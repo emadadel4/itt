@@ -31,11 +31,24 @@ $itt = [Hashtable]::Synchronized(@{
 
 # Ask user for administrator privileges if not already running as admin
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoProfile -Command `"$($MyInvocation.MyCommand.Definition)`"" -Verb RunAs -WindowStyle Maximized
+    Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoProfile -Command `"$($MyInvocation.MyCommand.Definition)`"" -Verb RunAs
     exit
 }
 
 Write-Host "Starting..."
+
+
+# Get the RawUI object
+$rawUI = $Host.UI.RawUI
+
+# Adjust the buffer size to match the maximum physical window size
+$bufferSize = $rawUI.BufferSize
+$bufferSize.Width = $rawUI.MaxPhysicalWindowSize.Width
+$bufferSize.Height = $rawUI.MaxPhysicalWindowSize.Height
+$rawUI.BufferSize = $bufferSize
+
+# Set the window size to the maximum physical window size
+$rawUI.WindowSize = $rawUI.MaxPhysicalWindowSize
 
 $itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
 $Host.UI.RawUI.WindowTitle = "ITT - #StandWithPalestine"
