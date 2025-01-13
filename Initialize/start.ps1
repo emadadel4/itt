@@ -48,6 +48,19 @@ $rawUI.BufferSize = $bufferSize
 # تعيين حجم النافذة إلى الحجم الأقصى
 $rawUI.WindowSize = $rawUI.MaxPhysicalWindowSize
 
+# الحصول على أبعاد الشاشة
+$screenWidth = [System.Windows.Forms.Screen]::PrimaryScreen.WorkingArea.Width
+$screenHeight = [System.Windows.Forms.Screen]::PrimaryScreen.WorkingArea.Height
+
+# حساب إحداثيات المنتصف
+$windowWidth = $rawUI.WindowSize.Width
+$windowHeight = $rawUI.WindowSize.Height
+$left = [int](($screenWidth - $windowWidth) / 2)
+$top = [int](($screenHeight - $windowHeight) / 2)
+
+# تحريك النافذة إلى المنتصف
+$host.UI.RawUI.CursorPosition = New-Object System.Management.Automation.Host.Coordinates($left, $top)
+
 
 $itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
 $Host.UI.RawUI.WindowTitle = "ITT - #StandWithPalestine"
