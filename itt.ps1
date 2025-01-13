@@ -21,10 +21,16 @@ Language       = "default"
 ittDir         = "$env:ProgramData\itt\"
 })
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoProfile -Command `"$($MyInvocation.MyCommand.Definition)`"" -Verb RunAs -WindowStyle Maximized
+Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoProfile -Command `"$($MyInvocation.MyCommand.Definition)`"" -Verb RunAs
 exit
 }
 Write-Host "Starting..."
+$rawUI = $Host.UI.RawUI
+$bufferSize = $rawUI.BufferSize
+$bufferSize.Width = $rawUI.MaxPhysicalWindowSize.Width
+$bufferSize.Height = $rawUI.MaxPhysicalWindowSize.Height
+$rawUI.BufferSize = $bufferSize
+$rawUI.WindowSize = $rawUI.MaxPhysicalWindowSize
 $itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
 $Host.UI.RawUI.WindowTitle = "ITT - #StandWithPalestine"
 $ittDir = $itt.ittDir
