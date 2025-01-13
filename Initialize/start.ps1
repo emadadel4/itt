@@ -35,20 +35,19 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     exit
 }
 
-Write-Host "Starting..."
 
-
-# Get the RawUI object
+# الحصول على RawUI
 $rawUI = $Host.UI.RawUI
 
-# Adjust the buffer size to match the maximum physical window size
+# تعديل حجم المخزن المؤقت بحيث يتناسب مع حجم النافذة
 $bufferSize = $rawUI.BufferSize
-$bufferSize.Width = $rawUI.MaxPhysicalWindowSize.Width
-$bufferSize.Height = $rawUI.MaxPhysicalWindowSize.Height
+$bufferSize.Width = [math]::Max($rawUI.MaxPhysicalWindowSize.Width, $bufferSize.Width)
+$bufferSize.Height = [math]::Max($rawUI.MaxPhysicalWindowSize.Height, $bufferSize.Height)
 $rawUI.BufferSize = $bufferSize
 
-# Set the window size to the maximum physical window size
+# تعيين حجم النافذة إلى الحجم الأقصى
 $rawUI.WindowSize = $rawUI.MaxPhysicalWindowSize
+
 
 $itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
 $Host.UI.RawUI.WindowTitle = "ITT - #StandWithPalestine"
@@ -63,4 +62,3 @@ if (-not (Test-Path -Path $ittDir)) {
 $logDir = Join-Path $ittDir 'logs'
 $timestamp = Get-Date -Format "yyyy-MM-dd"
 Start-Transcript -Path "$logDir\log_$timestamp.log" -Append -NoClobber
-Clear-Host
