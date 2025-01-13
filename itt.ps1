@@ -24,11 +24,10 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoProfile -Command `"$($MyInvocation.MyCommand.Definition)`"" -Verb RunAs
 exit
 }
-Write-Host "Starting..."
 $rawUI = $Host.UI.RawUI
 $bufferSize = $rawUI.BufferSize
-$bufferSize.Width = $rawUI.MaxPhysicalWindowSize.Width
-$bufferSize.Height = $rawUI.MaxPhysicalWindowSize.Height
+$bufferSize.Width = [math]::Max($rawUI.MaxPhysicalWindowSize.Width, $bufferSize.Width)
+$bufferSize.Height = [math]::Max($rawUI.MaxPhysicalWindowSize.Height, $bufferSize.Height)
 $rawUI.BufferSize = $bufferSize
 $rawUI.WindowSize = $rawUI.MaxPhysicalWindowSize
 $itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
@@ -40,7 +39,6 @@ New-Item -ItemType Directory -Path $ittDir -Force | Out-Null
 $logDir = Join-Path $ittDir 'logs'
 $timestamp = Get-Date -Format "yyyy-MM-dd"
 Start-Transcript -Path "$logDir\log_$timestamp.log" -Append -NoClobber
-Clear-Host
 $itt.database.Applications = @'
 [
 {
