@@ -1,6 +1,0 @@
-[submodule "locales"]
-	path = locales
-	url = https://github.com/emadadel4/locales.git
-[submodule "themes"]
-	path = themes
-	url = https://github.com/emadadel4/themes.git
