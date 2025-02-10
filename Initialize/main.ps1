@@ -41,10 +41,10 @@ foreach ($node in $MainXaml.SelectNodes("//*[@Name]")) {
                             $checkBox = $selectedItem.Children[0].Children[0]  
 
                             if ($checkBox) {
-                                $checkBox.IsChecked = -not $checkBox.IsChecked  
-
-                                if (-not ($global:CheckedItems -is [System.Collections.ArrayList])) {
-                                    $global:CheckedItems = New-Object System.Collections.ArrayList
+                                $checkBox.IsChecked = -not $checkBox.IsChecked 
+                                 
+                                if (-not $global:CheckedItems) {
+                                    $global:CheckedItems = [System.Collections.ArrayList]::new()
                                 }
 
                                 if ($checkBox.IsChecked) {
