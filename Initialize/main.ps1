@@ -41,21 +41,20 @@ foreach ($node in $MainXaml.SelectNodes("//*[@Name]")) {
                             $checkBox = $selectedItem.Children[0].Children[0]  
 
                             if ($checkBox) {
-                                    $checkBox.IsChecked = -not $checkBox.IsChecked 
+                                $checkBox.IsChecked = -not $checkBox.IsChecked  
 
-                                    if (-not $global:CheckedItems) {
-                                        $global:CheckedItems = @()
+                                if (-not ($global:CheckedItems -is [System.Collections.ArrayList])) {
+                                    $global:CheckedItems = New-Object System.Collections.ArrayList
+                                }
+
+                                if ($checkBox.IsChecked) {
+                                    if (-not ($global:CheckedItems | Where-Object { $_.Content -eq $checkBox.Content })) {
+                                        $null = $global:CheckedItems.Add(@{ Content = $checkBox.Content; IsChecked = $true })
+                                        Write-Host "Added: $($checkBox.Content)"
                                     }
-
-                                    if ($checkBox.IsChecked) 
-                                    {
-                                        if (-not ($global:CheckedItems | Where-Object { $_.Content -eq $checkBox.Content })) {
-                                            $null = $global:CheckedItems.Add(@{ Content = $checkBox.Content; IsChecked = $true })
-                                        }
-                                        
-                                    } else {
-                                        $itemToRemove = $global:CheckedItems | Where-Object { $_.Content -eq $checkBox.Content }
-                                        if ($itemToRemove) {
+                                } else {
+                                    $itemToRemove = $global:CheckedItems | Where-Object { $_.Content -eq $checkBox.Content }
+                                    if ($itemToRemove) {
                                         [void]$global:CheckedItems.Remove($itemToRemove)
                                     }
                                 }
