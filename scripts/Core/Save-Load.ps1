@@ -81,15 +81,17 @@ function SaveItemsToJson {
 
     # Collect checked items
     $items = foreach ($item in $itt.AppsListView.Items) {
-        $checkBoxes = Get-CheckBoxesFromStackPanel -item $item
-        if ($checkBoxes.IsChecked -and $appsDictionary.ContainsKey($checkBoxes.Content)) {
+        
+        $MyApp = Get-CheckBoxes
+        
+        if ($MyApp.IsChecked -and $appsDictionary.ContainsKey($MyApp.Content)) {
             [PSCustomObject]@{
-                Name  = $checkBoxes.Content
+                Name  = $MyApp.Content
                 Check = "true"
             }
         }
     }
-
+    
     # If no items are selected, show a message and return
     if ($items.Count -eq 0) {
         Message -key "Empty_save_msg" -icon "Information" -action "OK"
