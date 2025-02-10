@@ -25,29 +25,19 @@ function Get-SelectedItems {
     $items = @()
     switch ($Mode) {
         "Apps" {
-            $itt.AppsListView.Items |
-                Where-Object { $_ -is [System.Windows.Controls.StackPanel] } |
-                ForEach-Object {
-                    $_.Children |
-                        Where-Object { $_ -is [System.Windows.Controls.StackPanel] } |
-                        ForEach-Object {
-                            $_.Children |
-                                Where-Object { $_ -is [System.Windows.Controls.CheckBox] -and $_.IsChecked } |
-                                ForEach-Object {
-                                    $checkbox = $_
-                                    $app = $itt.database.Applications | Where-Object { $_.Name -eq $checkbox.Content }
-                                    if ($app) {
-                                        $items += @{
-                                            Name    = $app.name
-                                            Choco   = $app.choco
-                                            Winget  = $app.winget
-                                            Default = $app.default
-                                            # Add a new method downloader here
-                                        }
-                                    }
-                                }
-                        }
+            $global:checkedItems | ForEach-Object {
+                $Name = $_
+                $app = $itt.database.Applications | Where-Object { $_.Name -eq $Name }
+            
+                if ($app) {
+                    $items += [PSCustomObject]@{
+                        Name    = $app.Name
+                        Choco   = $app.Choco
+                        Winget  = $app.Winget
+                        Default = $app.Default
+                    }
                 }
+            }
         }
         "Tweaks" {
             $itt.TweaksListView.Items |
