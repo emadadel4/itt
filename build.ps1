@@ -158,15 +158,13 @@ function GenerateCheckboxes {
         }
 
 
-        $IsEnabled = If ($IsEnabledField -eq "Disabled")
+        $IsEnabled = If($IsEnabledField -eq "Disabled")
         {
             "IsEnabled=`"False`"" 
 
         }elseif($IsEnabledField -eq "Enabled")
         {
             "IsEnabled=`"True`"" 
-        }elseif ($NameField -eq "None") {
-
         }
         
 
@@ -177,7 +175,7 @@ function GenerateCheckboxes {
         $Checkboxes += @"
         <StackPanel Orientation="Vertical" Margin="10">
             <StackPanel Orientation="Horizontal">
-                <CheckBox Content="$Content" $Name $IsChecked $Tag $Toggle $Tips $IsEnabled FontWeight="SemiBold" FontSize="15" Foreground="{DynamicResource TextColorSecondaryColor}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <CheckBox Content="$Content" $Name $IsChecked $Tag $Toggle $Tips  IsEnabled="False" FontWeight="SemiBold" FontSize="15" Foreground="{DynamicResource TextColorSecondaryColor}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="13" Content="$CleanedCategory"/>
             </StackPanel>
             <TextBlock Width="666" Background="Transparent" Margin="8" Foreground="{DynamicResource TextColorSecondaryColor2}" FontSize="15" FontWeight="SemiBold" VerticalAlignment="Center" TextWrapping="Wrap" Text="$CleanedDescription."/>
@@ -730,9 +728,9 @@ try {
     catch {
         Write-Error "An error occurred while processing the XAML content: $($_.Exception.Message)"
     }
-    $AppsCheckboxes = GenerateCheckboxes -Items $itt.database.Applications -ContentField "Name" -NameField "None" -IsEnabledField "Disabled" -TagField "Category" -IsCheckedField "check" -TipsField "show"
+    $AppsCheckboxes = GenerateCheckboxes -Items $itt.database.Applications -ContentField "Name" -NameField "None" -TagField "Category" -IsCheckedField "check" -TipsField "show"
     $TweaksCheckboxes = GenerateCheckboxes -Items $itt.database.Tweaks -ContentField "Name" -TagField "Category" -IsCheckedField "check"
-    $SettingsCheckboxes = GenerateCheckboxes -Items $itt.database.Settings -ContentField "Name" -NameField "Name" -IsEnabledField "None" -ToggleField "Style=" { StaticResource ToggleSwitchStyle }""
+    $SettingsCheckboxes = GenerateCheckboxes -Items $itt.database.Settings -ContentField "Name" -NameField "Name" -ToggleField "Style=" { StaticResource ToggleSwitchStyle }""
     $MainXamlContent = $MainXamlContent -replace "{{Apps}}", $AppsCheckboxes 
     $MainXamlContent = $MainXamlContent -replace "{{Tweaks}}", $TweaksCheckboxes 
     $MainXamlContent = $MainXamlContent -replace "{{Settings}}", $SettingsCheckboxes 
