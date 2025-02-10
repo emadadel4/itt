@@ -1,11 +1,13 @@
 ﻿#=========================================================================== 
 #region Select elements with a Name attribute using XPath and iterate over them
 #=========================================================================== 
-$MainXaml.SelectNodes("//*[@Name]") | ForEach-Object {
-    $name = $_.Name
+foreach ($node in $MainXaml.SelectNodes("//*[@Name]")) {
+    $name = $node.Name
     $element = $itt["window"].FindName($name)
+    
     if ($element) {
         $itt[$name] = $element
+        
         # Add event handlers based on element type
         switch ($element.GetType().Name) {
             "Button" {
@@ -17,34 +19,34 @@ $MainXaml.SelectNodes("//*[@Name]") | ForEach-Object {
                 })
             }
             "TextBox" {
-                $element.Add_TextChanged({ Invoke-Button $args[0].Name $args[0].Text})
-                $element.Add_GotFocus({ Invoke-Button $args[0].Name $args[0].Text})
+                $element.Add_TextChanged({ Invoke-Button $args[0].Name $args[0].Text })
+                $element.Add_GotFocus({ Invoke-Button $args[0].Name $args[0].Text })
             }
             "ComboBox" {
-                $element.add_SelectionChanged({ Invoke-Button $args[0].Name $args[0].SelectedItem.Content})
+                $element.add_SelectionChanged({ Invoke-Button $args[0].Name $args[0].SelectedItem.Content })
             }
             "TabControl" {
-                $element.add_SelectionChanged({ Invoke-Button $args[0].Name $args[0].SelectedItem.Name})
+                $element.add_SelectionChanged({ Invoke-Button $args[0].Name $args[0].SelectedItem.Name })
             }
             "CheckBox" {
                 $element.IsChecked = Get-ToggleStatus -ToggleSwitch $name
-                $element.Add_Click({ Invoke-Toogle $args[0].Name})
+                $element.Add_Click({ Invoke-Toogle $args[0].Name })
             }
-            "Listview"{
+            "Listview" {
                 $element.Add_PreviewMouseLeftButtonUp({ 
                     if ($itt.CurrentList -eq "appslist" -or $itt.CurrentList -eq "tweakslist") {
                         $selectedItem = $args[0].SelectedItem
-                
+
                         if ($selectedItem) {
                             $checkBox = $selectedItem.Children[0].Children[0]  
-                
+
                             if ($checkBox) {
                                 $checkBox.IsChecked = -not $checkBox.IsChecked  
-                                
+
                                 if (-not ($global:CheckedItems -is [System.Collections.ArrayList])) {
                                     $global:CheckedItems = New-Object System.Collections.ArrayList
                                 }
-                
+
                                 if ($checkBox.IsChecked) {
                                     if (-not ($global:CheckedItems | Where-Object { $_.Content -eq $checkBox.Content })) {
                                         $null = $global:CheckedItems.Add(@{ Content = $checkBox.Content; IsChecked = $true })
