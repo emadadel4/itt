@@ -69,7 +69,6 @@ function Invoke-Install {
                 
                 Install-App -Name $app.Name -Winget $app.Winget -Choco $app.Choco
                 
-        
                 # Debugging
                 if ($Debug) { Write-Host "$($app.Name) $($app.Default.url)" }
             }
