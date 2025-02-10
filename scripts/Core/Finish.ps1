@@ -1,25 +1,12 @@
 function Finish {
+    
     <#
         .SYNOPSIS
         Clears checkboxes in a specified ListView and displays a notification.
         .DESCRIPTION
-        This function iterates through the items in a specified ListView, unchecks any CheckBox controls within it, and clears the ListView. After clearing the ListView, it uses the `Notify` function to display a notification with a given title, message, and icon.
-        .PARAMETER ListView
-        The name of the ListView control within the `$itt` object that needs to be processed. This parameter is required.
-        .PARAMETER title
-        The title for the notification message. Defaults to "ITT Emad Adel" if not specified.
-        .PARAMETER msg
-        The message content for the notification. Defaults to "Installed successfully" if not specified.
-        .PARAMETER icon
-        The icon to be used in the notification. Defaults to "Info" if not specified.
-        .EXAMPLE
-        Finish -ListView "myListView" -title "Process Completed" -msg "All items have been processed" -icon "Success"
         Clears all checkboxes in the ListView named "myListView" and displays a notification with the title "Process Completed", message "All items have been processed", and icon "Success".
-        .NOTES
-        - Ensure that the `Notify` function is implemented and available in your script to handle notification display.
-        - The function assumes the `$itt` object and its `ListView` are properly initialized and accessible.
-        - The notification duration is set to 30 seconds (`30000` milliseconds).
     #>
+
     param (
        [string]$ListView,
        [string]$title = "ITT Emad Adel",
@@ -37,24 +24,23 @@ function Finish {
             Notify -title "$title" -msg "ALL TWEAKS HAVE BEEN APPLIED SUCCESSFULLY." -icon "Info" -time 30000
         }
     }
+
+    # Reset Taskbar Progress
     $itt["window"].Dispatcher.Invoke([action]{ Set-Taskbar -progress "None" -value 0.01 -icon "done" })
-    # Clear 
+
+    # Uncheck all items in ListView
     $itt.$ListView.Dispatcher.Invoke([Action]{
-        foreach ($item in $itt.$ListView.Items)
-        {
-            foreach ($child in $item.Children) {
-                if ($child -is [System.Windows.Controls.StackPanel]) {
-                    foreach ($innerChild in $child.Children) {
-                        if ($innerChild -is [System.Windows.Controls.CheckBox]) {
-                            $innerChild.IsChecked = $false
-                            $itt.$ListView.Clear()
-                            $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.Items)
-                            $collectionView.Filter = $null
-                        }
-                    }
-                }
+        # Uncheck all items
+        foreach ($item in $itt.$ListView.Items) {
+            if ($item.Children.Count -gt 0 -and $item.Children[0].Children.Count -gt 0) {
+                $item.Children[0].Children[0].IsChecked = $false
             }
         }
+    
+        # Clear the list view selection and reset the filter
+        $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.Items)
+        $collectionView.Filter = $null
+        $collectionView.Refresh()
     })
 }
 function Show-Selected {
