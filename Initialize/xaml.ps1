@@ -5,38 +5,29 @@ $hashVars = New-object System.Management.Automation.Runspaces.SessionStateVariab
 $InitialSessionState = [System.Management.Automation.Runspaces.InitialSessionState]::CreateDefault()
 # Add the variable to the session state
 $InitialSessionState.Variables.Add($hashVars)
+
+
 $desiredFunctions = @(
-    'Install-App' ,
-    'Install-Winget',
-    'InvokeCommand' ,
-    'Add-Log',
-    'Disable-Service',
-    'Uninstall-AppxPackage',
-    'Finish',
-    'Message',
-    'Notify',
-    'UpdateUI',
-    'Native-Downloader',
-    'Install-Choco',
-    'ExecuteCommand',
-    'Set-Registry',
-    'Uninstall-AppxPackage',
-    'Set-Taskbar',
-    'Refresh-Explorer',
-    'Remove-ScheduledTasks'
+    'Install-App', 'Install-Winget', 'InvokeCommand', 'Add-Log', 'Disable-Service',
+    'Uninstall-AppxPackage', 'Finish', 'Message', 'Notify', 'UpdateUI',
+    'Native-Downloader', 'Install-Choco', 'ExecuteCommand', 'Set-Registry',
+    'Set-Taskbar', 'Refresh-Explorer', 'Remove-ScheduledTasks'
 )
-$functions = Get-ChildItem function:\ | Where-Object { $desiredFunctions -contains $_.Name }
-$functionEntries = $functions | ForEach-Object {
-    $functionDefinition = (Get-Command $_.Name).ScriptBlock.ToString()
-    New-Object System.Management.Automation.Runspaces.SessionStateFunctionEntry -ArgumentList $_.Name, $functionDefinition
-}
+
+$functionEntries = @(foreach ($func in (Get-ChildItem function:\ | Where-Object { $_.Name -in $desiredFunctions })) {
+    New-Object System.Management.Automation.Runspaces.SessionStateFunctionEntry -ArgumentList $func.Name, (Get-Command $func.Name).ScriptBlock.ToString()
+})
+
 $functionEntries | ForEach-Object { $initialSessionState.Commands.Add($_) }
+
 # debug start
-if ($Debug) { $functions | ForEach-Object { Write-Output "Added function: $($_.Name)" } }
+    if ($Debug) { foreach ($entry in $functionEntries) { Write-Output "Added function: $($entry.Name)" } }
 # debug end
+
 # Create and open the runspace pool
 $itt.runspace = [runspacefactory]::CreateRunspacePool(1, $maxthreads, $InitialSessionState, $Host)
 $itt.runspace.Open()
+
 # Initialize Main window
 try {
     [xml]$MainXaml = $MainWindowXaml
