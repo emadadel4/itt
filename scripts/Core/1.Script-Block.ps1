@@ -10,14 +10,16 @@
     #>
     param(
         [scriptblock]$ScriptBlock,
-        [array]$ArgumentList,
-        $Debug
+        [array]$ArgumentList = @()
     )
     $script:powershell = [powershell]::Create()
     # Add the script block and arguments to the runspace
     $script:powershell.AddScript($ScriptBlock)
-    $script:powershell.AddArgument($ArgumentList)
-    $script:powershell.AddArgument($Debug)
+
+    foreach ($arg in $ArgumentList) {
+        $script:powershell.AddArgument($arg)
+    }
+
     $script:powershell.RunspacePool = $itt.runspace
     # Begin running the script block asynchronously
     $script:handle = $script:powershell.BeginInvoke()
