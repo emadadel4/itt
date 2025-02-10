@@ -12,9 +12,6 @@ function Invoke-Install {
         6. Executes installation commands for applications using Chocolatey (`Choco`), Winget, or custom download methods.
         7. Updates the UI once the installation is complete and finishes the process.
     #>
-
-    Write-Host "Checked Items: $($checkedItems -join ', ')"
-
     
     # Clear Search QUery
     $itt.searchInput.text = $null
