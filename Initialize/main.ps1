@@ -31,31 +31,31 @@ $MainXaml.SelectNodes("//*[@Name]") | ForEach-Object {
                 $element.Add_Click({ Invoke-Toogle $args[0].Name})
             }
             "Listview"{
-
                 $element.Add_PreviewMouseLeftButtonUp({ 
-
-                    if($itt.CurrentList -eq "appslist" -or $itt.CurrentList -eq "tweakslist"){
-
+                    if ($itt.CurrentList -eq "appslist" -or $itt.CurrentList -eq "tweakslist") {
                         $selectedItem = $args[0].SelectedItem
-
-                    
+                
                         if ($selectedItem) {
                             $checkBox = $selectedItem.Children[0].Children[0]  
-                            
+                
                             if ($checkBox) {
-
                                 $checkBox.IsChecked = -not $checkBox.IsChecked  
-                                # Write-Host "CheckBox State: $($checkBox.Content) -> $($checkBox.IsChecked)"
-                    
-                                if ($checkBox.IsChecked) {
-                                    $global:CheckedItems += @{ Content = $checkBox.Content; IsChecked = $checkBox.IsChecked }
-                                     Write-Host "Added: $($checkBox.Content)"
-                                } else {
-                                    $global:CheckedItems = $global:CheckedItems | Where-Object { $_.Content -ne $checkBox.Content }
-                                     Write-Host "Removed: $($checkBox.Content)"
+                                
+                                if (-not ($global:CheckedItems -is [System.Collections.ArrayList])) {
+                                    $global:CheckedItems = New-Object System.Collections.ArrayList
                                 }
-                    
-                                Write-Host "Checked Items: $($checkedItems | ForEach-Object { "$($_.Content):$($_.IsChecked)" } | Out-String -Width 4096)"
+                
+                                if ($checkBox.IsChecked) {
+                                    if (-not ($global:CheckedItems | Where-Object { $_.Content -eq $checkBox.Content })) {
+                                        $null = $global:CheckedItems.Add(@{ Content = $checkBox.Content; IsChecked = $true })
+                                        Write-Host "Added: $($checkBox.Content)"
+                                    }
+                                } else {
+                                    $itemToRemove = $global:CheckedItems | Where-Object { $_.Content -eq $checkBox.Content }
+                                    if ($itemToRemove) {
+                                        [void]$global:CheckedItems.Remove($itemToRemove)
+                                    }
+                                }
                             }
                         }
                     }
