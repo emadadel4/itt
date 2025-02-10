@@ -1,7 +1,7 @@
 # Function to get all CheckBoxes from a StackPanel
 function Get-CheckBoxes {
     $item.Children[0].Children[0]
-    return $itt
+    return $item
 }
 
 # Load JSON data and update the UI
@@ -65,6 +65,7 @@ function Load-SavedFile {
     $itt.Search_placeholder.Visibility = "Visible"
     $itt.SearchInput.Text = $null
 }
+
 # Save selected items to a JSON file
 function Save-File {
     # Check if a process is running
@@ -130,6 +131,7 @@ function Save-File {
     $itt.Search_placeholder.Visibility = "Visible"
     $itt.SearchInput.Text = $null
 }
+
 # Quick Install 
 function Quick-Install {
     param (
