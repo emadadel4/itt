@@ -11886,6 +11886,9 @@ $itt.applyText = $itt["window"].FindName("applyText")
 $itt.applyIcon = $itt["window"].FindName("applyIcon")
 $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
 $global:CheckedItems = @()
+if (-not $global:CheckedItems) {
+$global:CheckedItems = [System.Collections.ArrayList]::new()
+}
 foreach ($node in $MainXaml.SelectNodes("//*[@Name]")) {
 $name = $node.Name
 $element = $itt["window"].FindName($name)
