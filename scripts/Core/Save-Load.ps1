@@ -34,8 +34,8 @@ function LoadJson {
     if ($openFileDialog.ShowDialog() -eq $true) {
         try {
             # Load and parse JSON data
-            $jsonData = Get-Content -Path $openFileDialog.FileName -Raw | ConvertFrom-Json -ErrorAction Stop
-            $filteredNames = $jsonData.Name
+            $FileContent = Get-Content -Path $openFileDialog.FileName -Raw | ConvertFrom-Json -ErrorAction Stop
+            $filteredNames = $FileContent.Name
 
             # Get the apps list and collection view
             $appsList = $itt['window'].FindName('appslist')
@@ -132,55 +132,61 @@ function Quick-Install {
         [string]$file
     )
 
-        $QuickInstall = $true
+    $QuickInstall = $true
 
-        try {
-            # Get file local or remote
-            if ($file -match "^https?://") {
+    try {
+        # Get file local or remote
+        if ($file -match "^https?://") {
 
-                $jsonData = Invoke-RestMethod -Uri $file -ErrorAction Stop
+            $FileContent = Invoke-RestMethod -Uri $file -ErrorAction Stop
 
-                if ($jsonData -isnot [array] -or $jsonData.Count -eq 0) {
-                    Message -NoneKey "The file is corrupt or access is forbidden" -icon "Warning" -action "OK"
-                    return
-                }
-
-            } else {
-
-                $jsonData = Get-Content -Path $file -Raw | ConvertFrom-Json -ErrorAction Stop
-
-                if($file -notmatch "\.itt"){
-                    Message -NoneKey "Invalid file format. Expected .itt file." -icon "Warning" -action "OK"
-                    return
-                }
+            if ($FileContent -isnot [array] -or $FileContent.Count -eq 0) {
+                Message -NoneKey "The file is corrupt or access is forbidden" -icon "Warning" -action "OK"
+                return
             }
 
-        } catch {
-            Write-Warning "Failed to load or parse JSON file: $_"
-            return
+        } else {
+
+            $FileContent = Get-Content -Path $file -Raw | ConvertFrom-Json -ErrorAction Stop
+
+            if($file -notmatch "\.itt"){
+                Message -NoneKey "Invalid file format. Expected .itt file." -icon "Warning" -action "OK"
+                return
+            }
         }
 
+    } catch {
+        Write-Warning "Failed to load or parse JSON file: $_"
+        return
+    }
 
-    if($jsonData -eq $null){return}
+    if($FileContent -eq $null){return}
 
     # Extract names from JSON data
-    $filteredNames = $jsonData.Name
+    $filteredNames = $FileContent
+
+    if (-not $global:CheckedItems) {
+        $global:CheckedItems = [System.Collections.ArrayList]::new()
+    }
+
+    foreach ($MyApp in $FileContent) {
+        $global:CheckedItems.Add(@{ Content = $MyApp.Name; IsChecked = $true })
+    }
 
     # Get the apps list and collection view
-    $appsList = $itt['window'].FindName('appslist')
-    $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($appsList.Items)
+    $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt['Window'].FindName('appslist').Items)
 
     # Set the filter predicate
     $collectionView.Filter = {
         param($item)
-        $checkBoxes = Get-CheckBoxesFromStackPanel -item $item
-        $checkBoxes.IsChecked = $filteredNames -contains $checkBoxes.Content
-        return $checkBoxes.IsChecked
-    }
 
-    # Select the apps tab and clear the list
-    $itt['window'].FindName('apps').IsSelected = $true
-    $appsList.Clear()
+        # التحقق من الاسم وتمكين التحديد إذا كان مطابقًا
+        if ($FileContent.Name -contains $item.Children[0].Children[0].Content) {
+            $item.Children[0].Children[0].IsChecked = $true
+            return $true
+        }
+        return $false
+    }
 
     # Start the installation process
     try {
