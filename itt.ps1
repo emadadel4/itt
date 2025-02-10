@@ -13253,7 +13253,7 @@ $itt.installIcon = $itt["window"].FindName("installIcon")
 $itt.applyText = $itt["window"].FindName("applyText")
 $itt.applyIcon = $itt["window"].FindName("applyIcon")
 $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
-$global:CheckedItems = [System.Collections.ArrayList]::new()
+$global:CheckedItems = @()
 
 
 #===========================================================================
@@ -13308,7 +13308,7 @@ foreach ($node in $MainXaml.SelectNodes("//*[@Name]")) {
                                 $checkBox.IsChecked = -not $checkBox.IsChecked  
 
                                 if (-not ($global:CheckedItems -is [System.Collections.ArrayList])) {
-                                    $global:CheckedItems = New-Object System.Collections.ArrayList
+                                    $global:CheckedItems = [System.Collections.ArrayList]::new()
                                 }
 
                                 if ($checkBox.IsChecked) {
