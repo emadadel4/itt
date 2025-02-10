@@ -48,13 +48,12 @@ function Invoke-Install {
     if ($result -eq "no") {
         Show-Selected -ListView "AppsListView" -Mode "Default"
         Clear-Item -ListView "AppsListView"
-        $global:CheckedItems = @()
         return
     }
 
-    ITT-ScriptBlock -ArgumentList $selectedApps $global:CheckedItems  $QuickInstall, $debug -debug $debug -ScriptBlock {
+    ITT-ScriptBlock -ArgumentList @($SelectedApps,$QuickInstall,$Debug) -ScriptBlock {
 
-        param($selectedApps ,$QuickInstall,$global:CheckedItems,$debug)
+        param($SelectedApps,$QuickInstall,$debug)
 
         $itt.ProcessRunning = $true
 
@@ -62,40 +61,45 @@ function Invoke-Install {
 
         $itt["window"].Dispatcher.Invoke([action]{ Set-Taskbar -progress "Indeterminate" -value 0.01 -icon "logo" })
 
-        $selectedApps | ForEach-Object {
+        foreach ($app in $SelectedApps) {
+            
+            if ($app.Winget -ne "none" -or $app.Choco -ne "none") {
 
-            if ($_.Winget -ne "none" -or $_.Choco -ne "none")
-            {
-                # Some packages won't install until the package folder is removed.
-                $chocoFolder = Join-Path $env:ProgramData "chocolatey\lib\$($_.Choco)"
+                $chocoFolder = Join-Path $env:ProgramData "chocolatey\lib\$($app.Choco)"
                 #Remove-Item -Path "$chocoFolder" -Recurse -Force
                 #Remove-Item -Path "$chocoFolder.install" -Recurse -Force
                 #Remove-Item -Path "$env:TEMP\chocolatey" -Recurse -Force
-                Install-App -Name $_.Name -Winget $_.Winget -Choco $_.Choco
-                # debug start
-                    if($debug){Add-Log -Message $_.Choco -Level "debug"}
-                # debug end
+                
+                Install-App -Name $app.Name -Winget $app.Winget -Choco $app.Choco
+                
+        
+                # Debugging
+                if ($Debug) { Write-Host "$($app.Name) $($app.Default.url)" }
             }
-            else
-            {
+            else {
                 Native-Downloader `
-                -name           $_.name `
-                -url            $_.default.url `
-                -launcher       $_.default.launcher `
-                -portable       $_.default.portable `
-                -installArgs    $_.default.args
-                # debug start
-                    if($debug){Add-Log -Message $_.name $_.default.url -Level "debug"}
-                 # debug end
+                -name           $app.Name `
+                -url            $app.Default.url `
+                -launcher       $app.Default.launcher `
+                -portable       $app.Default.portable `
+                -installArgs    $app.Default.args
+        
+                # Debugging
+                if ($Debug) { Add-Log -Message "$($app.Name) $($app.Default.url)" -Level "debug" }
             }
         }
+        
         Finish -ListView "AppsListView"
 
-        $global:CheckedItems = @()
         $itt.ProcessRunning = $false
         $QuickInstall = $false
+
+
         
     }
+
+    #Clear the checked items
+    $global:CheckedItems = @()
 }
 function Invoke-Apply {
 
