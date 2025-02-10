@@ -5986,14 +5986,16 @@ function ITT-ScriptBlock {
     #>
     param(
         [scriptblock]$ScriptBlock,
-        [array]$ArgumentList,
-        $Debug
+        [array]$ArgumentList = @()
     )
     $script:powershell = [powershell]::Create()
     # Add the script block and arguments to the runspace
     $script:powershell.AddScript($ScriptBlock)
-    $script:powershell.AddArgument($ArgumentList)
-    $script:powershell.AddArgument($Debug)
+
+    foreach ($arg in $ArgumentList) {
+        $script:powershell.AddArgument($arg)
+    }
+
     $script:powershell.RunspacePool = $itt.runspace
     # Begin running the script block asynchronously
     $script:handle = $script:powershell.BeginInvoke()
@@ -6134,6 +6136,9 @@ function Finish {
             }
         }
     
+
+        Write-Host $global:CheckedItems
+
         # Clear the list view selection and reset the filter
         $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.Items)
         $collectionView.Filter = $null
@@ -6199,6 +6204,7 @@ function Clear-Item {
 
         # Clear all items from the ListView
         $itt.$ListView.Clear()
+        $global:CheckedItems = @()
 
         # Reset the filter to show all items
         [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.Items).Filter = $null
@@ -6682,24 +6688,11 @@ function Reset-Preferences {
     Message -key "Reopen_itt_again" -icon "Information" -action "OK"
 }
 # Function to get all CheckBoxes from a StackPanel
-function Get-CheckBoxesFromStackPanel {
-    param (
-        [System.Windows.Controls.StackPanel]$item
-    )
-    $checkBoxes = @()
-    if ($item -is [System.Windows.Controls.StackPanel]) {
-        foreach ($child in $item.Children) {
-            if ($child -is [System.Windows.Controls.StackPanel]) {
-                foreach ($innerChild in $child.Children) {
-                    if ($innerChild -is [System.Windows.Controls.CheckBox]) {
-                        $checkBoxes += $innerChild
-                    }
-                }
-            }
-        }
-    }
-    return $checkBoxes
+function Get-CheckBoxes {
+    $item.Children[0].Children[0]
+    return $itt
 }
+
 # Load JSON data and update the UI
 function LoadJson {
     # Check if a process is running
@@ -6710,15 +6703,28 @@ function LoadJson {
 
     # Open file dialog to select JSON file
     $openFileDialog = New-Object Microsoft.Win32.OpenFileDialog -Property @{
-        Filter = "JSON files (*.itt)|*.itt"
-        Title  = "Open JSON File"
+        Filter = "itt files (*.itt)|*.itt"
+        Title  = "itt File"
     }
 
     if ($openFileDialog.ShowDialog() -eq $true) {
+
         try {
+
+       
+
             # Load and parse JSON data
-            $jsonData = Get-Content -Path $openFileDialog.FileName -Raw | ConvertFrom-Json -ErrorAction Stop
-            $filteredNames = $jsonData.Name
+            $FileContent = Get-Content -Path $openFileDialog.FileName -Raw | ConvertFrom-Json -ErrorAction Stop
+            $filteredNames = $FileContent.Name
+
+            if (-not $global:CheckedItems) {
+                $global:CheckedItems = [System.Collections.ArrayList]::new()
+            }
+        
+            foreach ($MyApp in $FileContent) {
+                $global:CheckedItems.Add(@{ Content = $MyApp.Name; IsChecked = $true })
+            }
+
 
             # Get the apps list and collection view
             $appsList = $itt['window'].FindName('appslist')
@@ -6727,20 +6733,20 @@ function LoadJson {
             # Define the filter predicate
             $collectionView.Filter = {
                 param($item)
-                $checkBoxes = Get-CheckBoxesFromStackPanel -item $item
-                $checkBoxes.IsChecked = $filteredNames -contains $checkBoxes.Content
-                return $checkBoxes.IsChecked
-            }
 
-            # Update UI
-            $itt['window'].FindName('apps').IsSelected = $true
-            $appsList.Clear()
+                if ($FileContent.Name -contains $item.Children[0].Children[0].Content) {
+                    $item.Children[0].Children[0].IsChecked = $true
+                    return $true
+                }
+                return $false
+            }
 
             # Show success message
             Message -NoneKey "Restored successfully" -icon "info" -action "OK"
+
+
         } catch {
             Write-Warning "Failed to load or parse JSON file: $_"
-            Message -NoneKey "Failed to load JSON file" -icon "error" -action "OK"
         }
     }
 
@@ -6764,15 +6770,17 @@ function SaveItemsToJson {
 
     # Collect checked items
     $items = foreach ($item in $itt.AppsListView.Items) {
-        $checkBoxes = Get-CheckBoxesFromStackPanel -item $item
-        if ($checkBoxes.IsChecked -and $appsDictionary.ContainsKey($checkBoxes.Content)) {
+        
+        $MyApp = Get-CheckBoxes
+        
+        if ($MyApp.IsChecked -and $appsDictionary.ContainsKey($MyApp.Content)) {
             [PSCustomObject]@{
-                Name  = $checkBoxes.Content
+                Name  = $MyApp.Content
                 Check = "true"
             }
         }
     }
-
+    
     # If no items are selected, show a message and return
     if ($items.Count -eq 0) {
         Message -key "Empty_save_msg" -icon "Information" -action "OK"
@@ -6794,9 +6802,11 @@ function SaveItemsToJson {
 
             # Uncheck all checkboxes
             foreach ($item in $itt.AppsListView.Items) {
-                $checkBoxes = Get-CheckBoxesFromStackPanel -item $item
-                if ($checkBoxes.IsChecked) {
-                    $checkBoxes.IsChecked = $false
+
+                $item.Children[0].Children[0]
+
+                if ($item.IsChecked) {
+                    $item.IsChecked = $false
                 }
             }
         } catch {
@@ -6815,55 +6825,60 @@ function Quick-Install {
         [string]$file
     )
 
-        $QuickInstall = $true
+    $QuickInstall = $true
 
-        try {
-            # Get file local or remote
-            if ($file -match "^https?://") {
+    try {
+        # Get file local or remote
+        if ($file -match "^https?://") {
 
-                $jsonData = Invoke-RestMethod -Uri $file -ErrorAction Stop
+            $FileContent = Invoke-RestMethod -Uri $file -ErrorAction Stop
 
-                if ($jsonData -isnot [array] -or $jsonData.Count -eq 0) {
-                    Message -NoneKey "The file is corrupt or access is forbidden" -icon "Warning" -action "OK"
-                    return
-                }
-
-            } else {
-
-                $jsonData = Get-Content -Path $file -Raw | ConvertFrom-Json -ErrorAction Stop
-
-                if($file -notmatch "\.itt"){
-                    Message -NoneKey "Invalid file format. Expected .itt file." -icon "Warning" -action "OK"
-                    return
-                }
+            if ($FileContent -isnot [array] -or $FileContent.Count -eq 0) {
+                Message -NoneKey "The file is corrupt or access is forbidden" -icon "Warning" -action "OK"
+                return
             }
 
-        } catch {
-            Write-Warning "Failed to load or parse JSON file: $_"
-            return
+        } else {
+
+            $FileContent = Get-Content -Path $file -Raw | ConvertFrom-Json -ErrorAction Stop
+
+            if($file -notmatch "\.itt"){
+                Message -NoneKey "Invalid file format. Expected .itt file." -icon "Warning" -action "OK"
+                return
+            }
         }
 
+    } catch {
+        Write-Warning "Failed to load or parse JSON file: $_"
+        return
+    }
 
-    if($jsonData -eq $null){return}
+    if($FileContent -eq $null){return}
 
     # Extract names from JSON data
-    $filteredNames = $jsonData.Name
+    $filteredNames = $FileContent
+
+    if (-not $global:CheckedItems) {
+        $global:CheckedItems = [System.Collections.ArrayList]::new()
+    }
+
+    foreach ($MyApp in $FileContent) {
+        $global:CheckedItems.Add(@{ Content = $MyApp.Name; IsChecked = $true })
+    }
 
     # Get the apps list and collection view
-    $appsList = $itt['window'].FindName('appslist')
-    $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($appsList.Items)
+    $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt['Window'].FindName('appslist').Items)
 
     # Set the filter predicate
     $collectionView.Filter = {
         param($item)
-        $checkBoxes = Get-CheckBoxesFromStackPanel -item $item
-        $checkBoxes.IsChecked = $filteredNames -contains $checkBoxes.Content
-        return $checkBoxes.IsChecked
-    }
 
-    # Select the apps tab and clear the list
-    $itt['window'].FindName('apps').IsSelected = $true
-    $appsList.Clear()
+        if ($FileContent.Name -contains (Get-CheckBoxes).Content) {
+            $item.Children[0].Children[0].IsChecked = $true
+            return $true
+        }
+        return $false
+    }
 
     # Start the installation process
     try {
@@ -7261,13 +7276,12 @@ function Invoke-Install {
     if ($result -eq "no") {
         Show-Selected -ListView "AppsListView" -Mode "Default"
         Clear-Item -ListView "AppsListView"
-        $global:CheckedItems = @()
         return
     }
 
-    ITT-ScriptBlock -ArgumentList $selectedApps $global:CheckedItems  $QuickInstall, $debug -debug $debug -ScriptBlock {
+    ITT-ScriptBlock -ArgumentList @($SelectedApps,$QuickInstall,$Debug) -ScriptBlock {
 
-        param($selectedApps ,$QuickInstall,$global:CheckedItems,$debug)
+        param($SelectedApps,$QuickInstall,$debug)
 
         $itt.ProcessRunning = $true
 
@@ -7275,40 +7289,45 @@ function Invoke-Install {
 
         $itt["window"].Dispatcher.Invoke([action]{ Set-Taskbar -progress "Indeterminate" -value 0.01 -icon "logo" })
 
-        $selectedApps | ForEach-Object {
+        foreach ($app in $SelectedApps) {
+            
+            if ($app.Winget -ne "none" -or $app.Choco -ne "none") {
 
-            if ($_.Winget -ne "none" -or $_.Choco -ne "none")
-            {
-                # Some packages won't install until the package folder is removed.
-                $chocoFolder = Join-Path $env:ProgramData "chocolatey\lib\$($_.Choco)"
+                $chocoFolder = Join-Path $env:ProgramData "chocolatey\lib\$($app.Choco)"
                 #Remove-Item -Path "$chocoFolder" -Recurse -Force
                 #Remove-Item -Path "$chocoFolder.install" -Recurse -Force
                 #Remove-Item -Path "$env:TEMP\chocolatey" -Recurse -Force
-                Install-App -Name $_.Name -Winget $_.Winget -Choco $_.Choco
-                # debug start
-                    if($debug){Add-Log -Message $_.Choco -Level "debug"}
-                # debug end
+                
+                Install-App -Name $app.Name -Winget $app.Winget -Choco $app.Choco
+                
+        
+                # Debugging
+                if ($Debug) { Write-Host "$($app.Name) $($app.Default.url)" }
             }
-            else
-            {
+            else {
                 Native-Downloader `
-                -name           $_.name `
-                -url            $_.default.url `
-                -launcher       $_.default.launcher `
-                -portable       $_.default.portable `
-                -installArgs    $_.default.args
-                # debug start
-                    if($debug){Add-Log -Message $_.name $_.default.url -Level "debug"}
-                 # debug end
+                -name           $app.Name `
+                -url            $app.Default.url `
+                -launcher       $app.Default.launcher `
+                -portable       $app.Default.portable `
+                -installArgs    $app.Default.args
+        
+                # Debugging
+                if ($Debug) { Add-Log -Message "$($app.Name) $($app.Default.url)" -Level "debug" }
             }
         }
+        
         Finish -ListView "AppsListView"
 
-        $global:CheckedItems = @()
         $itt.ProcessRunning = $false
         $QuickInstall = $false
+
+
         
     }
+
+    #Clear the checked items
+    $global:CheckedItems = @()
 }
 function Invoke-Apply {
 
@@ -8025,30 +8044,10 @@ function About {
     $itt.about.ShowDialog() | Out-Null
 }
 function ITTShortcut {
-
-    <#
-        .SYNOPSIS
-            Creates a desktop shortcut.
-        .DESCRIPTION
-            The `ITTShortcut` function creates a shortcut on the user's desktop that points to a PowerShell executable with a specified command.
-            It downloads a custom icon from a specified URL, saves it to the `C:\ProgramData\itt\` folder, and sets this icon for the shortcut.
-            The PowerShell script specified in the shortcut executes a command to run a script from a provided URL.
-    #>
-
-    # URL of the icon file
-    # Determine the path in AppData\Roaming
-    $appDataPath = "$env:ProgramData/itt"
-    $localIconPath = Join-Path -Path $appDataPath -ChildPath "itt.ico"
-    # Download the icon file
-    Invoke-WebRequest -Uri $itt.icon -OutFile $localIconPath
-    # Create a shortcut object
+    $iconPath = "$env:ProgramData\itt\itt.ico"
+    Invoke-WebRequest -Uri $itt.icon -OutFile $iconPath
     $Shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut("$([Environment]::GetFolderPath('Desktop'))\ITT Emad Adel.lnk")
-    # Set the target path to PowerShell with your command
-    $Shortcut.TargetPath = "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe"
-    $Shortcut.Arguments = "-ExecutionPolicy Bypass -Command ""irm bit.ly/ittea | iex"""
-    # Set the icon path to the downloaded icon file in AppData\Roaming
-    $Shortcut.IconLocation = "$localIconPath"
-    # Save the shortcut
+    $Shortcut.TargetPath, $Shortcut.Arguments, $Shortcut.IconLocation = "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe", "-ExecutionPolicy Bypass -Command ""irm bit.ly/ittea | iex""", $iconPath
     $Shortcut.Save()
 }
 function Search {
@@ -8234,46 +8233,12 @@ function Message {
     [System.Windows.MessageBox]::Show($msg, $title, [System.Windows.MessageBoxButton]::$action, [System.Windows.MessageBoxImage]::$icon)
 }    
 function Notify {
-    <#
-        .SYNOPSIS
-        Displays a balloon tip notification in the system tray with a customizable title, message, icon, and duration.
-        .DESCRIPTION
-        The `Notify` function creates a balloon tip notification using the system tray's notification area. 
-        This function is useful for displaying temporary alerts or messages to the user. 
-        It allows you to specify the notification's title, message, icon type, and how long the balloon tip should be displayed.
-        .PARAMETER title
-        The title of the notification balloon. This appears as the header of the balloon tip.
-        .PARAMETER msg
-        The main message text of the notification balloon.
-        .PARAMETER icon
-        The icon to be displayed in the notification balloon. Should be one of the standard `System.Windows.Forms.NotifyIcon` icon types such as "Information", "Warning", or "Error".
-        .PARAMETER time
-        The duration (in milliseconds) for which the balloon tip will be displayed.
-        .EXAMPLE
-        Notify -title "ITT" -msg "Hello world!" -icon "Information" -time 3000
-        Displays a notification balloon with the title "ITT" and the message "Hello world!" with an informational icon for 3 seconds.
-        .EXAMPLE
-        Notify -title "Warning" -msg "Please check your settings." -icon "Warning" -time 5000
-        Displays a notification balloon with the title "Warning" and the message "Please check your settings." with a warning icon for 5 seconds.
-        .NOTES
-        - The `icon` parameter should match one of the standard `System.Windows.Forms.NotifyIcon` types.
-        - The `notification` object is disposed of after showing the balloon tip to free up system resources.
-    #>
-    param(
-        [string]$title,
-        [string]$msg,
-        [string]$icon,
-        [Int32]$time
-    )
-    $notification = New-Object System.Windows.Forms.NotifyIcon
-    $notification.Icon = [System.Drawing.SystemIcons]::Information
-    $notification.BalloonTipIcon = $icon
-    $notification.BalloonTipText = $msg
-    $notification.BalloonTipTitle = $title
-    $notification.Visible = $true
-    $notification.ShowBalloonTip($time)
-    # Clean up resources
-    $notification.Dispose()
+    param([string]$title, [string]$msg, [string]$icon, [int]$time)
+    $n = New-Object System.Windows.Forms.NotifyIcon -Property @{ 
+        Icon = [System.Drawing.SystemIcons]::Information
+        BalloonTipIcon = $icon; BalloonTipText = $msg; BalloonTipTitle = $title; Visible = $true 
+    }
+    $n.ShowBalloonTip($time); $n.Dispose()
 }
 function Manage-Music {
 
@@ -8286,30 +8251,22 @@ function Manage-Music {
         It supports setting the volume, stopping music, and stopping all runspaces and processes.
     #>
 
-    param(
-        [string]$action,
-        [int]$volume = 0
-    )
+    param([string]$action, [int]$volume = 0)
 
     switch ($action) {
         "SetVolume" {
             $itt.mediaPlayer.settings.volume = $volume
+            $global:toggleState = ($volume -ne 0)
             Set-ItemProperty -Path $itt.registryPath -Name "Music" -Value "$volume" -Force
             $itt["window"].title = "Install Tweaks Tool #StandWithPalestine " + @("🔊", "🔈")[$volume -eq 0]
         }
         "StopAll" {
-            $itt.mediaPlayer.controls.stop()   
-            $itt.mediaPlayer = $null
-            $itt.runspace.Dispose()
-            $itt.runspace.Close()
-            $script:powershell.Dispose()
-            $script:powershell.Stop()
-            $newProcess.exit
-            [System.GC]::Collect()
+            $itt.mediaPlayer.controls.stop(); $itt.mediaPlayer = $null
+            $itt.runspace.Dispose(); $itt.runspace.Close()
+            $script:powershell.Dispose(); $script:powershell.Stop()
+            $newProcess.exit; [System.GC]::Collect()
         }
-        default {
-            Write-Host "Invalid action. Use 'SetVolume', 'StopMusic', or 'StopAll'."
-        }
+        default { Write-Host "Invalid action. Use 'SetVolume' or 'StopAll'." }
     }
 }
 function System-Default {
@@ -12772,23 +12729,23 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('ps').add_MouseLeftButtonDown({
-                    Start-Process('https://www.palestinercs.org/en/Donation')
-                })
-            
-            
-            $itt.event.FindName('ytv').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=QmO82OTsU5c')
-                })
-            
-            
             $itt.event.FindName('esg').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
+            $itt.event.FindName('ps').add_MouseLeftButtonDown({
+                    Start-Process('https://www.palestinercs.org/en/Donation')
+                })
+            
+            
             $itt.event.FindName('shell').add_MouseLeftButtonDown({
                     Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+                })
+            
+            
+            $itt.event.FindName('ytv').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=QmO82OTsU5c')
                 })
             
             
