@@ -37,6 +37,7 @@ $MainXaml.SelectNodes("//*[@Name]") | ForEach-Object {
                     if($itt.CurrentList -eq "appslist" -or $itt.CurrentList -eq "tweakslist"){
 
                         $selectedItem = $args[0].SelectedItem
+
                     
                         if ($selectedItem) {
                             $checkBox = $selectedItem.Children[0].Children[0]  
@@ -44,18 +45,17 @@ $MainXaml.SelectNodes("//*[@Name]") | ForEach-Object {
                             if ($checkBox) {
 
                                 $checkBox.IsChecked = -not $checkBox.IsChecked  
-                                Write-Host "CheckBox State: $($checkBox.Content) -> $($checkBox.IsChecked)"
+                                # Write-Host "CheckBox State: $($checkBox.Content) -> $($checkBox.IsChecked)"
                     
                                 if ($checkBox.IsChecked) {
-                                    $global:checkedItems += $checkBox.Content
-                                    Write-Host "Added: $($checkBox.Content)"
+                                    $global:CheckedItems += @{ Content = $checkBox.Content; IsChecked = $checkBox.IsChecked }
+                                     Write-Host "Added: $($checkBox.Content)"
                                 } else {
-                                    $global:checkedItems = $global:checkedItems | Where-Object { $_ -ne $checkBox.Content }
-                                    Write-Host "Removed: $($checkBox.Content)"
+                                    $global:CheckedItems = $global:CheckedItems | Where-Object { $_.Content -ne $checkBox.Content }
+                                     Write-Host "Removed: $($checkBox.Content)"
                                 }
                     
-                                Write-Host "Checked Items Count: $($checkedItems.Count)"
-                                Write-Host "Checked Items: $($checkedItems -join ', ')"
+                                Write-Host "Checked Items: $($checkedItems | ForEach-Object { "$($_.Content):$($_.IsChecked)" } | Out-String -Width 4096)"
                             }
                         }
                     }
