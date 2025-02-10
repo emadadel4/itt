@@ -13253,7 +13253,7 @@ $itt.installIcon = $itt["window"].FindName("installIcon")
 $itt.applyText = $itt["window"].FindName("applyText")
 $itt.applyIcon = $itt["window"].FindName("applyIcon")
 $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
-$global:CheckedItems = @()
+$global:CheckedItems = [System.Collections.ArrayList]::new()
 
 
 #===========================================================================
