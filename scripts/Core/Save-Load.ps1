@@ -1,22 +1,9 @@
 # Function to get all CheckBoxes from a StackPanel
-function Get-CheckBoxesFromStackPanel {
-    param (
-        [System.Windows.Controls.StackPanel]$item
-    )
-    $checkBoxes = @()
-    if ($item -is [System.Windows.Controls.StackPanel]) {
-        foreach ($child in $item.Children) {
-            if ($child -is [System.Windows.Controls.StackPanel]) {
-                foreach ($innerChild in $child.Children) {
-                    if ($innerChild -is [System.Windows.Controls.CheckBox]) {
-                        $checkBoxes += $innerChild
-                    }
-                }
-            }
-        }
-    }
-    return $checkBoxes
+function Get-CheckBoxes {
+    $item.Children[0].Children[0]
+    return $itt
 }
+
 # Load JSON data and update the UI
 function LoadJson {
     # Check if a process is running
@@ -27,15 +14,28 @@ function LoadJson {
 
     # Open file dialog to select JSON file
     $openFileDialog = New-Object Microsoft.Win32.OpenFileDialog -Property @{
-        Filter = "JSON files (*.itt)|*.itt"
-        Title  = "Open JSON File"
+        Filter = "itt files (*.itt)|*.itt"
+        Title  = "itt File"
     }
 
     if ($openFileDialog.ShowDialog() -eq $true) {
+
         try {
+
+       
+
             # Load and parse JSON data
             $FileContent = Get-Content -Path $openFileDialog.FileName -Raw | ConvertFrom-Json -ErrorAction Stop
             $filteredNames = $FileContent.Name
+
+            if (-not $global:CheckedItems) {
+                $global:CheckedItems = [System.Collections.ArrayList]::new()
+            }
+        
+            foreach ($MyApp in $FileContent) {
+                $global:CheckedItems.Add(@{ Content = $MyApp.Name; IsChecked = $true })
+            }
+
 
             # Get the apps list and collection view
             $appsList = $itt['window'].FindName('appslist')
@@ -44,20 +44,20 @@ function LoadJson {
             # Define the filter predicate
             $collectionView.Filter = {
                 param($item)
-                $checkBoxes = Get-CheckBoxesFromStackPanel -item $item
-                $checkBoxes.IsChecked = $filteredNames -contains $checkBoxes.Content
-                return $checkBoxes.IsChecked
-            }
 
-            # Update UI
-            $itt['window'].FindName('apps').IsSelected = $true
-            $appsList.Clear()
+                if ($FileContent.Name -contains $item.Children[0].Children[0].Content) {
+                    $item.Children[0].Children[0].IsChecked = $true
+                    return $true
+                }
+                return $false
+            }
 
             # Show success message
             Message -NoneKey "Restored successfully" -icon "info" -action "OK"
+
+
         } catch {
             Write-Warning "Failed to load or parse JSON file: $_"
-            Message -NoneKey "Failed to load JSON file" -icon "error" -action "OK"
         }
     }
 
@@ -111,9 +111,11 @@ function SaveItemsToJson {
 
             # Uncheck all checkboxes
             foreach ($item in $itt.AppsListView.Items) {
-                $checkBoxes = Get-CheckBoxesFromStackPanel -item $item
-                if ($checkBoxes.IsChecked) {
-                    $checkBoxes.IsChecked = $false
+
+                $item.Children[0].Children[0]
+
+                if ($item.IsChecked) {
+                    $item.IsChecked = $false
                 }
             }
         } catch {
@@ -180,8 +182,7 @@ function Quick-Install {
     $collectionView.Filter = {
         param($item)
 
-        # التحقق من الاسم وتمكين التحديد إذا كان مطابقًا
-        if ($FileContent.Name -contains $item.Children[0].Children[0].Content) {
+        if ($FileContent.Name -contains (Get-CheckBoxes).Content) {
             $item.Children[0].Children[0].IsChecked = $true
             return $true
         }
