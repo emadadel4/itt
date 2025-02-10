@@ -25,9 +25,9 @@ function Get-SelectedItems {
     $items = @()
     switch ($Mode) {
         "Apps" {
-            $global:checkedItems | ForEach-Object {
+            $global:CheckedItems | ForEach-Object {
                 $Name = $_
-                $app = $itt.database.Applications | Where-Object { $_.Name -eq $Name }
+                $app = $itt.database.Applications | Where-Object { $_.Name -eq $Name.Content -and $Name.IsChecked }
             
                 if ($app) {
                     $items += [PSCustomObject]@{
