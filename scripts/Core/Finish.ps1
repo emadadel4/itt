@@ -37,6 +37,9 @@ function Finish {
             }
         }
     
+
+        Write-Host $global:CheckedItems
+
         # Clear the list view selection and reset the filter
         $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.Items)
         $collectionView.Filter = $null
@@ -102,6 +105,7 @@ function Clear-Item {
 
         # Clear all items from the ListView
         $itt.$ListView.Clear()
+        $global:CheckedItems = @()
 
         # Reset the filter to show all items
         [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.Items).Filter = $null
