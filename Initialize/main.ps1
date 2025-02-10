@@ -30,6 +30,21 @@ $MainXaml.SelectNodes("//*[@Name]") | ForEach-Object {
                 $element.IsChecked = Get-ToggleStatus -ToggleSwitch $name
                 $element.Add_Click({ Invoke-Toogle $args[0].Name})
             }
+            "Listview"{
+                $element.Add_PreviewMouseLeftButtonUp({ 
+
+                    if($itt.CurrentList -eq "appslist" -or $itt.CurrentList -eq "tweakslist"){
+                        
+                        $selectedItem = $args[0].SelectedItem
+                    
+                        if ($selectedItem) {
+                            $checkBox = $selectedItem.Children[0].Children[0]  
+                            $checkBox.IsChecked = -not $checkBox.IsChecked 
+                            Write-Host "CheckBox toggled: $($checkBox.Content) -> $($checkBox.IsChecked)"
+                        }
+                    }
+                })
+            }
         }
     }
 }
