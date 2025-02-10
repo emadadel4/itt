@@ -25,8 +25,7 @@ function Get-SelectedItems {
     $items = @()
     switch ($Mode) {
         "Apps" {
-            $global:CheckedItems | ForEach-Object {
-                $Name = $_
+            foreach ($Name in $global:CheckedItems) {
                 $app = $itt.database.Applications | Where-Object { $_.Name -eq $Name.Content -and $Name.IsChecked }
             
                 if ($app) {
