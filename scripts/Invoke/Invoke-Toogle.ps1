@@ -1,4 +1,4 @@
-function Invoke-Toggle {
+function Invoke-Toogle {
 
     <#
         .SYNOPSIS
