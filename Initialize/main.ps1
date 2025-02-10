@@ -50,7 +50,6 @@ foreach ($node in $MainXaml.SelectNodes("//*[@Name]")) {
                                 if ($checkBox.IsChecked) {
                                     if (-not ($global:CheckedItems | Where-Object { $_.Content -eq $checkBox.Content })) {
                                         $null = $global:CheckedItems.Add(@{ Content = $checkBox.Content; IsChecked = $true })
-                                        Write-Host "Added: $($checkBox.Content)"
                                     }
                                 } else {
                                     $itemToRemove = $global:CheckedItems | Where-Object { $_.Content -eq $checkBox.Content }
