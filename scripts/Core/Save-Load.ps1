@@ -5,7 +5,7 @@ function Get-CheckBoxes {
 }
 
 # Load JSON data and update the UI
-function LoadJson {
+function Load-SavedFile {
     # Check if a process is running
     if ($itt.ProcessRunning) {
         Message -key "Please_wait" -icon "Warning" -action "OK"
@@ -66,7 +66,7 @@ function LoadJson {
     $itt.SearchInput.Text = $null
 }
 # Save selected items to a JSON file
-function SaveItemsToJson {
+function Save-File {
     # Check if a process is running
     if ($itt.ProcessRunning) {
         Message -key "Please_wait" -icon "warning" -action "OK"
@@ -91,7 +91,7 @@ function SaveItemsToJson {
             }
         }
     }
-    
+
     # If no items are selected, show a message and return
     if ($items.Count -eq 0) {
         Message -key "Empty_save_msg" -icon "Information" -action "OK"
