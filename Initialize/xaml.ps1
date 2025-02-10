@@ -182,3 +182,7 @@ $itt.applyIcon = $itt["window"].FindName("applyIcon")
 $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
 $global:CheckedItems = @()
 
+if (-not $global:CheckedItems) {
+    $global:CheckedItems = [System.Collections.ArrayList]::new()
+}
+
