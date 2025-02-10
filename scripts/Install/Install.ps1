@@ -52,9 +52,9 @@ function Invoke-Install {
         return
     }
 
-    ITT-ScriptBlock -ArgumentList $selectedApps $QuickInstall, $debug -debug $debug -ScriptBlock {
+    ITT-ScriptBlock -ArgumentList $selectedApps $global:CheckedItems  $QuickInstall, $debug -debug $debug -ScriptBlock {
 
-        param($selectedApps ,$QuickInstall ,$debug)
+        param($selectedApps ,$QuickInstall,$global:CheckedItems,$debug)
 
         $itt.ProcessRunning = $true
 
@@ -68,9 +68,9 @@ function Invoke-Install {
             {
                 # Some packages won't install until the package folder is removed.
                 $chocoFolder = Join-Path $env:ProgramData "chocolatey\lib\$($_.Choco)"
-                Remove-Item -Path "$chocoFolder" -Recurse -Force
-                Remove-Item -Path "$chocoFolder.install" -Recurse -Force
-                Remove-Item -Path "$env:TEMP\chocolatey" -Recurse -Force
+                #Remove-Item -Path "$chocoFolder" -Recurse -Force
+                #Remove-Item -Path "$chocoFolder.install" -Recurse -Force
+                #Remove-Item -Path "$env:TEMP\chocolatey" -Recurse -Force
                 Install-App -Name $_.Name -Winget $_.Winget -Choco $_.Choco
                 # debug start
                     if($debug){Add-Log -Message $_.Choco -Level "debug"}
@@ -89,8 +89,9 @@ function Invoke-Install {
                  # debug end
             }
         }
-        $global:CheckedItems = @()
         Finish -ListView "AppsListView"
+
+        $global:CheckedItems = @()
         $itt.ProcessRunning = $false
         $QuickInstall = $false
         
