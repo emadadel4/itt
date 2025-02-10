@@ -31,16 +31,32 @@ $MainXaml.SelectNodes("//*[@Name]") | ForEach-Object {
                 $element.Add_Click({ Invoke-Toogle $args[0].Name})
             }
             "Listview"{
+
                 $element.Add_PreviewMouseLeftButtonUp({ 
 
                     if($itt.CurrentList -eq "appslist" -or $itt.CurrentList -eq "tweakslist"){
-                        
+
                         $selectedItem = $args[0].SelectedItem
                     
                         if ($selectedItem) {
                             $checkBox = $selectedItem.Children[0].Children[0]  
-                            $checkBox.IsChecked = -not $checkBox.IsChecked 
-                            Write-Host "CheckBox toggled: $($checkBox.Content) -> $($checkBox.IsChecked)"
+                            
+                            if ($checkBox) {
+
+                                $checkBox.IsChecked = -not $checkBox.IsChecked  
+                                Write-Host "CheckBox State: $($checkBox.Content) -> $($checkBox.IsChecked)"
+                    
+                                if ($checkBox.IsChecked) {
+                                    $global:checkedItems += $checkBox.Content
+                                    Write-Host "Added: $($checkBox.Content)"
+                                } else {
+                                    $global:checkedItems = $global:checkedItems | Where-Object { $_ -ne $checkBox.Content }
+                                    Write-Host "Removed: $($checkBox.Content)"
+                                }
+                    
+                                Write-Host "Checked Items Count: $($checkedItems.Count)"
+                                Write-Host "Checked Items: $($checkedItems -join ', ')"
+                            }
                         }
                     }
                 })
