@@ -6,7 +6,7 @@
     "choco": "firefox",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Mozilla Firefox ESR",
@@ -15,7 +15,7 @@
     "choco": "firefoxesr",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Thorium SSE3",
@@ -24,7 +24,7 @@
     "choco": "thorium --params /SSE3",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Thorium AVX",
@@ -33,7 +33,7 @@
     "choco": "thorium --params /AVX",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Edge",
@@ -42,7 +42,7 @@
     "choco": "microsoft-edge",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Google Chrome",
@@ -51,7 +51,7 @@
     "choco": "googlechrome",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Chromium",
@@ -60,7 +60,7 @@
     "choco": "chromium",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Brave",
@@ -69,7 +69,7 @@
     "choco": "brave",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Tor Browser",
@@ -78,7 +78,7 @@
     "choco": "tor-browser",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Opera",
@@ -87,7 +87,7 @@
     "choco": "opera",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Internet Download Manager",
@@ -96,7 +96,7 @@
     "choco": "internet-download-manager",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "JDownloader",
@@ -105,7 +105,7 @@
     "choco": "jdownloader",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "KLite Mega Codec Full Pack",
@@ -114,7 +114,7 @@
     "choco": "k-litecodecpackfull",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "PotPlayer",
@@ -123,7 +123,7 @@
     "choco": "potplayer",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "VLC",
@@ -132,7 +132,7 @@
     "choco": "vlc.install",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Kodi",
@@ -141,7 +141,7 @@
     "choco": "kodi",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Jellyfin Server",
@@ -150,7 +150,7 @@
     "choco": "jellyfin",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Winamp",
@@ -159,7 +159,7 @@
     "choco": "winamp",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Aimp",
@@ -168,7 +168,7 @@
     "choco": "aimp",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Spotify",
@@ -177,7 +177,7 @@
     "choco": "spotify",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "FastStone Image Viewer",
@@ -186,7 +186,7 @@
     "choco": "fsviewer",
     "default": [],
     "category": "Imaging",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "OpenOffice",
@@ -195,7 +195,7 @@
     "choco": "openoffice",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "FoxitReader",
@@ -204,7 +204,7 @@
     "choco": "foxitreader",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "LibreOffice",
@@ -213,7 +213,7 @@
     "choco": "libreoffice-fresh",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "SumatraPDF",
@@ -222,7 +222,7 @@
     "choco": "sumatrapdf.install",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "WinRAR",
@@ -231,7 +231,7 @@
     "choco": "winrar",
     "default": [],
     "category": "Compression",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "7Zip",
@@ -240,7 +240,7 @@
     "choco": "7zip",
     "default": [],
     "category": "Compression",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "PeaZip",
@@ -249,7 +249,7 @@
     "choco": "peazip",
     "default": [],
     "category": "Compression",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Telegram Desktop",
@@ -258,7 +258,7 @@
     "choco": "telegram",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Signal",
@@ -267,7 +267,7 @@
     "choco": "signal",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Meta Messenger",
@@ -276,7 +276,7 @@
     "choco": "messenger",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Zoom",
@@ -285,7 +285,7 @@
     "choco": "zoom",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Teams",
@@ -294,7 +294,7 @@
     "choco": "microsoft-teams.install",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Discord",
@@ -303,7 +303,7 @@
     "choco": "discord",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "TeamViewer",
@@ -312,7 +312,7 @@
     "choco": "teamviewer",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "GIMP",
@@ -321,7 +321,7 @@
     "choco": "gimp",
     "default": [],
     "category": "Imaging",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ Runtime - all versions",
@@ -330,7 +330,7 @@
     "choco": "vcredist-all",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "DirectX",
@@ -339,7 +339,7 @@
     "choco": "directx",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ 2005 (x86) Redistributable",
@@ -348,7 +348,7 @@
     "choco": "vcredist2005",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ 2005 (x64) Redistributable",
@@ -357,7 +357,7 @@
     "choco": "vcredist2005",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ 2008 (x86) Redistributable",
@@ -366,7 +366,7 @@
     "choco": "vcredist2008",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ 2008 (x64) Redistributable",
@@ -375,7 +375,7 @@
     "choco": "vcredist2008",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ 2010 (x86) Redistributable",
@@ -384,7 +384,7 @@
     "choco": "vcredist2010",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ 2010 (x64) Redistributable",
@@ -393,7 +393,7 @@
     "choco": "vcredist2010",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ 2012 (x86) Redistributable",
@@ -402,7 +402,7 @@
     "choco": "vcredist2012",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ 2012 (x64) Redistributable",
@@ -411,7 +411,7 @@
     "choco": "vcredist2012",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ 2013 (x86) Redistributable",
@@ -420,7 +420,7 @@
     "choco": "vcredist2013",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ 2013 (x64) Redistributable",
@@ -429,7 +429,7 @@
     "choco": "vcredist2013",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ 2015-2022 (x64) Redistributable",
@@ -438,7 +438,7 @@
     "choco": "vcredist2015",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visual C++ 2015-2022  (x86) Redistributable",
@@ -447,7 +447,7 @@
     "choco": "vcredist2015",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NET Framework All Versions",
@@ -456,7 +456,7 @@
     "choco": "dotnet-all",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "AMD Ryzen Chipset Drivers",
@@ -465,7 +465,7 @@
     "choco": "amd-ryzen-chipset",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NVidia Display Driver",
@@ -474,7 +474,7 @@
     "choco": "nvidia-display-driver",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NVIDIA GeForce Experience",
@@ -483,7 +483,7 @@
     "choco": "geforce-experience",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Msi Afterburner",
@@ -492,7 +492,7 @@
     "choco": "msiafterburner",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NVIDIA PhysX",
@@ -501,7 +501,7 @@
     "choco": "physx.legacy",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Steam",
@@ -510,7 +510,7 @@
     "choco": "steam",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Ubisoft Connect",
@@ -519,7 +519,7 @@
     "choco": "ubisoft-connect",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Origin",
@@ -528,7 +528,7 @@
     "choco": "origin",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Rockstar Games Launcher",
@@ -537,7 +537,7 @@
     "choco": "rockstar-launcher",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "GameSave Manager",
@@ -546,7 +546,7 @@
     "choco": "gamesavemanager",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "StreamlabsOBS",
@@ -555,7 +555,7 @@
     "choco": "streamlabs-obs",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "OBS Studio",
@@ -564,7 +564,7 @@
     "choco": "obs-studio.install",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Logitech Gaming Software",
@@ -573,7 +573,7 @@
     "choco": "logitechgaming",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Lively Wallpaper",
@@ -582,7 +582,7 @@
     "choco": "lively",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Playnite",
@@ -591,7 +591,7 @@
     "choco": "playnite",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Driver Easy",
@@ -600,7 +600,7 @@
     "choco": "drivereasyfree",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Intel Graphics Windows DCH",
@@ -609,7 +609,7 @@
     "choco": "intel-graphics-driver",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Intel Driver Support Assistant",
@@ -618,7 +618,7 @@
     "choco": "intel-dsa",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Intel Network Adapter",
@@ -627,7 +627,7 @@
     "choco": "intel-network-drivers-win10",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Snappy Driver Installer",
@@ -636,7 +636,7 @@
     "choco": "sdio",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Driver booster",
@@ -645,7 +645,7 @@
     "choco": "driverbooster",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Driver Genius",
@@ -654,7 +654,7 @@
     "choco": "drivergenius",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Display Driver Uninstaller",
@@ -663,7 +663,7 @@
     "choco": "ddu",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Driver Store Explorer",
@@ -672,7 +672,7 @@
     "choco": "rapr",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "1Password",
@@ -681,7 +681,7 @@
     "choco": "1password",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "AOMEI Partition Assistant Standard",
@@ -690,7 +690,7 @@
     "choco": "partition-assistant-standard",
     "default": [],
     "category": "Disk Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "AOMEI Backupper Standard",
@@ -699,7 +699,7 @@
     "choco": "backupper-standard",
     "default": [],
     "category": "Disk Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Recuva recover",
@@ -708,7 +708,7 @@
     "choco": "recuva",
     "default": [],
     "category": "Disk Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "CCleaner",
@@ -717,7 +717,7 @@
     "choco": "ccleaner",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "BCUninstaller",
@@ -726,7 +726,7 @@
     "choco": "bulk-crap-uninstaller",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Easy Context Menu",
@@ -735,7 +735,7 @@
     "choco": "ecm",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "HWiNFO",
@@ -744,7 +744,7 @@
     "choco": "hwinfo.install",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Speccy",
@@ -753,7 +753,7 @@
     "choco": "speccy",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "FurMark",
@@ -762,7 +762,7 @@
     "choco": "furmark",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Hard Disk Sentinel",
@@ -771,7 +771,7 @@
     "choco": "hdsentinel",
     "default": [],
     "category": "Disk Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "CPU-Z",
@@ -780,7 +780,7 @@
     "choco": "cpu-z",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Mem Reduct",
@@ -789,7 +789,7 @@
     "choco": "memreduct",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "HandBrake",
@@ -798,7 +798,7 @@
     "choco": "handbrake.install",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Rufus Portable",
@@ -807,7 +807,7 @@
     "choco": "rufus",
     "default": [],
     "category": "Portable",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "ImgBurn",
@@ -816,7 +816,7 @@
     "choco": "imgburn",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Virtual CloneDrive",
@@ -825,7 +825,7 @@
     "choco": "virtualclonedrive",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Ultra ISO",
@@ -834,7 +834,7 @@
     "choco": "ultraiso",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Ventoy",
@@ -843,7 +843,7 @@
     "choco": "ventoy",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "iVentoy",
@@ -852,7 +852,7 @@
     "choco": "iventoy",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "AutoHotkey",
@@ -861,7 +861,7 @@
     "choco": "autohotkey",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Rainmeter",
@@ -870,7 +870,7 @@
     "choco": "rainmeter",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "FxSound",
@@ -879,7 +879,7 @@
     "choco": "fxsound",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Vysor",
@@ -888,7 +888,7 @@
     "choco": "vysor",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Unified Remote",
@@ -897,7 +897,7 @@
     "choco": "unifiedremote",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "AnyDesk",
@@ -906,7 +906,7 @@
     "choco": "anydesk",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Airdroid",
@@ -915,7 +915,7 @@
     "choco": "airdroid",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "UltraViewer",
@@ -924,7 +924,7 @@
     "choco": "ultraviewer",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Wireless Network Watcher Portable",
@@ -933,7 +933,7 @@
     "choco": "wnetwatcher.portable",
     "default": [],
     "category": "Portable",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "WifiInfoView",
@@ -942,7 +942,7 @@
     "choco": "wifiinfoview",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "WirelessNetView",
@@ -951,7 +951,7 @@
     "choco": "wirelessnetview",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "qBittorrent",
@@ -960,7 +960,7 @@
     "choco": "qbittorrent",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Google Earth Pro",
@@ -969,7 +969,7 @@
     "choco": "googleearthpro",
     "default": [],
     "category": "Imaging",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "XAMPP",
@@ -978,7 +978,7 @@
     "choco": "xampp-81",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Visual Studio Professional 2022",
@@ -987,7 +987,7 @@
     "choco": "visualstudio2022professional",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Visual Studio Community 2022",
@@ -996,7 +996,7 @@
     "choco": "visualstudio2022community",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Unity Hub",
@@ -1005,7 +1005,7 @@
     "choco": "unity-hub",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Godot Engine",
@@ -1014,7 +1014,7 @@
     "choco": "godot",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Unity3D Engine",
@@ -1023,7 +1023,7 @@
     "choco": "unity",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Blender",
@@ -1032,7 +1032,7 @@
     "choco": "blender",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "VSCode",
@@ -1041,7 +1041,7 @@
     "choco": "vscode",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Vim",
@@ -1050,7 +1050,7 @@
     "choco": "vim",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Sublime Text 4",
@@ -1059,7 +1059,7 @@
     "choco": "sublimetext4",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Atom",
@@ -1068,7 +1068,7 @@
     "choco": "atom",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "InnoSetup",
@@ -1077,7 +1077,7 @@
     "choco": "innosetup",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "PyCharm Community Edition",
@@ -1086,7 +1086,7 @@
     "choco": "pycharm-community",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "PyCharm Professional Edition",
@@ -1095,7 +1095,7 @@
     "choco": "pycharm",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Jetbrains Rider",
@@ -1104,7 +1104,7 @@
     "choco": "jetbrains-rider",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NodeJs LTS",
@@ -1113,7 +1113,7 @@
     "choco": "nodejs-lts",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Electron",
@@ -1122,7 +1122,7 @@
     "choco": "electron",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Electrum LTS",
@@ -1131,7 +1131,7 @@
     "choco": "electronim",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Hugo",
@@ -1140,7 +1140,7 @@
     "choco": "hugo",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Hugo Extended",
@@ -1149,7 +1149,7 @@
     "choco": "hugo-extended",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Notepad++",
@@ -1158,7 +1158,7 @@
     "choco": "notepadplusplus",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Windows Terminal",
@@ -1167,7 +1167,7 @@
     "choco": "microsoft-windows-terminal",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Powershell 7",
@@ -1176,7 +1176,7 @@
     "choco": "powershell-core",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "x64dbg Portable",
@@ -1185,7 +1185,7 @@
     "choco": "x64dbg.portable",
     "default": [],
     "category": "Portable",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "dnSpy",
@@ -1194,7 +1194,7 @@
     "choco": "dnspy",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Cheat Engine",
@@ -1203,7 +1203,7 @@
     "choco": "cheatengine",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Python 3.12.6",
@@ -1212,7 +1212,7 @@
     "choco": "python",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Git",
@@ -1221,7 +1221,7 @@
     "choco": "git",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "GitHub Desktop",
@@ -1230,7 +1230,7 @@
     "choco": "github-desktop",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Docker Desktop",
@@ -1239,7 +1239,7 @@
     "choco": "docker-desktop",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Docker Compose",
@@ -1248,7 +1248,7 @@
     "choco": "docker-compose",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "PowerToys",
@@ -1257,7 +1257,7 @@
     "choco": "powertoys",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Notion",
@@ -1266,7 +1266,7 @@
     "choco": "notion",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "FL Studio",
@@ -1275,7 +1275,7 @@
     "choco": "ImageLine.FLStudio",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Android Debug Bridge",
@@ -1284,7 +1284,7 @@
     "choco": "adb",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Universal ADB Drivers",
@@ -1293,7 +1293,7 @@
     "choco": "universal-adb-drivers",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Scrcpy",
@@ -1302,7 +1302,7 @@
     "choco": "scrcpy",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "VirtualBox",
@@ -1311,7 +1311,7 @@
     "choco": "virtualbox",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Oh My Posh",
@@ -1320,7 +1320,7 @@
     "choco": "oh-my-posh",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Malwarebytes",
@@ -1329,7 +1329,7 @@
     "choco": "malwarebytes",
     "default": [],
     "category": "Security",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Avast Free Antivirus",
@@ -1338,7 +1338,7 @@
     "choco": "avastfreeantivirus",
     "default": [],
     "category": "Security",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Nerd Fonts - CascadiaCode",
@@ -1347,7 +1347,7 @@
     "choco": "nerd-fonts-cascadiacode",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Java SE Runtime Environment 8.0.411",
@@ -1356,7 +1356,7 @@
     "choco": "jre8",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Audacity",
@@ -1365,7 +1365,7 @@
     "choco": "audacity",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MusicBee",
@@ -1374,7 +1374,7 @@
     "choco": "musicbee",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Format Factory",
@@ -1383,7 +1383,7 @@
     "choco": "formatfactory",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Winaero Tweaker",
@@ -1392,7 +1392,7 @@
     "choco": "winaero-tweaker",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Windows Subsystem for Linux WSL2",
@@ -1401,7 +1401,7 @@
     "choco": "wsl2",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Wamp Server 3.3.5",
@@ -1410,7 +1410,7 @@
     "choco": "wamp-server",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MongoDB",
@@ -1419,7 +1419,7 @@
     "choco": "mongodb",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MPC-BE",
@@ -1428,7 +1428,7 @@
     "choco": "mpc-be",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Kdenlive",
@@ -1437,7 +1437,7 @@
     "choco": "kdenlive",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "TablePlus",
@@ -1446,7 +1446,7 @@
     "choco": "tableplus",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Hosts File Editor",
@@ -1455,7 +1455,7 @@
     "choco": "hosts.editor",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Subtitle Edit",
@@ -1464,7 +1464,7 @@
     "choco": "subtitleedit",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Skype",
@@ -1473,7 +1473,7 @@
     "choco": "skype",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "FileZilla",
@@ -1482,7 +1482,7 @@
     "choco": "filezilla",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Everything",
@@ -1491,7 +1491,7 @@
     "choco": "everything",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Yarn",
@@ -1500,7 +1500,7 @@
     "choco": "yarn",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "VMware Workstation Player",
@@ -1509,7 +1509,7 @@
     "choco": "vmware-workstation-player",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "HDD Low Level Format Tool",
@@ -1518,7 +1518,7 @@
     "choco": "llftool",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "BlueStacks",
@@ -1527,7 +1527,7 @@
     "choco": "bluestacks",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Intel Wireless Bluetooth for Windows 10 and Windows 11",
@@ -1536,7 +1536,7 @@
     "choco": "intel-bluetooth-drivers",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Office 365 Business",
@@ -1545,7 +1545,7 @@
     "choco": "office365business",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Bandicam",
@@ -1554,7 +1554,7 @@
     "choco": "none",
     "default": [],
     "category": "Imaging",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "QQPlayer",
@@ -1563,7 +1563,7 @@
     "choco": "none",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "4K Video Downloader",
@@ -1572,7 +1572,7 @@
     "choco": "4k-video-downloader",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Active@ Partition Recovery",
@@ -1581,7 +1581,7 @@
     "choco": "none",
     "default": [],
     "category": "Disk Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "HiSuite",
@@ -1590,7 +1590,7 @@
     "choco": "none",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Android Studio",
@@ -1599,7 +1599,7 @@
     "choco": "androidstudio",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "LibreWolf",
@@ -1608,7 +1608,7 @@
     "choco": "librewolf",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Flow Launcher",
@@ -1617,7 +1617,7 @@
     "choco": "flow-launcher",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "IconsExtract",
@@ -1626,7 +1626,7 @@
     "choco": "iconsext",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "AdGuard Home",
@@ -1635,7 +1635,7 @@
     "choco": "adguardhome",
     "default": [],
     "category": "Security",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Burp Suite Community Edition",
@@ -1644,7 +1644,7 @@
     "choco": "burp-suite-free-edition",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "CoreTemp",
@@ -1653,7 +1653,7 @@
     "choco": "coretemp",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "ShareX",
@@ -1662,7 +1662,7 @@
     "choco": "sharex",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "ONLY OFFICE",
@@ -1671,7 +1671,7 @@
     "choco": "onlyoffice",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "ESET Internet Security",
@@ -1680,7 +1680,7 @@
     "choco": "eset-internet-security",
     "default": [],
     "category": "Security",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "WinDirStat",
@@ -1689,7 +1689,7 @@
     "choco": "windirstat",
     "default": [],
     "category": "Disk Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Winmerge",
@@ -1698,7 +1698,7 @@
     "choco": "winmerge",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Wireshark",
@@ -1707,7 +1707,7 @@
     "choco": "wireshark",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "TeraCopy",
@@ -1716,7 +1716,7 @@
     "choco": "teracopy",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "QuickLook",
@@ -1725,7 +1725,7 @@
     "choco": "quicklook",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "RepoZ",
@@ -1734,7 +1734,7 @@
     "choco": "repoz",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Intel Graphics Command Center",
@@ -1743,7 +1743,7 @@
     "choco": "none",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Go Programming Language",
@@ -1752,7 +1752,7 @@
     "choco": "golang",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Rust",
@@ -1761,7 +1761,7 @@
     "choco": "rust",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Inkscape",
@@ -1770,7 +1770,7 @@
     "choco": "inkscape",
     "default": [],
     "category": "Imaging",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Youtube Dl",
@@ -1779,7 +1779,7 @@
     "choco": "yt-dlp",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Postman",
@@ -1788,7 +1788,7 @@
     "choco": "postman",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Azure CLI",
@@ -1797,7 +1797,7 @@
     "choco": "azure-cli",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "GameMaker Studio",
@@ -1806,7 +1806,7 @@
     "choco": "none",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Charles",
@@ -1815,7 +1815,7 @@
     "choco": "charles",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Windows Media Player",
@@ -1824,7 +1824,7 @@
     "choco": "none",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "espanso",
@@ -1833,7 +1833,7 @@
     "choco": "espanso",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Ability Office",
@@ -1842,7 +1842,7 @@
     "choco": "abilityoffice",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Winbox",
@@ -1851,7 +1851,7 @@
     "choco": "none",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "SearchMyFiles",
@@ -1860,7 +1860,7 @@
     "choco": "searchmyfiles",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "iTunes",
@@ -1869,7 +1869,7 @@
     "choco": "itunes",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "StartIsBack++",
@@ -1878,7 +1878,7 @@
     "choco": "startisback",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Advanced SystemCare Free",
@@ -1887,7 +1887,7 @@
     "choco": "afedteated",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Send Anywhere",
@@ -1896,7 +1896,7 @@
     "choco": "none",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "YUMI Legacy",
@@ -1905,7 +1905,7 @@
     "choco": "yumi",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "YUMI UEFI",
@@ -1914,7 +1914,7 @@
     "choco": "yumi-uefi",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "OP Auto Clicker",
@@ -1923,7 +1923,7 @@
     "choco": "autoclicker",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Spotube",
@@ -1932,7 +1932,7 @@
     "choco": "spotube",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Audio Switcher",
@@ -1941,7 +1941,7 @@
     "choco": "audioswitcher",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Teams Classic Desktop",
@@ -1950,7 +1950,7 @@
     "choco": "microsoft-teams.install",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Windows SDK",
@@ -1959,7 +1959,7 @@
     "choco": "windows-sdk-10.1",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "RunAsDate Portable",
@@ -1968,7 +1968,7 @@
     "choco": "runasdate",
     "default": [],
     "category": "Portable",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Visual Studio 2017 Build ",
@@ -1977,7 +1977,7 @@
     "choco": "visualstudio2017buildtools",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MSEdgeRedirect",
@@ -1986,7 +1986,7 @@
     "choco": "msedgeredirect",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NET Desktop Runtime 5",
@@ -1995,7 +1995,7 @@
     "choco": "dotnet-5.0-desktopruntime",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NET Desktop Runtime 3",
@@ -2004,7 +2004,7 @@
     "choco": "Microsoft.DotNet.HostingBundle.3_1",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NET Desktop Runtime 6",
@@ -2013,7 +2013,7 @@
     "choco": "dotnet-6.0-desktopruntime",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NET Desktop Runtime 7",
@@ -2022,7 +2022,7 @@
     "choco": "dotnet-7.0-desktopruntime",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NET Desktop Runtime 8",
@@ -2031,7 +2031,7 @@
     "choco": "dotnet-desktopruntime",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Viber",
@@ -2040,7 +2040,7 @@
     "choco": "viber",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "StartAllBack",
@@ -2049,7 +2049,7 @@
     "choco": "startallback",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "DiskGenius Free",
@@ -2058,7 +2058,7 @@
     "choco": "diskgenius",
     "default": [],
     "category": "Disk Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "UNFORMAT",
@@ -2067,7 +2067,7 @@
     "choco": "none",
     "default": [],
     "category": "Disk Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Active@ UNDELETE",
@@ -2076,7 +2076,7 @@
     "choco": "none",
     "default": [],
     "category": "Disk Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "HxD Hex Editor",
@@ -2085,7 +2085,7 @@
     "choco": "hxd",
     "default": [],
     "category": "Disk Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Epic Games Launcher",
@@ -2094,7 +2094,7 @@
     "choco": "epicgameslauncher",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Vivaldi",
@@ -2103,7 +2103,7 @@
     "choco": "vivaldi",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft PC Manager",
@@ -2112,7 +2112,7 @@
     "choco": "none",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Openshot",
@@ -2121,7 +2121,7 @@
     "choco": "openshot",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "WhatsApp",
@@ -2130,7 +2130,7 @@
     "choco": "none",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Paint.NET",
@@ -2139,7 +2139,7 @@
     "choco": "paint.net",
     "default": [],
     "category": "Imaging",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Stretchly",
@@ -2148,7 +2148,7 @@
     "choco": "stretchly",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Silverlight",
@@ -2157,7 +2157,7 @@
     "choco": "silverlight",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "TreeSize",
@@ -2166,7 +2166,7 @@
     "choco": "treesizefree",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Dot Net 3.5",
@@ -2175,7 +2175,7 @@
     "choco": "dotnet3.5",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Flash Player ActiveX",
@@ -2184,7 +2184,7 @@
     "choco": "flashplayeractivex",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Google Drive",
@@ -2193,7 +2193,7 @@
     "choco": "googledrive",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Dot Net 4.5.2",
@@ -2202,7 +2202,7 @@
     "choco": "dotnet4.5.2",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Dropbox",
@@ -2211,7 +2211,7 @@
     "choco": "dropbox",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "cURL",
@@ -2220,7 +2220,7 @@
     "choco": "curl",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "PDF Creator",
@@ -2229,7 +2229,7 @@
     "choco": "pdfcreator",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Autoruns",
@@ -2238,7 +2238,7 @@
     "choco": "autoruns",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft OneDrive",
@@ -2247,7 +2247,7 @@
     "choco": "onedrive",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Process Explorer",
@@ -2256,7 +2256,7 @@
     "choco": "procexp",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "FFmpeg",
@@ -2265,7 +2265,7 @@
     "choco": "ffmpeg",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "OpenVPN Connect",
@@ -2274,7 +2274,7 @@
     "choco": "openvpn-connect",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Git Large File Storage",
@@ -2283,7 +2283,7 @@
     "choco": "git-lfs",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Nmap",
@@ -2292,7 +2292,7 @@
     "choco": "nmap",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "UltraVNC",
@@ -2301,7 +2301,7 @@
     "choco": "ultravnc",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Plex",
@@ -2310,7 +2310,7 @@
     "choco": "plex",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Plex Media Server",
@@ -2319,7 +2319,7 @@
     "choco": "plexmediaserver",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft Visio Viewer",
@@ -2328,7 +2328,7 @@
     "choco": "visioviewer",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Keyn Stroke",
@@ -2337,7 +2337,7 @@
     "choco": "key-n-stroke",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Fing",
@@ -2346,7 +2346,7 @@
     "choco": "fing",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Ryujinx",
@@ -2355,7 +2355,7 @@
     "choco": "ryujinx --params '/DesktopShortcut'",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Omnify Hotspot",
@@ -2364,7 +2364,7 @@
     "choco": "omnifyhotspot",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MKVToolNix",
@@ -2373,7 +2373,7 @@
     "choco": "mkvtoolnix",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Neat Download Manager",
@@ -2389,7 +2389,7 @@
       }
     ],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "x630ce for all games",
@@ -2405,7 +2405,7 @@
       }
     ],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "x630ce x86",
@@ -2421,7 +2421,7 @@
       }
     ],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "x630ce x64",
@@ -2437,7 +2437,7 @@
       }
     ],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft .NET SDK 7",
@@ -2446,7 +2446,7 @@
     "choco": "dotnet-7.0-sdk",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft .NET SDK 8",
@@ -2455,7 +2455,7 @@
     "choco": "dotnet-sdk",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Microsoft ASP.NET Core Runtime 7.0",
@@ -2464,7 +2464,7 @@
     "choco": "dotnet-aspnetruntime",
     "default": [],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "HFS HTTP File Server",
@@ -2473,7 +2473,7 @@
     "choco": "hfs",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Cemu",
@@ -2482,7 +2482,7 @@
     "choco": "cemu",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Chatterino",
@@ -2491,7 +2491,7 @@
     "choco": "chatterino",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Clementine",
@@ -2500,7 +2500,7 @@
     "choco": "clementine",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Clink",
@@ -2509,7 +2509,7 @@
     "choco": "clink",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "CMake",
@@ -2518,7 +2518,7 @@
     "choco": "cmake",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "CopyQ Clipboard Manager",
@@ -2527,7 +2527,7 @@
     "choco": "copyq",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Crystal Disk Info",
@@ -2536,7 +2536,7 @@
     "choco": "crystaldiskinfo",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Crystal Disk Mark",
@@ -2545,7 +2545,7 @@
     "choco": "crystaldiskmark",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Darktable",
@@ -2554,7 +2554,7 @@
     "choco": "darktable",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "EA App",
@@ -2563,7 +2563,7 @@
     "choco": "ea-app",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Falkon",
@@ -2572,7 +2572,7 @@
     "choco": "falkon",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "File Converter",
@@ -2581,7 +2581,7 @@
     "choco": "file-converter",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Files",
@@ -2590,7 +2590,7 @@
     "choco": "files",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Flameshot",
@@ -2599,7 +2599,7 @@
     "choco": "flameshot",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Lightshot",
@@ -2608,7 +2608,7 @@
     "choco": "lightshot",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "F.lux",
@@ -2617,7 +2617,7 @@
     "choco": "flux",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "GitHub CLI",
@@ -2626,7 +2626,7 @@
     "choco": "gh",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "GOG Galaxy",
@@ -2635,7 +2635,7 @@
     "choco": "goggalaxy",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Greenshot",
@@ -2644,7 +2644,7 @@
     "choco": "greenshot",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Hexchat",
@@ -2653,7 +2653,7 @@
     "choco": "hexchat",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "HWMonitor",
@@ -2662,7 +2662,7 @@
     "choco": "hwmonitor",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "ImageGlass",
@@ -2671,7 +2671,7 @@
     "choco": "imageglass",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Itch.io",
@@ -2680,7 +2680,7 @@
     "choco": "itch",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "KDE Connect",
@@ -2689,7 +2689,7 @@
     "choco": "kdeconnect-kde",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "KeePassXC",
@@ -2698,7 +2698,7 @@
     "choco": "keepassxc",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Lazygit",
@@ -2707,7 +2707,7 @@
     "choco": "lazygit",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "LocalSend",
@@ -2716,7 +2716,7 @@
     "choco": "localsend.install",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Fork",
@@ -2725,7 +2725,7 @@
     "choco": "git-fork",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "PulsarEdit",
@@ -2734,7 +2734,7 @@
     "choco": "pulsar",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Shotcut",
@@ -2743,7 +2743,7 @@
     "choco": "Shotcut",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "PaleMoon",
@@ -2752,7 +2752,7 @@
     "choco": "paleMoon",
     "default": [],
     "category": "Web Browsers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "JoyToKey",
@@ -2761,7 +2761,7 @@
     "choco": "joytokey",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Windows Auto Dark Mode",
@@ -2770,7 +2770,7 @@
     "choco": "auto-dark-mode",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Windows Firewall Control",
@@ -2779,7 +2779,7 @@
     "choco": "windowsfirewallcontrol",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "TightVNC",
@@ -2788,7 +2788,7 @@
     "choco": "TightVNC",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Python Version Manager",
@@ -2797,7 +2797,7 @@
     "choco": "pyenv-win",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Pixi",
@@ -2806,7 +2806,7 @@
     "choco": "pixi",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "VSCodium",
@@ -2815,7 +2815,7 @@
     "choco": "vscodium",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Thonny Python IDE",
@@ -2824,7 +2824,7 @@
     "choco": "thonny",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Poedit",
@@ -2833,7 +2833,7 @@
     "choco": "none",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Adobe Acrobat Reader",
@@ -2842,7 +2842,7 @@
     "choco": "adobereader",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Flash Player Plugin",
@@ -2851,7 +2851,7 @@
     "choco": "flashplayerplugin",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Sysinternals",
@@ -2860,7 +2860,7 @@
     "choco": "sysinternals",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "SelfishNet",
@@ -2876,7 +2876,7 @@
       }
     ],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NTLite",
@@ -2885,7 +2885,7 @@
     "choco": "ntlite-free",
     "default": [],
     "category": "Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Olive Video Editor",
@@ -2894,7 +2894,7 @@
     "choco": "olive",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Mark Text",
@@ -2903,7 +2903,7 @@
     "choco": "marktext.portable",
     "default": [],
     "category": "Portable",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "pCloud Drive",
@@ -2912,7 +2912,7 @@
     "choco": "pcloud",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Hurl",
@@ -2921,7 +2921,7 @@
     "choco": "hurl",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "File Hash Generator",
@@ -2930,7 +2930,7 @@
     "choco": "file-hash-generator",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Multimark down",
@@ -2939,7 +2939,7 @@
     "choco": "multimarkdown",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "PCSX2 Emulator",
@@ -2948,7 +2948,7 @@
     "choco": "pcsx2.portable",
     "default": [],
     "category": "Portable",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "RetroArch",
@@ -2957,7 +2957,7 @@
     "choco": "retroarch",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Free Virtual Keyboard",
@@ -2966,7 +2966,7 @@
     "choco": "free-virtual-keyboard",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "TypeScript for Visual Studio 2017 and 2019",
@@ -2975,7 +2975,7 @@
     "choco": "typescript-vs2017-vs2019",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Caret",
@@ -2984,7 +2984,7 @@
     "choco": "caret",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "iSpy",
@@ -2993,7 +2993,7 @@
     "choco": "ispy",
     "default": [],
     "category": "Imaging",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "WavPack",
@@ -3002,7 +3002,7 @@
     "choco": "wavpack",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "ProcessThreadsView",
@@ -3011,7 +3011,7 @@
     "choco": "processthreadsview",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Zulu",
@@ -3020,7 +3020,7 @@
     "choco": "zulu12",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "GitHubReleaseNotesv1",
@@ -3029,7 +3029,7 @@
     "choco": "githubreleasenotes",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Tome",
@@ -3038,7 +3038,7 @@
     "choco": "tome-editor",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Win32 OpenSSH",
@@ -3047,7 +3047,7 @@
     "choco": "openssh",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Komodo Edit",
@@ -3056,7 +3056,7 @@
     "choco": "komodo-edit",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "FreeCAD",
@@ -3065,7 +3065,7 @@
     "choco": "freecad",
     "default": [],
     "category": "Imaging",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "SQLite",
@@ -3074,7 +3074,7 @@
     "choco": "sqlite",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MkDocs",
@@ -3083,7 +3083,7 @@
     "choco": "mkdocs",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MkDocs Material Theme",
@@ -3092,7 +3092,7 @@
     "choco": "mkdocs-material",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "PuTTY",
@@ -3101,7 +3101,7 @@
     "choco": "putty",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "WinSCP",
@@ -3110,7 +3110,7 @@
     "choco": "winscp",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "LibreOffice Still",
@@ -3119,7 +3119,7 @@
     "choco": "libreoffice-still",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Aio Runtimes",
@@ -3135,7 +3135,7 @@
       }
     ],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Visual-C-Runtimes All in One Oct 2024",
@@ -3151,7 +3151,7 @@
       }
     ],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "GPU-Z",
@@ -3160,7 +3160,7 @@
     "choco": "gpu-z",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MemTest86",
@@ -3176,7 +3176,7 @@
       }
     ],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Memtest86 Plus",
@@ -3192,7 +3192,7 @@
       }
     ],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "VLC Skins",
@@ -3201,7 +3201,7 @@
     "choco": "vlc-skins",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "GrepWin",
@@ -3210,7 +3210,7 @@
     "choco": "grepwin",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NICE DCV Server",
@@ -3219,7 +3219,7 @@
     "choco": "nice-dcv-server",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "NTag",
@@ -3228,7 +3228,7 @@
     "choco": "ntag",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Radeon™ RX 570 Adrenalin Edition Windows 10",
@@ -3244,7 +3244,7 @@
       }
     ],
     "category": "GPU Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Radeon™ RX 580 Adrenalin Edition Windows 10",
@@ -3260,7 +3260,7 @@
       }
     ],
     "category": "GPU Drivers",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Visual C++ Redistributable Runtimes AIO Repack",
@@ -3276,7 +3276,7 @@
       }
     ],
     "category": "Runtimes",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Volume2",
@@ -3285,7 +3285,7 @@
     "choco": "volume2",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "qBittorrent Enhanced Edition",
@@ -3294,7 +3294,7 @@
     "choco": "qbittorrent-enhanced",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Aspia",
@@ -3310,7 +3310,7 @@
       }
     ],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "SimpleTransfer Desktop",
@@ -3319,7 +3319,7 @@
     "choco": "simpletransfer",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Twitch Desktop App",
@@ -3328,7 +3328,7 @@
     "choco": "twitch",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Remote Desktop Manager",
@@ -3337,7 +3337,7 @@
     "choco": "rdm",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Torrid",
@@ -3346,7 +3346,7 @@
     "choco": "torrid",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Mediamonkey",
@@ -3355,7 +3355,7 @@
     "choco": "mediamonkey",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MediaInfo",
@@ -3364,7 +3364,7 @@
     "choco": "mediainfo",
     "default": [],
     "category": "Media Tools",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Universal Media Server",
@@ -3373,7 +3373,7 @@
     "choco": "ums",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "K-Lite Codec Pack Standard",
@@ -3382,7 +3382,7 @@
     "choco": "k-litecodecpack-standard",
     "default": [],
     "category": "Media",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "PowerISO",
@@ -3391,7 +3391,7 @@
     "choco": "poweriso",
     "default": [],
     "category": "Compression",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Screen To Gif",
@@ -3400,7 +3400,7 @@
     "choco": "screentogif.portable",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Figma",
@@ -3409,7 +3409,7 @@
     "choco": "figma",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "EarTrumpet",
@@ -3418,7 +3418,7 @@
     "choco": "eartrumpet",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Visual Studio Code Insiders",
@@ -3427,7 +3427,7 @@
     "choco": "vscode-insiders",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "AyuGramDesktop",
@@ -3443,7 +3443,7 @@
       }
     ],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Zettlr",
@@ -3452,7 +3452,7 @@
     "choco": "zettlr",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "RustDesk",
@@ -3461,7 +3461,7 @@
     "choco": "rustdesk",
     "default": [],
     "category": "File Sharing",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Ente Auth",
@@ -3470,7 +3470,7 @@
     "choco": "ente-auth",
     "default": [],
     "category": "Security",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "SQLiteStudio",
@@ -3479,7 +3479,7 @@
     "choco": "sqlitestudio",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "DuckStation",
@@ -3495,7 +3495,7 @@
       }
     ],
     "category": "Portable",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Authme - Simple 2FA",
@@ -3504,7 +3504,7 @@
     "choco": "authme.portable",
     "default": [],
     "category": "Security",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "SuperCopier2",
@@ -3520,7 +3520,7 @@
       }
     ],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Octopus Deploy",
@@ -3529,7 +3529,7 @@
     "choco": "octopusdeploy.tentacle",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Kindle Previewer",
@@ -3538,7 +3538,7 @@
     "choco": "kindlepreviewer",
     "default": [],
     "category": "Documents",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Interior Design 3D",
@@ -3547,7 +3547,7 @@
     "choco": "none",
     "default": [],
     "category": "Imaging",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MeshLab",
@@ -3556,7 +3556,7 @@
     "choco": "meshlab",
     "default": [],
     "category": "Imaging",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "GitKraken",
@@ -3565,7 +3565,7 @@
     "choco": "gitkraken",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Slack",
@@ -3574,7 +3574,7 @@
     "choco": "slack",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Rocket Chat",
@@ -3583,7 +3583,7 @@
     "choco": "rocketchat",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "TeamSpeak",
@@ -3592,7 +3592,7 @@
     "choco": "teamspeak",
     "default": [],
     "category": "Communication",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "FFFTP",
@@ -3601,7 +3601,7 @@
     "choco": "ffftp",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "SmartFTP",
@@ -3610,7 +3610,7 @@
     "choco": "smartftp",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Rclone",
@@ -3619,7 +3619,7 @@
     "choco": "rclone",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Cyberduck",
@@ -3628,7 +3628,7 @@
     "choco": "cyberduck",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Dolphin",
@@ -3637,7 +3637,7 @@
     "choco": "dolphin",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "mGBA",
@@ -3646,7 +3646,7 @@
     "choco": "mgba",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "EmulationStation",
@@ -3655,7 +3655,7 @@
     "choco": "emulationstation",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "ScummVM",
@@ -3664,7 +3664,7 @@
     "choco": "scummvm",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Project64",
@@ -3673,7 +3673,7 @@
     "choco": "project64",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "DOSBox",
@@ -3682,7 +3682,7 @@
     "choco": "none",
     "default": [],
     "category": "Gaming",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Kodu Game Lab",
@@ -3691,7 +3691,7 @@
     "choco": "none",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "GDevelop",
@@ -3700,7 +3700,7 @@
     "choco": "gdevelop",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MongoDB Tools",
@@ -3709,7 +3709,7 @@
     "choco": "mongodb-database-tools",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "DB Browser for SQLite",
@@ -3718,7 +3718,7 @@
     "choco": "sqlitebrowser",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MySQL",
@@ -3727,7 +3727,7 @@
     "choco": "mysql",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MongoDB Compass",
@@ -3736,7 +3736,7 @@
     "choco": "mongodb-compass",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "MongoDB Compass readonly",
@@ -3745,7 +3745,7 @@
     "choco": "mongodb-compass-readonly",
     "default": [],
     "category": "Development",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "IDA free",
@@ -3754,7 +3754,7 @@
     "choco": "ida-free",
     "default": [],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Binary Ninja",
@@ -3770,7 +3770,7 @@
       }
     ],
     "category": "Utilities",
-    "check": "false"
+    "IsChecked": false
   },
   {
     "Name": "Resource Hacker",
@@ -3786,6 +3786,6 @@
       }
     ],
     "category": "Portable",
-    "check": "false"
+    "IsChecked": false
   }
 ]
