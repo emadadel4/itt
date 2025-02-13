@@ -21,24 +21,25 @@ function Get-SelectedItems {
     switch ($Mode) {
         "Apps" {
 
-            $items = @()  
+            $items = @()
 
-            foreach ($item in $itt.AppsListView.Items) {
-                
-                $child = $item.Children[0].Children[0]
+            foreach ($app in $itt.AppsListView.ItemsSource) {
 
-                if ($appsDict.ContainsKey($child.Content) -and $child.IsChecked) {
+                if ($app.IsChecked -eq $true) {
 
                     $items += @{
-                        Name    = $appsDict[$child.Content].Name
-                        Choco   = $appsDict[$child.Content].Choco
-                        Winget  = $appsDict[$child.Content].Winget
-                        Default = $appsDict[$child.Content].Default
-                        # Add a new download mothed here
+                        Name    = $app.Name
+                        Choco   = $app.Choco
+                        Winget  = $app.Winget
+                        Default = $app.Default
+                        # Add a new download method here
                     }
                 }
             }
+
+            return $items
         }
+
         "Tweaks" {
 
             $items = @()  
@@ -63,10 +64,11 @@ function Get-SelectedItems {
                     }
                 }
             }
+
+            return $items
         }
         default {
             Write-Error "Invalid Mode specified. Please choose 'Apps' or 'Tweaks'."
         }
     }
-    return $items
 }
