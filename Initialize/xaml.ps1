@@ -23,7 +23,7 @@ foreach ($func in $functions) {
         )
 
         #debug start
-            Write-Output "Added function: $func"
+        Write-Output "Added function: $func"
         #debug end
     }
 }
@@ -84,14 +84,13 @@ try {
     try {
         $Locales = switch ($itt.Locales) {
             "default" {
-                switch ($shortCulture) 
-                {
+                switch ($shortCulture) {
                     #{LangagesSwitch}
                     default { "en" }
                 }
             }
             #{LangagesSwitch}
-            default {"en"}
+            default { "en" }
         }
         $itt["window"].DataContext = $itt.database.locales.Controls.$Locales
         $itt.Language = $Locales
@@ -190,16 +189,8 @@ $itt.applyText = $itt["window"].FindName("applyText")
 $itt.applyIcon = $itt["window"].FindName("applyIcon")
 $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
 
-$appsDict = @{}
-$tweaksDict = @{}
 
-foreach ($app in $itt.database.Applications) {
-    $appsDict[$app.Name] = $app
-}
-
-foreach ($tweak in $itt.database.Tweaks) {
-    $tweaksDict[$tweak.Name] = $tweak
-}
+$itt.AppsListView.DataContext = $itt.Database.Applications
 
 #===========================================================================
 #endregion Initialize WPF Controls
