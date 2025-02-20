@@ -7,6 +7,7 @@ function System-Default {
         }
         $itt["window"].DataContext = $dc
         Set-ItemProperty -Path $itt.registryPath -Name "locales" -Value "default" -Force
+        $itt.Language = $shortCulture
     }
     catch {
         Write-Host "An error occurred: $_"
