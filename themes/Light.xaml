@@ -7,7 +7,7 @@
  <SolidColorBrush x:Key="PrimaryButtonHighlight" Color="White" />
  <SolidColorBrush x:Key="TextColorPrimary" Color="Black" />
  <SolidColorBrush x:Key="TextColorSecondaryColor" Color="Black"/>
- <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#4B5361"/>
+ <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="White"/>
  <SolidColorBrush x:Key="BorderBrush" Color="#FFB3B3B3"/>
  <SolidColorBrush x:Key="ButtonBorderColor" Color="#525FE1"/>
  <SolidColorBrush x:Key="Label" Color="LightBlue"/>
