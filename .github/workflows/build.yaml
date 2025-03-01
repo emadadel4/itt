@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - static/Database/Applications.json
       - CHANGELOG.md
     branches:
       - main  
