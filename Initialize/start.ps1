@@ -33,6 +33,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 $Host.UI.RawUI.BackgroundColor = "black"
+Clear
 
 Add-Type @"
 using System;
@@ -61,9 +62,8 @@ $hwnd = $process.MainWindowHandle
 # Disable input (read-only mode)
 [WinAPI]::EnableWindow($hwnd, $false)
 
+# Create mediaPlayer Object
 $itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
-
-# Create directory if it doesn't exist
 
 # Create directory if it doesn't exist
 $ittDir = $itt.ittDir
@@ -74,5 +74,4 @@ if (-not (Test-Path -Path $ittDir)) {
 # Trace the script
 $logDir = Join-Path $ittDir 'logs'
 $timestamp = Get-Date -Format "yyyy-MM-dd"
-Clear-Host
 Start-Transcript -Path "$logDir\log_$timestamp.log" -Append -NoClobber *> $null
