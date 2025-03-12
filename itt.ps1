@@ -7445,7 +7445,26 @@ function Install-ITTaChoco {
 }
 function Install-Winget {
 
+    <#
+        .SYNOPSIS
+        Installs Winget on Windows systems that support it.
+
+        .DESCRIPTION
+        This function checks if Winget is installed on the system. If not, it verifies the system's architecture and Windows version to ensure compatibility. It 
+        then downloads and installs the necessary dependencies and Winget itself.
+    #>
+
+    if(Get-Command winget -ErrorAction SilentlyContinue) {return}
+    $ComputerInfo = Get-ComputerInfo -ErrorAction Stop
+    $arch = [int](($ComputerInfo).OsArchitecture -replace '\D', '')
+
+    if ($ComputerInfo.WindowsVersion -lt "1809") {
+        Add-Log -Message "Winget is not supported on this version of Windows Upgrade to 1809 or newer." -Level "info" 
+        return
+    }
+
     try {
+        
         Start-Process -FilePath "itt" -ArgumentList "install winget y-" -NoNewWindow -Wait -PassThru
         return
     }
