@@ -47,6 +47,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 $Host.UI.RawUI.BackgroundColor = "black"
+Clear
 
 Add-Type @"
 using System;
@@ -64,18 +65,19 @@ public class WinAPI {
 }
 "@
 
-# Get the current PowerShell window handle
-$hwnd = [WinAPI]::GetForegroundWindow()
 
-# Maximize window
+# Get the PowerShell window handle by process ID
+$process = Get-Process -Id $PID
+$hwnd = $process.MainWindowHandle
+
+# Maximize the PowerShell window
 [WinAPI]::ShowWindow($hwnd, 3)
 
 # Disable input (read-only mode)
 [WinAPI]::EnableWindow($hwnd, $false)
 
+# Create mediaPlayer Object
 $itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
-
-# Create directory if it doesn't exist
 
 # Create directory if it doesn't exist
 $ittDir = $itt.ittDir
@@ -86,9 +88,7 @@ if (-not (Test-Path -Path $ittDir)) {
 # Trace the script
 $logDir = Join-Path $ittDir 'logs'
 $timestamp = Get-Date -Format "yyyy-MM-dd"
-Clear-Host
 Start-Transcript -Path "$logDir\log_$timestamp.log" -Append -NoClobber *> $null
-
 #===========================================================================
 #endregion End Start
 #===========================================================================
@@ -13662,11 +13662,6 @@ function Show-Event {
         $itt.event.FindName('date').text = '03/01/2025'.Trim()
         
     
-            $itt.event.FindName('shell').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
-                })
-            
-            
             $itt.event.FindName('ps').add_MouseLeftButtonDown({
                     Start-Process('https://www.palestinercs.org/en/Donation')
                 })
@@ -13677,17 +13672,22 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('preview2').add_MouseLeftButtonDown({
-                    Start-Process('https://github.com/emadadel4/itt')
-                })
-            
-            
             $itt.event.FindName('preview').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
             $itt.event.FindName('esg').add_MouseLeftButtonDown({
+                    Start-Process('https://github.com/emadadel4/itt')
+                })
+            
+            
+            $itt.event.FindName('shell').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+                })
+            
+            
+            $itt.event.FindName('preview2').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
