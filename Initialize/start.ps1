@@ -50,10 +50,12 @@ public class WinAPI {
 }
 "@
 
-# Get the current PowerShell window handle
-$hwnd = [WinAPI]::GetForegroundWindow()
 
-# Maximize window
+# Get the PowerShell window handle by process ID
+$process = Get-Process -Id $PID
+$hwnd = $process.MainWindowHandle
+
+# Maximize the PowerShell window
 [WinAPI]::ShowWindow($hwnd, 3)
 
 # Disable input (read-only mode)
