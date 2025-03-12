@@ -7464,7 +7464,8 @@ function Install-Winget {
     }
 
     try {
-        
+        Add-Log -Message "Installing Winget... This might take several minutes" -Level "info"
+        Install-ITTaChoco
         Start-Process -FilePath "itt" -ArgumentList "install winget y-" -NoNewWindow -Wait -PassThru
         return
     }
