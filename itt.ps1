@@ -45,8 +45,30 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     exit
 }
 
+$Host.UI.RawUI.BackgroundColor = "black"
+$Host.UI.RawUI.BackgroundColor = "Black"
 $itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
 $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
+Clear-Host
+
+Add-Type @"
+using System;
+using System.Runtime.InteropServices;
+
+public class WinAPI {
+    [DllImport("user32.dll")]
+    public static extern IntPtr GetForegroundWindow();
+
+    [DllImport("user32.dll")]
+    public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+}
+"@
+
+$hwnd = [WinAPI]::GetForegroundWindow()
+[WinAPI]::ShowWindow($hwnd, 3)
+
+
+#$Host.UI.RawUI.WindowSize = New-Object System.Management.Automation.Host.Size(100, 40)
 
 # Create directory if it doesn't exist
 $ittDir = $itt.ittDir
@@ -7464,64 +7486,6 @@ function Install-Winget {
         Write-Error "Failed to install $_"
     }
 }
-function Native-Downloader {
-    param (
-        [string]$url,
-        [string]$name,
-        [string]$launcher,
-        [string]$portable,
-        [string]$installArgs
-    )
-    # Define the destination directory
-    $Destination_Directory = Join-Path -Path "$env:ProgramData\itt\Downloads" -ChildPath $name
-    # Ensure destination directory exists
-    if (-not (Test-Path -Path $Destination_Directory)) {
-        New-Item -ItemType Directory -Path $Destination_Directory -Force | Out-Null
-    }
-    # Extract file name and ensure we have the file with extension
-    $File = [System.IO.Path]::GetFileName($url)
-    $DownloadPath = Join-Path -Path $Destination_Directory -ChildPath $File
-    $targetPath = Join-Path -Path $Destination_Directory -ChildPath $launcher
-    try {
-        # Start downloading the file
-        Add-Log -Message "Downloading $name using Start-BitsTransfer" -Level "INFO"
-        Start-BitsTransfer -Source $url -Destination $DownloadPath -ErrorAction Stop
-        Expand-Archive -Path $DownloadPath -DestinationPath $Destination_Directory -Force -ErrorAction Stop
-    }
-    catch {
-        Write-Error "An error occurred during the download or extraction process: $_"
-    }
-    if ($portable -eq "true") {
-        # Check if the target file exists
-        if (-not (Test-Path -Path $targetPath)) {
-            Add-Log -Message  "Target file '$targetPath' does not exist after extraction." -Level "error"
-            return
-        }
-
-        if ($launcher -ne "none" -or "") {
-            # Define the path to the desktop shortcut
-            $desktopPath = [System.Environment]::GetFolderPath('Desktop')
-            $shortcutPath = Join-Path -Path $desktopPath -ChildPath "$name.lnk"
-            try {
-                # Create the shortcut
-                $shell = New-Object -ComObject WScript.Shell
-                $shortcut = $shell.CreateShortcut($shortcutPath)
-                $shortcut.TargetPath = $targetPath
-                $shortcut.Save()
-                Add-Log -Message "Shortcut created on Destkop" -Level "info"
-            }
-            catch {
-                Write-Error "Failed to create shortcut. Error: $_"
-            }
-        }
-    }
-    else {
-        Start-Process -FilePath $targetPath -ArgumentList $installArgs -Wait
-        # debug start
-        if ($debug) { Write-Host $targetPath }
-        # debug end
-    }
-}
 function Refresh-Explorer {
     # Check if explorer is not running and start it if needed
     Add-Log -Message "Restart explorer." -Level "Apply"
@@ -9287,6 +9251,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
             From="0" To="1" Duration="0:0:0.2" />
     </Storyboard>
 <!--Listview Fade in-->
+
 <!--Logo Fade in-->
     <Storyboard x:Key="Logo" RepeatBehavior="Forever">
         <!-- Fade Out -->
@@ -9302,32 +9267,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
             BeginTime="0:0:10" /> 
     </Storyboard>
 <!--Logo Fade in-->
-<!-- Define the FadeOut and FadeIn animations with looping -->
-    <Storyboard x:Key="FadeOutInLoopStoryboard">
-        <!-- Fade Out Animation -->
-        <DoubleAnimation
-            Storyboard.TargetProperty="Opacity"
-            From="1.0"
-            To="0.0"
-            Duration="0:0:1" />
-        <!-- Fade In Animation -->
-        <DoubleAnimation
-            Storyboard.TargetProperty="Opacity"
-            From="0.0"
-            To="1.0"
-            Duration="0:0:1"
-            BeginTime="0:0:1" />
-    </Storyboard>
-<!-- Define the FadeOut and FadeIn animations with looping -->
-<!--Image Style-->
-    <Style TargetType="Image">
-        <Style.Triggers>
-            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                <BeginStoryboard Storyboard="{StaticResource Logo}" />
-            </EventTrigger>
-        </Style.Triggers>
-    </Style>
-<!--End Image Style-->
+
 <!--Button Style-->
     <Style TargetType="Button">
         <Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
@@ -9360,6 +9300,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
         </Style.Triggers>
     </Style>
 <!--End Button Style-->
+
 <!--ListViewItem Style-->
     <Style TargetType="ListViewItem">
         <Setter Property="Margin" Value="5 5 5 0"/>
@@ -9393,6 +9334,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
         </Style.Triggers>
     </Style>
 <!--End ListViewItem Style-->
+
 <!--CheckBox Style-->
     <Style TargetType="CheckBox">
         <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
@@ -9431,6 +9373,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
         </Setter>
     </Style>
 <!--End CheckBox Style-->
+
 <!--SearchBox Style-->
     <Style x:Key="SearchBox" TargetType="TextBox">
         <Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
@@ -9454,6 +9397,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
         </Setter>
     </Style>
 <!--End SearchBox Style-->
+
 <!--Label Style-->
   <Style TargetType="Label">
     <Setter Property="Background" Value="Transparent"/>
@@ -9474,6 +9418,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
     </Setter>
   </Style>
 <!--End Label Style-->
+
 <!--TextBlock Style-->
     <Style TargetType="TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}"/>
@@ -9481,6 +9426,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
         <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
     </Style>
 <!--End TextBlock Style-->
+
 <!-- Menu Style -->
     <Style TargetType="Menu">
         <Setter Property="Background" Value="#FFFFFF"/>
@@ -9587,6 +9533,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
         </Setter>
     </Style>
 <!-- End Menu Style -->
+
 <!--Scrollbar Thumbs-->
     <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
         <Setter Property="Template">
@@ -9669,6 +9616,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
         <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"/>
     </Style>
 <!--End Scrollbar Thumbs-->
+
 <!--TabControl Style-->
     <Style TargetType="TabItem">
         <Setter Property="Template">
@@ -9708,6 +9656,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
     </Style>
     
 <!--End TabControl Style-->
+
 <!--ComboBox Style-->
     <Style TargetType="ComboBox">
         <Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
@@ -9800,6 +9749,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
         </Setter>
     </Style>
 <!--End ComboBox Style-->
+
 <!--ToggleSwitchStyle Style-->
     <Style x:Key="ToggleSwitchStyle" TargetType="CheckBox">
         <Setter Property="Template">
@@ -9883,6 +9833,23 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
         </Setter>
     </Style>
 <!--End ToggleSwitchStyle Style-->
+
+<!--Logo Style-->
+    <Style TargetType="TextBlock" x:Key="logoText">
+        <Setter Property="Foreground" Value="#3DAEE9"/>
+        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="FontWeight" Value="bold"/>
+        <Setter Property="FontSize" Value="60"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard Storyboard="{StaticResource Logo}" />
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+<!--End Logo Style-->
     <!-- Generated from build dont play here -->
         <!-- {Dark} -->
 <!-- by {emadadel} -->
@@ -9892,7 +9859,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
  <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#098fd4" />
  <SolidColorBrush x:Key="PrimaryButtonHighlight" Color="White" />
  <SolidColorBrush x:Key="TextColorPrimary" Color="WhiteSmoke" />
- <SolidColorBrush x:Key="TextColorSecondaryColor" Color="White"/>
+ <SolidColorBrush x:Key="TextColorSecondaryColor" Color="white"/>
  <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#bbbbbb"/>
  <SolidColorBrush x:Key="BorderBrush" Color="#2b2d31" />
  <SolidColorBrush x:Key="ButtonBorderColor" Color="#1DB954"/>
@@ -10001,9 +9968,11 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
             </Grid.ColumnDefinitions>
                  <!--Menu-->
     <Menu Grid.Row="0" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" BorderThickness="0">
-        <MenuItem Background="Transparent" BorderBrush="Transparent" BorderThickness="0" IsEnabled="False" ToolTip="Emad Adel">
+        <MenuItem Background="Transparent" BorderBrush="Transparent" BorderThickness="0"  IsEnabled="False" ToolTip="Emad Adel">
             <MenuItem.Icon>
-                <Image Source="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Images/logo.png" Width="90" Height="Auto" Margin="5,5,0,0"></Image>
+                <Border Background="Transparent" CornerRadius="10" Height="70" Width="70">
+                    <TextBlock Text="itt" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource logoText}"/>
+                </Border>
             </MenuItem.Icon>
         </MenuItem>
 
@@ -13685,6 +13654,11 @@ function Show-Event {
         $itt.event.FindName('date').text = '03/01/2025'.Trim()
         
     
+            $itt.event.FindName('shell').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+                })
+            
+            
             $itt.event.FindName('ps').add_MouseLeftButtonDown({
                     Start-Process('https://www.palestinercs.org/en/Donation')
                 })
@@ -13695,22 +13669,17 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('shell').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
-                })
-            
-            
-            $itt.event.FindName('esg').add_MouseLeftButtonDown({
-                    Start-Process('https://github.com/emadadel4/itt')
-                })
-            
-            
             $itt.event.FindName('preview2').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
             $itt.event.FindName('preview').add_MouseLeftButtonDown({
+                    Start-Process('https://github.com/emadadel4/itt')
+                })
+            
+            
+            $itt.event.FindName('esg').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
@@ -14021,7 +13990,7 @@ $InitialSessionState.Variables.Add($hashVars)
 $functions = @(
     'Install-App', 'Install-Winget', 'InvokeCommand', 'Add-Log',
     'Disable-Service', 'Uninstall-AppxPackage', 'Finish', 'Message',
-    'Notify', 'UpdateUI', 'Native-Downloader', 'Install-ITTaChoco',
+    'Notify', 'UpdateUI', 'Install-ITTaChoco',
     'ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
     'Refresh-Explorer', 'Remove-ScheduledTasks'
 )
