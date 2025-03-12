@@ -28,7 +28,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
         database       = @{}
         ProcessRunning = $false
-        lastupdate     = "03/11/2025"
+        lastupdate     = "03/12/2025"
         registryPath   = "HKCU:\Software\ITT@emadadel"
         icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
         Theme          = "default"
@@ -7349,12 +7349,12 @@ function Install-App {
     # Common Winget Arguments
     $wingetArgs = "install --id $Winget --silent --accept-source-agreements --accept-package-agreements --force"
     $chocoArgs = "install $Choco --confirm --acceptlicense -q --ignore-http-cache --limit-output --allowemptychecksumsecure --ignorechecksum --allowemptychecksum --usepackagecodes --ignoredetectedreboot --ignore-checksums --ignore-reboot-requests"
-    $ittArgs = "install $ITT -y"
+    $ittArgs = "i $ITT -y"
 
     # TODO: If Chocolatey is 'none', use Winget
     if ($Choco -eq "na" -and $Winget -eq "na" -and $itt -ne "na") {
 
-        Install-Choco
+        Install-ITTaChoco
         Add-Log -Message "Attempting to install $Name." -Level "ITT"
         $ITTResult = Install-AppWithInstaller "itt" $ittArgs
         Log $ITTResult "itt"
@@ -7375,7 +7375,7 @@ function Install-App {
             # TODO: If choco is not 'none' and winget is not 'none', use choco first and fallback to winget
             if ($Choco -ne "na" -or $Winget -ne "na") 
             {
-                Install-Choco
+                Install-ITTaChoco
                 Add-Log -Message "Attempting to install $Name." -Level "Chocolatey"
                 $chocoResult = Install-AppWithInstaller "choco" $chocoArgs
 
@@ -7394,17 +7394,53 @@ function Install-App {
         }
     }
 }
-function Install-Choco {
+function Install-ITTaChoco {
 
-    if (-not (Get-Command choco -ErrorAction SilentlyContinue))
-    {
+    <#
+    .SYNOPSIS
+        Install ITT Package manager and Chocolatey.
+        Check for update for ITT.
+    #>
+
+    if (-not (Get-Command choco -ErrorAction SilentlyContinue)){
         Add-Log -Message "Checking dependencies This won't take a minute..." -Level "INFO"
         Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) *> $null
     }
-
-    if (-not (Get-Command itt -ErrorAction SilentlyContinue))
-    {
+    
+    if (-not (Get-Command itt -ErrorAction SilentlyContinue)){
         Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/itt-co/bin/refs/heads/main/install.ps1')) *> $null
+    }
+    else 
+    {
+        
+        $CurrentVersion = "0.1.0.0"
+        $RepoUrl = "https://api.github.com/repos/itt-co/bin/releases/latest"
+        $DownloadUrl = "https://github.com/itt-co/bin/releases/latest/download/installer.msi"
+        $InstallerPath = "$env:temp\installer.msi"
+
+        try {
+            # Write-Host "Current version: $CurrentVersion"
+            $response = Invoke-RestMethod -Uri $RepoUrl -Headers @{ "User-Agent" = "itt-updater" }
+            $latestVersion = $response.tag_name
+
+            if ($latestVersion -ne $CurrentVersion)
+            {
+                # Download the latest installer
+                Add-Log -Message "Updating ITT..." -Level "info"
+                Invoke-WebRequest -Uri $DownloadUrl -OutFile $InstallerPath
+
+                # Install the update
+                Add-Log -Message "Installing update..." -Level "info"
+                Start-Process -FilePath "msiexec.exe" -ArgumentList "/i `"$InstallerPath`" /q" -NoNewWindow -Wait
+                Add-Log -Message "Update installed successfully!" -Level "info"
+
+                # Cleanup
+                Remove-Item $InstallerPath -Force
+            }
+        }
+        catch {
+            Add-Log -Message "Update check failed: $_" -Level "error"
+        }
     }
 }
 function Install-Winget {
@@ -9872,8 +9908,8 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
         <!-- {Dark} -->
 <!-- by {emadadel} -->
 <ResourceDictionary x:Key="Dark">
- <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#2b2d31"/>
- <SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="#3c3f44"/>
+ <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#2A2E32"/>
+ <SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="#393C3F"/>
  <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#098fd4" />
  <SolidColorBrush x:Key="PrimaryButtonHighlight" Color="White" />
  <SolidColorBrush x:Key="TextColorPrimary" Color="WhiteSmoke" />
@@ -9882,14 +9918,14 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
  <SolidColorBrush x:Key="BorderBrush" Color="#2b2d31" />
  <SolidColorBrush x:Key="ButtonBorderColor" Color="#1DB954"/>
  <SolidColorBrush x:Key="Label" Color="#3f3f3f"/>
- <SolidColorBrush x:Key="HighlightColor" Color="#066ca1"/>
+ <SolidColorBrush x:Key="HighlightColor" Color="#3DAEE9"/>
  <SolidColorBrush x:Key="ToggleSwitchBackgroundColor" Color="#282828"/>
  <SolidColorBrush x:Key="ToggleSwitchForegroundColor" Color="#282828"/>
- <SolidColorBrush x:Key="ToggleSwitchEnableColor" Color="white"/>
+ <SolidColorBrush x:Key="ToggleSwitchEnableColor" Color="#ffffff"/>
  <SolidColorBrush x:Key="ToggleSwitchDisableColor" Color="#c9c9c7"/>
  <SolidColorBrush x:Key="ToggleSwitchBorderBrush" Color="#c9c9c7"/>
- <Color x:Key="ListViewCardLeftColor">#3c3f44</Color> 
- <Color x:Key="ListViewCardRightColor">#2b2d31</Color>
+ <Color x:Key="ListViewCardLeftColor">#393C3F</Color> 
+ <Color x:Key="ListViewCardRightColor">#393C3F</Color>
  <ImageBrush x:Key="BackgroundImage" ImageSource="{x:Null}" Stretch="UniformToFill"/>
 </ResourceDictionary>
 <!--{Dark}-->
@@ -13670,22 +13706,12 @@ function Show-Event {
         $itt.event.FindName('date').text = '03/01/2025'.Trim()
         
     
-            $itt.event.FindName('preview').add_MouseLeftButtonDown({
-                    Start-Process('https://github.com/emadadel4/itt')
-                })
-            
-            
-            $itt.event.FindName('shell').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
-                })
-            
-            
             $itt.event.FindName('esg').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
-            $itt.event.FindName('preview2').add_MouseLeftButtonDown({
+            $itt.event.FindName('preview').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
@@ -13695,8 +13721,18 @@ function Show-Event {
                 })
             
             
+            $itt.event.FindName('shell').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+                })
+            
+            
             $itt.event.FindName('ps').add_MouseLeftButtonDown({
                     Start-Process('https://www.palestinercs.org/en/Donation')
+                })
+            
+            
+            $itt.event.FindName('preview2').add_MouseLeftButtonDown({
+                    Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
@@ -14006,7 +14042,7 @@ $InitialSessionState.Variables.Add($hashVars)
 $functions = @(
     'Install-App', 'Install-Winget', 'InvokeCommand', 'Add-Log',
     'Disable-Service', 'Uninstall-AppxPackage', 'Finish', 'Message',
-    'Notify', 'UpdateUI', 'Native-Downloader', 'Install-Choco',
+    'Notify', 'UpdateUI', 'Native-Downloader', 'Install-ITTaChoco',
     'ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
     'Refresh-Explorer', 'Remove-ScheduledTasks'
 )
