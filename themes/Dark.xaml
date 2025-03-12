@@ -6,7 +6,7 @@
  <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#098fd4" />
  <SolidColorBrush x:Key="PrimaryButtonHighlight" Color="White" />
  <SolidColorBrush x:Key="TextColorPrimary" Color="WhiteSmoke" />
- <SolidColorBrush x:Key="TextColorSecondaryColor" Color="White"/>
+ <SolidColorBrush x:Key="TextColorSecondaryColor" Color="white"/>
  <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#bbbbbb"/>
  <SolidColorBrush x:Key="BorderBrush" Color="#2b2d31" />
  <SolidColorBrush x:Key="ButtonBorderColor" Color="#1DB954"/>
