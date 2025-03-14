@@ -46,9 +46,9 @@ function Install-App {
     # Common Winget Arguments
     $wingetArgs = "install --id $Winget --silent --accept-source-agreements --accept-package-agreements --force"
     $chocoArgs = "install $Choco --confirm --acceptlicense -q --ignore-http-cache --limit-output --allowemptychecksumsecure --ignorechecksum --allowemptychecksum --usepackagecodes --ignoredetectedreboot --ignore-checksums --ignore-reboot-requests"
-    $ittArgs = "i $ITT -y"
+    $ittArgs = "install $ITT -y"
 
-    # TODO: If Chocolatey is 'none', use Winget
+    # TODO: If Chocolatey is 'none', and Winget is none use itt
     if ($Choco -eq "na" -and $Winget -eq "na" -and $itt -ne "na") {
 
         Install-ITTaChoco
