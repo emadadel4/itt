@@ -6,7 +6,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "03/11/2025"
+lastupdate     = "03/12/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -20,8 +20,26 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 $newProcess = Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoProfile -Command `"$($MyInvocation.MyCommand.Definition)`"" -Verb RunAs
 exit
 }
-$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
 $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
+$Host.UI.RawUI.BackgroundColor = "black"
+Clear
+Add-Type @"
+using System;
+using System.Runtime.InteropServices;
+public class WinAPI {
+[DllImport("user32.dll")]
+public static extern IntPtr GetForegroundWindow();
+[DllImport("user32.dll")]
+public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+[DllImport("user32.dll")]
+public static extern bool EnableWindow(IntPtr hWnd, bool bEnable);
+}
+"@
+$process = Get-Process -Id $PID
+$hwnd = $process.MainWindowHandle
+[WinAPI]::ShowWindow($hwnd, 3)
+[WinAPI]::EnableWindow($hwnd, $false)
+$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
 $ittDir = $itt.ittDir
 if (-not (Test-Path -Path $ittDir)) {
 New-Item -ItemType Directory -Path $ittDir -Force | Out-Null
@@ -6931,9 +6949,9 @@ Add-Log -Message "Successfully Installed ($Name)" -Level "$Source"
 }
 $wingetArgs = "install --id $Winget --silent --accept-source-agreements --accept-package-agreements --force"
 $chocoArgs = "install $Choco --confirm --acceptlicense -q --ignore-http-cache --limit-output --allowemptychecksumsecure --ignorechecksum --allowemptychecksum --usepackagecodes --ignoredetectedreboot --ignore-checksums --ignore-reboot-requests"
-$ittArgs = "install $ITT -y"
+$ittArgs = "i $ITT -y"
 if ($Choco -eq "na" -and $Winget -eq "na" -and $itt -ne "na") {
-Install-Choco
+Install-ITTaChoco
 Add-Log -Message "Attempting to install $Name." -Level "ITT"
 $ITTResult = Install-AppWithInstaller "itt" $ittArgs
 Log $ITTResult "itt"
@@ -6952,7 +6970,7 @@ else
 {
 if ($Choco -ne "na" -or $Winget -ne "na")
 {
-Install-Choco
+Install-ITTaChoco
 Add-Log -Message "Attempting to install $Name." -Level "Chocolatey"
 $chocoResult = Install-AppWithInstaller "choco" $chocoArgs
 if ($chocoResult -ne 0) {
@@ -6970,15 +6988,36 @@ Add-Log -Message "Package not found in any repository" -Level "ERROR"
 }
 }
 }
-function Install-Choco {
-if (-not (Get-Command choco -ErrorAction SilentlyContinue))
-{
+function Install-ITTaChoco {
+if (-not (Get-Command choco -ErrorAction SilentlyContinue)){
 Add-Log -Message "Checking dependencies This won't take a minute..." -Level "INFO"
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) *> $null
 }
-if (-not (Get-Command itt -ErrorAction SilentlyContinue))
-{
+if (-not (Get-Command itt -ErrorAction SilentlyContinue)){
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/itt-co/bin/refs/heads/main/install.ps1')) *> $null
+}
+else
+{
+$CurrentVersion = "0.1.0.0"
+$RepoUrl = "https://api.github.com/repos/itt-co/bin/releases/latest"
+$DownloadUrl = "https://github.com/itt-co/bin/releases/latest/download/installer.msi"
+$InstallerPath = "$env:temp\installer.msi"
+try {
+$response = Invoke-RestMethod -Uri $RepoUrl -Headers @{ "User-Agent" = "itt-updater" }
+$latestVersion = $response.tag_name
+if ($latestVersion -ne $CurrentVersion)
+{
+Add-Log -Message "Updating ITT..." -Level "info"
+Invoke-WebRequest -Uri $DownloadUrl -OutFile $InstallerPath
+Add-Log -Message "Installing update..." -Level "info"
+Start-Process -FilePath "msiexec.exe" -ArgumentList "/i `"$InstallerPath`" /q" -NoNewWindow -Wait
+Add-Log -Message "Update installed successfully!" -Level "info"
+Remove-Item $InstallerPath -Force
+}
+}
+catch {
+Add-Log -Message "Update check failed: $_" -Level "error"
+}
 }
 }
 function Install-Winget {
@@ -6989,70 +7028,14 @@ if ($ComputerInfo.WindowsVersion -lt "1809") {
 Add-Log -Message "Winget is not supported on this version of Windows Upgrade to 1809 or newer." -Level "info"
 return
 }
-$VCLibs = "https://aka.ms/Microsoft.VCLibs.x$arch.14.00.Desktop.appx"
-$UIXaml = "https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.8.6/Microsoft.UI.Xaml.2.8.x$arch.appx"
-$WingetLatset = "https://aka.ms/getwinget"
 try {
 Add-Log -Message "Installing Winget... This might take several minutes" -Level "info"
-Start-BitsTransfer -Source $VCLibs -Destination "$env:TEMP\Microsoft.VCLibs.Desktop.appx"
-Start-BitsTransfer -Source $UIXaml -Destination "$env:TEMP\Microsoft.UI.Xaml.appx"
-Start-BitsTransfer -Source $WingetLatset -Destination "$env:TEMP\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
-Add-AppxPackage "$env:TEMP\Microsoft.VCLibs.Desktop.appx"
-Add-AppxPackage "$env:TEMP\Microsoft.UI.Xaml.appx"
-Add-AppxPackage "$env:TEMP\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
-Start-Sleep -Seconds 1
-Add-Log -Message "Successfully installed Winget. Continuing to install selected apps..." -Level "info"
+Install-ITTaChoco
+Start-Process -FilePath "itt" -ArgumentList "install winget -y" -NoNewWindow -Wait -PassThru
 return
 }
 catch {
 Write-Error "Failed to install $_"
-}
-}
-function Native-Downloader {
-param (
-[string]$url,
-[string]$name,
-[string]$launcher,
-[string]$portable,
-[string]$installArgs
-)
-$Destination_Directory = Join-Path -Path "$env:ProgramData\itt\Downloads" -ChildPath $name
-if (-not (Test-Path -Path $Destination_Directory)) {
-New-Item -ItemType Directory -Path $Destination_Directory -Force | Out-Null
-}
-$File = [System.IO.Path]::GetFileName($url)
-$DownloadPath = Join-Path -Path $Destination_Directory -ChildPath $File
-$targetPath = Join-Path -Path $Destination_Directory -ChildPath $launcher
-try {
-Add-Log -Message "Downloading $name using Start-BitsTransfer" -Level "INFO"
-Start-BitsTransfer -Source $url -Destination $DownloadPath -ErrorAction Stop
-Expand-Archive -Path $DownloadPath -DestinationPath $Destination_Directory -Force -ErrorAction Stop
-}
-catch {
-Write-Error "An error occurred during the download or extraction process: $_"
-}
-if ($portable -eq "true") {
-if (-not (Test-Path -Path $targetPath)) {
-Add-Log -Message  "Target file '$targetPath' does not exist after extraction." -Level "error"
-return
-}
-if ($launcher -ne "none" -or "") {
-$desktopPath = [System.Environment]::GetFolderPath('Desktop')
-$shortcutPath = Join-Path -Path $desktopPath -ChildPath "$name.lnk"
-try {
-$shell = New-Object -ComObject WScript.Shell
-$shortcut = $shell.CreateShortcut($shortcutPath)
-$shortcut.TargetPath = $targetPath
-$shortcut.Save()
-Add-Log -Message "Shortcut created on Destkop" -Level "info"
-}
-catch {
-Write-Error "Failed to create shortcut. Error: $_"
-}
-}
-}
-else {
-Start-Process -FilePath $targetPath -ArgumentList $installArgs -Wait
 }
 }
 function Refresh-Explorer {
@@ -8200,26 +8183,6 @@ From="1.0" To="0.0"
 Duration="0:0:1"
 BeginTime="0:0:10" />
 </Storyboard>
-<Storyboard x:Key="FadeOutInLoopStoryboard">
-<DoubleAnimation
-Storyboard.TargetProperty="Opacity"
-From="1.0"
-To="0.0"
-Duration="0:0:1" />
-<DoubleAnimation
-Storyboard.TargetProperty="Opacity"
-From="0.0"
-To="1.0"
-Duration="0:0:1"
-BeginTime="0:0:1" />
-</Storyboard>
-<Style TargetType="Image">
-<Style.Triggers>
-<EventTrigger RoutedEvent="FrameworkElement.Loaded">
-<BeginStoryboard Storyboard="{StaticResource Logo}" />
-</EventTrigger>
-</Style.Triggers>
-</Style>
 <Style TargetType="Button">
 <Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
 <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor2}"/>
@@ -8740,25 +8703,39 @@ To="5,0,0,0">
 </Setter.Value>
 </Setter>
 </Style>
+<Style TargetType="TextBlock" x:Key="logoText">
+<Setter Property="Foreground" Value="#3DAEE9"/>
+<Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
+<Setter Property="FontFamily" Value="Arial"/>
+<Setter Property="FontWeight" Value="bold"/>
+<Setter Property="FontSize" Value="60"/>
+<Setter Property="TextAlignment" Value="Center"/>
+<Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
+<Style.Triggers>
+<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+<BeginStoryboard Storyboard="{StaticResource Logo}" />
+</EventTrigger>
+</Style.Triggers>
+</Style>
 <ResourceDictionary x:Key="Dark">
-<SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#2b2d31"/>
-<SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="#3c3f44"/>
+<SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#2A2E32"/>
+<SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="#393C3F"/>
 <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#098fd4" />
 <SolidColorBrush x:Key="PrimaryButtonHighlight" Color="White" />
 <SolidColorBrush x:Key="TextColorPrimary" Color="WhiteSmoke" />
-<SolidColorBrush x:Key="TextColorSecondaryColor" Color="White"/>
+<SolidColorBrush x:Key="TextColorSecondaryColor" Color="white"/>
 <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#bbbbbb"/>
 <SolidColorBrush x:Key="BorderBrush" Color="#2b2d31" />
 <SolidColorBrush x:Key="ButtonBorderColor" Color="#1DB954"/>
 <SolidColorBrush x:Key="Label" Color="#3f3f3f"/>
-<SolidColorBrush x:Key="HighlightColor" Color="#066ca1"/>
+<SolidColorBrush x:Key="HighlightColor" Color="#3DAEE9"/>
 <SolidColorBrush x:Key="ToggleSwitchBackgroundColor" Color="#282828"/>
 <SolidColorBrush x:Key="ToggleSwitchForegroundColor" Color="#282828"/>
-<SolidColorBrush x:Key="ToggleSwitchEnableColor" Color="white"/>
+<SolidColorBrush x:Key="ToggleSwitchEnableColor" Color="#ffffff"/>
 <SolidColorBrush x:Key="ToggleSwitchDisableColor" Color="#c9c9c7"/>
 <SolidColorBrush x:Key="ToggleSwitchBorderBrush" Color="#c9c9c7"/>
-<Color x:Key="ListViewCardLeftColor">#3c3f44</Color>
-<Color x:Key="ListViewCardRightColor">#2b2d31</Color>
+<Color x:Key="ListViewCardLeftColor">#393C3F</Color>
+<Color x:Key="ListViewCardRightColor">#393C3F</Color>
 <ImageBrush x:Key="BackgroundImage" ImageSource="{x:Null}" Stretch="UniformToFill"/>
 </ResourceDictionary>
 <ResourceDictionary x:Key="DarkKnight">
@@ -8837,9 +8814,11 @@ To="5,0,0,0">
 <ColumnDefinition Width="*"/>
 </Grid.ColumnDefinitions>
 <Menu Grid.Row="0" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" BorderThickness="0">
-<MenuItem Background="Transparent" BorderBrush="Transparent" BorderThickness="0" IsEnabled="False" ToolTip="Emad Adel">
+<MenuItem Background="Transparent" BorderBrush="Transparent" BorderThickness="0"  IsEnabled="False" ToolTip="Emad Adel">
 <MenuItem.Icon>
-<Image Source="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Images/logo.png" Width="90" Height="Auto" Margin="5,5,0,0"></Image>
+<Border Background="Transparent" CornerRadius="10" Height="70" Width="70">
+<TextBlock Text="itt" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource logoText}"/>
+</Border>
 </MenuItem.Icon>
 </MenuItem>
 <MenuItem VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="Transparent">
@@ -12393,23 +12372,23 @@ $itt.event.FindName('closebtn').add_MouseLeftButtonDown({ $itt.event.Close() })
 $itt.event.FindName('DisablePopup').add_MouseLeftButtonDown({ DisablePopup; $itt.event.Close() })
 $itt.event.FindName('title').text = '🌜 Ramadan Kareem'.Trim()
 $itt.event.FindName('date').text = '03/01/2025'.Trim()
-$itt.event.FindName('shell').add_MouseLeftButtonDown({
-Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+$itt.event.FindName('ps').add_MouseLeftButtonDown({
+Start-Process('https://www.palestinercs.org/en/Donation')
 })
-$itt.event.FindName('preview2').add_MouseLeftButtonDown({
+$itt.event.FindName('ytv').add_MouseLeftButtonDown({
+Start-Process('https://www.youtube.com/watch?v=QmO82OTsU5c')
+})
+$itt.event.FindName('preview').add_MouseLeftButtonDown({
 Start-Process('https://github.com/emadadel4/itt')
 })
 $itt.event.FindName('esg').add_MouseLeftButtonDown({
 Start-Process('https://github.com/emadadel4/itt')
 })
-$itt.event.FindName('preview').add_MouseLeftButtonDown({
+$itt.event.FindName('shell').add_MouseLeftButtonDown({
+Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+})
+$itt.event.FindName('preview2').add_MouseLeftButtonDown({
 Start-Process('https://github.com/emadadel4/itt')
-})
-$itt.event.FindName('ytv').add_MouseLeftButtonDown({
-Start-Process('https://www.youtube.com/watch?v=QmO82OTsU5c')
-})
-$itt.event.FindName('ps').add_MouseLeftButtonDown({
-Start-Process('https://www.palestinercs.org/en/Donation')
 })
 $itt.event.Add_PreViewKeyDown({ if ($_.Key -eq "Escape") { $itt.event.Close() } })
 $storedDate = [datetime]::ParseExact($itt.event.FindName('date').Text, 'MM/dd/yyyy', $null)
@@ -12670,7 +12649,7 @@ $InitialSessionState.Variables.Add($hashVars)
 $functions = @(
 'Install-App', 'Install-Winget', 'InvokeCommand', 'Add-Log',
 'Disable-Service', 'Uninstall-AppxPackage', 'Finish', 'Message',
-'Notify', 'UpdateUI', 'Native-Downloader', 'Install-Choco',
+'Notify', 'UpdateUI', 'Install-ITTaChoco',
 'ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
 'Refresh-Explorer', 'Remove-ScheduledTasks'
 )

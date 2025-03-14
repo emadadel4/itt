@@ -48,10 +48,10 @@ function Install-App {
     $chocoArgs = "install $Choco --confirm --acceptlicense -q --ignore-http-cache --limit-output --allowemptychecksumsecure --ignorechecksum --allowemptychecksum --usepackagecodes --ignoredetectedreboot --ignore-checksums --ignore-reboot-requests"
     $ittArgs = "install $ITT -y"
 
-    # TODO: If Chocolatey is 'none', use Winget
+    # TODO: If Chocolatey is 'none', and Winget is none use itt
     if ($Choco -eq "na" -and $Winget -eq "na" -and $itt -ne "na") {
 
-        Install-Choco
+        Install-ITTaChoco
         Add-Log -Message "Attempting to install $Name." -Level "ITT"
         $ITTResult = Install-AppWithInstaller "itt" $ittArgs
         Log $ITTResult "itt"
@@ -72,7 +72,7 @@ function Install-App {
             # TODO: If choco is not 'none' and winget is not 'none', use choco first and fallback to winget
             if ($Choco -ne "na" -or $Winget -ne "na") 
             {
-                Install-Choco
+                Install-ITTaChoco
                 Add-Log -Message "Attempting to install $Name." -Level "Chocolatey"
                 $chocoResult = Install-AppWithInstaller "choco" $chocoArgs
 

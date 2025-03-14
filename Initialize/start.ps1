@@ -31,8 +31,39 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     exit
 }
 
-$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
 $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
+$Host.UI.RawUI.BackgroundColor = "black"
+Clear
+
+Add-Type @"
+using System;
+using System.Runtime.InteropServices;
+
+public class WinAPI {
+    [DllImport("user32.dll")]
+    public static extern IntPtr GetForegroundWindow();
+
+    [DllImport("user32.dll")]
+    public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+    [DllImport("user32.dll")]
+    public static extern bool EnableWindow(IntPtr hWnd, bool bEnable);
+}
+"@
+
+
+# Get the PowerShell window handle by process ID
+$process = Get-Process -Id $PID
+$hwnd = $process.MainWindowHandle
+
+# Maximize the PowerShell window
+[WinAPI]::ShowWindow($hwnd, 3)
+
+# Disable input (read-only mode)
+[WinAPI]::EnableWindow($hwnd, $false)
+
+# Create mediaPlayer Object
+$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
 
 # Create directory if it doesn't exist
 $ittDir = $itt.ittDir
