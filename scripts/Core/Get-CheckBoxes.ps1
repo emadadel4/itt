@@ -3,15 +3,6 @@ function Get-SelectedItems {
     <#
         .SYNOPSIS
         Retrieves selected items from the ListView based on the specified mode.
-        .DESCRIPTION
-        This function collects information about selected items from a ListView, depending on the mode specified. It extracts data from the ListView items that have checkboxes that are checked and returns this information in a structured format.
-        .PARAMETER Mode
-        Specifies the mode for item retrieval. Options include:
-        - `Apps`: Retrieves information about selected applications from the `AppsListView`.
-        - `Tweaks`: Retrieves information about selected tweaks from the `TweaksListView`.
-        .EXAMPLE
-        Get-SelectedItems -Mode "Apps"
-        Retrieves and returns a list of selected applications from the `AppsListView`.
     #>
     
     param ([string]$Mode)
@@ -21,22 +12,20 @@ function Get-SelectedItems {
 
             $items = @()  
 
-            foreach ($item in $itt.AppsListView.Items) {
-                
-                $checkbox = $item.Children[0].Children[0]
-                $choco = $item.children[1].Text
-                $winget = $item.children[2].Text
-                $itt = $item.children[3].Text
+            $itt["window"].FindName("appslist").Items.Items | Where-Object { $_.IsChecked } | ForEach-Object {
 
-                if ($checkbox.IsChecked) {
+                $tag = $_.Tag
+                $tagParts = $tag -split " \| "
+                $choco = $tagParts[0]
+                $winget = $tagParts[1]
+                $itt = $tagParts[2]
 
-                    $items += @{
-                        Name    = $checkbox.Content
-                        Choco   = $choco
-                        Winget  = $winget
-                        ITT     = $itt
-                        # Add a new download mothed here
-                    }
+                $items += @{
+                    Name    = $_.Content
+                    Choco   = $choco
+                    Winget  = $winget
+                    ITT     = $itt
+                    # Add a new download method here
                 }
             }
         }

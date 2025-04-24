@@ -2307,7 +2307,7 @@
   {
     "Name": "Set current network profile to public",
     "Description": "Deny file sharing, device discovery",
-    "Category": "",
+    "Category": "Protection",
     "Check": "false",
     "Refresh": "false",
     "Script": [

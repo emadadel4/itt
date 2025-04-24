@@ -139,54 +139,48 @@ function GenerateCheckboxes {
     param (
         [array]$Database,
         [string]$ContentField,
-        [string]$TagField = "",
+        [string]$TagField = "Category",
         [string]$TipsField = "",
         [string]$IsCheckedField = "",
         [string]$ToggleField = "",
         [string]$NameField = ""
     )
 
-    Write-Host "[+] Generating Listview Checkboxes..." -ForegroundColor Yellow
+    Write-Host "[+] Generating TreeView Checkboxes grouped by category..." -ForegroundColor Yellow
 
-    $Checkboxes = ""
+    $Grouped = $Database | Group-Object { $_.$TagField }
 
-    foreach ($Item in $Database) {
+    $TreeViewXaml = ""
 
-        # Clean description and category to remove special characters
-        $CleanedDescription = $Item.Description -replace '[^\w\s./]', ''
-        $CleanedCategory = $Item.Category -replace '[^\w\s]', ''
-        $CleanedName = $Item.Name -replace '[^a-zA-Z0-9]', ''
-        $Content = $Item.$ContentField
+    foreach ($Group in $Grouped) {
 
-        $ChocoPkg = $Item.Choco
-        $WingetPkg = $Item.Winget
-        $ITTPkg = $Item.ITT
+        $Category = $Group.Name
+        $TreeViewXaml += "<TreeViewItem Header=`"$Category`" Margin=`"8`"  Foreground=`"{DynamicResource TextColorSecondaryColor}`">"
 
-        # Optional attributes for CheckBox based on fields
-        $Tag = if ($TagField) { "Tag=`"$($Item.$TagField)`"" } else { "" }
+        foreach ($Item in $Group.Group) {
 
-        #$Tips = if ($TipsField) { "ToolTip=`"Install it again to update`"" } else { "" }
+            $Content = $Item.$ContentField
 
-        $Name = if ($NameField) { "Name=`"$($CleanedName)`"" } else { "" }
+            $ChocoPkg = $Item.Choco
+            $WingetPkg = $Item.Winget
+            $ITTPkg = $Item.ITT
 
-        $Toggle = if ($ToggleField) { "Style=`"{StaticResource ToggleSwitchStyle}`"" } else { "" }
-        #$IsChecked = if ($IsCheckedField) { "IsChecked=`"$($Item.$IsCheckedField)`"" } else { "" }
+            $Toggle = if ($ToggleField) { "Style=`"{StaticResource ToggleSwitchStyle}`"" } else { "" }
 
-        # Build the CheckBox and its container
-        $Checkboxes += @"
-        <StackPanel Orientation="Vertical" Margin="10">
-            <StackPanel Orientation="Horizontal">
-                <CheckBox Content="$Content" FontSize="14" $Tag $Toggle $Name ToolTip="$CleanedDescription" Foreground="{DynamicResource TextColorSecondaryColor}"/>
-                <Label Margin="5,0,0,0" FontSize="13" Content="$CleanedCategory"/>
-            </StackPanel>
-            <TextBlock Text="$ChocoPkg" Visibility="Collapsed"/>
-            <TextBlock Text="$WingetPkg" Visibility="Collapsed"/>
-            <TextBlock Text="$ITTPkg" Visibility="Collapsed"/>
-        </StackPanel>
-"@
+            $CleanedName = $Item.Name -replace '[^a-zA-Z0-9]', ''
+            $Name = if ($PSBoundParameters.ContainsKey("NameField")) { "Name=`"$($CleanedName)`"" } else { "" }
+
+            $TreeViewXaml += "<CheckBox Content=`"$Content`" $Name $Toggle Margin=`"0 10 0 2`" Tag=`"$ChocoPkg | $WingetPkg | $ITTPkg`" Foreground=`"{DynamicResource TextColorSecondaryColor}`" />"
+        }
+
+        $TreeViewXaml += "</TreeViewItem>"
     }
-    return $Checkboxes
+    
+
+    return $TreeViewXaml
 }
+
+
 # Process each JSON file in the specified directory
 function Sync-JsonFiles {
     param (
@@ -676,7 +670,7 @@ try {
         $ColorsXamlContent = Get-Content -Path $FilePaths["Colors"] -Raw
         $MenuXamlContent = Get-Content -Path $FilePaths["menu"] -Raw
         $ButtonsXamlContent = Get-Content -Path $FilePaths["buttons"] -Raw
-        $CatagoryXamlContent = Get-Content -Path $FilePaths["catagory"] -Raw
+        #$CatagoryXamlContent = Get-Content -Path $FilePaths["catagory"] -Raw
         $searchXamlContent = Get-Content -Path $FilePaths["search"] -Raw
         # Replace placeholders with actual content
         $MainXamlContent = $MainXamlContent -replace "{{Tabs}}", $AppXamlContent
@@ -684,16 +678,24 @@ try {
         $MainXamlContent = $MainXamlContent -replace "{{Colors}}", $ColorsXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{menu}}", $MenuXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{buttons}}", $ButtonsXamlContent
-        $MainXamlContent = $MainXamlContent -replace "{{catagory}}", $CatagoryXamlContent
+        #$MainXamlContent = $MainXamlContent -replace "{{catagory}}", $CatagoryXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{search}}", $searchXamlContent
     }
     catch {
         Write-Error "An error occurred while processing the XAML content: $($_.Exception.Message)"
         break
     }
+
     $AppsCheckboxes = GenerateCheckboxes -Database $itt.database.Applications -ContentField "Name" -TagField "Category"
+
+
     $TweaksCheckboxes = GenerateCheckboxes -Database $itt.database.Tweaks -ContentField "Name" -TagField "Category" -IsCheckedField "check"
-    $SettingsCheckboxes = GenerateCheckboxes -Database $itt.database.Settings -ContentField "Name" -NameField "Name" -ToggleField "Style=" { StaticResource ToggleSwitchStyle }""
+
+
+    $SettingsCheckboxes = GenerateCheckboxes -Database $itt.database.Settings -ContentField "Name" -NameField "Name"  -TagField "Category" -ToggleField "Style=" { StaticResource ToggleSwitchStyle }""
+
+
+
     $MainXamlContent = $MainXamlContent -replace "{{Apps}}", $AppsCheckboxes 
     $MainXamlContent = $MainXamlContent -replace "{{Tweaks}}", $TweaksCheckboxes 
     $MainXamlContent = $MainXamlContent -replace "{{Settings}}", $SettingsCheckboxes 

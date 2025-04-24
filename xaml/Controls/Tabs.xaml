@@ -1,64 +1,21 @@
 <!--TabControl-->
     <TabControl Name="taps" TabStripPlacement="Left" Grid.Row="1" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}">
             <TabItem Name="apps" Header="📦" ToolTip="{Binding apps, TargetNullValue=Apps}" FontSize="18" BorderBrush="{x:Null}" >
-                <ListView Name="appslist" 
-                    Grid.Row="1" 
-                    BorderBrush="{x:Null}" 
-                    Background="{x:Null}"
-                    SelectionMode="Single"
-                    SnapsToDevicePixels="True"
-                    VirtualizingStackPanel.IsContainerVirtualizable="True"
-                    VirtualizingStackPanel.IsVirtualizing="True"
-                    VirtualizingStackPanel.VirtualizationMode="Recycling"
-                    AlternationCount="2"
-                    ScrollViewer.CanContentScroll="True">
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel />
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
+                <TreeView Name="appslist" BorderBrush="{x:Null}" Background="{x:Null}" Margin="10">
                     {{Apps}}
-                </ListView>
+                </TreeView>
             </TabItem>
 
             <TabItem x:Name="tweeksTab" Header="🛠" ToolTip="{Binding tweaks, TargetNullValue=Tweaks}"  FontSize="18" BorderBrush="{x:Null}" Background="{x:Null}">
-                   <ListView Name="tweakslist" 
-                        BorderBrush="{x:Null}" 
-                        Background="{x:Null}"
-                        SelectionMode="Single"
-                        SnapsToDevicePixels="True"
-                        VirtualizingStackPanel.IsVirtualizing="True"
-                        VirtualizingStackPanel.IsContainerVirtualizable="True"
-                        VirtualizingStackPanel.VirtualizationMode="Recycling"
-                        AlternationCount="2"
-                        ScrollViewer.CanContentScroll="True">
-                        <ListView.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <VirtualizingStackPanel />
-                            </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                        {{Tweaks}}
-                    </ListView>
+                <TreeView Name="tweakslist" BorderBrush="{x:Null}" Background="{x:Null}" Margin="10">
+                    {{Tweaks}}
+                </TreeView>
             </TabItem>
 
             <TabItem x:Name="SettingsTab" Header="⚙" ToolTip="{Binding settings, TargetNullValue=Settings}" FontSize="18" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <ListView Name="SettingsList" 
-                        BorderBrush="{x:Null}" 
-                        Background="{x:Null}"
-                        SelectionMode="Single"
-                        SnapsToDevicePixels="True"
-                        VirtualizingStackPanel.IsVirtualizing="True"
-                        VirtualizingStackPanel.IsContainerVirtualizable="True"
-                        VirtualizingStackPanel.VirtualizationMode="Recycling"
-                        AlternationCount="2"
-                        ScrollViewer.CanContentScroll="True">
-                        <ListView.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <VirtualizingStackPanel />
-                            </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                        {{Settings}}
-                    </ListView>
+                <TreeView Name="SettingsList" BorderBrush="{x:Null}" Background="{x:Null}" Margin="10">
+                    {{Settings}}
+                </TreeView>
             </TabItem>
     </TabControl>
 <!--End TabControl-->

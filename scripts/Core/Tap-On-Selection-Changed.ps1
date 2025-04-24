@@ -17,13 +17,11 @@ function ChangeTap {
             'installBtn' = 'Visible';
             'applyBtn' = 'Hidden'; 
             'CurrentList' = 'appslist'; 
-            'CurrentCategory' = 'AppsCategory' 
         }
             'tweeksTab'   = @{ 
             'installBtn' = 'Hidden'; 
             'applyBtn' = 'Visible'; 
             'CurrentList' = 'tweakslist'; 
-            'CurrentCategory' = 'TwaeksCategory'
         }
         'SettingsTab' = @{ 
             'installBtn' = 'Hidden'; 
@@ -41,8 +39,8 @@ function ChangeTap {
             $itt.CurrentCategory = $settings['CurrentCategory']
             $itt['window'].FindName('installBtn').Visibility = $settings['installBtn']
             $itt['window'].FindName('applyBtn').Visibility = $settings['applyBtn']
-            $itt['window'].FindName('AppsCategory').Visibility = $settings['installBtn']
-            $itt['window'].FindName('TwaeksCategory').Visibility = $settings['applyBtn']
+            #$itt['window'].FindName('AppsCategory').Visibility = $settings['installBtn']
+            #$itt['window'].FindName('TwaeksCategory').Visibility = $settings['applyBtn']
             break
         }
     }
