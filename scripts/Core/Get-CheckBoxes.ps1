@@ -34,6 +34,8 @@ function Get-SelectedItems {
                         Choco   = $tags[0]
                         Winget  = $tags[1]
                         ITT     = $tags[2]
+                        Scoop   = $tags[3]
+
                     }
                 }
             }
