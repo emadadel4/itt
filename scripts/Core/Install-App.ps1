@@ -14,7 +14,7 @@ function Install-App {
         Install-App -Name "Google Chrome" -Choco "googlechrome" -Winget "Google.Chrome"
     #>
 
-    param ([string]$Name,[string]$Choco,[string]$Winget,[string]$ITT)
+    param ([string]$Name,[string]$Choco,[string]$Winget,[string]$ITT,[string]$Scoop)
 
     # Helper function to install an app using a specific installer
     function Install-AppWithInstaller {
