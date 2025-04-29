@@ -59,12 +59,12 @@ function Invoke-Install {
             $chocoFolder = Join-Path $env:ProgramData "chocolatey\lib\$($App.Choco)"
             $ITTFolder = Join-Path $env:ProgramData "itt\downloads\$($App.ITT)"
 
-            Remove-Item -Path "$chocoFolder" -Recurse -Force
-            Remove-Item -Path "$chocoFolder.install" -Recurse -Force
-            Remove-Item -Path "$env:TEMP\chocolatey" -Recurse -Force
-            Remove-Item -Path "$ITTFolder" -Recurse -Force
+            #Remove-Item -Path "$chocoFolder" -Recurse -Force
+            #Remove-Item -Path "$chocoFolder.install" -Recurse -Force
+            #Remove-Item -Path "$env:TEMP\chocolatey" -Recurse -Force
+            #Remove-Item -Path "$ITTFolder" -Recurse -Force
             
-            $Install_result = Install-App -Name $App.Name -Winget $App.Winget -Choco $App.Choco -itt $App.ITT -itt $App.Scoop
+            $Install_result = Install-App -Name $App.Name -Winget $App.Winget -Choco $App.Choco -itt $App.ITT -Scoop $App.Scoop
 
             if ($Install_result) {
                 Set-Statusbar -Text "✔ $($App.Name) Installed successfully "
