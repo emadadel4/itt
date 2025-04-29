@@ -117,6 +117,7 @@
     "winget": "VideoLAN.VLC",
     "choco": "vlc.install",
     "itt": "na",
+    "scoop": "extras/vlc",
     "category": "Media"
   },
   {
