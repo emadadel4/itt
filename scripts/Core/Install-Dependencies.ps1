@@ -7,6 +7,12 @@ function Install-ITTAChoco {
         Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) *> $null
     }
 
+    if (-not (Get-Command scoop -ErrorAction SilentlyContinue))
+    {
+        iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
+        scoop bucket add extras
+    }
+
     # Installing ITT Package manager if not exist
     if (-not (Get-Command itt -ErrorAction SilentlyContinue))
     {
