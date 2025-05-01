@@ -46,7 +46,7 @@ function Install-App {
     $ittArgs = "install $ITT -y"
 
     # TODO: If Chocolatey is 'none', use Winget
-    if ($Choco -eq "na" -and $Winget -eq "na" -and $itt -ne "na") {
+    if ($Choco -eq "na" -and $Winget -eq "na" -and $Scoop -eq "na" -and $ITT -ne "na") {
 
         Install-ITTAChoco
         Add-Log -Message "Attempting to install $Name." -Level "ITT"
