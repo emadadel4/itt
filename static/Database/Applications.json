@@ -117,7 +117,7 @@
     "winget": "VideoLAN.VLC",
     "choco": "vlc.install",
     "itt": "na",
-    "scoop": "extras/vlc",
+    "scoop": "na",
     "category": "Media"
   },
   {
@@ -3262,6 +3262,15 @@
     "winget": "na",
     "choco": "na",
     "itt": "yf-qc",
+    "category": "Documents"
+  },
+  {
+    "Name": "A TEST",
+    "Description": "A TEST",
+    "winget": "na",
+    "choco": "na",
+    "itt": "na",
+    "scoop": "extras/vlc",
     "category": "Documents"
   }
 ]
