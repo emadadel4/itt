@@ -41,30 +41,30 @@ function Invoke-Install {
         return
     }
 
-    ITT-ScriptBlock -ArgumentList $selectedApps $i -Debug $debug -ScriptBlock {
+    ITT-ScriptBlock -ArgumentList $selectedApps $i $PKGMan -Debug $debug -ScriptBlock {
 
-        param($selectedApps , $i)
+        param($selectedApps, $i, $PKGMan)
+
+        $itt.ProcessRunning = $true
 
         UpdateUI -Button "installBtn" -Content "Downloading" -Width "auto"
 
         $itt["window"].Dispatcher.Invoke([action] { Set-Taskbar -progress "Indeterminate" -value 0.01 -icon "logo" })
-
-        $itt.ProcessRunning = $true
 
         foreach ($App in $selectedApps) {
 
             Set-Statusbar -Text "⬇ Current task: Downloading $($App.Name)"
 
             # Some packages won't install until the package folder is removed.
-            $chocoFolder = Join-Path $env:ProgramData "chocolatey\lib\$($App.Choco)"
-            $ITTFolder = Join-Path $env:ProgramData "itt\downloads\$($App.ITT)"
+            #$chocoFolder = Join-Path $env:ProgramData "chocolatey\lib\$($App.Choco)"
+            #$ITTFolder = Join-Path $env:ProgramData "itt\downloads\$($App.ITT)"
 
             #Remove-Item -Path "$chocoFolder" -Recurse -Force
             #Remove-Item -Path "$chocoFolder.install" -Recurse -Force
             #Remove-Item -Path "$env:TEMP\chocolatey" -Recurse -Force
             #Remove-Item -Path "$ITTFolder" -Recurse -Force
             
-            #$Install_result = Install-App -Name $App.Name -Winget $App.Winget -Choco $App.Choco -itt $App.ITT -Scoop $App.Scoop
+            $Install_result = Install-App -Source $PKGMan -Name $App.Name -Winget $App.Winget -Choco $App.Choco -itt $App.ITT -Scoop $App.Scoop
 
             if ($Install_result) {
                 Set-Statusbar -Text "✔ $($App.Name) Installed successfully "
