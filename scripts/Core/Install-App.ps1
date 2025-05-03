@@ -3,18 +3,11 @@ function Install-App {
     <#
         .SYNOPSIS
         Installs an application using either Chocolatey or Winget package managers.
-
-        .DESCRIPTION
-        The Install-App function automates the installation of applications using Chocolatey and Winget. 
-        It first attempts to install the application with Chocolatey if provided. If Chocolatey is not 
-        available or fails, it falls back to Winget for installation. The function also logs the 
-        installation attempts, successes, and failures.
-
         .EXAMPLE
         Install-App -Name "Google Chrome" -Choco "googlechrome" -Winget "Google.Chrome"
     #>
 
-    param ([string]$Name,[string]$Choco,[string]$Winget,[string]$ITT,[string]$Scoop)
+    param ([string]$Source,[string]$Name,[string]$Choco,[string]$Winget,[string]$ITT,[string]$Scoop)
 
     # Helper function to install an app using a specific installer
     function Install-AppWithInstaller {
@@ -44,6 +37,13 @@ function Install-App {
     $wingetArgs = "install --id $Winget --silent --accept-source-agreements --accept-package-agreements --force"
     $chocoArgs = "install $Choco --confirm --acceptlicense -q --ignore-http-cache --limit-output --allowemptychecksumsecure --ignorechecksum --allowemptychecksum --usepackagecodes --ignoredetectedreboot --ignore-checksums --ignore-reboot-requests"
     $ittArgs = "install $ITT -y"
+
+    # TODO: Only Downloading with user prefences 
+    if($Source -ne "default"){
+
+        Write-Host "Testing...."
+        return
+    }
 
     # TODO: If Chocolatey is 'none', use Winget
     if ($Choco -eq "na" -and $Winget -eq "na" -and $Scoop -eq "na" -and $ITT -ne "na") {
