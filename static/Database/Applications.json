@@ -59,6 +59,7 @@
     "winget": "Microsoft.Edge",
     "choco": "microsoft-edge",
     "itt": "na",
+    "scoop": "na",
     "category": "Web Browsers"
   },
   {
@@ -67,6 +68,7 @@
     "winget": "eloston.ungoogled-chromium",
     "choco": "chromium",
     "itt": "na",
+    "scoop": "extras/chromium",
     "category": "Web Browsers"
   },
   {
