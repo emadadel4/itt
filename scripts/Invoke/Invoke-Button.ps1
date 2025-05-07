@@ -41,6 +41,24 @@ function Invoke-Button {
                 Debug-Message $action
             # debug end
         }
+        "auto" {
+            Set-ItemProperty -Path $itt.registryPath -Name "source" -Value "$action" -Force
+            # debug start
+                Write-Host $action
+            # debug end
+        }
+        "choco" {
+            Set-ItemProperty -Path $itt.registryPath -Name "source" -Value "$action" -Force
+            # debug start
+                Write-Host $action
+            # debug end
+        }
+        "winget" {
+            Set-ItemProperty -Path $itt.registryPath -Name "source" -Value "$action" -Force
+            # debug start
+                Write-Host $action
+            # debug end
+        }
         # Menu items
         "systemlang" {
             Set-Language -lang "default"
