@@ -48,7 +48,8 @@ function Check {
     param (
         [string]$choco,
         [string]$winget,
-        [string]$itt
+        [string]$itt,
+        [string]$scoop
     )
 
     $jsonContent = Get-Content -Path $applications -Raw | ConvertFrom-Json
@@ -65,6 +66,10 @@ function Check {
 
         }elseif ($item.itt -eq $itt -and $item.itt -ne "na") {
             Write-Host "($itt) already exists!" -ForegroundColor Yellow
+            exit
+        }
+        elseif ($item.scoop -eq $scoop -and $item.scoop -ne "na") {
+            Write-Host "($scoop) already exists!" -ForegroundColor Yellow
             exit
         }
     }
@@ -91,6 +96,7 @@ function Create-JsonObject {
     $jsonObject.itt = $downloadMethod.itt
     $jsonObject.winget = $downloadMethod.winget
     $jsonObject.choco = $downloadMethod.choco
+    $jsonObject.scoop = $downloadMethod.scoop
     $jsonObject.category += Category
     return $jsonObject
 }
@@ -105,7 +111,19 @@ function Download-Mthoed {
 
             $choco = ($choco -replace "choco install", "" -replace ",,", ",").Trim()
 
+<<<<<<< Updated upstream
             if ($choco -eq "") { $choco = "na" }  # Set default value if empty
+=======
+            # scoop input
+                $scoop = Read-Host "Enter scoop package"
+                if ($scoop -eq "") { $scoop = "na" }  # Set default value if empty
+            # scoop input
+            
+            # itt input 
+                $itt = Read-Host "Enter itt package name"
+                if ($itt -eq "") { $itt = "na" }  # Set default value if empty
+            # itt input 
+>>>>>>> Stashed changes
 
             Check -choco $choco
 
@@ -119,6 +137,7 @@ function Download-Mthoed {
 
             Check -winget $cleanedWinget
             return @{
+<<<<<<< Updated upstream
                 winget       = $cleanedWinget
                 choco        = $choco
                 itt          = "na"
@@ -137,6 +156,12 @@ function Download-Mthoed {
                 winget  = "na"
                 choco   = "na"
                 itt     = "$itt"
+=======
+                winget       =  $cleanedWinget
+                choco        =  $choco
+                itt          =  $itt
+                scoop        =  $scoop
+>>>>>>> Stashed changes
             }
         }
     }
@@ -204,6 +229,7 @@ if (Test-Path $applications) {
             winget      = $item.winget
             choco       = $item.choco
             itt         = $item.itt
+            scoop       = $item.scoop
             category    = $item.category
         }
     }
