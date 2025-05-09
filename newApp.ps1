@@ -19,8 +19,7 @@ Write-Host "
 #region Begin Prompt user to choose download method
 #===========================================================================
 $Mthoed = @{
-    1 = "API [Choco/Winget] Recommended"
-    2 = "ITT [in development]"
+    1 = "API [Choco/Winget/ITT]"
 }
 do {
 
@@ -85,8 +84,8 @@ function Create-JsonObject {
         description = $Description
         winget      = "na"
         choco       = "na"
-        scoop       = "na"
         itt         = "na"
+        scoop       = "na"
         category    = ""
     }
 
@@ -104,64 +103,38 @@ function Download-Mthoed {
     # Handle the selected method
     switch ($userInput) {
 
-        "API [Choco/Winget] Recommended" {
+        "API [Choco/Winget/ITT]" {
 
-            # Prompt the user for input
-            $choco = Read-Host "Enter Chocolatey package name"
+            # choco input 
+                $choco = Read-Host "Enter Chocolatey package name"
+                $choco = ($choco -replace "choco install", "" -replace ",,", ",").Trim()
+                if ($choco -eq "") { $choco = "na" }  # Set default value if empty
+            # choco Prompt 
 
-            $choco = ($choco -replace "choco install", "" -replace ",,", ",").Trim()
+            # winget input
+                $winget = Read-Host "Enter winget package"
+                if ($winget -eq "") { $winget = "na" }  # Set default value if empty
+                $cleanedWinget = $winget -replace "winget install -e --id", "" -replace "\s+", ""
+            # winget input
 
-<<<<<<< Updated upstream
-            if ($choco -eq "") { $choco = "na" }  # Set default value if empty
-=======
-            # scoop input
-                $scoop = Read-Host "Enter scoop package"
+            # itt scoop 
+                $itt = Read-Host "Enter scoop package name"
                 if ($scoop -eq "") { $scoop = "na" }  # Set default value if empty
-            # scoop input
-            
+            # itt scoop 
+                 
             # itt input 
                 $itt = Read-Host "Enter itt package name"
                 if ($itt -eq "") { $itt = "na" }  # Set default value if empty
             # itt input 
->>>>>>> Stashed changes
 
-            Check -choco $choco
+            # Check if there is dublicate 
+            Check -itt $itt -choco $choco -winget $winget -scoop $scoop
 
-            # Prompt the user for input
-            $winget = Read-Host "Enter winget package"
-
-            if ($winget -eq "") { $winget = "na" }  # Set default value if empty
-
-            # Remove the string 'winget install -e --id' and any spaces from the input
-            $cleanedWinget = $winget -replace "winget install -e --id", "" -replace "\s+", ""
-
-            Check -winget $cleanedWinget
             return @{
-<<<<<<< Updated upstream
                 winget       = $cleanedWinget
                 choco        = $choco
-                itt          = "na"
-            }
-        }
-
-        "ITT [in development]" {
-
-            # Prompt the user for input
-            $itt = Read-Host "Enter itt package name"
-            if ($itt -eq "") { $itt = "na" }  # Set default value if empty
-
-            Check -itt $itt
-
-            return @{
-                winget  = "na"
-                choco   = "na"
-                itt     = "$itt"
-=======
-                winget       =  $cleanedWinget
-                choco        =  $choco
-                itt          =  $itt
-                scoop        =  $scoop
->>>>>>> Stashed changes
+                itt          = $itt
+                scoop        = $scoop
             }
         }
     }
@@ -235,10 +208,11 @@ if (Test-Path $applications) {
     }
     # Write the ordered JSON to the file
     $jsonOutput | ConvertTo-Json -Depth 20 | Out-File -FilePath $applications -Encoding utf8
-    Write-Host "Added successfully, Don't forget to build and test it before push commit" -ForegroundColor Green
+    Write-Host "Added successfully, Don't forget to build and test it before PR!" -ForegroundColor Green
 } 
 else {
     Write-Host "The file $applications does not exist!" -ForegroundColor Red
+    exit
 }
 #===========================================================================
 #endregion end output json file
