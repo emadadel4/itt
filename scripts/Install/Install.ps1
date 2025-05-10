@@ -41,6 +41,7 @@ function Invoke-Install {
         return
     }
 
+
     ITT-ScriptBlock -ArgumentList $selectedApps $i $source -Debug $debug -ScriptBlock {
 
         param($selectedApps , $i, $source)
@@ -49,21 +50,19 @@ function Invoke-Install {
 
         $itt["window"].Dispatcher.Invoke([action] { Set-Taskbar -progress "Indeterminate" -value 0.01 -icon "logo" })
 
-        $itt.ProcessRunning = $true
-
         foreach ($App in $selectedApps) {
 
             Set-Statusbar -Text "⬇ Current task: Downloading $($App.Name)"
 
             # Some packages won't install until the package folder is removed.
-            $chocoFolder = Join-Path $env:ProgramData "chocolatey\lib\$($App.Choco)"
-            $ITTFolder = Join-Path $env:ProgramData "itt\downloads\$($App.ITT)"
+            #$chocoFolder = Join-Path $env:ProgramData "chocolatey\lib\$($App.Choco)"
+            #$ITTFolder = Join-Path $env:ProgramData "itt\downloads\$($App.ITT)"
 
-            Remove-Item -Path "$chocoFolder" -Recurse -Force
-            Remove-Item -Path "$chocoFolder.install" -Recurse -Force
-            Remove-Item -Path "$env:TEMP\chocolatey" -Recurse -Force
-            Remove-Item -Path "$ITTFolder" -Recurse -Force
-            
+            #Remove-Item -Path "$chocoFolder" -Recurse -Force
+            #Remove-Item -Path "$chocoFolder.install" -Recurse -Force
+            #Remove-Item -Path "$env:TEMP\chocolatey" -Recurse -Force
+            #Remove-Item -Path "$ITTFolder" -Recurse -Force
+
             $Install_result = Install-App -Source $itt.PackgeManager -Name $App.Name -Winget $App.Winget -Choco $App.Choco -itt $App.ITT
 
             if ($Install_result.Success) {
@@ -75,7 +74,7 @@ function Invoke-Install {
             }
             
             # debug start
-            if ($Debug) { Add-Log -Message "$($App.Choco) | $($App.Winget) | $($App.ITT)"  -Level "debug" }
+            if ($Debug) { Add-Log -Message "$($App.Choco) | $($App.Winget) | $($App.ITT) | $($App.Scoop)"   -Level "debug" }
             # debug end
         }
 

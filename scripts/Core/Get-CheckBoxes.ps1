@@ -25,7 +25,7 @@ function Get-SelectedItems {
                 
                 $checkbox = $item.Children[0].Children[0]
         
-                $tags = $item.Children[0].Children[0].Tag -split " \| "
+                $tags = $item.Children[0].Children[0].Tag -split "\|"
 
                 if ($checkbox.IsChecked) {
 
@@ -34,6 +34,8 @@ function Get-SelectedItems {
                         Choco   = $tags[0]
                         Winget  = $tags[1]
                         ITT     = $tags[2]
+                        Scoop   = $tags[3]
+
                     }
                 }
             }

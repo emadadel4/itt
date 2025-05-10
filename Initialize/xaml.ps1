@@ -8,10 +8,9 @@ $InitialSessionState = [System.Management.Automation.Runspaces.InitialSessionSta
 $InitialSessionState.Variables.Add($hashVars)
 
 $functions = @(
-    'Install-App', 'Install-Winget', 'InvokeCommand', 'Add-Log',
+    'Install-App', 'Install-Dependencies', 'InvokeCommand', 'Add-Log',
     'Disable-Service', 'Uninstall-AppxPackage', 'Finish', 'Message',
-    'Notify', 'UpdateUI', 'Install-ITTAChoco',
-    'ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
+    'Notify', 'UpdateUI','ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
     'Refresh-Explorer', 'Remove-ScheduledTasks','CreateRestorePoint','Set-Statusbar'
 )
 
