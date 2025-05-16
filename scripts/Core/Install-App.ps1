@@ -14,7 +14,7 @@ function Install-App {
         Install-App -Name "Google Chrome" -Choco "googlechrome" -Winget "Google.Chrome"
     #>
 
-    param ([string]$Source, [string]$Name,[string]$Choco,[string]$Winget,[string]$ITT)
+    param ([string]$Source, [string]$Name,[string]$Choco,[string]$Winget,[string]$ITT,[string]$scoop)
     
     # Arguments
     $wingetArgs = "install --id $Winget --silent --accept-source-agreements --accept-package-agreements --force"
@@ -68,7 +68,7 @@ function Install-App {
     }
 
     # TODO: If Chocolatey is 'none', use Winget
-    if ($Choco -eq "na" -and $Winget -eq "na" -and $itt -ne "na") {
+    if ($Choco -eq "na" -and $Winget -eq "na" -and $itt -ne "na" -and $scoop -ne "na") {
 
         Install-ITTAChoco
         Add-Log -Message "Attempting to install $Name." -Level "ITT"
