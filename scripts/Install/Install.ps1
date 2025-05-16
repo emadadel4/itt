@@ -64,7 +64,7 @@ function Invoke-Install {
             Remove-Item -Path "$env:TEMP\chocolatey" -Recurse -Force
             Remove-Item -Path "$ITTFolder" -Recurse -Force
             
-            $Install_result = Install-App -Source $itt.PackgeManager -Name $App.Name -Winget $App.Winget -Choco $App.Choco -itt $App.ITT
+            $Install_result = Install-App -Source $itt.PackgeManager -Name $App.Name -Winget $App.Winget -Choco $App.Choco -itt $App.ITT -Scoop $App.Scoop
 
             if ($Install_result.Success) {
                 Set-Statusbar -Text "✔ $($Install_result.Message)"
@@ -75,7 +75,7 @@ function Invoke-Install {
             }
             
             # debug start
-            if ($Debug) { Add-Log -Message "$($App.Choco) | $($App.Winget) | $($App.ITT)"  -Level "debug" }
+            if ($Debug) { Add-Log -Message "$($App.Choco) | $($App.Winget) | $($App.ITT) | $($App.Scoop)"  -Level "debug" }
             # debug end
         }
 
