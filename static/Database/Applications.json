@@ -3672,12 +3672,48 @@
     "category": "Documents"
   },
   {
-    "Name": "A Test",
-    "Description": "VLC SCOOP",
+    "Name": "Cursor",
+    "Description": "Cursor is an AI-first Code Editor",
     "winget": "na",
-    "choco": "na",
+    "choco": "cursoride",
     "itt": "na",
-    "scoop": "extras/vlc",
-    "category": "Documents"
+    "scoop": "na",
+    "category": "Development"
+  },
+  {
+    "Name": "Reason",
+    "Description": "A modular DAW and plug-in for music production",
+    "winget": "na",
+    "choco": "reasonstudios-reason13",
+    "itt": "na",
+    "scoop": "na",
+    "category": "Media Tools"
+  },
+  {
+    "Name": "Ruby",
+    "Description": "Ruby - A dynamic, open source programming language focusing on simplicity and productivity",
+    "winget": "RubyInstallerTeam.Ruby.3.1",
+    "choco": "ruby",
+    "itt": "na",
+    "scoop": "na",
+    "category": "Development"
+  },
+  {
+    "Name": "FastCopy",
+    "Description": "The Fastest Copy/Delete Software on Windows",
+    "winget": "FastCopy.FastCopy",
+    "choco": "fastcopy",
+    "itt": "na",
+    "scoop": "na",
+    "category": "Utilities"
+  },
+  {
+    "Name": "Forkgram",
+    "Description": "Fork of Telegram Desktop messaging app",
+    "winget": "na",
+    "choco": "forkgram",
+    "itt": "na",
+    "scoop": null,
+    "category": "Portable"
   }
 ]
