@@ -3963,7 +3963,7 @@ function Install-Dependencies {
             {
                 Add-Log -Message "Installing scoop... This might take few seconds" -Level "info"
                 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
-                Invoke-Expression "& {$(Invoke-RestMethod get.scoop.sh)} -RunAsAdmin"
+                Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
                 scoop bucket add extras
             }
         }
@@ -4387,7 +4387,7 @@ function Startup {
             Write-Host "  ██║  ██║ Adel ██║    "
             Write-Host "  ██║  ██║      ██║    "
             Write-Host "  ╚═╝  ╚═╝      ╚═╝    "
-            #UsageCount
+            UsageCount
             Write-Host "`n  ITT has been used $(GetCount) times worldwide.`n" -ForegroundColor White
             #Set-Statusbar -Text "🎉 ITT has been used 50 times worldwide."
         }
