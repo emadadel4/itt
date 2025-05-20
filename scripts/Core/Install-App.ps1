@@ -3,15 +3,6 @@ function Install-App {
     <#
         .SYNOPSIS
         Installs an application using either Chocolatey or Winget package managers.
-
-        .DESCRIPTION
-        The Install-App function automates the installation of applications using Chocolatey and Winget. 
-        It first attempts to install the application with Chocolatey if provided. If Chocolatey is not 
-        available or fails, it falls back to Winget for installation. The function also logs the 
-        installation attempts, successes, and failures.
-
-        .EXAMPLE
-        Install-App -Name "Google Chrome" -Choco "googlechrome" -Winget "Google.Chrome"
     #>
 
     param ([string]$Source, [string]$Name,[string]$Choco,[string]$Scoop,[string]$Winget,[string]$ITT)
