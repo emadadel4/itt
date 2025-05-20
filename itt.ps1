@@ -3815,16 +3815,20 @@ function Install-App {
         switch ($Source) {
 
             "choco" { 
+                Install-Dependencies -PKGMan "choco"
                 Install-AppWithInstaller "choco" $chocoArgs
                 return Log $LASTEXITCODE "Chocolatey"
             }
             "winget" {
-               Install-AppWithInstaller "winget" $wingetArgs
-               return Log $LASTEXITCODE "Winget"
+                Install-Winget
+                Install-Dependencies -PKGMan "winget"
+                Install-AppWithInstaller "winget" $wingetArgs
+                return Log $LASTEXITCODE "Winget"
             }
             "scoop" {
-               scoop install $scoopArgs --skip-hash-check
-               return Log $LASTEXITCODE "Scoop"
+                Install-Dependencies -PKGMan "scoop"
+                scoop install $scoopArgs --skip-hash-check
+                return Log $LASTEXITCODE "Scoop"
             }
         }
     }
@@ -3843,9 +3847,12 @@ function Install-App {
         # Skip choco and scoop
         if ($Choco -eq "na" -and $Scoop -eq "na" -and $Winget -ne "na") 
         {
-            Install-Winget
             Add-Log -Message "Attempting to install $Name." -Level "Winget"
+
+            Install-Winget
+            
             Start-Process -FilePath "winget" -ArgumentList "settings --enable InstallerHashOverride" -NoNewWindow -Wait -PassThru
+            
             $wingetResult = Install-AppWithInstaller "winget" $wingetArgs
             Log $wingetResult "Winget"
         }
@@ -3854,8 +3861,10 @@ function Install-App {
             # TODO: If choco is not equal to 'none' and winget is not equal to 'none', use choco first and fallback to scoop and if scoop is failed, use winget for last try
             if ($Choco -ne "na" -or $Winget -ne "na" -or $Scoop -ne "na") 
             {
-                Install-Dependencies -PKGMan "choco"
                 Add-Log -Message "Attempting to install $Name." -Level "Chocolatey"
+
+                Install-Dependencies -PKGMan "choco"
+
                 $chocoResult = Install-AppWithInstaller "choco" $chocoArgs
 
                 if ($chocoResult -ne 0) {
@@ -9652,8 +9661,8 @@ function Show-Event {
         $itt.event.FindName('date').text = '04/11/2025'.Trim()
         
     
-            $itt.event.FindName('preview').add_MouseLeftButtonDown({
-                    Start-Process('https://github.com/emadadel4/itt')
+            $itt.event.FindName('shell').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
                 })
             
             
@@ -9662,7 +9671,7 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('esg').add_MouseLeftButtonDown({
+            $itt.event.FindName('preview').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
@@ -9672,8 +9681,8 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('shell').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+            $itt.event.FindName('esg').add_MouseLeftButtonDown({
+                    Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
