@@ -39,39 +39,6 @@ function Install-Dependencies {
                 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) *> $null
             }
         }
-        "winget" { 
-
-            if(Get-Command winget -ErrorAction SilentlyContinue) {return}
-            $ComputerInfo = Get-ComputerInfo -ErrorAction Stop
-            $arch = [int](($ComputerInfo).OsArchitecture -replace '\D', '')
-
-            if ($ComputerInfo.WindowsVersion -lt "1809") {
-                Add-Log -Message "Winget is not supported on this version of Windows Upgrade to 1809 or newer." -Level "info" 
-                return
-            }
-
-            $VCLibs = "https://aka.ms/Microsoft.VCLibs.x$arch.14.00.Desktop.appx"
-            $UIXaml = "https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.8.6/Microsoft.UI.Xaml.2.8.x$arch.appx"
-            $WingetLatset = "https://aka.ms/getwinget"
-
-            try {
-                
-                Add-Log -Message "Installing Winget... This might take several minutes" -Level "info"
-                Start-BitsTransfer -Source $VCLibs -Destination "$env:TEMP\Microsoft.VCLibs.Desktop.appx"
-                Start-BitsTransfer -Source $UIXaml -Destination "$env:TEMP\Microsoft.UI.Xaml.appx"
-                Start-BitsTransfer -Source $WingetLatset -Destination "$env:TEMP\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
-
-                Add-AppxPackage "$env:TEMP\Microsoft.VCLibs.Desktop.appx"
-                Add-AppxPackage "$env:TEMP\Microsoft.UI.Xaml.appx"
-                Add-AppxPackage "$env:TEMP\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
-                Start-Sleep -Seconds 1
-                Add-Log -Message "Successfully installed Winget. Continuing to install selected apps..." -Level "info"
-                return
-            }
-            catch {
-                Write-Error "Failed to install $_"
-            }
-        }
         "scoop" {
 
             if (-not (Get-Command scoop -ErrorAction SilentlyContinue))
