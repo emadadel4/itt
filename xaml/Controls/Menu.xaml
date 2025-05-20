@@ -149,6 +149,7 @@
 
                 <MenuItem Name="auto" Header="Auto" ToolTip="Automatically install using the best available method"/>
                 <MenuItem Name="choco" Header="Choco" />
+                <MenuItem Name="scoop" Header="Scoop" />
                 <MenuItem Name="winget" Header="Winget"/>
 
             </MenuItem>
