@@ -4402,7 +4402,7 @@ function Startup {
             Write-Host "  ██║  ██║ Adel ██║    "
             Write-Host "  ██║  ██║      ██║    "
             Write-Host "  ╚═╝  ╚═╝      ╚═╝    "
-            UsageCount
+            #UsageCount
             Write-Host "`n  ITT has been used $(GetCount) times worldwide.`n" -ForegroundColor White
             #Set-Statusbar -Text "🎉 ITT has been used 50 times worldwide."
         }
@@ -9661,8 +9661,8 @@ function Show-Event {
         $itt.event.FindName('date').text = '04/11/2025'.Trim()
         
     
-            $itt.event.FindName('shell').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+            $itt.event.FindName('ytv').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=QmO82OTsU5c')
                 })
             
             
@@ -9676,8 +9676,8 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('ytv').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=QmO82OTsU5c')
+            $itt.event.FindName('shell').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
                 })
             
             
