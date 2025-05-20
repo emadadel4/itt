@@ -3768,15 +3768,6 @@ function Install-App {
     <#
         .SYNOPSIS
         Installs an application using either Chocolatey or Winget package managers.
-
-        .DESCRIPTION
-        The Install-App function automates the installation of applications using Chocolatey and Winget. 
-        It first attempts to install the application with Chocolatey if provided. If Chocolatey is not 
-        available or fails, it falls back to Winget for installation. The function also logs the 
-        installation attempts, successes, and failures.
-
-        .EXAMPLE
-        Install-App -Name "Google Chrome" -Choco "googlechrome" -Winget "Google.Chrome"
     #>
 
     param ([string]$Source, [string]$Name,[string]$Choco,[string]$Scoop,[string]$Winget,[string]$ITT)
@@ -9661,8 +9652,8 @@ function Show-Event {
         $itt.event.FindName('date').text = '04/11/2025'.Trim()
         
     
-            $itt.event.FindName('ytv').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=QmO82OTsU5c')
+            $itt.event.FindName('esg').add_MouseLeftButtonDown({
+                    Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
@@ -9676,13 +9667,13 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('shell').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+            $itt.event.FindName('ytv').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=QmO82OTsU5c')
                 })
             
             
-            $itt.event.FindName('esg').add_MouseLeftButtonDown({
-                    Start-Process('https://github.com/emadadel4/itt')
+            $itt.event.FindName('shell').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
                 })
             
             
