@@ -35,26 +35,54 @@ function Install-App {
         }
     }
 
-    if($Source -ne "auto")
-    {
+     # If specific package manager is requested
+     if ($Source -ne "auto") {
 
-        switch ($Source) {
-
+        switch ($Source.ToLower()) {
             "choco" { 
+                
+                if ($Choco -eq "na") {
+                    Add-Log -Message "Chocolatey package not available for $Name" -Level "WARNING"
+                    return @{ Success = $false; Message = "No Chocolatey package specified" }
+                }
+
                 Install-Dependencies -PKGMan "choco"
-                $LASTEXITCODE = Install-AppWithInstaller "choco" $chocoArgs
+
+                $exitCode = Install-AppWithInstaller "choco" $chocoArgs
+
+                return Log $exitCode "Chocolatey"
             }
             "winget" {
+
+                if ($Winget -eq "na") {
+                    Add-Log -Message "Winget package not available for $Name" -Level "WARNING"
+                    return @{ Success = $false; Message = "No Winget package specified" }
+                }
+
                 Install-Dependencies -PKGMan "winget"
-                $LASTEXITCODE = Install-AppWithInstaller "winget" $wingetArgs
+
+                $exitCode = Install-AppWithInstaller "winget" $wingetArgs
+
+                return Log $exitCode "Winget"
             }
             "scoop" {
+
+                if ($Scoop -eq "na") {
+                    Add-Log -Message "Scoop package not available for $Name" -Level "WARNING"
+                    return @{ Success = $false; Message = "No Scoop package specified" }
+                }
+
                 Install-Dependencies -PKGMan "scoop"
+
                 $LASTEXITCODE = scoop install $scoopArgs
+
+                return Log $LASTEXITCODE "Scoop"
+            }
+            default {
+                Add-Log -Message "Invalid package manager specified: $Source" -Level "ERROR"
+                return @{ Success = $false; Message = "Invalid package manager" }
             }
         }
-
-        return Log $LASTEXITCODE $Source
     }
 
     # TODO: if all package managers are 'none', use itt
@@ -97,7 +125,7 @@ function Install-App {
 
                     Install-Dependencies -PKGMan "scoop"
 
-                    scoop install $scoopArgs --skip-hash-check
+                    scoop install $scoopArgs
 
                     if ($LASTEXITCODE -ne 0) {
 
