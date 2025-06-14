@@ -41,41 +41,38 @@ function Invoke-Apply {
 
         $itt["window"].Dispatcher.Invoke([action] { Set-Taskbar -progress "Indeterminate" -value 0.01 -icon "logo" })
 
-        foreach ($tweak in $selectedTweaks) {
-            Add-Log -Message "::::$($tweak.Name)::::" -Level "default"
-            $tweak | ForEach-Object {
-                if ($_.Script -and $_.Script.Count -gt 0) {
-                    ExecuteCommand -tweak $tweak.Script
-                    if ($_.Refresh -eq $true) {
-                        Refresh-Explorer
-                    }
-                } 
-                if ($_.Registry -and $_.Registry.Count -gt 0) {
-                    Set-Registry -tweak $tweak.Registry
-                    if ($_.Refresh -eq $true) {
-                        Refresh-Explorer
-                    }
-                } 
-                if ($_.AppxPackage -and $_.AppxPackage.Count -gt 0) {
-                    Uninstall-AppxPackage -tweak $tweak.AppxPackage
-                    if ($_.Refresh -eq $true) {
-                        Refresh-Explorer
-                    }
-                } 
-                if ($_.ScheduledTask -and $_.ScheduledTask.Count -gt 0) {
-                    Remove-ScheduledTasks -tweak $tweak.ScheduledTask
-                    if ($_.Refresh -eq $true) {
-                        Refresh-Explorer
-                    }
-                } 
-                if ($_.Services -and $_.Services.Count -gt 0) {
-                    Disable-Service -tweak $tweak.Services
-                    if ($_.Refresh -eq $true) {
-                        Refresh-Explorer
-                    }
-                } 
+        Add-Log -Message "::::$($selectedTweaks.Name)::::" -Level "default"
+
+        if ($selectedTweaks.Script -and $selectedTweaks.Script.Count -gt 0) {
+            ExecuteCommand -tweak $selectedTweaks.Script
+            if ($selectedTweaks.Refresh -eq $true) {
+                Refresh-Explorer
             }
-        }
+        } 
+        if ($selectedTweaks.Registry -and $selectedTweaks.Registry.Count -gt 0) {
+            Set-Registry -tweak $selectedTweaks.Registry
+            if ($selectedTweaks.Refresh -eq $true) {
+                Refresh-Explorer
+            }
+        } 
+        if ($selectedTweaks.AppxPackage -and $selectedTweaks.AppxPackage.Count -gt 0) {
+            Uninstall-AppxPackage -tweak $selectedTweaks.AppxPackage
+            if ($selectedTweaks.Refresh -eq $true) {
+                Refresh-Explorer
+            }
+        } 
+        if ($selectedTweaks.ScheduledTask -and $selectedTweaks.ScheduledTask.Count -gt 0) {
+            Remove-ScheduledTasks -tweak $selectedTweaks.ScheduledTask
+            if ($selectedTweaks.Refresh -eq $true) {
+                Refresh-Explorer
+            }
+        } 
+        if ($selectedTweaks.Services -and $selectedTweaks.Services.Count -gt 0) {
+            Disable-Service -tweak $selectedTweaks.Services
+            if ($selectedTweaks.Refresh -eq $true) {
+                Refresh-Explorer
+            }
+        } 
 
         $itt.ProcessRunning = $false
         Finish -ListView "TweaksListView"
