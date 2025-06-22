@@ -55,7 +55,7 @@ Start-Transcript -Path "$logDir\log_$timestamp.log" -Append -NoClobber *> $null
 
 $valid = @(
   "irm bit.ly/ittea | iex",
-  "irm raw.githubusercontent.com/emadadel4/itt/main/itt.ps1 | iex",
+  "irm raw.githubusercontent.com/emadadel4/itt/update/itt.ps1 | iex",
   "irm emadadel4.github.io/itt.ps1 | iex"
 )
 if ($MyInvocation.MyCommand.Definition -notin $valid) { 
