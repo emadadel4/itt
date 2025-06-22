@@ -629,7 +629,7 @@ try {
 #===========================================================================
 "@
     Convert-Locales
-    Sync-JsonFiles -DatabaseDirectory $DatabaseDirectory -OutputScriptPath $OutputScript -Skip @("OST.json", "Quotes.json","Applications.json","Settings.json")
+    Sync-JsonFiles -DatabaseDirectory $DatabaseDirectory -OutputScriptPath $OutputScript -Skip @("OST.json", "Quotes.json","Settings.json","Applications.json","Tweaks.json")
     WriteToScript -Content @"
 #===========================================================================
 #endregion End Database /APPS/TWEEAKS/Quotes/OST/Settings
@@ -689,8 +689,8 @@ try {
         Write-Error "An error occurred while processing the XAML content: $($_.Exception.Message)"
         break
     }
-    $AppsCheckboxes = GenerateCheckboxes -Database $itt.database.Applications -ContentField "Name" -TagField "Category"
-    $TweaksCheckboxes = GenerateCheckboxes -Database $itt.database.Tweaks -ContentField "Name" -TagField "Category" -IsCheckedField "check"
+    #$AppsCheckboxes = GenerateCheckboxes -Database $itt.database.Applications -ContentField "Name" -TagField "Category"
+    #$TweaksCheckboxes = GenerateCheckboxes -Database $itt.database.Tweaks -ContentField "Name" -TagField "Category" -IsCheckedField "check"
     $SettingsCheckboxes = GenerateCheckboxes -Database $itt.database.Settings -ContentField "Name" -NameField "Name" -ToggleField "Style=" { StaticResource ToggleSwitchStyle }""
     $MainXamlContent = $MainXamlContent -replace "{{Apps}}", $AppsCheckboxes 
     $MainXamlContent = $MainXamlContent -replace "{{Tweaks}}", $TweaksCheckboxes 
