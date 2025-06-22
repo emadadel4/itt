@@ -183,7 +183,6 @@ $itt.applyIcon = $itt["window"].FindName("applyIcon")
 $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
 
 
-Write-Host "Hang tight! Getting the newest stuff for you..."
 $itt.database.Applications = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/Applications.json"
 $itt.database.Tweaks = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/Tweaks.json"
 $itt.TweaksListView.ItemsSource = $itt.database.Tweaks
