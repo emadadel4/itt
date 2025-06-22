@@ -4508,13 +4508,13 @@ function Show-Event {
         $itt.event.FindName('date').text = '06/08/2025'.Trim()
         
     
-            $itt.event.FindName('esg').add_MouseLeftButtonDown({
+            $itt.event.FindName('preview2').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
-            $itt.event.FindName('shell').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+            $itt.event.FindName('esg').add_MouseLeftButtonDown({
+                    Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
@@ -4523,8 +4523,8 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('preview2').add_MouseLeftButtonDown({
-                    Start-Process('https://github.com/emadadel4/itt')
+            $itt.event.FindName('shell').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
                 })
             
             
@@ -5018,12 +5018,13 @@ $itt.applyText = $itt["window"].FindName("applyText")
 $itt.applyIcon = $itt["window"].FindName("applyIcon")
 $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
 
+
+Write-Host "Checking for Update..."
 $itt.database.Applications = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/Applications.json"
 $itt.database.Tweaks = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/Tweaks.json"
-
 $itt.TweaksListView.ItemsSource = $itt.database.Tweaks
 $itt.AppsListView.ItemsSource = $itt.database.Applications
-
+Write-Host "Done."
 
 #===========================================================================
 #endregion Initialize WPF Controls
