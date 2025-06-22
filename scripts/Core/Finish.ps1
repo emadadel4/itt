@@ -52,12 +52,13 @@ function Finish {
         })
 }
 function Show-Selected {
+    
     param (
         [string]$ListView,
         [string]$mode
     )
 
-    $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.Items)
+    $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.ItemsSource)
 
     switch ($mode) {
         "Filter" {
@@ -65,7 +66,7 @@ function Show-Selected {
                 param ($item)
 
                 # Check if item is selected
-                return $item.Children[0].Children[0].IsChecked -eq $true
+                return $item.IsChecked -eq $true
             }
         }
         Default {
@@ -74,7 +75,7 @@ function Show-Selected {
                 param ($item)
 
                 # Uncheck all checkboxes
-                $item.Children[0].Children[0].IsChecked = $false
+                $item.IsChecked = $false
             }
 
             # Reset collection view
