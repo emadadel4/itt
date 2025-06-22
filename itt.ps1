@@ -1499,7 +1499,7 @@ function Startup {
             Write-Host "  ██║  ██║ Adel ██║    "
             Write-Host "  ██║  ██║      ██║    "
             Write-Host "  ╚═╝  ╚═╝      ╚═╝    "
-            UsageCount
+            #UsageCount
             Write-Host "`n  ITT has been used $(GetCount) times worldwide.`n" -ForegroundColor White
             #Set-Statusbar -Text "🎉 ITT has been used 50 times worldwide."
         }
@@ -4508,12 +4508,7 @@ function Show-Event {
         $itt.event.FindName('date').text = '06/08/2025'.Trim()
         
     
-            $itt.event.FindName('preview').add_MouseLeftButtonDown({
-                    Start-Process('https://github.com/emadadel4/itt')
-                })
-            
-            
-            $itt.event.FindName('preview2').add_MouseLeftButtonDown({
+            $itt.event.FindName('esg').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
@@ -4523,7 +4518,12 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('esg').add_MouseLeftButtonDown({
+            $itt.event.FindName('preview').add_MouseLeftButtonDown({
+                    Start-Process('https://github.com/emadadel4/itt')
+                })
+            
+            
+            $itt.event.FindName('preview2').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
