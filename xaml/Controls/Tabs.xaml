@@ -153,18 +153,16 @@
 
                         <!--End AppsCategory-->
 
-
-
                         <ListView x:Name="appslist" Margin="10" Grid.Row="1">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel>
-                                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                    <StackPanel Orientation="Vertical" Margin="10">
+                                        <CheckBox Content="{Binding Name}" FontSize="15" IsChecked="{Binding IsChecked}"/>
+                                        <TextBlock Margin="2 8 0 0" Foreground="{DynamicResource TextColorSecondaryColor2}" FontSize="15" Text="{Binding Description}" TextWrapping="Wrap" Width="700"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-
             </Grid> 
 
             </TabItem>
@@ -264,8 +262,9 @@
                         <ListView x:Name="tweakslist" Margin="10" Grid.Row="1">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel>
-                                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                    <StackPanel Orientation="Vertical" Margin="10">
+                                        <CheckBox Content="{Binding Name}" FontSize="15" IsChecked="{Binding IsChecked}"/>
+                                        <TextBlock Margin="2 8 0 0" Foreground="{DynamicResource TextColorSecondaryColor2}" FontSize="15" Text="{Binding Description}" TextWrapping="Wrap" Width="700"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
