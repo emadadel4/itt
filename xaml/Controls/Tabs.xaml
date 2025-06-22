@@ -153,16 +153,17 @@
 
                         <!--End AppsCategory-->
 
-                <ListView Name="appslist" 
-                    AlternationCount="2"
-                    Grid.Row="1">
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel />
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
-                    {{Apps}}
-                </ListView>
+
+
+                        <ListView x:Name="appslist" Margin="10" Grid.Row="1">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
 
             </Grid> 
 
@@ -178,7 +179,6 @@
                             </StackPanel>
                         </DataTemplate>
                 </TabItem.HeaderTemplate>
-            
 
                 <Grid>
 
@@ -261,17 +261,15 @@
                         </ComboBox>
                     <!--End TwaeksCategory-->
 
-                   <ListView Name="tweakslist" 
-                        Grid.Row="1"
-                        AlternationCount="2">
-                        <ListView.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <VirtualizingStackPanel />
-                            </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                        {{Tweaks}}
-                    </ListView>
-
+                        <ListView x:Name="tweakslist" Margin="10" Grid.Row="1">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                 </Grid>
                 
             </TabItem>
@@ -286,7 +284,6 @@
                         </DataTemplate>
                 </TabItem.HeaderTemplate>
 
-
                     <ListView Name="SettingsList" 
                         AlternationCount="2">
                         <ListView.ItemsPanel>
@@ -296,6 +293,7 @@
                         </ListView.ItemsPanel>
                         {{Settings}}
                     </ListView>
+                    
             </TabItem>
 
     </TabControl>
