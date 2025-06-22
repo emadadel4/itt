@@ -9,7 +9,7 @@ $InitialSessionState.Variables.Add($hashVars)
 
 $functions = @(
     'Install-App','Install-Dependencies','InvokeCommand', 'Add-Log',
-    'Disable-Service', 'Uninstall-AppxPackage', 'Finish', 'Message',
+    'Disable-Service', 'Uninstall-AppxPackage', 'Finalize', 'Message',
     'Notify','UpdateUI', 'ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
     'Refresh-Explorer','Remove-ScheduledTasks','CreateRestorePoint','Set-Statusbar'
 )
@@ -182,12 +182,13 @@ $itt.applyText = $itt["window"].FindName("applyText")
 $itt.applyIcon = $itt["window"].FindName("applyIcon")
 $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
 
+
+Write-Host "Checking for Update..."
 $itt.database.Applications = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/Applications.json"
 $itt.database.Tweaks = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/Tweaks.json"
-
 $itt.TweaksListView.ItemsSource = $itt.database.Tweaks
 $itt.AppsListView.ItemsSource = $itt.database.Applications
-
+Write-Host "Done."
 
 #===========================================================================
 #endregion Initialize WPF Controls

@@ -82,6 +82,6 @@ function Invoke-Apply {
         }
 
         $itt.ProcessRunning = $false
-        Finish -ListView "TweaksListView"
+        Finalize -ListView "TweaksListView"
     }
 }

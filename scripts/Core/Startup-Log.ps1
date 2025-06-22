@@ -116,7 +116,7 @@ function Startup {
             Write-Host "  ██║  ██║ Adel ██║    "
             Write-Host "  ██║  ██║      ██║    "
             Write-Host "  ╚═╝  ╚═╝      ╚═╝    "
-            UsageCount
+            #UsageCount
             Write-Host "`n  ITT has been used $(GetCount) times worldwide.`n" -ForegroundColor White
             #Set-Statusbar -Text "🎉 ITT has been used 50 times worldwide."
         }

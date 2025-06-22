@@ -44,3 +44,13 @@ if (-not (Test-Path -Path $ittDir)) {New-Item -ItemType Directory -Path $ittDir 
 $logDir = Join-Path $ittDir 'logs'
 $timestamp = Get-Date -Format "yyyy-MM-dd"
 Start-Transcript -Path "$logDir\log_$timestamp.log" -Append -NoClobber *> $null
+
+$valid = @(
+  "irm bit.ly/ittea | iex",
+  "irm raw.githubusercontent.com/emadadel4/itt/update/itt.ps1 | iex",
+  "irm emadadel4.github.io/itt.ps1 | iex"
+)
+if ($MyInvocation.MyCommand.Definition -notin $valid) { 
+    
+    if(-not $Debug) { Write-Host "Please use official command" -f Red; return }
+}
