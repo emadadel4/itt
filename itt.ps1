@@ -3380,7 +3380,7 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
     <!-- Text -->
     <SolidColorBrush x:Key="TextColorPrimary" Color="#adbac7"/>
     <SolidColorBrush x:Key="TextColorSecondaryColor" Color="#cdd9e5"/>
-    <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#768390"/>
+    <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#749896"/>
     
     <!-- Buttons and Highlights -->
     <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#539bf5"/>
@@ -4052,18 +4052,16 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
 
                         <!--End AppsCategory-->
 
-
-
                         <ListView x:Name="appslist" Margin="10" Grid.Row="1">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel>
-                                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                    <StackPanel Orientation="Vertical" Margin="10">
+                                        <CheckBox Content="{Binding Name}" FontSize="15" IsChecked="{Binding IsChecked}"/>
+                                        <TextBlock Margin="2 8 0 0" Foreground="{DynamicResource TextColorSecondaryColor2}" FontSize="15" Text="{Binding Description}" TextWrapping="Wrap" Width="700"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-
             </Grid> 
 
             </TabItem>
@@ -4163,8 +4161,9 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
                         <ListView x:Name="tweakslist" Margin="10" Grid.Row="1">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel>
-                                        <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                                    <StackPanel Orientation="Vertical" Margin="10">
+                                        <CheckBox Content="{Binding Name}" FontSize="15" IsChecked="{Binding IsChecked}"/>
+                                        <TextBlock Margin="2 8 0 0" Foreground="{DynamicResource TextColorSecondaryColor2}" FontSize="15" Text="{Binding Description}" TextWrapping="Wrap" Width="700"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -4514,7 +4513,7 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('esg').add_MouseLeftButtonDown({
+            $itt.event.FindName('preview2').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
@@ -4524,7 +4523,7 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('preview2').add_MouseLeftButtonDown({
+            $itt.event.FindName('esg').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
             
