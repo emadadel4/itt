@@ -21,20 +21,16 @@ function Get-SelectedItems {
 
             $items = @()  
 
-            foreach ($item in $itt.AppsListView.Items) {
+            foreach ($item in $itt.AppsListView.ItemsSource) {
                 
-                $checkbox = $item.Children[0].Children[0]
-        
-                $tags = $item.Children[0].Children[0].Tag -split "\|"
-
-                if ($checkbox.IsChecked) {
+                if ($item.IsChecked) {
 
                     $items += @{
-                        Name    = $checkbox.Content
-                        Choco   = $tags[0]
-                        Scoop   = $tags[1]
-                        Winget  = $tags[2]
-                        ITT     = $tags[3]
+                        Name    = $item.Name
+                        Choco   = $item.Choco
+                        Scoop   = $item.Scoop
+                        Winget  = $item.Winget
+                        ITT     = $item.itt
                     }
                 }
             }
@@ -43,22 +39,20 @@ function Get-SelectedItems {
 
             $items = @()  
 
-            foreach ($item in $itt.TweaksListView.Items) {
-                
-                $child = $item.Children[0].Children[0]
+            foreach ($item in $itt.TweaksListView.ItemsSource) {
 
-                if ($tweaksDict.ContainsKey($child.Content) -and $child.IsChecked) {
+                if ($item.IsChecked) {
 
                     $items += @{
 
-                        Name          = $tweaksDict[$child.Content].Name
-                        Registry      = $tweaksDict[$child.Content].Registry
-                        Services      = $tweaksDict[$child.Content].Services
-                        ScheduledTask = $tweaksDict[$child.Content].ScheduledTask
-                        AppxPackage   = $tweaksDict[$child.Content].AppxPackage
-                        Script        = $tweaksDict[$child.Content].Script
-                        UndoScript    = $tweaksDict[$child.Content].UndoScript
-                        Refresh       = $tweaksDict[$child.Content].Refresh
+                        Name          = $item.Name
+                        Registry      = $item.Registry
+                        Services      = $item.Services
+                        ScheduledTask = $item.ScheduledTask
+                        AppxPackage   = $item.AppxPackage
+                        Script        = $item.Script
+                        UndoScript    = $item.UndoScript
+                        Refresh       = $item.Refresh
                         # Add a new tweak method here
                     }
                 }
