@@ -183,13 +183,12 @@ $itt.applyIcon = $itt["window"].FindName("applyIcon")
 $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
 
 
-Write-Host "Checking for Update..."
+Write-Host "Hang tight! Getting the newest stuff for you..."
 $itt.database.Applications = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/Applications.json"
 $itt.database.Tweaks = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/Tweaks.json"
 $itt.TweaksListView.ItemsSource = $itt.database.Tweaks
 $itt.AppsListView.ItemsSource = $itt.database.Applications
-Write-Host "Done."
-
+Write-Host "That was faster than deleting your search history :)"
 #===========================================================================
 #endregion Initialize WPF Controls
 #===========================================================================
