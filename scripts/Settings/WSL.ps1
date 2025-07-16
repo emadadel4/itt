@@ -12,12 +12,14 @@ function Invoke-WSL {
             Add-Log -Message "Enabling WSL2..." -Level "info"
             Start-Process powershell -ArgumentList 'dism.exe /online /enable-feature /featurename:"Microsoft-Windows-Subsystem-Linux" /all /norestart' -Verb RunAs
             Start-Process powershell -ArgumentList 'dism.exe /online /enable-feature /featurename:"VirtualMachinePlatform" /all /norestart' -Verb RunAs
+            Read-Host "Press ENTER to exit..."
             Add-Log -Message "Restart required" -Level "info"
         }
         else {
             Add-Log -Message "Disabling WSL2..." -Level "info"
             Start-Process powershell -ArgumentList 'dism.exe /online /disable-feature /featurename:"Microsoft-Windows-Subsystem-Linux" /norestart' -Verb RunAs
             Start-Process powershell -ArgumentList 'dism.exe /online /disable-feature /featurename:"VirtualMachinePlatform" /norestart' -Verb RunAs
+            Read-Host "Press ENTER to exit..."
             Add-Log -Message "Restart required" -Level "info"
         }
     }
