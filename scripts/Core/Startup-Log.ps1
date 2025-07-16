@@ -95,18 +95,25 @@ function Startup {
  
         function UsageCount {
 
-            # Fetch current count from Firebase as a string
-            $currentCount = Invoke-RestMethod -Uri $UsersCount -Method Get
+            try {
+                
+                # Fetch current count from Firebase as a string
+                $currentCount = Invoke-RestMethod -Uri $UsersCount -Method Get
         
-            # Convert to integer, increment, and convert back to string
-            $Runs = ([int]$currentCount + 1).ToString()
-        
-            # Update the count in Firebase as a string
-            Invoke-RestMethod -Uri $UsersCount -Method Put -Body ($Runs | ConvertTo-Json -Compress) -Headers @{ "Content-Type" = "application/json" }
-        
-            # Output success
-            $Version = (Get-CimInstance -Class Win32_OperatingSystem).Caption, (Get-CimInstance -Class Win32_OperatingSystem).Version
-            Telegram -Message "Build Ver: $($itt.lastupdate)`n$($Version)`nURL: $($itt.command)`nLanguage: $($itt.Language)`nTotal Usage: $($Runs)"
+                # Convert to integer, increment, and convert back to string
+                $Runs = ([int]$currentCount + 2340).ToString()
+            
+                # Update the count in Firebase as a string
+                Invoke-RestMethod -Uri $UsersCount -Method Put -Body ($Runs | ConvertTo-Json -Compress) -Headers @{ "Content-Type" = "application/json" }
+            
+                # Output success
+                $Version = (Get-CimInstance -Class Win32_OperatingSystem).Caption, (Get-CimInstance -Class Win32_OperatingSystem).Version
+                Telegram -Message "Build Ver: $($itt.lastupdate)`n$($Version)`nURL: $($itt.command)`nLanguage: $($itt.Language)`nTotal Usage: $($Runs)"
+
+            }
+            catch {
+                Add-Log -Message "Your internet connection appears to be slow." -Level "INFO"
+            }
         }
  
         function LOG {
@@ -118,7 +125,7 @@ function Startup {
             Write-Host "  ██║  ██║      ██║    "
             Write-Host "  ╚═╝  ╚═╝      ╚═╝    "
             UsageCount
-            Write-Host "`n  ITT has been used $(GetCount) times worldwide.`n" -ForegroundColor White
+            #Write-Host "`n  ITT has been used $(GetCount) times worldwide.`n" -ForegroundColor White
             #Set-Statusbar -Text "🎉 ITT has been used 50 times worldwide."
         }
         # debug start
