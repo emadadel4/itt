@@ -3621,11 +3621,16 @@ Start-Sleep 25
 } while ($true)
 }
 function UsageCount {
+try {
 $currentCount = Invoke-RestMethod -Uri $UsersCount -Method Get
-$Runs = ([int]$currentCount + 1).ToString()
+$Runs = ([int]$currentCount + 2340).ToString()
 Invoke-RestMethod -Uri $UsersCount -Method Put -Body ($Runs | ConvertTo-Json -Compress) -Headers @{ "Content-Type" = "application/json" }
 $Version = (Get-CimInstance -Class Win32_OperatingSystem).Caption, (Get-CimInstance -Class Win32_OperatingSystem).Version
 Telegram -Message "Build Ver: $($itt.lastupdate)`n$($Version)`nURL: $($itt.command)`nLanguage: $($itt.Language)`nTotal Usage: $($Runs)"
+}
+catch {
+Add-Log -Message "Your internet connection appears to be slow." -Level "INFO"
+}
 }
 function LOG {
 Write-Host "  `n` "
@@ -3636,7 +3641,6 @@ Write-Host "  ██║  ██║ Adel ██║    "
 Write-Host "  ██║  ██║      ██║    "
 Write-Host "  ╚═╝  ╚═╝      ╚═╝    "
 UsageCount
-Write-Host "`n  ITT has been used $(GetCount) times worldwide.`n" -ForegroundColor White
 }
 LOG
 PlayMusic
@@ -8323,9 +8327,6 @@ $itt.event.FindName('closebtn').add_MouseLeftButtonDown({ $itt.event.Close() })
 $itt.event.FindName('DisablePopup').add_MouseLeftButtonDown({ Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 1 -Force; $itt.event.Close() })
 $itt.event.FindName('title').text = 'Changelog'.Trim()
 $itt.event.FindName('date').text = '07/01/2025'.Trim()
-$itt.event.FindName('shell').add_MouseLeftButtonDown({
-Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
-})
 $itt.event.FindName('preview').add_MouseLeftButtonDown({
 Start-Process('https://t.me/+BjM2Xjpvw_s3ZDhk')
 })
@@ -8334,6 +8335,9 @@ Start-Process('https://github.com/emadadel4/itt')
 })
 $itt.event.FindName('preview2').add_MouseLeftButtonDown({
 Start-Process('https://github.com/emadadel4/itt')
+})
+$itt.event.FindName('shell').add_MouseLeftButtonDown({
+Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
 })
 $storedDate = [datetime]::ParseExact($itt.event.FindName('date').Text, 'MM/dd/yyyy', $null)
 $daysElapsed = (Get-Date) - $storedDate
