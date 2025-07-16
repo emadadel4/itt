@@ -1,0 +1,73 @@
+Key,Text
+name,Deutsch
+Welcome,Sparen Sie Zeit indem Sie mehrere Programme gleichzeitig instAllieren und die Leistung Ihres Windows steigern. Schließen Sie sich uns an um dieses Tool zu verbessern und noch besser zu machen. Sie können auch Ihre Lieblings-Musik-Apps und Anpassungen hinzufügen.
+Install,InstAllieren
+Apply,Anwenden
+Downloading,Herunterladen...
+About,Über
+Third_party,Drittanbieter
+Preferences,Einstellungen
+Management,Verwaltung
+Apps,Apps
+Tweaks,Optimierungen
+Settings,Einstellungen
+Save,Speichern
+Restore,Wiederherstellen
+Music,Musik
+On,Ein
+Off,Aus
+Disk_Managment,Datenträgerverwaltung
+Msconfig,Systemkonfiguration
+Environment_Variables,Umgebungsvariablen
+Task_Manager,Task-Manager
+Apps_features,Apps-FunktiOnen
+Networks,Netzwerke
+Services,Dienste
+Device_Manager,Geräte-Manager
+Power_Options,EnergieoptiOnen
+System_Info,Systeminfo
+Use_system_setting,Systemeinstellungen verwenden
+Create_desktop_shortcut,Desktop-Verknüpfung erstellen
+Reset_preferences,Einstellungen zurücksetzen
+Reopen_itt_again,Bitte ITT erneut öffnen.
+Theme,Thema
+Language,Sprache
+Browsers_extensions,Browser-Erweiterungen
+All,Alle
+Search,Suchen
+Create_restore_point,Wiederherstellungspunkt erstellen
+Portable_Downloads_Folder,Ordner für tragbare Downloads
+Install_msg,Sind Sie sicher  dass Sie die folgenden Anwendungen instAllieren möchten?
+Apply_msg,Sind Sie sicher dass Sie die folgenden Anpassungen anwenden möchten?
+Applying,Anwenden...
+Please_wait,Bitte warten ein Prozess läuft im Hintergrund
+Last_update,Letztes Update
+Exit_msg,Sind Sie sicher dass Sie das Programm schließen möchten? Alle InstAllatiOnen werden abgebrochen.
+Empty_save_msg,Wählen Sie mindestens eine App zum Speichern aus
+easter_egg, Kannst du das verborgene Geheimnis entdecken? Tauche in den Quellcode ein sei der erste der die Funktion entdeckt und integriere sie in das Tool
+system_protection, Systemschutz
+web browsers,Webbrowser
+media,Medien
+media tools,Medienwerkzeuge
+documents,Dokumente
+compression,Komprimierung
+communication,Kommunikation
+file sharing,Dateifreigabe
+imaging,Bildbearbeitung
+gaming,Spiele
+utilities,Dienstprogramme
+disk tools,Laufwerkswerkzeuge
+development,Entwicklung
+security,Sicherheit
+portable,Tragbar
+runtimes,Laufzeitumgebungen
+drivers,Treiber
+privacy,Datenschutz
+fixer,Reparierer
+performance,Leistung
+personalization,Personalisierung
+power,Energie
+protection,Schutz
+classic,Klassisch
+auto,automatisch
+package_manager,Manager der Pakete

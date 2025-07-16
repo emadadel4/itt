@@ -1,0 +1,73 @@
+Key,Text
+name,Русский
+Welcome,Сэкономьте время устанавливая несколько программ одновременно и улучшите производительность Windows. Присоединяйтесь к нам для улучшения этого инструмента и его совершенствования. Вы также можете добавить свои любимые музыкальные приложения и настройки.
+Install,Установить
+Apply,Применить
+Downloading,Загрузка...
+About,О нас
+Third_party,Сторонние
+Preferences,Настройки
+Management,Управление
+Apps,Приложения
+Tweaks,Настройки
+Settings,Параметры
+Save,Сохранить
+Restore,Восстановить
+Music,Музыка
+On,Вкл
+Off,Выкл
+Disk_Managment,Управление дисками
+Msconfig,Конфигурация системы
+Environment_Variables,Переменные окружения
+Task_Manager,Диспетчер задач
+Apps_features,Приложения-Функции
+Networks,Сети
+Services,Сервисы
+Device_Manager,Диспетчер устройств
+Power_Options,Энергопитание
+System_Info,Информация о системе
+Use_system_setting,Использовать системные настройки
+Create_desktop_shortcut,Создать ярлык на рабочем столе
+Reset_preferences,Сбросить настройки
+Reopen_itt_again,Пожалуйста перезапустите ITT.
+Theme,Тема
+Language,Язык
+Browsers_extensions,Расширения для браузеров
+All,Все
+Search,Поиск
+Create_restore_point,Создать точку восстановления
+Portable_Downloads_Folder,Папка для портативных загрузок
+Install_msg,Вы уверены что хотите установить следующие приложения?
+Apply_msg,Вы уверены что хотите применить следующие настройки?
+Applying,Применение...
+Please_wait,Подождите выполняется фоновый процесс.
+Last_update,Последнее обновление
+Exit_msg,Вы уверены что хотите закрыть программу? Все установки будут прерваны.
+Empty_save_msg,Выберите хотя бы одно приложение для сохранения
+easter_egg, Можешь ли ты раскрыть скрытый секрет? Погрузись в исходный код стань первым кто обнаружит функцию и интегрируй её в инструмент
+system_protection,Системная защита
+web browsers,Веб-браузеры
+media,Медиа
+media tools,Медиа-инструменты
+documents,Документы
+compression,Архивация
+communication,Связь
+file sharing,Обмен файлами
+imaging,Обработка изображений
+gaming,Игры
+utilities,Утилиты
+disk tools,Работа с дисками
+development,Разработка
+security,Безопасность
+portable,Портативные
+runtimes,Среды выполнения
+drivers,Драйверы
+privacy,Конфиденциальность
+fixer,Исправитель
+performance,Производительность
+personalization,Персонализация
+power,Мощность
+protection,Защита
+classic,Классический
+auto,Автоматический
+package_manager,Менеджер пакетов

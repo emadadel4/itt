@@ -1,0 +1,73 @@
+Key,Text
+name,Français
+Welcome,Gagnez du temps en instAllant plusieurs programmes à la fois et améliorez les performances de votre Windows. Rejoignez-nous pour améliorer cet outil et le rendre encore meilleur. Vous pouvez également ajouter vos applicatiOns Musicales et vos Tweaks préférés.
+Install,InstAller
+Apply,Appliquer
+Downloading,Téléchargement...
+About,À propos
+Third_party,Tiers
+Preferences,Préférences
+Management,GestiOn
+Apps,ApplicatiOns
+Tweaks,OptimisatiOns
+Settings,Paramètres
+Save,Sauvegarder
+Restore,Restaurer
+Music,Musique
+On,Activé
+Off,Désactivé
+Disk_Managment,GestiOn des disques
+Msconfig,Configuration du système
+Environment_Variables,Variables d'environnement
+Task_Manager,GestiOnnaire des tâches
+Apps_features,ApplicatiOns-FOnctiOnnalités
+Networks,Réseaux
+Services,Services
+Device_Manager,GestiOnnaire de périphériques
+Power_Options,OptiOns d'alimentatiOn
+System_Info,Infos système
+Use_system_setting,Utiliser les paramètres système
+Create_desktop_shortcut,Créer un raccourci sur le bureau
+Reset_preferences,Réinitialiser les préférences
+Reopen_itt_again,Veuillez rouvrir ITT.
+Theme,Thème
+Language,Langue
+Browsers_extensions,Browsers_extensions de navigateurs
+All,Tout
+Search,Rechercher
+Create_restore_point,Créer un point de restauratiOn
+Portable_Downloads_Folder,Dossier de téléchargements portables
+Install_msg,Êtes-vous sûr de vouloir instAller les applicatiOns suivantes ?
+Apply_msg,Êtes-vous sûr de vouloir appliquer les Tweaks suivants ?
+Applying,ApplicatiOn...
+Please_wait,Veuillez patienter
+Last_update,Dernière mise à jour  un processus est en cours d'exécutiOn en arrière-plan.
+Exit_msg,Êtes-vous sûr de vouloir fermer le programme ? Si des instAllatiOns sOnt en cours  elles serOnt interrompues
+Empty_save_msg,Choisissez au moins une applicatiOn à sauvegarder
+easter_egg, Peux-tu découvrir le secret caché ? Plonge dans le code source sois le premier à découvrir la fonctionnalité et intègre-la dans l'outil
+system_protection,Protection du système
+web browsers,Navigateurs Web
+media,Médias
+media tools,Outils multimédias
+documents,Documents
+compression,Compression
+communication,Communication
+file sharing,Partage de fichiers
+imaging,Imagerie
+gaming,Jeux
+utilities,Utilitaires
+disk tools,Outils de disque
+development,Développement
+security,Sécurité
+portable,Portable
+runtimes,Runtimes
+drivers,Pilotes
+privacy,Confidentialité
+fixer,Réparateur
+performance,Performance
+personalization,Personnalisation
+power,Puissance
+protection,Protection
+classic,Classique
+auto,automatique
+package_manager,Manager des paquets

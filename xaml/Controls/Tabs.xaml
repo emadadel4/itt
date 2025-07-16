@@ -1,0 +1,304 @@
+<!--TabControl-->
+    <TabControl Name="taps" Grid.Row="1" >
+
+            <TabItem Name="apps" Header="{Binding apps, TargetNullValue=Apps}" Tag="apps" BorderBrush="{x:Null}" >
+
+            <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" >
+                            <TextBlock Text="📦" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding}" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+            </TabItem.HeaderTemplate>
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                        <!--AppsCategory-->
+                            <ComboBox 
+                                SelectedIndex="0" 
+                                Name="AppsCategory" 
+                                Grid.Row="0"
+                                VirtualizingStackPanel.IsVirtualizing="True"
+                                VirtualizingStackPanel.VirtualizationMode="Recycling"
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Center" 
+                                Width="auto">
+
+                                <ComboBoxItem Tag="All">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🏷 "/>
+                                        <Run Text="{Binding all, TargetNullValue=All}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Web Browsers">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🌐 "/>
+                                        <Run Text="{Binding web browsers, TargetNullValue=Web Browsers}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Media">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🎬 "/>
+                                        <Run Text="{Binding media, TargetNullValue=Media}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Media Tools">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🎚 "/>
+                                        <Run Text="{Binding media tools, TargetNullValue=Media Tools}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Documents">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="📃 "/>
+                                        <Run Text="{Binding documents, TargetNullValue=Documents}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Compression">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="📀 "/>
+                                        <Run Text="{Binding compression, TargetNullValue=Compression}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Communication">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="📞 "/>
+                                        <Run Text="{Binding communication, TargetNullValue=Communication}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="File Sharing">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="📁 "/>
+                                        <Run Text="{Binding file sharing, TargetNullValue=File Sharing}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Imaging">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="📷 "/>
+                                        <Run Text="{Binding imaging, TargetNullValue=Imaging}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Gaming">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🎮 "/>
+                                        <Run Text="{Binding gaming, TargetNullValue=Gaming}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Utilities">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🔨 "/>
+                                        <Run Text="{Binding utilities, TargetNullValue=Utilities}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Disk Tools">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="💽 "/>
+                                        <Run Text="{Binding disk tools, TargetNullValue=Disk Tools}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Development">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="👩‍💻 "/>
+                                        <Run Text="{Binding development, TargetNullValue=Development}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Security">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🛡 "/>
+                                        <Run Text="{Binding security, TargetNullValue=Security}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Portable">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="💼 "/>
+                                        <Run Text="{Binding portable, TargetNullValue=Portable}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Runtimes">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="📈 "/>
+                                        <Run Text="{Binding runtimes, TargetNullValue=Runtimes}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                                <ComboBoxItem Tag="Drivers">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🔌 "/>
+                                        <Run Text="{Binding drivers, TargetNullValue=Drivers}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                            </ComboBox>
+
+                        <!--End AppsCategory-->
+
+                <ListView Name="appslist" 
+                    AlternationCount="2"
+                    Grid.Row="1">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    {{Apps}}
+                </ListView>
+
+            </Grid> 
+
+            </TabItem>
+
+            <TabItem x:Name="tweeksTab" Header="{Binding tweaks, TargetNullValue=Tweaks}" Tag="tweaks">
+
+                <TabItem.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="🛠" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="18"/>
+                                <TextBlock Text="{Binding}" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"  TextWrapping="Wrap" Margin="0,5,0,0"/>
+                            </StackPanel>
+                        </DataTemplate>
+                </TabItem.HeaderTemplate>
+            
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--TwaeksCategory-->
+                        <ComboBox 
+                            SelectedIndex="0" 
+                            Name="TwaeksCategory" 
+                            Grid.Row="0" 
+                            IsReadOnly="True"
+                            VirtualizingStackPanel.IsVirtualizing="True"
+                            VirtualizingStackPanel.VirtualizationMode="Recycling"
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Center" 
+                            Visibility="Collapsed"
+                            Width="auto">
+
+                              <ComboBoxItem Tag="all">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🏷 "/>
+                                        <Run Text="{Binding all, TargetNullValue=All}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+                                
+                                
+                              <ComboBoxItem Tag="Privacy">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🔒 "/>
+                                        <Run Text="{Binding privacy, TargetNullValue=Privacy}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+                            
+
+                              <ComboBoxItem Tag="Fixer">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🔧 "/>
+                                        <Run Text="{Binding fixer, TargetNullValue=Fixer}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                              <ComboBoxItem Tag="Performance">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="⚡ "/>
+                                        <Run Text="{Binding performance, TargetNullValue=Performance}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                              <ComboBoxItem Tag="Personalization">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🎨 "/>
+                                        <Run Text="{Binding personalization, TargetNullValue=Personalization}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                            <ComboBoxItem Tag="Power">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🔋 "/>
+                                        <Run Text="{Binding power, TargetNullValue=Power}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                            <ComboBoxItem Tag="Protection">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🛡 "/>
+                                        <Run Text="{Binding protection, TargetNullValue=Protection}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                              <ComboBoxItem Tag="Classic">
+                                    <TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
+                                        <Run Text="🕰 "/>
+                                        <Run Text="{Binding classic, TargetNullValue=Classic}"/>
+                                    </TextBlock>
+                                </ComboBoxItem>
+
+                        </ComboBox>
+                    <!--End TwaeksCategory-->
+
+                   <ListView Name="tweakslist" 
+                        Grid.Row="1"
+                        AlternationCount="2">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        {{Tweaks}}
+                    </ListView>
+
+                </Grid>
+                
+            </TabItem>
+
+                <TabItem x:Name="SettingsTab" Header="{Binding settings, TargetNullValue=Settings}">
+                    <TabItem.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="⚙" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="18"/>
+                                <TextBlock Text="{Binding}" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                </TabItem.HeaderTemplate>
+
+
+                    <ListView Name="SettingsList" 
+                        AlternationCount="2">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        {{Settings}}
+                    </ListView>
+            </TabItem>
+
+    </TabControl>
+<!--End TabControl-->
+
+
