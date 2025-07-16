@@ -101,7 +101,7 @@ function Startup {
                 $currentCount = Invoke-RestMethod -Uri $UsersCount -Method Get
         
                 # Convert to integer, increment, and convert back to string
-                $Runs = ([int]$currentCount + 2340).ToString()
+                $Runs = ([int]$currentCount + 1).ToString()
             
                 # Update the count in Firebase as a string
                 Invoke-RestMethod -Uri $UsersCount -Method Put -Body ($Runs | ConvertTo-Json -Compress) -Headers @{ "Content-Type" = "application/json" }
