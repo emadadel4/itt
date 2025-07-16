@@ -3623,7 +3623,7 @@ Start-Sleep 25
 function UsageCount {
 try {
 $currentCount = Invoke-RestMethod -Uri $UsersCount -Method Get
-$Runs = ([int]$currentCount + 2340).ToString()
+$Runs = ([int]$currentCount + 1).ToString()
 Invoke-RestMethod -Uri $UsersCount -Method Put -Body ($Runs | ConvertTo-Json -Compress) -Headers @{ "Content-Type" = "application/json" }
 $Version = (Get-CimInstance -Class Win32_OperatingSystem).Caption, (Get-CimInstance -Class Win32_OperatingSystem).Version
 Telegram -Message "Build Ver: $($itt.lastupdate)`n$($Version)`nURL: $($itt.command)`nLanguage: $($itt.Language)`nTotal Usage: $($Runs)"
