@@ -1,0 +1,73 @@
+Key,Text
+name,अंग्रेज़ी
+Welcome,एक बार में कई प्रोग्राम इंस्टॉल करके समय बचाएं और अपने विंडोज़ के प्रदर्शन को बढ़ावा दें। इस टूल को बेहतर बनाने और इसे और अच्छा बनाने में हमारा साथ दें। आप अपने पसंदीदा म्यूज़िक ऐप्स और ट्विक्स भी जोड़ सकते हैं।
+Install,इंस्टॉल करें
+Apply,लागू करें
+Downloading,डाउनलोड हो रहा है...
+About,के बारे में
+Third_party,थर्ड-पार्टी
+Preferences,पसंद
+Management,प्रबंधन
+Apps,ऐप्स
+Tweaks,ट्विक्स
+Settings,सेटिंग्स
+Save,सहेजें
+Restore,पुनर्स्थापित करें
+Music,संगीत
+On,चालू
+Off,बंद
+Disk_Managment,डिस्क प्रबंधन
+Msconfig,सिस्टम कॉन्फ़िगरेशन
+Environment_Variables,एन्विर्बल वार्डियल्स
+Task_Manager,टास्क मैनेजर
+Apps_features,ऐप्स-फीचर्स
+Networks,नेटवर्क्स
+Services,सेवाएँ
+Device_Manager,डिवाइस मैनेजर
+Power_Options,पावर विकल्प
+System_Info,सिस्टम जानकारी
+Use_system_setting,सिस्टम सेटिंग का उपयोग करें
+Create_desktop_shortcut,डेस्कटॉप शॉर्टकट बनाएं
+Reset_preferences,पसंद रीसेट करें
+Reopen_itt_again,कृपया इसे फिर से खोलें।
+Theme,थीम
+Language,भाषा
+Browsers_extensions,ब्राउज़र एक्सटेंशन
+All,सभी
+Search,खोज
+Create_restore_point,पुनर्स्थापना बिंदु बनाएँ
+Portable_Downloads_Folder,पोर्टेबल डाउनलोड फ़ोल्डर
+Install_msg,क्या आप निश्चित हैं कि आप निम्न ऐप्स इंस्टॉल करना चाहते हैं?
+Apply_msg,क्या आप निश्चित हैं कि आप निम्न ट्विक्स लागू करना चाहते हैं?
+Applying,लागू किया जा रहा है...
+Please_wait,कृपया प्रतीक्षा करें बैकग्राउंड में एक प्रक्रिया चल रही है
+Last_update,आखिरी अपडेट
+Exit_msg,क्या आप निश्चित हैं कि आप प्रोग्राम बंद करना चाहते हैं? यदि कोई इंस्टॉलेशन चल रहा हो तो वह समाप्त हो जाएगा
+Empty_save_msg,कम से कम एक ऐप चुनें और उसे सहेजें।
+easter_egg, क्या आप छिपे हुए रहस्य को उजागर कर सकते हैं? सोर्स कोड में डूबकी लगाएं पहले व्यक्ति बनें जो फीचर को खोजे और इसे टूल में इंटीग्रेट करें
+system_protection,सिस्टम सुरक्षा
+web browsers,वेब ब्राउज़र
+media,मीडिया
+media tools,मीडिया उपकरण
+documents,दस्तावेज़
+compression,संपीड़न
+communication,संचार
+file sharing,फ़ाइल साझा करना
+imaging,इमेजिंग
+gaming,गेमिंग
+utilities,उपयोगिताएँ
+disk tools,डिस्क उपकरण
+development,विकास
+security,सुरक्षा
+portable,पोर्टेबल
+runtimes,रनटाइम्स
+drivers,ड्राइवर
+privacy,गोपनीयता
+fixer,ठीक करने वाला
+performance,प रदर्शन
+personalization,वैयक्तिकरण
+power,शक्ति
+protection,सुरक्षा
+classic,क्लासिक
+auto,स्वचालित
+package_manager,पैकेज मैनेजर

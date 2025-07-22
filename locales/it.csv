@@ -1,0 +1,73 @@
+Key,Text
+name,Italiano
+Welcome,Risparmia tempo installando più programmi contemporaneamente e migliora le prestazioni di Windows. Unisciti a noi per migliorare questo strumento e renderlo migliore. Puoi anche aggiungere le tue app musicali preferite e le personalizzazioni.
+Install,Installa
+Apply,Applica
+Downloading,Download in corso...
+About,Informazioni
+Third_party,Terze parti
+Preferences,Preferenze
+Management,Gestione
+Apps,App
+Tweaks,Personalizzazioni
+Settings,Impostazioni
+Save,Salva
+Restore,Ripristina
+Music,Musica
+On,Acceso
+Off,Spento
+Disk_Managment,Gestione disco
+Msconfig,Configurazione di sistema
+Environment_Variables,Variabili di ambiente
+Task_Manager,Gestore attività
+Apps_features,App-Funzionalità
+Networks,Reti
+Services,Servizi
+Device_Manager,Gestore dispositivi
+Power_Options,Opzioni risparmio energia
+System_Info,Informazioni di sistema
+Use_system_setting,Usa impostazioni di sistema
+Create_desktop_shortcut,Crea collegamento sul desktop
+Reset_preferences,Reimposta preferenze
+Reopen_itt_again,Per favore riapri di nuovo.
+Theme,Tema
+Language,Lingua
+Browsers_extensions,Estensioni per browser
+All,Tutti
+Search,Cerca
+Create_restore_point,Crea un punto di ripristino
+Portable_Downloads_Folder,Cartella download portatile
+Install_msg,Sei sicuro di voler installare le seguenti app?
+Apply_msg,Sei sicuro di voler applicare le seguenti personalizzazioni?
+Applying,Applicazione in corso...
+Please_wait,Attendere un processo è in corso in background
+Last_update,Ultimo aggiornamento
+Exit_msg,Sei sicuro di voler chiudere il programma? Se ci sono installazioni in corso verranno terminate.
+Empty_save_msg,Scegli almeno un'app per salvarla.
+easter_egg, Riuscirai a scoprire il segreto nascosto? Tuffati nel codice sorgente sii il primo a scoprire la funzionalità e integrala nello strumento
+system_protection,Protezione del sistema
+web browsers,Browser Web
+media,Media
+media tools,Strumenti Media
+documents,Documenti
+compression,Compressione
+communication,Comunicazione
+file sharing,Condivisione File
+imaging,Imaging
+gaming,Giochi
+utilities,Utilità
+disk tools,Strumenti Disco
+development,Sviluppo
+security,Sicurezza
+portable,Portatile
+runtimes,Runtime
+drivers,Driver
+privacy,Privacy
+fixer,Riparatore
+performance,Prestazioni
+personalization,Personalizzazione
+power,Potenza
+protection,Protezione
+classic,Classico
+auto,automatico
+package_manager,Gestore pacchetti
