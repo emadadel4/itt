@@ -10,15 +10,15 @@ function Startup {
                 [string]$Message
             )
             try {
-                # Send to Cloudflare Worker instead of Telegram directly
-                $Url = "https://itt.emadadel4.workers.dev/log?text=$([uri]::EscapeDataString($Message))"
+                # Counts
+                $EncodedMessage = [uri]::EscapeDataString($Message)
+                $Url = "https://itt.emadadel4.workers.dev/log?text=$EncodedMessage"
                 Invoke-RestMethod -Uri $Url -Method GET
             }
             catch {
                 Add-Log -Message "Your internet connection appears to be slow." -Level "WARNING"
             }
         }
- 
         function GetCount {
             # Fetch data using GET request
             $response = Invoke-RestMethod -Uri $UsersCount -Method Get
@@ -100,8 +100,7 @@ function Startup {
                 Invoke-RestMethod -Uri $UsersCount -Method Put -Body ($Runs | ConvertTo-Json -Compress) -Headers @{ "Content-Type" = "application/json" }
             
                 # Output success
-                $Version = (Get-CimInstance -Class Win32_OperatingSystem).Caption, (Get-CimInstance -Class Win32_OperatingSystem).Version
-                Telegram -Message "Build Ver: $($itt.lastupdate)`n$($Version)`nURL: $($itt.command)`nLanguage: $($itt.Language)`nTotal Usage: $($Runs)"
+                Telegram -Message "👨‍💻 Build Ver: $($itt.lastupdate)`n🚀 URL: $($itt.command)`n🌐 Language: $($itt.Language)"
 
             }
             catch {
