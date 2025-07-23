@@ -3553,9 +3553,8 @@ catch {
 }
 }
 function Startup {
-$UsersCount = "https://ittools-7d9fe-default-rtdb.firebaseio.com/message/message.json"
-ITT-ScriptBlock -ArgumentList $Debug $UsersCount -ScriptBlock {
-param($Debug, $UsersCount)
+ITT-ScriptBlock -ArgumentList $Debug -ScriptBlock {
+param($Debug)
 function Telegram {
 param (
 [string]$Message
@@ -3569,9 +3568,13 @@ catch {
 Add-Log -Message "Your internet connection appears to be slow." -Level "WARNING"
 }
 }
-function GetCount {
-$response = Invoke-RestMethod -Uri $UsersCount -Method Get
-return $response
+function UsageCount {
+try {
+Telegram -Message "👨‍💻 Build Ver: $($itt.lastupdate)`n🚀 URL: $($itt.command)`n🌐 Language: $($itt.Language)"
+}
+catch {
+Add-Log -Message "Your internet connection appears to be slow." -Level "INFO"
+}
 }
 function PlayMusic {
 $ST = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/OST.json" -Method Get
@@ -3614,17 +3617,6 @@ Set-Statusbar -Text "$icon $text"
 Start-Sleep 25
 }
 } while ($true)
-}
-function UsageCount {
-try {
-$currentCount = Invoke-RestMethod -Uri $UsersCount -Method Get
-$Runs = ([int]$currentCount + 1).ToString()
-Invoke-RestMethod -Uri $UsersCount -Method Put -Body ($Runs | ConvertTo-Json -Compress) -Headers @{ "Content-Type" = "application/json" }
-Telegram -Message "👨‍💻 Build Ver: $($itt.lastupdate)`n🚀 URL: $($itt.command)`n🌐 Language: $($itt.Language)"
-}
-catch {
-Add-Log -Message "Your internet connection appears to be slow." -Level "INFO"
-}
 }
 function LOG {
 Write-Host "  `n` "
@@ -8321,14 +8313,14 @@ $itt.event.FindName('closebtn').add_MouseLeftButtonDown({ $itt.event.Close() })
 $itt.event.FindName('DisablePopup').add_MouseLeftButtonDown({ Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 1 -Force; $itt.event.Close() })
 $itt.event.FindName('title').text = 'Changelog'.Trim()
 $itt.event.FindName('date').text = '07/01/2025'.Trim()
-$itt.event.FindName('esg').add_MouseLeftButtonDown({
-Start-Process('https://github.com/emadadel4/itt')
+$itt.event.FindName('shell').add_MouseLeftButtonDown({
+Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
 })
 $itt.event.FindName('preview2').add_MouseLeftButtonDown({
 Start-Process('https://github.com/emadadel4/itt')
 })
-$itt.event.FindName('shell').add_MouseLeftButtonDown({
-Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+$itt.event.FindName('esg').add_MouseLeftButtonDown({
+Start-Process('https://github.com/emadadel4/itt')
 })
 $storedDate = [datetime]::ParseExact($itt.event.FindName('date').Text, 'MM/dd/yyyy', $null)
 $daysElapsed = (Get-Date) - $storedDate
