@@ -1,10 +1,9 @@
 function Startup {
 
-    $UsersCount = "https://ittools-7d9fe-default-rtdb.firebaseio.com/message/message.json"
  
-    ITT-ScriptBlock -ArgumentList $Debug $UsersCount -ScriptBlock {
+    ITT-ScriptBlock -ArgumentList $Debug -ScriptBlock {
  
-        param($Debug, $UsersCount)
+        param($Debug)
         function Telegram {
             param (
                 [string]$Message
@@ -19,14 +18,16 @@ function Startup {
                 Add-Log -Message "Your internet connection appears to be slow." -Level "WARNING"
             }
         }
-        function GetCount {
-            # Fetch data using GET request
-            $response = Invoke-RestMethod -Uri $UsersCount -Method Get
-         
-            # Output the Users count
-            return $response
+        function UsageCount {
+
+            try {
+                # Output success
+                Telegram -Message "👨‍💻 Build Ver: $($itt.lastupdate)`n🚀 URL: $($itt.command)`n🌐 Language: $($itt.Language)"
+            }
+            catch {
+                Add-Log -Message "Your internet connection appears to be slow." -Level "INFO"
+            }
         }
-         
         function PlayMusic {
 
             $ST = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/OST.json" -Method Get
@@ -65,7 +66,6 @@ function Startup {
             # Play the preloaded playlist
             PlayPreloadedPlaylist
         }
- 
         function Quotes {
             function Get-Quotes {(Invoke-RestMethod "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/Quotes.json").Quotes | Sort-Object { Get-Random }}
             
@@ -85,29 +85,6 @@ function Startup {
                 }
             } while ($true)
         }
- 
-        function UsageCount {
-
-            try {
-                
-                # Fetch current count from Firebase as a string
-                $currentCount = Invoke-RestMethod -Uri $UsersCount -Method Get
-        
-                # Convert to integer, increment, and convert back to string
-                $Runs = ([int]$currentCount + 1).ToString()
-            
-                # Update the count in Firebase as a string
-                Invoke-RestMethod -Uri $UsersCount -Method Put -Body ($Runs | ConvertTo-Json -Compress) -Headers @{ "Content-Type" = "application/json" }
-            
-                # Output success
-                Telegram -Message "👨‍💻 Build Ver: $($itt.lastupdate)`n🚀 URL: $($itt.command)`n🌐 Language: $($itt.Language)"
-
-            }
-            catch {
-                Add-Log -Message "Your internet connection appears to be slow." -Level "INFO"
-            }
-        }
- 
         function LOG {
             Write-Host "  `n` "
             Write-Host "  ███████████████████╗ Be the first to uncover the secret! Dive into"
@@ -117,8 +94,6 @@ function Startup {
             Write-Host "  ██║  ██║      ██║    "
             Write-Host "  ╚═╝  ╚═╝      ╚═╝    "
             UsageCount
-            #Write-Host "`n  ITT has been used $(GetCount) times worldwide.`n" -ForegroundColor White
-            #Set-Statusbar -Text "🎉 ITT has been used 50 times worldwide."
         }
         # debug start
         if ($Debug) { return }
