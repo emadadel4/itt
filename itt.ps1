@@ -3561,7 +3561,8 @@ param (
 [string]$Message
 )
 try {
-$Url = "https://itt.emadadel4.workers.dev/log?text=$([uri]::EscapeDataString($Message))"
+$EncodedMessage = [uri]::EscapeDataString($Message)
+$Url = "https://itt.emadadel4.workers.dev/log?text=$EncodedMessage"
 Invoke-RestMethod -Uri $Url -Method GET
 }
 catch {
@@ -3619,8 +3620,7 @@ try {
 $currentCount = Invoke-RestMethod -Uri $UsersCount -Method Get
 $Runs = ([int]$currentCount + 1).ToString()
 Invoke-RestMethod -Uri $UsersCount -Method Put -Body ($Runs | ConvertTo-Json -Compress) -Headers @{ "Content-Type" = "application/json" }
-$Version = (Get-CimInstance -Class Win32_OperatingSystem).Caption, (Get-CimInstance -Class Win32_OperatingSystem).Version
-Telegram -Message "Build Ver: $($itt.lastupdate)`n$($Version)`nURL: $($itt.command)`nLanguage: $($itt.Language)`nTotal Usage: $($Runs)"
+Telegram -Message "👨‍💻 Build Ver: $($itt.lastupdate)`n🚀 URL: $($itt.command)`n🌐 Language: $($itt.Language)"
 }
 catch {
 Add-Log -Message "Your internet connection appears to be slow." -Level "INFO"
@@ -8321,14 +8321,14 @@ $itt.event.FindName('closebtn').add_MouseLeftButtonDown({ $itt.event.Close() })
 $itt.event.FindName('DisablePopup').add_MouseLeftButtonDown({ Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 1 -Force; $itt.event.Close() })
 $itt.event.FindName('title').text = 'Changelog'.Trim()
 $itt.event.FindName('date').text = '07/01/2025'.Trim()
-$itt.event.FindName('shell').add_MouseLeftButtonDown({
-Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
-})
 $itt.event.FindName('esg').add_MouseLeftButtonDown({
 Start-Process('https://github.com/emadadel4/itt')
 })
 $itt.event.FindName('preview2').add_MouseLeftButtonDown({
 Start-Process('https://github.com/emadadel4/itt')
+})
+$itt.event.FindName('shell').add_MouseLeftButtonDown({
+Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
 })
 $storedDate = [datetime]::ParseExact($itt.event.FindName('date').Text, 'MM/dd/yyyy', $null)
 $daysElapsed = (Get-Date) - $storedDate
