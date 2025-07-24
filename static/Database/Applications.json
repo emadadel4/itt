@@ -3715,5 +3715,23 @@
     "winget": "futo-org.Grayjay.Desktop",
     "itt": "na",
     "category": "Media"
+  },
+  {
+    "Name": "Heroic Games Launcher",
+    "Description": "An alternative GOG and Epic Games Launcher for Linux, Windows and macOS",
+    "choco": "heroic-games-launcher",
+    "scoop": "heroic-games-launcher",
+    "winget": "HeroicGamesLauncher.HeroicGamesLauncher",
+    "itt": "na",
+    "category": "Gaming"
+  },
+  {
+    "Name": "Thunderbird",
+    "Description": "A free email client from Mozilla",
+    "choco": "thunderbird",
+    "scoop": "thunderbird",
+    "winget": "Mozilla.Thunderbird",
+    "itt": "na",
+    "category": "Communication"
   }
 ]
