@@ -5,7 +5,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "07/23/2025"
+lastupdate     = "07/24/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -7674,6 +7674,16 @@ Grid.Row="1">
 <CheckBox Content="Grayjay" FontSize="15" Tag="grayjay|na|futo-org.Grayjay.Desktop|na|Media"   ToolTip="Watch content on your own terms ensuring you retain full ownership and control over what you watch. Your content your way"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Media}"/>
 </StackPanel>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
+<StackPanel Orientation="Horizontal">
+<CheckBox Content="Heroic Games Launcher" FontSize="15" Tag="heroic-games-launcher|heroic-games-launcher|HeroicGamesLauncher.HeroicGamesLauncher|na|Gaming"   ToolTip="An alternative GOG and Epic Games Launcher for Linux Windows and macOS"/>
+<TextBlock Margin="8" FontSize="11" Text="{Binding Gaming}"/>
+</StackPanel>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
+<StackPanel Orientation="Horizontal">
+<CheckBox Content="Thunderbird" FontSize="15" Tag="thunderbird|thunderbird|Mozilla.Thunderbird|na|Communication"   ToolTip="A free email client from Mozilla"/>
+<TextBlock Margin="8" FontSize="11" Text="{Binding Communication}"/>
+</StackPanel>
 </StackPanel>
 </ListView>
 </Grid>
@@ -8316,10 +8326,10 @@ $itt.event.FindName('date').text = '07/01/2025'.Trim()
 $itt.event.FindName('shell').add_MouseLeftButtonDown({
 Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
 })
-$itt.event.FindName('preview2').add_MouseLeftButtonDown({
+$itt.event.FindName('esg').add_MouseLeftButtonDown({
 Start-Process('https://github.com/emadadel4/itt')
 })
-$itt.event.FindName('esg').add_MouseLeftButtonDown({
+$itt.event.FindName('preview2').add_MouseLeftButtonDown({
 Start-Process('https://github.com/emadadel4/itt')
 })
 $storedDate = [datetime]::ParseExact($itt.event.FindName('date').Text, 'MM/dd/yyyy', $null)
