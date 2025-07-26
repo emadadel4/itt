@@ -201,11 +201,3 @@ Set-Location "C:\Users\$env:USERNAME\Documents\Github\ITT"
 ### "If you can't lift the injustice, at least tell everyone about it."
 ### "إذا لم تستطع رفع الظلم، على الاقل اخبر الجميع عنه"
 </div>
-
-<br>
-
-## ⭐ Support Project
-
-If you find this project helpful Give it a ⭐
-
-[![Stargazers repo roster for @emadadel4/itt](https://reporoster.com/stars/dark/emadadel4/itt)](https://github.com/emadadel4/itt/stargazers)
