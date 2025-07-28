@@ -3626,7 +3626,9 @@ Write-Host "  ██║  ██║      ██║    "
 Write-Host "  ╚═╝  ╚═╝      ╚═╝    "
 UsageCount
 }
+LOG
 PlayMusic
+Quotes
 }
 }
 function ChangeTap {
