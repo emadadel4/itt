@@ -31,7 +31,7 @@ function Startup {
         function PlayMusic {
 
             # Download and parse the M3U playlist
-            $playlistUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/ittplaylist.m3u"
+            $playlistUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/ittplaylist.m3u"
             $m3uContent = Invoke-RestMethod -Uri $playlistUrl -Method Get
         
             # Extract valid track URLs (ignoring lines starting with #)
