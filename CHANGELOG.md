@@ -2,7 +2,7 @@
 
 ## Changelog
 
-![itt.xName:preview2 [https://www.palestinercs.org/en/Donation]](https://github.com/user-attachments/assets/996f7e97-3b37-4883-8524-a29917b17268)
+![itt.xName:ps [https://www.palestinercs.org/en/Donation]](https://github.com/user-attachments/assets/996f7e97-3b37-4883-8524-a29917b17268)
 
 ##### Keyboard Shortcuts
 
