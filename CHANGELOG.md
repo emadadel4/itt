@@ -1,8 +1,10 @@
-###### 07/01/2025
+###### 08/01/2025
 
 ## Changelog
 
-![itt.xName:ps [https://www.palestinercs.org/en/Donation]](https://github.com/user-attachments/assets/996f7e97-3b37-4883-8524-a29917b17268)
+![itt.xName:ps [https://www.palestinercs.org/en/Donation]](https://camo.githubusercontent.com/5cf02c5ee4898f8f92965367dfbf6829cf7d5e180f3808898ac65eccb0835d68/68747470733a2f2f7374796c65732e7265646469746d656469612e636f6d2f74355f327168616b2f7374796c65732f696d6167655f7769646765745f3738637964797a6c336b7462312e706e67)
+
+#### Your support for the Palestinian cause is invaluable, especially in these challenging times. Donations play a crucial role in providing essential services to those affected by the ongoing genocide and helping to sustain long-term development efforts. Supporting trusted organizations allows your contributions to have a direct impact, offering humanitarian aid and food, medical assistance, legal support, and more.
 
 ##### Keyboard Shortcuts
 
@@ -20,8 +22,6 @@
 - Shift+Q: Restore point.
 - Shift+I: ITT Shortcut.
 - Ctrl+G: Close application.
-
-![itt.xName:preview2 [https://github.com/emadadel4/itt]](https://github.com/user-attachments/assets/2a4fedc7-1d0e-419d-940c-b784edc7d1d1)
 
 ##### 📥 Download any Youtube video
 
