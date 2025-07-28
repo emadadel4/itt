@@ -229,7 +229,8 @@ function Update-Readme {
     $applicationsCount = $itt.database.Applications.Count
     $tweaksCount = $itt.database.Tweaks.Count
     $quotesCount = (Get-Content -Path ".\static\Database\Quotes.json" | ConvertFrom-Json).Quotes.Count
-    $tracksCount = (Get-Content -Path ".\static\Database\OST.json" | ConvertFrom-Json).Tracks.Count
+    $tracks = Get-Content -Path ".\static\Database\ittplaylist.m3u" | Where-Object { $_ -and ($_ -notmatch "^#") }
+    $tracksCount = $tracks.Count
     $settingsCount = $itt.database.Settings.Count
     $localesCount = ($itt.database.locales.Controls.PSObject.Properties | Measure-Object).Count
     # Create a hashtable for placeholders and their replacements
