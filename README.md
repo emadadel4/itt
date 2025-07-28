@@ -149,10 +149,9 @@ Set-Location "C:\Users\$env:USERNAME\Documents\Github\ITT"
 ---
 
 ### 🎵 Add a New Soundtrack
+> To add a new audio track to the playlist, simply append your .mp3 URL at the end of the .m3u file.
 
-```PowerShell
-.\newOST.ps1
-```
+[Click here to edit the playlist](https://github.com/emadadel4/itt/edit/main/static/Database/ittplaylist.m3u)
 
 ---
 
