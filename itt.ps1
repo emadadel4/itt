@@ -3577,23 +3577,21 @@ Add-Log -Message "Your internet connection appears to be slow." -Level "INFO"
 }
 }
 function PlayMusic {
-$ST = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/OST.json" -Method Get
+$playlistUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/ittplaylist.m3u"
+$m3uContent = Invoke-RestMethod -Uri $playlistUrl -Method Get
+$tracks = $m3uContent -split "`n" | Where-Object { $_ -and ($_ -notmatch "^#") }
 function PlayAudio($track) {
 $mediaItem = $itt.mediaPlayer.newMedia($track)
 $itt.mediaPlayer.currentPlaylist.appendItem($mediaItem)
 $itt.mediaPlayer.controls.play()
 }
 function GetShuffledTracks {
-switch ($itt.Date.Month, $itt.Date.Day) {
-{ $_ -eq 9, 1 } { return $ST.Favorite | Get-Random -Count $ST.Favorite.Count }
-{ $_ -eq 10, 6 -or $_ -eq 10, 7 } { return $ST.Otobers | Get-Random -Count $ST.Otobers.Count }
-default { return $ST.Tracks | Get-Random -Count $ST.Tracks.Count }
-}
+return $tracks | Get-Random -Count $tracks.Count
 }
 function PlayPreloadedPlaylist {
 $shuffledTracks = GetShuffledTracks
 foreach ($track in $shuffledTracks) {
-PlayAudio -track $track.url
+PlayAudio -track $track
 while ($itt.mediaPlayer.playState -in @(3, 6)) {
 Start-Sleep -Milliseconds 100
 }
@@ -3628,9 +3626,7 @@ Write-Host "  ██║  ██║      ██║    "
 Write-Host "  ╚═╝  ╚═╝      ╚═╝    "
 UsageCount
 }
-LOG
 PlayMusic
-Quotes
 }
 }
 function ChangeTap {
