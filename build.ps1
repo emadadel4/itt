@@ -322,7 +322,7 @@ function ConvertTo-Xaml {
                 $xaml += 
                 "<Image x:Name=''$($matches[1].Trim())'' Cursor=''Hand'' Margin=''8'' Height=''300'' Width=''Auto''>
                     <Image.Source>
-                        <BitmapImage UriSource=''$($matches[3].Trim())''/>
+                        <BitmapImage UriSource=''$($matches[3].Trim())'' CacheOption=''OnLoad''/>
                     </Image.Source>
                 </Image> `n"
                 $link = $matches[2].Trim()   # Extract the link from inside the brackets
