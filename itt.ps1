@@ -1623,57 +1623,7 @@ $itt.database.Tweaks = @'
     "Category": "Classic",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-        "Name": ".jpg",
-        "Type": "String",
-        "Value": "PhotoViewer.FileAssoc.Tiff",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-        "Name": ".jpeg",
-        "Type": "String",
-        "Value": "PhotoViewer.FileAssoc.Tiff",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-        "Name": ".png",
-        "Type": "String",
-        "Value": "PhotoViewer.FileAssoc.Tiff",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-        "Name": ".bmp",
-        "Type": "String",
-        "Value": "PhotoViewer.FileAssoc.Tiff",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-        "Name": ".gif",
-        "Type": "String",
-        "Value": "PhotoViewer.FileAssoc.Tiff",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-        "Name": "ApplicationIcon",
-        "Type": "String",
-        "Value": "C:\\Program Files (x86)\\Windows Photo Viewer\\photoviewer.dll",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-        "Name": "ApplicationName",
-        "Type": "String",
-        "Value": "Windows Photo Viewer",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Activate%20Windows%20Classic%20Photo%20Viewer/run.ps1 | iex"]
   },
   {
     "Name": "Remove Copilot in Windows 11",
@@ -9103,11 +9053,6 @@ function Show-Event {
         $itt.event.FindName('date').text = '08/01/2025'.Trim()
         
     
-            $itt.event.FindName('esg').add_MouseLeftButtonDown({
-                    Start-Process('https://github.com/emadadel4/itt')
-                })
-            
-            
             $itt.event.FindName('ps').add_MouseLeftButtonDown({
                     Start-Process('https://www.palestinercs.org/en/Donation')
                 })
@@ -9115,6 +9060,11 @@ function Show-Event {
             
             $itt.event.FindName('shell').add_MouseLeftButtonDown({
                     Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+                })
+            
+            
+            $itt.event.FindName('esg').add_MouseLeftButtonDown({
+                    Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
