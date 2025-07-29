@@ -1269,71 +1269,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Feeds",
-        "Name": "ShellFeedsTaskbarViewMode",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
-        "Name": "SearchboxTaskbarMode",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "2"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\People",
-        "Name": "PeopleBand",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-        "Name": "HideSCAMeetNow",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-        "Name": "NoNewsAndInterests",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\PolicyManager\\default\\NewsAndInterests\\AllowNewsAndInterests",
-        "Name": "value",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Feeds",
-        "Name": "EnableFeeds",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Name": "ShowCortanaButton",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Name": "ShowTaskViewButton",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Clean%20Taskbar/run.ps1 | iex"]
   },
   {
     "Name": "Remove Microsoft Apps",
@@ -3697,9 +3633,9 @@ function Startup {
         # debug start
         if ($Debug) { return }
         # debug end
-        LOG
-        PlayMusic
-        Quotes
+        #LOG
+        #PlayMusic
+        #Quotes
     }
 }
 function ChangeTap {
@@ -9058,13 +8994,13 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('shell').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+            $itt.event.FindName('esg').add_MouseLeftButtonDown({
+                    Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
-            $itt.event.FindName('esg').add_MouseLeftButtonDown({
-                    Start-Process('https://github.com/emadadel4/itt')
+            $itt.event.FindName('shell').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
                 })
             
             
