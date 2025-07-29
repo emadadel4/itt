@@ -1553,13 +1553,6 @@
       },
       {
         "Path": "HKCU:\\Software\\Microsoft\\DirectX\\GraphicsSettings",
-        "Name": "",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\DirectX\\GraphicsSettings",
         "Name": "SwapEffectUpgradeCache",
         "Type": "DWord",
         "Value": "1",
