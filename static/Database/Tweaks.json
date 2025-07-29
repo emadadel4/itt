@@ -16,7 +16,7 @@
     "Check": "false",
     "Refresh": "false",
     "Script": [
-      "Add-Log -Message 'This may take a few minutes' -Level 'Info' Chkdsk /scan\r\n sfc /scannow\r\n DISM /Online /Cleanup-Image /Restorehealth\r\n sfc /scannow\r\n"
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/sfc/run.ps1 | iex"
     ]
   },
   {
