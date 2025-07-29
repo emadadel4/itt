@@ -1551,53 +1551,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Services": [
-      {
-        "Name": "Spooler",
-        "StartupType": "Disabled",
-        "DefaultType": "Automatic"
-      },
-      {
-        "Name": "Fax",
-        "StartupType": "Disabled",
-        "DefaultType": "Automatic"
-      },
-      {
-        "Name": "DPS",
-        "StartupType": "Disabled",
-        "DefaultType": "Automatic"
-      },
-      {
-        "Name": "MapsBroker",
-        "StartupType": "Disabled",
-        "DefaultType": "Automatic"
-      },
-      {
-        "Name": "WerSvc",
-        "StartupType": "Disabled",
-        "DefaultType": "Manual"
-      },
-      {
-        "Name": "RemoteRegistry",
-        "StartupType": "Disabled",
-        "DefaultType": "Disabled"
-      },
-      {
-        "Name": "lmhosts",
-        "StartupType": "Disabled",
-        "DefaultType": "Manual"
-      },
-      {
-        "Name": "SharedAccess",
-        "StartupType": "Disabled",
-        "DefaultType": "Manual"
-      },
-      {
-        "Name": "DiagTrack",
-        "StartupType": "Disabled",
-        "DefaultType": "Manual"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimize%20Windows%20Services/run.ps1 | iex"]
   },
   {
     "Name": "Disable Hibernate",
@@ -9149,11 +9103,6 @@ function Show-Event {
         $itt.event.FindName('date').text = '08/01/2025'.Trim()
         
     
-            $itt.event.FindName('shell').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
-                })
-            
-            
             $itt.event.FindName('esg').add_MouseLeftButtonDown({
                     Start-Process('https://github.com/emadadel4/itt')
                 })
@@ -9161,6 +9110,11 @@ function Show-Event {
             
             $itt.event.FindName('ps').add_MouseLeftButtonDown({
                     Start-Process('https://www.palestinercs.org/en/Donation')
+                })
+            
+            
+            $itt.event.FindName('shell').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
                 })
             
             
