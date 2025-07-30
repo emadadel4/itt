@@ -1500,50 +1500,7 @@
     "Category": "Privacy",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKCU:\\Software\\Policies\\Microsoft\\Windows\\WindowsCopilot",
-        "Name": "TurnOffWindowsCopilot",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsCopilot",
-        "Name": "TurnOffWindowsCopilot",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Name": "ShowCopilotButton",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "HubsSidebarEnabled",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Policies\\Microsoft\\Windows\\Explorer",
-        "Name": "DisableSearchBoxSuggestions",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer",
-        "Name": "DisableSearchBoxSuggestions",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Copilot%20Windows%2011/run.ps1 | iex"]
   },
   {
     "Name": "Disable Recall Snapshots in Windows 11 24H",
@@ -1551,29 +1508,7 @@
     "Category": "Privacy",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKCU:\\Software\\Policies\\Microsoft\\Windows\\WindowsAI",
-        "Name": "DisableAIDataAnalysis",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsAI",
-        "Name": "DisableAIDataAnalysis",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsAI",
-        "Name": "AllowRecallEnablement",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Recall%20Snapshots%20in%20Windows%2011%2024H/run.ps1 | iex"]
   },
   {
     "Name": "Delete Thumbnail Cache",
@@ -1591,15 +1526,7 @@
     "Category": "Classic",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\MTCUVC",
-        "Name": "EnableMtcUvc",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Classic%20Volume%20Control/run.ps1 | iex"]
   },
   {
     "Name": "Disable Toggle Key Sounds",
@@ -1615,18 +1542,7 @@
     "Category": "Privacy",
     "Check": "false",
     "Refresh": "false",
-    "Services": [
-      {
-        "Name": "HomeGroupListener",
-        "StartupType": "Manual ",
-        "DefaultType": "Automatic"
-      },
-      {
-        "Name": "HomeGroupProvider",
-        "StartupType": "Manual ",
-        "DefaultType": "Automatic"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Homegroup/run.ps1 | iex"]
   },
   {
     "Name": "Remove Home and Gallery from explorer in Windows 11",
@@ -1634,23 +1550,7 @@
     "Category": "Privacy",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Name": "1",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Desktop\\NameSpace\\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}",
-        "Value": "Remove"
-      },
-      {
-        "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Desktop\\NameSpace\\{f874310e-b6b7-47dc-bc84-b9e6b38f5903}",
-        "Value": "Remove"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Home%20and%20Gallery%20from%20explorer%20in%20Windows%2011/run.ps1 | iex"]
   },
   {
     "Name": "Disable Wifi Sense",
@@ -1658,29 +1558,7 @@
     "Category": "Protection",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\PolicyManager\\default\\WiFi\\AllowWiFiHotSpotReporting",
-        "Name": "value",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\PolicyManager\\default\\WiFi\\AllowAutoConnectToWiFiSenseHotspots",
-        "Name": "value",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\WcmSvc\\wifinetworkmanager\\config",
-        "Name": "AutoConnectAllowedOEM",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Wifi%20Sense/run.ps1 | iex"]
   },
   {
     "Name": "Disable Autoplay and Autorun",
@@ -1688,22 +1566,7 @@
     "Category": "Protection",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\AutoplayHandlers",
-        "Name": "DisableAutoplay",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-        "Name": "NoDriveTypeAutoRun",
-        "Type": "DWord",
-        "Value": "255",
-        "defaultValue": "255"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Autoplay%20and%20Autorun/run.ps1 | iex"]
   },
   {
     "Name": "Disable SMB Server",
@@ -1749,15 +1612,7 @@
     "Category": "Personalization",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\System\\CurrentControlSet\\Control\\CrashControl",
-        "Name": "DisplayParameters",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://github.com/itt-co/itt-tweaks/blob/main/Set%20Wallpaper%20desktop%20Quality%20to%20100%25/run.ps1 | iex"]
   },
   {
     "Name": "Disable Windows Transparency",
@@ -1765,15 +1620,7 @@
     "Category": "Performance",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
-        "Name": "EnableTransparency",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Windows%20Transparency/run.ps1| iex"]
   },
   {
     "Name": "Disable scheduled defragmentation task",
@@ -1781,9 +1628,7 @@
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Defrag\\ScheduledDefrag' | Out-Null"
-    ]
+    "Script": ["Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Defrag\\ScheduledDefrag' | Out-Null"]
   },
   {
     "Name": "Enable NET 3.5",
@@ -1791,9 +1636,7 @@
     "Category": "Classic",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "DISM /Online /Enable-Feature /FeatureName:NetFx3 /All"
-    ]
+    "Script": ["DISM /Online /Enable-Feature /FeatureName:NetFx3 /All"]
   },
   {
     "Name": "Super Performance",
@@ -1903,16 +1746,8 @@
     "Refresh": "true",
     "Script": [
       "Install-Dependencies 'winget'",
-      "winget uninstall 'windows web experience pack' --silent"
-    ],
-    "Registry": [
-      {
-        "Name": "TaskbarDa",
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\TaskbarDeveloperSettings",
-        "defaultValue": "1",
-        "Value": "0",
-        "Type": "DWord"
-      }
+      "winget uninstall 'windows web experience pack' --silent",
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Widgets%20from%20Taskbar%20in%20Windows%2011/run.ps1 | iex"
     ]
   },
   {
@@ -1942,12 +1777,7 @@
     "Category": "Fixer",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts",
-        "Value": "Remove"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Restore%20Default%20File%20Type%20Associations/run.ps1 | iex"]
   },
   {
     "Name": "Limit Defender CPU Usage",
