@@ -334,7 +334,7 @@ $itt.database.Tweaks = @'
     "Category": "Power",
     "Check": "false",
     "Refresh": "false",
-    "Script": ["\r\n        powercfg /X monitor-timeout-ac 0\r\n        powercfg /X monitor-timeout-dc 0\r\n        powercfg /X standby-timeout-ac 0\r\n        powercfg /X standby-timeout-dc 0\r\n      "]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20display%20and%20sleep%20mode%20timeouts/run.ps1 | iex"]
   },
   {
     "Name": "Set Wallpaper desktop Quality to 100%",
@@ -358,7 +358,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Script": ["Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Defrag\\ScheduledDefrag' | Out-Null"]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20scheduled%20defragmentation%20task/run.ps1 | iex"]
   },
   {
     "Name": "Enable NET 3.5",
