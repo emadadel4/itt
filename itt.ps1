@@ -70,9 +70,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/Disk%20cleanup.ps1 | iex"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/Disk%20cleanup.ps1 | iex"]
   },
   {
     "Name": "System File Checker",
@@ -80,9 +78,7 @@ $itt.database.Tweaks = @'
     "Category": "Fixer",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/SFC/run.ps1 | iex"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/SFC/run.ps1 | iex"]
   },
   {
     "Name": "Restore Classic Context Menu Windows 11",
@@ -98,9 +94,7 @@ $itt.database.Tweaks = @'
     "Category": "Fixer",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/test.bat' -OutFile $env:TEMP\\script.bat \r\n Start-Process -FilePath 'cmd.exe' -ArgumentList '/c %TMP%\\script.bat && del /f /q %TMP%\\script.bat ' -NoNewWindow -Wait "
-    ]
+    "Script": ["Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/test.bat' -OutFile $env:TEMP\\script.bat \r\n Start-Process -FilePath 'cmd.exe' -ArgumentList '/c %TMP%\\script.bat && del /f /q %TMP%\\script.bat ' -NoNewWindow -Wait "]
   },
   {
     "Name": "Clean Taskbar",
@@ -164,11 +158,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "Disable-MMAgent -MemoryCompression | Out-Null",
-      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Xbox%20Services/run.ps1 | iex",
-      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Fix%20Stutter/run.ps1 | iex"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Xbox%20Services/run.ps1 | iex"]
   },
   {
     "Name": "Disable Start Menu Ads",
@@ -224,10 +214,6 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "ScheduledTask": [
-      "OneDrive",
-      "MicrosoftEdge"
-    ],
     "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20OneDrive/run.ps1 | iex"]
   },
   {
@@ -268,9 +254,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "Remove-Item \"$env:LocalAppData\\Microsoft\\Windows\\Explorer\\thumbcache*\" -Force -Recurse"
-    ]
+    "Script": ["Remove-Item \"$env:LocalAppData\\Microsoft\\Windows\\Explorer\\thumbcache*\" -Force -Recurse"]
   },
   {
     "Name": "Classic Volume Control",
@@ -326,9 +310,7 @@ $itt.database.Tweaks = @'
     "Category": "Protection",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force; Set-SmbServerConfiguration -EnableSMB2Protocol $false -Force"
-    ]
+    "Script": ["Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force; Set-SmbServerConfiguration -EnableSMB2Protocol $false -Force"]
   },
   {
     "Name": "Set current network profile to public",
@@ -336,9 +318,7 @@ $itt.database.Tweaks = @'
     "Category": "Privacy",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "Set-NetConnectionProfile -NetworkCategory Public"
-    ]
+    "Script": ["Set-NetConnectionProfile -NetworkCategory Public"]
   },
   {
     "Name": "Enable F8 boot menu options",
@@ -354,9 +334,7 @@ $itt.database.Tweaks = @'
     "Category": "Power",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "\r\n        powercfg /X monitor-timeout-ac 0\r\n        powercfg /X monitor-timeout-dc 0\r\n        powercfg /X standby-timeout-ac 0\r\n        powercfg /X standby-timeout-dc 0\r\n      "
-    ]
+    "Script": ["\r\n        powercfg /X monitor-timeout-ac 0\r\n        powercfg /X monitor-timeout-dc 0\r\n        powercfg /X standby-timeout-ac 0\r\n        powercfg /X standby-timeout-dc 0\r\n      "]
   },
   {
     "Name": "Set Wallpaper desktop Quality to 100%",
@@ -396,99 +374,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "defaultValue": "1",
-        "Type": "String",
-        "Path": "HKCU:\\Control Panel\\Desktop",
-        "Value": "0",
-        "Name": "DragFullWindows"
-      },
-      {
-        "defaultValue": "1",
-        "Type": "String",
-        "Path": "HKCU:\\Control Panel\\Desktop",
-        "Value": "200",
-        "Name": "MenuShowDelay"
-      },
-      {
-        "defaultValue": "1",
-        "Type": "String",
-        "Path": "HKCU:\\Control Panel\\Desktop\\WindowMetrics",
-        "Value": "0",
-        "Name": "MinAnimate"
-      },
-      {
-        "defaultValue": "1",
-        "Type": "DWord",
-        "Path": "HKCU:\\Control Panel\\Keyboard",
-        "Value": "0",
-        "Name": "KeyboardDelay"
-      },
-      {
-        "defaultValue": "1",
-        "Type": "DWord",
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Value": "0",
-        "Name": "ListviewAlphaSelect"
-      },
-      {
-        "defaultValue": "1",
-        "Type": "DWord",
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Value": "0",
-        "Name": "ListviewShadow"
-      },
-      {
-        "defaultValue": "1",
-        "Type": "DWord",
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Value": "0",
-        "Name": "TaskbarAnimations"
-      },
-      {
-        "defaultValue": "1",
-        "Type": "DWord",
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects",
-        "Value": "2",
-        "Name": "VisualFXSetting"
-      },
-      {
-        "defaultValue": "1",
-        "Type": "DWord",
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\DWM",
-        "Value": "0",
-        "Name": "EnableAeroPeek"
-      },
-      {
-        "defaultValue": "1",
-        "Type": "DWord",
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Value": "0",
-        "Name": "TaskbarMn"
-      },
-      {
-        "defaultValue": "1",
-        "Type": "DWord",
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Value": "0",
-        "Name": "TaskbarDa"
-      },
-      {
-        "defaultValue": "1",
-        "Type": "DWord",
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Value": "0",
-        "Name": "ShowTaskViewButton"
-      },
-      {
-        "defaultValue": "1",
-        "Type": "DWord",
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
-        "Value": "0",
-        "Name": "SearchboxTaskbarMode"
-      }
-    ]
+    "Script": ["irm https://github.com/itt-co/itt-tweaks/blob/main/Super%20Performance/run.ps1 | iex"]
   },
   {
     "Name": "Remove Widgets from Taskbar in Windows 11",
@@ -496,11 +382,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "true",
-    "Script": [
-      "Install-Dependencies 'winget'",
-      "winget uninstall 'windows web experience pack' --silent",
-      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Widgets%20from%20Taskbar%20in%20Windows%2011/run.ps1 | iex"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Widgets%20from%20Taskbar%20in%20Windows%2011/run.ps1 | iex"]
   },
   {
     "Name": "Set Username to Unknown",
@@ -508,10 +390,7 @@ $itt.database.Tweaks = @'
     "Category": "Privacy",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "Rename-Computer -NewName 'Unknown'",
-      "$currentUsername = $env:USERNAME; Rename-LocalUser -Name $currentUsername -NewName 'Unknown'"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Set%20Username%20to%20Unknown/run.ps1 | iex"]
   },
   {
     "Name": "Fix Arabic encoding",
@@ -519,9 +398,7 @@ $itt.database.Tweaks = @'
     "Category": "Fixer",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "Set-WinSystemLocale -SystemLocale 'ar-EG'"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Fix%20Arabic%20encoding/run.ps1 | iex"]
   },
   {
     "Name": "Restore Default File Type Associations",
