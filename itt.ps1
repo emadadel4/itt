@@ -22,7 +22,7 @@ $itt = [Hashtable]::Synchronized(@{
 
     database       = @{}
     ProcessRunning = $false
-    lastupdate     = "07/29/2025"
+    lastupdate     = "07/30/2025"
     registryPath   = "HKCU:\Software\ITT@emadadel"
     icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
     Theme          = "default"
@@ -1559,7 +1559,7 @@ $itt.database.Tweaks = @'
     "Category": "Classic",
     "Check": "false",
     "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Activate%20Windows%20Classic%20Photo%20Viewer/run.ps1 | iex"]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Old%20Photo%20Viewer/run.bat | iex"]
   },
   {
     "Name": "Remove Copilot in Windows 11",
@@ -3634,7 +3634,7 @@ function Startup {
         if ($Debug) { return }
         # debug end
         #LOG
-        #PlayMusic
+        #layMusic
         #Quotes
     }
 }
@@ -8994,13 +8994,13 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('esg').add_MouseLeftButtonDown({
-                    Start-Process('https://github.com/emadadel4/itt')
+            $itt.event.FindName('shell').add_MouseLeftButtonDown({
+                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
                 })
             
             
-            $itt.event.FindName('shell').add_MouseLeftButtonDown({
-                    Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
+            $itt.event.FindName('esg').add_MouseLeftButtonDown({
+                    Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
