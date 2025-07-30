@@ -2003,29 +2003,7 @@
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\System\\CurrentControlSet\\Control",
-        "Name": "WaitToKillServiceTimeout",
-        "Type": "String",
-        "Value": "2000",
-        "defaultValue": "100"
-      },
-      {
-        "Path": "HKCU:\\Control Panel\\Desktop",
-        "Name": "WaitToKillAppTimeout",
-        "Type": "String",
-        "Value": "2000",
-        "defaultValue": "100"
-      },
-      {
-        "Path": "HKCU:\\Control Panel\\Desktop",
-        "Name": "HungAppTimeout",
-        "Type": "String",
-        "Value": "2000 ",
-        "defaultValue": "100"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20Faster%20Shutdown/run.ps1 | iex"]
   },
   {
     "Name": "Super Control Panel",
@@ -2033,9 +2011,7 @@
     "Category": "Personalization",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "New-Item -Path \"$env:USERPROFILE\\Desktop\\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}\" -ItemType Directory"
-    ]
+    "Script": ["New-Item -Path \"$env:USERPROFILE\\Desktop\\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}\" -ItemType Directory"]
   },
   {
     "Name": "Detailed BSoD",
@@ -2043,21 +2019,6 @@
     "Category": "Fixer",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\CrashControl",
-        "Name": "DisplayParameters",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\CrashControl",
-        "Name": "DisableEmoticon",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Detailed%20BSoD/run.ps1 | iex"]
   }
 ]
