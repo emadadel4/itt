@@ -81,7 +81,7 @@ $itt.database.Tweaks = @'
     "Check": "false",
     "Refresh": "false",
     "Script": [
-      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/sfc/run.ps1 | iex"
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/SFC/run.ps1 | iex"
     ]
   },
   {
@@ -90,22 +90,7 @@ $itt.database.Tweaks = @'
     "Category": "Classic",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKCU:\\Software\\Classes\\CLSID\\",
-        "Name": "{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}",
-        "Type": "String",
-        "Value": "",
-        "defaultValue": ""
-      },
-      {
-        "Path": "HKCU:\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\\InprocServer32",
-        "Name": "",
-        "Type": "String",
-        "Value": "",
-        "defaultValue": "default"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Restore%20Classic%20Context%20Menu%20Windows%2011/run.ps1 | iex"]
   },
   {
     "Name": "Restore All Windows Services to Default",
@@ -115,1152 +100,6 @@ $itt.database.Tweaks = @'
     "Refresh": "false",
     "Script": [
       "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/test.bat' -OutFile $env:TEMP\\script.bat \r\n Start-Process -FilePath 'cmd.exe' -ArgumentList '/c %TMP%\\script.bat && del /f /q %TMP%\\script.bat ' -NoNewWindow -Wait "
-    ]
-  },
-  {
-    "Name": "Super Privacy Disable all Privacy Settings and Telemetry",
-    "Description": "Disable Wifi-Sense & Activity History & ActivityFeed All Telemetry & DataCollection & disable various telemetry and annoyances in Edge",
-    "Category": "Privacy",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": [
-      "Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Application Experience\\Microsoft Compatibility Appraiser' | Out-Null; Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Application Experience\\ProgramDataUpdater' | Out-Null; Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Autochk\\Proxy' | Out-Null; Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Customer Experience Improvement Program\\Consolidator' | Out-Null; Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Customer Experience Improvement Program\\UsbCeip' | Out-Null; Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\DiskDiagnostic\\Microsoft-Windows-DiskDiagnosticDataCollector' | Out-Null; schtasks /change /TN '\\Microsoft\\Windows\\Customer Experience Improvement Program\\Consolidator' /DISABLE > NUL 2>&1; schtasks /change /TN '\\Microsoft\\Windows\\DiskDiagnostic\\Microsoft-Windows-DiskDiagnosticDataCollector' /DISABLE > NUL 2>&1; schtasks /change /TN '\\Microsoft\\Windows\\Windows Error Reporting\\QueueReporting' /DISABLE > NUL 2>&1"
-    ],
-    "Registry": [
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\location",
-        "Name": "Value",
-        "Type": "String",
-        "Value": "Deny",
-        "defaultValue": "Deny"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\DataCollection",
-        "Name": "Start_TrackProgs",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCR:\\Software\\Microsoft\\Windows\\CurrentVersion\\Privacy",
-        "Name": "TailoredExperiencesWithDiagnosticDataEnabled",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCR:\\Software\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo",
-        "Name": "Enabled",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCR:\\Software\\Microsoft\\Speech_OneCore\\Settings\\OnlineSpeechPrivacy",
-        "Name": "HasAccepted",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCR:\\Software\\Microsoft\\Input\\TIPC",
-        "Name": "Enabled",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCR:\\Software\\Microsoft\\InputPersonalization",
-        "Name": "RestrictImplicitInkCollection",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCR:\\Software\\Microsoft\\InputPersonalization",
-        "Name": "RestrictImplicitTextCollection",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Sensor\\Overrides\\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}",
-        "Name": "SensorPermissionState",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Services\\lfsvc\\Service\\Configuration",
-        "Name": "Status",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SYSTEM\\Maps",
-        "Name": "AutoUpdateEnabled",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\System",
-        "Name": "EnableActivityFeed",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\Software\\Microsoft\\PolicyManager\\default\\WiFi\\AllowAutoConnectToWiFiSenseHotspots",
-        "Name": "Value",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting",
-        "Name": "Disabled",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting",
-        "Name": "Disabled",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-        "Name": "AllowTelemetry",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "ContentDeliveryAllowed",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "OemPreInstalledAppsEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "PreInstalledAppsEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "PreInstalledAppsEverEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "SilentInstalledAppsEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "SubscribedContent-338387Enabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "SubscribedContent-338388Enabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "SubscribedContent-338389Enabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "SubscribedContent-353698Enabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "SystemPaneSuggestionsEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Siuf\\Rules",
-        "Name": "NumberOfSIUFInPeriod",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-        "Name": "DoNotShowFeedbackNotifications",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\CloudContent",
-        "Name": "DisableTailoredExperiencesWithDiagnosticData",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\AdvertisingInfo",
-        "Name": "DisabledByGroupPolicy",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting",
-        "Name": "Disabled",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\DeliveryOptimization\\Config",
-        "Name": "DODownloadMode",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Remote Assistance",
-        "Name": "fAllowToGetHelp",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\OperationStatusManager",
-        "Name": "EnthusiastMode",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Name": "ShowTaskViewButton",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\People",
-        "Name": "PeopleBand",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Name": "LaunchTo",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\FileSystem",
-        "Name": "LongPathsEnabled",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\DriverSearching",
-        "Name": "SearchOrderConfig",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile",
-        "Name": "SystemResponsiveness",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile",
-        "Name": "NetworkThrottlingIndex",
-        "Value": "4294967295",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Control Panel\\Desktop",
-        "Name": "MenuShowDelay",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Control Panel\\Desktop",
-        "Name": "AutoEndTasks",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management",
-        "Name": "ClearPageFileAtShutdown",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SYSTEM\\ControlSet001\\Services\\Ndu",
-        "Name": "Start",
-        "Value": "2",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Control Panel\\Mouse",
-        "Name": "MouseHoverTime",
-        "Value": "400",
-        "Type": "String",
-        "defaultValue": "400"
-      },
-      {
-        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Services\\LanmanServer\\Parameters",
-        "Name": "IRPStackSize",
-        "Value": "30",
-        "Type": "DWord",
-        "defaultValue": "20"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Feeds",
-        "Name": "EnableFeeds",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Feeds",
-        "Name": "ShellFeedsTaskbarViewMode",
-        "Value": "2",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-        "Name": "HideSCAMeetNow",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\UserProfileEngagement",
-        "Name": "ScoobeSystemSettingEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Feeds",
-        "Name": "EnableFeeds",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "ConnectedSearchPrivacy",
-        "Value": "3",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\Software\\Policies\\Microsoft\\Windows\\Explorer",
-        "Name": "DisableSearchHistory",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "AllowSearchToUseLocation",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "EnableDynamicContentInWSB",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "DisableWebSearch",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\Software\\Policies\\Microsoft\\Windows\\Explorer",
-        "Name": "DisableSearchBoxSuggestions",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "PreventUnwantedAddIns",
-        "Value": " ",
-        "Type": "String",
-        "defaultValue": " "
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "PreventRemoteQueries",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "AlwaysUseAutoLangDetection",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "AllowIndexingEncryptedStoresOrItems",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "DisableSearchBoxSuggestions",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "CortanaInAmbientMode",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "BingSearchEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Name": "ShowCortanaButton",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "CanCortanaBeEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "CanCortanaBeEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "ConnectedSearchUseWebOverMeteredConnections",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "AllowCortanaAboveLock",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\SearchSettings",
-        "Name": "IsDynamicSearchBoxEnabled",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\PolicyManager\\default\\Experience\\AllowCortana",
-        "Name": "value",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search",
-        "Name": "AllowSearchToUseLocation",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Speech_OneCore\\Preferences",
-        "Name": "ModelDownloadAllowed",
-        "Value": "0",
-        "Type": "DWord",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\SearchSettings",
-        "Name": "IsDeviceSearchHistoryEnabled",
-        "Value": "1",
-        "Type": "DWord",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Speech_OneCore\\Preferences",
-        "Name": "VoiceActivationOn",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Speech_OneCore\\Preferences",
-        "Name": "VoiceActivationEnableAboveLockscreen",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\OOBE",
-        "Name": "DisableVoice",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "AllowCortana",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search",
-        "Name": "DeviceHistoryEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search",
-        "Name": "HistoryViewEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\Software\\Microsoft\\Speech_OneCore\\Preferences",
-        "Name": "VoiceActivationDefaultOn",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
-        "Name": "CortanaEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search",
-        "Name": "CortanaEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SearchSettings",
-        "Name": "IsMSACloudSearchEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SearchSettings",
-        "Name": "IsAADCloudSearchEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-        "Name": "AllowCloudSearch",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search",
-        "Name": "VoiceShortcut",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
-        "Name": "CortanaConsent",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-        "Name": "AllowDesktopAnalyticsProcessing",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-        "Name": "AllowDeviceNameInTelemetry",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-        "Name": "MicrosoftEdgeDataOptIn",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-        "Name": "AllowWUfBCloudProcessing",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-        "Name": "AllowUpdateComplianceProcessing",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-        "Name": "AllowCommercialDataPipeline",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\Software\\Policies\\Microsoft\\SQMClient\\Windows",
-        "Name": "CEIPEnable",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\DataCollection",
-        "Name": "AllowTelemetry",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-        "Name": "AllowTelemetry",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\Software\\Policies\\Microsoft\\Windows\\DataCollection",
-        "Name": "DisableOneSettingsDownloads",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\Software\\Policies\\Microsoft\\Windows NT\\CurrentVersion\\Software Protection Platform",
-        "Name": "NoGenTicket",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\Software\\Policies\\Microsoft\\Windows\\Windows Error Reporting",
-        "Name": "Disabled",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting",
-        "Name": "Disabled",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\Software\\Microsoft\\Windows\\Windows Error Reporting\\Consent",
-        "Name": "DefaultConsent",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\Software\\Microsoft\\Windows\\Windows Error Reporting\\Consent",
-        "Name": "DefaultOverrideBehavior",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\Software\\Microsoft\\Windows\\Windows Error Reporting",
-        "Name": "DontSendAdditionalData",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\Software\\Microsoft\\Windows\\Windows Error Reporting",
-        "Name": "LoggingDisabled",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "ContentDeliveryAllowed",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "OemPreInstalledAppsEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "PreInstalledAppsEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "PreInstalledAppsEverEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "SilentInstalledAppsEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-        "Name": "SystemPaneSuggestionsEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\SystemSettings\\AccountNotifications",
-        "Name": "EnableAccountNotifications",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\SystemSettings\\AccountNotifications",
-        "Name": "EnableAccountNotifications",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Notifications\\Settings",
-        "Name": "NOC_GLOBAL_SETTING_TOASTS_ENABLED",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Policies\\Microsoft\\Windows\\EdgeUI",
-        "Name": "DisableMFUTracking",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\EdgeUI",
-        "Name": "DisableMFUTracking",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\Control Panel\\International\\User Profile",
-        "Name": "HttpAcceptLanguageOptOut",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\System",
-        "Name": "PublishUserActivities",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Personalization",
-        "Name": "NoLockScreenCamera",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\location",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\webcam",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\microphone",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\documentsLibrary",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\picturesLibrary",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\videosLibrary",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\broadFileSystemAccess",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\userAccountInformation",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\contacts",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\phoneCallHistory",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\chat",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\email",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\userDataTasks",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\appDiagnostics",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Speech_OneCore\\Settings\\VoiceActivation\\UserPreferenceForAllApps",
-        "Name": "AgentActivationEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppPrivacy",
-        "Name": "LetAppsAccessPhone",
-        "Value": "2",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppPrivacy",
-        "Name": "LetAppsAccessPhone_UserInControlOfTheseApps",
-        "Value": "",
-        "Type": "REG_MULTI_SZ",
-        "DefaultValue": ""
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppPrivacy",
-        "Name": "LetAppsAccessPhone_ForceAllowTheseApps",
-        "Value": "",
-        "Type": "REG_MULTI_SZ",
-        "DefaultValue": ""
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppPrivacy",
-        "Name": "LetAppsAccessPhone_ForceDenyTheseApps",
-        "Value": "",
-        "Type": "REG_MULTI_SZ",
-        "DefaultValue": ""
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\DeviceAccess\\Global\\{C1D23ACC-752B-43E5-8448-8D0E519CD6D6}",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\appointments",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\activity",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\radios",
-        "Name": "Value",
-        "Value": "Deny",
-        "Type": "String",
-        "DefaultValue": "Allow"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "EdgeEnhanceImagesEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "PersonalizationReportingEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "ShowRecommendationsEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "HideFirstRunExperience",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "UserFeedbackAllowed",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "ConfigureDoNotTrack",
-        "Value": "1",
-        "Type": "DWord",
-        "DefaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "AlternateErrorPagesEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "EdgeCollectionsEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "EdgeFollowEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "EdgeShoppingAssistantEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "MicrosoftEdgeInsiderPromotionEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "ShowMicrosoftRewards",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "WebWidgetAllowed",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "DiagnosticData",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "EdgeAssetDeliveryServiceEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "CryptoWalletEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "WalletDonationEnabled",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCR:\\Software\\Microsoft\\Personalization\\Settings",
-        "Name": "AcceptedPrivacyPolicy",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKCR:\\Software\\Microsoft\\InputPersonalization\\TrainedDataStore",
-        "Name": "HarvestContacts",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      }
     ]
   },
   {
@@ -1277,102 +116,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "true",
-    "AppxPackage": [
-      "Microsoft.Copilot",
-      "Microsoft.BingNews",
-      "Microsoft.WindowsCamera",
-      "Microsoft.Getstarted",
-      "Microsoft.BingWeather_1.0.6.0_x64__8wekyb3d8bbwe",
-      "MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy",
-      "Microsoft.GetHelp",
-      "Microsoft.AppConnector",
-      "Microsoft.BingFinance",
-      "Microsoft.BingTranslator",
-      "Microsoft.BingSports",
-      "MicrosoftCorporationII.MicrosoftFamily",
-      "Microsoft.BingHealthAndFitness",
-      "Microsoft.BingTravel",
-      "Microsoft.MinecraftUWP",
-      "PowerAutomate",
-      "MicrosoftTeams",
-      "Microsoft.Todos",
-      "Microsoft.AsyncTextService",
-      "Microsoft.GamingServices",
-      "Microsoft.BingFoodAndDrink",
-      "Microsoft.BingWeather",
-      "Microsoft.Messaging",
-      "Microsoft.Microsoft3DViewer",
-      "Microsoft.3DBuilder",
-      "Microsoft.MicrosoftOfficeHub",
-      "Microsoft.MicrosoftSolitaireCollection",
-      "Microsoft.NetworkSpeedTest",
-      "Microsoft.News",
-      "Microsoft.549981C3F5F10",
-      "Microsoft.Office.Lens",
-      "Microsoft.Office.OneNote",
-      "Microsoft.Office.Sway",
-      "Microsoft.OutlookForWindows",
-      "Microsoft.OneConnect",
-      "Microsoft.People",
-      "Microsoft.Print3D",
-      "Microsoft.RemoteDesktop",
-      "Microsoft.SkypeApp",
-      "Microsoft.StorePurchaseApp",
-      "Microsoft.Office.Todo.List",
-      "Microsoft.Whiteboard",
-      "Microsoft.CommsPhone",
-      "Microsoft.windowscommunicationsapps",
-      "Microsoft.WindowsFeedbackHub",
-      "Microsoft.Wallet",
-      "Microsoft.WindowsMaps",
-      "Microsoft.YourPhone",
-      "Microsoft.WindowsSoundRecorder",
-      "Microsoft.Windows.Cortana",
-      "Microsoft.ScreenSketch",
-      "Microsoft.Windows.DevHome",
-      "Microsoft.MixedReality.Portal",
-      "Microsoft.MSPaint",
-      "Microsoft.Getstarted",
-      "Microsoft.ZuneVideo",
-      "Microsoft.ZuneMusic",
-      "EclipseManager",
-      "ActiproSoftwareLLC",
-      "AdobeSystemsIncorporated.AdobePhotoshopExpress",
-      "Duolingo-LearnLanguagesforFree",
-      "PandoraMediaInc",
-      "CandyCrush",
-      "BubbleWitch3Saga",
-      "Wunderlist",
-      "Flipboard",
-      "Twitter",
-      "Facebook",
-      "Minecraft",
-      "Royal Revolt",
-      "Sway",
-      "Disney.37853FC22B2CE",
-      "disney",
-      "Microsoft.549981",
-      "Microsoft.MicrosoftStickyNotes",
-      "TikTok.TikTok_8wekyb3d8bbwe",
-      "TikTok",
-      "Microsoft.NetworkSpeedTest"
-    ],
-    "Registry": [
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-        "Name": "NoStartMenuMorePrograms",
-        "Type": "DWord",
-        "Value": "2",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-        "Name": "NoStartMenuMorePrograms",
-        "Type": "DWord",
-        "Value": "2",
-        "defaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20MS%20Apps/run.ps1 | iex"],
   },
   {
     "Name": "Remove Xbox Apps",
@@ -1380,14 +124,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "true",
-    "AppxPackage": [
-      "Microsoft.XboxApp",
-      "Microsoft.Xbox.TCUI",
-      "Microsoft.XboxGamingOverlay",
-      "Microsoft.XboxGameOverlay",
-      "Microsoft.XboxIdentityProvider",
-      "Microsoft.XboxSpeechToTextOverlay"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Xbox%20apps/run.ps1 | iex"]
   },
   {
     "Name": "Fix Stutter in games",
@@ -1395,9 +132,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "irm https://raw.githubusercontent.com/emadadel4/Fix-Stutter-in-Games/main/fix.ps1 | iex "
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/emadadel4/Fix-Stutter-in-Games/main/fix.ps1 | iex "]
   },
   {
     "Name": "Enable the Ultimate Performance Power Plan",
@@ -1405,9 +140,7 @@ $itt.database.Tweaks = @'
     "Category": "Power",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61; Start-Process powercfg.cpl"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20Ultimate%20Performance%20Power%20Plan/run.ps1 | iex"]
   },
   {
     "Name": "Reset the TCP/IP Stack",
@@ -1415,9 +148,7 @@ $itt.database.Tweaks = @'
     "Category": "Fixer",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "netsh int ip reset"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Netsh/run.ps1 | iex"]
   },
   {
     "Name": "Setup Auto login",
@@ -1425,9 +156,7 @@ $itt.database.Tweaks = @'
     "Category": "Classic",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "curl.exe -ss \"https://live.sysinternals.com/Autologon.exe\" -o $env:temp\\autologin.exe ; cmd /c $env:temp\\autologin.exe /accepteula"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Setup%20Auto%20login/run.ps1 | iex"]
   },
   {
     "Name": "Disable Xbox Services",
@@ -1463,15 +192,7 @@ $itt.database.Tweaks = @'
     "Category": "Privacy",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\CloudContent",
-        "Name": "DisableWindowsConsumerFeatures",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20suggestions%20on%20Start%20Menu/run.ps1 | iex"]
   },
   {
     "Name": "Remove Folder Shortcuts From File Explorer",
@@ -1495,28 +216,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "powercfg.exe /hibernate off"
-    ],
-    "UndoScript": [
-      "powercfg.exe /hibernate on"
-    ],
-    "Registry": [
-      {
-        "Path": "HKLM:\\System\\CurrentControlSet\\Control\\Session Manager\\Power",
-        "Name": "HibernateEnabled",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FlyoutMenuSettings",
-        "Name": "ShowHibernateOption",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Hibernate/run.ps1 | iex"]
   },
   {
     "Name": "Disable OneDrive",
@@ -1528,20 +228,7 @@ $itt.database.Tweaks = @'
       "OneDrive",
       "MicrosoftEdge"
     ],
-    "Registry": [
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\OneDrive",
-        "Name": "DisableFileSyncNGSC",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
-        "Name": "OneDrive",
-        "Value": "Remove"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20OneDrive/run.ps1 | iex"]
   },
   {
     "Name": "Remove OneDrive",
@@ -1549,9 +236,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/OneDrive-Uninstaller.ps1 | iex"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/OneDrive-Uninstaller.ps1 | iex"]
   },
   {
     "Name": "Activate Windows Classic Photo Viewer",
@@ -1567,50 +252,7 @@ $itt.database.Tweaks = @'
     "Category": "Privacy",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKCU:\\Software\\Policies\\Microsoft\\Windows\\WindowsCopilot",
-        "Name": "TurnOffWindowsCopilot",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsCopilot",
-        "Name": "TurnOffWindowsCopilot",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Name": "ShowCopilotButton",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-        "Name": "HubsSidebarEnabled",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKCU:\\Software\\Policies\\Microsoft\\Windows\\Explorer",
-        "Name": "DisableSearchBoxSuggestions",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer",
-        "Name": "DisableSearchBoxSuggestions",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Copilot%20Windows%2011/run.ps1 | iex"]
   },
   {
     "Name": "Disable Recall Snapshots in Windows 11 24H",
@@ -1618,29 +260,7 @@ $itt.database.Tweaks = @'
     "Category": "Privacy",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKCU:\\Software\\Policies\\Microsoft\\Windows\\WindowsAI",
-        "Name": "DisableAIDataAnalysis",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsAI",
-        "Name": "DisableAIDataAnalysis",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsAI",
-        "Name": "AllowRecallEnablement",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Recall%20Snapshots%20in%20Windows%2011%2024H/run.ps1 | iex"]
   },
   {
     "Name": "Delete Thumbnail Cache",
@@ -1658,15 +278,7 @@ $itt.database.Tweaks = @'
     "Category": "Classic",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\MTCUVC",
-        "Name": "EnableMtcUvc",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Classic%20Volume%20Control/run.ps1 | iex"]
   },
   {
     "Name": "Disable Toggle Key Sounds",
@@ -1674,15 +286,7 @@ $itt.database.Tweaks = @'
     "Category": "Classic",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKCU:\\Control Panel\\Accessibility\\ToggleKeys",
-        "Name": "Flags",
-        "Type": "String",
-        "Value": "58",
-        "defaultValue": "62"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Sticky%20Keys/run.ps1 | iex"]
   },
   {
     "Name": "Disable Homegroup",
@@ -1690,18 +294,7 @@ $itt.database.Tweaks = @'
     "Category": "Privacy",
     "Check": "false",
     "Refresh": "false",
-    "Services": [
-      {
-        "Name": "HomeGroupListener",
-        "StartupType": "Manual ",
-        "DefaultType": "Automatic"
-      },
-      {
-        "Name": "HomeGroupProvider",
-        "StartupType": "Manual ",
-        "DefaultType": "Automatic"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Homegroup/run.ps1 | iex"]
   },
   {
     "Name": "Remove Home and Gallery from explorer in Windows 11",
@@ -1709,23 +302,7 @@ $itt.database.Tweaks = @'
     "Category": "Privacy",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-        "Name": "1",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Desktop\\NameSpace\\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}",
-        "Value": "Remove"
-      },
-      {
-        "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Desktop\\NameSpace\\{f874310e-b6b7-47dc-bc84-b9e6b38f5903}",
-        "Value": "Remove"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Home%20and%20Gallery%20from%20explorer%20in%20Windows%2011/run.ps1 | iex"]
   },
   {
     "Name": "Disable Wifi Sense",
@@ -1733,29 +310,7 @@ $itt.database.Tweaks = @'
     "Category": "Protection",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\PolicyManager\\default\\WiFi\\AllowWiFiHotSpotReporting",
-        "Name": "value",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\PolicyManager\\default\\WiFi\\AllowAutoConnectToWiFiSenseHotspots",
-        "Name": "value",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\WcmSvc\\wifinetworkmanager\\config",
-        "Name": "AutoConnectAllowedOEM",
-        "Value": "0",
-        "Type": "DWord",
-        "DefaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Wifi%20Sense/run.ps1 | iex"]
   },
   {
     "Name": "Disable Autoplay and Autorun",
@@ -1763,22 +318,7 @@ $itt.database.Tweaks = @'
     "Category": "Protection",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\AutoplayHandlers",
-        "Name": "DisableAutoplay",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-        "Name": "NoDriveTypeAutoRun",
-        "Type": "DWord",
-        "Value": "255",
-        "defaultValue": "255"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Autoplay%20and%20Autorun/run.ps1 | iex"]
   },
   {
     "Name": "Disable SMB Server",
@@ -1806,9 +346,7 @@ $itt.database.Tweaks = @'
     "Category": "BIOS",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "bcdedit /set bootmenupolicy Standard | Out-Null"
-    ]
+    "Script": ["bcdedit /set bootmenupolicy Standard | Out-Null"]
   },
   {
     "Name": "Disable display and sleep mode timeouts",
@@ -1826,15 +364,7 @@ $itt.database.Tweaks = @'
     "Category": "Personalization",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\System\\CurrentControlSet\\Control\\CrashControl",
-        "Name": "DisplayParameters",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://github.com/itt-co/itt-tweaks/blob/main/Set%20Wallpaper%20desktop%20Quality%20to%20100%25/run.ps1 | iex"]
   },
   {
     "Name": "Disable Windows Transparency",
@@ -1842,15 +372,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
-        "Name": "EnableTransparency",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Windows%20Transparency/run.ps1| iex"]
   },
   {
     "Name": "Disable scheduled defragmentation task",
@@ -1858,9 +380,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Defrag\\ScheduledDefrag' | Out-Null"
-    ]
+    "Script": ["Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Defrag\\ScheduledDefrag' | Out-Null"]
   },
   {
     "Name": "Enable NET 3.5",
@@ -1868,9 +388,7 @@ $itt.database.Tweaks = @'
     "Category": "Classic",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "DISM /Online /Enable-Feature /FeatureName:NetFx3 /All"
-    ]
+    "Script": ["DISM /Online /Enable-Feature /FeatureName:NetFx3 /All"]
   },
   {
     "Name": "Super Performance",
@@ -1980,16 +498,8 @@ $itt.database.Tweaks = @'
     "Refresh": "true",
     "Script": [
       "Install-Dependencies 'winget'",
-      "winget uninstall 'windows web experience pack' --silent"
-    ],
-    "Registry": [
-      {
-        "Name": "TaskbarDa",
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\TaskbarDeveloperSettings",
-        "defaultValue": "1",
-        "Value": "0",
-        "Type": "DWord"
-      }
+      "winget uninstall 'windows web experience pack' --silent",
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Widgets%20from%20Taskbar%20in%20Windows%2011/run.ps1 | iex"
     ]
   },
   {
@@ -2019,12 +529,7 @@ $itt.database.Tweaks = @'
     "Category": "Fixer",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts",
-        "Value": "Remove"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Restore%20Default%20File%20Type%20Associations/run.ps1 | iex"]
   },
   {
     "Name": "Limit Defender CPU Usage",
@@ -2032,15 +537,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Scan",
-        "Name": "AvgCPULoadFactor",
-        "Type": "DWord",
-        "Value": "25",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Limit%20Defender%20CPU%20Usage/run.ps1 | iex"]
   },
   {
     "Name": "Optimizing GPU scheduling",
@@ -2048,15 +545,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\SOFTWARE\\CurrentControlSet\\Control\\GraphicsDrivers",
-        "Name": "HwSchMode",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimizing%20GPU%20scheduling/run.ps1 | iex"]
   },
   {
     "Name": "Disable Fullscreen Optimizations",
@@ -2064,15 +553,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKCU:\\System\\GameConfigStore",
-        "Name": "GameDVR_DXGIHonorFSEWindowsCompatible",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Fullscreen%20Optimizations/run.ps1 | iex"]
   },
   {
     "Name": "Optimize Network",
@@ -2080,22 +561,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
-        "Name": "TcpAckFrequency",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
-        "Name": "TCPNoDelay",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimize%20Network/run.ps1 | iex"]
   },
   {
     "Name": "Enable system cache",
@@ -2103,15 +569,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\System\\CurrentControlSet\\Control\\Session Manager\\Memory Management",
-        "Name": "LargeSystemCache",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20system%20cache/run.ps1 | iex"]
   },
   {
     "Name": "Optimizing NVIDIA GPU settings",
@@ -2119,29 +577,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\Software\\NVIDIA Corporation\\Global\\NvCplApi\\Policies",
-        "Name": "PowerMizerEnable",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\Software\\NVIDIA Corporation\\Global\\NvCplApi\\Policies",
-        "Name": "PowerMizerLevel",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\Software\\NVIDIA Corporation\\Global\\NvCplApi\\Policies",
-        "Name": "PowerMizerLevelAC",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimizing%20NVIDIA%20GPU%20settings/run.ps1 | iex"]
   },
   {
     "Name": "Enable Faster Shutdown",
@@ -2149,29 +585,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\System\\CurrentControlSet\\Control",
-        "Name": "WaitToKillServiceTimeout",
-        "Type": "String",
-        "Value": "2000",
-        "defaultValue": "100"
-      },
-      {
-        "Path": "HKCU:\\Control Panel\\Desktop",
-        "Name": "WaitToKillAppTimeout",
-        "Type": "String",
-        "Value": "2000",
-        "defaultValue": "100"
-      },
-      {
-        "Path": "HKCU:\\Control Panel\\Desktop",
-        "Name": "HungAppTimeout",
-        "Type": "String",
-        "Value": "2000 ",
-        "defaultValue": "100"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20Faster%20Shutdown/run.ps1 | iex"]
   },
   {
     "Name": "Super Control Panel",
@@ -2179,9 +593,7 @@ $itt.database.Tweaks = @'
     "Category": "Personalization",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "New-Item -Path \"$env:USERPROFILE\\Desktop\\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}\" -ItemType Directory"
-    ]
+    "Script": ["New-Item -Path \"$env:USERPROFILE\\Desktop\\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}\" -ItemType Directory"]
   },
   {
     "Name": "Detailed BSoD",
@@ -2189,22 +601,7 @@ $itt.database.Tweaks = @'
     "Category": "Fixer",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\CrashControl",
-        "Name": "DisplayParameters",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\CrashControl",
-        "Name": "DisableEmoticon",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Detailed%20BSoD/run.ps1 | iex"]
   }
 ]
 '@ | ConvertFrom-Json
@@ -8403,11 +6800,6 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
             </StackPanel>
         </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
             <StackPanel Orientation="Horizontal">
-                <CheckBox Content="Super Privacy Disable all Privacy Settings and Telemetry" FontSize="15" Tag="||||Privacy"   ToolTip="Disable WifiSense  Activity History  ActivityFeed All Telemetry  DataCollection  disable various telemetry and annoyances in Edge"/>
-                <TextBlock Margin="8" FontSize="11" Text="{Binding Privacy}"/>
-            </StackPanel>
-        </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
-            <StackPanel Orientation="Horizontal">
                 <CheckBox Content="Clean Taskbar" FontSize="15" Tag="||||Performance"   ToolTip="Disable icons"/>
                 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
             </StackPanel>
@@ -8989,8 +7381,8 @@ function Show-Event {
         $itt.event.FindName('date').text = '08/01/2025'.Trim()
         
     
-            $itt.event.FindName('ps').add_MouseLeftButtonDown({
-                    Start-Process('https://www.palestinercs.org/en/Donation')
+            $itt.event.FindName('esg').add_MouseLeftButtonDown({
+                    Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
@@ -8999,8 +7391,8 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('esg').add_MouseLeftButtonDown({
-                    Start-Process('https://github.com/emadadel4/itt')
+            $itt.event.FindName('ps').add_MouseLeftButtonDown({
+                    Start-Process('https://www.palestinercs.org/en/Donation')
                 })
             
             
