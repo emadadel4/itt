@@ -110,7 +110,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20MS%20Apps/run.ps1 | iex"],
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20MS%20Apps/run.ps1 | iex"]
   },
   {
     "Name": "Remove Xbox Apps",
@@ -126,7 +126,7 @@ $itt.database.Tweaks = @'
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/emadadel4/Fix-Stutter-in-Games/main/fix.ps1 | iex "]
+    "Script": ["irm https://raw.githubusercontent.com/emadadel4/Fix-Stutter-in-Games/main/fix.ps1 | iex"]
   },
   {
     "Name": "Enable the Ultimate Performance Power Plan",
@@ -7258,8 +7258,8 @@ function Show-Event {
         $itt.event.FindName('date').text = '08/01/2025'.Trim()
         
     
-            $itt.event.FindName('esg').add_MouseLeftButtonDown({
-                    Start-Process('https://github.com/emadadel4/itt')
+            $itt.event.FindName('ps').add_MouseLeftButtonDown({
+                    Start-Process('https://www.palestinercs.org/en/Donation')
                 })
             
             
@@ -7268,8 +7268,8 @@ function Show-Event {
                 })
             
             
-            $itt.event.FindName('ps').add_MouseLeftButtonDown({
-                    Start-Process('https://www.palestinercs.org/en/Donation')
+            $itt.event.FindName('esg').add_MouseLeftButtonDown({
+                    Start-Process('https://github.com/emadadel4/itt')
                 })
             
             
