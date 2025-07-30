@@ -5,9 +5,7 @@
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/Disk%20cleanup.ps1 | iex"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/Disk%20cleanup.ps1 | iex"]
   },
   {
     "Name": "System File Checker",
@@ -15,9 +13,7 @@
     "Category": "Fixer",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/SFC/run.ps1 | iex"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/SFC/run.ps1 | iex"]
   },
   {
     "Name": "Restore Classic Context Menu Windows 11",
