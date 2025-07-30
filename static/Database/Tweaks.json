@@ -16,7 +16,7 @@
     "Check": "false",
     "Refresh": "false",
     "Script": [
-      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/sfc/run.ps1 | iex"
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/SFC/run.ps1 | iex"
     ]
   },
   {
@@ -1341,7 +1341,7 @@
     "Check": "false",
     "Refresh": "false",
     "Script": [
-      "powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61; Start-Process powercfg.cpl"
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20Ultimate%20Performance%20Power%20Plan/run.ps1 | iex"
     ]
   },
   {
@@ -1351,7 +1351,7 @@
     "Check": "false",
     "Refresh": "false",
     "Script": [
-      "netsh int ip reset"
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Netsh/run.ps1 | iex"
     ]
   },
   {
@@ -1484,9 +1484,7 @@
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/OneDrive-Uninstaller.ps1 | iex"
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/OneDrive-Uninstaller.ps1 | iex"]
   },
   {
     "Name": "Activate Windows Classic Photo Viewer",
@@ -1494,7 +1492,7 @@
     "Category": "Classic",
     "Check": "false",
     "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Activate%20Windows%20Classic%20Photo%20Viewer/run.ps1 | iex"]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Old%20Photo%20Viewer/run.bat | iex"]
   },
   {
     "Name": "Remove Copilot in Windows 11",
@@ -1609,15 +1607,7 @@
     "Category": "Classic",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKCU:\\Control Panel\\Accessibility\\ToggleKeys",
-        "Name": "Flags",
-        "Type": "String",
-        "Value": "58",
-        "defaultValue": "62"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Sticky%20Keys/run.ps1 | iex"]
   },
   {
     "Name": "Disable Homegroup",
@@ -1741,9 +1731,7 @@
     "Category": "BIOS",
     "Check": "false",
     "Refresh": "false",
-    "Script": [
-      "bcdedit /set bootmenupolicy Standard | Out-Null"
-    ]
+    "Script": ["bcdedit /set bootmenupolicy Standard | Out-Null"]
   },
   {
     "Name": "Disable display and sleep mode timeouts",
@@ -1967,15 +1955,7 @@
     "Category": "Performance",
     "Check": "false",
     "Refresh": "true",
-    "Registry": [
-      {
-        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Scan",
-        "Name": "AvgCPULoadFactor",
-        "Type": "DWord",
-        "Value": "25",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Limit%20Defender%20CPU%20Usage/run.ps1 | iex"]
   },
   {
     "Name": "Optimizing GPU scheduling",
@@ -1983,15 +1963,7 @@
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\SOFTWARE\\CurrentControlSet\\Control\\GraphicsDrivers",
-        "Name": "HwSchMode",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimizing%20GPU%20scheduling/run.ps1 | iex"]
   },
   {
     "Name": "Disable Fullscreen Optimizations",
@@ -1999,15 +1971,7 @@
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKCU:\\System\\GameConfigStore",
-        "Name": "GameDVR_DXGIHonorFSEWindowsCompatible",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Fullscreen%20Optimizations/run.ps1 | iex"]
   },
   {
     "Name": "Optimize Network",
@@ -2015,22 +1979,7 @@
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
-        "Name": "TcpAckFrequency",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
-        "Name": "TCPNoDelay",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimize%20Network/run.ps1 | iex"]
   },
   {
     "Name": "Enable system cache",
@@ -2038,15 +1987,7 @@
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\System\\CurrentControlSet\\Control\\Session Manager\\Memory Management",
-        "Name": "LargeSystemCache",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20system%20cache/run.ps1 | iex"]
   },
   {
     "Name": "Optimizing NVIDIA GPU settings",
@@ -2054,29 +1995,7 @@
     "Category": "Performance",
     "Check": "false",
     "Refresh": "false",
-    "Registry": [
-      {
-        "Path": "HKLM:\\Software\\NVIDIA Corporation\\Global\\NvCplApi\\Policies",
-        "Name": "PowerMizerEnable",
-        "Type": "DWord",
-        "Value": "1",
-        "defaultValue": "0"
-      },
-      {
-        "Path": "HKLM:\\Software\\NVIDIA Corporation\\Global\\NvCplApi\\Policies",
-        "Name": "PowerMizerLevel",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      },
-      {
-        "Path": "HKLM:\\Software\\NVIDIA Corporation\\Global\\NvCplApi\\Policies",
-        "Name": "PowerMizerLevelAC",
-        "Type": "DWord",
-        "Value": "0",
-        "defaultValue": "1"
-      }
-    ]
+    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimizing%20NVIDIA%20GPU%20settings/run.ps1 | iex"]
   },
   {
     "Name": "Enable Faster Shutdown",
