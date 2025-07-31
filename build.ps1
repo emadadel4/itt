@@ -35,6 +35,7 @@ $itt.database = @{
     Applications = (Get-Content -Path ./static/Database/Applications.json | ConvertFrom-Json)
     Settings = (Get-Content -Path ./static/Database/Settings.json | ConvertFrom-Json)
     Tweaks = (Get-Content -Path ./static/Database/Tweaks.json | ConvertFrom-Json)
+    locales = (Get-Content -Path ./static/Database/locales.json | ConvertFrom-Json)
 }
 
 $global:imageLinkMap = @{}
