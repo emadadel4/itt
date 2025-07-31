@@ -1,4 +1,4 @@
-﻿function ITT-ScriptBlock {
+function ITT-ScriptBlock {
     <#
         .SYNOPSIS
         Executes a given script block asynchronously within a specified runspace.
