@@ -84,6 +84,8 @@ try {
     #===========================================================================
     #region Set Language based on culture
     #===========================================================================
+    $localesUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/test-tweaks/static/Database/locales.json"
+    $itt.database.locales = Invoke-WebRequest -Uri $localesUrl -UseBasicParsing | Select-Object -ExpandProperty Content | ConvertFrom-Json
     try {
         $Locales = switch ($itt.Locales) {
             "default" {
