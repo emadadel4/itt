@@ -138,6 +138,7 @@ function GenerateCheckboxes {
 
     param (
         [array]$Database,
+        [string]$DatabaseName,          
         [string]$ContentField,
         [string]$TagField = "",
         [string]$TipsField = "",
@@ -157,27 +158,30 @@ function GenerateCheckboxes {
         $CleanedCategory = $Item.Category -replace '[^\w\s]', ''
         $CleanedName = $Item.Name -replace '[^a-zA-Z0-9]', ''
         $Content = $Item.$ContentField
-
         $ChocoPkg = $Item.Choco
         $ScoopPkg = $Item.Scoop
         $WingetPkg = $Item.Winget
         $ITTPkg = $Item.ITT
+        $Script = $Item.Script
 
-        # Optional attributes for CheckBox based on fields
-        #$Tag = if ($TagField) { "Tag=`"$($Item.$TagField)`"" } else { "" }
+        switch ($DatabaseName.ToLower()) {
 
-        #$Tips = if ($TipsField) { "ToolTip=`"Install it again to update`"" } else { "" }
+            "applications" {
+                $Tag = "$ChocoPkg|$ScoopPkg|$WingetPkg|$ITTPkg|$CleanedCategory"
+            }
+            "tweaks" {
+                $Tag = "$Script"
+            }
+        }
 
         $Name = if ($NameField) { "Name=`"$($CleanedName)`"" } else { "" }
-
         $Toggle = if ($ToggleField) { "Style=`"{StaticResource ToggleSwitchStyle}`"" } else { "" }
-        #$IsChecked = if ($IsCheckedField) { "IsChecked=`"$($Item.$IsCheckedField)`"" } else { "" }
 
         # Build the CheckBox and its container
         $Checkboxes += @"
         <StackPanel Orientation="Vertical" Margin="10">
             <StackPanel Orientation="Horizontal">
-                <CheckBox Content="$Content" FontSize="15" Tag="$ChocoPkg|$ScoopPkg|$WingetPkg|$ITTPkg|$CleanedCategory" $Toggle $Name ToolTip="$CleanedDescription"/>
+                <CheckBox Content="$Content" FontSize="15" Tag="$Tag" $Toggle $Name ToolTip="$CleanedDescription"/>
                 <TextBlock Margin="8" FontSize="11" Text="{Binding $($Item.Category)}"/>
             </StackPanel>
         </StackPanel>
@@ -630,7 +634,7 @@ try {
 #===========================================================================
 "@
     Convert-Locales
-    Sync-JsonFiles -DatabaseDirectory $DatabaseDirectory -OutputScriptPath $OutputScript -Skip @("OST.json", "Quotes.json","Applications.json","Settings.json")
+    Sync-JsonFiles -DatabaseDirectory $DatabaseDirectory -OutputScriptPath $OutputScript -Skip @("OST.json", "Quotes.json","Applications.json","Tweaks.json","Settings.json")
     WriteToScript -Content @"
 #===========================================================================
 #endregion End Database /APPS/TWEEAKS/Quotes/OST/Settings
@@ -690,8 +694,9 @@ try {
         Write-Error "An error occurred while processing the XAML content: $($_.Exception.Message)"
         break
     }
-    $AppsCheckboxes = GenerateCheckboxes -Database $itt.database.Applications -ContentField "Name" -TagField "Category"
-    $TweaksCheckboxes = GenerateCheckboxes -Database $itt.database.Tweaks -ContentField "Name" -TagField "Category" -IsCheckedField "check"
+    $AppsCheckboxes   = GenerateCheckboxes -Database $itt.database.Applications -DatabaseName "applications" -ContentField "Name"
+    $TweaksCheckboxes = GenerateCheckboxes -Database $itt.database.Tweaks -DatabaseName "tweaks" -ContentField "Name" -IsCheckedField "check"
+
     $SettingsCheckboxes = GenerateCheckboxes -Database $itt.database.Settings -ContentField "Name" -NameField "Name" -ToggleField "Style=" { StaticResource ToggleSwitchStyle }""
     $MainXamlContent = $MainXamlContent -replace "{{Apps}}", $AppsCheckboxes 
     $MainXamlContent = $MainXamlContent -replace "{{Tweaks}}", $TweaksCheckboxes 
