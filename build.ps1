@@ -634,7 +634,7 @@ try {
 #===========================================================================
 "@
     Convert-Locales
-    Sync-JsonFiles -DatabaseDirectory $DatabaseDirectory -OutputScriptPath $OutputScript -Skip @("OST.json", "Quotes.json","Applications.json","Tweaks.json","Settings.json")
+    Sync-JsonFiles -DatabaseDirectory $DatabaseDirectory -OutputScriptPath $OutputScript -Skip @("OST.json", "Quotes.json","Applications.json","Tweaks.json","Settings.json","locales.json")
     WriteToScript -Content @"
 #===========================================================================
 #endregion End Database /APPS/TWEEAKS/Quotes/OST/Settings
