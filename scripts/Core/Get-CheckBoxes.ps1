@@ -41,29 +41,24 @@ function Get-SelectedItems {
         }
         "Tweaks" {
 
-            $items = @()  
+            $Tweaks = @()  
 
             foreach ($item in $itt.TweaksListView.Items) {
                 
-                $child = $item.Children[0].Children[0]
+                $checkbox = $item.Children[0].Children[0]
+                
+                $tags = $item.Children[0].Children[0].Tag
 
-                if ($tweaksDict.ContainsKey($child.Content) -and $child.IsChecked) {
+        
+                if ($checkbox.IsChecked) {
 
-                    $items += @{
-
-                        Name          = $tweaksDict[$child.Content].Name
-                        Registry      = $tweaksDict[$child.Content].Registry
-                        Services      = $tweaksDict[$child.Content].Services
-                        ScheduledTask = $tweaksDict[$child.Content].ScheduledTask
-                        AppxPackage   = $tweaksDict[$child.Content].AppxPackage
-                        Script        = $tweaksDict[$child.Content].Script
-                        UndoScript    = $tweaksDict[$child.Content].UndoScript
-                        Refresh       = $tweaksDict[$child.Content].Refresh
-                        # Add a new tweak method here
+                    $Tweaks += @{
+                        Name    = $checkbox.Content
+                        Script   = $tags
                     }
                 }
             }
         }
     }
-    return $items
+    return $Tweaks
 }
