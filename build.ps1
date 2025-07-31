@@ -664,7 +664,6 @@ try {
         "MainWindow" = Join-Path -Path $windows  -ChildPath "MainWindow.xaml"
         "tabs"       = Join-Path -Path $Controls -ChildPath "tabs.xaml"
         "menu"       = Join-Path -Path $Controls -ChildPath "menu.xaml"
-        # "catagory"   = Join-Path -Path $Controls -ChildPath "catagory.xaml"
         "search"     = Join-Path -Path $Controls -ChildPath "search.xaml"
         "buttons"    = Join-Path -Path $Controls -ChildPath "buttons.xaml"
         "Style"      = Join-Path -Path $Assets   -ChildPath "Themes/Styles.xaml"
@@ -679,8 +678,8 @@ try {
         $ColorsXamlContent = Get-Content -Path $FilePaths["Colors"] -Raw
         $MenuXamlContent = Get-Content -Path $FilePaths["menu"] -Raw
         $ButtonsXamlContent = Get-Content -Path $FilePaths["buttons"] -Raw
-        # $CatagoryXamlContent = Get-Content -Path $FilePaths["catagory"] -Raw
         $searchXamlContent = Get-Content -Path $FilePaths["search"] -Raw
+        
         # Replace placeholders with actual content
         $MainXamlContent = $MainXamlContent -replace "{{Tabs}}", $AppXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{Style}}", $StyleXamlContent
@@ -694,15 +693,17 @@ try {
         Write-Error "An error occurred while processing the XAML content: $($_.Exception.Message)"
         break
     }
+
     $AppsCheckboxes   = GenerateCheckboxes -Database $itt.database.Applications -DatabaseName "applications" -ContentField "Name"
     $TweaksCheckboxes = GenerateCheckboxes -Database $itt.database.Tweaks -DatabaseName "tweaks" -ContentField "Name" -IsCheckedField "check"
+    $SettingsCheckboxes = GenerateCheckboxes -Database $itt.database.Settings -ContentField "Name" -NameField "Name" -ToggleField "Style="{ StaticResource ToggleSwitchStyle }""
 
-    $SettingsCheckboxes = GenerateCheckboxes -Database $itt.database.Settings -ContentField "Name" -NameField "Name" -ToggleField "Style=" { StaticResource ToggleSwitchStyle }""
     $MainXamlContent = $MainXamlContent -replace "{{Apps}}", $AppsCheckboxes 
     $MainXamlContent = $MainXamlContent -replace "{{Tweaks}}", $TweaksCheckboxes 
     $MainXamlContent = $MainXamlContent -replace "{{Settings}}", $SettingsCheckboxes 
     $MainXamlContent = $MainXamlContent -replace "{{ThemesKeys}}", (GenerateThemesKeys)
     $MainXamlContent = $MainXamlContent -replace "{{LocalesKeys}}", (GenerateLocalesKeys)
+
     # Get xaml files from Themes and put it inside MainXamlContent
     $ThemeFilesContent = Get-ChildItem -Path "$Themes" -File | 
     ForEach-Object { Get-Content $_.FullName -Raw } | 
