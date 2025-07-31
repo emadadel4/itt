@@ -46,39 +46,11 @@ function Invoke-Apply {
         $itt["window"].Dispatcher.Invoke([action] { Set-Taskbar -progress "Indeterminate" -value 0.01 -icon "logo" })
 
         foreach ($tweak in $selectedTweaks) {
+
             Add-Log -Message "::::$($tweak.Name)::::" -Level "default"
-            $tweak | ForEach-Object {
-                if ($_.Script -and $_.Script.Count -gt 0) {
-                    ExecuteCommand -tweak $tweak.Script
-                    if ($_.Refresh -eq $true) {
-                        Refresh-Explorer
-                    }
-                } 
-                if ($_.Registry -and $_.Registry.Count -gt 0) {
-                    Set-Registry -tweak $tweak.Registry
-                    if ($_.Refresh -eq $true) {
-                        Refresh-Explorer
-                    }
-                } 
-                if ($_.AppxPackage -and $_.AppxPackage.Count -gt 0) {
-                    Uninstall-AppxPackage -tweak $tweak.AppxPackage
-                    if ($_.Refresh -eq $true) {
-                        Refresh-Explorer
-                    }
-                } 
-                if ($_.ScheduledTask -and $_.ScheduledTask.Count -gt 0) {
-                    Remove-ScheduledTasks -tweak $tweak.ScheduledTask
-                    if ($_.Refresh -eq $true) {
-                        Refresh-Explorer
-                    }
-                } 
-                if ($_.Services -and $_.Services.Count -gt 0) {
-                    Disable-Service -tweak $tweak.Services
-                    if ($_.Refresh -eq $true) {
-                        Refresh-Explorer
-                    }
-                } 
-            }
+
+            ExecuteCommand -tweak $tweak.Script
+            
         }
 
         $itt.ProcessRunning = $false
