@@ -168,6 +168,12 @@ function Invoke-Button {
         "taps"{
             ChangeTap
         }
+        "telegram"{
+            Start-Process("https://t.me/emadadel4")
+        }
+        "github"{
+            Start-Process("https://github.com/emadadel4/itt")
+        }
         Default {
             Write-Host "Unknown action: $action"
         }
