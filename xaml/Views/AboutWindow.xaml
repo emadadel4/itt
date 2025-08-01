@@ -3,6 +3,7 @@
     AllowsTransparency="True"
     Placement="Center"
     StaysOpen="False"
+    PopupAnimation="Fade"
     IsOpen="false">
 
     <Border 
