@@ -1,4 +1,4 @@
-<!--Search -->
+<!--Begin Search -->
 <Grid HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center">
     <TextBox Padding="8"
         Width="120"
