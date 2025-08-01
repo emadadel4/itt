@@ -96,7 +96,7 @@
     "scoop": "extras/abdownloadmanager",
     "winget": "Tonec.InternetDownloadManager",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Utilities"
   },
   {
     "Name": "JDownloader",
