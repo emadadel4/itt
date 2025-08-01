@@ -50,10 +50,11 @@ $itt.SearchInput.Add_GotFocus({
     })
 
 $itt.SearchInput.Add_LostFocus({
-        if ([string]::IsNullOrEmpty($itt.SearchInput.Text)) {
-            $itt.Search_placeholder.Visibility = "Visible"
-        }
-    })
+
+    if ([string]::IsNullOrEmpty($itt.SearchInput.Text)) {
+        $itt.Search_placeholder.Visibility = "Visible"
+    }
+})
 
 # Quick install
 if ($i) {
