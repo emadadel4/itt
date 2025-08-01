@@ -656,6 +656,16 @@ try {
 #region Begin WPF Main Window
 #===========================================================================
 "@
+
+    $AppsCheckboxes = GenerateCheckboxes -Database $itt.database.Applications -ContentField "Name" -TagField "Category"
+    $TweaksCheckboxes = GenerateCheckboxes -Database $itt.database.Tweaks -ContentField "Name" -TagField "Category" -IsCheckedField "check"
+    $SettingsCheckboxes = GenerateCheckboxes -Database $itt.database.Settings -ContentField "Name" -NameField "Name" -ToggleField "Style=" { StaticResource ToggleSwitchStyle }""
+
+    # Get xaml files from Themes and put it inside MainXamlContent
+    $ThemeFilesContent = Get-ChildItem -Path "$Themes" -File | 
+    ForEach-Object { Get-Content $_.FullName -Raw } | 
+    Out-String
+
     # Define file paths
     $FilePaths = @{
         "MainWindow" = Join-Path -Path $windows  -ChildPath "MainWindow.xaml"
@@ -668,22 +678,18 @@ try {
         "Style"      = Join-Path -Path $Assets   -ChildPath "Themes/Styles.xaml"
         "Colors"     = Join-Path -Path $Assets   -ChildPath "Themes/Colors.xaml"
     }
-    # Read and replace placeholders in XAML content
     try {
         # Read content from files
         $MainXamlContent = (Get-Content -Path $FilePaths["MainWindow"] -Raw) -replace "'", "''"
-        $EventWindowContent = Get-Content -Path $FilePaths["EventWindow"] -Raw
-        $AboutWindowContent = Get-Content -Path $FilePaths["AboutWindow"] -Raw
-
-        
         $AppXamlContent = Get-Content -Path $FilePaths["tabs"] -Raw
         $StyleXamlContent = Get-Content -Path $FilePaths["Style"] -Raw
         $ColorsXamlContent = Get-Content -Path $FilePaths["Colors"] -Raw
         $MenuXamlContent = Get-Content -Path $FilePaths["menu"] -Raw
         $ButtonsXamlContent = Get-Content -Path $FilePaths["buttons"] -Raw
         $searchXamlContent = Get-Content -Path $FilePaths["search"] -Raw
+        $EventWindowContent = Get-Content -Path $FilePaths["EventWindow"] -Raw
+        $AboutWindowContent = Get-Content -Path $FilePaths["AboutWindow"] -Raw
 
-        # Replace placeholders with actual content
         $MainXamlContent = $MainXamlContent -replace "{{Tabs}}", $AppXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{Style}}", $StyleXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{Colors}}", $ColorsXamlContent
@@ -691,42 +697,44 @@ try {
         $MainXamlContent = $MainXamlContent -replace "{{buttons}}", $ButtonsXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{catagory}}", $CatagoryXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{search}}", $searchXamlContent
-        $MainXamlContent = $MainXamlContent -replace "{{EventWindow}}", $EventWindowContent
-        $MainXamlContent = $MainXamlContent -replace "{{AboutWindow}}", $AboutWindowContent
+        $MainXamlContent = $MainXamlContent -replace "{{Apps}}", $AppsCheckboxes 
+        $MainXamlContent = $MainXamlContent -replace "{{Tweaks}}", $TweaksCheckboxes 
+        $MainXamlContent = $MainXamlContent -replace "{{Settings}}", $SettingsCheckboxes 
+        $MainXamlContent = $MainXamlContent -replace "{{ThemesKeys}}", (GenerateThemesKeys)
+        $MainXamlContent = $MainXamlContent -replace "{{LocalesKeys}}", (GenerateLocalesKeys)
+        $MainXamlContent = $MainXamlContent -replace "{{CustomThemes}}", $ThemeFilesContent 
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{EventWindow}} -->", $EventWindowContent
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{AboutWindow}} -->", $AboutWindowContent
 
-        $textContent = Get-Content -Path $Changlog -Raw
-        $xamlContent = ConvertTo-Xaml -text $textContent
+
+
+        $ChanglogContent = Get-Content -Path $Changlog -Raw
+        $xamlContent = ConvertTo-Xaml -text $ChanglogContent
+        $ChanglogFilterd = $xamlContent -replace "''", "'"
+        $MainXamlContent = $MainXamlContent -replace "<!-- UpdateContent -->", $ChanglogFilterd
+
+        
+        $MainXamlContent = $MainXamlContent -replace "<!-- names -->", (NewCONTRIBUTOR)
+
         GenerateClickEventHandlers
-        $MainXamlContent = $MainXamlContent -replace "UpdateContent", $xamlContent
 
-        $MainXamlContent = $MainXamlContent -replace "#{names}", (NewCONTRIBUTOR)
+        # Final output
+        WriteToScript -Content "`$MainWindowXaml = @`"`n$MainXamlContent`n`"@"
 
     }
-    catch {
+    catch 
+    {
         Write-Error "An error occurred while processing the XAML content: $($_.Exception.Message)"
         break
     }
-    $AppsCheckboxes = GenerateCheckboxes -Database $itt.database.Applications -ContentField "Name" -TagField "Category"
-    $TweaksCheckboxes = GenerateCheckboxes -Database $itt.database.Tweaks -ContentField "Name" -TagField "Category" -IsCheckedField "check"
-    $SettingsCheckboxes = GenerateCheckboxes -Database $itt.database.Settings -ContentField "Name" -NameField "Name" -ToggleField "Style=" { StaticResource ToggleSwitchStyle }""
-    $MainXamlContent = $MainXamlContent -replace "{{Apps}}", $AppsCheckboxes 
-    $MainXamlContent = $MainXamlContent -replace "{{Tweaks}}", $TweaksCheckboxes 
-    $MainXamlContent = $MainXamlContent -replace "{{Settings}}", $SettingsCheckboxes 
-    $MainXamlContent = $MainXamlContent -replace "{{ThemesKeys}}", (GenerateThemesKeys)
-    $MainXamlContent = $MainXamlContent -replace "{{LocalesKeys}}", (GenerateLocalesKeys)
-    # Get xaml files from Themes and put it inside MainXamlContent
-    $ThemeFilesContent = Get-ChildItem -Path "$Themes" -File | 
-    ForEach-Object { Get-Content $_.FullName -Raw } | 
-    Out-String
-    $MainXamlContent = $MainXamlContent -replace "{{CustomThemes}}", $ThemeFilesContent 
-    # Final output
-    WriteToScript -Content "`$MainWindowXaml = '$MainXamlContent'"
+
     WriteToScript -Content @"
 #===========================================================================
 #endregion End WPF Main Window
 #===========================================================================
 "@
     WriteToScript -Content @"
+    
 #===========================================================================
 #region Begin loadXmal
 #===========================================================================
@@ -744,14 +752,14 @@ try {
 
     WriteToScript -Content @"
 #===========================================================================
-#region Begin Main Script
+#region Begin Main
 #===========================================================================
 "@
     #ProcessDirectory -Directory $ScritsDirectory
     AddFileContentToScript -FilePath $MainScript
     WriteToScript -Content @"
 #===========================================================================
-#endregion End Main Script
+#endregion End Main
 #===========================================================================
 "@
 
