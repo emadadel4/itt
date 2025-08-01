@@ -37,7 +37,6 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="center" Margin="0 5 0 5">
                 <TextBlock Text="Github" Foreground="{DynamicResource TextColorSecondaryColor}" Name="github" Cursor="Hand" Margin="5"/>
                 <TextBlock Text="Telegrm" Foreground="{DynamicResource TextColorSecondaryColor}" Name="telegram" Cursor="Hand" Margin="5"/>
-                <TextBlock Text="Blog" Foreground="{DynamicResource TextColorSecondaryColor}" Name="blog" Cursor="Hand" Margin="5"/>
             </StackPanel>
 
             <!-- Contribute Names Section -->
