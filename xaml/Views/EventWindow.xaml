@@ -31,13 +31,6 @@
             <StackPanel x:Name="MainStackPanel" Height="Auto" Background="Transparent" Orientation="Vertical" Margin="20">
                 <!-- Title -->
                 <Grid Background="Transparent">
-                    <TextBlock Text="&#10006;" 
-                               Name="closebtn"
-                               HorizontalAlignment="Right" 
-                               VerticalAlignment="Top"
-                               Margin="0"
-                               Cursor="Hand"
-                               Foreground="Red"/>
                     <StackPanel Orientation="Vertical" Margin="0">
                         <TextBlock Name="title"
                                    Height="Auto"
