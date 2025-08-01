@@ -3,9 +3,9 @@
     <ColumnDefinition Width="*"/>
     <ColumnDefinition Width="auto"/>
   </Grid.ColumnDefinitions>
-  <!-- Buttons -->
+  <!-- Begin Buttons -->
      <Grid Column="1" Background="Transparent">
-      <!--Install Button-->
+      <!--Begin Install Button-->
         <Button
           Name="installBtn"
           Content="{Binding Install, TargetNullValue=Install}"
@@ -18,7 +18,7 @@
           Margin="20">
         </Button>
       <!--End Install Button-->
-      <!--Apply Button-->
+      <!--Begin Apply Button-->
           <Button
             Name="applyBtn"
             Content="{Binding Apply, TargetNullValue=Apply}"
@@ -33,8 +33,8 @@
           </Button>
       <!--End Apply Button-->
     </Grid>
-  <!-- Buttons -->
-  <!-- Statusbar -->
+  <!-- End Buttons -->
+  <!-- Begin Statusbar -->
     <Grid Column="0">
         <TextBlock Name="statusbar"
           Text="✊ #StandWithPalestine"
@@ -46,5 +46,5 @@
           Width="auto"
         />
     </Grid>
-  <!-- Statusbar -->
+  <!-- End Statusbar -->
 </Grid>
