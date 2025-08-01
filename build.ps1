@@ -43,13 +43,10 @@ $global:DateContent = ""
 
 # write content to output script
 function WriteToScript {
-
     param ([string]$Content)
-    
-    try {
 
-        if($Realsee)
-        {
+    try {
+        if ($Realsee) {
             $Content = $Content.Trim()
             $Content = $Content -replace '(#\s*debug start[\s\S]*?#\s*debug end)', ''
             $Content = $Content -replace '<#[\s\S]*?#>', ''
@@ -63,11 +60,14 @@ function WriteToScript {
         }
 
         $streamWriter = $null
-        
+
         try {
-            $streamWriter = [System.IO.StreamWriter]::new($OutputScript, $true)
-            if($Content) {
-                $streamWriter.WriteLine($Content)
+            $streamWriter = [System.IO.StreamWriter]::new($OutputScript, $true, [System.Text.Encoding]::UTF8)
+
+            if ($Content) {
+                foreach ($line in $Content -split "`r?`n") {
+                    $streamWriter.WriteLine($line)
+                }
             }
         }
         finally {
