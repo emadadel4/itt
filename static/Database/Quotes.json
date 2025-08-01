@@ -406,23 +406,23 @@
       "type": "info"
     },
     {
-      "text": "Select your favorite apps and press Shift+S to save them to a file for later restore",
+      "text": "Select your favorite apps and press Shift+S to save them to selected items",
       "type": "info"
     },
     {
-      "text": "Shift+D restore your saved file",
+      "text": "Shift+D to restore your saved file",
       "type": "info"
     },
     {
-      "text": "Ctrl+S Install also Apply",
+      "text": "Ctrl+S to Install also Apply",
       "type": "info"
     },
     {
-      "text": "Shift+P Open portable downloads folder",
+      "text": "Shift+P to Open portable downloads folder",
       "type": "info"
     },
     {
-      "text": "Ctrl+A Clear selected category filter",
+      "text": "Ctrl+A to Clear selected category filter",
       "type": "info"
     },
     {
@@ -432,11 +432,6 @@
     {
       "text": "أخطر رجل على وجه الأرض هو الرجل الذي لم يعد لديه ما يخسره",
       "type": "quote"
-    },
-    {
-      "text": "The victory or martyrdom",
-      "type": "quote",
-      "name": "Palestinian Resistance"
     },
     {
       "type": "quote",
