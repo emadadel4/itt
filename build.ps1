@@ -660,6 +660,7 @@ try {
     $FilePaths = @{
         "MainWindow" = Join-Path -Path $windows  -ChildPath "MainWindow.xaml"
         "EventWindow" = Join-Path -Path $windows  -ChildPath "EventWindow.xaml"
+        "AboutWindow" = Join-Path -Path $windows  -ChildPath "AboutWindow.xaml"
         "tabs"       = Join-Path -Path $Controls -ChildPath "tabs.xaml"
         "menu"       = Join-Path -Path $Controls -ChildPath "menu.xaml"
         "search"     = Join-Path -Path $Controls -ChildPath "search.xaml"
@@ -672,6 +673,8 @@ try {
         # Read content from files
         $MainXamlContent = (Get-Content -Path $FilePaths["MainWindow"] -Raw) -replace "'", "''"
         $EventWindowContent = Get-Content -Path $FilePaths["EventWindow"] -Raw
+        $AboutWindowContent = Get-Content -Path $FilePaths["AboutWindow"] -Raw
+
         
         $AppXamlContent = Get-Content -Path $FilePaths["tabs"] -Raw
         $StyleXamlContent = Get-Content -Path $FilePaths["Style"] -Raw
@@ -689,11 +692,15 @@ try {
         $MainXamlContent = $MainXamlContent -replace "{{catagory}}", $CatagoryXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{search}}", $searchXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{EventWindow}}", $EventWindowContent
+        $MainXamlContent = $MainXamlContent -replace "{{AboutWindow}}", $AboutWindowContent
 
         $textContent = Get-Content -Path $Changlog -Raw
         $xamlContent = ConvertTo-Xaml -text $textContent
         GenerateClickEventHandlers
         $MainXamlContent = $MainXamlContent -replace "UpdateContent", $xamlContent
+
+        $MainXamlContent = $MainXamlContent -replace "#{names}", (NewCONTRIBUTOR)
+
     }
     catch {
         Write-Error "An error occurred while processing the XAML content: $($_.Exception.Message)"
@@ -721,34 +728,6 @@ try {
 "@
     WriteToScript -Content @"
 #===========================================================================
-#region Begin WPF About Window
-#===========================================================================
-"@
-    # Define file paths
-    $FilePaths = @{
-        "about" = Join-Path -Path $windows -ChildPath "AboutWindow.xaml"
-    }
-    # Read and replace placeholders in XAML content
-    try {
-        $AboutWindowXamlContent = (Get-Content -Path $FilePaths["about"] -Raw) -replace "'", "''"
-    }
-    catch {
-        Write-Error "Error: $($_.Exception.Message)"
-        break
-    }
-
-    $AboutWindowXamlContent = $AboutWindowXamlContent -replace "#{names}", (NewCONTRIBUTOR)
-
-    WriteToScript -Content "`$AboutWindowXaml = '$AboutWindowXamlContent'"
-
-    WriteToScript -Content @"
-#===========================================================================
-#endregion End WPF About Window
-#===========================================================================
-"@
-   
-    WriteToScript -Content @"
-#===========================================================================
 #region Begin loadXmal
 #===========================================================================
 "@
@@ -765,14 +744,14 @@ try {
 
     WriteToScript -Content @"
 #===========================================================================
-#region Begin Main
+#region Begin Main Script
 #===========================================================================
 "@
     #ProcessDirectory -Directory $ScritsDirectory
     AddFileContentToScript -FilePath $MainScript
     WriteToScript -Content @"
 #===========================================================================
-#endregion End Main
+#endregion End Main Script
 #===========================================================================
 "@
 
