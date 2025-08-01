@@ -1,7 +1,5 @@
 function Show-Event {
 
-    $itt['window'].FindName('closebtn').add_MouseLeftButtonDown({  $popup.IsOpen = $false })
-
     $itt['window'].FindName('DisablePopup').add_MouseLeftButtonDown({
         Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 1 -Force
         $popup.IsOpen = $false
