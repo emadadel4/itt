@@ -321,7 +321,7 @@ function ConvertTo-Xaml {
             "!\[itt\.xName:(.+?)\s*\[(.+?)\]\]\((.+?)\)" {
                 # Image section
                 $xaml += 
-                "<Image x:Name=''$($matches[1].Trim())'' Cursor=''Hand'' Margin=''8'' Height=''300'' Width=''Auto''>
+                "<Image x:Name=''$($matches[1].Trim())'' Cursor=''Hand'' Margin=''15'' Height=''400'' Width=''400'' HorizontalAlignment=''Center''>
                     <Image.Source>
                         <BitmapImage UriSource=''$($matches[3].Trim())'' CacheOption=''OnLoad''/>
                     </Image.Source>
@@ -338,29 +338,30 @@ function ConvertTo-Xaml {
             "^### (.+)" {
                 # Headline 
                 $text = $matches[1].Trim()
-                $xaml += "<TextBlock Text=''$text'' FontSize=''$HeadlineFontSize'' Margin=''0,18,0,30'' FontWeight=''Bold'' Foreground=''{DynamicResource PrimaryButtonForeground}'' TextWrapping=''Wrap''/>`n"
+                $xaml += "<TextBlock Text=''$text'' FontSize=''$HeadlineFontSize'' Padding=''10'' FontWeight=''Bold'' Foreground=''{DynamicResource PrimaryButtonForeground}'' TextWrapping=''Wrap''/>`n"
             }
             "^##### (.+)" {
                 ##### Headline
-                $text = $matches[1].Trim()  
-                $xaml += "<TextBlock Text='' • $text'' FontSize=''$HeadlineFontSize'' Margin=''0,44,0,30'' Foreground=''{DynamicResource PrimaryButtonForeground}'' FontWeight=''bold'' TextWrapping=''Wrap''/>`n" 
+                $Headline = $matches[1].Trim()  
+                $xaml += "<TextBlock Text='' • $Headline'' FontSize=''$HeadlineFontSize'' Padding=''10 25 0 20'' Foreground=''{DynamicResource PrimaryButtonForeground}'' FontWeight=''bold'' TextWrapping=''Wrap''/>`n" 
             }
             "^#### (.+)" {
                 #### Description
-                $text = $matches[1].Trim()  
-                $xaml += "<TextBlock Text=''$text'' FontSize=''$DescriptionFontSize'' Margin=''25,25,35,0''  Foreground=''{DynamicResource TextColorSecondaryColor}''  TextWrapping=''Wrap''/>`n" 
+                $Description = $matches[1].Trim()  
+                $xaml += "<TextBlock Text=''$Description'' FontSize=''$DescriptionFontSize'' Padding=''25 0 0 10'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap'' MaxWidth=''450''/>`n"
             }
             "^- (.+)" {
                 # - Lists
-                $text = $matches[1].Trim()  
+                $List = $matches[1].Trim()  
                 $xaml += "
                 <StackPanel Orientation=''Vertical''>
-                    <TextBlock Text=''• $text'' Margin=''35,0,0,0'' FontSize=''$DescriptionFontSize'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
+                    <TextBlock Text=''• $List'' Padding=''35,0,0,0'' FontSize=''$DescriptionFontSize'' Width=''Auto'' Height=''Auto'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
                 </StackPanel>
                 `n" 
             }
         }
     }
+    
     return $xaml
 }
 # Generate themes menu items
@@ -480,7 +481,7 @@ function GenerateClickEventHandlers {
             # Append a mouse click event handler for each image link
             $EventHandler += 
             "
-            `$itt.event.FindName('$name').add_MouseLeftButtonDown({
+            `$itt['window'].FindName('$name').add_MouseLeftButtonDown({
                     Start-Process('$url')
                 })
             `
@@ -488,8 +489,8 @@ function GenerateClickEventHandlers {
         }
         # Create the event title assignment using the extracted content
         $EventTitle = "
-        `$itt.event.FindName('title').text = '$global:TitleContent'`.Trim()
-        `$itt.event.FindName('date').text = '$global:DateContent'`.Trim()
+        `$itt['window'].FindName('title').text = '$global:TitleContent'`.Trim()
+        `$itt['window'].FindName('date').text = '$global:DateContent'`.Trim()
         "
         # Replace placeholders in the event window script with actual event handlers and title
         $EventWindowScript = $EventWindowScript -replace '#{contorlshandler}', $EventHandler
@@ -658,9 +659,9 @@ try {
     # Define file paths
     $FilePaths = @{
         "MainWindow" = Join-Path -Path $windows  -ChildPath "MainWindow.xaml"
+        "EventWindow" = Join-Path -Path $windows  -ChildPath "EventWindow.xaml"
         "tabs"       = Join-Path -Path $Controls -ChildPath "tabs.xaml"
         "menu"       = Join-Path -Path $Controls -ChildPath "menu.xaml"
-        # "catagory"   = Join-Path -Path $Controls -ChildPath "catagory.xaml"
         "search"     = Join-Path -Path $Controls -ChildPath "search.xaml"
         "buttons"    = Join-Path -Path $Controls -ChildPath "buttons.xaml"
         "Style"      = Join-Path -Path $Assets   -ChildPath "Themes/Styles.xaml"
@@ -670,13 +671,15 @@ try {
     try {
         # Read content from files
         $MainXamlContent = (Get-Content -Path $FilePaths["MainWindow"] -Raw) -replace "'", "''"
+        $EventWindowContent = Get-Content -Path $FilePaths["EventWindow"] -Raw
+        
         $AppXamlContent = Get-Content -Path $FilePaths["tabs"] -Raw
         $StyleXamlContent = Get-Content -Path $FilePaths["Style"] -Raw
         $ColorsXamlContent = Get-Content -Path $FilePaths["Colors"] -Raw
         $MenuXamlContent = Get-Content -Path $FilePaths["menu"] -Raw
         $ButtonsXamlContent = Get-Content -Path $FilePaths["buttons"] -Raw
-        # $CatagoryXamlContent = Get-Content -Path $FilePaths["catagory"] -Raw
         $searchXamlContent = Get-Content -Path $FilePaths["search"] -Raw
+
         # Replace placeholders with actual content
         $MainXamlContent = $MainXamlContent -replace "{{Tabs}}", $AppXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{Style}}", $StyleXamlContent
@@ -685,6 +688,12 @@ try {
         $MainXamlContent = $MainXamlContent -replace "{{buttons}}", $ButtonsXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{catagory}}", $CatagoryXamlContent
         $MainXamlContent = $MainXamlContent -replace "{{search}}", $searchXamlContent
+        $MainXamlContent = $MainXamlContent -replace "{{EventWindow}}", $EventWindowContent
+
+        $textContent = Get-Content -Path $Changlog -Raw
+        $xamlContent = ConvertTo-Xaml -text $textContent
+        GenerateClickEventHandlers
+        $MainXamlContent = $MainXamlContent -replace "UpdateContent", $xamlContent
     }
     catch {
         Write-Error "An error occurred while processing the XAML content: $($_.Exception.Message)"
@@ -737,34 +746,7 @@ try {
 #endregion End WPF About Window
 #===========================================================================
 "@
-    WriteToScript -Content @"
-#===========================================================================
-#region Begin WPF Event Window
-#===========================================================================
-"@
-    # Define file paths
-    $FilePaths = @{
-        "event" = Join-Path -Path $windows -ChildPath "EventWindow.xaml"
-    }
-    # Read and replace placeholders in XAML content
-    try {
-        $EventWindowXamlContent = (Get-Content -Path $FilePaths["event"] -Raw) -replace "'", "''"
-        # debug offline local file
-        $textContent = Get-Content -Path $Changlog -Raw
-        $xamlContent = ConvertTo-Xaml -text $textContent
-        GenerateClickEventHandlers
-        $EventWindowXamlContent = $EventWindowXamlContent -replace "UpdateContent", $xamlContent
-        WriteToScript -Content "`$EventWindowXaml = '$EventWindowXamlContent'"
-    }
-    catch {
-        Write-Error "Error: $($_.Exception.Message)"
-        break
-    }
-    WriteToScript -Content @"
-#===========================================================================
-#endregion End WPF Event Window
-#===========================================================================
-"@
+   
     WriteToScript -Content @"
 #===========================================================================
 #region Begin loadXmal
