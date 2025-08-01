@@ -690,19 +690,19 @@ try {
         $EventWindowContent = Get-Content -Path $FilePaths["EventWindow"] -Raw
         $AboutWindowContent = Get-Content -Path $FilePaths["AboutWindow"] -Raw
 
-        $MainXamlContent = $MainXamlContent -replace "{{Tabs}}", $AppXamlContent
-        $MainXamlContent = $MainXamlContent -replace "{{Style}}", $StyleXamlContent
-        $MainXamlContent = $MainXamlContent -replace "{{Colors}}", $ColorsXamlContent
-        $MainXamlContent = $MainXamlContent -replace "{{menu}}", $MenuXamlContent
-        $MainXamlContent = $MainXamlContent -replace "{{buttons}}", $ButtonsXamlContent
-        $MainXamlContent = $MainXamlContent -replace "{{catagory}}", $CatagoryXamlContent
-        $MainXamlContent = $MainXamlContent -replace "{{search}}", $searchXamlContent
-        $MainXamlContent = $MainXamlContent -replace "{{Apps}}", $AppsCheckboxes 
-        $MainXamlContent = $MainXamlContent -replace "{{Tweaks}}", $TweaksCheckboxes 
-        $MainXamlContent = $MainXamlContent -replace "{{Settings}}", $SettingsCheckboxes 
-        $MainXamlContent = $MainXamlContent -replace "{{ThemesKeys}}", (GenerateThemesKeys)
-        $MainXamlContent = $MainXamlContent -replace "{{LocalesKeys}}", (GenerateLocalesKeys)
-        $MainXamlContent = $MainXamlContent -replace "{{CustomThemes}}", $ThemeFilesContent 
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{Tabs}} -->", $AppXamlContent
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{Style}} -->", $StyleXamlContent
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{Colors}} -->", $ColorsXamlContent
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{menu}} -->", $MenuXamlContent
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{buttons}} -->", $ButtonsXamlContent
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{catagory}} -->", $CatagoryXamlContent
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{search}} -->", $searchXamlContent
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{Apps}} -->", $AppsCheckboxes 
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{Tweaks}} -->", $TweaksCheckboxes 
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{Settings}} -->", $SettingsCheckboxes 
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{ThemesKeys}} -->", (GenerateThemesKeys)
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{LocalesKeys}} -->", (GenerateLocalesKeys)
+        $MainXamlContent = $MainXamlContent -replace "<!-- {{CustomThemes}} -->", $ThemeFilesContent 
         $MainXamlContent = $MainXamlContent -replace "<!-- {{EventWindow}} -->", $EventWindowContent
         $MainXamlContent = $MainXamlContent -replace "<!-- {{AboutWindow}} -->", $AboutWindowContent
 

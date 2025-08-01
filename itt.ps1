@@ -5,7 +5,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "07/28/2025"
+lastupdate     = "08/01/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -49,7 +49,7 @@ $itt.database.Tweaks = @'
 "Check": "false",
 "Refresh": "false",
 "Script": [
-"Add-Log -Message 'This may take a few minutes' -Level 'Info' Chkdsk /scan\r\n sfc /scannow\r\n DISM /Online /Cleanup-Image /Restorehealth\r\n sfc /scannow\r\n"
+"irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/sfc/run.ps1 | iex"
 ]
 },
 {
@@ -1469,7 +1469,7 @@ $itt.database.Tweaks = @'
 "Refresh": "false",
 "Script": [
 "Disable-MMAgent -MemoryCompression | Out-Null",
-"\r\n        takeown /f C:\\Windows\\System32\\GameBarPresenceWriter.exe\r\n\r\n        takeown /f C:\\Windows\\System32\\GameBarPresenceWriter.proxy.dll\r\n\r\n        takeown /f C:\\Windows\\System32\\Windows.Gaming.UI.GameBar.dll\r\n\r\n        Start-Sleep -Seconds 1\r\n\r\n\r\n        icacls C:\\Windows\\System32\\GameBarPresenceWriter.exe /grant administrators:F\r\n\r\n        icacls C:\\Windows\\System32\\GameBarPresenceWriter.proxy.dll /grant administrators:F\r\n\r\n        icacls C:\\Windows\\System32\\Windows.Gaming.UI.GameBar.dll /grant administrators:F\r\n\r\n        Start-Sleep -Seconds 1\r\n\r\n\r\n        Rename-Item C:\\Windows\\System32\\GameBarPresenceWriter.exe -NewName GameBarPresenceWriter.exe_backup\r\n\r\n        Rename-Item C:\\Windows\\System32\\GameBarPresenceWriter.proxy.dll -NewName GameBarPresenceWriter.proxy.dll_backup\r\n\r\n        Rename-Item C:\\Windows\\System32\\Windows.Gaming.UI.GameBar.dll -NewName Windows.Gaming.UI.GameBar.dll_backup\r\n\r\n      "
+"irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Fix%20Stutter/run.ps1 | iex"
 ],
 "Registry": [
 {
@@ -1582,13 +1582,6 @@ $itt.database.Tweaks = @'
 "Name": "DirectXUserGlobalSettings",
 "Type": "String",
 "Value": "SwapEffectUpgradeEnable=1;",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\DirectX\\GraphicsSettings",
-"Name": "",
-"Type": "DWord",
-"Value": "1",
 "defaultValue": "0"
 },
 {
@@ -4269,18 +4262,12 @@ Write-Warning "Unable to set WSL2 due to a Security Exception"
 }
 }
 function About {
-[xml]$about = $AboutWindowXaml
-$childWindowReader = (New-Object System.Xml.XmlNodeReader $about)
-$itt.about = [Windows.Markup.XamlReader]::Load($childWindowReader)
-$itt.about.Add_PreViewKeyDown({ if ($_.Key -eq "Escape") { $itt.about.Close() } })
-$itt['about'].Resources.MergedDictionaries.Clear()
-$itt["about"].Resources.MergedDictionaries.Add($itt["window"].FindResource($itt.Theme))
-$itt.about.FindName('ver').Text = "Last update $($itt.lastupdate)"
-$itt.about.FindName("telegram").Add_MouseLeftButtonDown({ Start-Process("https://t.me/emadadel4") })
-$itt.about.FindName("github").Add_MouseLeftButtonDown({ Start-Process("https://github.com/emadadel4/itt") })
-$itt.about.FindName("blog").Add_MouseLeftButtonDown({ Start-Process("https://emadadel4.github.io") })
-$itt.about.DataContext = $itt.database.locales.Controls.$($itt.Language)
-$itt.about.ShowDialog() | Out-Null
+$aboutPopup = $itt['window'].FindName('AboutPopup')
+$aboutPopup.FindName('ver').Text = "Last update $($itt.lastupdate)"
+$aboutPopup.FindName("telegram").Add_MouseLeftButtonDown({ Start-Process("https://t.me/emadadel4") })
+$aboutPopup.FindName("github").Add_MouseLeftButtonDown({ Start-Process("https://github.com/emadadel4/itt") })
+$aboutPopup.FindName("blog").Add_MouseLeftButtonDown({ Start-Process("https://emadadel4.github.io") })
+$aboutPopup.IsOpen = $true
 }
 function ITTShortcut {
 $appDataPath = "$env:ProgramData/itt"
@@ -4498,7 +4485,25 @@ $itt.$Button.Content = $NonKey
 }
 })
 }
-$MainWindowXaml = '
+function Show-Event {
+$itt['window'].FindName('DisablePopup').add_MouseLeftButtonDown({
+Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 1 -Force
+$popup.IsOpen = $false
+})
+$itt['window'].FindName('title').text = 'Changelog'.Trim()
+$itt['window'].FindName('date').text = '08/01/2025'.Trim()
+$itt['window'].FindName('ps').add_MouseLeftButtonDown({
+Start-Process('https://www.palestinercs.org/en/Donation')
+})
+$storedDate = [datetime]::ParseExact($itt['window'].FindName('date').Text, 'MM/dd/yyyy', $null)
+$daysElapsed = (Get-Date) - $storedDate
+if (($daysElapsed.Days -ge 1) -and (($itt.PopupWindow -ne "0") -or $i)) { return }
+if ($daysElapsed.Days -lt 1) {
+$itt['window'].FindName('DisablePopup').Visibility = 'Hidden'
+}
+$popup.IsOpen = $true
+}
+$MainWindowXaml = @"
 <Window
 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8184,98 +8189,146 @@ Width="auto"
 />
 </Grid>
 </Grid>
-</Grid>
-</Window>
-'
-$AboutWindowXaml = '<Window
-xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-Title="{Binding About, TargetNullValue=About}"
-WindowStartupLocation="CenterScreen"
-Background="{DynamicResource PrimaryBackgroundColor}"
-WindowStyle="ToolWindow"
-Height="400" Width="400"
-ShowInTaskbar="True"
-MinHeight="400"
-MinWidth="400"
-ResizeMode="NoResize"
-Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/icon.ico">
-<Window.Resources>
-<Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
-<Setter Property="Template">
-<Setter.Value>
-<ControlTemplate TargetType="{x:Type Thumb}">
-<Grid x:Name="Grid">
-<Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="Transparent" />
-<Border x:Name="Rectangle1" CornerRadius="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Background="{TemplateBinding Background}" />
-</Grid>
-<ControlTemplate.Triggers>
-<Trigger Property="Tag" Value="Horizontal">
-<Setter TargetName="Rectangle1" Property="Width" Value="Auto" />
-<Setter TargetName="Rectangle1" Property="Height" Value="7" />
-</Trigger>
-</ControlTemplate.Triggers>
-</ControlTemplate>
-</Setter.Value>
-</Setter>
-</Style>
-<Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
-<Setter Property="Stylus.IsFlicksEnabled" Value="false" />
-<Setter Property="Foreground" Value="{DynamicResource PrimaryButtonForeground}" />
-<Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}" />
-<Setter Property="Width" Value="8" />
-<Setter Property="Template">
-<Setter.Value>
-<ControlTemplate TargetType="{x:Type ScrollBar}">
-<Grid x:Name="GridRoot" Width="8" Background="{TemplateBinding Background}">
+<Popup Name="EventPopup"
+Placement="Center"
+StaysOpen="False"
+AllowsTransparency="True"
+Focusable="False"
+PopupAnimation="Fade"
+Width="486" Height="600">
+<Border Background="{DynamicResource PrimaryBackgroundColor}"
+BorderBrush="{DynamicResource SecondaryPrimaryBackgroundColor}"
+BorderThickness="4"
+CornerRadius="10"
+Opacity="0">
+<Border.Triggers>
+<EventTrigger RoutedEvent="Border.Loaded">
+<BeginStoryboard>
+<Storyboard>
+<DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5"/>
+</Storyboard>
+</BeginStoryboard>
+</EventTrigger>
+</Border.Triggers>
+<Grid>
 <Grid.RowDefinitions>
-<RowDefinition Height="0.00001*" />
+<RowDefinition Height="Auto"/>
+<RowDefinition Height="*"/>
+<RowDefinition Height="auto"/>
 </Grid.RowDefinitions>
-<Track x:Name="PART_Track" Grid.Row="0" IsDirectionReversed="true" Focusable="false">
-<Track.Thumb>
-<Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" Style="{DynamicResource ScrollThumbs}" />
-</Track.Thumb>
-<Track.IncreaseRepeatButton>
-<RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="false" />
-</Track.IncreaseRepeatButton>
-<Track.DecreaseRepeatButton>
-<RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="false" />
-</Track.DecreaseRepeatButton>
-</Track>
+<StackPanel x:Name="MainStackPanel" Height="Auto" Background="Transparent" Orientation="Vertical" Margin="20">
+<Grid Background="Transparent">
+<StackPanel Orientation="Vertical" Margin="0">
+<TextBlock Name="title"
+Height="Auto"
+Width="Auto"
+FontSize="20"
+Text="Whats New"
+Foreground="{DynamicResource TextColorSecondaryColor}"
+FontWeight="SemiBold"
+TextWrapping="Wrap"
+VerticalAlignment="Center"
+HorizontalAlignment="Left"/>
+<TextBlock Name="date"
+Height="Auto"
+Width="Auto"
+Margin="5,8,0,0"
+Text="8/29/2024"
+Foreground="{DynamicResource TextColorSecondaryColor2}"
+TextWrapping="Wrap"
+VerticalAlignment="Center"
+HorizontalAlignment="Left"/>
+</StackPanel>
 </Grid>
-<ControlTemplate.Triggers>
-<Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
-<Setter Value="{DynamicResource ButtonSelectBrush}" TargetName="Thumb" Property="Background" />
-</Trigger>
-<Trigger SourceName="Thumb" Property="IsDragging" Value="true">
-<Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background" />
-</Trigger>
-<Trigger Property="IsEnabled" Value="false">
-<Setter TargetName="Thumb" Property="Visibility" Value="Collapsed" />
-</Trigger>
-<Trigger Property="Orientation" Value="Horizontal">
-<Setter TargetName="GridRoot" Property="LayoutTransform">
-<Setter.Value>
-<RotateTransform Angle="-90" />
-</Setter.Value>
-</Setter>
-<Setter TargetName="PART_Track" Property="LayoutTransform">
-<Setter.Value>
-<RotateTransform Angle="-90" />
-</Setter.Value>
-</Setter>
-<Setter Property="Width" Value="Auto" />
-<Setter Property="Height" Value="8" />
-<Setter TargetName="Thumb" Property="Tag" Value="Horizontal" />
-<Setter TargetName="PageDown" Property="Command" Value="ScrollBar.PageLeftCommand" />
-<Setter TargetName="PageUp" Property="Command" Value="ScrollBar.PageRightCommand" />
-</Trigger>
-</ControlTemplate.Triggers>
-</ControlTemplate>
-</Setter.Value>
-</Setter>
-</Style>
-</Window.Resources>
+</StackPanel>
+<Grid Grid.Row="1" Background="Transparent">
+<ScrollViewer Name="ScrollViewer" VerticalScrollBarVisibility="Auto" Height="Auto">
+<StackPanel Orientation="Vertical">
+<Image x:Name='ps' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
+<Image.Source>
+<BitmapImage UriSource='https://camo.githubusercontent.com/5cf02c5ee4898f8f92965367dfbf6829cf7d5e180f3808898ac65eccb0835d68/68747470733a2f2f7374796c65732e7265646469746d656469612e636f6d2f74355f327168616b2f7374796c65732f696d6167655f7769646765745f3738637964797a6c336b7462312e706e67' CacheOption='OnLoad'/>
+</Image.Source>
+</Image>
+<TextBlock Text='Your support for the Palestinian cause is invaluable, especially in these challenging times. Donations play a crucial role in providing essential services to those affected by the ongoing genocide and helping to sustain long-term development efforts. Supporting trusted organizations allows your contributions to have a direct impact, offering humanitarian aid and food, medical assistance, legal support, and more.' FontSize='16' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
+<TextBlock Text=' • Keyboard Shortcuts' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Ctrl+A: Clear category filter.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Ctrl+F: toggle search mode.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Ctrl+Q: Switch to Apps.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Ctrl+W: Switch to Tweaks.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Ctrl+E: Switch to Settings.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Ctrl+S: Install selected Apps/Tweaks.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Shift+S: Save selected.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Shift+D: Load save file.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Shift+M: Toggle music.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Shift+P: Open Choco folder.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Shift+T: Open ITT folder.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Shift+Q: Restore point.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Shift+I: ITT Shortcut.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<StackPanel Orientation='Vertical'>
+<TextBlock Text='• Ctrl+G: Close application.' Padding='35,0,0,0' FontSize='16' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
+</StackPanel>
+<TextBlock Text=' • 💡 A Secret Feature Awaits – Unlock It' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
+<TextBlock Text='Can You Find the Hidden Easter Egg? Open the source code and uncover the secret features waiting for you!' FontSize='16' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
+</StackPanel>
+</ScrollViewer>
+</Grid>
+<Grid Grid.Row="2" Background="Transparent">
+<TextBlock Name="DisablePopup"
+Foreground="{DynamicResource TextColorSecondaryColor2}"
+Text="Show on update"
+Background="Transparent"
+TextAlignment="Center"
+Cursor="Hand"
+Padding="15"
+Visibility="Visible"
+HorizontalAlignment="Center"
+VerticalAlignment="Center"/>
+</Grid>
+</Grid>
+</Border>
+</Popup>
+<Popup
+x:Name="AboutPopup"
+AllowsTransparency="True"
+Placement="Center"
+StaysOpen="False"
+PopupAnimation="Fade"
+IsOpen="false">
+<Border
+Background="{DynamicResource PrimaryBackgroundColor}"
+BorderBrush="{DynamicResource SecondaryPrimaryBackgroundColor}"
+BorderThickness="1"
+Width="400"
+Height="300"
+Padding="10"
+CornerRadius="8"
+SnapsToDevicePixels="True">
 <Grid Margin="8">
 <Grid.RowDefinitions>
 <RowDefinition Height="auto"/>
@@ -8285,17 +8338,8 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/icon.ico">
 <Grid Grid.Row="0">
 <StackPanel Orientation="Vertical">
 <TextBlock Text="itt" VerticalAlignment="Center" FontFamily="arial" FontWeight="bold" FontSize="88" Margin="0 2 0 0" Foreground="{DynamicResource logo}" TextAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource logoText}"/>
-<TextBlock
-Text="Made by Emad Adel"
-HorizontalAlignment="Center"
-Foreground="{DynamicResource TextColorSecondaryColor}"
-TextAlignment="Center"
-/>
-<TextBlock
-Name="ver"
-TextAlignment="Center"
-Foreground="{DynamicResource TextColorSecondaryColor}"
-/>
+<TextBlock Text="Made by Emad Adel" HorizontalAlignment="Center" Foreground="{DynamicResource TextColorSecondaryColor}" TextAlignment="Center"/>
+<TextBlock Name="ver" TextAlignment="Center" Foreground="{DynamicResource TextColorSecondaryColor}"/>
 </StackPanel>
 </Grid>
 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="center" Margin="0 5 0 5">
@@ -8303,265 +8347,21 @@ Foreground="{DynamicResource TextColorSecondaryColor}"
 <TextBlock Text="Telegrm" Foreground="{DynamicResource TextColorSecondaryColor}" Name="telegram" Cursor="Hand" Margin="5"/>
 <TextBlock Text="Blog" Foreground="{DynamicResource TextColorSecondaryColor}" Name="blog" Cursor="Hand" Margin="5"/>
 </StackPanel>
-<TextBlock Grid.Row="2" Text="Contributors" TextWrapping="Wrap" HorizontalAlignment="center" Foreground="{DynamicResource TextColorSecondaryColor}"/>
-<ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Height="90">
+<StackPanel Grid.Row="2">
+<TextBlock Text="Contributors" TextWrapping="Wrap" HorizontalAlignment="center" Foreground="{DynamicResource TextColorSecondaryColor}"/>
+<ScrollViewer VerticalScrollBarVisibility="Auto" Height="90">
 <StackPanel Margin="5,0,0,0">
 <TextBlock Text="emadadel4" Margin="1" Foreground="{DynamicResource TextColorSecondaryColor}" />
 <TextBlock Text="yousefmhmd" Margin="1" Foreground="{DynamicResource TextColorSecondaryColor}" />
 </StackPanel>
 </ScrollViewer>
-</Grid>
-</Window>
-'
-function Show-Event {
-[xml]$event = $EventWindowXaml
-$itt.event = [Windows.Markup.XamlReader]::Load((New-Object System.Xml.XmlNodeReader $event))
-$itt.event.Resources.MergedDictionaries.Add($itt["window"].FindResource($itt.Theme))
-$itt.event.FindName('closebtn').add_MouseLeftButtonDown({ $itt.event.Close() })
-$itt.event.FindName('DisablePopup').add_MouseLeftButtonDown({ Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 1 -Force; $itt.event.Close() })
-$itt.event.FindName('title').text = 'Changelog'.Trim()
-$itt.event.FindName('date').text = '08/01/2025'.Trim()
-$itt.event.FindName('ps').add_MouseLeftButtonDown({
-Start-Process('https://www.palestinercs.org/en/Donation')
-})
-$itt.event.FindName('shell').add_MouseLeftButtonDown({
-Start-Process('https://www.youtube.com/watch?v=nI7rUhWeOrA')
-})
-$itt.event.FindName('esg').add_MouseLeftButtonDown({
-Start-Process('https://github.com/emadadel4/itt')
-})
-$storedDate = [datetime]::ParseExact($itt.event.FindName('date').Text, 'MM/dd/yyyy', $null)
-$daysElapsed = (Get-Date) - $storedDate
-if (($daysElapsed.Days -ge 1) -and (($itt.PopupWindow -ne "0") -or $i)) {return}
-$itt.event.Add_PreViewKeyDown({ if ($_.Key -eq "Escape") { $itt.event.Close() } })
-if ($daysElapsed.Days -lt 1){$itt.event.FindName('DisablePopup').Visibility = 'Hidden'}
-$itt.event.ShowDialog() | Out-Null
-}
-$EventWindowXaml = '<Window
-xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-x:Name="Window" Title="ITT | Event"
-WindowStartupLocation = "CenterScreen"
-Background="Transparent"
-WindowStyle="None"
-AllowsTransparency="True"
-Height="600" Width="486"
-ShowInTaskbar = "False"
-Topmost="True"
-Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/icon.ico">
-<Window.Resources>
-<Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
-<Setter Property="Template">
-<Setter.Value>
-<ControlTemplate TargetType="{x:Type Thumb}">
-<Grid x:Name="Grid">
-<Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="Transparent" />
-<Border x:Name="Rectangle1" CornerRadius="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Background="{TemplateBinding Background}" />
-</Grid>
-<ControlTemplate.Triggers>
-<Trigger Property="Tag" Value="Horizontal">
-<Setter TargetName="Rectangle1" Property="Width" Value="Auto" />
-<Setter TargetName="Rectangle1" Property="Height" Value="7" />
-</Trigger>
-</ControlTemplate.Triggers>
-</ControlTemplate>
-</Setter.Value>
-</Setter>
-</Style>
-<Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
-<Setter Property="Stylus.IsFlicksEnabled" Value="false" />
-<Setter Property="Foreground" Value="{DynamicResource PrimaryButtonForeground}" />
-<Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}" />
-<Setter Property="Width" Value="8" />
-<Setter Property="Template">
-<Setter.Value>
-<ControlTemplate TargetType="{x:Type ScrollBar}">
-<Grid x:Name="GridRoot" Width="8" Background="{TemplateBinding Background}">
-<Grid.RowDefinitions>
-<RowDefinition Height="0.00001*" />
-</Grid.RowDefinitions>
-<Track x:Name="PART_Track" Grid.Row="0" IsDirectionReversed="true" Focusable="false">
-<Track.Thumb>
-<Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" Style="{DynamicResource ScrollThumbs}" />
-</Track.Thumb>
-<Track.IncreaseRepeatButton>
-<RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="false" />
-</Track.IncreaseRepeatButton>
-<Track.DecreaseRepeatButton>
-<RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="false" />
-</Track.DecreaseRepeatButton>
-</Track>
-</Grid>
-<ControlTemplate.Triggers>
-<Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
-<Setter Value="{DynamicResource ButtonSelectBrush}" TargetName="Thumb" Property="Background" />
-</Trigger>
-<Trigger SourceName="Thumb" Property="IsDragging" Value="true">
-<Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background" />
-</Trigger>
-<Trigger Property="IsEnabled" Value="false">
-<Setter TargetName="Thumb" Property="Visibility" Value="Collapsed" />
-</Trigger>
-<Trigger Property="Orientation" Value="Horizontal">
-<Setter TargetName="GridRoot" Property="LayoutTransform">
-<Setter.Value>
-<RotateTransform Angle="-90" />
-</Setter.Value>
-</Setter>
-<Setter TargetName="PART_Track" Property="LayoutTransform">
-<Setter.Value>
-<RotateTransform Angle="-90" />
-</Setter.Value>
-</Setter>
-<Setter Property="Width" Value="Auto" />
-<Setter Property="Height" Value="8" />
-<Setter TargetName="Thumb" Property="Tag" Value="Horizontal" />
-<Setter TargetName="PageDown" Property="Command" Value="ScrollBar.PageLeftCommand" />
-<Setter TargetName="PageUp" Property="Command" Value="ScrollBar.PageRightCommand" />
-</Trigger>
-</ControlTemplate.Triggers>
-</ControlTemplate>
-</Setter.Value>
-</Setter>
-</Style>
-</Window.Resources>
-<Window.Triggers>
-<EventTrigger RoutedEvent="Window.Loaded">
-<BeginStoryboard>
-<Storyboard>
-<DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5"/>
-</Storyboard>
-</BeginStoryboard>
-</EventTrigger>
-</Window.Triggers>
-<Border Background="{DynamicResource PrimaryBackgroundColor}" BorderBrush="{DynamicResource SecondaryPrimaryBackgroundColor}" BorderThickness="4" CornerRadius="10">
-<Grid>
-<Grid.RowDefinitions>
-<RowDefinition Height="Auto"/>
-<RowDefinition Height="*"/>
-<RowDefinition Height="auto"/>
-</Grid.RowDefinitions>
-<StackPanel x:Name="MainStackPanel" Height="Auto" Background="Transparent" Orientation="Vertical" Margin="20">
-<Grid Row="0" Background="Transparent">
-<TextBlock Text="&#10006;"
-Name="closebtn"
-HorizontalAlignment="Right"
-VerticalAlignment="Top"
-Margin="0"
-Cursor="Hand"
-Foreground="red" />
-<StackPanel Orientation="Vertical" Margin="0">
-<TextBlock
-Name="title"
-Height="Auto"
-Width="Auto"
-FontSize="20"
-Text="What''s New"
-Foreground="{DynamicResource TextColorSecondaryColor}"
-FontWeight="SemiBold"
-TextWrapping="Wrap"
-VerticalAlignment="Center"
-HorizontalAlignment="Left" />
-<TextBlock
-Name="date"
-Height="Auto"
-Width="Auto"
-Margin="5,0,0,0"
-Text="8/29/2024"
-Foreground="{DynamicResource TextColorSecondaryColor2}"
-TextWrapping="Wrap"
-VerticalAlignment="Center"
-HorizontalAlignment="Left" />
 </StackPanel>
-</Grid>
-</StackPanel>
-<Grid Row="1" Background="Transparent" Margin="20">
-<ScrollViewer Name="ScrollViewer" VerticalScrollBarVisibility="Auto" Height="Auto">
-<StackPanel Orientation="Vertical">
-<Image x:Name=''ps'' Cursor=''Hand'' Margin=''8'' Height=''300'' Width=''Auto''>
-<Image.Source>
-<BitmapImage UriSource=''https://camo.githubusercontent.com/5cf02c5ee4898f8f92965367dfbf6829cf7d5e180f3808898ac65eccb0835d68/68747470733a2f2f7374796c65732e7265646469746d656469612e636f6d2f74355f327168616b2f7374796c65732f696d6167655f7769646765745f3738637964797a6c336b7462312e706e67'' CacheOption=''OnLoad''/>
-</Image.Source>
-</Image>
-<TextBlock Text=''Your support for the Palestinian cause is invaluable, especially in these challenging times. Donations play a crucial role in providing essential services to those affected by the ongoing genocide and helping to sustain long-term development efforts. Supporting trusted organizations allows your contributions to have a direct impact, offering humanitarian aid and food, medical assistance, legal support, and more.'' FontSize=''16'' Margin=''25,25,35,0''  Foreground=''{DynamicResource TextColorSecondaryColor}''  TextWrapping=''Wrap''/>
-<TextBlock Text='' • Keyboard Shortcuts'' FontSize=''20'' Margin=''0,44,0,30'' Foreground=''{DynamicResource PrimaryButtonForeground}'' FontWeight=''bold'' TextWrapping=''Wrap''/>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Ctrl+A: Clear category filter.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Ctrl+F: toggle search mode.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Ctrl+Q: Switch to Apps.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Ctrl+W: Switch to Tweaks.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Ctrl+E: Switch to Settings.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Ctrl+S: Install selected Apps/Tweaks.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Shift+S: Save selected.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Shift+D: Load save file.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Shift+M: Toggle music.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Shift+P: Open Choco folder.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Shift+T: Open ITT folder.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Shift+Q: Restore point.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Shift+I: ITT Shortcut.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<StackPanel Orientation=''Vertical''>
-<TextBlock Text=''• Ctrl+G: Close application.'' Margin=''35,0,0,0'' FontSize=''16'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
-</StackPanel>
-<TextBlock Text='' • 📥 Download any Youtube video'' FontSize=''20'' Margin=''0,44,0,30'' Foreground=''{DynamicResource PrimaryButtonForeground}'' FontWeight=''bold'' TextWrapping=''Wrap''/>
-<Image x:Name=''shell'' Cursor=''Hand'' Margin=''8'' Height=''300'' Width=''Auto''>
-<Image.Source>
-<BitmapImage UriSource=''https://raw.githubusercontent.com/emadadel4/ShellTube/main/demo.jpg'' CacheOption=''OnLoad''/>
-</Image.Source>
-</Image>
-<TextBlock Text=''Shelltube is simple way to downnload videos and playlist from youtube just Launch it and start download your video you can Launch it from Third-party section.'' FontSize=''16'' Margin=''25,25,35,0''  Foreground=''{DynamicResource TextColorSecondaryColor}''  TextWrapping=''Wrap''/>
-<TextBlock Text='' • 💡 A Secret Feature Awaits – Unlock It'' FontSize=''20'' Margin=''0,44,0,30'' Foreground=''{DynamicResource PrimaryButtonForeground}'' FontWeight=''bold'' TextWrapping=''Wrap''/>
-<Image x:Name=''esg'' Cursor=''Hand'' Margin=''8'' Height=''300'' Width=''Auto''>
-<Image.Source>
-<BitmapImage UriSource=''https://github.com/user-attachments/assets/edb67270-d9d2-4e94-8873-1c822c3afe2f'' CacheOption=''OnLoad''/>
-</Image.Source>
-</Image>
-<TextBlock Text=''Can You Find the Hidden Easter Egg? Open the source code and uncover the secret features waiting for you!'' FontSize=''16'' Margin=''25,25,35,0''  Foreground=''{DynamicResource TextColorSecondaryColor}''  TextWrapping=''Wrap''/>
-</StackPanel>
-</ScrollViewer>
-</Grid>
-<Grid Row="2" Background="Transparent">
-<TextBlock
-Name="DisablePopup"
-Foreground="{DynamicResource TextColorSecondaryColor2}"
-Text="Show on update"
-Background="Transparent"
-TextAlignment="Center"
-Cursor="Hand"
-Padding="15"
-Visibility="Visible"
-HorizontalAlignment="Center"
-VerticalAlignment="Center"
-/>
-</Grid>
 </Grid>
 </Border>
+</Popup>
+</Grid>
 </Window>
-'
+"@
 $maxthreads = [int]$env:NUMBER_OF_PROCESSORS
 $hashVars = New-object System.Management.Automation.Runspaces.SessionStateVariableEntry -ArgumentList 'itt', $itt, $Null
 $InitialSessionState = [System.Management.Automation.Runspaces.InitialSessionState]::CreateDefault()
@@ -8695,6 +8495,7 @@ if (-not $Debug) { Set-Taskbar -progress "None" -icon "logo" }
 catch {
 Write-Output "Error: $_"
 }
+$popup = $itt["window"].FindName("EventPopup")
 $itt.CurrentList
 $itt.CurrentCategory
 $itt.Search_placeholder = $itt["window"].FindName("search_placeholder")

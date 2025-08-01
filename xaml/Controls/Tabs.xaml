@@ -161,7 +161,7 @@
                             <VirtualizingStackPanel />
                         </ItemsPanelTemplate>
                     </ListView.ItemsPanel>
-                    {{Apps}}
+                    <!-- {{Apps}} -->
                 </ListView>
 
             </Grid> 
@@ -269,7 +269,7 @@
                                 <VirtualizingStackPanel />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        {{Tweaks}}
+                        <!-- {{Tweaks}} -->
                     </ListView>
 
                 </Grid>
@@ -294,7 +294,7 @@
                                 <VirtualizingStackPanel />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        {{Settings}}
+                        <!-- {{Settings}} -->
                     </ListView>
             </TabItem>
 

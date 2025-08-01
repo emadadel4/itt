@@ -149,7 +149,7 @@
                     <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
                 </MenuItem.Icon>
                 <MenuItem Name="systheme" Header="{Binding Use_system_setting, TargetNullValue=System}" ToolTip="Use system theme if available" />
-                {{ThemesKeys}}
+                <!-- {{ThemesKeys}} -->
             </MenuItem>
             
 
@@ -181,7 +181,7 @@
 
                     <MenuItem Name="systemlang" Header="{Binding Use_system_setting, TargetNullValue=System Language}">
                     </MenuItem>
-                    {{LocalesKeys}}
+                    <!-- {{LocalesKeys}} -->
             </MenuItem>
 
             <MenuItem Name="ittshortcut" Header="{Binding Create_desktop_shortcut, TargetNullValue=Create Shortcut}" InputGestureText="Shift+I">
