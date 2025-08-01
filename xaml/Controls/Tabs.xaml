@@ -286,7 +286,6 @@
                         </DataTemplate>
                 </TabItem.HeaderTemplate>
 
-
                     <ListView Name="SettingsList" 
                         AlternationCount="2">
                         <ListView.ItemsPanel>
@@ -300,5 +299,3 @@
 
     </TabControl>
 <!--End TabControl-->
-
-
