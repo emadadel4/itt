@@ -45,7 +45,7 @@
                 <TextBlock Text="Contributors" TextWrapping="Wrap" HorizontalAlignment="center" Foreground="{DynamicResource TextColorSecondaryColor}"/>
                 <ScrollViewer VerticalScrollBarVisibility="Auto" Height="90">
                     <StackPanel Margin="5,0,0,0">
-                        #{names}
+                        <!-- names -->
                     </StackPanel>
                 </ScrollViewer>
             </StackPanel>

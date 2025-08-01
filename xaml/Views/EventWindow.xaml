@@ -58,7 +58,7 @@
             <Grid Grid.Row="1" Background="Transparent">
                 <ScrollViewer Name="ScrollViewer" VerticalScrollBarVisibility="Auto" Height="Auto">
                     <StackPanel Orientation="Vertical">
-                        UpdateContent
+                        <!-- UpdateContent -->
                     </StackPanel>
                 </ScrollViewer>
             </Grid>
