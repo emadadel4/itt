@@ -46,6 +46,8 @@ Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico
     <!--Header Section-->
         {{Tabs}}
         {{buttons}}
+        {{EventWindow}}
+
 </Grid>
 </Window>
 <!--End Main Window-->
