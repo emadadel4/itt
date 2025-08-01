@@ -4266,7 +4266,6 @@ $aboutPopup = $itt['window'].FindName('AboutPopup')
 $aboutPopup.FindName('ver').Text = "Last update $($itt.lastupdate)"
 $aboutPopup.FindName("telegram").Add_MouseLeftButtonDown({ Start-Process("https://t.me/emadadel4") })
 $aboutPopup.FindName("github").Add_MouseLeftButtonDown({ Start-Process("https://github.com/emadadel4/itt") })
-$aboutPopup.FindName("blog").Add_MouseLeftButtonDown({ Start-Process("https://emadadel4.github.io") })
 $aboutPopup.IsOpen = $true
 }
 function ITTShortcut {
@@ -8345,7 +8344,6 @@ SnapsToDevicePixels="True">
 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="center" Margin="0 5 0 5">
 <TextBlock Text="Github" Foreground="{DynamicResource TextColorSecondaryColor}" Name="github" Cursor="Hand" Margin="5"/>
 <TextBlock Text="Telegrm" Foreground="{DynamicResource TextColorSecondaryColor}" Name="telegram" Cursor="Hand" Margin="5"/>
-<TextBlock Text="Blog" Foreground="{DynamicResource TextColorSecondaryColor}" Name="blog" Cursor="Hand" Margin="5"/>
 </StackPanel>
 <StackPanel Grid.Row="2">
 <TextBlock Text="Contributors" TextWrapping="Wrap" HorizontalAlignment="center" Foreground="{DynamicResource TextColorSecondaryColor}"/>
