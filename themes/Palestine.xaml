@@ -1,7 +1,6 @@
 <!-- {Palestine} -->
 <!-- by {emadadel} -->
 <ResourceDictionary x:Key="Palestine">
-
     <!-- Backgrounds -->
     <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="black"/>
     <SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="black"/>
@@ -36,5 +35,4 @@
     <SolidColorBrush x:Key="logo" Color="#00D96D"/>
     <ImageBrush x:Key="BackgroundImage" ImageSource="https://w.wallhaven.cc/full/we/wallhaven-wegrj6.jpg" Stretch="UniformToFill" Opacity="0.3"/>
     <x:String x:Key="SubText">#StandWithPalestine</x:String>
-
 </ResourceDictionary>
