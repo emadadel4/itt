@@ -1,7 +1,6 @@
 <!-- {Light} -->
 <!-- by {emadadel} -->
 <ResourceDictionary x:Key="Light">
-
     <!-- Backgrounds -->
     <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#ffffff"/>
     <SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="#f6f8fa"/>
@@ -36,5 +35,4 @@
     <SolidColorBrush x:Key="logo" Color="#0969da"/>
     <ImageBrush x:Key="BackgroundImage" ImageSource="{x:Null}" Stretch="UniformToFill"/>
     <x:String x:Key="SubText">Install Tweaks Tool</x:String>
-
 </ResourceDictionary>
