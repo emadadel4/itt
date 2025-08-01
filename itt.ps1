@@ -5664,8 +5664,8 @@ Grid.Row="1">
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Internet Download Manager" FontSize="15" Tag="internet-download-manager|extras/abdownloadmanager|Tonec.InternetDownloadManager|na|Web Browsers"   ToolTip="A popular download manager tool that accelerates downloads and allows"/>
-<TextBlock Margin="8" FontSize="11" Text="{Binding Web Browsers}"/>
+<CheckBox Content="Internet Download Manager" FontSize="15" Tag="internet-download-manager|extras/abdownloadmanager|Tonec.InternetDownloadManager|na|Utilities"   ToolTip="A popular download manager tool that accelerates downloads and allows"/>
+<TextBlock Margin="8" FontSize="11" Text="{Binding Utilities}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
@@ -8060,7 +8060,7 @@ AlternationCount="2">
 </ListView.ItemsPanel>
 <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Show file extensions" FontSize="15" Tag="||||Protection" Style="{StaticResource ToggleSwitchStyle}" Name="Showfileextensions" ToolTip="Show file extensions in Windows displays the suffix at the end of file names like .txt .jpg .exe etc"/>
+<CheckBox Content="Show file extensions" FontSize="15" Tag="||||Protection" Style="{StaticResource ToggleSwitchStyle}" Name="Showfileextensions" ToolTip="Show file extensions in Windows displays the suffix at the end of file names like .txt .jpg .exe"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Protection}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
