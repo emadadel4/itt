@@ -1,4 +1,4 @@
-﻿# Set the maximum number of threads for the RunspacePool to the number of threads on the machine
+# Set the maximum number of threads for the RunspacePool to the number of threads on the machine
 $maxthreads = [int]$env:NUMBER_OF_PROCESSORS
 # Create a new session state for parsing variables into our runspace
 $hashVars = New-object System.Management.Automation.Runspaces.SessionStateVariableEntry -ArgumentList 'itt', $itt, $Null
@@ -84,6 +84,8 @@ try {
     #===========================================================================
     #region Set Language based on culture
     #===========================================================================
+    $localesUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/test-tweaks/static/Database/locales.json"
+    $itt.database.locales = Invoke-WebRequest -Uri $localesUrl -UseBasicParsing | Select-Object -ExpandProperty Content | ConvertFrom-Json
     try {
         $Locales = switch ($itt.Locales) {
             "default" {

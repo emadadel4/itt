@@ -10,14 +10,12 @@ function ExecuteCommand {
         Executes the PowerShell command `Write-Output 'Welcome to ITT'` in a new PowerShell process.
     #>
 
-    param ([array]$tweak)
+    param ($tweak)
 
     try {
-        foreach ($cmd in $tweak) {
             Add-Log -Message "Please wait..."
-            $script = [scriptblock]::Create($cmd)
+            $script = [scriptblock]::Create($tweak)
             Invoke-Command  $script -ErrorAction Stop
-        }
     } catch  {
         Add-Log -Message "The specified command was not found." -Level "WARNING"
     }
