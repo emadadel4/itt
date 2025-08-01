@@ -708,14 +708,16 @@ try {
 
 
 
+        # Update Changelog
         $ChanglogContent = Get-Content -Path $Changlog -Raw
         $xamlContent = ConvertTo-Xaml -text $ChanglogContent
         $ChanglogFilterd = $xamlContent -replace "''", "'"
-        $MainXamlContent = $MainXamlContent -replace "<!-- UpdateContent -->", $ChanglogFilterd
 
-        
+        # Replace placeholder
+        $MainXamlContent = $MainXamlContent -replace "<!-- UpdateContent -->", $ChanglogFilterd
         $MainXamlContent = $MainXamlContent -replace "<!-- names -->", (NewCONTRIBUTOR)
 
+        # Generate Click Event Handlers in Changelog
         GenerateClickEventHandlers
 
         # Final output
