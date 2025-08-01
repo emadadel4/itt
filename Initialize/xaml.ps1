@@ -162,6 +162,7 @@ catch {
 #===========================================================================
 
 # List Views
+$popup = $itt["window"].FindName("EventPopup")
 $itt.CurrentList
 $itt.CurrentCategory
 $itt.Search_placeholder = $itt["window"].FindName("search_placeholder")
@@ -182,13 +183,11 @@ $itt.applyText = $itt["window"].FindName("applyText")
 $itt.applyIcon = $itt["window"].FindName("applyIcon")
 $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
 
-
 # Cacheing Applications & Tweaks for quick respnse
 $tweaksDict = @{}
 foreach ($tweak in $itt.database.Tweaks) {
     $tweaksDict[$tweak.Name] = $tweak
 }
-
 #===========================================================================
 #endregion Initialize WPF Controls
 #===========================================================================
