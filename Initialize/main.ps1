@@ -13,6 +13,7 @@ $MainXaml.SelectNodes("//*[@Name]") | ForEach-Object {
             "Button" { $element.Add_Click({ Invoke-Button $this.Name $this.Content }) }
             "MenuItem" { $element.Add_Click({ Invoke-Button $this.Name -Content $this.Header }) }
             "TextBox" { $element.Add_TextChanged({ Invoke-Button $this.Name $this.Text }) }
+            "TextBlock" { $element.Add_MouseLeftButtonDown({ Invoke-Button $this.Name $this.Text }) }
             "ComboBox" { $element.add_SelectionChanged({ Invoke-Button $this.Name $this.SelectedItem.Content }) }
             "TabControl" { $element.add_SelectionChanged({ Invoke-Button $this.Name $this.SelectedItem.Name }) }
             "CheckBox" {
