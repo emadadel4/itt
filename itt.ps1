@@ -2831,6 +2831,12 @@ Find-Driver
 "taps"{
 ChangeTap
 }
+"telegram"{
+Start-Process("https://t.me/emadadel4")
+}
+"github"{
+Start-Process("https://github.com/emadadel4/itt")
+}
 Default {
 Write-Host "Unknown action: $action"
 }
@@ -4264,8 +4270,6 @@ Write-Warning "Unable to set WSL2 due to a Security Exception"
 function About {
 $aboutPopup = $itt['window'].FindName('AboutPopup')
 $aboutPopup.FindName('ver').Text = "Last update $($itt.lastupdate)"
-$aboutPopup.FindName("telegram").Add_MouseLeftButtonDown({ Start-Process("https://t.me/emadadel4") })
-$aboutPopup.FindName("github").Add_MouseLeftButtonDown({ Start-Process("https://github.com/emadadel4/itt") })
 $aboutPopup.IsOpen = $true
 }
 function ITTShortcut {
@@ -8525,6 +8529,7 @@ switch ($type) {
 "Button" { $element.Add_Click({ Invoke-Button $this.Name $this.Content }) }
 "MenuItem" { $element.Add_Click({ Invoke-Button $this.Name -Content $this.Header }) }
 "TextBox" { $element.Add_TextChanged({ Invoke-Button $this.Name $this.Text }) }
+"TextBlock" { $element.Add_MouseLeftButtonDown({ Invoke-Button $this.Name $this.Text }) }
 "ComboBox" { $element.add_SelectionChanged({ Invoke-Button $this.Name $this.SelectedItem.Content }) }
 "TabControl" { $element.add_SelectionChanged({ Invoke-Button $this.Name $this.SelectedItem.Name }) }
 "CheckBox" {
