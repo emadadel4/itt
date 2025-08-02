@@ -259,7 +259,7 @@ function NewCONTRIBUTOR {
 
     # Define paths
     $gitFolder = ".git"
-    $contribFile = "CONTRIBUTING.md"
+    $contribFile = "CONTRIBUTOR.md"
     
     # Function to get GitHub username from .git folder
     function Get-GitHubUsername {
