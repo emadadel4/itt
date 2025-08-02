@@ -5349,12 +5349,12 @@ Duration="0:0:0.1" />
 <MenuItem.Icon>
 <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
 </MenuItem.Icon>
-<MenuItem Name="moff" Header="{Binding off, TargetNullValue=Off}" InputGestureText="Shift+N">
+<MenuItem Name="moff" Header="{Binding off, TargetNullValue=Off}" InputGestureText="Shift+M">
 <MenuItem.Icon>
 <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
 </MenuItem.Icon>
 </MenuItem>
-<MenuItem Name="mon" Header="{Binding on, TargetNullValue=On}" InputGestureText="Shift+F">
+<MenuItem Name="mon" Header="{Binding on, TargetNullValue=On}" InputGestureText="Shift+M">
 <MenuItem.Icon>
 <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
 </MenuItem.Icon>
