@@ -165,7 +165,6 @@ catch {
 $popup = $itt["window"].FindName("EventPopup")
 $itt.CurrentList
 $itt.CurrentCategory
-$itt.Search_placeholder = $itt["window"].FindName("search_placeholder")
 $itt.TabControl = $itt["window"].FindName("taps")
 $itt.AppsListView = $itt["window"].FindName("appslist")
 $itt.TweaksListView = $itt["window"].FindName("tweakslist")
@@ -176,7 +175,6 @@ $itt.Description = $itt["window"].FindName("description")
 $itt.Statusbar = $itt["window"].FindName("statusbar")
 $itt.InstallBtn = $itt["window"].FindName("installBtn")
 $itt.ApplyBtn = $itt["window"].FindName("applyBtn")
-$itt.SearchInput = $itt["window"].FindName("searchInput")
 $itt.installText = $itt["window"].FindName("installText")
 $itt.installIcon = $itt["window"].FindName("installIcon")
 $itt.applyText = $itt["window"].FindName("applyText")
