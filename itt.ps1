@@ -5,7 +5,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/01/2025"
+lastupdate     = "08/02/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -2837,9 +2837,6 @@ Start-Process("https://t.me/emadadel4")
 "github"{
 Start-Process("https://github.com/emadadel4/itt")
 }
-Default {
-Write-Host "Unknown action: $action"
-}
 }
 }
 function ITT-ScriptBlock {
@@ -4676,21 +4673,43 @@ VerticalAlignment="Center"/>
 </Style>
 <Style x:Key="SearchBox" TargetType="TextBox">
 <Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
-<Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}"/>
-<Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}"/>
+<Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
 <Setter Property="BorderThickness" Value="0"/>
 <Setter Property="Padding" Value="8"/>
 <Setter Property="Template">
 <Setter.Value>
 <ControlTemplate TargetType="TextBox">
-<Border Margin="0"
-Background="{TemplateBinding Background}"
-BorderBrush="{TemplateBinding BorderBrush}"
+<Grid>
+<Border Background="{TemplateBinding Background}"
 BorderThickness="{TemplateBinding BorderThickness}"
 CornerRadius="15">
 <ScrollViewer x:Name="PART_ContentHost"
 Background="Transparent"/>
 </Border>
+<TextBlock x:Name="PlaceholderText"
+Text="🔍 Ctrl+F"
+Foreground="Gray"
+Margin="12,0,0,0"
+VerticalAlignment="Center"
+IsHitTestVisible="False"/>
+</Grid>
+<ControlTemplate.Triggers>
+<Trigger Property="Text" Value="">
+<Setter TargetName="PlaceholderText" Property="Visibility" Value="Visible"/>
+</Trigger>
+<Trigger Property="Text" Value="{x:Null}">
+<Setter TargetName="PlaceholderText" Property="Visibility" Value="Visible"/>
+</Trigger>
+<Trigger Property="Text" Value=" ">
+<Setter TargetName="PlaceholderText" Property="Visibility" Value="Visible"/>
+</Trigger>
+<Trigger Property="Text" Value="🔍 Ctrl+F">
+<Setter TargetName="PlaceholderText" Property="Visibility" Value="Collapsed"/>
+</Trigger>
+<Trigger Property="IsKeyboardFocused" Value="True">
+<Setter TargetName="PlaceholderText" Property="Visibility" Value="Collapsed"/>
+</Trigger>
+</ControlTemplate.Triggers>
 </ControlTemplate>
 </Setter.Value>
 </Setter>
@@ -5458,25 +5477,6 @@ VerticalAlignment="Center"
 HorizontalAlignment="Left"
 Style="{StaticResource SearchBox}"
 Name="searchInput" />
-<Grid Name="search_placeholder">
-<TextBlock
-Name="SearchIcon"
-Text=""
-FontSize="15"
-Foreground="Gray"
-VerticalAlignment="Center"
-FontFamily="Segoe MDL2 Assets"
-HorizontalAlignment="Left"
-IsHitTestVisible="False"
-Margin="10,0,0,0" />
-<TextBlock
-Text="Ctrl+F"
-Foreground="Gray"
-VerticalAlignment="Center"
-HorizontalAlignment="Left"
-IsHitTestVisible="False"
-Margin="30,0,0,0" />
-</Grid>
 </Grid>
 </Grid>
 </Grid>
@@ -8325,12 +8325,12 @@ PopupAnimation="Fade"
 IsOpen="false">
 <Border
 Background="{DynamicResource PrimaryBackgroundColor}"
-BorderBrush="{DynamicResource SecondaryPrimaryBackgroundColor}"
+BorderBrush="DarkGray"
 BorderThickness="1"
-Width="400"
+Width="300"
 Height="300"
 Padding="10"
-CornerRadius="8"
+CornerRadius="10"
 SnapsToDevicePixels="True">
 <Grid Margin="8">
 <Grid.RowDefinitions>
@@ -8500,7 +8500,6 @@ Write-Output "Error: $_"
 $popup = $itt["window"].FindName("EventPopup")
 $itt.CurrentList
 $itt.CurrentCategory
-$itt.Search_placeholder = $itt["window"].FindName("search_placeholder")
 $itt.TabControl = $itt["window"].FindName("taps")
 $itt.AppsListView = $itt["window"].FindName("appslist")
 $itt.TweaksListView = $itt["window"].FindName("tweakslist")
@@ -8509,7 +8508,6 @@ $itt.Description = $itt["window"].FindName("description")
 $itt.Statusbar = $itt["window"].FindName("statusbar")
 $itt.InstallBtn = $itt["window"].FindName("installBtn")
 $itt.ApplyBtn = $itt["window"].FindName("applyBtn")
-$itt.SearchInput = $itt["window"].FindName("searchInput")
 $itt.installText = $itt["window"].FindName("installText")
 $itt.installIcon = $itt["window"].FindName("installIcon")
 $itt.applyText = $itt["window"].FindName("applyText")
@@ -8552,14 +8550,6 @@ $c.Cancel = $true
 $itt["window"].Add_ContentRendered({
 Startup
 Show-Event
-})
-$itt.SearchInput.Add_GotFocus({
-$itt.Search_placeholder.Visibility = "Hidden"
-})
-$itt.SearchInput.Add_LostFocus({
-if ([string]::IsNullOrEmpty($itt.SearchInput.Text)) {
-$itt.Search_placeholder.Visibility = "Visible"
-}
 })
 if ($i) {
 Quick-Install -file $i *> $null
