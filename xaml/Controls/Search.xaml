@@ -6,24 +6,5 @@
         HorizontalAlignment="Left"
         Style="{StaticResource SearchBox}"
         Name="searchInput" />
-    <Grid Name="search_placeholder">
-        <TextBlock 
-                Name="SearchIcon"
-                Text="" 
-                FontSize="15" 
-                Foreground="Gray" 
-                VerticalAlignment="Center" 
-                FontFamily="Segoe MDL2 Assets"
-                HorizontalAlignment="Left" 
-                IsHitTestVisible="False"
-                Margin="10,0,0,0" />
-        <TextBlock 
-                Text="Ctrl+F" 
-                Foreground="Gray" 
-                VerticalAlignment="Center" 
-                HorizontalAlignment="Left" 
-                IsHitTestVisible="False"
-                Margin="30,0,0,0" />
-    </Grid>
 </Grid>
 <!--End Search-->
