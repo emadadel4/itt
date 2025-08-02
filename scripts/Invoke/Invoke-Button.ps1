@@ -174,9 +174,6 @@ function Invoke-Button {
         "github"{
             Start-Process("https://github.com/emadadel4/itt")
         }
-        Default {
-            Write-Host "Unknown action: $action"
-        }
     }
 
     # debug start
