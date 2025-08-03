@@ -5,10 +5,6 @@ function Get-SelectedItems {
         Retrieves selected items from the ListView based on the specified mode.
         .DESCRIPTION
         This function collects information about selected items from a ListView, depending on the mode specified. It extracts data from the ListView items that have checkboxes that are checked and returns this information in a structured format.
-        .PARAMETER Mode
-        Specifies the mode for item retrieval. Options include:
-        - `Apps`: Retrieves information about selected applications from the `AppsListView`.
-        - `Tweaks`: Retrieves information about selected tweaks from the `TweaksListView`.
         .EXAMPLE
         Get-SelectedItems -Mode "Apps"
         Retrieves and returns a list of selected applications from the `AppsListView`.
@@ -19,7 +15,7 @@ function Get-SelectedItems {
     switch ($Mode) {
         "Apps" {
 
-            $items = @()  
+            $Apps = @()  
 
             foreach ($item in $itt.AppsListView.Items) {
                 
@@ -29,7 +25,7 @@ function Get-SelectedItems {
 
                 if ($checkbox.IsChecked) {
 
-                    $items += @{
+                    $Apps += @{
                         Name    = $checkbox.Content
                         Choco   = $tags[0]
                         Scoop   = $tags[1]
@@ -38,32 +34,30 @@ function Get-SelectedItems {
                     }
                 }
             }
+
+            return $Apps
         }
         "Tweaks" {
 
-            $items = @()  
+            $Tweaks = @()  
 
             foreach ($item in $itt.TweaksListView.Items) {
                 
-                $child = $item.Children[0].Children[0]
+                $checkbox = $item.Children[0].Children[0]
+                
+                $tags = $item.Children[0].Children[0].Tag
 
-                if ($tweaksDict.ContainsKey($child.Content) -and $child.IsChecked) {
+        
+                if ($checkbox.IsChecked) {
 
-                    $items += @{
-
-                        Name          = $tweaksDict[$child.Content].Name
-                        Registry      = $tweaksDict[$child.Content].Registry
-                        Services      = $tweaksDict[$child.Content].Services
-                        ScheduledTask = $tweaksDict[$child.Content].ScheduledTask
-                        AppxPackage   = $tweaksDict[$child.Content].AppxPackage
-                        Script        = $tweaksDict[$child.Content].Script
-                        UndoScript    = $tweaksDict[$child.Content].UndoScript
-                        Refresh       = $tweaksDict[$child.Content].Refresh
-                        # Add a new tweak method here
+                    $Tweaks += @{
+                        Name    = $checkbox.Content
+                        Script   = $tags
                     }
                 }
             }
+
+            return $Tweaks
         }
     }
-    return $items
 }
