@@ -3675,8 +3675,6 @@ Add-Log -Message "PLEASE USE (WINDOWS POWERSHELL) NOT (TERMINAL POWERSHELL 7) TO
 }
 }
 function Invoke-Apply {
-$itt.searchInput.text = $null
-$itt.Search_placeholder.Visibility = "Visible"
 $itt['window'].FindName("TwaeksCategory").SelectedIndex = 0
 $selectedTweaks = Get-SelectedItems -Mode "Tweaks"
 if ($itt.ProcessRunning) {
