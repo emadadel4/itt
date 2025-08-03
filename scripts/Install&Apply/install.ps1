@@ -9,9 +9,6 @@ function Invoke-Install {
         Message -key "Please_wait" -icon "Warning" -action "OK"
         return
     }
-    
-    # Clear Search QUery
-    $itt.Search_placeholder.Visibility = "Visible"
 
     # Get Selected apps
     $itt['window'].FindName("AppsCategory").SelectedIndex = 0
