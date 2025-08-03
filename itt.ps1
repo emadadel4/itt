@@ -3675,7 +3675,6 @@ Add-Log -Message "PLEASE USE (WINDOWS POWERSHELL) NOT (TERMINAL POWERSHELL 7) TO
 }
 }
 function Invoke-Apply {
-$itt.Search_placeholder.Visibility = "Visible"
 $itt['window'].FindName("TwaeksCategory").SelectedIndex = 0
 $selectedTweaks = Get-SelectedItems -Mode "Tweaks"
 if ($itt.ProcessRunning) {
@@ -3712,7 +3711,6 @@ if ($itt.ProcessRunning) {
 Message -key "Please_wait" -icon "Warning" -action "OK"
 return
 }
-$itt.Search_placeholder.Visibility = "Visible"
 $itt['window'].FindName("AppsCategory").SelectedIndex = 0
 $selectedApps = Get-SelectedItems -Mode "Apps"
 if ($selectedApps.Count -le 0) {return}
