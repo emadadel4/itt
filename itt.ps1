@@ -5,7 +5,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/02/2025"
+lastupdate     = "08/03/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -3675,7 +3675,6 @@ Add-Log -Message "PLEASE USE (WINDOWS POWERSHELL) NOT (TERMINAL POWERSHELL 7) TO
 }
 }
 function Invoke-Apply {
-$itt.searchInput.text = $null
 $itt.Search_placeholder.Visibility = "Visible"
 $itt['window'].FindName("TwaeksCategory").SelectedIndex = 0
 $selectedTweaks = Get-SelectedItems -Mode "Tweaks"
@@ -3702,38 +3701,7 @@ UpdateUI -Button "ApplyBtn" -Content "Applying" -Width "auto"
 $itt["window"].Dispatcher.Invoke([action] { Set-Taskbar -progress "Indeterminate" -value 0.01 -icon "logo" })
 foreach ($tweak in $selectedTweaks) {
 Add-Log -Message "::::$($tweak.Name)::::" -Level "default"
-$tweak | ForEach-Object {
-if ($_.Script -and $_.Script.Count -gt 0) {
 ExecuteCommand -tweak $tweak.Script
-if ($_.Refresh -eq $true) {
-Refresh-Explorer
-}
-}
-if ($_.Registry -and $_.Registry.Count -gt 0) {
-Set-Registry -tweak $tweak.Registry
-if ($_.Refresh -eq $true) {
-Refresh-Explorer
-}
-}
-if ($_.AppxPackage -and $_.AppxPackage.Count -gt 0) {
-Uninstall-AppxPackage -tweak $tweak.AppxPackage
-if ($_.Refresh -eq $true) {
-Refresh-Explorer
-}
-}
-if ($_.ScheduledTask -and $_.ScheduledTask.Count -gt 0) {
-Remove-ScheduledTasks -tweak $tweak.ScheduledTask
-if ($_.Refresh -eq $true) {
-Refresh-Explorer
-}
-}
-if ($_.Services -and $_.Services.Count -gt 0) {
-Disable-Service -tweak $tweak.Services
-if ($_.Refresh -eq $true) {
-Refresh-Explorer
-}
-}
-}
 }
 $itt.ProcessRunning = $false
 Finish -ListView "TweaksListView"
@@ -3744,7 +3712,6 @@ if ($itt.ProcessRunning) {
 Message -key "Please_wait" -icon "Warning" -action "OK"
 return
 }
-$itt.searchInput.text = $null
 $itt.Search_placeholder.Visibility = "Visible"
 $itt['window'].FindName("AppsCategory").SelectedIndex = 0
 $selectedApps = Get-SelectedItems -Mode "Apps"
