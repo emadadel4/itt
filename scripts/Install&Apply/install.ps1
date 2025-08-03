@@ -11,7 +11,6 @@ function Invoke-Install {
     }
     
     # Clear Search QUery
-    $itt.searchInput.text = $null
     $itt.Search_placeholder.Visibility = "Visible"
 
     # Get Selected apps
