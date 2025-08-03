@@ -10,10 +10,6 @@ function Invoke-Install {
         return
     }
     
-    # Clear Search QUery
-    $itt.searchInput.text = $null
-    $itt.Search_placeholder.Visibility = "Visible"
-
     # Get Selected apps
     $itt['window'].FindName("AppsCategory").SelectedIndex = 0
     $selectedApps = Get-SelectedItems -Mode "Apps"
