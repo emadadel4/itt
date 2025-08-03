@@ -5,9 +5,6 @@ function Invoke-Apply {
         Handles the application of selected tweaks by executing the relevant commands, registry modifications, and other operations.
     #>
 
-    # Clear Search QUery
-    $itt.Search_placeholder.Visibility = "Visible"
-
     $itt['window'].FindName("TwaeksCategory").SelectedIndex = 0
     $selectedTweaks = Get-SelectedItems -Mode "Tweaks"
 
