@@ -5,7 +5,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/03/2025"
+lastupdate     = "08/04/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -8323,7 +8323,7 @@ IsOpen="false">
 Background="{DynamicResource PrimaryBackgroundColor}"
 BorderBrush="DarkGray"
 BorderThickness="1"
-Width="300"
+Width="360"
 Height="300"
 Padding="10"
 CornerRadius="10"
@@ -8337,15 +8337,11 @@ SnapsToDevicePixels="True">
 <Grid Grid.Row="0">
 <StackPanel Orientation="Vertical">
 <TextBlock Text="itt" VerticalAlignment="Center" FontFamily="arial" FontWeight="bold" FontSize="88" Margin="0 2 0 0" Foreground="{DynamicResource logo}" TextAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource logoText}"/>
-<TextBlock Text="Made by Emad Adel" HorizontalAlignment="Center" Foreground="{DynamicResource TextColorSecondaryColor}" TextAlignment="Center"/>
+<TextBlock Text="Made by Emad Adel" HorizontalAlignment="Center" Foreground="{DynamicResource TextColorSecondaryColor}" TextAlignment="Center" Margin="0 2 0 8"/>
 <TextBlock Name="ver" TextAlignment="Center" Foreground="{DynamicResource TextColorSecondaryColor}"/>
 </StackPanel>
 </Grid>
-<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="center" Margin="0 5 0 5">
-<TextBlock Text="Github" Foreground="{DynamicResource TextColorSecondaryColor}" Name="github" Cursor="Hand" Margin="5"/>
-<TextBlock Text="Telegrm" Foreground="{DynamicResource TextColorSecondaryColor}" Name="telegram" Cursor="Hand" Margin="5"/>
-</StackPanel>
-<StackPanel Grid.Row="2">
+<StackPanel Grid.Row="1">
 <TextBlock Text="Contributors" TextWrapping="Wrap" HorizontalAlignment="center" Foreground="{DynamicResource TextColorSecondaryColor}"/>
 <ScrollViewer VerticalScrollBarVisibility="Auto" Height="90">
 <StackPanel Margin="5,0,0,0">
@@ -8353,6 +8349,9 @@ SnapsToDevicePixels="True">
 <TextBlock Text="yousefmhmd" Margin="1" Foreground="{DynamicResource TextColorSecondaryColor}" />
 </StackPanel>
 </ScrollViewer>
+</StackPanel>
+<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="center" Margin="0">
+<TextBlock Text="Source Code" Foreground="{DynamicResource TextColorSecondaryColor}" Name="github" Cursor="Hand" Margin="0"/>
 </StackPanel>
 </Grid>
 </Border>
