@@ -130,7 +130,6 @@ Set-Location "C:\Users\$env:USERNAME\Documents\Github\ITT"
 > Ensure you understand the tweak you are adding and test it before committing.
 
 ### 🌐 Add your native language  
-*Run the following script:*
 
 ```PowerShell
 .\newLocale.ps1
