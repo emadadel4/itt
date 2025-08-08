@@ -10,14 +10,14 @@ function Startup {
         param($Debug)
         
         function UsageCount {
-            try {
+             try {
                 $Message = "👨‍💻 Build Ver: $($itt.lastupdate)`n🚀 URL: $($itt.command)`n👤 Username: $env:USERNAME`n🌐 Language: $($itt.Language)"
-                $EncodedMessage = [uri]::EscapeDataString($Message)
-                $Url = "https://itt.emadadel4.workers.dev/log?text=$EncodedMessage"
-                Invoke-RestMethod -Uri $Url -Method GET
+                $body = @{ text = $Message } | ConvertTo-Json
+                $result = Invoke-RestMethod -Uri "https://itt.emadadel4.workers.dev/log" -Method POST -Body $body -ContentType "application/json"
+                Add-Log -Message "`n  $result times worldwide"
             }
             catch {
-                Add-Log -Message "$_" -Level "info"
+                Add-Log -Message "Your internet connection is not stable" -Level "info"
             }
         }
         function PlayMusic {
