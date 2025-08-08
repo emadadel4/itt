@@ -3556,7 +3556,7 @@ $Url = "https://itt.emadadel4.workers.dev/log?text=$EncodedMessage"
 Invoke-RestMethod -Uri $Url -Method GET
 }
 catch {
-Add-Log -Message "Your internet connection appears to be slow." -Level "info"
+Add-Log -Message "$_" -Level "info"
 }
 }
 function PlayMusic {
