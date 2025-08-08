@@ -8523,10 +8523,10 @@ $c.Cancel = $true
 $itt["window"].Add_ContentRendered({
 Startup
 Show-Event
-})
 if ($i) {
 Quick-Install -file $i *> $null
 }
+})
 $itt["window"].add_Closing($onClosingEvent)
 $itt["window"].Add_PreViewKeyDown($KeyEvents)
 $itt["window"].ShowDialog() | Out-Null
