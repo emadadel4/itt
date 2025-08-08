@@ -2,11 +2,9 @@
 
 ## Changelog
 
-##### Join the Batman Cave Telegram Group
-
 ![itt.xName:bc [https://t.me/+Wpw4QcYsUUMyZmU0]](https://github.com/user-attachments/assets/7d4cb36c-98c3-4ce5-9e90-f1e3560124f2)
 
-#### The largest collection of free stuff on the internet
+#### Join the Batman Cave Telegram Group
 
 ![itt.xName:ps [https://www.palestinercs.org/en/Donation]](https://camo.githubusercontent.com/5cf02c5ee4898f8f92965367dfbf6829cf7d5e180f3808898ac65eccb0835d68/68747470733a2f2f7374796c65732e7265646469746d656469612e636f6d2f74355f327168616b2f7374796c65732f696d6167655f7769646765745f3738637964797a6c336b7462312e706e67)
 
