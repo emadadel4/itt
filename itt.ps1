@@ -3560,9 +3560,7 @@ Add-Log -Message "Your internet connection is not stable" -Level "info"
 }
 }
 function PlayMusic {
-$playlistUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/ittplaylist.m3u"
-$m3uContent = Invoke-RestMethod -Uri $playlistUrl -Method Get
-$tracks = $m3uContent -split "`n" | Where-Object { $_ -and ($_ -notmatch "^#") }
+$tracks = (Invoke-RestMethod "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/ittplaylist.m3u") -split "`n" | Where-Object { $_ -and ($_ -notmatch "^#") }
 $shuffledTracks = $tracks | Get-Random -Count $tracks.Count
 foreach ($track in $shuffledTracks) {
 $mediaItem = $itt.mediaPlayer.newMedia($track)
