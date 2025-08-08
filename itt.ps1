@@ -8225,7 +8225,7 @@ HorizontalAlignment="Left"/>
 <StackPanel Orientation="Vertical">
 <Image x:Name='bc' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
 <Image.Source>
-<BitmapImage UriSource='https://github.com/user-attachments/assets/d0fb01c2-c6e1-4e22-80df-53118f50bf34' CacheOption='OnLoad'/>
+<BitmapImage UriSource='https://github.com/user-attachments/assets/0e3fc2c1-f4a1-43ed-8741-a43e39f26438' CacheOption='OnLoad'/>
 </Image.Source>
 </Image>
 <TextBlock Text='Join the Batman Cave Telegram Group' FontSize='16' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
