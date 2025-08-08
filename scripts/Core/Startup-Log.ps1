@@ -1,90 +1,46 @@
 function Startup {
 
- 
+    <#
+    .SYNOPSIS
+        Runs startup tasks including usage logging, music playback, and quote display.
+    #>
+
     ITT-ScriptBlock -ArgumentList $Debug -ScriptBlock {
  
         param($Debug)
-        function Telegram {
-            param (
-                [string]$Message
-            )
+        
+        function UsageCount {
             try {
-                # Counts
+                $Message = "👨‍💻 Build Ver: $($itt.lastupdate)`n🚀 URL: $($itt.command)`n👤 Username: $env:USERNAME`n🌐 Language: $($itt.Language)"
                 $EncodedMessage = [uri]::EscapeDataString($Message)
                 $Url = "https://itt.emadadel4.workers.dev/log?text=$EncodedMessage"
                 Invoke-RestMethod -Uri $Url -Method GET
             }
             catch {
-                Add-Log -Message "Your internet connection appears to be slow." -Level "WARNING"
-            }
-        }
-        function UsageCount {
-
-            try {
-                # Output success
-                Telegram -Message "👨‍💻 Build Ver: $($itt.lastupdate)`n🚀 URL: $($itt.command)`n🌐 Language: $($itt.Language)"
-            }
-            catch {
-                Add-Log -Message "Your internet connection appears to be slow." -Level "INFO"
+                Add-Log -Message "Your internet connection appears to be slow." -Level "info"
             }
         }
         function PlayMusic {
-
-            # Download and parse the M3U playlist
             $playlistUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/ittplaylist.m3u"
             $m3uContent = Invoke-RestMethod -Uri $playlistUrl -Method Get
-        
-            # Extract valid track URLs (ignoring lines starting with #)
             $tracks = $m3uContent -split "`n" | Where-Object { $_ -and ($_ -notmatch "^#") }
+            $shuffledTracks = $tracks | Get-Random -Count $tracks.Count
         
-            # Function to play an audio track
-            function PlayAudio($track) {
+            foreach ($track in $shuffledTracks) {
                 $mediaItem = $itt.mediaPlayer.newMedia($track)
                 $itt.mediaPlayer.currentPlaylist.appendItem($mediaItem)
                 $itt.mediaPlayer.controls.play()
-        
-                # debug start
-                    # $currentFileName = $itt.mediaPlayer.currentMedia.name
-                    # Write-Host "Currently playing: $currentFileName"
-                # debug end
-            }
-        
-            # Shuffle the playlist and create a new playlist
-            function GetShuffledTracks {
-                return $tracks | Get-Random -Count $tracks.Count
-            }
-        
-            # Preload and play the shuffled playlist
-            function PlayPreloadedPlaylist {
-                $shuffledTracks = GetShuffledTracks
-                foreach ($track in $shuffledTracks) {
-                    PlayAudio -track $track
-                    while ($itt.mediaPlayer.playState -in @(3, 6)) {
-                        Start-Sleep -Milliseconds 100
-                    }
+                while ($itt.mediaPlayer.playState -in 3,6) {
+                    Start-Sleep -Milliseconds 100
                 }
             }
-        
-            PlayPreloadedPlaylist
         }
         function Quotes {
-            function Get-Quotes {(Invoke-RestMethod "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/Quotes.json").Quotes | Sort-Object { Get-Random }}
-            
-            function Show-Quote($text, $icon) {}
-        
-            Set-Statusbar -Text "☕ $($itt.database.locales.Controls.$($itt.Language).welcome)"
-            Start-Sleep 18
-            Set-Statusbar -Text "👁‍🗨 $($itt.database.locales.Controls.$($itt.Language).easter_egg)"
-            Start-Sleep 18
-            $iconMap = @{quote = "💬"; info = "📢"; music = "🎵"; Cautton = "⚠"; default = "☕" }
-            do {
-                foreach ($q in Get-Quotes) {
-                    $icon = if ($iconMap.ContainsKey($q.type)) { $iconMap[$q.type] } else { $iconMap.default }
-                    $text = "`“$($q.text)`”" + $(if ($q.name) { " ― $($q.name)" } else { "" })
-                    Set-Statusbar -Text "$icon $text"
-                    Start-Sleep 25
-                }
-            } while ($true)
+            $q=(Invoke-RestMethod "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/Quotes.json").Quotes|Sort-Object {Get-Random}
+            Set-Statusbar -Text "☕ $($itt.database.locales.Controls.$($itt.Language).welcome)"; Start-Sleep 18
+            Set-Statusbar -Text "👁‍🗨 $($itt.database.locales.Controls.$($itt.Language).easter_egg)"; Start-Sleep 18
+            $i=@{quote="💬";info="📢";music="🎵";Cautton="⚠";default="☕"}
+            while(1){foreach($x in $q){$c=$i[$x.type];if(-not $c){$c=$i.default};$t="`“$($x.text)`”";if($x.name){$t+=" ― $($x.name)"};Set-Statusbar -Text "$c $t";Start-Sleep 25}}
         }
         function LOG {
             Write-Host "  `n` "
