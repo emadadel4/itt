@@ -52,7 +52,7 @@ function Startup {
         # debug start
         if ($Debug) { return }
         # debug end
-        #LOG
+        LOG
         PlayMusic
         Quotes
     }
