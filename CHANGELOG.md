@@ -2,7 +2,7 @@
 
 ## Changelog
 
-![itt.xName:bc [https://t.me/+Wpw4QcYsUUMyZmU0]](https://github.com/user-attachments/assets/d0fb01c2-c6e1-4e22-80df-53118f50bf34)
+![itt.xName:bc [https://t.me/+Wpw4QcYsUUMyZmU0]](https://github.com/user-attachments/assets/0e3fc2c1-f4a1-43ed-8741-a43e39f26438)
 
 #### Join the Batman Cave Telegram Group
 
