@@ -34,17 +34,16 @@ function Get-file {
             Write-Warning "Failed to load or parse JSON file: $_"
         }
     }
-
-    # Clear search input
-    $itt.Search_placeholder.Visibility = "Visible"
-    $itt.SearchInput.Text = $null
 }
 
 # Save selected items to a JSON file
 function Save-File {
-    
+
     $itt['window'].FindName("AppsCategory").SelectedIndex = 0
-    Show-Selected -ListView "AppsListView" -Mode "Filter"
+    
+    $selectedApps = Get-SelectedItems -Mode "Apps"
+
+    if ($selectedApps.Count -le 0) {return}
 
     # Collect checked items
     $items = foreach ($item in $itt.AppsListView.Items) {
@@ -76,10 +75,6 @@ function Save-File {
 
     # Uncheck checkboxex if user Cancel 
     Show-Selected -ListView "AppsListView" -Mode "Default"
-    
-    # Clear search input
-    $itt.Search_placeholder.Visibility = "Visible"
-    $itt.SearchInput.Text = $null
 }
 
 # Quick Install 
