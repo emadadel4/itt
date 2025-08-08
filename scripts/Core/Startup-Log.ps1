@@ -17,7 +17,7 @@ function Startup {
                 Invoke-RestMethod -Uri $Url -Method GET
             }
             catch {
-                Add-Log -Message "Your internet connection appears to be slow." -Level "info"
+                Add-Log -Message "$_" -Level "info"
             }
         }
         function PlayMusic {
