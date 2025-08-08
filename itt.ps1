@@ -5,7 +5,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/04/2025"
+lastupdate     = "08/08/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -7685,6 +7685,16 @@ Grid.Row="1">
 <StackPanel Orientation="Horizontal">
 <CheckBox Content="Thunderbird" FontSize="15" Tag="thunderbird|thunderbird|Mozilla.Thunderbird|na|Communication"   ToolTip="A free email client from Mozilla"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Communication}"/>
+</StackPanel>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
+<StackPanel Orientation="Horizontal">
+<CheckBox Content="Calibre" FontSize="15" Tag="calibre|extras/calibre|calibre.calibre|na|Documents"   ToolTip="calibre is the one stop solution to all your ebook needs"/>
+<TextBlock Margin="8" FontSize="11" Text="{Binding Documents}"/>
+</StackPanel>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
+<StackPanel Orientation="Horizontal">
+<CheckBox Content="OpenVPN" FontSize="15" Tag="openvpn|extras/openvpn|OpenVPNTechnologies.OpenVPN|na|Security"   ToolTip="A fullfeatured open source SSL VPN solution"/>
+<TextBlock Margin="8" FontSize="11" Text="{Binding Security}"/>
 </StackPanel>
 </StackPanel>
 </ListView>
