@@ -774,15 +774,23 @@ try {
 
     try {
 
-        if($Realsee)
+        $param = if ($debug) { "-debug" } elseif ($Realsee) { "-Realsee" } else { break }
+        $scriptPath = Join-Path $PSScriptRoot $OutputScript
+        $script = "& '$scriptPath' $param"
+        
+        $powershellcmd = if (Get-Command pwsh -ErrorAction SilentlyContinue) { "pwsh" } else { "powershell" }
+        $processCmd = if (Get-Command wt.exe -ErrorAction SilentlyContinue) { "wt.exe" } else { $powershellcmd }
+        
+        if ($processCmd -eq "wt.exe") {
+            $commandLine = "$powershellcmd -NoProfile -NoExit -Command $script"
+            Start-Process wt.exe -ArgumentList $commandLine
+        } 
+        else
         {
-            Write-Host "Starting Release"
-            ./itt.ps1 -release
-
-        }else{
-            Write-Host "Starting Debug"
-            ./itt.ps1 -debug
+            Start-Process $processCmd -ArgumentList @("-NoProfile", "-Command", $script)
         }
+
+        break
     }
     catch {
         Write-Error "An error occurred: $_"

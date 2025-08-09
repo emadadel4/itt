@@ -43,12 +43,12 @@ $onClosingEvent = {
 $itt["window"].Add_ContentRendered({
     Startup
     Show-Event
-})
 
-# Quick install
-if ($i) {
-    Quick-Install -file $i *> $null
-}
+    # Quick install
+    if ($i) {
+        Quick-Install -file $i *> $null
+    }
+})
 
 # Close event handler
 $itt["window"].add_Closing($onClosingEvent)

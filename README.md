@@ -18,7 +18,7 @@ ITT (Install Tweaks Tool) included most Windows 10/11 Software and Windows Tweak
 
 <!-- ![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fittools-7d9fe-default-rtdb.firebaseio.com%2Fmessage.json) -->
 ![Usage Badge](https://img.shields.io/endpoint?url=https://itt.emadadel4.workers.dev/count)
-![Latest update](https://img.shields.io/badge/Latest%20update-08/03/2025-blue)
+![Latest update](https://img.shields.io/badge/Latest%20update-08/08/2025-blue)
 ![Script size](https://img.shields.io/github/size/emadadel4/itt/itt.ps1?label=Script%20size)
 <!-- ![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Femadadel4%2Fitt%2F&countColor=%23263759&style=flat) -->
 
@@ -33,7 +33,9 @@ ITT (Install Tweaks Tool) included most Windows 10/11 Software and Windows Tweak
 [![Italian](https://flagcdn.com/w20/it.png)](/locales/it.csv)
 [![Hindi](https://flagcdn.com/w20/in.png)](/locales/hi.csv)
 
-###### 📦 415 Apps • ⚙️ 52 Tweaks • 🔧 17 Settings • 💬 108 Quote • 🎵 26 Soundtrack • 🌐 11 Localization
+
+ 📦 417 Apps • ⚙️ 53 Tweaks • 🔧 17 Settings • 💬 108 Quote • 🎵 26 Soundtrack • 🌐 11 Localization
+
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&repeat=false&width=435&lines=Launch+Anytime+Anywhere!)](https://git.io/typing-svg)
 
@@ -128,7 +130,6 @@ Set-Location "C:\Users\$env:USERNAME\Documents\Github\ITT"
 > Ensure you understand the tweak you are adding and test it before committing.
 
 ### 🌐 Add your native language  
-*Run the following script:*
 
 ```PowerShell
 .\newLocale.ps1

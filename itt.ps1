@@ -5,7 +5,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/03/2025"
+lastupdate     = "08/08/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -806,12 +806,11 @@ catch {
 Write-Warning "Failed to load or parse JSON file: $_"
 }
 }
-$itt.Search_placeholder.Visibility = "Visible"
-$itt.SearchInput.Text = $null
 }
 function Save-File {
 $itt['window'].FindName("AppsCategory").SelectedIndex = 0
-Show-Selected -ListView "AppsListView" -Mode "Filter"
+$selectedApps = Get-SelectedItems -Mode "Apps"
+if ($selectedApps.Count -le 0) {return}
 $items = foreach ($item in $itt.AppsListView.Items) {
 if ($item.Children[0].Children[0].IsChecked) {
 [PSCustomObject]@{
@@ -832,8 +831,6 @@ $items | ConvertTo-Json -Compress | Out-File -FilePath $saveFileDialog.FileName 
 Write-Host "Saved: $($saveFileDialog.FileName)"
 }
 Show-Selected -ListView "AppsListView" -Mode "Default"
-$itt.Search_placeholder.Visibility = "Visible"
-$itt.SearchInput.Text = $null
 }
 function Quick-Install {
 param (
@@ -936,66 +933,36 @@ catch {
 function Startup {
 ITT-ScriptBlock -ArgumentList $Debug -ScriptBlock {
 param($Debug)
-function Telegram {
-param (
-[string]$Message
-)
-try {
-$EncodedMessage = [uri]::EscapeDataString($Message)
-$Url = "https://itt.emadadel4.workers.dev/log?text=$EncodedMessage"
-Invoke-RestMethod -Uri $Url -Method GET
-}
-catch {
-Add-Log -Message "Your internet connection appears to be slow." -Level "WARNING"
-}
-}
 function UsageCount {
 try {
-Telegram -Message "👨‍💻 Build Ver: $($itt.lastupdate)`n🚀 URL: $($itt.command)`n🌐 Language: $($itt.Language)"
+$Message = "👨‍💻 Build Ver: $($itt.lastupdate)`n🚀 URL: $($itt.command)`n👤 Username: $env:USERNAME`n🌐 Language: $($itt.Language)"
+$EncodedMessage = [uri]::EscapeDataString($Message)
+$Url = "https://itt.emadadel4.workers.dev/log?text=$EncodedMessage"
+$result = Invoke-RestMethod -Uri $Url -Method GET
+Add-Log -Message "`n  $result times worldwide"
 }
 catch {
-Add-Log -Message "Your internet connection appears to be slow." -Level "INFO"
+Add-Log -Message "Your internet connection appears to be slow." -Level "info"
 }
 }
 function PlayMusic {
-$playlistUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/ittplaylist.m3u"
-$m3uContent = Invoke-RestMethod -Uri $playlistUrl -Method Get
-$tracks = $m3uContent -split "`n" | Where-Object { $_ -and ($_ -notmatch "^#") }
-function PlayAudio($track) {
+$tracks = (Invoke-RestMethod "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/ittplaylist.m3u") -split "`n" | Where-Object { $_ -and ($_ -notmatch "^#") }
+$shuffledTracks = $tracks | Get-Random -Count $tracks.Count
+foreach ($track in $shuffledTracks) {
 $mediaItem = $itt.mediaPlayer.newMedia($track)
 $itt.mediaPlayer.currentPlaylist.appendItem($mediaItem)
 $itt.mediaPlayer.controls.play()
-}
-function GetShuffledTracks {
-return $tracks | Get-Random -Count $tracks.Count
-}
-function PlayPreloadedPlaylist {
-$shuffledTracks = GetShuffledTracks
-foreach ($track in $shuffledTracks) {
-PlayAudio -track $track
-while ($itt.mediaPlayer.playState -in @(3, 6)) {
+while ($itt.mediaPlayer.playState -in 3,6) {
 Start-Sleep -Milliseconds 100
 }
 }
 }
-PlayPreloadedPlaylist
-}
 function Quotes {
-function Get-Quotes {(Invoke-RestMethod "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/Quotes.json").Quotes | Sort-Object { Get-Random }}
-function Show-Quote($text, $icon) {}
-Set-Statusbar -Text "☕ $($itt.database.locales.Controls.$($itt.Language).welcome)"
-Start-Sleep 18
-Set-Statusbar -Text "👁‍🗨 $($itt.database.locales.Controls.$($itt.Language).easter_egg)"
-Start-Sleep 18
-$iconMap = @{quote = "💬"; info = "📢"; music = "🎵"; Cautton = "⚠"; default = "☕" }
-do {
-foreach ($q in Get-Quotes) {
-$icon = if ($iconMap.ContainsKey($q.type)) { $iconMap[$q.type] } else { $iconMap.default }
-$text = "`“$($q.text)`”" + $(if ($q.name) { " ― $($q.name)" } else { "" })
-Set-Statusbar -Text "$icon $text"
-Start-Sleep 25
-}
-} while ($true)
+$q=(Invoke-RestMethod "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/Quotes.json").Quotes|Sort-Object {Get-Random}
+Set-Statusbar -Text "☕ $($itt.database.locales.Controls.$($itt.Language).welcome)"; Start-Sleep 18
+Set-Statusbar -Text "👁‍🗨 $($itt.database.locales.Controls.$($itt.Language).easter_egg)"; Start-Sleep 18
+$i=@{quote="💬";info="📢";music="🎵";Cautton="⚠";default="☕"}
+while(1){foreach($x in $q){$c=$i[$x.type];if(-not $c){$c=$i.default};$t="`“$($x.text)`”";if($x.name){$t+=" ― $($x.name)"};Set-Statusbar -Text "$c $t";Start-Sleep 25}}
 }
 function LOG {
 Write-Host "  `n` "
@@ -1085,7 +1052,38 @@ UpdateUI -Button "ApplyBtn" -Content "Applying" -Width "auto"
 $itt["window"].Dispatcher.Invoke([action] { Set-Taskbar -progress "Indeterminate" -value 0.01 -icon "logo" })
 foreach ($tweak in $selectedTweaks) {
 Add-Log -Message "::::$($tweak.Name)::::" -Level "default"
+$tweak | ForEach-Object {
+if ($_.Script -and $_.Script.Count -gt 0) {
 ExecuteCommand -tweak $tweak.Script
+if ($_.Refresh -eq $true) {
+Refresh-Explorer
+}
+}
+if ($_.Registry -and $_.Registry.Count -gt 0) {
+Set-Registry -tweak $tweak.Registry
+if ($_.Refresh -eq $true) {
+Refresh-Explorer
+}
+}
+if ($_.AppxPackage -and $_.AppxPackage.Count -gt 0) {
+Uninstall-AppxPackage -tweak $tweak.AppxPackage
+if ($_.Refresh -eq $true) {
+Refresh-Explorer
+}
+}
+if ($_.ScheduledTask -and $_.ScheduledTask.Count -gt 0) {
+Remove-ScheduledTasks -tweak $tweak.ScheduledTask
+if ($_.Refresh -eq $true) {
+Refresh-Explorer
+}
+}
+if ($_.Services -and $_.Services.Count -gt 0) {
+Disable-Service -tweak $tweak.Services
+if ($_.Refresh -eq $true) {
+Refresh-Explorer
+}
+}
+}
 }
 $itt.ProcessRunning = $false
 Finish -ListView "TweaksListView"
@@ -1841,7 +1839,10 @@ Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 1 -Force
 $popup.IsOpen = $false
 })
 $itt['window'].FindName('title').text = 'Changelog'.Trim()
-$itt['window'].FindName('date').text = '08/01/2025'.Trim()
+$itt['window'].FindName('date').text = '08/11/2025'.Trim()
+$itt['window'].FindName('bc').add_MouseLeftButtonDown({
+Start-Process('https://t.me/+Wpw4QcYsUUMyZmU0')
+})
 $itt['window'].FindName('ps').add_MouseLeftButtonDown({
 Start-Process('https://www.palestinercs.org/en/Donation')
 })
@@ -5040,6 +5041,16 @@ Grid.Row="1">
 <CheckBox Content="Thunderbird" FontSize="15" Tag="thunderbird|thunderbird|Mozilla.Thunderbird|na|Communication"   ToolTip="A free email client from Mozilla"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Communication}"/>
 </StackPanel>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
+<StackPanel Orientation="Horizontal">
+<CheckBox Content="Calibre" FontSize="15" Tag="calibre|extras/calibre|calibre.calibre|na|Documents"   ToolTip="calibre is the one stop solution to all your ebook needs"/>
+<TextBlock Margin="8" FontSize="11" Text="{Binding Documents}"/>
+</StackPanel>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
+<StackPanel Orientation="Horizontal">
+<CheckBox Content="OpenVPN" FontSize="15" Tag="openvpn|extras/openvpn|OpenVPNTechnologies.OpenVPN|na|Security"   ToolTip="A fullfeatured open source SSL VPN solution"/>
+<TextBlock Margin="8" FontSize="11" Text="{Binding Security}"/>
+</StackPanel>
 </StackPanel>
 </ListView>
 </Grid>
@@ -5592,6 +5603,12 @@ HorizontalAlignment="Left"/>
 <Grid Grid.Row="1" Background="Transparent">
 <ScrollViewer Name="ScrollViewer" VerticalScrollBarVisibility="Auto" Height="Auto">
 <StackPanel Orientation="Vertical">
+<Image x:Name='bc' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
+<Image.Source>
+<BitmapImage UriSource='https://github.com/user-attachments/assets/0e3fc2c1-f4a1-43ed-8741-a43e39f26438' CacheOption='OnLoad'/>
+</Image.Source>
+</Image>
+<TextBlock Text='Join the Batman Cave Telegram Group' FontSize='16' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
 <Image x:Name='ps' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
 <Image.Source>
 <BitmapImage UriSource='https://camo.githubusercontent.com/5cf02c5ee4898f8f92965367dfbf6829cf7d5e180f3808898ac65eccb0835d68/68747470733a2f2f7374796c65732e7265646469746d656469612e636f6d2f74355f327168616b2f7374796c65732f696d6167655f7769646765745f3738637964797a6c336b7462312e706e67' CacheOption='OnLoad'/>
@@ -5672,7 +5689,7 @@ IsOpen="false">
 Background="{DynamicResource PrimaryBackgroundColor}"
 BorderBrush="DarkGray"
 BorderThickness="1"
-Width="300"
+Width="360"
 Height="300"
 Padding="10"
 CornerRadius="10"
@@ -5686,15 +5703,11 @@ SnapsToDevicePixels="True">
 <Grid Grid.Row="0">
 <StackPanel Orientation="Vertical">
 <TextBlock Text="itt" VerticalAlignment="Center" FontFamily="arial" FontWeight="bold" FontSize="88" Margin="0 2 0 0" Foreground="{DynamicResource logo}" TextAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource logoText}"/>
-<TextBlock Text="Made by Emad Adel" HorizontalAlignment="Center" Foreground="{DynamicResource TextColorSecondaryColor}" TextAlignment="Center"/>
+<TextBlock Text="Made by Emad Adel" HorizontalAlignment="Center" Foreground="{DynamicResource TextColorSecondaryColor}" TextAlignment="Center" Margin="0 2 0 8"/>
 <TextBlock Name="ver" TextAlignment="Center" Foreground="{DynamicResource TextColorSecondaryColor}"/>
 </StackPanel>
 </Grid>
-<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="center" Margin="0 5 0 5">
-<TextBlock Text="Github" Foreground="{DynamicResource TextColorSecondaryColor}" Name="github" Cursor="Hand" Margin="5"/>
-<TextBlock Text="Telegrm" Foreground="{DynamicResource TextColorSecondaryColor}" Name="telegram" Cursor="Hand" Margin="5"/>
-</StackPanel>
-<StackPanel Grid.Row="2">
+<StackPanel Grid.Row="1">
 <TextBlock Text="Contributors" TextWrapping="Wrap" HorizontalAlignment="center" Foreground="{DynamicResource TextColorSecondaryColor}"/>
 <ScrollViewer VerticalScrollBarVisibility="Auto" Height="90">
 <StackPanel Margin="5,0,0,0">
@@ -5702,6 +5715,9 @@ SnapsToDevicePixels="True">
 <TextBlock Text="yousefmhmd" Margin="1" Foreground="{DynamicResource TextColorSecondaryColor}" />
 </StackPanel>
 </ScrollViewer>
+</StackPanel>
+<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="center" Margin="0">
+<TextBlock Text="Source Code" Foreground="{DynamicResource TextColorSecondaryColor}" Name="github" Cursor="Hand" Margin="0"/>
 </StackPanel>
 </Grid>
 </Border>
@@ -5891,10 +5907,10 @@ $c.Cancel = $true
 $itt["window"].Add_ContentRendered({
 Startup
 Show-Event
-})
 if ($i) {
 Quick-Install -file $i *> $null
 }
+})
 $itt["window"].add_Closing($onClosingEvent)
 $itt["window"].Add_PreViewKeyDown($KeyEvents)
 $itt["window"].ShowDialog() | Out-Null
