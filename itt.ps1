@@ -939,7 +939,7 @@ $Message = "👨‍💻 Build Ver: $($itt.lastupdate)`n🚀 URL: $($itt.command)
 $EncodedMessage = [uri]::EscapeDataString($Message)
 $Url = "https://itt.emadadel4.workers.dev/log?text=$EncodedMessage"
 $result = Invoke-RestMethod -Uri $Url -Method GET
-Add-Log -Message "`n  $result times worldwide"
+Add-Log -Message "`n  $result times worldwide`n"
 }
 catch {
 Add-Log -Message "Your internet connection appears to be slow." -Level "info"
