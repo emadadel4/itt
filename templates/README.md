@@ -104,7 +104,6 @@ iex "& { $(irm bit.ly/ittea) } -i .\myapps.itt"
 ---
 
 1. **Make sure you have PowerShell 7 installed (recommended) for building. is available on ITT**
----
 
 2. Clone the repository:
 
@@ -112,15 +111,11 @@ iex "& { $(irm bit.ly/ittea) } -i .\myapps.itt"
 git clone https://github.com/emadadel4/itt.git
 ```
 
----
-
 3. **Open ITT Directory in PowerShell 7 (Run as Administrator)**
 
 ```PowerShell
 Set-Location "C:\Users\$env:USERNAME\Documents\Github\ITT"
 ```
-
----
 
 4. **Choose what you want to add.**
 
