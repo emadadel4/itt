@@ -5,7 +5,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/08/2025"
+lastupdate     = "08/09/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -4454,10 +4454,7 @@ Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 1 -Force
 $popup.IsOpen = $false
 })
 $itt['window'].FindName('title').text = 'Changelog'.Trim()
-$itt['window'].FindName('date').text = '08/11/2025'.Trim()
-$itt['window'].FindName('bc').add_MouseLeftButtonDown({
-Start-Process('https://t.me/+Wpw4QcYsUUMyZmU0')
-})
+$itt['window'].FindName('date').text = '08/08/2025'.Trim()
 $itt['window'].FindName('ps').add_MouseLeftButtonDown({
 Start-Process('https://www.palestinercs.org/en/Donation')
 })
@@ -8223,12 +8220,6 @@ HorizontalAlignment="Left"/>
 <Grid Grid.Row="1" Background="Transparent">
 <ScrollViewer Name="ScrollViewer" VerticalScrollBarVisibility="Auto" Height="Auto">
 <StackPanel Orientation="Vertical">
-<Image x:Name='bc' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
-<Image.Source>
-<BitmapImage UriSource='https://github.com/user-attachments/assets/0e3fc2c1-f4a1-43ed-8741-a43e39f26438' CacheOption='OnLoad'/>
-</Image.Source>
-</Image>
-<TextBlock Text='Join the Batman Cave Telegram Group' FontSize='16' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
 <Image x:Name='ps' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
 <Image.Source>
 <BitmapImage UriSource='https://camo.githubusercontent.com/5cf02c5ee4898f8f92965367dfbf6829cf7d5e180f3808898ac65eccb0835d68/68747470733a2f2f7374796c65732e7265646469746d656469612e636f6d2f74355f327168616b2f7374796c65732f696d6167655f7769646765745f3738637964797a6c336b7462312e706e67' CacheOption='OnLoad'/>
