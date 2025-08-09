@@ -122,9 +122,7 @@ Set-Location "C:\Users\$env:USERNAME\Documents\Github\ITT"
 
 <h3>⚙️ Add a New Tweak</h3>
 
-```PowerShell
-.\newTweak.ps1
-```
+[➕ Add your script here](https://github.com/itt-co/itt-tweaks)
 
 > [!NOTE]  
 > Ensure you understand the tweak you are adding and test it before committing.

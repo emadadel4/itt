@@ -33,7 +33,9 @@ ITT (Install Tweaks Tool) included most Windows 10/11 Software and Windows Tweak
 [![Italian](https://flagcdn.com/w20/it.png)](/locales/it.csv)
 [![Hindi](https://flagcdn.com/w20/in.png)](/locales/hi.csv)
 
-###### 📦 417 Apps • ⚙️ 53 Tweaks • 🔧 17 Settings • 💬 108 Quote • 🎵 26 Soundtrack • 🌐 11 Localization
+
+ 📦 417 Apps • ⚙️ 53 Tweaks • 🔧 17 Settings • 💬 108 Quote • 🎵 26 Soundtrack • 🌐 11 Localization
+
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&repeat=false&width=435&lines=Launch+Anytime+Anywhere!)](https://git.io/typing-svg)
 
@@ -122,9 +124,7 @@ Set-Location "C:\Users\$env:USERNAME\Documents\Github\ITT"
 
 <h3>⚙️ Add a New Tweak</h3>
 
-```PowerShell
-.\newTweak.ps1
-```
+[➕ Add your script here](https://github.com/itt-co/itt-tweaks)
 
 > [!NOTE]  
 > Ensure you understand the tweak you are adding and test it before committing.
