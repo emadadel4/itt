@@ -120,12 +120,11 @@ Set-Location "C:\Users\$env:USERNAME\Documents\Github\ITT"
 .\newApp.ps1
 ```
 
-<h3>⚙️ Add a New Tweak</h3>
+<h3>⚙️ Add a New Tweak/Settings</h3>
 
 [➕ Add your script here](https://github.com/itt-co/itt-tweaks)
 
-> [!NOTE]  
-> Ensure you understand the tweak you are adding and test it before committing.
+> Ensure you understand the tweak you are adding and test it before PR.
 
 ---
 
