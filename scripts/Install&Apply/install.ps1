@@ -9,7 +9,7 @@ function Invoke-Install {
         Message -key "Please_wait" -icon "Warning" -action "OK"
         return
     }
-
+    
     # Get Selected apps
     $itt['window'].FindName("AppsCategory").SelectedIndex = 0
     $selectedApps = Get-SelectedItems -Mode "Apps"
