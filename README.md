@@ -127,6 +127,8 @@ Set-Location "C:\Users\$env:USERNAME\Documents\Github\ITT"
 > [!NOTE]  
 > Ensure you understand the tweak you are adding and test it before committing.
 
+---
+
 ### 🌐 Add your native language  
 
 ```PowerShell
