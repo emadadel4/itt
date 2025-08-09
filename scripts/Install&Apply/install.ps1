@@ -1,4 +1,5 @@
 function Invoke-Install {
+    
     <#
         .SYNOPSIS
         Handles the installation of selected applications by invoking the appropriate installation methods.
