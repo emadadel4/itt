@@ -30,2617 +30,6 @@ Start-Transcript -Path "$logDir\log_$timestamp.log" -Append -NoClobber *> $null
 $itt.database.locales = @'
 {"Controls":{"ar":{"name":"عربي","Welcome":"توفر هذه الأداة تسهيلات كبيرة في عملية تثبيت البرامج وتحسين الويندوز. انضم إلينا وكن جزءًا في تطويرها","System_Info":"معلومات النظام","Power_Options":"خيارات الطاقة","Device_Manager":"إدارة الأجهزة","Services":"خدمات","Networks":"شبكات","Apps_features":"التطبيقات و الميزات","Task_Manager":"مدير المهام","Disk_Managment":"إدارة القرص","Msconfig":"تكوين النظام","Environment_Variables":"متغيرات بيئة النظام","Install":"تثبيت","Apply":"تطبيق","Downloading":"...جارٍ التحميل","About":"عن الاداة","Third_party":"ادوات اخرى","Preferences":"التفضيلات","Management":"إدارة الجهاز","Apps":"برامج","Tweaks":"تحسينات","Settings":"إعدادات","Save":"حفظ البرامج","Restore":"أسترجاع البرامج","Music":"الموسيقى","On":"تشغيل ","Off":"كتم","Dark":"ليلا","Light":"نهارا","Use_system_setting":"استخدم إعدادات النظام","Create_desktop_shortcut":"أنشاء أختصار على سطح المكتب","Reset_preferences":"إعادة التفضيلات إلى الوضع الافتراضي","Reopen_itt_again":"يرجى اعادة فتح الاداة مرة اخرى","Theme":"المظهر","Language":"اللغة","Browsers_extensions":"أضافات المتصفحات","All":"الكل","Search":"بحث","Create_restore_point":"إنشاء نقطة الاستعادة","Portable_Downloads_Folder":"مجلد التنزيلات المحمولة","Install_msg":"هل تريد تثبيت البرامج التالية","Apply_msg":"هل تريد تطبيق التحسينات التالية","Applying":"...جارٍي التطبيق","Please_wait":"يرجى الانتظار، يوجد عملية في الخلفية","Last_update":"آخر تحديث","Exit_msg":"هل أنت متأكد من رغبتك في إغلاق البرنامج؟ إذا كان هناك أي تثبيتات، فسيتم إيقافها.","Empty_save_msg":"يرجى اختيار تطبيق واحد على الاقل لحفظه","easter_egg":"تقدر تكتشف الميزة المخفية؟ تصفح الكود، وكن أول واحد يكتشف الميزة، ويضيفها للأداة","system_protection":"حماية النظام","web browsers":"متصفحات","media":"مشغل","media tools":"أدوات الفيديو","documents":"المستندات","compression":"الضغط","communication":"الاتصال","file sharing":"مشاركة الملفات","imaging":"صور","gaming":"ألعاب","utilities":"أدوات النظام","disk tools":"أدوات القرص","development":"تطوير","security":"حماية","portable":"محمولة","runtimes":"مكاتب","drivers":"تعريفات","privacy":"الخصوصية","fixer":"المصحح","performance":"الأداء","personalization":"التخصيص","power":"الطاقة","protection":"حماية","classic":"كلاسيكي","auto":"تلقائي","package_manager":"مدير الحزم"},"de":{"name":"Deutsch","Welcome":"Sparen Sie Zeit indem Sie mehrere Programme gleichzeitig instAllieren und die Leistung Ihres Windows steigern. Schließen Sie sich uns an um dieses Tool zu verbessern und noch besser zu machen. Sie können auch Ihre Lieblings-Musik-Apps und Anpassungen hinzufügen.","Install":"InstAllieren","Apply":"Anwenden","Downloading":"Herunterladen...","About":"Über","Third_party":"Drittanbieter","Preferences":"Einstellungen","Management":"Verwaltung","Apps":"Apps","Tweaks":"Optimierungen","Settings":"Einstellungen","Save":"Speichern","Restore":"Wiederherstellen","Music":"Musik","On":"Ein","Off":"Aus","Disk_Managment":"Datenträgerverwaltung","Msconfig":"Systemkonfiguration","Environment_Variables":"Umgebungsvariablen","Task_Manager":"Task-Manager","Apps_features":"Apps-FunktiOnen","Networks":"Netzwerke","Services":"Dienste","Device_Manager":"Geräte-Manager","Power_Options":"EnergieoptiOnen","System_Info":"Systeminfo","Use_system_setting":"Systemeinstellungen verwenden","Create_desktop_shortcut":"Desktop-Verknüpfung erstellen","Reset_preferences":"Einstellungen zurücksetzen","Reopen_itt_again":"Bitte ITT erneut öffnen.","Theme":"Thema","Language":"Sprache","Browsers_extensions":"Browser-Erweiterungen","All":"Alle","Search":"Suchen","Create_restore_point":"Wiederherstellungspunkt erstellen","Portable_Downloads_Folder":"Ordner für tragbare Downloads","Install_msg":"Sind Sie sicher  dass Sie die folgenden Anwendungen instAllieren möchten?","Apply_msg":"Sind Sie sicher dass Sie die folgenden Anpassungen anwenden möchten?","Applying":"Anwenden...","Please_wait":"Bitte warten ein Prozess läuft im Hintergrund","Last_update":"Letztes Update","Exit_msg":"Sind Sie sicher dass Sie das Programm schließen möchten? Alle InstAllatiOnen werden abgebrochen.","Empty_save_msg":"Wählen Sie mindestens eine App zum Speichern aus","easter_egg":"Kannst du das verborgene Geheimnis entdecken? Tauche in den Quellcode ein sei der erste der die Funktion entdeckt und integriere sie in das Tool","system_protection":"Systemschutz","web browsers":"Webbrowser","media":"Medien","media tools":"Medienwerkzeuge","documents":"Dokumente","compression":"Komprimierung","communication":"Kommunikation","file sharing":"Dateifreigabe","imaging":"Bildbearbeitung","gaming":"Spiele","utilities":"Dienstprogramme","disk tools":"Laufwerkswerkzeuge","development":"Entwicklung","security":"Sicherheit","portable":"Tragbar","runtimes":"Laufzeitumgebungen","drivers":"Treiber","privacy":"Datenschutz","fixer":"Reparierer","performance":"Leistung","personalization":"Personalisierung","power":"Energie","protection":"Schutz","classic":"Klassisch","auto":"automatisch","package_manager":"Manager der Pakete"},"en":{"name":"English","Welcome":"Save time and install all your programs at once and debloat Windows and more. Be part of ITT and contribute to improving it","Install":"Install","Apply":"Apply","Downloading":"Downloading...","About":"About","Third_party":"Third-party","Preferences":"Preferences","Management":"Management","Apps":"Apps","Tweaks":"Tweaks","Settings":"Settings","Save":"Save","Restore":"Restore","Music":"Music","On":"On","Off":"Off","Disk_Managment":"Disk Managment","Msconfig":"System Configuration","Environment_Variables":"Environment Variables","Task_Manager":"Task Manager","Apps_features":"Programs and Features","Networks":"Networks","Services":"Services","Device_Manager":"Device Manager","Power_Options":"Power options","System_Info":"System Info","Use_system_setting":"Use system setting","Create_desktop_shortcut":"Create desktop shortcut","Reset_preferences":"Reset Preferences","Reopen_itt_again":"Please reopen itt again.","Theme":"Theme","Language":"Language","Browsers_extensions":"Browsers extensions","All":"All","Search":"Search","Create_restore_point":"Create a restore point","Portable_Downloads_Folder":"Portable Downloads Folder","Install_msg":"Are you sure you want to install the following App(s)","Apply_msg":"Are you sure you want to apply the following Tweak(s)","Applying":"Applying...","Please_wait":"Please wait a process is running in the background","Last_update":"Last update","Exit_msg":"Are you sure you want to close the program? Any ongoing installations will be canceled","Empty_save_msg":"Choose at least One app to save it","easter_egg":"Can you uncover the hidden secret? Dive into the source code be the first to discover the feature and integrate it into the tool","system_protection":"System protection","web browsers":"Web Browsers","media":"Media","media tools":"Media Tools","documents":"Documents","compression":"Compression","communication":"Communication","file sharing":"File Sharing","imaging":"Imaging","gaming":"Gaming","utilities":"Utilities","disk tools":"Disk Tools","development":"Development","security":"Security","portable":"Portable","runtimes":"Runtimes","drivers":"Drivers","privacy":"Privacy","fixer":"Fixer","performance":"Performance","personalization":"Personalization","power":"Power","protection":"Protection","classic":"Classic","auto":"Auto","package_manager":"Package Manager"},"es":{"name":"Español","Welcome":"Ahorra tiempo instalando varios prograMAS a la vez y mejora el rendimiento de tu Windows. Únete a nosotros para mejorar esta herramienta y hacerla aún mejor. También puedes agregar tus aplicaciOnes Musicales y ajustes favoritos.","Install":"Instalar","Apply":"Aplicar","Downloading":"Descargando...","About":"Acerca de","Third_party":"Terceros","Preferences":"Preferencias","Management":"Gestión","Apps":"AplicaciOnes","Tweaks":"Ajustes","Settings":"COnfiguración","Save":"Guardar","Restore":"Restaurar","Music":"Música","On":"Encendido","Off":"Apagado","Disk_Managment":"Administración de discos","Msconfig":"Configuración del sistema","Environment_Variables":"Variables de entorno","Task_Manager":"Administrador de tareas","Apps_features":"AplicaciOnes-FunciOnes","Networks":"Redes","Services":"Servicios","Device_Manager":"Administrador de dispositivos","Power_Options":"OpciOnes de energía","System_Info":"Información del sistema","Use_system_setting":"Usar la cOnfiguración del sistema","Create_desktop_shortcut":"Crear acceso directo en el escritorio","Reset_preferences":"Restablecer preferencias","Reopen_itt_again":"Vuelve a abrir ITT.","Theme":"Tema","Language":"Idioma","Browsers_extensions":"ExtensiOnes del navegador","All":"Todos","Search":"Buscar","Create_restore_point":"Crear un punto de restauración","Portable_Downloads_Folder":"Carpeta de descargas portátiles","Install_msg":"¿Estás seguro de que deseas instalar las siguientes aplicaciOnes?","Apply_msg":"¿Estás seguro de que deseas aplicar los siguientes ajustes?","Applying":"Aplicando...","Please_wait":"Por favorespera un proceso se está ejecutando en segundo plano.","Last_update":"Última actualización","Exit_msg":"¿Estás seguro de que deseas cerrar el programa? Si hay instalaciOnes se interrumpirán.","Empty_save_msg":"Elige al menos una aplicación para guardarla.","easter_egg":"¿Puedes descubrir el secreto oculto? Sumérgete en el código fuente sé el primero en descubrir la función e intégrala en la herramienta","system_protection":"Protección del sistema","web browsers":"Navegadores web","media":"Medios","media tools":"Herramientas multimedia","documents":"Documentos","compression":"Compresión","communication":"Comunicación","file sharing":"Compartición de archivos","imaging":"Imágenes","gaming":"Juegos","utilities":"Utilidades","disk tools":"Herramientas de disco","development":"Desarrollo","security":"Seguridad","portable":"Portátil","runtimes":"Runtimes","drivers":"Controladores","privacy":"Privacidad","fixer":"Reparador","performance":"Rendimiento","personalization":"Personalización","power":"Potencia","protection":"Protección","classic":"Clásico","auto":"automático","package_manager":"Manager de paquetes"},"fr":{"name":"Français","Welcome":"Gagnez du temps en instAllant plusieurs programmes à la fois et améliorez les performances de votre Windows. Rejoignez-nous pour améliorer cet outil et le rendre encore meilleur. Vous pouvez également ajouter vos applicatiOns Musicales et vos Tweaks préférés.","Install":"InstAller","Apply":"Appliquer","Downloading":"Téléchargement...","About":"À propos","Third_party":"Tiers","Preferences":"Préférences","Management":"GestiOn","Apps":"ApplicatiOns","Tweaks":"OptimisatiOns","Settings":"Paramètres","Save":"Sauvegarder","Restore":"Restaurer","Music":"Musique","On":"Activé","Off":"Désactivé","Disk_Managment":"GestiOn des disques","Msconfig":"Configuration du système","Environment_Variables":"Variables d'environnement","Task_Manager":"GestiOnnaire des tâches","Apps_features":"ApplicatiOns-FOnctiOnnalités","Networks":"Réseaux","Services":"Services","Device_Manager":"GestiOnnaire de périphériques","Power_Options":"OptiOns d'alimentatiOn","System_Info":"Infos système","Use_system_setting":"Utiliser les paramètres système","Create_desktop_shortcut":"Créer un raccourci sur le bureau","Reset_preferences":"Réinitialiser les préférences","Reopen_itt_again":"Veuillez rouvrir ITT.","Theme":"Thème","Language":"Langue","Browsers_extensions":"Browsers_extensions de navigateurs","All":"Tout","Search":"Rechercher","Create_restore_point":"Créer un point de restauratiOn","Portable_Downloads_Folder":"Dossier de téléchargements portables","Install_msg":"Êtes-vous sûr de vouloir instAller les applicatiOns suivantes ?","Apply_msg":"Êtes-vous sûr de vouloir appliquer les Tweaks suivants ?","Applying":"ApplicatiOn...","Please_wait":"Veuillez patienter","Last_update":"Dernière mise à jour  un processus est en cours d'exécutiOn en arrière-plan.","Exit_msg":"Êtes-vous sûr de vouloir fermer le programme ? Si des instAllatiOns sOnt en cours  elles serOnt interrompues","Empty_save_msg":"Choisissez au moins une applicatiOn à sauvegarder","easter_egg":"Peux-tu découvrir le secret caché ? Plonge dans le code source sois le premier à découvrir la fonctionnalité et intègre-la dans l'outil","system_protection":"Protection du système","web browsers":"Navigateurs Web","media":"Médias","media tools":"Outils multimédias","documents":"Documents","compression":"Compression","communication":"Communication","file sharing":"Partage de fichiers","imaging":"Imagerie","gaming":"Jeux","utilities":"Utilitaires","disk tools":"Outils de disque","development":"Développement","security":"Sécurité","portable":"Portable","runtimes":"Runtimes","drivers":"Pilotes","privacy":"Confidentialité","fixer":"Réparateur","performance":"Performance","personalization":"Personnalisation","power":"Puissance","protection":"Protection","classic":"Classique","auto":"automatique","package_manager":"Manager des paquets"},"hi":{"name":"अंग्रेज़ी","Welcome":"एक बार में कई प्रोग्राम इंस्टॉल करके समय बचाएं और अपने विंडोज़ के प्रदर्शन को बढ़ावा दें। इस टूल को बेहतर बनाने और इसे और अच्छा बनाने में हमारा साथ दें। आप अपने पसंदीदा म्यूज़िक ऐप्स और ट्विक्स भी जोड़ सकते हैं।","Install":"इंस्टॉल करें","Apply":"लागू करें","Downloading":"डाउनलोड हो रहा है...","About":"के बारे में","Third_party":"थर्ड-पार्टी","Preferences":"पसंद","Management":"प्रबंधन","Apps":"ऐप्स","Tweaks":"ट्विक्स","Settings":"सेटिंग्स","Save":"सहेजें","Restore":"पुनर्स्थापित करें","Music":"संगीत","On":"चालू","Off":"बंद","Disk_Managment":"डिस्क प्रबंधन","Msconfig":"सिस्टम कॉन्फ़िगरेशन","Environment_Variables":"एन्विर्बल वार्डियल्स","Task_Manager":"टास्क मैनेजर","Apps_features":"ऐप्स-फीचर्स","Networks":"नेटवर्क्स","Services":"सेवाएँ","Device_Manager":"डिवाइस मैनेजर","Power_Options":"पावर विकल्प","System_Info":"सिस्टम जानकारी","Use_system_setting":"सिस्टम सेटिंग का उपयोग करें","Create_desktop_shortcut":"डेस्कटॉप शॉर्टकट बनाएं","Reset_preferences":"पसंद रीसेट करें","Reopen_itt_again":"कृपया इसे फिर से खोलें।","Theme":"थीम","Language":"भाषा","Browsers_extensions":"ब्राउज़र एक्सटेंशन","All":"सभी","Search":"खोज","Create_restore_point":"पुनर्स्थापना बिंदु बनाएँ","Portable_Downloads_Folder":"पोर्टेबल डाउनलोड फ़ोल्डर","Install_msg":"क्या आप निश्चित हैं कि आप निम्न ऐप्स इंस्टॉल करना चाहते हैं?","Apply_msg":"क्या आप निश्चित हैं कि आप निम्न ट्विक्स लागू करना चाहते हैं?","Applying":"लागू किया जा रहा है...","Please_wait":"कृपया प्रतीक्षा करें बैकग्राउंड में एक प्रक्रिया चल रही है","Last_update":"आखिरी अपडेट","Exit_msg":"क्या आप निश्चित हैं कि आप प्रोग्राम बंद करना चाहते हैं? यदि कोई इंस्टॉलेशन चल रहा हो तो वह समाप्त हो जाएगा","Empty_save_msg":"कम से कम एक ऐप चुनें और उसे सहेजें।","easter_egg":"क्या आप छिपे हुए रहस्य को उजागर कर सकते हैं? सोर्स कोड में डूबकी लगाएं पहले व्यक्ति बनें जो फीचर को खोजे और इसे टूल में इंटीग्रेट करें","system_protection":"सिस्टम सुरक्षा","web browsers":"वेब ब्राउज़र","media":"मीडिया","media tools":"मीडिया उपकरण","documents":"दस्तावेज़","compression":"संपीड़न","communication":"संचार","file sharing":"फ़ाइल साझा करना","imaging":"इमेजिंग","gaming":"गेमिंग","utilities":"उपयोगिताएँ","disk tools":"डिस्क उपकरण","development":"विकास","security":"सुरक्षा","portable":"पोर्टेबल","runtimes":"रनटाइम्स","drivers":"ड्राइवर","privacy":"गोपनीयता","fixer":"ठीक करने वाला","performance":"प रदर्शन","personalization":"वैयक्तिकरण","power":"शक्ति","protection":"सुरक्षा","classic":"क्लासिक","auto":"स्वचालित","package_manager":"पैकेज मैनेजर"},"it":{"name":"Italiano","Welcome":"Risparmia tempo installando più programmi contemporaneamente e migliora le prestazioni di Windows. Unisciti a noi per migliorare questo strumento e renderlo migliore. Puoi anche aggiungere le tue app musicali preferite e le personalizzazioni.","Install":"Installa","Apply":"Applica","Downloading":"Download in corso...","About":"Informazioni","Third_party":"Terze parti","Preferences":"Preferenze","Management":"Gestione","Apps":"App","Tweaks":"Personalizzazioni","Settings":"Impostazioni","Save":"Salva","Restore":"Ripristina","Music":"Musica","On":"Acceso","Off":"Spento","Disk_Managment":"Gestione disco","Msconfig":"Configurazione di sistema","Environment_Variables":"Variabili di ambiente","Task_Manager":"Gestore attività","Apps_features":"App-Funzionalità","Networks":"Reti","Services":"Servizi","Device_Manager":"Gestore dispositivi","Power_Options":"Opzioni risparmio energia","System_Info":"Informazioni di sistema","Use_system_setting":"Usa impostazioni di sistema","Create_desktop_shortcut":"Crea collegamento sul desktop","Reset_preferences":"Reimposta preferenze","Reopen_itt_again":"Per favore riapri di nuovo.","Theme":"Tema","Language":"Lingua","Browsers_extensions":"Estensioni per browser","All":"Tutti","Search":"Cerca","Create_restore_point":"Crea un punto di ripristino","Portable_Downloads_Folder":"Cartella download portatile","Install_msg":"Sei sicuro di voler installare le seguenti app?","Apply_msg":"Sei sicuro di voler applicare le seguenti personalizzazioni?","Applying":"Applicazione in corso...","Please_wait":"Attendere un processo è in corso in background","Last_update":"Ultimo aggiornamento","Exit_msg":"Sei sicuro di voler chiudere il programma? Se ci sono installazioni in corso verranno terminate.","Empty_save_msg":"Scegli almeno un'app per salvarla.","easter_egg":"Riuscirai a scoprire il segreto nascosto? Tuffati nel codice sorgente sii il primo a scoprire la funzionalità e integrala nello strumento","system_protection":"Protezione del sistema","web browsers":"Browser Web","media":"Media","media tools":"Strumenti Media","documents":"Documenti","compression":"Compressione","communication":"Comunicazione","file sharing":"Condivisione File","imaging":"Imaging","gaming":"Giochi","utilities":"Utilità","disk tools":"Strumenti Disco","development":"Sviluppo","security":"Sicurezza","portable":"Portatile","runtimes":"Runtime","drivers":"Driver","privacy":"Privacy","fixer":"Riparatore","performance":"Prestazioni","personalization":"Personalizzazione","power":"Potenza","protection":"Protezione","classic":"Classico","auto":"automatico","package_manager":"Gestore pacchetti"},"ko":{"name":"한국어","Welcome":"여러 프로그램을 한 번에 설치하여 시간을 절약하고 Windows 성능을 향상시킵니다. 도구를 개선하고 우리와 함께 훌륭하게 만들어 보세요.","System_Info":"시스템 정보","Power_Options":"전원 옵션","Device_Manager":"장치 관리자","Services":"서비스","Networks":"네트워크","Apps_features":"앱 기능","Task_Manager":"작업 관리자","Disk_Managment":"디스크 관리","Msconfig":"시스템 구성","Environment_Variables":"연습별 변수","Install":"설치","Apply":"적용","Downloading":"다운로드 중","About":"정보","Third_party":"외부","Preferences":"환경 설정","Management":"관리","Apps":"앱","Tweaks":"설정","Settings":"설정","Save":"선택한 앱 저장","Restore":"선택한 앱 복원","Music":"음악","On":"켜기","Reset_preferences":"환경 설정 초기화","Off":"끄기","Dark":"다크","Light":"라이트","Use_system_setting":"시스템","Create_desktop_shortcut":"바탕화면 바로 가기 만들기","Reopen_itt_again":"ITT를 다시 열어주세요.","Theme":"테마","Language":"언어","Browsers_extensions":"브라우저 확장 프로그램","All":"모두","Create_restore_point":"복원 지점 생성","Portable_Downloads_Folder":"휴대용 다운로드 폴더","Install_msg":"선택한 앱을 설치하시겠습니까","Apply_msg":"선택한 조정 사항을 적용하시겠습니까","instAlling":"설치 중..","Applying":"적용 중..","Please_wait":"배경에서 프로세스가 진행 중입니다. 잠시 기다려주세요.","Last_update":"마지막 업데이트","Exit_msg":"프로그램을 종료하시겠습니까? 진행 중인 설치가 있으면 중단됩니다.","easter_egg":"숨겨진 비밀을 발견할 수 있습니다. 소스 코드에 뛰어들고 최초로 기능을 발견하고 도구에 통합하세요","system_protection":"웹 보호","web browsers":"웹 브라우저","media":"미디어","media tools":"미디어 도구","documents":"문서","compression":"압축","communication":"커뮤니케이션","file sharing":"파일 공유","imaging":"이미지 처리","gaming":"게임","utilities":"유틸리티","disk tools":"디스크 도구","development":"개발","security":"보호","portable":"포터블","runtimes":"런타임","drivers":"드라이버","privacy":"개인 정보 보호","fixer":"수리공","performance":"성능","personalization":"개인화","power":"전력","protection":"보호","classic":"클래식","auto":"자동","package_manager":"패키지 관리자"},"ru":{"name":"Русский","Welcome":"Сэкономьте время устанавливая несколько программ одновременно и улучшите производительность Windows. Присоединяйтесь к нам для улучшения этого инструмента и его совершенствования. Вы также можете добавить свои любимые музыкальные приложения и настройки.","Install":"Установить","Apply":"Применить","Downloading":"Загрузка...","About":"О нас","Third_party":"Сторонние","Preferences":"Настройки","Management":"Управление","Apps":"Приложения","Tweaks":"Настройки","Settings":"Параметры","Save":"Сохранить","Restore":"Восстановить","Music":"Музыка","On":"Вкл","Off":"Выкл","Disk_Managment":"Управление дисками","Msconfig":"Конфигурация системы","Environment_Variables":"Переменные окружения","Task_Manager":"Диспетчер задач","Apps_features":"Приложения-Функции","Networks":"Сети","Services":"Сервисы","Device_Manager":"Диспетчер устройств","Power_Options":"Энергопитание","System_Info":"Информация о системе","Use_system_setting":"Использовать системные настройки","Create_desktop_shortcut":"Создать ярлык на рабочем столе","Reset_preferences":"Сбросить настройки","Reopen_itt_again":"Пожалуйста перезапустите ITT.","Theme":"Тема","Language":"Язык","Browsers_extensions":"Расширения для браузеров","All":"Все","Search":"Поиск","Create_restore_point":"Создать точку восстановления","Portable_Downloads_Folder":"Папка для портативных загрузок","Install_msg":"Вы уверены что хотите установить следующие приложения?","Apply_msg":"Вы уверены что хотите применить следующие настройки?","Applying":"Применение...","Please_wait":"Подождите выполняется фоновый процесс.","Last_update":"Последнее обновление","Exit_msg":"Вы уверены что хотите закрыть программу? Все установки будут прерваны.","Empty_save_msg":"Выберите хотя бы одно приложение для сохранения","easter_egg":"Можешь ли ты раскрыть скрытый секрет? Погрузись в исходный код стань первым кто обнаружит функцию и интегрируй её в инструмент","system_protection":"Системная защита","web browsers":"Веб-браузеры","media":"Медиа","media tools":"Медиа-инструменты","documents":"Документы","compression":"Архивация","communication":"Связь","file sharing":"Обмен файлами","imaging":"Обработка изображений","gaming":"Игры","utilities":"Утилиты","disk tools":"Работа с дисками","development":"Разработка","security":"Безопасность","portable":"Портативные","runtimes":"Среды выполнения","drivers":"Драйверы","privacy":"Конфиденциальность","fixer":"Исправитель","performance":"Производительность","personalization":"Персонализация","power":"Мощность","protection":"Защита","classic":"Классический","auto":"Автоматический","package_manager":"Менеджер пакетов"},"tr":{"name":"Türkçe","Welcome":"Birden fazla programı aynı anda yükleyerek zaman kazanın ve Windows performansınızı artırın. Bu aracı geliştirmek ve daha da iyileştirmek için bize katılın. Ayrıca favori müzik uygulamalarınızı ve ayarlarınızı da ekleyebilirsiniz.","Install":"Yükle","Apply":"Uygula","Downloading":"İndiriliyor...","About":"Hakkında","Third_party":"Üçüncü Taraf","Preferences":"Tercihler","Management":"Yönetim","Apps":"Uygulamalar","Tweaks":"İnce Ayarlar","Settings":"Ayarlar","Save":"Kayıt Et","Restore":"Geri Yükle","Music":"Müzik","On":"Açık","Off":"Kapalı","Disk_Managment":"Disk Yönetimi","Msconfig":"Sistem Yapılandırması","Environment_Variables":"Ortam Değişkenleri","Task_Manager":"Görev Yöneticisi","Apps_features":"Uygulamalar-Özellikler","Networks":"Ağlar","Services":"Hizmetler","Device_Manager":"Aygıt Yöneticisi","Power_Options":"Güç Seçenekleri","System_Info":"Sistem Bilgisi","Use_system_setting":"Sistem ayarlarını kullan","Create_desktop_shortcut":"MASaüstü kısayolu oluştur","Reset_preferences":"Tercihleri sıfırla","Reopen_itt_again":"Lütfen ITT'yi tekrar açın.","Theme":"Tema","Language":"Dil","Browsers_extensions":"Tarayıcı Eklentileri","All":"Tümü","Search":"Ara","Create_restore_point":"Geri yükleme noktası oluştur","Portable_Downloads_Folder":"Taşınabilir İndirilenler Klasörü","Install_msg":"Aşağıdaki uygulamaları yüklemek istediğinizden emin misiniz?","Apply_msg":"Aşağıdaki ayarları uygulamak istediğinizden emin misiniz?","Applying":"Uygulanıyor...","Please_wait":"Lütfen bekleyin arka planda bir işlem çalışıyor","Last_update":"SOn güncelleme","Exit_msg":"Programı kapatmak istediğinizden emin misiniz? Herhangi bir kurulum varsa durdurulacak","Empty_save_msg":"Kaydetmek için en az bir uygulama seçin","easter_egg":"Gizli sırrı keşfedebilir misin? Kaynağa dal özelliği ilk keşfeden ol ve araca entegre et","system_protection":"Sistem koruması","web browsers":"Web Tarayıcıları","media":"Medya","media tools":"Medya Araçları","documents":"Belgeler","compression":"Sıkıştırma","communication":"İletişim","file sharing":"Dosya Paylaşımı","imaging":"Görüntü İşleme","gaming":"Oyun","utilities":"Araçlar","disk tools":"Disk Araçları","development":"Geliştirme","security":"Güvenlik","portable":"Taşınabilir","runtimes":"Çalışma Zamanı","drivers":"Sürücüler","privacy":"Gizlilik","fixer":"Düzeltici","performance":"Performans","personalization":"Kişiselleştirme","power":"Güç","protection":"Koruma","classic":"Klasik","auto":"otomatik","package_manager":"Paket Yöneticisi"},"zh":{"name":"中文","Welcome":"通过一次安装多个程序节省时间并提升您的Windows性能。加入我们，改进工具，使其更加优秀。","System_Info":"系统信息","Power_Options":"电源选项","Device_Manager":"设备管理器","Services":"服务","Networks":"网络","Apps_features":"应用特性","Task_Manager":"任务管理器","Disk_Managment":"磁盘管理","Msconfig":"系统配置","Environment_Variables":"环境变量","Install":"安装","Apply":"应用","Downloading":"下载中","About":"关于","Third_party":"第三方","Preferences":"偏好","Management":"管理","Apps":"应用","Tweaks":"调整","Settings":"设置","Save":"保存选定应用","Restore":"恢复选定应用","Music":"音乐","On":"开启","Off":"关闭","Reset_preferences":"重置偏好设置","Dark":"深色","Light":"浅色","Use_system_setting":"系统","Create_desktop_shortcut":"创建桌面快捷方式","Reopen_itt_again":"请重新打开ITT。","Theme":"主题","Language":"语言","Browsers_extensions":"浏览器扩展","All":"都","Create_restore_point":"创建还原点","Portable_Downloads_Folder":"便携下载文件夹","Install_msg":"是否要安装选定的应用","Apply_msg":"是否要应用选定的调整","instAlling":"安装中..","Applying":"应用中..","Please_wait":"请等待，后台有进程在进行中。","Last_update":"最后更新","Exit_msg":"您确定要关闭程序吗？如果有任何安装正在进行，它们将被终止。","easter_egg":"你能发现隐藏的秘密吗？深入源代码，成为第一个发现功能的人，并将其集成到工具中","system_protection":"系统保护","web browsers":"网页浏览器","media":"媒体","media tools":"媒体工具","documents":"文档","compression":"压缩","communication":"通讯","file sharing":"文件共享","imaging":"图像处理","gaming":"游戏","utilities":"实用工具","disk tools":"磁盘工具","development":"开发","security":"安全","portable":"便携版","runtimes":"运行时","drivers":"驱动程序","privacy":"隐私","fixer":"修复工具","performance":"性能","personalization":"个性化","power":"电力","protection":"保护","classic":"经典","auto":"自动","package_manager":"包管理器"}}}
 '@ | ConvertFrom-Json
-$itt.database.Tweaks = @'
-[
-{
-"Name": "Disk cleanup",
-"Description": "Clean temporary files that are not necessary",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/Disk%20cleanup.ps1 | iex"
-]
-},
-{
-"Name": "System File Checker",
-"Description": "sfc /scannow Use the System File Checker tool to repair missing or corrupted system files",
-"Category": "Fixer",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/sfc/run.ps1 | iex"
-]
-},
-{
-"Name": "Restore Classic Context Menu Windows 11",
-"Description": "Restore the old context menu for Windows 11",
-"Category": "Classic",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKCU:\\Software\\Classes\\CLSID\\",
-"Name": "{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}",
-"Type": "String",
-"Value": "",
-"defaultValue": ""
-},
-{
-"Path": "HKCU:\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\\InprocServer32",
-"Name": "",
-"Type": "String",
-"Value": "",
-"defaultValue": "default"
-}
-]
-},
-{
-"Name": "Restore All Windows Services to Default",
-"Description": "if you face issues with services, try Restore All Windows Services to Default",
-"Category": "Fixer",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/test.bat' -OutFile $env:TEMP\\script.bat \r\n Start-Process -FilePath 'cmd.exe' -ArgumentList '/c %TMP%\\script.bat && del /f /q %TMP%\\script.bat ' -NoNewWindow -Wait "
-]
-},
-{
-"Name": "Super Privacy Disable all Privacy Settings and Telemetry",
-"Description": "Disable Wifi-Sense & Activity History & ActivityFeed All Telemetry & DataCollection & disable various telemetry and annoyances in Edge",
-"Category": "Privacy",
-"Check": "false",
-"Refresh": "true",
-"Script": [
-"Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Application Experience\\Microsoft Compatibility Appraiser' | Out-Null; Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Application Experience\\ProgramDataUpdater' | Out-Null; Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Autochk\\Proxy' | Out-Null; Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Customer Experience Improvement Program\\Consolidator' | Out-Null; Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Customer Experience Improvement Program\\UsbCeip' | Out-Null; Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\DiskDiagnostic\\Microsoft-Windows-DiskDiagnosticDataCollector' | Out-Null; schtasks /change /TN '\\Microsoft\\Windows\\Customer Experience Improvement Program\\Consolidator' /DISABLE > NUL 2>&1; schtasks /change /TN '\\Microsoft\\Windows\\DiskDiagnostic\\Microsoft-Windows-DiskDiagnosticDataCollector' /DISABLE > NUL 2>&1; schtasks /change /TN '\\Microsoft\\Windows\\Windows Error Reporting\\QueueReporting' /DISABLE > NUL 2>&1"
-],
-"Registry": [
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\location",
-"Name": "Value",
-"Type": "String",
-"Value": "Deny",
-"defaultValue": "Deny"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\DataCollection",
-"Name": "Start_TrackProgs",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCR:\\Software\\Microsoft\\Windows\\CurrentVersion\\Privacy",
-"Name": "TailoredExperiencesWithDiagnosticDataEnabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCR:\\Software\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo",
-"Name": "Enabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCR:\\Software\\Microsoft\\Speech_OneCore\\Settings\\OnlineSpeechPrivacy",
-"Name": "HasAccepted",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCR:\\Software\\Microsoft\\Input\\TIPC",
-"Name": "Enabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCR:\\Software\\Microsoft\\InputPersonalization",
-"Name": "RestrictImplicitInkCollection",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKCR:\\Software\\Microsoft\\InputPersonalization",
-"Name": "RestrictImplicitTextCollection",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Sensor\\Overrides\\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}",
-"Name": "SensorPermissionState",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Services\\lfsvc\\Service\\Configuration",
-"Name": "Status",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SYSTEM\\Maps",
-"Name": "AutoUpdateEnabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\System",
-"Name": "EnableActivityFeed",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\Software\\Microsoft\\PolicyManager\\default\\WiFi\\AllowAutoConnectToWiFiSenseHotspots",
-"Name": "Value",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting",
-"Name": "Disabled",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting",
-"Name": "Disabled",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-"Name": "AllowTelemetry",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "ContentDeliveryAllowed",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "OemPreInstalledAppsEnabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "PreInstalledAppsEnabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "PreInstalledAppsEverEnabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "SilentInstalledAppsEnabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "SubscribedContent-338387Enabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "SubscribedContent-338388Enabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "SubscribedContent-338389Enabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "SubscribedContent-353698Enabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "SystemPaneSuggestionsEnabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Siuf\\Rules",
-"Name": "NumberOfSIUFInPeriod",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-"Name": "DoNotShowFeedbackNotifications",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\CloudContent",
-"Name": "DisableTailoredExperiencesWithDiagnosticData",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\AdvertisingInfo",
-"Name": "DisabledByGroupPolicy",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting",
-"Name": "Disabled",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\DeliveryOptimization\\Config",
-"Name": "DODownloadMode",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Remote Assistance",
-"Name": "fAllowToGetHelp",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\OperationStatusManager",
-"Name": "EnthusiastMode",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Name": "ShowTaskViewButton",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\People",
-"Name": "PeopleBand",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Name": "LaunchTo",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\FileSystem",
-"Name": "LongPathsEnabled",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\DriverSearching",
-"Name": "SearchOrderConfig",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile",
-"Name": "SystemResponsiveness",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile",
-"Name": "NetworkThrottlingIndex",
-"Value": "4294967295",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Control Panel\\Desktop",
-"Name": "MenuShowDelay",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Control Panel\\Desktop",
-"Name": "AutoEndTasks",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management",
-"Name": "ClearPageFileAtShutdown",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SYSTEM\\ControlSet001\\Services\\Ndu",
-"Name": "Start",
-"Value": "2",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Control Panel\\Mouse",
-"Name": "MouseHoverTime",
-"Value": "400",
-"Type": "String",
-"defaultValue": "400"
-},
-{
-"Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Services\\LanmanServer\\Parameters",
-"Name": "IRPStackSize",
-"Value": "30",
-"Type": "DWord",
-"defaultValue": "20"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Feeds",
-"Name": "EnableFeeds",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Feeds",
-"Name": "ShellFeedsTaskbarViewMode",
-"Value": "2",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-"Name": "HideSCAMeetNow",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\UserProfileEngagement",
-"Name": "ScoobeSystemSettingEnabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Feeds",
-"Name": "EnableFeeds",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "ConnectedSearchPrivacy",
-"Value": "3",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\Software\\Policies\\Microsoft\\Windows\\Explorer",
-"Name": "DisableSearchHistory",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "AllowSearchToUseLocation",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "EnableDynamicContentInWSB",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "DisableWebSearch",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\Software\\Policies\\Microsoft\\Windows\\Explorer",
-"Name": "DisableSearchBoxSuggestions",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "PreventUnwantedAddIns",
-"Value": " ",
-"Type": "String",
-"defaultValue": " "
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "PreventRemoteQueries",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "AlwaysUseAutoLangDetection",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "AllowIndexingEncryptedStoresOrItems",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "DisableSearchBoxSuggestions",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "CortanaInAmbientMode",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "BingSearchEnabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Name": "ShowCortanaButton",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "CanCortanaBeEnabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "CanCortanaBeEnabled",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "ConnectedSearchUseWebOverMeteredConnections",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "AllowCortanaAboveLock",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\SearchSettings",
-"Name": "IsDynamicSearchBoxEnabled",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\PolicyManager\\default\\Experience\\AllowCortana",
-"Name": "value",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search",
-"Name": "AllowSearchToUseLocation",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Speech_OneCore\\Preferences",
-"Name": "ModelDownloadAllowed",
-"Value": "0",
-"Type": "DWord",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\SearchSettings",
-"Name": "IsDeviceSearchHistoryEnabled",
-"Value": "1",
-"Type": "DWord",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Speech_OneCore\\Preferences",
-"Name": "VoiceActivationOn",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Speech_OneCore\\Preferences",
-"Name": "VoiceActivationEnableAboveLockscreen",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\OOBE",
-"Name": "DisableVoice",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "AllowCortana",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search",
-"Name": "DeviceHistoryEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search",
-"Name": "HistoryViewEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\Software\\Microsoft\\Speech_OneCore\\Preferences",
-"Name": "VoiceActivationDefaultOn",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
-"Name": "CortanaEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search",
-"Name": "CortanaEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SearchSettings",
-"Name": "IsMSACloudSearchEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\SearchSettings",
-"Name": "IsAADCloudSearchEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
-"Name": "AllowCloudSearch",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Search",
-"Name": "VoiceShortcut",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
-"Name": "CortanaConsent",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-"Name": "AllowDesktopAnalyticsProcessing",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-"Name": "AllowDeviceNameInTelemetry",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-"Name": "MicrosoftEdgeDataOptIn",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-"Name": "AllowWUfBCloudProcessing",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-"Name": "AllowUpdateComplianceProcessing",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-"Name": "AllowCommercialDataPipeline",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\Software\\Policies\\Microsoft\\SQMClient\\Windows",
-"Name": "CEIPEnable",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\DataCollection",
-"Name": "AllowTelemetry",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
-"Name": "AllowTelemetry",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\Software\\Policies\\Microsoft\\Windows\\DataCollection",
-"Name": "DisableOneSettingsDownloads",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKLM:\\Software\\Policies\\Microsoft\\Windows NT\\CurrentVersion\\Software Protection Platform",
-"Name": "NoGenTicket",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKLM:\\Software\\Policies\\Microsoft\\Windows\\Windows Error Reporting",
-"Name": "Disabled",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting",
-"Name": "Disabled",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKLM:\\Software\\Microsoft\\Windows\\Windows Error Reporting\\Consent",
-"Name": "DefaultConsent",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\Software\\Microsoft\\Windows\\Windows Error Reporting\\Consent",
-"Name": "DefaultOverrideBehavior",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKLM:\\Software\\Microsoft\\Windows\\Windows Error Reporting",
-"Name": "DontSendAdditionalData",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKLM:\\Software\\Microsoft\\Windows\\Windows Error Reporting",
-"Name": "LoggingDisabled",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "ContentDeliveryAllowed",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "OemPreInstalledAppsEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "PreInstalledAppsEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "PreInstalledAppsEverEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "SilentInstalledAppsEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "SystemPaneSuggestionsEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\SystemSettings\\AccountNotifications",
-"Name": "EnableAccountNotifications",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\SystemSettings\\AccountNotifications",
-"Name": "EnableAccountNotifications",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Notifications\\Settings",
-"Name": "NOC_GLOBAL_SETTING_TOASTS_ENABLED",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Policies\\Microsoft\\Windows\\EdgeUI",
-"Name": "DisableMFUTracking",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\EdgeUI",
-"Name": "DisableMFUTracking",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKCU:\\Control Panel\\International\\User Profile",
-"Name": "HttpAcceptLanguageOptOut",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\System",
-"Name": "PublishUserActivities",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Personalization",
-"Name": "NoLockScreenCamera",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\location",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\webcam",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\microphone",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\documentsLibrary",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\picturesLibrary",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\videosLibrary",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\broadFileSystemAccess",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\userAccountInformation",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\contacts",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\phoneCallHistory",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\chat",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\email",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\userDataTasks",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\appDiagnostics",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Speech_OneCore\\Settings\\VoiceActivation\\UserPreferenceForAllApps",
-"Name": "AgentActivationEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppPrivacy",
-"Name": "LetAppsAccessPhone",
-"Value": "2",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppPrivacy",
-"Name": "LetAppsAccessPhone_UserInControlOfTheseApps",
-"Value": "",
-"Type": "REG_MULTI_SZ",
-"DefaultValue": ""
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppPrivacy",
-"Name": "LetAppsAccessPhone_ForceAllowTheseApps",
-"Value": "",
-"Type": "REG_MULTI_SZ",
-"DefaultValue": ""
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppPrivacy",
-"Name": "LetAppsAccessPhone_ForceDenyTheseApps",
-"Value": "",
-"Type": "REG_MULTI_SZ",
-"DefaultValue": ""
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\DeviceAccess\\Global\\{C1D23ACC-752B-43E5-8448-8D0E519CD6D6}",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\appointments",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\activity",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\radios",
-"Name": "Value",
-"Value": "Deny",
-"Type": "String",
-"DefaultValue": "Allow"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "EdgeEnhanceImagesEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "PersonalizationReportingEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "ShowRecommendationsEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "HideFirstRunExperience",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "UserFeedbackAllowed",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "ConfigureDoNotTrack",
-"Value": "1",
-"Type": "DWord",
-"DefaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "AlternateErrorPagesEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "EdgeCollectionsEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "EdgeFollowEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "EdgeShoppingAssistantEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "MicrosoftEdgeInsiderPromotionEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "ShowMicrosoftRewards",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "WebWidgetAllowed",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "DiagnosticData",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "EdgeAssetDeliveryServiceEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "CryptoWalletEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "WalletDonationEnabled",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCR:\\Software\\Microsoft\\Personalization\\Settings",
-"Name": "AcceptedPrivacyPolicy",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKCR:\\Software\\Microsoft\\InputPersonalization\\TrainedDataStore",
-"Name": "HarvestContacts",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-}
-]
-},
-{
-"Name": "Clean Taskbar",
-"Description": "Disable icons",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "true",
-"Registry": [
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Feeds",
-"Name": "ShellFeedsTaskbarViewMode",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
-"Name": "SearchboxTaskbarMode",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "2"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\People",
-"Name": "PeopleBand",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-"Name": "HideSCAMeetNow",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-"Name": "NoNewsAndInterests",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\PolicyManager\\default\\NewsAndInterests\\AllowNewsAndInterests",
-"Name": "value",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Feeds",
-"Name": "EnableFeeds",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Name": "ShowCortanaButton",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Name": "ShowTaskViewButton",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-}
-]
-},
-{
-"Name": "Remove Microsoft Apps",
-"Description": "Uninstalls pre-installed Microsoft apps like Clipchamp, People etc",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "true",
-"AppxPackage": [
-"Microsoft.Copilot",
-"Microsoft.BingNews",
-"Microsoft.WindowsCamera",
-"Microsoft.Getstarted",
-"Microsoft.BingWeather_1.0.6.0_x64__8wekyb3d8bbwe",
-"MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy",
-"Microsoft.GetHelp",
-"Microsoft.AppConnector",
-"Microsoft.BingFinance",
-"Microsoft.BingTranslator",
-"Microsoft.BingSports",
-"MicrosoftCorporationII.MicrosoftFamily",
-"Microsoft.BingHealthAndFitness",
-"Microsoft.BingTravel",
-"Microsoft.MinecraftUWP",
-"PowerAutomate",
-"MicrosoftTeams",
-"Microsoft.Todos",
-"Microsoft.AsyncTextService",
-"Microsoft.GamingServices",
-"Microsoft.BingFoodAndDrink",
-"Microsoft.BingWeather",
-"Microsoft.Messaging",
-"Microsoft.Microsoft3DViewer",
-"Microsoft.3DBuilder",
-"Microsoft.MicrosoftOfficeHub",
-"Microsoft.MicrosoftSolitaireCollection",
-"Microsoft.NetworkSpeedTest",
-"Microsoft.News",
-"Microsoft.549981C3F5F10",
-"Microsoft.Office.Lens",
-"Microsoft.Office.OneNote",
-"Microsoft.Office.Sway",
-"Microsoft.OutlookForWindows",
-"Microsoft.OneConnect",
-"Microsoft.People",
-"Microsoft.Print3D",
-"Microsoft.RemoteDesktop",
-"Microsoft.SkypeApp",
-"Microsoft.StorePurchaseApp",
-"Microsoft.Office.Todo.List",
-"Microsoft.Whiteboard",
-"Microsoft.CommsPhone",
-"Microsoft.windowscommunicationsapps",
-"Microsoft.WindowsFeedbackHub",
-"Microsoft.Wallet",
-"Microsoft.WindowsMaps",
-"Microsoft.YourPhone",
-"Microsoft.WindowsSoundRecorder",
-"Microsoft.Windows.Cortana",
-"Microsoft.ScreenSketch",
-"Microsoft.Windows.DevHome",
-"Microsoft.MixedReality.Portal",
-"Microsoft.MSPaint",
-"Microsoft.Getstarted",
-"Microsoft.ZuneVideo",
-"Microsoft.ZuneMusic",
-"EclipseManager",
-"ActiproSoftwareLLC",
-"AdobeSystemsIncorporated.AdobePhotoshopExpress",
-"Duolingo-LearnLanguagesforFree",
-"PandoraMediaInc",
-"CandyCrush",
-"BubbleWitch3Saga",
-"Wunderlist",
-"Flipboard",
-"Twitter",
-"Facebook",
-"Minecraft",
-"Royal Revolt",
-"Sway",
-"Disney.37853FC22B2CE",
-"disney",
-"Microsoft.549981",
-"Microsoft.MicrosoftStickyNotes",
-"TikTok.TikTok_8wekyb3d8bbwe",
-"TikTok",
-"Microsoft.NetworkSpeedTest"
-],
-"Registry": [
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-"Name": "NoStartMenuMorePrograms",
-"Type": "DWord",
-"Value": "2",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-"Name": "NoStartMenuMorePrograms",
-"Type": "DWord",
-"Value": "2",
-"defaultValue": "1"
-}
-]
-},
-{
-"Name": "Remove Xbox Apps",
-"Description": "Uninstalls pre-installed Xbox apps",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "true",
-"AppxPackage": [
-"Microsoft.XboxApp",
-"Microsoft.Xbox.TCUI",
-"Microsoft.XboxGamingOverlay",
-"Microsoft.XboxGameOverlay",
-"Microsoft.XboxIdentityProvider",
-"Microsoft.XboxSpeechToTextOverlay"
-]
-},
-{
-"Name": "Fix Stutter in games",
-"Description": "Fix Stutter in Games (Disable GameBarPresenceWriter). Windows 10/11",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"irm https://raw.githubusercontent.com/emadadel4/Fix-Stutter-in-Games/main/fix.ps1 | iex "
-]
-},
-{
-"Name": "Enable the Ultimate Performance Power Plan",
-"Description": "This will add the Ultimate Performance power plan, to enable it go to the power options",
-"Category": "Power",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61; Start-Process powercfg.cpl"
-]
-},
-{
-"Name": "Reset the TCP/IP Stack",
-"Description": "If you have an internet issue, reset the network configuration",
-"Category": "Fixer",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"netsh int ip reset"
-]
-},
-{
-"Name": "Setup Auto login",
-"Description": "Setup auto login Windows username",
-"Category": "Classic",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"curl.exe -ss \"https://live.sysinternals.com/Autologon.exe\" -o $env:temp\\autologin.exe ; cmd /c $env:temp\\autologin.exe /accepteula"
-]
-},
-{
-"Name": "Disable Xbox Services",
-"Description": "Disables all Xbox Services Game Mode",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"Disable-MMAgent -MemoryCompression | Out-Null",
-"irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Fix%20Stutter/run.ps1 | iex"
-],
-"Registry": [
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\GameBar",
-"Name": "AutoGameModeEnabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\GameBar",
-"Name": "AllowAutoGameMode",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\GameBar",
-"Name": "ShowStartupPanel",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\System\\GameConfigStore",
-"Name": "GameDVR_Enabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\GameBar",
-"Name": "AppCaptureEnabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\GameBar",
-"Name": "UseNexusForGameBarEnabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\GameBar",
-"Name": "AudioCaptureEnabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\GameBar",
-"Name": "CursorCaptureEnabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\Software\\Policies\\Microsoft\\Windows\\GameDVR",
-"Name": "AllowgameDVR",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\System\\CurrentControlSet\\Services\\xbgm",
-"Name": "Start",
-"Type": "DWord",
-"Value": "4",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\System\\GameConfigStore",
-"Name": "GameDVR_FSEBehaviorMode",
-"Type": "DWord",
-"Value": "2",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\System\\GameConfigStore",
-"Name": "GameDVR_HonorUserFSEBehaviorMode",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\System\\GameConfigStore",
-"Name": "GameDVR_FSEBehavior",
-"Type": "DWord",
-"Value": "2",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\System\\GameConfigStore",
-"Name": "GameDVR_EFSEFeatureFlags",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\System\\GameConfigStore",
-"Name": "GameDVR_DSEBehavior",
-"Type": "DWord",
-"Value": "2",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\DirectX\\UserGpuPreferences",
-"Name": "DirectXUserGlobalSettings",
-"Type": "String",
-"Value": "SwapEffectUpgradeEnable=1;",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\DirectX\\GraphicsSettings",
-"Name": "SwapEffectUpgradeCache",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\SoftwareProtectionPlatform",
-"Name": "InactivityShutdownDelay",
-"Type": "DWord",
-"Value": "4294967295",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\Dwm",
-"Name": "OverlayTestMode",
-"Type": "DWord",
-"Value": "5",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games",
-"Name": "GPU Priority",
-"Type": "DWord",
-"Value": "8",
-"defaultValue": "8"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games",
-"Name": "Scheduling Category",
-"Type": "String",
-"Value": "High",
-"defaultValue": "High"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Games",
-"Name": "SFIO Priority",
-"Type": "String",
-"Value": "High",
-"defaultValue": "High"
-},
-{
-"Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\PriorityControl",
-"Name": "IRQ8Priority",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\CloudContent",
-"Name": "DisableWindowsConsumerFeatures",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-}
-]
-},
-{
-"Name": "Disable Start Menu Ads",
-"Description": "Start menu Ads and web search",
-"Category": "Privacy",
-"Check": "false",
-"Refresh": "true",
-"Registry": [
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
-"Name": "BingSearchEnabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo",
-"Name": "Enabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "SystemPaneSuggestionsEnabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
-"Name": "SoftLandingEnabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Name": "ShowSyncProviderNotifications",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-}
-]
-},
-{
-"Name": "Turn off background Apps",
-"Description": "Turn off background apps",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\BackgroundAccessApplications",
-"Name": "GlobalUserDisabled",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
-"Name": "BackgroundAppGlobalToggle",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-}
-]
-},
-{
-"Name": "Disable suggestions on Start Menu",
-"Description": "Suggestions on start menu",
-"Category": "Privacy",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\CloudContent",
-"Name": "DisableWindowsConsumerFeatures",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-}
-]
-},
-{
-"Name": "Remove Folder Shortcuts From File Explorer",
-"Description": "Documents, Videos, Pictures, Desktop. Shortcuts from File Explorer",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{f86fa3ab-70d2-4fc7-9c99-fcbf05467f3a}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{f86fa3ab-70d2-4fc7-9c99-fcbf05467f3a}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{3dfdf296-dbec-4fb4-81d1-6a3438bcf4de}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{3dfdf296-dbec-4fb4-81d1-6a3438bcf4de}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{24ad3ad4-a569-4530-98e1-ab02f9417aa8}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{24ad3ad4-a569-4530-98e1-ab02f9417aa8}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{088e3905-0323-4b02-9826-5d99428e115f}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{088e3905-0323-4b02-9826-5d99428e115f}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{d3162b92-9365-467a-956b-92703aca08af}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MyComputer\\NameSpace\\{d3162b92-9365-467a-956b-92703aca08af}",
-"Value": "Remove"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer",
-"Name": "HubMode",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKCR:\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}",
-"Name": "System.IsPinnedToNameSpaceTree",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKCR:\\Wow6432Node\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}",
-"Name": "System.IsPinnedToNameSpaceTree",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\Software\\Classes\\CLSID\\{031E4825-7B94-4dc3-B131-E946B44C8DD5}",
-"Name": "System.IsPinnedToNameSpaceTree",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-}
-]
-},
-{
-"Name": "Optimize Windows Services",
-"Description": "(Print Spooler), (Fax), (Diagnostic Policy), (Downloaded Maps Manager), (Windows Error Reporting Service), (Remote Registry) , (Internet Connection Sharing), (Disables Telemetry and Data)",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Services": [
-{
-"Name": "Spooler",
-"StartupType": "Disabled",
-"DefaultType": "Automatic"
-},
-{
-"Name": "Fax",
-"StartupType": "Disabled",
-"DefaultType": "Automatic"
-},
-{
-"Name": "DPS",
-"StartupType": "Disabled",
-"DefaultType": "Automatic"
-},
-{
-"Name": "MapsBroker",
-"StartupType": "Disabled",
-"DefaultType": "Automatic"
-},
-{
-"Name": "WerSvc",
-"StartupType": "Disabled",
-"DefaultType": "Manual"
-},
-{
-"Name": "RemoteRegistry",
-"StartupType": "Disabled",
-"DefaultType": "Disabled"
-},
-{
-"Name": "lmhosts",
-"StartupType": "Disabled",
-"DefaultType": "Manual"
-},
-{
-"Name": "SharedAccess",
-"StartupType": "Disabled",
-"DefaultType": "Manual"
-},
-{
-"Name": "DiagTrack",
-"StartupType": "Disabled",
-"DefaultType": "Manual"
-}
-]
-},
-{
-"Name": "Disable Hibernate",
-"Description": "Allows the system to save the current state of your computer",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"powercfg.exe /hibernate off"
-],
-"UndoScript": [
-"powercfg.exe /hibernate on"
-],
-"Registry": [
-{
-"Path": "HKLM:\\System\\CurrentControlSet\\Control\\Session Manager\\Power",
-"Name": "HibernateEnabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FlyoutMenuSettings",
-"Name": "ShowHibernateOption",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-}
-]
-},
-{
-"Name": "Disable OneDrive",
-"Description": "Disabling OneDrive",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"ScheduledTask": [
-"OneDrive",
-"MicrosoftEdge"
-],
-"Registry": [
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\OneDrive",
-"Name": "DisableFileSyncNGSC",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
-"Name": "OneDrive",
-"Value": "Remove"
-}
-]
-},
-{
-"Name": "Remove OneDrive",
-"Description": "Removes OneDrive from the system",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/OneDrive-Uninstaller.ps1 | iex"
-]
-},
-{
-"Name": "Activate Windows Classic Photo Viewer",
-"Description": "Classic Photo Viewer",
-"Category": "Classic",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-"Name": ".jpg",
-"Type": "String",
-"Value": "PhotoViewer.FileAssoc.Tiff",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-"Name": ".jpeg",
-"Type": "String",
-"Value": "PhotoViewer.FileAssoc.Tiff",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-"Name": ".png",
-"Type": "String",
-"Value": "PhotoViewer.FileAssoc.Tiff",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-"Name": ".bmp",
-"Type": "String",
-"Value": "PhotoViewer.FileAssoc.Tiff",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-"Name": ".gif",
-"Type": "String",
-"Value": "PhotoViewer.FileAssoc.Tiff",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-"Name": "ApplicationIcon",
-"Type": "String",
-"Value": "C:\\Program Files (x86)\\Windows Photo Viewer\\photoviewer.dll",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows Photo Viewer\\Capabilities\\FileAssociations",
-"Name": "ApplicationName",
-"Type": "String",
-"Value": "Windows Photo Viewer",
-"defaultValue": "0"
-}
-]
-},
-{
-"Name": "Remove Copilot in Windows 11",
-"Description": "AI assistance",
-"Category": "Privacy",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKCU:\\Software\\Policies\\Microsoft\\Windows\\WindowsCopilot",
-"Name": "TurnOffWindowsCopilot",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsCopilot",
-"Name": "TurnOffWindowsCopilot",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Name": "ShowCopilotButton",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
-"Name": "HubsSidebarEnabled",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKCU:\\Software\\Policies\\Microsoft\\Windows\\Explorer",
-"Name": "DisableSearchBoxSuggestions",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer",
-"Name": "DisableSearchBoxSuggestions",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-}
-]
-},
-{
-"Name": "Disable Recall Snapshots in Windows 11 24H",
-"Description": "Recall is an upcoming preview experience exclusive to Copilot+",
-"Category": "Privacy",
-"Check": "false",
-"Refresh": "true",
-"Registry": [
-{
-"Path": "HKCU:\\Software\\Policies\\Microsoft\\Windows\\WindowsAI",
-"Name": "DisableAIDataAnalysis",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsAI",
-"Name": "DisableAIDataAnalysis",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsAI",
-"Name": "AllowRecallEnablement",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-}
-]
-},
-{
-"Name": "Delete Thumbnail Cache",
-"Description": "Removing the stored image thumbnails",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"Remove-Item \"$env:LocalAppData\\Microsoft\\Windows\\Explorer\\thumbcache*\" -Force -Recurse"
-]
-},
-{
-"Name": "Classic Volume Control",
-"Description": "The old volume control",
-"Category": "Classic",
-"Check": "false",
-"Refresh": "true",
-"Registry": [
-{
-"Path": "HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\MTCUVC",
-"Name": "EnableMtcUvc",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-}
-]
-},
-{
-"Name": "Disable Toggle Key Sounds",
-"Description": "Toggle key sounds are audio cues that play when you press the Caps Lock, Num Lock, or Scroll Lock keys",
-"Category": "Classic",
-"Check": "false",
-"Refresh": "true",
-"Registry": [
-{
-"Path": "HKCU:\\Control Panel\\Accessibility\\ToggleKeys",
-"Name": "Flags",
-"Type": "String",
-"Value": "58",
-"defaultValue": "62"
-}
-]
-},
-{
-"Name": "Disable Homegroup",
-"Description": "HomeGroup is a passwordprotected home networking service that lets you share your stuff with other PCs",
-"Category": "Privacy",
-"Check": "false",
-"Refresh": "false",
-"Services": [
-{
-"Name": "HomeGroupListener",
-"StartupType": "Manual ",
-"DefaultType": "Automatic"
-},
-{
-"Name": "HomeGroupProvider",
-"StartupType": "Manual ",
-"DefaultType": "Automatic"
-}
-]
-},
-{
-"Name": "Remove Home and Gallery from explorer in Windows 11",
-"Description": "Home and Gallery from explorer and sets This PC as default",
-"Category": "Privacy",
-"Check": "false",
-"Refresh": "true",
-"Registry": [
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Name": "1",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "1"
-},
-{
-"Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Desktop\\NameSpace\\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}",
-"Value": "Remove"
-},
-{
-"Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Desktop\\NameSpace\\{f874310e-b6b7-47dc-bc84-b9e6b38f5903}",
-"Value": "Remove"
-}
-]
-},
-{
-"Name": "Disable Wifi Sense",
-"Description": "Service that phones home all nearby scanned wifi networks and your location",
-"Category": "Protection",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\PolicyManager\\default\\WiFi\\AllowWiFiHotSpotReporting",
-"Name": "value",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\PolicyManager\\default\\WiFi\\AllowAutoConnectToWiFiSenseHotspots",
-"Name": "value",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\WcmSvc\\wifinetworkmanager\\config",
-"Name": "AutoConnectAllowedOEM",
-"Value": "0",
-"Type": "DWord",
-"DefaultValue": "1"
-}
-]
-},
-{
-"Name": "Disable Autoplay and Autorun",
-"Description": "Autoplay in prevents the automatic launch of media or applications when a removable device, such as a USB drive or CD",
-"Category": "Protection",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\AutoplayHandlers",
-"Name": "DisableAutoplay",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
-"Name": "NoDriveTypeAutoRun",
-"Type": "DWord",
-"Value": "255",
-"defaultValue": "255"
-}
-]
-},
-{
-"Name": "Disable SMB Server",
-"Description": "SMB Server enables file and printer sharing over a network, allowing access to resources on remote computers",
-"Category": "Protection",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"Set-SmbServerConfiguration -EnableSMB1Protocol $false -Force; Set-SmbServerConfiguration -EnableSMB2Protocol $false -Force"
-]
-},
-{
-"Name": "Set current network profile to public",
-"Description": "Deny file sharing, device discovery",
-"Category": "Privacy",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"Set-NetConnectionProfile -NetworkCategory Public"
-]
-},
-{
-"Name": "Enable F8 boot menu options",
-"Description": "Enable F8 boot menu options",
-"Category": "BIOS",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"bcdedit /set bootmenupolicy Standard | Out-Null"
-]
-},
-{
-"Name": "Disable display and sleep mode timeouts",
-"Description": "If you frequently use your device, disable this",
-"Category": "Power",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"\r\n        powercfg /X monitor-timeout-ac 0\r\n        powercfg /X monitor-timeout-dc 0\r\n        powercfg /X standby-timeout-ac 0\r\n        powercfg /X standby-timeout-dc 0\r\n      "
-]
-},
-{
-"Name": "Set Wallpaper desktop Quality to 100%",
-"Description": "Set Wallpaper desktop Quality",
-"Category": "Personalization",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKLM:\\System\\CurrentControlSet\\Control\\CrashControl",
-"Name": "DisplayParameters",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-}
-]
-},
-{
-"Name": "Disable Windows Transparency",
-"Description": "Disableing improve performance",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "true",
-"Registry": [
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
-"Name": "EnableTransparency",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-}
-]
-},
-{
-"Name": "Disable scheduled defragmentation task",
-"Description": "Optimizes disk performance",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"Disable-ScheduledTask -TaskName 'Microsoft\\Windows\\Defrag\\ScheduledDefrag' | Out-Null"
-]
-},
-{
-"Name": "Enable NET 3.5",
-"Description": "Some old games and applications require .NET Framework 3.5",
-"Category": "Classic",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"DISM /Online /Enable-Feature /FeatureName:NetFx3 /All"
-]
-},
-{
-"Name": "Super Performance",
-"Description": "Disabled all windows effects. You may need to log out and back in for changes to take effect. You can reset to default settings in Settings Tab",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "true",
-"Registry": [
-{
-"defaultValue": "1",
-"Type": "String",
-"Path": "HKCU:\\Control Panel\\Desktop",
-"Value": "0",
-"Name": "DragFullWindows"
-},
-{
-"defaultValue": "1",
-"Type": "String",
-"Path": "HKCU:\\Control Panel\\Desktop",
-"Value": "200",
-"Name": "MenuShowDelay"
-},
-{
-"defaultValue": "1",
-"Type": "String",
-"Path": "HKCU:\\Control Panel\\Desktop\\WindowMetrics",
-"Value": "0",
-"Name": "MinAnimate"
-},
-{
-"defaultValue": "1",
-"Type": "DWord",
-"Path": "HKCU:\\Control Panel\\Keyboard",
-"Value": "0",
-"Name": "KeyboardDelay"
-},
-{
-"defaultValue": "1",
-"Type": "DWord",
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Value": "0",
-"Name": "ListviewAlphaSelect"
-},
-{
-"defaultValue": "1",
-"Type": "DWord",
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Value": "0",
-"Name": "ListviewShadow"
-},
-{
-"defaultValue": "1",
-"Type": "DWord",
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Value": "0",
-"Name": "TaskbarAnimations"
-},
-{
-"defaultValue": "1",
-"Type": "DWord",
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects",
-"Value": "2",
-"Name": "VisualFXSetting"
-},
-{
-"defaultValue": "1",
-"Type": "DWord",
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\DWM",
-"Value": "0",
-"Name": "EnableAeroPeek"
-},
-{
-"defaultValue": "1",
-"Type": "DWord",
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Value": "0",
-"Name": "TaskbarMn"
-},
-{
-"defaultValue": "1",
-"Type": "DWord",
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Value": "0",
-"Name": "TaskbarDa"
-},
-{
-"defaultValue": "1",
-"Type": "DWord",
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-"Value": "0",
-"Name": "ShowTaskViewButton"
-},
-{
-"defaultValue": "1",
-"Type": "DWord",
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
-"Value": "0",
-"Name": "SearchboxTaskbarMode"
-}
-]
-},
-{
-"Name": "Remove Widgets from Taskbar in Windows 11",
-"Description": "Widgets are one of the new user interface elements in Windows 11",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "true",
-"Script": [
-"Install-Dependencies 'winget'",
-"winget uninstall 'windows web experience pack' --silent"
-],
-"Registry": [
-{
-"Name": "TaskbarDa",
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\TaskbarDeveloperSettings",
-"defaultValue": "1",
-"Value": "0",
-"Type": "DWord"
-}
-]
-},
-{
-"Name": "Set Username to Unknown",
-"Description": "Rename Computer name and Username to Unknown. The changes will take effect after you restart the computer",
-"Category": "Privacy",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"Rename-Computer -NewName 'Unknown'",
-"$currentUsername = $env:USERNAME; Rename-LocalUser -Name $currentUsername -NewName 'Unknown'"
-]
-},
-{
-"Name": "Fix Arabic encoding",
-"Description": "Fix issues related to strange symbols appearing in Arabic text",
-"Category": "Fixer",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"Set-WinSystemLocale -SystemLocale 'ar-EG'"
-]
-},
-{
-"Name": "Restore Default File Type Associations",
-"Description": "Restoring default apps for file type associations resets Windows settings, allowing the system to select the appropriate programs by default",
-"Category": "Fixer",
-"Check": "false",
-"Refresh": "true",
-"Registry": [
-{
-"Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FileExts",
-"Value": "Remove"
-}
-]
-},
-{
-"Name": "Limit Defender CPU Usage",
-"Description": "Limits Defender CPU maximum usage at 25% instead of default 50%",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "true",
-"Registry": [
-{
-"Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows Defender\\Scan",
-"Name": "AvgCPULoadFactor",
-"Type": "DWord",
-"Value": "25",
-"defaultValue": "0"
-}
-]
-},
-{
-"Name": "Optimizing GPU scheduling",
-"Description": "Disables Hardware-Accelerated GPU Scheduling, which may improve performance",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKLM:\\SOFTWARE\\CurrentControlSet\\Control\\GraphicsDrivers",
-"Name": "HwSchMode",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-}
-]
-},
-{
-"Name": "Disable Fullscreen Optimizations",
-"Description": "Fullscreen Optimizations, which may improve performance",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKCU:\\System\\GameConfigStore",
-"Name": "GameDVR_DXGIHonorFSEWindowsCompatible",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-}
-]
-},
-{
-"Name": "Optimize Network",
-"Description": "Optimize network performance",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKLM:\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
-"Name": "TcpAckFrequency",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\System\\CurrentControlSet\\Services\\Tcpip\\Parameters",
-"Name": "TCPNoDelay",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-}
-]
-},
-{
-"Name": "Enable system cache",
-"Description": "Enabling large system cache can improve performance for certain workloads but may affect system stability",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKLM:\\System\\CurrentControlSet\\Control\\Session Manager\\Memory Management",
-"Name": "LargeSystemCache",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-}
-]
-},
-{
-"Name": "Optimizing NVIDIA GPU settings",
-"Description": "Optimize NVIDIA GPU settings ",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKLM:\\Software\\NVIDIA Corporation\\Global\\NvCplApi\\Policies",
-"Name": "PowerMizerEnable",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\Software\\NVIDIA Corporation\\Global\\NvCplApi\\Policies",
-"Name": "PowerMizerLevel",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-},
-{
-"Path": "HKLM:\\Software\\NVIDIA Corporation\\Global\\NvCplApi\\Policies",
-"Name": "PowerMizerLevelAC",
-"Type": "DWord",
-"Value": "0",
-"defaultValue": "1"
-}
-]
-},
-{
-"Name": "Enable Faster Shutdown",
-"Description": "Optimize NVIDIA GPU settings ",
-"Category": "Performance",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKLM:\\System\\CurrentControlSet\\Control",
-"Name": "WaitToKillServiceTimeout",
-"Type": "String",
-"Value": "2000",
-"defaultValue": "100"
-},
-{
-"Path": "HKCU:\\Control Panel\\Desktop",
-"Name": "WaitToKillAppTimeout",
-"Type": "String",
-"Value": "2000",
-"defaultValue": "100"
-},
-{
-"Path": "HKCU:\\Control Panel\\Desktop",
-"Name": "HungAppTimeout",
-"Type": "String",
-"Value": "2000 ",
-"defaultValue": "100"
-}
-]
-},
-{
-"Name": "Super Control Panel",
-"Description": "Create Super Control Panel shortcut on Desktop",
-"Category": "Personalization",
-"Check": "false",
-"Refresh": "false",
-"Script": [
-"New-Item -Path \"$env:USERPROFILE\\Desktop\\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}\" -ItemType Directory"
-]
-},
-{
-"Name": "Detailed BSoD",
-"Description": "You will see a detailed Blue Screen of Death (BSOD) with more information",
-"Category": "Fixer",
-"Check": "false",
-"Refresh": "false",
-"Registry": [
-{
-"Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\CrashControl",
-"Name": "DisplayParameters",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-},
-{
-"Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\CrashControl",
-"Name": "DisableEmoticon",
-"Type": "DWord",
-"Value": "1",
-"defaultValue": "0"
-}
-]
-}
-]
-'@ | ConvertFrom-Json
 function Invoke-Button {
 Param ([string]$action,[string]$Content)
 Switch -Wildcard ($action) {
@@ -2967,12 +356,12 @@ function Get-SelectedItems {
 param ([string]$Mode)
 switch ($Mode) {
 "Apps" {
-$items = @()
+$Apps = @()
 foreach ($item in $itt.AppsListView.Items) {
 $checkbox = $item.Children[0].Children[0]
 $tags = $item.Children[0].Children[0].Tag -split "\|"
 if ($checkbox.IsChecked) {
-$items += @{
+$Apps += @{
 Name    = $checkbox.Content
 Choco   = $tags[0]
 Scoop   = $tags[1]
@@ -2981,27 +370,23 @@ ITT     = $tags[3]
 }
 }
 }
+return $Apps
 }
 "Tweaks" {
-$items = @()
+$Tweaks = @()
 foreach ($item in $itt.TweaksListView.Items) {
-$child = $item.Children[0].Children[0]
-if ($tweaksDict.ContainsKey($child.Content) -and $child.IsChecked) {
-$items += @{
-Name          = $tweaksDict[$child.Content].Name
-Registry      = $tweaksDict[$child.Content].Registry
-Services      = $tweaksDict[$child.Content].Services
-ScheduledTask = $tweaksDict[$child.Content].ScheduledTask
-AppxPackage   = $tweaksDict[$child.Content].AppxPackage
-Script        = $tweaksDict[$child.Content].Script
-UndoScript    = $tweaksDict[$child.Content].UndoScript
-Refresh       = $tweaksDict[$child.Content].Refresh
+$checkbox = $item.Children[0].Children[0]
+$tags = $item.Children[0].Children[0].Tag
+if ($checkbox.IsChecked) {
+$Tweaks += @{
+Name    = $checkbox.Content
+Script   = $tags
 }
 }
 }
+return $Tweaks
 }
 }
-return $items
 }
 function Get-ToggleStatus {
 Param($ToggleSwitch)
@@ -3657,48 +1042,17 @@ return
 }
 ITT-ScriptBlock -ArgumentList $selectedTweaks -debug $debug -ScriptBlock {
 param($selectedTweaks, $debug)
+$itt.ProcessRunning = $true
 if((Get-ItemProperty -Path $itt.registryPath -Name "backup" -ErrorAction Stop).backup -eq 0){
 UpdateUI -Button "ApplyBtn" -NonKey "Please Wait..." -Width "auto"
 Set-Statusbar -Text "ℹ Current task: Creating Restore Point..."
 CreateRestorePoint
 }
-$itt.ProcessRunning = $true
 UpdateUI -Button "ApplyBtn" -Content "Applying" -Width "auto"
 $itt["window"].Dispatcher.Invoke([action] { Set-Taskbar -progress "Indeterminate" -value 0.01 -icon "logo" })
 foreach ($tweak in $selectedTweaks) {
 Add-Log -Message "::::$($tweak.Name)::::" -Level "default"
-$tweak | ForEach-Object {
-if ($_.Script -and $_.Script.Count -gt 0) {
 ExecuteCommand -tweak $tweak.Script
-if ($_.Refresh -eq $true) {
-Refresh-Explorer
-}
-}
-if ($_.Registry -and $_.Registry.Count -gt 0) {
-Set-Registry -tweak $tweak.Registry
-if ($_.Refresh -eq $true) {
-Refresh-Explorer
-}
-}
-if ($_.AppxPackage -and $_.AppxPackage.Count -gt 0) {
-Uninstall-AppxPackage -tweak $tweak.AppxPackage
-if ($_.Refresh -eq $true) {
-Refresh-Explorer
-}
-}
-if ($_.ScheduledTask -and $_.ScheduledTask.Count -gt 0) {
-Remove-ScheduledTasks -tweak $tweak.ScheduledTask
-if ($_.Refresh -eq $true) {
-Refresh-Explorer
-}
-}
-if ($_.Services -and $_.Services.Count -gt 0) {
-Disable-Service -tweak $tweak.Services
-if ($_.Refresh -eq $true) {
-Refresh-Explorer
-}
-}
-}
 }
 $itt.ProcessRunning = $false
 Finish -ListView "TweaksListView"
@@ -7751,267 +5105,262 @@ AlternationCount="2">
 </ListView.ItemsPanel>
 <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disk cleanup" FontSize="15" Tag="||||Performance"   ToolTip="Clean temporary files that are not necessary"/>
+<CheckBox Content="Disk cleanup" FontSize="15" Tag="irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/Disk%20cleanup.ps1 | iex"   ToolTip="Clean temporary files that are not necessary"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="System File Checker" FontSize="15" Tag="||||Fixer"   ToolTip="sfc /scannow Use the System File Checker tool to repair missing or corrupted system files"/>
+<CheckBox Content="System File Checker" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/SFC/run.ps1 | iex"   ToolTip="sfc /scannow Use the System File Checker tool to repair missing or corrupted system files"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Fixer}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Restore Classic Context Menu Windows 11" FontSize="15" Tag="||||Classic"   ToolTip="Restore the old context menu for Windows 11"/>
+<CheckBox Content="Restore Classic Context Menu Windows 11" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Restore%20Classic%20Context%20Menu%20Windows%2011/run.ps1 | iex"   ToolTip="Restore the old context menu for Windows 11"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Classic}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Restore All Windows Services to Default" FontSize="15" Tag="||||Fixer"   ToolTip="if you face issues with services try Restore All Windows Services to Default"/>
+<CheckBox Content="Restore All Windows Services to Default" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Restore%20All%20Windows%20Services%20to%20Default/run.ps1 | iex"   ToolTip="if you face issues with services try Restore All Windows Services to Default"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Fixer}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Super Privacy Disable all Privacy Settings and Telemetry" FontSize="15" Tag="||||Privacy"   ToolTip="Disable WifiSense  Activity History  ActivityFeed All Telemetry  DataCollection  disable various telemetry and annoyances in Edge"/>
-<TextBlock Margin="8" FontSize="11" Text="{Binding Privacy}"/>
-</StackPanel>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
-<StackPanel Orientation="Horizontal">
-<CheckBox Content="Clean Taskbar" FontSize="15" Tag="||||Performance"   ToolTip="Disable icons"/>
+<CheckBox Content="Clean Taskbar" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Clean%20Taskbar/run.ps1 | iex"   ToolTip="Disable icons"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Remove Microsoft Apps" FontSize="15" Tag="||||Performance"   ToolTip="Uninstalls preinstalled Microsoft apps like Clipchamp People etc"/>
+<CheckBox Content="Remove Microsoft Apps" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20MS%20Apps/run.ps1 | iex"   ToolTip="Uninstalls preinstalled Microsoft apps like Clipchamp People etc"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Remove Xbox Apps" FontSize="15" Tag="||||Performance"   ToolTip="Uninstalls preinstalled Xbox apps"/>
+<CheckBox Content="Remove Xbox Apps" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Xbox%20apps/run.ps1 | iex"   ToolTip="Uninstalls preinstalled Xbox apps"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Fix Stutter in games" FontSize="15" Tag="||||Performance"   ToolTip="Fix Stutter in Games Disable GameBarPresenceWriter. Windows 10/11"/>
+<CheckBox Content="Fix Stutter in games" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Fix%20Stutter/run.ps1 | iex"   ToolTip="Fix Stutter in Games Disable GameBarPresenceWriter. Windows 10/11"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Enable the Ultimate Performance Power Plan" FontSize="15" Tag="||||Power"   ToolTip="This will add the Ultimate Performance power plan to enable it go to the power options"/>
+<CheckBox Content="Enable the Ultimate Performance Power Plan" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20Ultimate%20Performance%20Power%20Plan/run.ps1 | iex"   ToolTip="This will add the Ultimate Performance power plan to enable it go to the power options"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Power}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Reset the TCP/IP Stack" FontSize="15" Tag="||||Fixer"   ToolTip="If you have an internet issue reset the network configuration"/>
+<CheckBox Content="Reset the TCP/IP Stack" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Netsh/run.ps1 | iex"   ToolTip="If you have an internet issue reset the network configuration"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Fixer}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Setup Auto login" FontSize="15" Tag="||||Classic"   ToolTip="Setup auto login Windows username"/>
+<CheckBox Content="Setup Auto login" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Setup%20Auto%20login/run.ps1 | iex"   ToolTip="Setup auto login Windows username"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Classic}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable Xbox Services" FontSize="15" Tag="||||Performance"   ToolTip="Disables all Xbox Services Game Mode"/>
+<CheckBox Content="Disable Xbox Services" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Xbox%20Services/run.ps1 | iex"   ToolTip="Disables all Xbox Services Game Mode"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable Start Menu Ads" FontSize="15" Tag="||||Privacy"   ToolTip="Start menu Ads and web search"/>
+<CheckBox Content="Disable Start Menu Ads" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Start%20Menu%20Ads/run.ps1 | iex"   ToolTip="Start menu Ads and web search"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Privacy}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Turn off background Apps" FontSize="15" Tag="||||Performance"   ToolTip="Turn off background apps"/>
+<CheckBox Content="Turn off background Apps" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Background%20apps/run.ps1 | iex"   ToolTip="Turn off background apps"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable suggestions on Start Menu" FontSize="15" Tag="||||Privacy"   ToolTip="Suggestions on start menu"/>
+<CheckBox Content="Disable suggestions on Start Menu" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20suggestions%20on%20Start%20Menu/run.ps1 | iex"   ToolTip="Suggestions on start menu"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Privacy}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Remove Folder Shortcuts From File Explorer" FontSize="15" Tag="||||Performance"   ToolTip="Documents Videos Pictures Desktop. Shortcuts from File Explorer"/>
+<CheckBox Content="Remove Folder Shortcuts From File Explorer" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Folder%20Shortcuts%20From%20File%20Explorer/run.ps1 | iex"   ToolTip="Documents Videos Pictures Desktop. Shortcuts from File Explorer"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Optimize Windows Services" FontSize="15" Tag="||||Performance"   ToolTip="Print Spooler Fax Diagnostic Policy Downloaded Maps Manager Windows Error Reporting Service Remote Registry  Internet Connection Sharing Disables Telemetry and Data"/>
+<CheckBox Content="Optimize Windows Services" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimize%20Windows%20Services/run.ps1 | iex"   ToolTip="Print Spooler Fax Diagnostic Policy Downloaded Maps Manager Windows Error Reporting Service Remote Registry  Internet Connection Sharing Disables Telemetry and Data"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable Hibernate" FontSize="15" Tag="||||Performance"   ToolTip="Allows the system to save the current state of your computer"/>
+<CheckBox Content="Disable Hibernate" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Hibernate/run.ps1 | iex"   ToolTip="Allows the system to save the current state of your computer"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable OneDrive" FontSize="15" Tag="||||Performance"   ToolTip="Disabling OneDrive"/>
+<CheckBox Content="Disable OneDrive" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20OneDrive/run.ps1 | iex"   ToolTip="Disabling OneDrive"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Remove OneDrive" FontSize="15" Tag="||||Performance"   ToolTip="Removes OneDrive from the system"/>
+<CheckBox Content="Remove OneDrive" FontSize="15" Tag="irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/OneDrive-Uninstaller.ps1 | iex"   ToolTip="Removes OneDrive from the system"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Activate Windows Classic Photo Viewer" FontSize="15" Tag="||||Classic"   ToolTip="Classic Photo Viewer"/>
+<CheckBox Content="Activate Windows Classic Photo Viewer" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Old%20Photo%20Viewer/run.bat | iex"   ToolTip="Classic Photo Viewer"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Classic}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Remove Copilot in Windows 11" FontSize="15" Tag="||||Privacy"   ToolTip="AI assistance"/>
+<CheckBox Content="Remove Copilot in Windows 11" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Copilot%20Windows%2011/run.ps1 | iex"   ToolTip="AI assistance"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Privacy}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable Recall Snapshots in Windows 11 24H" FontSize="15" Tag="||||Privacy"   ToolTip="Recall is an upcoming preview experience exclusive to Copilot"/>
+<CheckBox Content="Disable Recall Snapshots in Windows 11 24H" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Recall%20Snapshots%20in%20Windows%2011%2024H/run.ps1 | iex"   ToolTip="Recall is an upcoming preview experience exclusive to Copilot"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Privacy}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Delete Thumbnail Cache" FontSize="15" Tag="||||Performance"   ToolTip="Removing the stored image thumbnails"/>
+<CheckBox Content="Delete Thumbnail Cache" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Delete%20Thumbnail%20Cache/run.ps1 | iex"   ToolTip="Removing the stored image thumbnails"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Classic Volume Control" FontSize="15" Tag="||||Classic"   ToolTip="The old volume control"/>
+<CheckBox Content="Classic Volume Control" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Classic%20Volume%20Control/run.ps1 | iex"   ToolTip="The old volume control"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Classic}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable Toggle Key Sounds" FontSize="15" Tag="||||Classic"   ToolTip="Toggle key sounds are audio cues that play when you press the Caps Lock Num Lock or Scroll Lock keys"/>
+<CheckBox Content="Disable Toggle Key Sounds" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Sticky%20Keys/run.ps1 | iex"   ToolTip="Toggle key sounds are audio cues that play when you press the Caps Lock Num Lock or Scroll Lock keys"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Classic}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable Homegroup" FontSize="15" Tag="||||Privacy"   ToolTip="HomeGroup is a passwordprotected home networking service that lets you share your stuff with other PCs"/>
+<CheckBox Content="Disable Homegroup" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Homegroup/run.ps1 | iex"   ToolTip="HomeGroup is a passwordprotected home networking service that lets you share your stuff with other PCs"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Privacy}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Remove Home and Gallery from explorer in Windows 11" FontSize="15" Tag="||||Privacy"   ToolTip="Home and Gallery from explorer and sets This PC as default"/>
+<CheckBox Content="Remove Home and Gallery from explorer in Windows 11" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Home%20and%20Gallery%20from%20explorer%20in%20Windows%2011/run.ps1 | iex"   ToolTip="Home and Gallery from explorer and sets This PC as default"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Privacy}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable Wifi Sense" FontSize="15" Tag="||||Protection"   ToolTip="Service that phones home all nearby scanned wifi networks and your location"/>
+<CheckBox Content="Disable Wifi Sense" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Wifi%20Sense/run.ps1 | iex"   ToolTip="Service that phones home all nearby scanned wifi networks and your location"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Protection}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable Autoplay and Autorun" FontSize="15" Tag="||||Protection"   ToolTip="Autoplay in prevents the automatic launch of media or applications when a removable device such as a USB drive or CD"/>
+<CheckBox Content="Disable Autoplay and Autorun" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Autoplay%20and%20Autorun/run.ps1 | iex"   ToolTip="Autoplay in prevents the automatic launch of media or applications when a removable device such as a USB drive or CD"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Protection}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable SMB Server" FontSize="15" Tag="||||Protection"   ToolTip="SMB Server enables file and printer sharing over a network allowing access to resources on remote computers"/>
+<CheckBox Content="Disable SMB Server" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20SMB%20Server/run.ps1 | iex"   ToolTip="SMB Server enables file and printer sharing over a network allowing access to resources on remote computers"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Protection}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Set current network profile to public" FontSize="15" Tag="||||Privacy"   ToolTip="Deny file sharing device discovery"/>
+<CheckBox Content="Set current network profile to public" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Set%20network%20profile%20to%20public/run.ps1 | iex"   ToolTip="Deny file sharing device discovery"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Privacy}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Enable F8 boot menu options" FontSize="15" Tag="||||BIOS"   ToolTip="Enable F8 boot menu options"/>
+<CheckBox Content="Enable F8 boot menu options" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20F8%20boot%20menu%20options/run.ps1 | iex"   ToolTip="Enable F8 boot menu options"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding BIOS}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable display and sleep mode timeouts" FontSize="15" Tag="||||Power"   ToolTip="If you frequently use your device disable this"/>
+<CheckBox Content="Disable display and sleep mode timeouts" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20display%20and%20sleep%20mode%20timeouts/run.ps1 | iex"   ToolTip="If you frequently use your device disable this"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Power}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Set Wallpaper desktop Quality to 100%" FontSize="15" Tag="||||Personalization"   ToolTip="Set Wallpaper desktop Quality"/>
+<CheckBox Content="Set Wallpaper desktop Quality to 100%" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Set%20Wallpaper%20desktop%20Quality%20to%20100%25/run.ps1 | iex"   ToolTip="Set Wallpaper desktop Quality"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Personalization}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable Windows Transparency" FontSize="15" Tag="||||Performance"   ToolTip="Disableing improve performance"/>
+<CheckBox Content="Disable Windows Transparency" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Windows%20Transparency/run.ps1 | iex"   ToolTip="Disableing improve performance"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable scheduled defragmentation task" FontSize="15" Tag="||||Performance"   ToolTip="Optimizes disk performance"/>
+<CheckBox Content="Disable scheduled defragmentation task" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20scheduled%20defragmentation%20task/run.ps1 | iex"   ToolTip="Optimizes disk performance"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Enable NET 3.5" FontSize="15" Tag="||||Classic"   ToolTip="Some old games and applications require .NET Framework 3.5"/>
+<CheckBox Content="Enable NET 3.5" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20NET%203.5/run.ps1 | iex"   ToolTip="Some old games and applications require .NET Framework 3.5"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Classic}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Super Performance" FontSize="15" Tag="||||Performance"   ToolTip="Disabled all windows effects. You may need to log out and back in for changes to take effect. You can reset to default settings in Settings Tab"/>
+<CheckBox Content="Super Performance" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Super%20Performance/run.ps1 | iex"   ToolTip="Disabled all windows effects. You may need to log out and back in for changes to take effect. You can reset to default settings in Settings Tab"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Remove Widgets from Taskbar in Windows 11" FontSize="15" Tag="||||Performance"   ToolTip="Widgets are one of the new user interface elements in Windows 11"/>
+<CheckBox Content="Remove Widgets from Taskbar in Windows 11" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Widgets%20from%20Taskbar%20in%20Windows%2011/run.ps1 | iex"   ToolTip="Widgets are one of the new user interface elements in Windows 11"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Set Username to Unknown" FontSize="15" Tag="||||Privacy"   ToolTip="Rename Computer name and Username to Unknown. The changes will take effect after you restart the computer"/>
+<CheckBox Content="Set Username to Unknown" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Set%20Username%20to%20Unknown/run.ps1 | iex"   ToolTip="Rename Computer name and Username to Unknown. The changes will take effect after you restart the computer"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Privacy}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Fix Arabic encoding" FontSize="15" Tag="||||Fixer"   ToolTip="Fix issues related to strange symbols appearing in Arabic text"/>
+<CheckBox Content="Fix Arabic encoding" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Fix%20Arabic%20encoding/run.ps1 | iex"   ToolTip="Fix issues related to strange symbols appearing in Arabic text"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Fixer}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Restore Default File Type Associations" FontSize="15" Tag="||||Fixer"   ToolTip="Restoring default apps for file type associations resets Windows settings allowing the system to select the appropriate programs by default"/>
+<CheckBox Content="Restore Default File Type Associations" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Restore%20Default%20File%20Type%20Associations/run.ps1 | iex"   ToolTip="Restoring default apps for file type associations resets Windows settings allowing the system to select the appropriate programs by default"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Fixer}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Limit Defender CPU Usage" FontSize="15" Tag="||||Performance"   ToolTip="Limits Defender CPU maximum usage at 25 instead of default 50"/>
+<CheckBox Content="Limit Defender CPU Usage" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Limit%20Defender%20CPU%20Usage/run.ps1 | iex"   ToolTip="Limits Defender CPU maximum usage at 25 instead of default 50"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Optimizing GPU scheduling" FontSize="15" Tag="||||Performance"   ToolTip="Disables HardwareAccelerated GPU Scheduling which may improve performance"/>
+<CheckBox Content="Optimizing GPU scheduling" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimizing%20GPU%20scheduling/run.ps1 | iex"   ToolTip="Disables HardwareAccelerated GPU Scheduling which may improve performance"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable Fullscreen Optimizations" FontSize="15" Tag="||||Performance"   ToolTip="Fullscreen Optimizations which may improve performance"/>
+<CheckBox Content="Disable Fullscreen Optimizations" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Fullscreen%20Optimizations/run.ps1 | iex"   ToolTip="Fullscreen Optimizations which may improve performance"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Optimize Network" FontSize="15" Tag="||||Performance"   ToolTip="Optimize network performance"/>
+<CheckBox Content="Optimize Network" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimize%20Network/run.ps1 | iex"   ToolTip="Optimize network performance"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Enable system cache" FontSize="15" Tag="||||Performance"   ToolTip="Enabling large system cache can improve performance for certain workloads but may affect system stability"/>
+<CheckBox Content="Enable system cache" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20system%20cache/run.ps1 | iex"   ToolTip="Enabling large system cache can improve performance for certain workloads but may affect system stability"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Optimizing NVIDIA GPU settings" FontSize="15" Tag="||||Performance"   ToolTip="Optimize NVIDIA GPU settings "/>
+<CheckBox Content="Optimizing NVIDIA GPU settings" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimizing%20NVIDIA%20GPU%20settings/run.ps1 | iex"   ToolTip="Optimize NVIDIA GPU settings "/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Enable Faster Shutdown" FontSize="15" Tag="||||Performance"   ToolTip="Optimize NVIDIA GPU settings "/>
+<CheckBox Content="Enable Faster Shutdown" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20Faster%20Shutdown/run.ps1 | iex"   ToolTip="Optimize NVIDIA GPU settings "/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Super Control Panel" FontSize="15" Tag="||||Personalization"   ToolTip="Create Super Control Panel shortcut on Desktop"/>
+<CheckBox Content="Super Control Panel" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Super%20Control%20Panel/run.ps1 | iex"   ToolTip="Create Super Control Panel shortcut on Desktop"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Personalization}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Detailed BSoD" FontSize="15" Tag="||||Fixer"   ToolTip="You will see a detailed Blue Screen of Death BSOD with more information"/>
+<CheckBox Content="Detailed BSoD" FontSize="15" Tag="irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Detailed%20BSoD/run.ps1 | iex"   ToolTip="You will see a detailed Blue Screen of Death BSOD with more information"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Fixer}"/>
 </StackPanel>
 </StackPanel>
@@ -8036,87 +5385,87 @@ AlternationCount="2">
 </ListView.ItemsPanel>
 <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Show file extensions" FontSize="15" Tag="||||Protection" Style="{StaticResource ToggleSwitchStyle}" Name="Showfileextensions" ToolTip="Show file extensions in Windows displays the suffix at the end of file names like .txt .jpg .exe"/>
+<CheckBox Content="Show file extensions" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="Showfileextensions" ToolTip="Show file extensions in Windows displays the suffix at the end of file names like .txt .jpg .exe"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Protection}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Show Super Hidden" FontSize="15" Tag="||||Protection" Style="{StaticResource ToggleSwitchStyle}" Name="ShowSuperHidden" ToolTip="Show Super Hidden displays files and folders"/>
+<CheckBox Content="Show Super Hidden" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="ShowSuperHidden" ToolTip="Show Super Hidden displays files and folders"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Protection}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Dark Mode" FontSize="15" Tag="||||Personalization" Style="{StaticResource ToggleSwitchStyle}" Name="DarkMode" ToolTip="Dark Mode is a setting that changes the screen to darker colors reducing eye strain and saving battery life on OLED screens"/>
+<CheckBox Content="Dark Mode" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="DarkMode" ToolTip="Dark Mode is a setting that changes the screen to darker colors reducing eye strain and saving battery life on OLED screens"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Personalization}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="NumLook" FontSize="15" Tag="||||Protection" Style="{StaticResource ToggleSwitchStyle}" Name="NumLook" ToolTip="Toggle the Num Lock key state when your computer starts"/>
+<CheckBox Content="NumLook" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="NumLook" ToolTip="Toggle the Num Lock key state when your computer starts"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Protection}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Sticky Keys" FontSize="15" Tag="||||Personalization" Style="{StaticResource ToggleSwitchStyle}" Name="StickyKeys" ToolTip="Sticky keys is an accessibility feature of some graphical user interfaces which assists users who have physical disabilities"/>
+<CheckBox Content="Sticky Keys" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="StickyKeys" ToolTip="Sticky keys is an accessibility feature of some graphical user interfaces which assists users who have physical disabilities"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Personalization}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Mouse Acceleration" FontSize="15" Tag="||||Personalization" Style="{StaticResource ToggleSwitchStyle}" Name="MouseAcceleration" ToolTip="Cursor movement is affected by the speed of your physical mouse movements"/>
+<CheckBox Content="Mouse Acceleration" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="MouseAcceleration" ToolTip="Cursor movement is affected by the speed of your physical mouse movements"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Personalization}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="End Task On Taskbar Windows 11" FontSize="15" Tag="||||Personalization" Style="{StaticResource ToggleSwitchStyle}" Name="EndTaskOnTaskbarWindows11" ToolTip="End task when right clicking a program in the taskbar"/>
+<CheckBox Content="End Task On Taskbar Windows 11" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="EndTaskOnTaskbarWindows11" ToolTip="End task when right clicking a program in the taskbar"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Personalization}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Clear Page File At Shutdown" FontSize="15" Tag="||||Performance" Style="{StaticResource ToggleSwitchStyle}" Name="ClearPageFileAtShutdown" ToolTip="Removes sensitive data stored in virtual memory when the system shuts down"/>
+<CheckBox Content="Clear Page File At Shutdown" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="ClearPageFileAtShutdown" ToolTip="Removes sensitive data stored in virtual memory when the system shuts down"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Auto End Tasks" FontSize="15" Tag="||||Performance" Style="{StaticResource ToggleSwitchStyle}" Name="AutoEndTasks" ToolTip="Automatically end tasks that are not responding"/>
+<CheckBox Content="Auto End Tasks" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="AutoEndTasks" ToolTip="Automatically end tasks that are not responding"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Performance Options" FontSize="15" Tag="||||Performance" Style="{StaticResource ToggleSwitchStyle}" Name="PerformanceOptions" ToolTip="Adjust for best performance"/>
+<CheckBox Content="Performance Options" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="PerformanceOptions" ToolTip="Adjust for best performance"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Launch To This PC" FontSize="15" Tag="||||Personalization" Style="{StaticResource ToggleSwitchStyle}" Name="LaunchToThisPC" ToolTip="File Explorer open directly to This PC"/>
+<CheckBox Content="Launch To This PC" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="LaunchToThisPC" ToolTip="File Explorer open directly to This PC"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Personalization}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Disable Automatic Driver Installation" FontSize="15" Tag="||||Drivers" Style="{StaticResource ToggleSwitchStyle}" Name="DisableAutomaticDriverInstallation" ToolTip="Automatically downloading and installing drivers"/>
+<CheckBox Content="Disable Automatic Driver Installation" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="DisableAutomaticDriverInstallation" ToolTip="Automatically downloading and installing drivers"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Drivers}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Always show icons never Thumbnail" FontSize="15" Tag="||||Performance" Style="{StaticResource ToggleSwitchStyle}" Name="AlwaysshowiconsneverThumbnail" ToolTip="Show icons in the file explorer instead of thumbnails"/>
+<CheckBox Content="Always show icons never Thumbnail" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="AlwaysshowiconsneverThumbnail" ToolTip="Show icons in the file explorer instead of thumbnails"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Performance}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Core Isolation Memory Integrity" FontSize="15" Tag="||||Security" Style="{StaticResource ToggleSwitchStyle}" Name="CoreIsolationMemoryIntegrity" ToolTip="Core Isolation Memory Integrity"/>
+<CheckBox Content="Core Isolation Memory Integrity" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="CoreIsolationMemoryIntegrity" ToolTip="Core Isolation Memory Integrity"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Security}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Windows Sandbox" FontSize="15" Tag="||||Development" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSandbox" ToolTip="Windows Sandbox is a feature that allows you to run a sandboxed version of Windows"/>
+<CheckBox Content="Windows Sandbox" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSandbox" ToolTip="Windows Sandbox is a feature that allows you to run a sandboxed version of Windows"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Development}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="Windows Subsystem for Linux" FontSize="15" Tag="||||Development" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSubsystemforLinux" ToolTip="Windows Subsystem for Linux is an optional feature of Windows that allows Linux programs to run natively on Windows without the need for a separate virtual machine or dual booting"/>
+<CheckBox Content="Windows Subsystem for Linux" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSubsystemforLinux" ToolTip="Windows Subsystem for Linux is an optional feature of Windows that allows Linux programs to run natively on Windows without the need for a separate virtual machine or dual booting"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Development}"/>
 </StackPanel>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="10">
 <StackPanel Orientation="Horizontal">
-<CheckBox Content="HyperV Virtualization" FontSize="15" Tag="||||Development" Style="{StaticResource ToggleSwitchStyle}" Name="HyperVVirtualization" ToolTip="HyperV is a hardware virtualization product developed by Microsoft that allows users to create and manage virtual machines"/>
+<CheckBox Content="HyperV Virtualization" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="HyperVVirtualization" ToolTip="HyperV is a hardware virtualization product developed by Microsoft that allows users to create and manage virtual machines"/>
 <TextBlock Margin="8" FontSize="11" Text="{Binding Development}"/>
 </StackPanel>
 </StackPanel>
@@ -8485,10 +5834,6 @@ $itt.installIcon = $itt["window"].FindName("installIcon")
 $itt.applyText = $itt["window"].FindName("applyText")
 $itt.applyIcon = $itt["window"].FindName("applyIcon")
 $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
-$tweaksDict = @{}
-foreach ($tweak in $itt.database.Tweaks) {
-$tweaksDict[$tweak.Name] = $tweak
-}
 $MainXaml.SelectNodes("//*[@Name]") | ForEach-Object {
 $name = $_.Name
 $element = $itt["window"].FindName($name)
