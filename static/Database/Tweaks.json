@@ -1,6 +1,6 @@
 [
   {
-    "Name": "Disk cleanup",
+    "Content": "Disk cleanup",
     "Description": "Clean temporary files that are not necessary",
     "Category": "Performance",
     "IsChecked": false,
@@ -9,7 +9,7 @@
     ]
   },
   {
-    "Name": "System File Checker",
+    "Content": "System File Checker",
     "Description": "sfc /scannow Use the System File Checker tool to repair missing or corrupted system files",
     "Category": "Fixer",
     "IsChecked": false,
@@ -18,7 +18,7 @@
     ]
   },
   {
-    "Name": "Restore Classic Context Menu Windows 11",
+    "Content": "Restore Classic Context Menu Windows 11",
     "Description": "Restore the old context menu for Windows 11",
     "Category": "Classic",
     "IsChecked": false,
@@ -27,7 +27,7 @@
     ]
   },
   {
-    "Name": "Restore All Windows Services to Default",
+    "Content": "Restore All Windows Services to Default",
     "Description": "if you face issues with services, try Restore All Windows Services to Default",
     "Category": "Fixer",
     "IsChecked": false,
@@ -36,7 +36,7 @@
     ]
   },
   {
-    "Name": "Clean Taskbar",
+    "Content": "Clean Taskbar",
     "Description": "Disable icons",
     "Category": "Performance",
     "IsChecked": false,
@@ -45,7 +45,7 @@
     ]
   },
   {
-    "Name": "Remove Microsoft Apps",
+    "Content": "Remove Microsoft Apps",
     "Description": "Uninstalls pre-installed Microsoft apps like Clipchamp, People etc",
     "Category": "Performance",
     "IsChecked": false,
@@ -54,7 +54,7 @@
     ]
   },
   {
-    "Name": "Remove Xbox Apps",
+    "Content": "Remove Xbox Apps",
     "Description": "Uninstalls pre-installed Xbox apps",
     "Category": "Performance",
     "IsChecked": false,
@@ -63,7 +63,7 @@
     ]
   },
   {
-    "Name": "Fix Stutter in games",
+    "Content": "Fix Stutter in games",
     "Description": "Fix Stutter in Games (Disable GameBarPresenceWriter). Windows 10/11",
     "Category": "Performance",
     "IsChecked": false,
@@ -72,7 +72,7 @@
     ]
   },
   {
-    "Name": "Enable the Ultimate Performance Power Plan",
+    "Content": "Enable the Ultimate Performance Power Plan",
     "Description": "This will add the Ultimate Performance power plan, to enable it go to the power options",
     "Category": "Power",
     "IsChecked": false,
@@ -81,7 +81,7 @@
     ]
   },
   {
-    "Name": "Reset the TCP/IP Stack",
+    "Content": "Reset the TCP/IP Stack",
     "Description": "If you have an internet issue, reset the network configuration",
     "Category": "Fixer",
     "IsChecked": false,
@@ -90,7 +90,7 @@
     ]
   },
   {
-    "Name": "Setup Auto login",
+    "Content": "Setup Auto login",
     "Description": "Setup auto login Windows username",
     "Category": "Classic",
     "IsChecked": false,
@@ -99,7 +99,7 @@
     ]
   },
   {
-    "Name": "Disable Xbox Services",
+    "Content": "Disable Xbox Services",
     "Description": "Disables all Xbox Services Game Mode",
     "Category": "Performance",
     "IsChecked": false,
@@ -108,7 +108,7 @@
     ]
   },
   {
-    "Name": "Disable Start Menu Ads",
+    "Content": "Disable Start Menu Ads",
     "Description": "Start menu Ads and web search",
     "Category": "Privacy",
     "IsChecked": false,
@@ -117,7 +117,7 @@
     ]
   },
   {
-    "Name": "Turn off background Apps",
+    "Content": "Turn off background Apps",
     "Description": "Turn off background apps",
     "Category": "Performance",
     "IsChecked": false,
@@ -126,7 +126,7 @@
     ]
   },
   {
-    "Name": "Disable suggestions on Start Menu",
+    "Content": "Disable suggestions on Start Menu",
     "Description": "Suggestions on start menu",
     "Category": "Privacy",
     "IsChecked": false,
@@ -135,7 +135,7 @@
     ]
   },
   {
-    "Name": "Remove Folder Shortcuts From File Explorer",
+    "Content": "Remove Folder Shortcuts From File Explorer",
     "Description": "Documents, Videos, Pictures, Desktop. Shortcuts from File Explorer",
     "Category": "Performance",
     "IsChecked": false,
@@ -144,7 +144,7 @@
     ]
   },
   {
-    "Name": "Optimize Windows Services",
+    "Content": "Optimize Windows Services",
     "Description": "(Print Spooler), (Fax), (Diagnostic Policy), (Downloaded Maps Manager), (Windows Error Reporting Service), (Remote Registry) , (Internet Connection Sharing), (Disables Telemetry and Data)",
     "Category": "Performance",
     "IsChecked": false,
@@ -153,7 +153,7 @@
     ]
   },
   {
-    "Name": "Disable Hibernate",
+    "Content": "Disable Hibernate",
     "Description": "Allows the system to save the current state of your computer",
     "Category": "Performance",
     "IsChecked": false,
@@ -162,7 +162,7 @@
     ]
   },
   {
-    "Name": "Disable OneDrive",
+    "Content": "Disable OneDrive",
     "Description": "Disabling OneDrive",
     "Category": "Performance",
     "IsChecked": false,
@@ -171,7 +171,7 @@
     ]
   },
   {
-    "Name": "Remove OneDrive",
+    "Content": "Remove OneDrive",
     "Description": "Removes OneDrive from the system",
     "Category": "Performance",
     "IsChecked": false,
@@ -180,7 +180,7 @@
     ]
   },
   {
-    "Name": "Activate Windows Classic Photo Viewer",
+    "Content": "Activate Windows Classic Photo Viewer",
     "Description": "Classic Photo Viewer",
     "Category": "Classic",
     "IsChecked": false,
@@ -189,7 +189,7 @@
     ]
   },
   {
-    "Name": "Remove Copilot in Windows 11",
+    "Content": "Remove Copilot in Windows 11",
     "Description": "AI assistance",
     "Category": "Privacy",
     "IsChecked": false,
@@ -198,7 +198,7 @@
     ]
   },
   {
-    "Name": "Disable Recall Snapshots in Windows 11 24H",
+    "Content": "Disable Recall Snapshots in Windows 11 24H",
     "Description": "Recall is an upcoming preview experience exclusive to Copilot+",
     "Category": "Privacy",
     "IsChecked": false,
@@ -207,7 +207,7 @@
     ]
   },
   {
-    "Name": "Delete Thumbnail Cache",
+    "Content": "Delete Thumbnail Cache",
     "Description": "Removing the stored image thumbnails",
     "Category": "Performance",
     "IsChecked": false,
@@ -216,7 +216,7 @@
     ]
   },
   {
-    "Name": "Classic Volume Control",
+    "Content": "Classic Volume Control",
     "Description": "The old volume control",
     "Category": "Classic",
     "IsChecked": false,
@@ -225,7 +225,7 @@
     ]
   },
   {
-    "Name": "Disable Toggle Key Sounds",
+    "Content": "Disable Toggle Key Sounds",
     "Description": "Toggle key sounds are audio cues that play when you press the Caps Lock, Num Lock, or Scroll Lock keys",
     "Category": "Classic",
     "IsChecked": false,
@@ -234,7 +234,7 @@
     ]
   },
   {
-    "Name": "Disable Homegroup",
+    "Content": "Disable Homegroup",
     "Description": "HomeGroup is a passwordprotected home networking service that lets you share your stuff with other PCs",
     "Category": "Privacy",
     "IsChecked": false,
@@ -243,7 +243,7 @@
     ]
   },
   {
-    "Name": "Remove Home and Gallery from explorer in Windows 11",
+    "Content": "Remove Home and Gallery from explorer in Windows 11",
     "Description": "Home and Gallery from explorer and sets This PC as default",
     "Category": "Privacy",
     "IsChecked": false,
@@ -252,7 +252,7 @@
     ]
   },
   {
-    "Name": "Disable Wifi Sense",
+    "Content": "Disable Wifi Sense",
     "Description": "Service that phones home all nearby scanned wifi networks and your location",
     "Category": "Protection",
     "IsChecked": false,
@@ -261,7 +261,7 @@
     ]
   },
   {
-    "Name": "Disable Autoplay and Autorun",
+    "Content": "Disable Autoplay and Autorun",
     "Description": "Autoplay in prevents the automatic launch of media or applications when a removable device, such as a USB drive or CD",
     "Category": "Protection",
     "IsChecked": false,
@@ -270,7 +270,7 @@
     ]
   },
   {
-    "Name": "Disable SMB Server",
+    "Content": "Disable SMB Server",
     "Description": "SMB Server enables file and printer sharing over a network, allowing access to resources on remote computers",
     "Category": "Protection",
     "IsChecked": false,
@@ -279,7 +279,7 @@
     ]
   },
   {
-    "Name": "Set current network profile to public",
+    "Content": "Set current network profile to public",
     "Description": "Deny file sharing, device discovery",
     "Category": "Privacy",
     "IsChecked": false,
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "Name": "Enable F8 boot menu options",
+    "Content": "Enable F8 boot menu options",
     "Description": "Enable F8 boot menu options",
     "Category": "BIOS",
     "IsChecked": false,
@@ -297,7 +297,7 @@
     ]
   },
   {
-    "Name": "Disable display and sleep mode timeouts",
+    "Content": "Disable display and sleep mode timeouts",
     "Description": "If you frequently use your device, disable this",
     "Category": "Power",
     "IsChecked": false,
@@ -306,7 +306,7 @@
     ]
   },
   {
-    "Name": "Set Wallpaper desktop Quality to 100%",
+    "Content": "Set Wallpaper desktop Quality to 100%",
     "Description": "Set Wallpaper desktop Quality",
     "Category": "Personalization",
     "IsChecked": false,
@@ -315,7 +315,7 @@
     ]
   },
   {
-    "Name": "Disable Windows Transparency",
+    "Content": "Disable Windows Transparency",
     "Description": "Disableing improve performance",
     "Category": "Performance",
     "IsChecked": false,
@@ -324,7 +324,7 @@
     ]
   },
   {
-    "Name": "Disable scheduled defragmentation task",
+    "Content": "Disable scheduled defragmentation task",
     "Description": "Optimizes disk performance",
     "Category": "Performance",
     "IsChecked": false,
@@ -333,7 +333,7 @@
     ]
   },
   {
-    "Name": "Enable NET 3.5",
+    "Content": "Enable NET 3.5",
     "Description": "Some old games and applications require .NET Framework 3.5",
     "Category": "Classic",
     "IsChecked": false,
@@ -342,7 +342,7 @@
     ]
   },
   {
-    "Name": "Super Performance",
+    "Content": "Super Performance",
     "Description": "Disabled all windows effects. You may need to log out and back in for changes to take effect. You can reset to default settings in Settings Tab",
     "Category": "Performance",
     "IsChecked": false,
@@ -351,7 +351,7 @@
     ]
   },
   {
-    "Name": "Remove Widgets from Taskbar in Windows 11",
+    "Content": "Remove Widgets from Taskbar in Windows 11",
     "Description": "Widgets are one of the new user interface elements in Windows 11",
     "Category": "Performance",
     "IsChecked": false,
@@ -360,7 +360,7 @@
     ]
   },
   {
-    "Name": "Set Username to Unknown",
+    "Content": "Set Username to Unknown",
     "Description": "Rename Computer name and Username to Unknown. The changes will take effect after you restart the computer",
     "Category": "Privacy",
     "IsChecked": false,
@@ -369,7 +369,7 @@
     ]
   },
   {
-    "Name": "Fix Arabic encoding",
+    "Content": "Fix Arabic encoding",
     "Description": "Fix issues related to strange symbols appearing in Arabic text",
     "Category": "Fixer",
     "IsChecked": false,
@@ -378,7 +378,7 @@
     ]
   },
   {
-    "Name": "Restore Default File Type Associations",
+    "Content": "Restore Default File Type Associations",
     "Description": "Restoring default apps for file type associations resets Windows settings, allowing the system to select the appropriate programs by default",
     "Category": "Fixer",
     "IsChecked": false,
@@ -387,7 +387,7 @@
     ]
   },
   {
-    "Name": "Limit Defender CPU Usage",
+    "Content": "Limit Defender CPU Usage",
     "Description": "Limits Defender CPU maximum usage at 25% instead of default 50%",
     "Category": "Performance",
     "IsChecked": false,
@@ -396,7 +396,7 @@
     ]
   },
   {
-    "Name": "Optimizing GPU scheduling",
+    "Content": "Optimizing GPU scheduling",
     "Description": "Disables Hardware-Accelerated GPU Scheduling, which may improve performance",
     "Category": "Performance",
     "IsChecked": false,
@@ -405,7 +405,7 @@
     ]
   },
   {
-    "Name": "Disable Fullscreen Optimizations",
+    "Content": "Disable Fullscreen Optimizations",
     "Description": "Fullscreen Optimizations, which may improve performance",
     "Category": "Performance",
     "IsChecked": false,
@@ -414,7 +414,7 @@
     ]
   },
   {
-    "Name": "Optimize Network",
+    "Content": "Optimize Network",
     "Description": "Optimize network performance",
     "Category": "Performance",
     "IsChecked": false,
@@ -423,7 +423,7 @@
     ]
   },
   {
-    "Name": "Enable system cache",
+    "Content": "Enable system cache",
     "Description": "Enabling large system cache can improve performance for certain workloads but may affect system stability",
     "Category": "Performance",
     "IsChecked": false,
@@ -432,7 +432,7 @@
     ]
   },
   {
-    "Name": "Optimizing NVIDIA GPU settings",
+    "Content": "Optimizing NVIDIA GPU settings",
     "Description": "Optimize NVIDIA GPU settings ",
     "Category": "Performance",
     "IsChecked": false,
@@ -441,7 +441,7 @@
     ]
   },
   {
-    "Name": "Enable Faster Shutdown",
+    "Content": "Enable Faster Shutdown",
     "Description": "Optimize NVIDIA GPU settings ",
     "Category": "Performance",
     "IsChecked": false,
@@ -450,7 +450,7 @@
     ]
   },
   {
-    "Name": "Super Control Panel",
+    "Content": "Super Control Panel",
     "Description": "Create Super Control Panel shortcut on Desktop",
     "Category": "Personalization",
     "IsChecked": false,
@@ -459,7 +459,7 @@
     ]
   },
   {
-    "Name": "Detailed BSoD",
+    "Content": "Detailed BSoD",
     "Description": "You will see a detailed Blue Screen of Death (BSOD) with more information",
     "Category": "Fixer",
     "IsChecked": false,
@@ -468,7 +468,7 @@
     ]
   },
   {
-    "Name": "1",
+    "Content": "1",
     "Description": "1",
     "Category": "Privacy",
     "IsChecked": false,
