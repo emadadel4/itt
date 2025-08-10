@@ -34,9 +34,9 @@ function FilterByCat {
         $collectionView.Filter = {
             param ($item)
 
-            $tags = $item.Children[0].Children[0].Tag -split "\|"
+            $tags = $item.Children[0].Children[0].ToolTip
 
-            return $tags[4] -ieq $Cat
+            return $tags -ieq $Cat
         }
     }
 
