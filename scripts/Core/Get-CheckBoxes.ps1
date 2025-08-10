@@ -19,18 +19,14 @@ function Get-SelectedItems {
 
             foreach ($item in $itt.AppsListView.Items) {
                 
-                $checkbox = $item.Children[0].Children[0]
-        
-                $tags = $item.Children[0].Children[0].Tag -split "\|"
-
-                if ($checkbox.IsChecked) {
+                if ($item.IsChecked) {
 
                     $Apps += @{
-                        Name    = $checkbox.Content
-                        Choco   = $tags[0]
-                        Scoop   = $tags[1]
-                        Winget  = $tags[2]
-                        ITT     = $tags[3]
+                        Name    = $item.Content
+                        Choco   = $item.Choco
+                        Scoop   = $item.Scoop
+                        Winget  = $item.Winget
+                        ITT     = $item.ITT
                     }
                 }
             }
@@ -42,17 +38,12 @@ function Get-SelectedItems {
             $Tweaks = @()  
 
             foreach ($item in $itt.TweaksListView.Items) {
-                
-                $checkbox = $item.Children[0].Children[0]
-                
-                $tags = $item.Children[0].Children[0].Tag
-
         
-                if ($checkbox.IsChecked) {
+                if ($item.IsChecked) {
 
                     $Tweaks += @{
-                        Name    = $checkbox.Content
-                        Script   = $tags
+                        Name    = $item.Content
+                        Script   = $item.script
                     }
                 }
             }
