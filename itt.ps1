@@ -939,7 +939,9 @@ $result = Invoke-RestMethod -Uri $Url -Method GET
 Add-Log -Message "`n  $result times worldwide`n"
 }
 catch {
-Add-Log -Message "Your internet connection appears to be slow." -Level "info"
+Add-Log -Message "Unstable internet connection detected." -Level "info"
+Start-Sleep 8
+UsageCount
 }
 }
 function PlayMusic {
@@ -3510,6 +3512,7 @@ Write-Host "Unstable internet connection detected. Retrying in 8 seconds..." -Fo
 Start-Sleep 8
 & $MyInvocation.MyCommand.Definition
 }
+Clear-Host
 $MainXaml.SelectNodes("//*[@Name]") | ForEach-Object {
 $name = $_.Name
 $element = $itt["window"].FindName($name)
