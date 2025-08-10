@@ -12,12 +12,12 @@ function Search {
         param ($item)
 
         # Ensure item structure is valid
-        if ($item.Children.Count -lt 1 -or $item.Children[0].Children.Count -lt 1) {
+        if ($item.Count -lt 1) {
             return $false
         }
 
         # Search within first-level child content
-        return $item.Children[0].Children[0].Content -match $filter -or $item.Children[0].Children[0].Tag -match $filter
+        return $item.Content -match $filter -or $item.Category -match $filter
     }
 }
 function FilterByCat {
@@ -34,7 +34,7 @@ function FilterByCat {
         $collectionView.Filter = {
             param ($item)
 
-            $tags = $item.Children[0].Children[0].ToolTip
+            $tags = $item.Category
 
             return $tags -ieq $Cat
         }
