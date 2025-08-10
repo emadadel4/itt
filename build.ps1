@@ -168,7 +168,7 @@ function GenerateCheckboxes {
         switch ($DatabaseName.ToLower()) {
 
             "applications" {
-                $Tag = "$ChocoPkg|$ScoopPkg|$WingetPkg|$ITTPkg|$CleanedCategory"
+                $Tag = "$ChocoPkg|$ScoopPkg|$WingetPkg|$ITTPkg"
             }
             "tweaks" {
                 $Tag = "$Script"
@@ -182,7 +182,7 @@ function GenerateCheckboxes {
         $Checkboxes += @"
         <StackPanel Orientation="Vertical" Margin="10">
             <StackPanel Orientation="Horizontal">
-                <CheckBox Content="$Content" FontSize="15" Tag="$Tag" $Toggle $Name ToolTip="$CleanedDescription"/>
+                <CheckBox Content="$Content" FontSize="15" Tag="$Tag" $Toggle $Name ToolTip="$CleanedCategory"/>
                 <TextBlock Margin="8" FontSize="11" Text="{Binding $($Item.Category)}"/>
             </StackPanel>
         </StackPanel>
