@@ -35,7 +35,8 @@ function Install-Dependencies {
 
             if (-not (Get-Command choco -ErrorAction SilentlyContinue))
             {
-                Add-Log -Message "Installing dependencies... This might take few seconds" -Level "INFO"
+                Add-Log -Message "Installing dependencies..." -Level "INFO"
+                Add-Log -Message "This might take few seconds" -Level "INFO"
                 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) *> $null
             }
         }
@@ -58,7 +59,8 @@ function Install-Dependencies {
 
             try {
                 
-                Add-Log -Message "Installing Winget... This might take several minutes" -Level "info"
+                Add-Log -Message "Installing Winget..." -Level "info"
+                Add-Log -Message "This might take several minutes" -Level "info"
                 Start-BitsTransfer -Source $VCLibs -Destination "$env:TEMP\Microsoft.VCLibs.Desktop.appx"
                 Start-BitsTransfer -Source $UIXaml -Destination "$env:TEMP\Microsoft.UI.Xaml.appx"
                 Start-BitsTransfer -Source $WingetLatset -Destination "$env:TEMP\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
@@ -78,7 +80,8 @@ function Install-Dependencies {
 
             if (-not (Get-Command scoop -ErrorAction SilentlyContinue))
             {
-                Add-Log -Message "Installing scoop... This might take few seconds" -Level "info"
+                Add-Log -Message "Installing scoop..." -Level "info"
+                Add-Log -Message "This might take few seconds" -Level "info"
                 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
                 Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
                 scoop bucket add extras
