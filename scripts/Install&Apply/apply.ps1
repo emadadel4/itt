@@ -42,7 +42,7 @@ function Invoke-Apply {
         $itt["window"].Dispatcher.Invoke([action] { Set-Taskbar -progress "Indeterminate" -value 0.01 -icon "logo" })
 
         foreach ($tweak in $selectedTweaks) {
-            Add-Log -Message "::::$($tweak.Name)::::" -Level "default"
+            Add-Log -Message "::::$($tweak.Content)::::" -Level "default"
             ExecuteCommand -tweak $tweak.Script
         }
 
