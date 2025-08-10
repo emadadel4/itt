@@ -2314,11 +2314,6 @@ function Search {
     $collectionView.Filter = {
         param ($item)
 
-        # Ensure item structure is valid
-        if ($item.Count -lt 1) {
-            return $false
-        }
-
         # Search within first-level child content
         return $item.Content -match $filter -or $item.Category -match $filter
     }
