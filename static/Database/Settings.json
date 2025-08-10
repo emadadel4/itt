@@ -1,121 +1,87 @@
 [
   {
-    "Content": "Show file extensions",
+    "Name": "Show file extensions",
     "description": "Show file extensions in Windows displays the suffix at the end of file names (like .txt, .jpg, .exe)",
-    "category": "Protection",
-    "IsChecked": false,
-    "XName": "showfileextensions"
+    "category": "Protection"
   },
   {
-    "Content": "Show Super Hidden",
+    "Name": "Show Super Hidden",
     "description": "Show Super Hidden displays files and folders",
-    "category": "Protection",
-    "IsChecked": false,
-    "XName": "showsuperhidden"
+    "category": "Protection"
   },
   {
-    "Content": "Dark Mode",
+    "Name": "Dark Mode",
     "description": "Dark Mode is a setting that changes the screen to darker colors, reducing eye strain and saving battery life on OLED screens",
-    "category": "Personalization",
-    "IsChecked": false,
-    "XName": "darkmode"
+    "category": "Personalization"
   },
   {
-    "Content": "NumLook",
+    "Name": "NumLook",
     "description": "Toggle the Num Lock key state when your computer starts",
-    "category": "Protection",
-    "IsChecked": false,
-    "XName": "numlook"
+    "category": "Protection"
   },
   {
-    "Content": "Sticky Keys",
+    "Name": "Sticky Keys",
     "description": "Sticky keys is an accessibility feature of some graphical user interfaces which assists users who have physical disabilities",
-    "category": "Personalization",
-    "IsChecked": false,
-    "XName": "stickykeys"
+    "category": "Personalization"
   },
   {
-    "Content": "Mouse Acceleration",
+    "Name": "Mouse Acceleration",
     "description": "Cursor movement is affected by the speed of your physical mouse movements",
-    "category": "Personalization",
-    "IsChecked": false,
-    "XName": "mouseacceleration"
+    "category": "Personalization"
   },
   {
-    "Content": "End Task On Taskbar Windows 11",
+    "Name": "End Task On Taskbar Windows 11",
     "description": "End task when right clicking a program in the taskbar",
-    "category": "Personalization",
-    "IsChecked": false,
-    "XName": "endtaskontaskbarwindows11"
+    "category": "Personalization"
   },
   {
-    "Content": "Clear Page File At Shutdown",
+    "Name": "Clear Page File At Shutdown",
     "description": "Removes sensitive data stored in virtual memory when the system shuts down",
-    "category": "Performance",
-    "IsChecked": false,
-    "XName": "clearpagefileatshutdown"
+    "category": "Performance"
   },
   {
-    "Content": "Auto End Tasks",
+    "Name": "Auto End Tasks",
     "description": "Automatically end tasks that are not responding",
-    "category": "Performance",
-    "IsChecked": false,
-    "XName": "autoendtasks"
+    "category": "Performance"
   },
   {
-    "Content": "Performance Options",
+    "Name": "Performance Options",
     "description": "Adjust for best performance",
-    "category": "Performance",
-    "IsChecked": false,
-    "XName": "performanceoptions"
+    "category": "Performance"
   },
   {
-    "Content": "Launch To This PC",
+    "Name": "Launch To This PC",
     "description": "File Explorer open directly to This PC",
-    "category": "Personalization",
-    "IsChecked": false,
-    "XName": "launchtothispc"
+    "category": "Personalization"
   },
   {
-    "Content": "Disable Automatic Driver Installation",
+    "Name": "Disable Automatic Driver Installation",
     "description": "Automatically downloading and installing drivers",
-    "category": "Drivers",
-    "IsChecked": false,
-    "XName": "disableautomaticdriverinstallation"
+    "category": "Drivers"
   },
   {
-    "Content": "Always show icons never Thumbnail",
+    "Name": "Always show icons never Thumbnail",
     "description": "Show icons in the file explorer instead of thumbnails",
-    "category": "Performance",
-    "IsChecked": false,
-    "XName": "AlwaysshowiconsneverThumbnail"
+    "category": "Performance"
   },
   {
-    "Content": "Core Isolation Memory Integrity",
+    "Name": "Core Isolation Memory Integrity",
     "description": "Core Isolation Memory Integrity",
-    "category": "Security",
-    "IsChecked": false,
-    "XName": "CoreIsolationMemoryIntegrity"
+    "category": "Security"
   },
   {
-    "Content": "Windows Sandbox",
+    "Name": "Windows Sandbox",
     "description": "Windows Sandbox is a feature that allows you to run a sandboxed version of Windows",
-    "category": "Development",
-    "IsChecked": false,
-    "XName": "WindowsSandbox"
+    "category": "Development"
   },
   {
-    "Content": "Windows Subsystem for Linux",
+    "Name": "Windows Subsystem for Linux",
     "description": "Windows Subsystem for Linux is an optional feature of Windows that allows Linux programs to run natively on Windows without the need for a separate virtual machine or dual booting",
-    "category": "Development",
-    "IsChecked": false,
-    "XName": "WindowsSubSystemForLinux"
+    "category": "Development"
   },
   {
-    "Content": "HyperV Virtualization",
+    "Name": "HyperV Virtualization",
     "description": "Hyper-V is a hardware virtualization product developed by Microsoft that allows users to create and manage virtual machines",
-    "category": "Development",
-    "IsChecked": false,
-    "XName": "HyperVVirtualization"
+    "category": "Development"
   }
 ]
