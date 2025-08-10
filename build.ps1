@@ -662,8 +662,8 @@ try {
 #===========================================================================
 "@
 
-    $AppsCheckboxes   = GenerateCheckboxes -Database $itt.database.Applications -DatabaseName "applications" -ContentField "Name"
-    $TweaksCheckboxes = GenerateCheckboxes -Database $itt.database.Tweaks -DatabaseName "tweaks" -ContentField "Name" -IsCheckedField "check"
+    #$AppsCheckboxes   = GenerateCheckboxes -Database $itt.database.Applications -DatabaseName "applications" -ContentField "Name"
+    #$TweaksCheckboxes = GenerateCheckboxes -Database $itt.database.Tweaks -DatabaseName "tweaks" -ContentField "Name" -IsCheckedField "check"
     $SettingsCheckboxes = GenerateCheckboxes -Database $itt.database.Settings -ContentField "Name" -NameField "Name" -ToggleField "Style=" { StaticResource ToggleSwitchStyle }""
 
     # Get xaml files from Themes and put it inside MainXamlContent
