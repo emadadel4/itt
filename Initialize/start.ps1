@@ -7,7 +7,7 @@ param (
 )
 
 # Load DLLs
-Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'PresentationCore', 'WindowsBase'
+Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'PresentationCore', 'WindowsBase','System.Net.Http'
 
 # Synchronized Hashtable for shared variables
 $itt = [Hashtable]::Synchronized(@{
