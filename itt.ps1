@@ -2315,7 +2315,7 @@ function Search {
         param ($item)
 
         # Search within first-level child content
-        return $item.Content -match $filter -or $item.Category -match $filter
+        return $item.Content -match $filter -or $item.category -match $filter
     }
 }
 function FilterByCat {
@@ -2332,7 +2332,7 @@ function FilterByCat {
         $collectionView.Filter = {
             param ($item)
 
-            $tags = $item.Category
+            $tags = $item.category
 
             return $tags -ieq $Cat
         }
