@@ -3,416 +3,477 @@
     "Name": "Disk cleanup",
     "Description": "Clean temporary files that are not necessary",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/Disk%20cleanup.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/Disk%20cleanup.ps1 | iex"
+    ]
   },
   {
     "Name": "System File Checker",
     "Description": "sfc /scannow Use the System File Checker tool to repair missing or corrupted system files",
     "Category": "Fixer",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/SFC/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/SFC/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Restore Classic Context Menu Windows 11",
     "Description": "Restore the old context menu for Windows 11",
     "Category": "Classic",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Restore%20Classic%20Context%20Menu%20Windows%2011/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Restore%20Classic%20Context%20Menu%20Windows%2011/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Restore All Windows Services to Default",
     "Description": "if you face issues with services, try Restore All Windows Services to Default",
     "Category": "Fixer",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Restore%20All%20Windows%20Services%20to%20Default/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Restore%20All%20Windows%20Services%20to%20Default/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Clean Taskbar",
     "Description": "Disable icons",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Clean%20Taskbar/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Clean%20Taskbar/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Remove Microsoft Apps",
     "Description": "Uninstalls pre-installed Microsoft apps like Clipchamp, People etc",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20MS%20Apps/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20MS%20Apps/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Remove Xbox Apps",
     "Description": "Uninstalls pre-installed Xbox apps",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Xbox%20apps/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Xbox%20apps/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Fix Stutter in games",
     "Description": "Fix Stutter in Games (Disable GameBarPresenceWriter). Windows 10/11",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Fix%20Stutter/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Fix%20Stutter/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Enable the Ultimate Performance Power Plan",
     "Description": "This will add the Ultimate Performance power plan, to enable it go to the power options",
     "Category": "Power",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20Ultimate%20Performance%20Power%20Plan/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20Ultimate%20Performance%20Power%20Plan/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Reset the TCP/IP Stack",
     "Description": "If you have an internet issue, reset the network configuration",
     "Category": "Fixer",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Netsh/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Netsh/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Setup Auto login",
     "Description": "Setup auto login Windows username",
     "Category": "Classic",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Setup%20Auto%20login/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Setup%20Auto%20login/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable Xbox Services",
     "Description": "Disables all Xbox Services Game Mode",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Xbox%20Services/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Xbox%20Services/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable Start Menu Ads",
     "Description": "Start menu Ads and web search",
     "Category": "Privacy",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Start%20Menu%20Ads/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Start%20Menu%20Ads/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Turn off background Apps",
     "Description": "Turn off background apps",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Background%20apps/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Background%20apps/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable suggestions on Start Menu",
     "Description": "Suggestions on start menu",
     "Category": "Privacy",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20suggestions%20on%20Start%20Menu/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20suggestions%20on%20Start%20Menu/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Remove Folder Shortcuts From File Explorer",
     "Description": "Documents, Videos, Pictures, Desktop. Shortcuts from File Explorer",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Folder%20Shortcuts%20From%20File%20Explorer/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Folder%20Shortcuts%20From%20File%20Explorer/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Optimize Windows Services",
     "Description": "(Print Spooler), (Fax), (Diagnostic Policy), (Downloaded Maps Manager), (Windows Error Reporting Service), (Remote Registry) , (Internet Connection Sharing), (Disables Telemetry and Data)",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimize%20Windows%20Services/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimize%20Windows%20Services/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable Hibernate",
     "Description": "Allows the system to save the current state of your computer",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Hibernate/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Hibernate/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable OneDrive",
     "Description": "Disabling OneDrive",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20OneDrive/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20OneDrive/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Remove OneDrive",
     "Description": "Removes OneDrive from the system",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/OneDrive-Uninstaller.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/emadadel4/WindowsTweaks/refs/heads/main/OneDrive-Uninstaller.ps1 | iex"
+    ]
   },
   {
     "Name": "Activate Windows Classic Photo Viewer",
     "Description": "Classic Photo Viewer",
     "Category": "Classic",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Old%20Photo%20Viewer/run.bat | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Old%20Photo%20Viewer/run.bat | iex"
+    ]
   },
   {
     "Name": "Remove Copilot in Windows 11",
     "Description": "AI assistance",
     "Category": "Privacy",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Copilot%20Windows%2011/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Copilot%20Windows%2011/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable Recall Snapshots in Windows 11 24H",
     "Description": "Recall is an upcoming preview experience exclusive to Copilot+",
     "Category": "Privacy",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Recall%20Snapshots%20in%20Windows%2011%2024H/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Recall%20Snapshots%20in%20Windows%2011%2024H/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Delete Thumbnail Cache",
     "Description": "Removing the stored image thumbnails",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Delete%20Thumbnail%20Cache/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Delete%20Thumbnail%20Cache/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Classic Volume Control",
     "Description": "The old volume control",
     "Category": "Classic",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Classic%20Volume%20Control/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Classic%20Volume%20Control/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable Toggle Key Sounds",
     "Description": "Toggle key sounds are audio cues that play when you press the Caps Lock, Num Lock, or Scroll Lock keys",
     "Category": "Classic",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Sticky%20Keys/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Sticky%20Keys/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable Homegroup",
     "Description": "HomeGroup is a passwordprotected home networking service that lets you share your stuff with other PCs",
     "Category": "Privacy",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Homegroup/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Homegroup/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Remove Home and Gallery from explorer in Windows 11",
     "Description": "Home and Gallery from explorer and sets This PC as default",
     "Category": "Privacy",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Home%20and%20Gallery%20from%20explorer%20in%20Windows%2011/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Home%20and%20Gallery%20from%20explorer%20in%20Windows%2011/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable Wifi Sense",
     "Description": "Service that phones home all nearby scanned wifi networks and your location",
     "Category": "Protection",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Wifi%20Sense/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Wifi%20Sense/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable Autoplay and Autorun",
     "Description": "Autoplay in prevents the automatic launch of media or applications when a removable device, such as a USB drive or CD",
     "Category": "Protection",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Autoplay%20and%20Autorun/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Autoplay%20and%20Autorun/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable SMB Server",
     "Description": "SMB Server enables file and printer sharing over a network, allowing access to resources on remote computers",
     "Category": "Protection",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20SMB%20Server/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20SMB%20Server/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Set current network profile to public",
     "Description": "Deny file sharing, device discovery",
     "Category": "Privacy",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Set%20network%20profile%20to%20public/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Set%20network%20profile%20to%20public/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Enable F8 boot menu options",
     "Description": "Enable F8 boot menu options",
     "Category": "BIOS",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20F8%20boot%20menu%20options/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20F8%20boot%20menu%20options/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable display and sleep mode timeouts",
     "Description": "If you frequently use your device, disable this",
     "Category": "Power",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20display%20and%20sleep%20mode%20timeouts/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20display%20and%20sleep%20mode%20timeouts/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Set Wallpaper desktop Quality to 100%",
     "Description": "Set Wallpaper desktop Quality",
     "Category": "Personalization",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Set%20Wallpaper%20desktop%20Quality%20to%20100%25/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Set%20Wallpaper%20desktop%20Quality%20to%20100%25/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable Windows Transparency",
     "Description": "Disableing improve performance",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Windows%20Transparency/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Windows%20Transparency/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable scheduled defragmentation task",
     "Description": "Optimizes disk performance",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20scheduled%20defragmentation%20task/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20scheduled%20defragmentation%20task/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Enable NET 3.5",
     "Description": "Some old games and applications require .NET Framework 3.5",
     "Category": "Classic",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20NET%203.5/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20NET%203.5/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Super Performance",
     "Description": "Disabled all windows effects. You may need to log out and back in for changes to take effect. You can reset to default settings in Settings Tab",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Super%20Performance/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Super%20Performance/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Remove Widgets from Taskbar in Windows 11",
     "Description": "Widgets are one of the new user interface elements in Windows 11",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Widgets%20from%20Taskbar%20in%20Windows%2011/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Remove%20Widgets%20from%20Taskbar%20in%20Windows%2011/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Set Username to Unknown",
     "Description": "Rename Computer name and Username to Unknown. The changes will take effect after you restart the computer",
     "Category": "Privacy",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Set%20Username%20to%20Unknown/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Set%20Username%20to%20Unknown/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Fix Arabic encoding",
     "Description": "Fix issues related to strange symbols appearing in Arabic text",
     "Category": "Fixer",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Fix%20Arabic%20encoding/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Fix%20Arabic%20encoding/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Restore Default File Type Associations",
     "Description": "Restoring default apps for file type associations resets Windows settings, allowing the system to select the appropriate programs by default",
     "Category": "Fixer",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Restore%20Default%20File%20Type%20Associations/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Restore%20Default%20File%20Type%20Associations/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Limit Defender CPU Usage",
     "Description": "Limits Defender CPU maximum usage at 25% instead of default 50%",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "true",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Limit%20Defender%20CPU%20Usage/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Limit%20Defender%20CPU%20Usage/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Optimizing GPU scheduling",
     "Description": "Disables Hardware-Accelerated GPU Scheduling, which may improve performance",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimizing%20GPU%20scheduling/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimizing%20GPU%20scheduling/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Disable Fullscreen Optimizations",
     "Description": "Fullscreen Optimizations, which may improve performance",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Fullscreen%20Optimizations/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Fullscreen%20Optimizations/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Optimize Network",
     "Description": "Optimize network performance",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimize%20Network/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimize%20Network/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Enable system cache",
     "Description": "Enabling large system cache can improve performance for certain workloads but may affect system stability",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20system%20cache/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20system%20cache/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Optimizing NVIDIA GPU settings",
     "Description": "Optimize NVIDIA GPU settings ",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimizing%20NVIDIA%20GPU%20settings/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Optimizing%20NVIDIA%20GPU%20settings/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Enable Faster Shutdown",
     "Description": "Optimize NVIDIA GPU settings ",
     "Category": "Performance",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20Faster%20Shutdown/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20Faster%20Shutdown/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Super Control Panel",
     "Description": "Create Super Control Panel shortcut on Desktop",
     "Category": "Personalization",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Super%20Control%20Panel/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Super%20Control%20Panel/run.ps1 | iex"
+    ]
   },
   {
     "Name": "Detailed BSoD",
     "Description": "You will see a detailed Blue Screen of Death (BSOD) with more information",
     "Category": "Fixer",
-    "Check": "false",
-    "Refresh": "false",
-    "Script": ["irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Detailed%20BSoD/run.ps1 | iex"]
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Detailed%20BSoD/run.ps1 | iex"
+    ]
+  },
+  {
+    "Name": "1",
+    "Description": "1",
+    "Category": "Privacy",
+    "IsChecked": false,
+    "Script": [
+      "1"
+    ]
   }
 ]
