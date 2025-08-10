@@ -153,18 +153,23 @@
 
                         <!--End AppsCategory-->
 
-                <ListView Name="appslist" 
-                    AlternationCount="2"
-                    Grid.Row="1">
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <VirtualizingStackPanel />
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
-                    <!-- {{Apps}} -->
-                </ListView>
-
-            </Grid> 
+                    <ListView Name="appslist" AlternationCount="2" Grid.Row="1">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Margin="15">
+                                    <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
+                                    <TextBlock Margin="10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding Description}" Width="666"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                
+                </Grid> 
 
             </TabItem>
 
@@ -178,7 +183,6 @@
                             </StackPanel>
                         </DataTemplate>
                 </TabItem.HeaderTemplate>
-            
 
                 <Grid>
 
@@ -261,15 +265,20 @@
                         </ComboBox>
                     <!--End TwaeksCategory-->
 
-                   <ListView Name="tweakslist" 
-                        Grid.Row="1"
-                        AlternationCount="2">
+                    <ListView Name="tweakslist" AlternationCount="2" Grid.Row="1">
                         <ListView.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <VirtualizingStackPanel />
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        <!-- {{Tweaks}} -->
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Margin="15">
+                                    <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
+                                    <TextBlock Margin="10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding Description}" Width="666"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
 
                 </Grid>
@@ -295,6 +304,7 @@
                         </ListView.ItemsPanel>
                         <!-- {{Settings}} -->
                     </ListView>
+                    
             </TabItem>
 
     </TabControl>
