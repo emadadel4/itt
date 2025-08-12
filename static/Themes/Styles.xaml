@@ -65,7 +65,7 @@
     </Style>
 
     <Style TargetType="ListViewItem">
-        <Setter Property="Margin" Value="0 5 0 0"/>
+        <Setter Property="Margin" Value="0 10 0 0"/>
         <Setter Property="BorderThickness" Value="0.3"/>
         <Setter Property="BorderBrush" Value="DarkGray"/>
         <Setter Property="Padding" Value="0"/>
@@ -90,10 +90,12 @@
                 <Setter Property="Background" Value="{DynamicResource itemColor1}" />
                 <Setter Property="BorderBrush" Value="DarkGray"/>
                 <Setter Property="BorderThickness" Value="0.7"/>
+                <Setter Property="Opacity" Value="0.5"/>
             </Trigger>
             <Trigger Property="ItemsControl.AlternationIndex" Value="1">
                 <Setter Property="Background" Value="{DynamicResource itemColor2}" />
                 <Setter Property="BorderBrush" Value="DarkGray"/>
+                <Setter Property="Opacity" Value="0.5"/>
                 <Setter Property="BorderThickness" Value="0.7"/>
             </Trigger>
             <EventTrigger RoutedEvent="FrameworkElement.Loaded">
