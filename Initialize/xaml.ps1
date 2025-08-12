@@ -194,19 +194,30 @@ $c = [System.Net.Http.HttpClient]::new($h)
 $appsUrl   = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/Applications.json"
 $tweaksUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/Tweaks.json"
 
-try {
-    Write-Host "Getting Latest Apps and Tweaks..." -ForegroundColor Yellow
-    $aTask, $tTask = $c.GetStringAsync($appsUrl), $c.GetStringAsync($tweaksUrl)
-    [Threading.Tasks.Task]::WaitAll($aTask, $tTask)
-    $itt.AppsListView.ItemsSource   = $aTask.Result | ConvertFrom-Json
-    $itt.TweaksListView.ItemsSource = $tTask.Result | ConvertFrom-Json
-}
-catch {
-    Write-Host "Unstable internet connection detected. Retrying in 8 seconds..." -ForegroundColor Yellow
+while ($true) {
+    try {
+        Write-Host "Relax, good things are loading… almost there!" -ForegroundColor Yellow
+        $aTask, $tTask = $c.GetStringAsync($appsUrl), $c.GetStringAsync($tweaksUrl)
+        [Threading.Tasks.Task]::WaitAll($aTask, $tTask)
+
+        $appsData   = $aTask.Result | ConvertFrom-Json
+        $tweaksData = $tTask.Result | ConvertFrom-Json
+
+        if ($appsData -and $tweaksData) {
+            $itt.AppsListView.ItemsSource   = $appsData
+            $itt.TweaksListView.ItemsSource = $tweaksData
+            break
+        }
+        else {
+            Write-Host "Still loading data..." -ForegroundColor Yellow
+        }
+    }
+    catch {
+        Write-Host "Unstable internet connection detected. Retrying in 8 seconds..." -ForegroundColor Yellow
+    }
+
     Start-Sleep 8
-    & $MyInvocation.MyCommand.Definition
 }
 #===========================================================================
 #endregion Fetch Data
 #===========================================================================
-Clear-Host
