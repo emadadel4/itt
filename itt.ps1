@@ -3450,19 +3450,27 @@ $h.AutomaticDecompression = [System.Net.DecompressionMethods] 'GZip,Deflate'
 $c = [System.Net.Http.HttpClient]::new($h)
 $appsUrl   = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/Applications.json"
 $tweaksUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/Tweaks.json"
+while ($true) {
 try {
-Write-Host "Getting Latest Apps and Tweaks..." -ForegroundColor Yellow
+Write-Host "Relax, good things are loading… almost there!" -ForegroundColor Yellow
 $aTask, $tTask = $c.GetStringAsync($appsUrl), $c.GetStringAsync($tweaksUrl)
 [Threading.Tasks.Task]::WaitAll($aTask, $tTask)
-$itt.AppsListView.ItemsSource   = $aTask.Result | ConvertFrom-Json
-$itt.TweaksListView.ItemsSource = $tTask.Result | ConvertFrom-Json
+$appsData   = $aTask.Result | ConvertFrom-Json
+$tweaksData = $tTask.Result | ConvertFrom-Json
+if ($appsData -and $tweaksData) {
+$itt.AppsListView.ItemsSource   = $appsData
+$itt.TweaksListView.ItemsSource = $tweaksData
+break
+}
+else {
+Write-Host "Still loading data..." -ForegroundColor Yellow
+}
 }
 catch {
 Write-Host "Unstable internet connection detected. Retrying in 8 seconds..." -ForegroundColor Yellow
-Start-Sleep 8
-& $MyInvocation.MyCommand.Definition
 }
-Clear-Host
+Start-Sleep 8
+}
 $MainXaml.SelectNodes("//*[@Name]") | ForEach-Object {
 $name = $_.Name
 $element = $itt["window"].FindName($name)
