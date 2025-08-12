@@ -9,7 +9,7 @@
     <!-- Text -->
     <SolidColorBrush x:Key="TextColorPrimary" Color="#adbac7"/>
     <SolidColorBrush x:Key="TextColorSecondaryColor" Color="#cdd9e5"/>
-    <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#768390"/>
+    <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#B9BBBE"/>
     
     <!-- Buttons and Highlights -->
     <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#539bf5"/>

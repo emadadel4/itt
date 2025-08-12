@@ -27,7 +27,7 @@ function Get-file {
             $collectionView.Filter = {
                 param($item)
 
-                if ($FileContent.Name -contains $item.Children[0].Children[0].Content) { return $item.Children[0].Children[0].IsChecked = $true } else { return $false }
+                if ($FileContent.Name -contains $item.Content) { return $item.IsChecked = $true } else { return $false }
             }
         }
         catch {
@@ -48,9 +48,9 @@ function Save-File {
     # Collect checked items
     $items = foreach ($item in $itt.AppsListView.Items) {
         
-        if ($item.Children[0].Children[0].IsChecked) {
+        if ($item.IsChecked) {
             [PSCustomObject]@{
-                Name  = $item.Children[0].Children[0].Content
+                Name  = $item.Content
             }
         }
     }
@@ -121,7 +121,7 @@ function Quick-Install {
     $collectionView.Filter = {
         param($item)
 
-        if ($FileContent.Name -contains $item.Children[0].Children[0].Content) { return $item.Children[0].Children[0].IsChecked = $true } else { return $false }
+        if ($FileContent.Name -contains $item.Content) { return $item.IsChecked = $true } else { return $false }
     }
 
     # Start the installation process

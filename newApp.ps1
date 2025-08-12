@@ -87,6 +87,7 @@ function Create-JsonObject {
         winget      = "na"
         itt         = "na"
         category    = ""
+        IsChecked   = $false
     }
 
     $downloadMethod = Download-Mthoed
@@ -204,6 +205,8 @@ if (Test-Path $applications) {
             winget      = $item.winget
             itt         = $item.itt
             category    = $item.category
+            IsChecked   = $false
+
         }
     }
     # Write the ordered JSON to the file

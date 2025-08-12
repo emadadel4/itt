@@ -34,9 +34,7 @@ function Finish {
     $itt.$ListView.Dispatcher.Invoke([Action] {
             # Uncheck all items
             foreach ($item in $itt.$ListView.Items) {
-                if ($item.Children.Count -gt 0 -and $item.Children[0].Children.Count -gt 0) {
-                    $item.Children[0].Children[0].IsChecked = $false
-                }
+                $item.IsChecked = $false
             }
             
             # Clear the list view selection and reset the filter
@@ -65,7 +63,7 @@ function Show-Selected {
                 param ($item)
 
                 # Check if item is selected
-                return $item.Children[0].Children[0].IsChecked -eq $true
+                return $item.IsChecked -eq $true
             }
         }
         Default {
@@ -74,7 +72,7 @@ function Show-Selected {
                 param ($item)
 
                 # Uncheck all checkboxes
-                $item.Children[0].Children[0].IsChecked = $false
+                $item.IsChecked = $false
             }
 
             # Reset collection view

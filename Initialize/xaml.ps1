@@ -183,3 +183,30 @@ $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
 #===========================================================================
 #endregion Initialize WPF Controls
 #===========================================================================
+
+#===========================================================================
+#region Fetch Data
+#===========================================================================
+$h = [System.Net.Http.HttpClientHandler]::new()
+$h.AutomaticDecompression = [System.Net.DecompressionMethods] 'GZip,Deflate'
+$c = [System.Net.Http.HttpClient]::new($h)
+
+$appsUrl   = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/Applications.json"
+$tweaksUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/Tweaks.json"
+
+try {
+    Write-Host "Getting Latest Apps and Tweaks..." -ForegroundColor Yellow
+    $aTask, $tTask = $c.GetStringAsync($appsUrl), $c.GetStringAsync($tweaksUrl)
+    [Threading.Tasks.Task]::WaitAll($aTask, $tTask)
+    $itt.AppsListView.ItemsSource   = $aTask.Result | ConvertFrom-Json
+    $itt.TweaksListView.ItemsSource = $tTask.Result | ConvertFrom-Json
+}
+catch {
+    Write-Host "Unstable internet connection detected. Retrying in 8 seconds..." -ForegroundColor Yellow
+    Start-Sleep 8
+    & $MyInvocation.MyCommand.Definition
+}
+#===========================================================================
+#endregion Fetch Data
+#===========================================================================
+Clear-Host

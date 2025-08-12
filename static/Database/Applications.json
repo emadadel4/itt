@@ -1,3755 +1,4172 @@
 [
   {
-    "Name": "Brave",
+    "Content": "Brave",
     "Description": "A privacy focused web browser that blocks ads and trackers",
     "choco": "brave",
     "scoop": "extras/brave",
     "winget": "Brave.Brave",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Mozilla Firefox",
+    "Content": "Mozilla Firefox",
     "Description": "A widely-used open-source web browser known for its speed, privacy",
     "choco": "firefox",
     "scoop": "extras/firefox",
     "winget": "Mozilla.Firefox",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Thorium AVX",
+    "Content": "Thorium AVX",
     "Description": "A web browser designed for smooth and secure browsing experiences",
     "choco": "thorium --params /AVX",
     "scoop": "versions/thorium-avx2",
     "winget": "Alex313031.Thorium.AVX2",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Google Chrome",
+    "Content": "Google Chrome",
     "Description": "A popular web browser known for its speed, simplicity, and",
     "choco": "googlechrome",
     "scoop": "extras/googlechrome",
     "winget": "Google.Chrome",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Thorium SSE3",
+    "Content": "Thorium SSE3",
     "Description": "A web browser designed for smooth and secure browsing experiences",
     "choco": "thorium --params /SSE3",
     "scoop": "extras/thorium",
     "winget": "Alex313031.Thorium",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Mozilla Firefox ESR",
+    "Content": "Mozilla Firefox ESR",
     "Description": "A widely-used open-source web browser known for its speed, privacy",
     "choco": "firefoxesr",
     "scoop": "extras/firefox-esr",
     "winget": "Mozilla.Firefox.ESR",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Edge",
+    "Content": "Microsoft Edge",
     "Description": "Microsoft's web browser built for fast and secure internet surfing",
     "choco": "microsoft-edge",
     "scoop": "na",
     "winget": "Microsoft.Edge",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Chromium",
+    "Content": "Chromium",
     "Description": "An open-source web browser project that serves as the foundation",
     "choco": "chromium",
     "scoop": "extras/chromium",
     "winget": "eloston.ungoogled-chromium",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Tor Browser",
+    "Content": "Tor Browser",
     "Description": "A web browser that prioritizes user privacy by routing internet",
     "choco": "tor-browser",
     "scoop": "extras/tor-browser",
     "winget": "TorProject.TorBrowser",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Opera",
+    "Content": "Opera",
     "Description": "The Opera web browser makes the Web fast and fun",
     "choco": "opera",
     "scoop": "extras/opera",
     "winget": "Opera.Opera",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Internet Download Manager",
+    "Content": "Internet Download Manager",
     "Description": "A popular download manager tool that accelerates downloads and allows",
     "choco": "internet-download-manager",
     "scoop": "extras/abdownloadmanager",
     "winget": "Tonec.InternetDownloadManager",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "JDownloader",
+    "Content": "JDownloader",
     "Description": "JDownloader is an internet download manager",
     "choco": "jdownloader",
     "scoop": "extras/jdownloader",
     "winget": "AppWork.JDownloader",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "KLite Mega Codec Full Pack",
+    "Content": "KLite Mega Codec Full Pack",
     "Description": "Comprehensive collection of audio and video codecs, filters, and tools",
     "choco": "k-litecodecpackfull",
     "scoop": "nonportable/k-lite-codec-pack-full-np",
     "winget": "na",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "PotPlayer",
+    "Content": "PotPlayer",
     "Description": "A multimedia player with a sleek interface and advanced features",
     "choco": "potplayer",
     "scoop": "extras/potplayer",
     "winget": "Daum.PotPlayer",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "VLC",
+    "Content": "VLC",
     "Description": "A versatile media player capable of playing almost any multimedia",
     "choco": "vlc.install",
     "scoop": "extras/vlc",
     "winget": "VideoLAN.VLC",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "Kodi",
+    "Content": "Kodi",
     "Description": "A powerful open-source media center software that allows users to",
     "choco": "kodi",
     "scoop": "extras/kodi",
     "winget": "9NBLGGH4T892",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "Jellyfin Server",
+    "Content": "Jellyfin Server",
     "Description": "An open-source media server software that enables users to stream",
     "choco": "jellyfin",
     "scoop": "extras/jellyfin",
     "winget": "Jellyfin.Server",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "Winamp",
+    "Content": "Winamp",
     "Description": "A classic media player known for its customizable interface and",
     "choco": "winamp",
     "scoop": "na",
     "winget": "Winamp.Winamp",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "Aimp",
+    "Content": "Aimp",
     "Description": "A lightweight and feature-rich audio player with support for various",
     "choco": "na",
     "scoop": "extras/aimp",
     "winget": "na",
     "itt": "aimp",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "Spotify",
+    "Content": "Spotify",
     "Description": "Spotify is a new way to listen to music",
     "choco": "spotify",
     "scoop": "extras/spotify",
     "winget": "Spotify.Spotify",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "FastStone Image Viewer",
+    "Content": "FastStone Image Viewer",
     "Description": "FastStone Image Viewer is a fast, stable, user-friendly image browser",
     "choco": "fsviewer",
     "scoop": "extras/fsviewer",
     "winget": "FastStone.Viewer",
     "itt": "na",
-    "category": "Imaging"
+    "category": "Imaging",
+    "IsChecked": false
   },
   {
-    "Name": "OpenOffice",
+    "Content": "OpenOffice",
     "Description": "An open-source office productivity suite offering word processing, spreadsheet, presentation",
     "choco": "openoffice",
     "scoop": "extras/openoffice",
     "winget": "Apache.OpenOffice",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "FoxitReader",
+    "Content": "FoxitReader",
     "Description": "A lightweight and feature-rich PDF reader with annotation, form filling",
     "choco": "foxitreader",
     "scoop": "extras/foxit-reader",
     "winget": "Foxit.FoxitReader",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "LibreOffice",
+    "Content": "LibreOffice",
     "Description": "A powerful open-source office suite providing word processing, spreadsheet, presentation",
     "choco": "libreoffice-fresh",
     "scoop": "extras/libreoffice",
     "winget": "Foxit.FoxitReader",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "SumatraPDF",
+    "Content": "SumatraPDF",
     "Description": "A lightweight and fast PDF reader with minimalistic design and",
     "choco": "sumatrapdf.install",
     "scoop": "extras/sumatrapdf",
     "winget": "SumatraPDF.SumatraPDF",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "WinRAR",
+    "Content": "WinRAR",
     "Description": "A popular file compression and archiving utility that supports various",
     "choco": "winrar",
     "scoop": "extras/winrar",
     "winget": "RARLab.WinRAR",
     "itt": "na",
-    "category": "Compression"
+    "category": "Compression",
+    "IsChecked": false
   },
   {
-    "Name": "7Zip",
+    "Content": "7Zip",
     "Description": "An open-source file archiver with a high compression ratio, supporting",
     "choco": "7zip",
     "scoop": "extras/7zip",
     "winget": "7zip.7zip",
     "itt": "na",
-    "category": "Compression"
+    "category": "Compression",
+    "IsChecked": false
   },
   {
-    "Name": "PeaZip",
+    "Content": "PeaZip",
     "Description": " PeaZip is a free cross-platform file archiver",
     "choco": "peazip",
     "scoop": "extras/peazip",
     "winget": "Giorgiotani.Peazip",
     "itt": "na",
-    "category": "Compression"
+    "category": "Compression",
+    "IsChecked": false
   },
   {
-    "Name": "Telegram Desktop",
+    "Content": "Telegram Desktop",
     "Description": "A cross-platform messaging app with a focus on speed and",
     "choco": "telegram",
     "scoop": "extras/telegram",
     "winget": "Telegram.TelegramDesktop",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "Signal",
+    "Content": "Signal",
     "Description": "Fast, simple, secure. Privacy that fits in your pocket",
     "choco": "signal",
     "scoop": "extras/signal",
     "winget": "OpenWhisperSystems.Signal",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "Meta Messenger",
+    "Content": "Meta Messenger",
     "Description": "A messaging app that allows users to connect with friends",
     "choco": "messenger",
     "scoop": "na",
     "winget": "9WZDNCRF0083",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "Zoom",
+    "Content": "Zoom",
     "Description": "A video conferencing app that facilitates online meetings, webinars, and",
     "choco": "zoom",
     "scoop": "extras/zoom",
     "winget": "Zoom.ZoomRooms",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Teams",
+    "Content": "Microsoft Teams",
     "Description": "A collaboration platform that combines workplace chat, video meetings, file",
     "choco": "microsoft-teams.install",
     "scoop": "extras/microsoft-teams",
     "winget": "Microsoft.Teams",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "Discord",
+    "Content": "Discord",
     "Description": "A VoIP application and digital distribution platform designed for creating",
     "choco": "discord",
     "scoop": "extras/discord",
     "winget": "Discord.Discord",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "TeamViewer",
+    "Content": "TeamViewer",
     "Description": "A remote access and support software that enables users to",
     "choco": "teamviewer",
     "scoop": "extras/teamviewer",
     "winget": "TeamViewer.TeamViewer",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "GIMP",
+    "Content": "GIMP",
     "Description": "A free and open-source raster graphics editor used for image",
     "choco": "gimp",
     "scoop": "extras/gimp",
     "winget": "GIMP.GIMP",
     "itt": "na",
-    "category": "Imaging"
+    "category": "Imaging",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ Runtime - all versions",
+    "Content": "Microsoft Visual C++ Runtime - all versions",
     "Description": "Microsoft Visual C++ Redistributable installs run-time components of Visual C++",
     "choco": "vcredist-all",
     "scoop": "extras/vcredist-aio",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "DirectX",
+    "Content": "DirectX",
     "Description": "DirectX is a collection of APIs for handling tasks related",
     "choco": "directx",
     "scoop": "na",
     "winget": "Microsoft.DirectX",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ 2005 (x86) Redistributable",
+    "Content": "Microsoft Visual C++ 2005 (x86) Redistributable",
     "Description": "A set of runtime components required to run applications developed",
     "choco": "vcredist2005",
     "scoop": "extras/vcredist2005",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ 2005 (x64) Redistributable",
+    "Content": "Microsoft Visual C++ 2005 (x64) Redistributable",
     "Description": "A set of runtime components required to run 64-bit applications",
     "choco": "vcredist2005",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ 2008 (x86) Redistributable",
+    "Content": "Microsoft Visual C++ 2008 (x86) Redistributable",
     "Description": "A set of runtime components required to run applications developed",
     "choco": "vcredist2008",
     "scoop": "extras/vcredist2008",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ 2008 (x64) Redistributable",
+    "Content": "Microsoft Visual C++ 2008 (x64) Redistributable",
     "Description": "A set of runtime components required to run 64-bit applications",
     "choco": "vcredist2008",
     "scoop": "extras/vcredist2008",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ 2010 (x86) Redistributable",
+    "Content": "Microsoft Visual C++ 2010 (x86) Redistributable",
     "Description": "A set of runtime components required to run applications developed",
     "choco": "vcredist2010",
     "scoop": "extras/vcredist2010",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ 2010 (x64) Redistributable",
+    "Content": "Microsoft Visual C++ 2010 (x64) Redistributable",
     "Description": "A set of runtime components required to run 64-bit applications",
     "choco": "vcredist2010",
     "scoop": "extras/vcredist2010",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ 2012 (x86) Redistributable",
+    "Content": "Microsoft Visual C++ 2012 (x86) Redistributable",
     "Description": "A set of runtime components required to run applications developed",
     "choco": "vcredist2012",
     "scoop": "extras/vcredist2012",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ 2012 (x64) Redistributable",
+    "Content": "Microsoft Visual C++ 2012 (x64) Redistributable",
     "Description": "A set of runtime components required to run 64-bit applications",
     "choco": "vcredist2012",
     "scoop": "extras/vcredist2012",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ 2013 (x86) Redistributable",
+    "Content": "Microsoft Visual C++ 2013 (x86) Redistributable",
     "Description": "A set of runtime components required to run applications developed",
     "choco": "vcredist2013",
     "scoop": "extras/vcredist2013",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ 2013 (x64) Redistributable",
+    "Content": "Microsoft Visual C++ 2013 (x64) Redistributable",
     "Description": "A set of runtime components required to run 64-bit applications",
     "choco": "vcredist2013",
     "scoop": "extras/vcredist2013",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ 2015-2022 (x64) Redistributable",
+    "Content": "Microsoft Visual C++ 2015-2022 (x64) Redistributable",
     "Description": "A set of runtime components required to run 64-bit applications",
     "choco": "vcredist2015",
     "scoop": "extras/vcredist2015",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ 2015-2022  (x86) Redistributable",
+    "Content": "Microsoft Visual C++ 2015-2022  (x86) Redistributable",
     "Description": "A set of runtime components required to run applications developed",
     "choco": "vcredist2015",
     "scoop": "extras/vcredist2015",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "NET Framework All Versions",
+    "Content": "NET Framework All Versions",
     "Description": "A comprehensive and consistent programming model for building applications that",
     "choco": "dotnet-all",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "AMD Ryzen Chipset Drivers",
+    "Content": "AMD Ryzen Chipset Drivers",
     "Description": "Supports: AMD Ryzen Threadripper PRO Processor, AMD Ryzen 8000/7040/7000 Series",
     "choco": "amd-ryzen-chipset",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "NVidia Display Driver",
+    "Content": "NVidia Display Driver",
     "Description": "The software component that allows the operating system and installed",
     "choco": "nvidia-display-driver",
     "scoop": "nonportable/nvidia-display-driver-np",
     "winget": "na",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "NVIDIA GeForce Experience",
+    "Content": "NVIDIA GeForce Experience",
     "Description": "A cloud-based gaming service provided by NVIDIA that allows users",
     "choco": "geforce-experience",
     "scoop": "na",
     "winget": "Nvidia.GeForceExperience",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "Msi Afterburner",
+    "Content": "Msi Afterburner",
     "Description": "MSI Afterburner is the ultimate graphics card utility, co-developed by",
     "choco": "msiafterburner",
     "scoop": "extras/msiafterburner",
     "winget": "Guru3D.Afterburner",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "NVIDIA PhysX",
+    "Content": "NVIDIA PhysX",
     "Description": "A physics processing unit (PPU) software development kit (SDK) offered",
     "choco": "physx.legacy",
     "scoop": "na",
     "winget": "Nvidia.PhysXLegacy",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "Steam",
+    "Content": "Steam",
     "Description": "A digital distribution platform developed by Valve Corporation for purchasing",
     "choco": "steam",
     "scoop": "versions/steam",
     "winget": "Valve.Steam",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Ubisoft Connect",
+    "Content": "Ubisoft Connect",
     "Description": "A digital distribution, digital rights management, multiplayer, and communications service",
     "choco": "ubisoft-connect",
     "scoop": "versions/ubisoftconnect",
     "winget": "Ubisoft.Connect",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Origin",
+    "Content": "Origin",
     "Description": " Game store launcher",
     "choco": "origin",
     "scoop": "versions/origin",
     "winget": "ElectronicArts.Origin",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Rockstar Games Launcher",
+    "Content": "Rockstar Games Launcher",
     "Description": "Download and play the latest Rockstar Games PC titles",
     "choco": "rockstar-launcher",
     "scoop": "versions/rockstarlauncher",
     "winget": "na",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "GameSave Manager",
+    "Content": "GameSave Manager",
     "Description": "A utility tool that allows users to backup, restore, and",
     "choco": "gamesavemanager",
     "scoop": "na",
     "winget": "InsaneMatt.GameSaveManager",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "StreamlabsOBS",
+    "Content": "StreamlabsOBS",
     "Description": "A free and open-source streaming software built on top of",
     "choco": "streamlabs-obs",
     "scoop": "extras/streamlabs-obs",
     "winget": "Streamlabs.StreamlabsOBS",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "OBS Studio",
+    "Content": "OBS Studio",
     "Description": "A free and open-source software for video recording and live",
     "choco": "obs-studio.install",
     "scoop": "extras/obs-studio",
     "winget": "OBSProject.OBSStudio",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Logitech Gaming Software",
+    "Content": "Logitech Gaming Software",
     "Description": "Logitech Gaming Software lets you customize Logitech G gaming mice",
     "choco": "logitechgaming",
     "scoop": "nonportable/logitech-gaming-software-np",
     "winget": "Logitech.LGS",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Lively Wallpaper",
+    "Content": "Lively Wallpaper",
     "Description": "A software that allows users to set animated and interactive",
     "choco": "lively",
     "scoop": "extras/lively",
     "winget": "rocksdanister.LivelyWallpaper",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Playnite",
+    "Content": "Playnite",
     "Description": "Open source video game library manager and launcher with support",
     "choco": "playnite",
     "scoop": "extras/playnite",
     "winget": "Playnite.Playnite",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Driver Easy",
+    "Content": "Driver Easy",
     "Description": "A driver update tool that automatically detects, downloads, and installs",
     "choco": "drivereasyfree",
     "scoop": "na",
     "winget": "Easeware.DriverEasy",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "Intel Driver Support Assistant",
+    "Content": "Intel Driver Support Assistant",
     "Description": "Intel Driver & Support Assistant enables you to scan computing",
     "choco": "intel-dsa",
     "scoop": "na",
     "winget": "Intel.IntelDriverAndSupportAssistant",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "Snappy Driver Installer",
+    "Content": "Snappy Driver Installer",
     "Description": "A free and open-source tool for updating and installing device",
     "choco": "sdio",
     "scoop": "extras/snappy-driver-installer-origin",
     "winget": "samlab-ws.SnappyDriverInstaller",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "Driver booster",
+    "Content": "Driver booster",
     "Description": "Scans and identifies outdated drivers automatically, and downloads and installs",
     "choco": "driverbooster",
     "scoop": "na",
     "winget": "IObit.DriverBooster",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "Driver Genius",
+    "Content": "Driver Genius",
     "Description": "Professional driver management tool and hardware diagnostics",
     "choco": "drivergenius",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "Display Driver Uninstaller",
+    "Content": "Display Driver Uninstaller",
     "Description": "Utility to completely remove system drivers",
     "choco": "ddu",
     "scoop": "extras/ddu",
     "winget": "Wagnardsoft.DisplayDriverUninstaller",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "Driver Store Explorer",
+    "Content": "Driver Store Explorer",
     "Description": " Windows driver store utility",
     "choco": "rapr",
     "scoop": "extras/driverstoreexplorer",
     "winget": "na",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "1Password",
+    "Content": "1Password",
     "Description": "A password manager that securely stores login credentials, credit card",
     "choco": "1password",
     "scoop": "na",
     "winget": "AgileBits.1Password",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "AOMEI Partition Assistant Standard",
+    "Content": "AOMEI Partition Assistant Standard",
     "Description": "AOMEI Partition Assistant Standard allows you to realize disk upgrade/replacement",
     "choco": "partition-assistant-standard",
     "scoop": "na",
     "winget": "AOMEI.PartitionAssistant",
     "itt": "na",
-    "category": "Disk Tools"
+    "category": "Disk Tools",
+    "IsChecked": false
   },
   {
-    "Name": "AOMEI Backupper Standard",
+    "Content": "AOMEI Backupper Standard",
     "Description": "A backup and recovery software that enables users to create",
     "choco": "backupper-standard",
     "scoop": "na",
     "winget": "AOMEI.Backupper.Standard",
     "itt": "na",
-    "category": "Disk Tools"
+    "category": "Disk Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Recuva recover",
+    "Content": "Recuva recover",
     "Description": "A data recovery software that helps users retrieve accidentally deleted",
     "choco": "recuva",
     "scoop": "extras/recuva",
     "winget": "Piriform.Recuva",
     "itt": "na",
-    "category": "Disk Tools"
+    "category": "Disk Tools",
+    "IsChecked": false
   },
   {
-    "Name": "CCleaner",
+    "Content": "CCleaner",
     "Description": "A system optimization, privacy, and cleaning tool that helps users",
     "choco": "ccleaner",
     "scoop": "extras/ccleaner",
     "winget": "SingularLabs.CCEnhancer",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "BCUninstaller",
+    "Content": "BCUninstaller",
     "Description": "A powerful uninstaller tool for Windows that allows users to",
     "choco": "bulk-crap-uninstaller",
     "scoop": "extras/bulk-crap-uninstaller",
     "winget": "Klocman.BulkCrapUninstaller",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Easy Context Menu",
+    "Content": "Easy Context Menu",
     "Description": "To install Easy Context Menu, run the following command from",
     "choco": "ecm",
     "scoop": "extras/easy-context-menu",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "HWiNFO",
+    "Content": "HWiNFO",
     "Description": "A hardware information and diagnostic tool that provides detailed information",
     "choco": "hwinfo.install",
     "scoop": "extras/hwinfo",
     "winget": "REALiX.HWiNFO",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Speccy",
+    "Content": "Speccy",
     "Description": "A system information tool that provides detailed information about the",
     "choco": "speccy",
     "scoop": "extras/speccy",
     "winget": "Piriform.Speccy",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "FurMark",
+    "Content": "FurMark",
     "Description": "A graphics card stress testing and benchmarking utility that helps",
     "choco": "furmark",
     "scoop": "extras/furmark",
     "winget": "Geeks3D.FurMark",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Hard Disk Sentinel",
+    "Content": "Hard Disk Sentinel",
     "Description": "A hard disk monitoring and analysis software that helps users",
     "choco": "hdsentinel",
     "scoop": "extras/hard-disk-sentinel",
     "winget": "JanosMathe.HardDiskSentinelPro",
     "itt": "na",
-    "category": "Disk Tools"
+    "category": "Disk Tools",
+    "IsChecked": false
   },
   {
-    "Name": "CPU-Z",
+    "Content": "CPU-Z",
     "Description": "A system monitoring utility that provides detailed information about the",
     "choco": "cpu-z",
     "scoop": "extras/cpu-z",
     "winget": "CPUID.CPU-Z",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Mem Reduct",
+    "Content": "Mem Reduct",
     "Description": "Lightweight real-time memory management application to monitor and clean system",
     "choco": "memreduct",
     "scoop": "extras/memreduct",
     "winget": "Henry++.MemReduct",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "HandBrake",
+    "Content": "HandBrake",
     "Description": "A free and open-source video transcoder tool that converts video",
     "choco": "handbrake.install",
     "scoop": "extras/handbrake",
     "winget": "HandBrake.HandBrake",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Rufus Portable",
+    "Content": "Rufus Portable",
     "Description": "A utility tool for creating bootable USB drives from ISO",
     "choco": "rufus",
     "scoop": "extras/rufus",
     "winget": "Rufus.Rufus",
     "itt": "na",
-    "category": "Portable"
+    "category": "Portable",
+    "IsChecked": false
   },
   {
-    "Name": "ImgBurn",
+    "Content": "ImgBurn",
     "Description": "Lightweight CD / DVD burning application",
     "choco": "imgburn",
     "scoop": "extras/imgburn",
     "winget": "LIGHTNINGUK.ImgBurn",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Virtual CloneDrive",
+    "Content": "Virtual CloneDrive",
     "Description": "A free software that allows users to mount disc images",
     "choco": "virtualclonedrive",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Ultra ISO",
+    "Content": "Ultra ISO",
     "Description": "A powerful ISO image management tool that enables users to",
     "choco": "ultraiso",
     "scoop": "extras/ultraiso",
     "winget": "EZBSystems.UltraISO",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Ventoy",
+    "Content": "Ventoy",
     "Description": "An open-source tool for creating bootable USB drives with multiple",
     "choco": "ventoy",
     "scoop": "extras/ventoy",
     "winget": "Ventoy.Ventoy",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "iVentoy",
+    "Content": "iVentoy",
     "Description": "With iVentoy you can boot and install OS on multiple",
     "choco": "iventoy",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "AutoHotkey",
+    "Content": "AutoHotkey",
     "Description": "A scripting language for automating repetitive tasks and creating macros",
     "choco": "autohotkey",
     "scoop": "extras/autohotkey",
     "winget": "AutoHotkey.AutoHotkey",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Rainmeter",
+    "Content": "Rainmeter",
     "Description": "A customizable desktop customization tool that displays customizable skins, widgets",
     "choco": "rainmeter",
     "scoop": "extras/rainmeter",
     "winget": "Rainmeter.Rainmeter",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "FxSound",
+    "Content": "FxSound",
     "Description": "An audio enhancer software that improves the sound quality of",
     "choco": "fxsound",
     "scoop": "na",
     "winget": "FxSoundLLC.FxSound",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Vysor",
+    "Content": "Vysor",
     "Description": "A screen mirroring and remote control software that enables users",
     "choco": "vysor",
     "scoop": "na",
     "winget": "Vysor.Vysor",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Unified Remote",
+    "Content": "Unified Remote",
     "Description": "A remote control app that turns smartphones into universal remote",
     "choco": "unifiedremote",
     "scoop": "na",
     "winget": "UnifiedIntents.UnifiedRemote",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "AnyDesk",
+    "Content": "AnyDesk",
     "Description": "A remote desktop software that allows users to access and",
     "choco": "anydesk",
     "scoop": "extras/anydesk",
     "winget": "AnyDeskSoftwareGmbH.AnyDesk",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Airdroid",
+    "Content": "Airdroid",
     "Description": "AirDroid is a free and fast Android device manager app",
     "choco": "airdroid",
     "scoop": "extras/airdroid",
     "winget": "AirDroid.AirDroid",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "UltraViewer",
+    "Content": "UltraViewer",
     "Description": "Remote control to support your clients / partners from everywhere",
     "choco": "ultraviewer",
     "scoop": "na",
     "winget": "DucFabulous.UltraViewer",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Wireless Network Watcher Portable",
+    "Content": "Wireless Network Watcher Portable",
     "Description": "Wireless Network Watcher is a small utility that scans your",
     "choco": "wnetwatcher.portable",
     "scoop": "nirsoft/wnetwatcher",
     "winget": "NirSoft.WirelessNetworkWatcher",
     "itt": "na",
-    "category": "Portable"
+    "category": "Portable",
+    "IsChecked": false
   },
   {
-    "Name": "WifiInfoView",
+    "Content": "WifiInfoView",
     "Description": "Wireless Network Watcher is a small utility that scans your",
     "choco": "wifiinfoview",
     "scoop": "nirsoft/wifiinfoview",
     "winget": "NirSoft.WifiInfoView",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "WirelessNetView",
+    "Content": "WirelessNetView",
     "Description": "Wireless Network Watcher is a small utility that scans your",
     "choco": "wirelessnetview",
     "scoop": "nirsoft/wirelessnetview",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "qBittorrent",
+    "Content": "qBittorrent",
     "Description": "A free and open-source BitTorrent client for downloading and uploading",
     "choco": "qbittorrent",
     "scoop": "extras/qbittorrent",
     "winget": "qBittorrent.qBittorrent",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Google Earth Pro",
+    "Content": "Google Earth Pro",
     "Description": "Google Earth Pro on desktop is free for users with",
     "choco": "googleearthpro",
     "scoop": "na",
     "winget": "Google.EarthPro",
     "itt": "na",
-    "category": "Imaging"
+    "category": "Imaging",
+    "IsChecked": false
   },
   {
-    "Name": "XAMPP",
+    "Content": "XAMPP",
     "Description": "XAMPP is a free and open-source cross-platform web server solution",
     "choco": "xampp-81",
     "scoop": "extras/xampp",
     "winget": "ApacheFriends.Xampp.8.2",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Visual Studio Professional 2022",
+    "Content": "Visual Studio Professional 2022",
     "Description": "Visual Studio Professional 2022 is an integrated development environment (IDE)",
     "choco": "visualstudio2022professional",
     "scoop": "na",
     "winget": "Microsoft.VisualStudio.2022.Professional",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Visual Studio Community 2022",
+    "Content": "Visual Studio Community 2022",
     "Description": "Visual Studio Community 2022 is a free, fully-featured, and extensible",
     "choco": "visualstudio2022community",
     "scoop": "na",
     "winget": "Microsoft.VisualStudio.2022.Community",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Unity Hub",
+    "Content": "Unity Hub",
     "Description": "Unity is a cross-platform game creation system developed by Unity",
     "choco": "unity-hub",
     "scoop": "nonportable/unity-hub-np",
     "winget": "Unity.UnityHub",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Godot Engine",
+    "Content": "Godot Engine",
     "Description": "Godot is a feature-packed, cross-platform game engine for creating 2D",
     "choco": "godot",
     "scoop": "extras/godot",
     "winget": "GodotEngine.GodotEngine",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Unity3D Engine",
+    "Content": "Unity3D Engine",
     "Description": "Unity is a cross-platform game creation system developed by Unity",
     "choco": "unity",
     "scoop": "na",
     "winget": "Unity.Unity.2020",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Blender",
+    "Content": "Blender",
     "Description": "Blender is a free and open-source professional-grade 3D computer graphics",
     "choco": "blender",
     "scoop": "na",
     "winget": "BlenderFoundation.Blender",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "VSCode",
+    "Content": "VSCode",
     "Description": "Visual Studio Code is a free source-code editor developed by",
     "choco": "vscode",
     "scoop": "extras/vscode",
     "winget": "Microsoft.VisualStudioCode",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Vim",
+    "Content": "Vim",
     "Description": "Vim is an advanced text editor that seeks to provide",
     "choco": "vim",
     "scoop": "extras/vim",
     "winget": "vim.vim",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Sublime Text 4",
+    "Content": "Sublime Text 4",
     "Description": "Sublime Text 4 - The sophisticated text editor for code",
     "choco": "sublimetext4",
     "scoop": "extras/sublime-text",
     "winget": "SublimeHQ.SublimeText.4",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Atom",
+    "Content": "Atom",
     "Description": "Atom is a text editor that's modern, approachable, yet hackable",
     "choco": "atom",
     "scoop": "extras/atom",
     "winget": "GitHub.Atom",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "InnoSetup",
+    "Content": "InnoSetup",
     "Description": "Inno Setup is a free installer for Windows programs. First",
     "choco": "innosetup",
     "scoop": "nonportable/innosetup-np",
     "winget": "JRSoftware.InnoSetup",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "PyCharm Community Edition",
+    "Content": "PyCharm Community Edition",
     "Description": "PyCharm Community Edition is a free and open-source IDE for",
     "choco": "pycharm-community",
     "scoop": "na",
     "winget": "JetBrains.PyCharm.Community",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "PyCharm Professional Edition",
+    "Content": "PyCharm Professional Edition",
     "Description": "PyCharm Professional Edition is a powerful IDE for professional Python",
     "choco": "pycharm",
     "scoop": "extras/pycharm",
     "winget": "JetBrains.PyCharm.Professional",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Jetbrains Rider",
+    "Content": "Jetbrains Rider",
     "Description": "Rider is a cross-platform .NET IDE developed by JetBrains. It",
     "choco": "jetbrains-rider",
     "scoop": "extras/rider",
     "winget": "JetBrains.Rider",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "NodeJs LTS",
+    "Content": "NodeJs LTS",
     "Description": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript",
     "choco": "nodejs-lts",
     "scoop": "main/nodejs-lts",
     "winget": "OpenJS.NodeJS.LTS",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Electron",
+    "Content": "Electron",
     "Description": "Electron, framework lets you write cross-platform desktop applications using JavaScript",
     "choco": "electron",
     "scoop": "extras/electron",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Electrum LTS",
+    "Content": "Electrum LTS",
     "Description": "Electrum is a lightweight Bitcoin wallet focused on speed and",
     "choco": "electronim",
     "scoop": "na",
     "winget": "Electrum.Electrum",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Hugo",
+    "Content": "Hugo",
     "Description": "Hugo is one of the most popular open-source static site",
     "choco": "hugo",
     "scoop": "main/hugo",
     "winget": "Hugo.Hugo",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Hugo Extended",
+    "Content": "Hugo Extended",
     "Description": "Hugo is one of the most popular open-source static site",
     "choco": "hugo-extended",
     "scoop": "main/hugo-extended",
     "winget": "Hugo.Hugo.Extended",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Notepad++",
+    "Content": "Notepad++",
     "Description": "Notepad++ is a free source code editor and Notepad replacement",
     "choco": "notepadplusplus",
     "scoop": "extras/notepadplusplus",
     "winget": "Notepad++.Notepad++",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Windows Terminal",
+    "Content": "Windows Terminal",
     "Description": "Windows Terminal is a modern terminal application for users of",
     "choco": "microsoft-windows-terminal",
     "scoop": "extras/windows-terminal",
     "winget": "Microsoft.WindowsTerminal",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Powershell 7",
+    "Content": "Powershell 7",
     "Description": "PowerShell Core is a cross-platform (Windows, Linux, and macOS) automation",
     "choco": "powershell-core",
     "scoop": "na",
     "winget": "Microsoft.PowerShell",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "x64dbg Portable",
+    "Content": "x64dbg Portable",
     "Description": "An open-source x64/x32 debugger for windows",
     "choco": "x64dbg.portable",
     "scoop": "extras/x64dbg",
     "winget": "na",
     "itt": "na",
-    "category": "Portable"
+    "category": "Portable",
+    "IsChecked": false
   },
   {
-    "Name": "dnSpy",
+    "Content": "dnSpy",
     "Description": "dnSpy is a tool to reverse engineer .NET assemblies. It",
     "choco": "dnspy",
     "scoop": "extras/dnspy",
     "winget": "dnSpyEx.dnSpy",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Cheat Engine",
+    "Content": "Cheat Engine",
     "Description": "Cheat Engine is an open source tool designed to help",
     "choco": "cheatengine",
     "scoop": "extras/cheat-engine",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Python 3.12.6",
+    "Content": "Python 3.12.6",
     "Description": "Python is a popular high-level programming language known for its",
     "choco": "python",
     "scoop": "main/python",
     "winget": "Python.Python.3.9",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Git",
+    "Content": "Git",
     "Description": "Git is a free and open-source distributed version control system",
     "choco": "git",
     "scoop": "main/git",
     "winget": "Git.Git",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "GitHub Desktop",
+    "Content": "GitHub Desktop",
     "Description": "GitHub Desktop is a seamless way to contribute to projects",
     "choco": "github-desktop",
     "scoop": "na",
     "winget": "GitHub.GitHubDesktop",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Docker Desktop",
+    "Content": "Docker Desktop",
     "Description": "Docker Desktop is an easy-to-install application for Windows and macOS",
     "choco": "docker-desktop",
     "scoop": "na",
     "winget": "Docker.DockerDesktop",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Docker Compose",
+    "Content": "Docker Compose",
     "Description": "Docker Compose is a tool for defining and running multi-container",
     "choco": "docker-compose",
     "scoop": "main/docker-compose",
     "winget": "Docker.DockerCompose",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "PowerToys",
+    "Content": "PowerToys",
     "Description": "PowerToys is a set of utilities for power users to",
     "choco": "powertoys",
     "scoop": "extras/powertoys",
     "winget": "Microsoft.PowerToys",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Notion",
+    "Content": "Notion",
     "Description": "The all-in-one workspace for your notes, tasks, wikis, and databases",
     "choco": "notion",
     "scoop": "extras/notion",
     "winget": "Notion.Notion",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "FL Studio",
+    "Content": "FL Studio",
     "Description": "FL Studio is a digital audio workstation (DAW) developed by",
     "choco": "ImageLine.FLStudio",
     "scoop": "na",
     "winget": "ImageLine.FLStudio",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Android Debug Bridge",
+    "Content": "Android Debug Bridge",
     "Description": "Android Debug Bridge (ADB) is a command-line tool that allows",
     "choco": "adb",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Universal ADB Drivers",
+    "Content": "Universal ADB Drivers",
     "Description": "Universal ADB Drivers are drivers that provide compatibility with a",
     "choco": "universal-adb-drivers",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Scrcpy",
+    "Content": "Scrcpy",
     "Description": "Scrcpy is a free and open-source tool that allows you",
     "choco": "scrcpy",
     "scoop": "main/scrcpy",
     "winget": "Genymobile.scrcpy",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "VirtualBox",
+    "Content": "VirtualBox",
     "Description": "VirtualBox is a cross-platform virtualization application. It installs on existing",
     "choco": "virtualbox",
     "scoop": "nonportable/virtualbox-np",
     "winget": "Oracle.VirtualBox",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Oh My Posh",
+    "Content": "Oh My Posh",
     "Description": " Oh my Posh is a custom prompt engine for",
     "choco": "oh-my-posh",
     "scoop": "main/oh-my-posh",
     "winget": "JanDeDobbeleer.OhMyPosh",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Malwarebytes",
+    "Content": "Malwarebytes",
     "Description": "Multiple layers of malware-crushing tech, including virus protection. Thorough malware",
     "choco": "malwarebytes",
     "scoop": "na",
     "winget": "Malwarebytes.Malwarebytes",
     "itt": "na",
-    "category": "Security"
+    "category": "Security",
+    "IsChecked": false
   },
   {
-    "Name": "Avast Free Antivirus",
+    "Content": "Avast Free Antivirus",
     "Description": "Avast Free Antivirus",
     "choco": "avastfreeantivirus",
     "scoop": "na",
     "winget": "XPDNZJFNCR1B07",
     "itt": "na",
-    "category": "Security"
+    "category": "Security",
+    "IsChecked": false
   },
   {
-    "Name": "Nerd Fonts - CascadiaCode",
+    "Content": "Nerd Fonts - CascadiaCode",
     "Description": "Nerd Fonts is a project that patches developer targeted fonts",
     "choco": "nerd-fonts-cascadiacode",
     "scoop": "nerd-fonts/CascadiaCode-NF",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Java SE Runtime Environment 8.0.411",
+    "Content": "Java SE Runtime Environment 8.0.411",
     "Description": "Java allows you to play online games, chat with people",
     "choco": "jre8",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Audacity",
+    "Content": "Audacity",
     "Description": "Audacity is free, open source, cross-platform software for recording and",
     "choco": "audacity",
     "scoop": "extras/audacity",
     "winget": "Audacity.Audacity",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "MusicBee",
+    "Content": "MusicBee",
     "Description": "MusicBee makes it easy to organize, find and play music",
     "choco": "musicbee",
     "scoop": "extras/musicbee",
     "winget": "MusicBee.MusicBee",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "Format Factory",
+    "Content": "Format Factory",
     "Description": "multifunctional media processing tools",
     "choco": "formatfactory",
     "scoop": "extras/format-factory",
     "winget": "na",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Winaero Tweaker",
+    "Content": "Winaero Tweaker",
     "Description": "Customize the appearance and behavior of the Windows operating system",
     "choco": "winaero-tweaker",
     "scoop": "extras/winaero-tweaker",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Windows Subsystem for Linux WSL2",
+    "Content": "Windows Subsystem for Linux WSL2",
     "Description": "To install Windows Subsystem for Linux 2, run the following",
     "choco": "wsl2",
     "scoop": "na",
     "winget": "Microsoft.WSL",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Wamp Server 3.3.5",
+    "Content": "Wamp Server 3.3.5",
     "Description": "WampServer is a Windows web development environment. It allows you",
     "choco": "wamp-server",
     "scoop": "extras/uwamp",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "MongoDB",
+    "Content": "MongoDB",
     "Description": "MongoDB stores data using a flexible document data model that",
     "choco": "mongodb",
     "scoop": "main/mongodb",
     "winget": "MongoDB.Server",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "MPC-BE",
+    "Content": "MPC-BE",
     "Description": "Media Player Classic - BE is a free and open",
     "choco": "mpc-be",
     "scoop": "extras/mpc-be",
     "winget": " MPC-BE.MPC-BE",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "Kdenlive",
+    "Content": "Kdenlive",
     "Description": "A powerful non-linear video editor",
     "choco": "kdenlive",
     "scoop": "extras/kdenlive",
     "winget": "KDE.Kdenlive",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "TablePlus",
+    "Content": "TablePlus",
     "Description": "Modern, native, and friendly GUI tool for relational databases: MySQL",
     "choco": "tableplus",
     "scoop": "extras/tableplus",
     "winget": "TablePlus.TablePlus",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Hosts File Editor",
+    "Content": "Hosts File Editor",
     "Description": "Hosts File Editor makes it easy to change your hosts",
     "choco": "hosts.editor",
     "scoop": "extras/hosts-file-editor",
     "winget": "scottlerch.hosts-file-editor",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Subtitle Edit",
+    "Content": "Subtitle Edit",
     "Description": "With SE you can easily adjust a subtitle if it",
     "choco": "subtitleedit",
     "scoop": "extras/subtitleedit",
     "winget": "9NWH51GWJTKN",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Skype",
+    "Content": "Skype",
     "Description": "Skype - Install Skype, add your friends as contacts, then",
     "choco": "skype",
     "scoop": "na",
     "winget": "Microsoft.Skype",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "FileZilla",
+    "Content": "FileZilla",
     "Description": "FileZilla Client is a fast and reliable cross-platform FTP, FTPS",
     "choco": "filezilla",
     "scoop": "extras/filezilla",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Everything",
+    "Content": "Everything",
     "Description": "Everything Search Engine - locate files and folders by name",
     "choco": "everything",
     "scoop": "extras/everything",
     "winget": "voidtools.Everything",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Yarn",
+    "Content": "Yarn",
     "Description": "Yarn is a package manager for the npm and bower",
     "choco": "yarn",
     "scoop": "main/yarn",
     "winget": "Yarn.Yarn",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "VMware Workstation Player",
+    "Content": "VMware Workstation Player",
     "Description": "VMware Workstation Player™ is a streamlined desktop virtualization application that",
     "choco": "vmware-workstation-player",
     "scoop": "nonportable/vmware-workstation-player-np",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "HDD Low Level Format Tool",
+    "Content": "HDD Low Level Format Tool",
     "Description": "Will erase, Low-Level Format and re-certify a SATA, IDE or",
     "choco": "llftool",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "BlueStacks",
+    "Content": "BlueStacks",
     "Description": "Play Android Games on PC",
     "choco": "bluestacks",
     "scoop": "nonportable/bluestacks-np",
     "winget": "BlueStack.BlueStacks",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Office 365 Business",
+    "Content": "Office 365 Business",
     "Description": "Microsoft 365 (formerly Office 365) is a line of subscription",
     "choco": "office365business",
     "scoop": "nonportable/office-365-apps-np",
     "winget": "Microsoft.Office",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "Bandicam",
+    "Content": "Bandicam",
     "Description": "Bandicam is a closed-source screen capture and screen recording software",
     "choco": "na",
     "scoop": "na",
     "winget": "BandicamCompany.Bandicam",
     "itt": "na",
-    "category": "Imaging"
+    "category": "Imaging",
+    "IsChecked": false
   },
   {
-    "Name": "QQPlayer",
+    "Content": "QQPlayer",
     "Description": "QQPlayer media player",
     "choco": "na",
     "scoop": "na",
     "winget": "Tencent.QQPlayer",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "4K Video Downloader",
+    "Content": "4K Video Downloader",
     "Description": "4K Video Downloader allows downloading videos, playlists, channels and subtitles",
     "choco": "4k-video-downloader",
     "scoop": "na",
     "winget": "OpenMedia.4KVideoDownloader",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Active@ Partition Recovery",
+    "Content": "Active@ Partition Recovery",
     "Description": "Active@ Partition Recovery is a freeware toolkit that helps to",
     "choco": "na",
     "scoop": "na",
     "winget": "LSoftTechnologies.ActivePartitionRecovery",
     "itt": "na",
-    "category": "Disk Tools"
+    "category": "Disk Tools",
+    "IsChecked": false
   },
   {
-    "Name": "HiSuite",
+    "Content": "HiSuite",
     "Description": "HUAWEI HiSuite is the official Android Smart Device Manager tool,HiSuite",
     "choco": "na",
     "scoop": "na",
     "winget": "Huawei.HiSuite",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Android Studio",
+    "Content": "Android Studio",
     "Description": "Android Studio is the official integrated development environment for Google's",
     "choco": "androidstudio",
     "scoop": "extras/android-studio",
     "winget": "Google.AndroidStudio",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "LibreWolf",
+    "Content": "LibreWolf",
     "Description": "LibreWolf is designed to increase protection against tracking and fingerprinting",
     "choco": "librewolf",
     "scoop": "extras/librewolf",
     "winget": "LibreWolf.LibreWolf",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Flow Launcher",
+    "Content": "Flow Launcher",
     "Description": "Dedicated to making your workflow flow more seamless. Search everything",
     "choco": "flow-launcher",
     "scoop": "extras/flow-launcher",
     "winget": "Flow-Launcher.Flow-Launcher",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "IconsExtract",
+    "Content": "IconsExtract",
     "Description": "The IconsExtract utility scans the files and folders on your",
     "choco": "iconsext",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "AdGuard Home",
+    "Content": "AdGuard Home",
     "Description": "AdGuard Home is a network-wide software for blocking ads and",
     "choco": "adguardhome",
     "scoop": "extras/adguardian",
     "winget": "AdGuard.AdGuardHome",
     "itt": "na",
-    "category": "Security"
+    "category": "Security",
+    "IsChecked": false
   },
   {
-    "Name": "Burp Suite Community Edition",
+    "Content": "Burp Suite Community Edition",
     "Description": "Burp Suite is an integrated platform for performing security testing",
     "choco": "burp-suite-free-edition",
     "scoop": "nonportable/burp-suite-community-np",
     "winget": "PortSwigger.BurpSuite.Community",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "CoreTemp",
+    "Content": "CoreTemp",
     "Description": "Core Temp is a compact, no fuss, small footprint, yet",
     "choco": "coretemp",
     "scoop": "extras/coretemp",
     "winget": "ALCPU.CoreTemp",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "ShareX",
+    "Content": "ShareX",
     "Description": "Screen capture, file sharing and productivity tool",
     "choco": "sharex",
     "scoop": "extras/sharex",
     "winget": "ShareX.ShareX",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "ONLY OFFICE",
+    "Content": "ONLY OFFICE",
     "Description": "ONLYOFFICE is a project developed by experienced IT experts from",
     "choco": "onlyoffice",
     "scoop": "extras/onlyoffice-desktopeditors",
     "winget": "ONLYOFFICE.DesktopEditors",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "ESET Internet Security",
+    "Content": "ESET Internet Security",
     "Description": "Ideal for modern users concerned about their privacy, who actively",
     "choco": "eset-internet-security",
     "scoop": "na",
     "winget": "ESET.EndpointSecurity",
     "itt": "na",
-    "category": "Security"
+    "category": "Security",
+    "IsChecked": false
   },
   {
-    "Name": "WinDirStat",
+    "Content": "WinDirStat",
     "Description": "WinDirStat is a disk usage statistics viewer and cleanup tool",
     "choco": "windirstat",
     "scoop": "extras/windirstat",
     "winget": "WinDirStat.WinDirStat",
     "itt": "na",
-    "category": "Disk Tools"
+    "category": "Disk Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Winmerge",
+    "Content": "Winmerge",
     "Description": "WinMerge is an Open Source differencing and merging tool for",
     "choco": "winmerge",
     "scoop": "extras/winmerge",
     "winget": "WinMerge.WinMerge",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Wireshark",
+    "Content": "Wireshark",
     "Description": "Wireshark is the worlds foremost and widely-used network protocol analyzer.",
     "choco": "wireshark",
     "scoop": "extras/wireshark",
     "winget": "WiresharkFoundation.Wireshark",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "TeraCopy",
+    "Content": "TeraCopy",
     "Description": "TeraCopy is designed to copy and move files at the",
     "choco": "teracopy",
     "scoop": "nonportable/teracopy-np",
     "winget": "CodeSector.TeraCopy",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "QuickLook",
+    "Content": "QuickLook",
     "Description": "Quick Look is among the few features I missed from",
     "choco": "quicklook",
     "scoop": "extras/quicklook",
     "winget": "QL-Win.QuickLook",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "RepoZ",
+    "Content": "RepoZ",
     "Description": "RepoZ provides a quick overview of the git repositories on",
     "choco": "repoz",
     "scoop": "na",
     "winget": "AndreasWascher.RepoZ",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Go Programming Language",
+    "Content": "Go Programming Language",
     "Description": "Go is expressive concise clean and efficient Its concurrency mechanisms",
     "choco": "golang",
     "scoop": "main/go",
     "winget": "Language GoLang.Go",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Rust",
+    "Content": "Rust",
     "Description": "Rust is a curlybrace blockstructured expression language It visually resembles",
     "choco": "rust",
     "scoop": "main/rust",
     "winget": "Rustlang.Rust.GNU",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Inkscape",
+    "Content": "Inkscape",
     "Description": "Inkscape is an opensource vector graphics editor similar to Adobe",
     "choco": "inkscape",
     "scoop": "extras/inkscape",
     "winget": "Inkscape.Inkscape",
     "itt": "na",
-    "category": "Imaging"
+    "category": "Imaging",
+    "IsChecked": false
   },
   {
-    "Name": "Youtube Dl",
+    "Content": "Youtube Dl",
     "Description": "youtubedl is a small commandline program to download videos from",
     "choco": "yt-dlp",
     "scoop": "main/youtube-dl",
     "winget": "youtube-dl.youtube-dl",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Postman",
+    "Content": "Postman",
     "Description": "Postman helps you be more efficient while working with APIs",
     "choco": "postman",
     "scoop": "extras/postman",
     "winget": "Postman.Postman",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Azure CLI",
+    "Content": "Azure CLI",
     "Description": "The Azure CLI is available across Azure services and is",
     "choco": "azure-cli",
     "scoop": "main/azure-cli",
     "winget": "Microsoft.AzureCLI",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "GameMaker Studio",
+    "Content": "GameMaker Studio",
     "Description": "GameMaker Studio has everything you need for games development no",
     "choco": "na",
     "scoop": "na",
     "winget": "YoYoGames.GameMaker.Studio.2",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Charles",
+    "Content": "Charles",
     "Description": "Charles is an HTTP proxy HTTP monitor Reverse Proxy that",
     "choco": "charles",
     "scoop": "na",
     "winget": "XK72.Charles",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Windows Media Player",
+    "Content": "Windows Media Player",
     "Description": "Media Player is designed to make listening to and watching",
     "choco": "na",
     "scoop": "na",
     "winget": "9WZDNCRFJ3PT",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "espanso",
+    "Content": "espanso",
     "Description": "A crossplatform Text Expander written in Rust",
     "choco": "espanso",
     "scoop": "main/espanso",
     "winget": "Espanso.Espanso",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Ability Office",
+    "Content": "Ability Office",
     "Description": "Ability Office Standard offers 3 core applications essential for home",
     "choco": "abilityoffice",
     "scoop": "na",
     "winget": "Ability.AbilityOffice.8.Standard",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "Winbox",
+    "Content": "Winbox",
     "Description": "Small utility that allows administration of MikroTik RouterOS using a",
     "choco": "na",
     "scoop": "extras/winbox",
     "winget": "Mikrotik.Winbox",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "SearchMyFiles",
+    "Content": "SearchMyFiles",
     "Description": "SearchMyFiles allows you to make a very accurate search that",
     "choco": "searchmyfiles",
     "scoop": "nirsoft/searchmyfiles",
     "winget": "NirSoft.SearchMyFiles",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "iTunes",
+    "Content": "iTunes",
     "Description": "iTunes is the best way to organize and enjoy the",
     "choco": "itunes",
     "scoop": "na",
     "winget": "Apple.iTunes",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "StartIsBack++",
+    "Content": "StartIsBack++",
     "Description": "StartIsBack returns Windows 10 and Windows 8 a real fully",
     "choco": "startisback",
     "scoop": "na",
     "winget": "StartIsBack.StartIsBack",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Advanced SystemCare Free",
+    "Content": "Advanced SystemCare Free",
     "Description": "Over time your computer may accumulate with large quantities of",
     "choco": "afedteated",
     "scoop": "na",
     "winget": "XPFFGSS4Z9M2TX",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Send Anywhere",
+    "Content": "Send Anywhere",
     "Description": "Send Anywhere is a multiplatform file sharing service where users",
     "choco": "na",
     "scoop": "na",
     "winget": "Estmob.SendAnywhere",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "YUMI Legacy",
+    "Content": "YUMI Legacy",
     "Description": "YUMI Your Universal Multiboot Installer is the successor to MultibootISOs",
     "choco": "yumi",
     "scoop": "extras/yumi",
     "winget": "YumiUsb.Legacy",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "YUMI UEFI",
+    "Content": "YUMI UEFI",
     "Description": "YUMI Your Universal Multiboot Installer is the successor to MultibootISOs",
     "choco": "yumi-uefi",
     "scoop": "extras/yumi-uefi",
     "winget": "YumiUsb.UEFI",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "OP Auto Clicker",
+    "Content": "OP Auto Clicker",
     "Description": "A fullfledged autoclicker with two modes of autoclicking at your",
     "choco": "autoclicker",
     "scoop": "extras/autoclicker",
     "winget": "OPAutoClicker.OPAutoClicker",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Spotube",
+    "Content": "Spotube",
     "Description": "Spotube is a Flutter based lightweight spotify client It utilizes",
     "choco": "spotube",
     "scoop": "extras/spotube",
     "winget": "KRTirtho.Spotube",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "Audio Switcher",
+    "Content": "Audio Switcher",
     "Description": "Easily switch the default audio device input or output on",
     "choco": "audioswitcher",
     "scoop": "extras/audioswitcher",
     "winget": "FortyOneLtd.AudioSwitcher",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Teams Classic Desktop",
+    "Content": "Microsoft Teams Classic Desktop",
     "Description": "Microsoft Teams is a messaging app for teams where all",
     "choco": "microsoft-teams.install",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Windows SDK",
+    "Content": "Microsoft Windows SDK",
     "Description": "The Windows 10 SDK for Windows 10 version 1809 provides",
     "choco": "windows-sdk-10.1",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "RunAsDate Portable",
+    "Content": "RunAsDate Portable",
     "Description": "RunAsDate is a small utility that allows you to run",
     "choco": "runasdate",
     "scoop": "nirsoft/runasdate",
     "winget": "na",
     "itt": "na",
-    "category": "Portable"
+    "category": "Portable",
+    "IsChecked": false
   },
   {
-    "Name": "Visual Studio 2017 Build",
+    "Content": "Visual Studio 2017 Build",
     "Description": "These Build Tools allow you to build native and managed",
     "choco": "visualstudio2017buildtools",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "MSEdgeRedirect",
+    "Content": "MSEdgeRedirect",
     "Description": "This tool filters and passes the command line arguments of",
     "choco": "msedgeredirect",
     "scoop": "extras/msedgeredirect",
     "winget": "rcmaehl.MSEdgeRedirect",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "NET Desktop Runtime 5",
+    "Content": "NET Desktop Runtime 5",
     "Description": "NET Core is a general purpose development platform maintained by",
     "choco": "dotnet-5.0-desktopruntime",
     "scoop": "na",
     "winget": "Microsoft.DotNet.HostingBundle.5",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "NET Desktop Runtime 3",
+    "Content": "NET Desktop Runtime 3",
     "Description": "NET Core is a general purpose development platform maintained by",
     "choco": "Microsoft.DotNet.HostingBundle.3_1",
     "scoop": "versions/windowsdesktop-runtime-3.1",
     "winget": "dotnetcore-3.0-desktopruntime",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "NET Desktop Runtime 6",
+    "Content": "NET Desktop Runtime 6",
     "Description": "NET Core is a general purpose development platform maintained by",
     "choco": "dotnet-6.0-desktopruntime",
     "scoop": "versions/windowsdesktop-runtime-6.0",
     "winget": "Microsoft.DotNet.HostingBundle.6",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "NET Desktop Runtime 7",
+    "Content": "NET Desktop Runtime 7",
     "Description": "NET Core is a general purpose development platform maintained by",
     "choco": "dotnet-7.0-desktopruntime",
     "scoop": "versions/windowsdesktop-runtime-7.0",
     "winget": "Microsoft.DotNet.AspNetCore.7",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "NET Desktop Runtime 8",
+    "Content": "NET Desktop Runtime 8",
     "Description": "NET Core is a general purpose development platform maintained by",
     "choco": "dotnet-desktopruntime",
     "scoop": "extras/windowsdesktop-runtime",
     "winget": "Microsoft.DotNet.DesktopRuntime.8",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Viber",
+    "Content": "Viber",
     "Description": "Viber is a mobile application that lets you make free",
     "choco": "viber",
     "scoop": "na",
     "winget": "XPFM5P5KDWF0JP",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "StartAllBack",
+    "Content": "StartAllBack",
     "Description": "Introducing StartAllBack Windows 11 from a better timeline Embrace enhance",
     "choco": "startallback",
     "scoop": "na",
     "winget": "StartIsBack.StartAllBack",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "DiskGenius Free",
+    "Content": "DiskGenius Free",
     "Description": "With powerful capabilities and userfriendly interface DiskGenius Free Edition provides",
     "choco": "diskgenius",
     "scoop": "na",
     "winget": "Eassos.DiskGenius",
     "itt": "na",
-    "category": "Disk Tools"
+    "category": "Disk Tools",
+    "IsChecked": false
   },
   {
-    "Name": "UNFORMAT",
+    "Content": "UNFORMAT",
     "Description": "UNFORMAT is a software utility created to solve almost all",
     "choco": "na",
     "scoop": "na",
     "winget": "LSoftTechnologies.UNFORMAT",
     "itt": "na",
-    "category": "Disk Tools"
+    "category": "Disk Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Active@ UNDELETE",
+    "Content": "Active@ UNDELETE",
     "Description": "Active UNDELETE helps you to recover deleted files and restore",
     "choco": "na",
     "scoop": "na",
     "winget": "LSoftTechnologies.ActiveUNDELETE",
     "itt": "na",
-    "category": "Disk Tools"
+    "category": "Disk Tools",
+    "IsChecked": false
   },
   {
-    "Name": "HxD Hex Editor",
+    "Content": "HxD Hex Editor",
     "Description": "HxD is a carefully designed and fast hex editor which",
     "choco": "hxd",
     "scoop": "extras/hxd",
     "winget": "MHNexus.HxD",
     "itt": "na",
-    "category": "Disk Tools"
+    "category": "Disk Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Epic Games Launcher",
+    "Content": "Epic Games Launcher",
     "Description": "The Epic Games Launcher is how you obtain the Unreal",
     "choco": "epicgameslauncher",
     "scoop": "na",
     "winget": "EpicGames.EpicGamesLauncher",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Vivaldi",
+    "Content": "Vivaldi",
     "Description": "The new Vivaldi browser protects you from trackers blocks unwanted",
     "choco": "vivaldi",
     "scoop": "extras/vivaldi",
     "winget": "VivaldiTechnologies.Vivaldi",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft PC Manager",
+    "Content": "Microsoft PC Manager",
     "Description": "Microsoft PC manager a good way to protect your personal",
     "choco": "na",
     "scoop": "na",
     "winget": "9PM860492SZD",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Openshot",
+    "Content": "Openshot",
     "Description": "OpenShot Video Editor is an awardwinning opensource video editor available",
     "choco": "openshot",
     "scoop": "extras/openshot",
     "winget": "OpenShot.OpenShot",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "WhatsApp",
+    "Content": "WhatsApp",
     "Description": "WhatsApp Messenger or simply WhatsApp is an American freeware crossplatform",
     "choco": "na",
     "scoop": "na",
     "winget": "9NKSQGP7F2NH",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "Paint.NET",
+    "Content": "Paint.NET",
     "Description": "PaintNET is image and photo editing software for PCs that",
     "choco": "paint.net",
     "scoop": "extras/paint.net",
     "winget": "dotPDNLLC.paintdotnet",
     "itt": "na",
-    "category": "Imaging"
+    "category": "Imaging",
+    "IsChecked": false
   },
   {
-    "Name": "Stretchly",
+    "Content": "Stretchly",
     "Description": "stretchly is a crossplatform electron app that reminds you to",
     "choco": "stretchly",
     "scoop": "extras/stretchly",
     "winget": "Stretchly.Stretchly",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Silverlight",
+    "Content": "Microsoft Silverlight",
     "Description": "Silverlight is a powerful development tool for creating engaging interactive",
     "choco": "silverlight",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "TreeSize",
+    "Content": "TreeSize",
     "Description": "Every hard disk is too small if you just wait",
     "choco": "treesizefree",
     "scoop": "extras/treesize-free",
     "winget": "JAMSoftware.TreeSize.Free",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Dot Net 3.5",
+    "Content": "Dot Net 3.5",
     "Description": "NET is a free crossplatform opensource developer platform for building",
     "choco": "dotnet3.5",
     "scoop": "versions/de4dot-net35",
     "winget": "Microsoft.DotNet.DesktopRuntime.3_1",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Flash Player ActiveX",
+    "Content": "Flash Player ActiveX",
     "Description": "The Adobe Flash Player is freeware software for viewing multimedia",
     "choco": "flashplayeractivex",
     "scoop": "extras/flashplayer-sa",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Google Drive",
+    "Content": "Google Drive",
     "Description": "Google Drive All your files everywhere Safely store your files",
     "choco": "googledrive",
     "scoop": "main/gdrive",
     "winget": "na",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Dot Net 4.5.2",
+    "Content": "Dot Net 4.5.2",
     "Description": "The Microsoft NET Framework 452 is a highly compatible inplace",
     "choco": "dotnet4.5.2",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Dropbox",
+    "Content": "Dropbox",
     "Description": "Organize all your team's content, tune out distractions, and get",
     "choco": "dropbox",
     "scoop": "nonportable/dropbox-np",
     "winget": "Dropbox.Dropbox",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "cURL",
+    "Content": "cURL",
     "Description": "Command line tool and library for transferring data with URLs",
     "choco": "curl",
     "scoop": "main/curl",
     "winget": "cURL.cURL",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "PDF Creator",
+    "Content": "PDF Creator",
     "Description": "PDFCreator lets you convert any printable document to PDF",
     "choco": "pdfcreator",
     "scoop": "nonportable/pdf24-creator-np",
     "winget": "pdfforge.PDFCreator",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "Autoruns",
+    "Content": "Autoruns",
     "Description": "This utility shows you what programs are configured to run",
     "choco": "autoruns",
     "scoop": "sysinternals/autoruns",
     "winget": "Microsoft.Sysinternals.Autoruns",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft OneDrive",
+    "Content": "Microsoft OneDrive",
     "Description": "Save your files and photos to OneDrive and access them",
     "choco": "onedrive",
     "scoop": "na",
     "winget": "Microsoft.OneDrive",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Process Explorer",
+    "Content": "Process Explorer",
     "Description": "Process Explorer shows you information about which handles and DLLs",
     "choco": "procexp",
     "scoop": "sysinternals/process-explorer",
     "winget": "Microsoft.Sysinternals.ProcessExplorer",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "FFmpeg",
+    "Content": "FFmpeg",
     "Description": "FFmpeg is a widelyused crossplatform multimedia framework which can process",
     "choco": "ffmpeg",
     "scoop": "main/ffmpeg",
     "winget": "Gyan.FFmpeg",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "OpenVPN Connect",
+    "Content": "OpenVPN Connect",
     "Description": "The official OpenVPN Connect client software developed and maintained by",
     "choco": "openvpn-connect",
     "scoop": "extras/openvpn-connect",
     "winget": "OpenVPNTechnologies.OpenVPNConnect",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Git Large File Storage",
+    "Content": "Git Large File Storage",
     "Description": "Git Large File Storage LFS replaces large files such as",
     "choco": "git-lfs",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Nmap",
+    "Content": "Nmap",
     "Description": "Nmap Network Mapper is a free and open source utility",
     "choco": "nmap",
     "scoop": "main/nmap",
     "winget": "Insecure.Nmap",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "UltraVNC",
+    "Content": "UltraVNC",
     "Description": "UltraVNC is an open source application that uses the VNC",
     "choco": "ultravnc",
     "scoop": "extras/ultravnc",
     "winget": "uvncbvba.UltraVnc",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Plex",
+    "Content": "Plex",
     "Description": "Plex is a global streaming media service and a clientserver",
     "choco": "plex",
     "scoop": "extras/plex-desktop",
     "winget": "Plex.Plex",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Plex Media Server",
+    "Content": "Plex Media Server",
     "Description": "Plex Media Server helps you organise your media and stream",
     "choco": "plexmediaserver",
     "scoop": "main/plex-server",
     "winget": "Plex.PlexMediaServer",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visio Viewer",
+    "Content": "Microsoft Visio Viewer",
     "Description": "Visio 2016 Viewer Visio users can freely distribute Visio drawings",
     "choco": "visioviewer",
     "scoop": "na",
     "winget": "Microsoft.VisioViewer",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "Keyn Stroke",
+    "Content": "Keyn Stroke",
     "Description": "KeynStroke makes it easy for your audience to follow your",
     "choco": "key-n-stroke",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Fing",
+    "Content": "Fing",
     "Description": "Fing App is a free network scanner that makes you",
     "choco": "fing",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Ryujinx",
+    "Content": "Ryujinx",
     "Description": "Ryujinx is an opensource Nintendo Switch emulator created by gdkchan",
     "choco": "ryujinx --params",
     "scoop": "games/ryujinx",
     "winget": "na",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Omnify Hotspot",
+    "Content": "Omnify Hotspot",
     "Description": "The best virtual router to turn your PC into a",
     "choco": "omnifyhotspot",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "MKVToolNix",
+    "Content": "MKVToolNix",
     "Description": "MKVToolNix is a set of tools to create alter and",
     "choco": "mkvtoolnix",
     "scoop": "extras/mkvtoolnix",
     "winget": "MoritzBunkus.MKVToolNix",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Neat Download Manager",
+    "Content": "Neat Download Manager",
     "Description": "Neat Download Manager is a free Internet Download Manager for",
     "choco": "na",
     "scoop": "na",
     "winget": "na",
     "itt": "neat",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "x630ce for all games",
+    "Content": "x630ce for all games",
     "Description": "Xbox 360 Controller Emulator” allows your controller (gamepad, joystick, steering",
     "choco": "na",
     "scoop": "na",
     "winget": "na",
     "itt": "x360ce",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft .NET SDK 7",
+    "Content": "Microsoft .NET SDK 7",
     "Description": "NET is a free crossplatform opensource developer platform for building",
     "choco": "dotnet-7.0-sdk",
     "scoop": "na",
     "winget": "Microsoft.DotNet.SDK.7",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft .NET SDK 8",
+    "Content": "Microsoft .NET SDK 8",
     "Description": "NET is a free crossplatform opensource developer platform for building",
     "choco": "dotnet-sdk",
     "scoop": "na",
     "winget": "Microsoft.DotNet.SDK.Preview",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft ASP.NET Core Runtime 7.0",
+    "Content": "Microsoft ASP.NET Core Runtime 7.0",
     "Description": "NET is a free crossplatform opensource developer platform for building",
     "choco": "dotnet-aspnetruntime",
     "scoop": "na",
     "winget": "Microsoft.DotNet.AspNetCore.7",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "HFS HTTP File Server",
+    "Content": "HFS HTTP File Server",
     "Description": "You can use HFS HTTP File Server to send and",
     "choco": "hfs",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Cemu",
+    "Content": "Cemu",
     "Description": "Cemu is a highly experimental software to emulate Wii U",
     "choco": "cemu",
     "scoop": "games/cemu",
     "winget": "Cemu.Cemu",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Chatterino",
+    "Content": "Chatterino",
     "Description": "Chatterino is a chat client for Twitch chat that offers",
     "choco": "chatterino",
     "scoop": "extras/chatterino",
     "winget": "ChatterinoTeam.Chatterino",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "Clementine",
+    "Content": "Clementine",
     "Description": "Clementine is a modern music player and library organizer supporting",
     "choco": "clementine",
     "scoop": "extras/clementine",
     "winget": "Clementine.Clementine",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Clink",
+    "Content": "Clink",
     "Description": "Clink is a powerful Bashcompatible commandline interface CLIenhancement for Windows",
     "choco": "clink",
     "scoop": "main/clink",
     "winget": "chrisant996.Clink",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "CMake",
+    "Content": "CMake",
     "Description": "CMake is an opensource crossplatform family of tools designed to",
     "choco": "cmake",
     "scoop": "main/cmake",
     "winget": "Kitware.CMake",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "CopyQ Clipboard Manager",
+    "Content": "CopyQ Clipboard Manager",
     "Description": "CopyQ is a clipboard manager with advanced features allowing you",
     "choco": "copyq",
     "scoop": "extras/copyq",
     "winget": "hluk.CopyQ",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Crystal Disk Info",
+    "Content": "Crystal Disk Info",
     "Description": "Crystal Disk Info is a disk health monitoring tool that",
     "choco": "crystaldiskinfo",
     "scoop": "na",
     "winget": "CrystalDewWorld.CrystalDiskInfo",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Crystal Disk Mark",
+    "Content": "Crystal Disk Mark",
     "Description": "Crystal Disk Mark is a disk benchmarking tool that measures",
     "choco": "crystaldiskmark",
     "scoop": "extras/crystaldiskmark",
     "winget": "CrystalDewWorld.CrystalDiskMark",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Darktable",
+    "Content": "Darktable",
     "Description": "Opensource photo editing tool offering an intuitive interface advanced editing",
     "choco": "darktable",
     "scoop": "extras/darktable",
     "winget": "darktable.darktable",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "EA App",
+    "Content": "EA App",
     "Description": "EA App is a platform for accessing and playing Electronic",
     "choco": "ea-app",
     "scoop": "na",
     "winget": "ElectronicArts.EADesktop",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Falkon",
+    "Content": "Falkon",
     "Description": "Falkon is a lightweight and fast web browser with a",
     "choco": "falkon",
     "scoop": "extras/falkon",
     "winget": "KDE.Falkon",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "File Converter",
+    "Content": "File Converter",
     "Description": "File Converter is a very simple tool which allows you",
     "choco": "file-converter",
     "scoop": "nonportable/file-converter-np",
     "winget": "AdrienAllard.FileConverter",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Files",
+    "Content": "Files",
     "Description": "Alternative file explorer",
     "choco": "files",
     "scoop": "nonportable/files-np",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Flameshot",
+    "Content": "Flameshot",
     "Description": "Flameshot is a powerful yet simple to use screenshot software",
     "choco": "flameshot",
     "scoop": "extras/flameshot",
     "winget": "Flameshot.Flameshot",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Lightshot",
+    "Content": "Lightshot",
     "Description": "Ligthshot is an Easytouse lightweight screenshot software tool where you",
     "choco": "lightshot",
     "scoop": "versions/lightshot",
     "winget": "Skillbrains.Lightshot",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "F.lux",
+    "Content": "F.lux",
     "Description": "flux adjusts the color temperature of your screen to reduce",
     "choco": "flux",
     "scoop": "extras/f.lux",
     "winget": "flux.flux",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "GitHub CLI",
+    "Content": "GitHub CLI",
     "Description": "GitHub CLI is a commandline tool that simplifies working with",
     "choco": "gh",
     "scoop": "na",
     "winget": "GitHub.cli",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "GOG Galaxy",
+    "Content": "GOG Galaxy",
     "Description": "GOG Galaxy is a gaming client that offers DRMfree games",
     "choco": "goggalaxy",
     "scoop": "games/goggalaxy",
     "winget": "GOG.Galaxy",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Greenshot",
+    "Content": "Greenshot",
     "Description": "Greenshot is a lightweight screenshot software tool with builtin image",
     "choco": "greenshot",
     "scoop": "extras/greenshot",
     "winget": "Greenshot.Greenshot",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Hexchat",
+    "Content": "Hexchat",
     "Description": "HexChat is a free opensource IRC Internet Relay Chat client",
     "choco": "hexchat",
     "scoop": "extras/hexchat",
     "winget": "HexChat.HexChat",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "HWMonitor",
+    "Content": "HWMonitor",
     "Description": "HWMonitor is a hardware monitoring program that reads PC systems",
     "choco": "hwmonitor",
     "scoop": "extras/hwmonitor",
     "winget": "CPUID.HWMonitor",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "ImageGlass",
+    "Content": "ImageGlass",
     "Description": "ImageGlass is a versatile image viewer with support for various",
     "choco": "imageglass",
     "scoop": "extras/imageglass",
     "winget": "DuongDieuPhap.ImageGlass",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Itch.io",
+    "Content": "Itch.io",
     "Description": "Itchio is a digital distribution platform for indie games and",
     "choco": "itch",
     "scoop": "games/itch",
     "winget": "ItchIo.Itch",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "KDE Connect",
+    "Content": "KDE Connect",
     "Description": "KDE Connect allows seamless integration between your KDE desktop and",
     "choco": "kdeconnect-kde",
     "scoop": "extras/kdeconnect",
     "winget": "KDE.KDEConnect",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "KeePassXC",
+    "Content": "KeePassXC",
     "Description": "KeePassXC is a crossplatform opensource password manager with strong encryption",
     "choco": "keepassxc",
     "scoop": "extras/keepassxc",
     "winget": "KeePassXCTeam.KeePassXC",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Lazygit",
+    "Content": "Lazygit",
     "Description": "Simple terminal UI for git commands",
     "choco": "lazygit",
     "scoop": "extras/lazygit",
     "winget": "JesseDuffield.lazygit",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "LocalSend",
+    "Content": "LocalSend",
     "Description": "An open source crossplatform alternative to AirDrop",
     "choco": "localsend.install",
     "scoop": "extras/localsend",
     "winget": "LocalSend.LocalSend",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Fork",
+    "Content": "Fork",
     "Description": "Fork a fast and friendly git client",
     "choco": "git-fork",
     "scoop": "extras/fork",
     "winget": "Fork.Fork",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "PulsarEdit",
+    "Content": "PulsarEdit",
     "Description": "A Communityled HyperHackable Text Editor",
     "choco": "pulsar",
     "scoop": "na",
     "winget": "Pulsar-Edit.Pulsar",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Shotcut",
+    "Content": "Shotcut",
     "Description": "Shotcut is a free open source crossplatform video editor",
     "choco": "Shotcut",
     "scoop": "extras/shotcut",
     "winget": "Meltytech.Shotcut",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "PaleMoon",
+    "Content": "PaleMoon",
     "Description": "Pale Moon is an Open Source Goannabased web browser available",
     "choco": "paleMoon",
     "scoop": "extras/palemoon",
     "winget": "MoonchildProductions.PaleMoon",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "JoyToKey",
+    "Content": "JoyToKey",
     "Description": "enables PC game controllers to emulate the keyboard and mouse",
     "choco": "joytokey",
     "scoop": "na",
     "winget": "JTKsoftware.JoyToKey",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Windows Auto Dark Mode",
+    "Content": "Windows Auto Dark Mode",
     "Description": "Automatically switches between the dark and light theme of Windows",
     "choco": "auto-dark-mode",
     "scoop": "nonportable/auto-dark-mode-np",
     "winget": "Armin2208.WindowsAutoNightMode",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Windows Firewall Control",
+    "Content": "Windows Firewall Control",
     "Description": "Windows Firewall Control is a powerful tool which extends the",
     "choco": "windowsfirewallcontrol",
     "scoop": "na",
     "winget": "BiniSoft.WindowsFirewallControl",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "TightVNC",
+    "Content": "TightVNC",
     "Description": "TightVNC is a free and Open Source remote desktop software",
     "choco": "TightVNC",
     "scoop": "extras/tightvnc",
     "winget": "GlavSoft.TightVNC",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Python Version Manager",
+    "Content": "Python Version Manager",
     "Description": "pyenv for Windows is a simple python version management tool",
     "choco": "pyenv-win",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Pixi",
+    "Content": "Pixi",
     "Description": "Pixi is a fast software package manager built on top",
     "choco": "pixi",
     "scoop": "main/pixi",
     "winget": "prefix-dev.pixi",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "VSCodium",
+    "Content": "VSCodium",
     "Description": "VSCodium is a communitydriven freelylicensed binary distribution of Microsofts VS",
     "choco": "vscodium",
     "scoop": "extras/vscodium",
     "winget": "VSCodium.VSCodium",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Thonny Python IDE",
+    "Content": "Thonny Python IDE",
     "Description": "Python IDE for beginners",
     "choco": "thonny",
     "scoop": "extras/thonny",
     "winget": "AivarAnnamaa.Thonny",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Poedit",
+    "Content": "Poedit",
     "Description": "Poedit translations editor The best way to translate apps and",
     "choco": "na",
     "scoop": "extras/poedit",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Adobe Acrobat Reader",
+    "Content": "Adobe Acrobat Reader",
     "Description": "Adobe Acrobat Reader DC software is the free trusted global",
     "choco": "adobereader",
     "scoop": "na",
     "winget": "Adobe.Acrobat.Reader.32-bit",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "Flash Player Plugin",
+    "Content": "Flash Player Plugin",
     "Description": "The Adobe Flash Player is freeware software for viewing multimedia",
     "choco": "flashplayerplugin",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "Sysinternals",
+    "Content": "Sysinternals",
     "Description": "The Sysinternals Troubleshooting Utilities have been rolled up into a",
     "choco": "sysinternals",
     "scoop": "extras/sysinternals",
     "winget": "na",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "SelfishNet",
+    "Content": "SelfishNet",
     "Description": "Control your internet bandwidth with SelfishNet V3, ARP Spoofing application.",
     "choco": "na",
     "scoop": "na",
     "winget": "na",
     "itt": "selfishnet",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "NTLite",
+    "Content": "NTLite",
     "Description": "Integrate updates drivers automate Windows and application setup speedup Windows",
     "choco": "ntlite-free",
     "scoop": "extras/ntlite",
     "winget": "Nlitesoft.NTLite",
     "itt": "na",
-    "category": "Drivers"
+    "category": "Drivers",
+    "IsChecked": false
   },
   {
-    "Name": "Olive Video Editor",
+    "Content": "Olive Video Editor",
     "Description": "Olive is a free nonlinear video editor for Windows",
     "choco": "olive",
     "scoop": "extras/olive-editor",
     "winget": "OliveTeam.OliveVideoEditor",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Mark Text",
+    "Content": "Mark Text",
     "Description": "A simple and elegant opensource markdown editor that focused on",
     "choco": "marktext.portable",
     "scoop": "extras/marktext",
     "winget": "MarkText.MarkText",
     "itt": "na",
-    "category": "Portable"
+    "category": "Portable",
+    "IsChecked": false
   },
   {
-    "Name": "pCloud Drive",
+    "Content": "pCloud Drive",
     "Description": "pCloud is a file hosting service also called cloud storage",
     "choco": "pcloud",
     "scoop": "na",
     "winget": "pCloudAG.pCloudDrive",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Hurl",
+    "Content": "Hurl",
     "Description": "Hurl is a command line tool that runs HTTP requests",
     "choco": "hurl",
     "scoop": "main/hurl",
     "winget": "Orange-OpenSource.Hurl",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "File Hash Generator",
+    "Content": "File Hash Generator",
     "Description": "Compute and save MD5 SHA1 SHA2 RIPEMD hashes and CRC1632",
     "choco": "file-hash-generator",
     "scoop": "na",
     "winget": "BinaryMark.FileHashGenerator",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Multimark down",
+    "Content": "Multimark down",
     "Description": "MultiMarkdown or MMD, is a tool to help turn minimally",
     "choco": "multimarkdown",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "PCSX2 Emulator",
+    "Content": "PCSX2 Emulator",
     "Description": "PCSX2 is a free and opensource PlayStation 2 PS2 emulator",
     "choco": "pcsx2.portable",
     "scoop": "games/pcsx2",
     "winget": "na",
     "itt": "na",
-    "category": "Portable"
+    "category": "Portable",
+    "IsChecked": false
   },
   {
-    "Name": "RetroArch",
+    "Content": "RetroArch",
     "Description": "RetroArch is a frontend for emulators game engines and media",
     "choco": "retroarch",
     "scoop": "extras/retroarch",
     "winget": "Libretro.RetroArch",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Free Virtual Keyboard",
+    "Content": "Free Virtual Keyboard",
     "Description": "Free Virtual Keyboard works on any Windows based UMPC with",
     "choco": "free-virtual-keyboard",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Caret",
+    "Content": "Caret",
     "Description": "Beautiful Clever Markdown Editor Download trial",
     "choco": "caret",
     "scoop": "extras/caret",
     "winget": "Caret.Caret",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "iSpy",
+    "Content": "iSpy",
     "Description": "iSpy is the worlds most popular open source video surveillance",
     "choco": "ispy",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Imaging"
+    "category": "Imaging",
+    "IsChecked": false
   },
   {
-    "Name": "WavPack",
+    "Content": "WavPack",
     "Description": "WavPack is a completely open audio compression format providing lossless",
     "choco": "wavpack",
     "scoop": "main/wavpack",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "ProcessThreadsView",
+    "Content": "ProcessThreadsView",
     "Description": "ProcessThreadsView is a small utility that displays extensive information about",
     "choco": "processthreadsview",
     "scoop": "nirsoft/processthreadsview",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Zulu",
+    "Content": "Zulu",
     "Description": "Zulu is a certified build of OpenJDK that is fully",
     "choco": "zulu12",
     "scoop": "java/zulu11-jre",
     "winget": "Azul.Zulu.11.JRE",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "GitHubReleaseNotesv1",
+    "Content": "GitHubReleaseNotesv1",
     "Description": "Generate Release Notes in MarkDown format from a GitHub project",
     "choco": "githubreleasenotes",
     "scoop": "na",
     "winget": "StefHeyenrath.GitHubReleaseNotes",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Tome",
+    "Content": "Tome",
     "Description": "Developing games is all about data With game systems",
     "choco": "tome-editor",
     "scoop": "games/tome4",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Win32 OpenSSH",
+    "Content": "Win32 OpenSSH",
     "Description": "OpenSSH is a complete implementation of the SSH protocol version",
     "choco": "openssh",
     "scoop": "main/openssh",
     "winget": "Microsoft.OpenSSH.Beta",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Komodo Edit",
+    "Content": "Komodo Edit",
     "Description": "Komodo Edit is a free and open source text editor",
     "choco": "komodo-edit",
     "scoop": "na",
     "winget": "ActiveState.KomodoEdit",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "FreeCAD",
+    "Content": "FreeCAD",
     "Description": "A free and opensource multiplatform 3D parametric modeler",
     "choco": "freecad",
     "scoop": "extras/freecad",
     "winget": "FreeCAD.FreeCAD",
     "itt": "na",
-    "category": "Imaging"
+    "category": "Imaging",
+    "IsChecked": false
   },
   {
-    "Name": "SQLite",
+    "Content": "SQLite",
     "Description": "SQLite is an inprocess library that implements a selfcontained serverless",
     "choco": "sqlite",
     "scoop": "main/sqlite",
     "winget": "SQLite.SQLite",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "MkDocs",
+    "Content": "MkDocs",
     "Description": "MkDocs is a fast simple and downright gorgeous static site",
     "choco": "mkdocs",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "MkDocs Material Theme",
+    "Content": "MkDocs Material Theme",
     "Description": "MkDocs is a fast simple and downright gorgeous static site",
     "choco": "mkdocs-material",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "PuTTY",
+    "Content": "PuTTY",
     "Description": "A free implementation of SSH and Telnet along with an",
     "choco": "putty",
     "scoop": "extras/putty",
     "winget": "PuTTY.PuTTY",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "WinSCP",
+    "Content": "WinSCP",
     "Description": "WinSCP is an open source free SFTP client FTP client",
     "choco": "winscp",
     "scoop": "extras/winscp",
     "winget": "WinSCP.WinSCP",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "LibreOffice Still",
+    "Content": "LibreOffice Still",
     "Description": "LibreOffice is the free powerpacked Open Source personal productivity suite",
     "choco": "libreoffice-still",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "Aio Runtimes",
+    "Content": "Aio Runtimes",
     "Description": "All in One Runtimes also known as AIO Runtimes is",
     "choco": "na",
     "scoop": "extras/vcredist-aio",
     "winget": "na",
     "itt": "aio-runtimes",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "Visual-C-Runtimes All in One Oct 2024",
+    "Content": "Visual-C-Runtimes All in One Oct 2024",
     "Description": "This archive contains the latest version (Oct 2024) of all",
     "choco": "na",
     "scoop": "extras/vcredist",
     "winget": "na",
     "itt": "vsall",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "GPU-Z",
+    "Content": "GPU-Z",
     "Description": "GPUZ is a lightweight system utility designed to provide vital",
     "choco": "gpu-z",
     "scoop": "extras/gpu-z",
     "winget": "TechPowerUp.GPU-Z",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "MemTest86",
+    "Content": "MemTest86",
     "Description": "MemTest86 boots from a USB flash drive and tests the",
     "choco": "na",
     "scoop": "na",
     "winget": "na",
     "itt": "memtest86",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Memtest86 Plus",
+    "Content": "Memtest86 Plus",
     "Description": "Memtest86 Plus v6 is a unified, free, open-source memory testing",
     "choco": "na",
     "scoop": "na",
     "winget": "na",
     "itt": "memtest86plus",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "GrepWin",
+    "Content": "GrepWin",
     "Description": "Regular expression search and replace for Windows",
     "choco": "grepwin",
     "scoop": "extras/grepwin",
     "winget": "StefansTools.grepWin",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "NICE DCV Server",
+    "Content": "NICE DCV Server",
     "Description": "NICE DCV is a remote display protocol that securely streams",
     "choco": "nice-dcv-server",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "NTag",
+    "Content": "NTag",
     "Description": "NTag is a cross platform-graphical tag editor focused on everyday",
     "choco": "ntag",
     "scoop": "na",
     "winget": "nrittsti.NTag",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Volume2",
+    "Content": "Volume2",
     "Description": "Advanced Windows volume control",
     "choco": "volume2",
     "scoop": "extras/volume2",
     "winget": "irzyxa.Volume2Portable",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "qBittorrent Enhanced Edition",
+    "Content": "qBittorrent Enhanced Edition",
     "Description": "[Unofficial] qBittorrent Enhanced, based on qBittorrent",
     "choco": "qbittorrent-enhanced",
     "scoop": "extras/qbittorrent-enhanced",
     "winget": "wingetinstallc0re100.qBittorrent-Enhanced-Edition",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Aspia",
+    "Content": "Aspia",
     "Description": "Remote desktop and file transfer tool",
     "choco": "na",
     "scoop": "na",
     "winget": "na",
     "itt": "Aspia",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "SimpleTransfer Desktop",
+    "Content": "SimpleTransfer Desktop",
     "Description": "Simple Transfer is the easiest way of transferring your Photos",
     "choco": "simpletransfer",
     "scoop": "extras/simpletransfer",
     "winget": "Rambax.SimpleTransfer",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Twitch Desktop App",
+    "Content": "Twitch Desktop App",
     "Description": "Servers - A virtual home for your community to chat",
     "choco": "twitch",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Remote Desktop Manager",
+    "Content": "Remote Desktop Manager",
     "Description": "Remote Connections & Passwords. Everywhere!",
     "choco": "rdm",
     "scoop": "sysinternals/rdcman",
     "winget": "Devolutions.RemoteDesktopManager",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Torrid",
+    "Content": "Torrid",
     "Description": "Torrid is a multi-server, multi-client, multi-tracker Remote Torrent Client which",
     "choco": "torrid",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Mediamonkey",
+    "Content": "Mediamonkey",
     "Description": "Manage small to large collections of audio files, videos and",
     "choco": "mediamonkey",
     "scoop": "na",
     "winget": "VentisMedia.MediaMonkey",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "MediaInfo",
+    "Content": "MediaInfo",
     "Description": "Convenient unified display of the most relevent technical and tag",
     "choco": "mediainfo",
     "scoop": "main/mediainfo",
     "winget": "MediaArea.MediaInfo.GUI",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Universal Media Server",
+    "Content": "Universal Media Server",
     "Description": "Universal Media Server is a DLNA-compliant UPnP Media Server. It",
     "choco": "ums",
     "scoop": "na",
     "winget": "UniversalMediaServer.UniversalMediaServer",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "K-Lite Codec Pack Standard",
+    "Content": "K-Lite Codec Pack Standard",
     "Description": "The K-Lite Codec Pack is a collection of DirectShow filters",
     "choco": "k-litecodecpack-standard",
     "scoop": "nonportable/k-lite-codec-pack-standard-np",
     "winget": "CodecGuide.K-LiteCodecPack.Standard",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "PowerISO",
+    "Content": "PowerISO",
     "Description": "PowerISO provides an all-in-one solution. You can do every thing",
     "choco": "poweriso",
     "scoop": "na",
     "winget": "PowerSoftware.PowerISO",
     "itt": "na",
-    "category": "Compression"
+    "category": "Compression",
+    "IsChecked": false
   },
   {
-    "Name": "Screen To Gif",
+    "Content": "Screen To Gif",
     "Description": "This tool allows you to record a selected area of",
     "choco": "screentogif.portable",
     "scoop": "na",
     "winget": "NickeManarin.ScreenToGif",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Figma",
+    "Content": "Figma",
     "Description": "The collaborative interface design tool Build better products as a",
     "choco": "figma",
     "scoop": "extras/figma",
     "winget": "Figma.Figma",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "EarTrumpet",
+    "Content": "EarTrumpet",
     "Description": "EarTrumpet is a powerful volume control app for Windows",
     "choco": "eartrumpet",
     "scoop": "extras/eartrumpet",
     "winget": "File-New-Project.EarTrumpet",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Visual Studio Code Insiders",
+    "Content": "Visual Studio Code Insiders",
     "Description": "Microsoft Visual Studio Code is a code editor redefined and",
     "choco": "vscode-insiders",
     "scoop": "versions/vscode-insiders",
     "winget": "Microsoft.VisualStudioCode.Insiders",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "AyuGramDesktop",
+    "Content": "AyuGramDesktop",
     "Description": " Desktop Telegram client with good customization and Ghost mode",
     "choco": "na",
     "scoop": "na",
     "winget": "na",
     "itt": "ayugramdesktop",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "Zettlr",
+    "Content": "Zettlr",
     "Description": "Zettlr is a supercharged markdown editor that combines many writing",
     "choco": "zettlr",
     "scoop": "extras/zettlr",
     "winget": "Zettlr.Zettlr",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "RustDesk",
+    "Content": "RustDesk",
     "Description": "An open-source remote desktop software, works out of the box",
     "choco": "rustdesk",
     "scoop": "extras/rustdesk",
     "winget": "RustDesk.RustDesk",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Ente Auth",
+    "Content": "Ente Auth",
     "Description": "An end-to-end encrypted, cross platform and free app for storing",
     "choco": "ente-auth",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Security"
+    "category": "Security",
+    "IsChecked": false
   },
   {
-    "Name": "SQLiteStudio",
+    "Content": "SQLiteStudio",
     "Description": "SQLiteStudio is desktop application for browsing and editing SQLite database",
     "choco": "sqlitestudio",
     "scoop": "extras/sqlitestudio",
     "winget": "sqlitestudio.pl.SQLiteStudio",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "DuckStation",
+    "Content": "DuckStation",
     "Description": " Fast PlayStation 1 emulator for x86-64/AArch32/AArch64/RV64",
     "choco": "na",
     "scoop": "games/duckstation",
     "winget": "na",
     "itt": "duckstation",
-    "category": "Portable"
+    "category": "Portable",
+    "IsChecked": false
   },
   {
-    "Name": "Authme - Simple 2FA",
+    "Content": "Authme - Simple 2FA",
     "Description": "Simple 2FA desktop application",
     "choco": "authme.portable",
     "scoop": "extras/authme",
     "winget": "na",
     "itt": "na",
-    "category": "Security"
+    "category": "Security",
+    "IsChecked": false
   },
   {
-    "Name": "SuperCopier2",
+    "Content": "SuperCopier2",
     "Description": "SuperCopier2 SuperCopier replaces Windows explorer file copy and adds many",
     "choco": "na",
     "scoop": "na",
     "winget": "na",
     "itt": "supercopier2",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Octopus Deploy",
+    "Content": "Octopus Deploy",
     "Description": "Octopus Deploy is a Continuous Delivery platform for complex deployments",
     "choco": "octopusdeploy.tentacle",
     "scoop": "na",
     "winget": "OctopusDeploy.Tentacle",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Kindle Previewer",
+    "Content": "Kindle Previewer",
     "Description": "Kindle Previewer is a graphical user interface tool that emulates",
     "choco": "kindlepreviewer",
     "scoop": "extras/kcc",
     "winget": "na",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "Interior Design 3D",
+    "Content": "Interior Design 3D",
     "Description": "Interior Design 3D is an expert program for home design",
     "choco": "na",
     "scoop": "extras/sweethome3d",
     "winget": "AMSSoftware.InteriorDesign3D-e",
     "itt": "na",
-    "category": "Imaging"
+    "category": "Imaging",
+    "IsChecked": false
   },
   {
-    "Name": "MeshLab",
+    "Content": "MeshLab",
     "Description": "MeshLab is an open source, portable, and extensible system for",
     "choco": "meshlab",
     "scoop": "extras/meshlab",
     "winget": "CNRISTI.MeshLab",
     "itt": "na",
-    "category": "Imaging"
+    "category": "Imaging",
+    "IsChecked": false
   },
   {
-    "Name": "GitKraken",
+    "Content": "GitKraken",
     "Description": "Legendary Git GUI client for Windows, Mac & Linux",
     "choco": "gitkraken",
     "scoop": "extras/gitkraken",
     "winget": "Axosoft.GitKraken",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Slack",
+    "Content": "Slack",
     "Description": "Slack is a collaboration hub for work, no matter what",
     "choco": "slack",
     "scoop": "extras/slack",
     "winget": "SlackTechnologies.Slack",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "Rocket Chat",
+    "Content": "Rocket Chat",
     "Description": "Rocket.Chat is the leading open source team chat software solution.",
     "choco": "rocketchat",
     "scoop": "extras/rocketchat-client",
     "winget": "RocketChat.RocketChat",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "TeamSpeak",
+    "Content": "TeamSpeak",
     "Description": "Use crystal clear sound to communicate with your team mates",
     "choco": "teamspeak",
     "scoop": "extras/teamspeak3",
     "winget": "TeamSpeakSystems.TeamSpeakClient",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "FFFTP",
+    "Content": "FFFTP",
     "Description": "FFFTP is lightweight FTP client software. FFFTP has many useful",
     "choco": "ffftp",
     "scoop": "na",
     "winget": "Sayuri.FFFTP",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "SmartFTP",
+    "Content": "SmartFTP",
     "Description": "SmartFTP is a fast and reliable FTP, FTPS, SFTP, HTTP",
     "choco": "smartftp",
     "scoop": "na",
     "winget": "SmartSoft.SmartFTP",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Rclone",
+    "Content": "Rclone",
     "Description": "Rclone (\"rsync for cloud storage\") is a command-line program to",
     "choco": "rclone",
     "scoop": "main/rclone",
     "winget": "Rclone.Rclone",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Cyberduck",
+    "Content": "Cyberduck",
     "Description": "Cyberduck is a libre server and cloud storage browser for",
     "choco": "cyberduck",
     "scoop": "extras/cyberduck",
     "winget": "Iterate.Cyberduck",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Dolphin",
+    "Content": "Dolphin",
     "Description": "Dolphin is an emulator for two recent Nintendo video game",
     "choco": "dolphin",
     "scoop": "extras/dolphin",
     "winget": "DolphinEmulator.Dolphin",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "mGBA",
+    "Content": "mGBA",
     "Description": "mGBA is an open-source Game Boy Advance emulator",
     "choco": "mgba",
     "scoop": "games/mgba",
     "winget": "JeffreyPfau.mGBA",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "EmulationStation",
+    "Content": "EmulationStation",
     "Description": "A graphical and themeable emulator front-end that allows you to",
     "choco": "emulationstation",
     "scoop": "na",
     "winget": "Emulationstation.Emulationstation",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "ScummVM",
+    "Content": "ScummVM",
     "Description": "ScummVM is a program which allows you to run certain",
     "choco": "scummvm",
     "scoop": "games/scummvm",
     "winget": "ScummVM.ScummVM",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Project64",
+    "Content": "Project64",
     "Description": "Project64 is a free and open-source emulator for the Nintendo",
     "choco": "project64",
     "scoop": "games/project64",
     "winget": "Project64.Project64",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "DOSBox",
+    "Content": "DOSBox",
     "Description": "DOSBox is an emulator program which emulates an IBM PC",
     "choco": "na",
     "scoop": "main/dosbox",
     "winget": "DOSBox.DOSBox",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Kodu Game Lab",
+    "Content": "Kodu Game Lab",
     "Description": "Kodu Game Lab is a 3D game development environment that",
     "choco": "na",
     "scoop": "na",
     "winget": "InfiniteInstant.KoduGameLab",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "GDevelop",
+    "Content": "GDevelop",
     "Description": "A free and open source nocode game engine designed to",
     "choco": "gdevelop",
     "scoop": "extras/gdevelop",
     "winget": "GDevelop.GDevelop",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "MongoDB Tools",
+    "Content": "MongoDB Tools",
     "Description": "The MongoDB Database Tools are a collection of command-line utilities",
     "choco": "mongodb-database-tools",
     "scoop": "main/mongodb-database-tools",
     "winget": "MongoDB.DatabaseTools",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "DB Browser for SQLite",
+    "Content": "DB Browser for SQLite",
     "Description": "DB Browser for SQLite (DB4S) is a high quality, visual",
     "choco": "sqlitebrowser",
     "scoop": "na",
     "winget": "DBBrowserForSQLite.DBBrowserForSQLite",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "MySQL",
+    "Content": "MySQL",
     "Description": "The MySQL software delivers a very fast, multithreaded, multi-user, and",
     "choco": "mysql",
     "scoop": "main/mysql",
     "winget": "Oracle.MySQL",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "MongoDB Compass",
+    "Content": "MongoDB Compass",
     "Description": "Compass is a free interactive tool for querying, optimizing, and",
     "choco": "mongodb-compass",
     "scoop": "extras/mongodb-compass",
     "winget": "MongoDB.Compass.Full",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "MongoDB Compass readonly",
+    "Content": "MongoDB Compass readonly",
     "Description": "Compass is a free interactive tool for analyzing your MongoDB",
     "choco": "mongodb-compass-readonly",
     "scoop": "na",
     "winget": "MongoDB.Compass.Readonly",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "IDA free",
+    "Content": "IDA free",
     "Description": "DA is a Windows, Linux or Mac OS X hosted",
     "choco": "ida-free",
     "scoop": "extras/ida-free",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Binary Ninja",
+    "Content": "Binary Ninja",
     "Description": "reverse engineering tool. It supports a number of great features",
     "choco": "na",
     "scoop": "na",
     "winget": "na",
     "itt": "binaryninja",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Resource Hacker",
+    "Content": "Resource Hacker",
     "Description": "freeware resource compiler & decompiler for Windows® applications",
     "choco": "na",
     "scoop": "extras/resource-hacker",
     "winget": "na",
     "itt": "resourcehacker",
-    "category": "Portable"
+    "category": "Portable",
+    "IsChecked": false
   },
   {
-    "Name": "Microsoft Visual C++ Redistributable for Visual Studio 2015-2022",
+    "Content": "Microsoft Visual C++ Redistributable for Visual Studio 2015-2022",
     "Description": "Run-time components that are required to run C++ applications that",
     "choco": "vcredist140",
     "scoop": "na",
     "winget": "Microsoft.VCRedist.2015+.x86",
     "itt": "na",
-    "category": "Runtimes"
+    "category": "Runtimes",
+    "IsChecked": false
   },
   {
-    "Name": "MPV",
+    "Content": "MPV",
     "Description": "a free open source and cross-platform media player",
     "choco": "mpvio",
     "scoop": "extras/mpv",
     "winget": "na",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "ZenBrowser",
+    "Content": "ZenBrowser",
     "Description": "The modern, privacy-focused, performance-driven browser built on Firefox",
     "choco": "na",
     "scoop": "na",
     "winget": "Zen-Team.Zen-Browser",
     "itt": "na",
-    "category": "Web Browsers"
+    "category": "Web Browsers",
+    "IsChecked": false
   },
   {
-    "Name": "Aegisub",
+    "Content": "Aegisub",
     "Description": "Aegisub is a free, cross-platform open source tool for creating",
     "choco": "aegisub",
     "scoop": "extras/aegisub",
     "winget": "Aegisub.Aegisub",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "AppGroup",
+    "Content": "AppGroup",
     "Description": "App Group lets you organize, customize, and launch your apps",
     "choco": "na",
     "scoop": "na",
     "winget": "na",
     "itt": "iandiv-appgroup",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "Quran Companion",
+    "Content": "Quran Companion",
     "Description": "Free and open-source desktop Quran reader and player",
     "choco": "na",
     "scoop": "na",
     "winget": "na",
     "itt": "yf-qc",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "Cursor",
+    "Content": "Cursor",
     "Description": "Cursor is an AI-first Code Editor",
     "choco": "cursoride",
     "scoop": "extras/cursor",
     "winget": "na",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Reason",
+    "Content": "Reason",
     "Description": "A modular DAW and plug-in for music production",
     "choco": "reasonstudios-reason13",
     "scoop": "na",
     "winget": "na",
     "itt": "na",
-    "category": "Media Tools"
+    "category": "Media Tools",
+    "IsChecked": false
   },
   {
-    "Name": "Ruby",
+    "Content": "Ruby",
     "Description": "Ruby - A dynamic, open source programming language focusing on simplicity and productivity",
     "choco": "ruby",
     "scoop": "main/ruby",
     "winget": "RubyInstallerTeam.Ruby.3.1",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "FastCopy",
+    "Content": "FastCopy",
     "Description": "The Fastest Copy/Delete Software on Windows",
     "choco": "fastcopy",
     "scoop": "extras/fastcopy",
     "winget": "FastCopy.FastCopy",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Forkgram",
+    "Content": "Forkgram",
     "Description": "Fork of Telegram Desktop messaging app",
     "choco": "forkgram",
     "scoop": "extras/forkgram",
     "winget": "na",
     "itt": "na",
-    "category": "Portable"
+    "category": "Portable",
+    "IsChecked": false
   },
   {
-    "Name": "DriverView",
+    "Content": "DriverView",
     "Description": "Loaded Windows Drivers List",
     "choco": "driverview",
     "scoop": "extras/driverview",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "RegScanner",
+    "Content": "RegScanner",
     "Description": "Scan and find values in the Registry",
     "choco": "regscanner",
     "scoop": "nirsoft/regscanner",
     "winget": "na",
     "itt": "na",
-    "category": "Utilities"
+    "category": "Utilities",
+    "IsChecked": false
   },
   {
-    "Name": "Windsurf",
+    "Content": "Windsurf",
     "Description": "The first agentic IDE, and then some. The Windsurf Editor is where the work of developers and AI truly flow together",
     "choco": "windsurf",
     "scoop": "extras/windsurf",
     "winget": "Codeium.Windsurf",
     "itt": "na",
-    "category": "Development"
+    "category": "Development",
+    "IsChecked": false
   },
   {
-    "Name": "Deluge",
+    "Content": "Deluge",
     "Description": "Full-featured, lightweight BitTorrent client",
     "choco": "deluge",
     "scoop": "extras/deluge",
     "winget": "DelugeTeam.Deluge",
     "itt": "na",
-    "category": "File Sharing"
+    "category": "File Sharing",
+    "IsChecked": false
   },
   {
-    "Name": "Evernote",
+    "Content": "Evernote",
     "Description": "A cross-platform, freemium app designed for note taking, organizing, and archiving",
     "choco": "evernote",
     "scoop": "na",
     "winget": "Evernote.Evernote",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "Grayjay",
+    "Content": "Grayjay",
     "Description": "Watch content on your own terms, ensuring you retain full ownership and control over what you watch. Your content, your way",
     "choco": "grayjay",
     "scoop": "na",
     "winget": "futo-org.Grayjay.Desktop",
     "itt": "na",
-    "category": "Media"
+    "category": "Media",
+    "IsChecked": false
   },
   {
-    "Name": "Heroic Games Launcher",
+    "Content": "Heroic Games Launcher",
     "Description": "An alternative GOG and Epic Games Launcher for Linux, Windows and macOS",
     "choco": "heroic-games-launcher",
     "scoop": "heroic-games-launcher",
     "winget": "HeroicGamesLauncher.HeroicGamesLauncher",
     "itt": "na",
-    "category": "Gaming"
+    "category": "Gaming",
+    "IsChecked": false
   },
   {
-    "Name": "Thunderbird",
+    "Content": "Thunderbird",
     "Description": "A free email client from Mozilla",
     "choco": "thunderbird",
     "scoop": "thunderbird",
     "winget": "Mozilla.Thunderbird",
     "itt": "na",
-    "category": "Communication"
+    "category": "Communication",
+    "IsChecked": false
   },
   {
-    "Name": "Calibre",
+    "Content": "Calibre",
     "Description": "calibre is the one stop solution to all your e-book needs",
     "choco": "calibre",
     "scoop": "extras/calibre",
     "winget": "calibre.calibre",
     "itt": "na",
-    "category": "Documents"
+    "category": "Documents",
+    "IsChecked": false
   },
   {
-    "Name": "OpenVPN",
+    "Content": "OpenVPN",
     "Description": "A full-featured open source SSL VPN solution",
     "choco": "openvpn",
     "scoop": "extras/openvpn",
     "winget": "OpenVPNTechnologies.OpenVPN",
     "itt": "na",
-    "category": "Security"
+    "category": "Security",
+    "IsChecked": false
   }
 ]

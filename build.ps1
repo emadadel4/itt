@@ -312,7 +312,7 @@ function ConvertTo-Xaml {
     param (
         [string]$text,
         [string]$HeadlineFontSize = 20,
-        [string]$DescriptionFontSize = 16
+        [string]$DescriptionFontSize = 15
     )
     Write-Host "[+] Generating Events Window Content..." -ForegroundColor Yellow
     # Initialize XAML as an empty string
@@ -336,10 +336,6 @@ function ConvertTo-Xaml {
                 $global:imageLinkMap[$name] = $link
                 # Image section
             }
-            "^## (.+)" {
-                # Event title
-                $global:TitleContent += $matches[1].Trim()
-            }
             "^### (.+)" {
                 # Headline 
                 $text = $matches[1].Trim()
@@ -353,14 +349,14 @@ function ConvertTo-Xaml {
             "^#### (.+)" {
                 #### Description
                 $Description = $matches[1].Trim()  
-                $xaml += "<TextBlock Text=''$Description'' FontSize=''$DescriptionFontSize'' Padding=''25 0 0 10'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap'' MaxWidth=''450''/>`n"
+                $xaml += "<TextBlock Text=''$Description'' FontSize=''$DescriptionFontSize'' Padding=''25 0 0 10'' Foreground=''{DynamicResource TextColorSecondaryColor2}'' TextWrapping=''Wrap'' MaxWidth=''450''/>`n"
             }
             "^- (.+)" {
                 # - Lists
                 $List = $matches[1].Trim()  
                 $xaml += "
                 <StackPanel Orientation=''Vertical''>
-                    <TextBlock Text=''• $List'' Padding=''35,0,0,0'' FontSize=''$DescriptionFontSize'' Width=''Auto'' Height=''Auto'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
+                    <TextBlock Text=''• $List'' Padding=''35,0,0,0'' FontSize=''$DescriptionFontSize'' Width=''Auto'' Height=''Auto'' Foreground=''{DynamicResource TextColorSecondaryColor2}'' TextWrapping=''Wrap''/>
                 </StackPanel>
                 `n" 
             }
@@ -494,7 +490,6 @@ function GenerateClickEventHandlers {
         }
         # Create the event title assignment using the extracted content
         $EventTitle = "
-        `$itt['window'].FindName('title').text = '$global:TitleContent'`.Trim()
         `$itt['window'].FindName('date').text = '$global:DateContent'`.Trim()
         "
         # Replace placeholders in the event window script with actual event handlers and title
@@ -662,8 +657,8 @@ try {
 #===========================================================================
 "@
 
-    $AppsCheckboxes   = GenerateCheckboxes -Database $itt.database.Applications -DatabaseName "applications" -ContentField "Name"
-    $TweaksCheckboxes = GenerateCheckboxes -Database $itt.database.Tweaks -DatabaseName "tweaks" -ContentField "Name" -IsCheckedField "check"
+    #$AppsCheckboxes   = GenerateCheckboxes -Database $itt.database.Applications -DatabaseName "applications" -ContentField "Name"
+    #$TweaksCheckboxes = GenerateCheckboxes -Database $itt.database.Tweaks -DatabaseName "tweaks" -ContentField "Name" -IsCheckedField "check"
     $SettingsCheckboxes = GenerateCheckboxes -Database $itt.database.Settings -ContentField "Name" -NameField "Name" -ToggleField "Style=" { StaticResource ToggleSwitchStyle }""
 
     # Get xaml files from Themes and put it inside MainXamlContent
