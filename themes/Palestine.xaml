@@ -28,8 +28,8 @@
     <SolidColorBrush x:Key="ToggleSwitchBorderBrush" Color="#777777"/>
 
     <!-- ListView -->
-    <SolidColorBrush x:Key="itemColor1" Color="#000000"/>
-    <SolidColorBrush x:Key="itemColor2" Color="#000002"/>
+    <SolidColorBrush x:Key="itemColor1" Color="#CC000000"/> 
+    <SolidColorBrush x:Key="itemColor2" Color="#99000002"/>
 
     <!-- Misc -->
     <SolidColorBrush x:Key="logo" Color="#00D96D"/>
