@@ -466,14 +466,5 @@
     "Script": [
       "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Detailed%20BSoD/run.ps1 | iex"
     ]
-  },
-  {
-    "Content": "1",
-    "Description": "1",
-    "Category": "Privacy",
-    "IsChecked": false,
-    "Script": [
-      "1"
-    ]
   }
 ]
