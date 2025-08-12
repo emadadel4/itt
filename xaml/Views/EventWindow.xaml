@@ -66,7 +66,7 @@
             <Grid Grid.Row="2" Background="Transparent">
                 <TextBlock Name="DisablePopup"
                            Foreground="{DynamicResource TextColorSecondaryColor2}"
-                           Text="Show on update"
+                           Text="{Binding DisablePopupText, TargetNullValue=Show on update}"
                            Background="Transparent"
                            TextAlignment="Center"
                            Cursor="Hand"
