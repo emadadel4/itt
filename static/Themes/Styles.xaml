@@ -600,10 +600,10 @@
                                 Margin="10,0,0,0">
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock">
-                                    <Setter Property="Text" Value="Off"/>
+                                    <Setter Property="Text" Value="{Binding Off, TargetNullValue=Off}"/>
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked}" Value="True">
-                                            <Setter Property="Text" Value="On"/>
+                                            <Setter Property="Text" Value="{Binding On, TargetNullValue=On}"/>
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
