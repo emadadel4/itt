@@ -71,3 +71,4 @@ protection,Protection
 classic,Classic
 auto,Auto
 package_manager,Package Manager
+DisablePopupText,Show on update

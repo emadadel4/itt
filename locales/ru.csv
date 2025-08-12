@@ -71,3 +71,4 @@ protection,Защита
 classic,Классический
 auto,Автоматический
 package_manager,Менеджер пакетов
+DisablePopupText,Показывать при обновлении
