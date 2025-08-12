@@ -191,8 +191,8 @@ $h = [System.Net.Http.HttpClientHandler]::new()
 $h.AutomaticDecompression = [System.Net.DecompressionMethods] 'GZip,Deflate'
 $c = [System.Net.Http.HttpClient]::new($h)
 
-$appsUrl   = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/Applications.json"
-$tweaksUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/update/static/Database/Tweaks.json"
+$appsUrl   = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/Applications.json"
+$tweaksUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/Tweaks.json"
 
 try {
     Write-Host "Getting Latest Apps and Tweaks..." -ForegroundColor Yellow
