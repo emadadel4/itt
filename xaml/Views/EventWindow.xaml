@@ -36,7 +36,7 @@
                                    Height="Auto"
                                    Width="Auto"
                                    FontSize="20"
-                                   Text="Whats New"
+                                   Text="Changelog"
                                    Foreground="{DynamicResource TextColorSecondaryColor}"
                                    FontWeight="SemiBold"
                                    TextWrapping="Wrap"
