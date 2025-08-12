@@ -4,7 +4,7 @@
     <ColumnDefinition Width="auto"/>
   </Grid.ColumnDefinitions>
   <!-- Begin Buttons -->
-     <Grid Column="1" Background="Transparent">
+     <Grid Column="1">
       <!--Begin Install Button-->
         <Button
           Name="installBtn"
