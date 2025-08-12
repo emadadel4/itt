@@ -180,11 +180,8 @@ function GenerateCheckboxes {
 
         # Build the CheckBox and its container
         $Checkboxes += @"
-        <StackPanel Orientation="Vertical" Margin="10">
-            <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical" Margin="15">
                 <CheckBox Content="$Content" FontSize="15" Tag="$Tag" $Toggle $Name ToolTip="$CleanedCategory"/>
-                <TextBlock Margin="8" FontSize="11" Text="{Binding $($Item.Category)}"/>
-            </StackPanel>
         </StackPanel>
 "@
     }
