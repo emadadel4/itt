@@ -1,48 +1,81 @@
-# Set the maximum number of threads for the RunspacePool to the number of threads on the machine
-$maxthreads = [int]$env:NUMBER_OF_PROCESSORS
-# Create a new session state for parsing variables into our runspace
-$hashVars = New-object System.Management.Automation.Runspaces.SessionStateVariableEntry -ArgumentList 'itt', $itt, $Null
-$InitialSessionState = [System.Management.Automation.Runspaces.InitialSessionState]::CreateDefault()
-# Add the variable to the session state
+#===========================================================================
+#region initialize Runspace & Window
+#===========================================================================
 
-$InitialSessionState.Variables.Add($hashVars)
+    # ================================
+    # Configuration
+    # ================================
 
-$functions = @(
-    'Install-App','Install-Dependencies','InvokeCommand', 'Add-Log',
-    'Disable-Service', 'Uninstall-AppxPackage', 'Finish', 'Message',
-    'Notify','UpdateUI', 'ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
-    'Refresh-Explorer','Remove-ScheduledTasks','CreateRestorePoint','Set-Statusbar'
-)
+    # Max threads = number of logical processors
+    $MaxThreads = [int]$env:NUMBER_OF_PROCESSORS
 
-foreach ($func in $functions) {
-    $command = Get-Command $func -ErrorAction SilentlyContinue
-    if ($command) {
-        $InitialSessionState.Commands.Add(
-            (New-Object System.Management.Automation.Runspaces.SessionStateFunctionEntry $command.Name, $command.ScriptBlock.ToString())
-        )
+    # Create a session state variable entry for sharing $itt across runspaces
+    $HashVars = New-Object System.Management.Automation.Runspaces.SessionStateVariableEntry `
+        -ArgumentList 'itt', $itt, $null
 
-        #debug start
-        Write-Output "Added function: $func"
-        #debug end
+    # Create the initial session state
+    $InitialSessionState = [System.Management.Automation.Runspaces.InitialSessionState]::CreateDefault()
+    $InitialSessionState.Variables.Add($HashVars)
+
+
+    # ================================
+    # Function Injection
+    # ================================
+
+    # List of functions to include in the runspace environment
+    $Functions = @(
+        'Install-App', 'Install-Dependencies', 'InvokeCommand', 'Add-Log',
+        'Disable-Service', 'Uninstall-AppxPackage', 'Finish', 'Message',
+        'Notify', 'UpdateUI', 'ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
+        'Refresh-Explorer', 'Remove-ScheduledTasks', 'CreateRestorePoint', 'Set-Statusbar'
+    )
+
+    foreach ($Func in $Functions) {
+        $Command = Get-Command $Func -ErrorAction SilentlyContinue
+        if ($Command) {
+            $InitialSessionState.Commands.Add(
+                (New-Object System.Management.Automation.Runspaces.SessionStateFunctionEntry `
+                    $Command.Name, $Command.ScriptBlock.ToString())
+            )
+            
+            # Debug output
+            Write-Output "Added function: $Func"
+        }
     }
-}
 
-# Create and open the runspace pool
-$itt.runspace = [runspacefactory]::CreateRunspacePool(1, $maxthreads, $InitialSessionState, $Host)
-$itt.runspace.Open()
 
-# Initialize Main window
+    # ================================
+    # UI Initialization
+    # ================================
+
+    try {
+        [xml]$MainXaml = $MainWindowXaml
+        $itt["window"] = [Windows.Markup.XamlReader]::Load(
+            [System.Xml.XmlNodeReader]$MainXaml
+        )
+    }
+    catch {
+        Write-Output "Error initializing UI: $($_.Exception.Message)"
+    }
+
+
+    # ================================
+    # Runspace Pool Creation
+    # ================================
+
+    $itt.Runspace = [RunspaceFactory]::CreateRunspacePool(
+        1, $MaxThreads, $InitialSessionState, $Host
+    )
+
+    $itt.Runspace.Open()
+#===========================================================================
+#endregion initialize Runspace & Window
+#===========================================================================
+#===========================================================================
+#region Create default keys
+#===========================================================================
 try {
-    [xml]$MainXaml = $MainWindowXaml
-    $itt["window"] = [Windows.Markup.XamlReader]::Load([System.Xml.XmlNodeReader]$MainXaml)
-}
-catch {
-    Write-Output "Error: $($_.Exception.Message)"
-}
-try {
-    #===========================================================================
-    #region Create default keys
-    #===========================================================================
+
     $appsTheme = Get-ItemPropertyValue -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme"
     $fullCulture = Get-ItemPropertyValue -Path "HKCU:\Control Panel\International" -Name "LocaleName"
     $shortCulture = $fullCulture.Split('-')[0]
@@ -78,9 +111,6 @@ try {
         New-ItemProperty -Path $itt.registryPath -Name "source" -Value "auto" -PropertyType String -Force *> $Null
 
     }
-    #===========================================================================
-    #endregion Create default keys
-    #===========================================================================
     #===========================================================================
     #region Set Language based on culture
     #===========================================================================
@@ -158,6 +188,9 @@ catch {
     Write-Output "Error: $_"
 }
 #===========================================================================
+#endregion Create default keys
+#===========================================================================
+#===========================================================================
 #region Initialize WPF Controls
 #===========================================================================
 
@@ -183,7 +216,6 @@ $itt.QuoteIcon = $itt["window"].FindName("QuoteIcon")
 #===========================================================================
 #endregion Initialize WPF Controls
 #===========================================================================
-
 #===========================================================================
 #region Fetch Data
 #===========================================================================
