@@ -1,50 +1,44 @@
 <Grid Row="2">
-  <Grid.ColumnDefinitions>
-    <ColumnDefinition Width="*"/>
-    <ColumnDefinition Width="auto"/>
-  </Grid.ColumnDefinitions>
-  <!-- Begin Buttons -->
-     <Grid Column="1">
-      <!--Begin Install Button-->
-        <Button
-          Name="installBtn"
-          Content="{Binding Install, TargetNullValue=Install}"
-          HorizontalAlignment="Center"
-          VerticalAlignment="Center"
-          HorizontalContentAlignment="Center"
-          VerticalContentAlignment="Center"
-          Width="140" 
-          Height="45" 
-          Margin="20">
-        </Button>
-      <!--End Install Button-->
-      <!--Begin Apply Button-->
-          <Button
-            Name="applyBtn"
-            Content="{Binding Apply, TargetNullValue=Apply}"
-            Visibility="Collapsed"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"
-            Width="140" 
-            Height="45" 
-            Margin="20">
-          </Button>
-      <!--End Apply Button-->
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+
+    <!-- Buttons -->
+    <Grid Column="1">
+        <!-- Install Button -->
+        <Button Name="installBtn"
+                Content="{Binding Install, TargetNullValue=Install}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Width="140"
+                Height="45"
+                Margin="20" />
+        
+        <!-- Apply Button -->
+        <Button Name="applyBtn"
+                Content="{Binding Apply, TargetNullValue=Apply}"
+                Visibility="Collapsed"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Width="140"
+                Height="45"
+                Margin="20" />
     </Grid>
-  <!-- End Buttons -->
-  <!-- Begin Statusbar -->
+
+    <!-- Statusbar -->
     <Grid Column="0">
         <TextBlock Name="statusbar"
-          Text="✊ #StandWithPalestine"
-          HorizontalAlignment="Left"
-          VerticalAlignment="Center" 
-          TextWrapping="Wrap"
-          FontWeight="SemiBold"
-          Padding="10 0 0 0"
-          Width="auto"
-        />
+                   Text="✊ #StandWithPalestine"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   TextWrapping="Wrap"
+                   FontWeight="SemiBold"
+                   Padding="10 0 0 0"
+                   Width="Auto" />
     </Grid>
-  <!-- End Statusbar -->
 </Grid>
