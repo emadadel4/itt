@@ -1,5 +1,5 @@
 function ITT-ScriptBlock {
-    
+
     <#
         .SYNOPSIS
         Executes a given script block asynchronously within a specified runspace.
@@ -11,6 +11,7 @@ function ITT-ScriptBlock {
         $Debug
     )
 
+    # Create a new PowerShell instance
     $script:powershell = [powershell]::Create()
 
     # Add the script block and arguments to the runspace
