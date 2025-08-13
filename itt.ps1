@@ -3231,7 +3231,6 @@ $InitialSessionState.Commands.Add(
 (New-Object System.Management.Automation.Runspaces.SessionStateFunctionEntry `
 $Command.Name, $Command.ScriptBlock.ToString())
 )
-Write-Output "Added function: $Func"
 }
 }
 try {
