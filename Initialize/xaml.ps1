@@ -37,8 +37,9 @@
                     $Command.Name, $Command.ScriptBlock.ToString())
             )
             
-            # Debug output
-            Write-Output "Added function: $Func"
+            # Debug start
+                Write-Output "Added function: $Func"
+            # Debug end
         }
     }
 
