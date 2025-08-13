@@ -4,18 +4,23 @@
        AllowsTransparency="True"
        Focusable="False"
        PopupAnimation="Fade"
-       Width="486" Height="600">
-    
-    <Border Background="{DynamicResource PrimaryBackgroundColor}" 
-            BorderBrush="{DynamicResource SecondaryPrimaryBackgroundColor}" 
-            BorderThickness="4" 
+       Width="486"
+       Height="600">
+
+    <Border Background="{DynamicResource PrimaryBackgroundColor}"
+            BorderBrush="{DynamicResource SecondaryPrimaryBackgroundColor}"
+            BorderThickness="4"
             CornerRadius="10"
             Opacity="0">
+
         <Border.Triggers>
             <EventTrigger RoutedEvent="Border.Loaded">
                 <BeginStoryboard>
                     <Storyboard>
-                        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5"/>
+                        <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                         From="0"
+                                         To="1"
+                                         Duration="0:0:0.5" />
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>
@@ -23,46 +28,49 @@
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <StackPanel x:Name="MainStackPanel" Height="Auto" Background="Transparent" Orientation="Vertical" Margin="20">
-                <!-- Title -->
+            <!-- Title Section -->
+            <StackPanel x:Name="MainStackPanel"
+                        Background="Transparent"
+                        Orientation="Vertical"
+                        Margin="20">
+
                 <Grid Background="Transparent">
-                    <StackPanel Orientation="Vertical" Margin="0">
+                    <StackPanel Orientation="Vertical">
                         <TextBlock Name="title"
-                                   Height="Auto"
-                                   Width="Auto"
                                    FontSize="20"
                                    Text="Changelog"
                                    Foreground="{DynamicResource TextColorSecondaryColor}"
                                    FontWeight="SemiBold"
                                    TextWrapping="Wrap"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Left"/>
+                                   HorizontalAlignment="Left" />
                         <TextBlock Name="date"
-                                   Height="Auto"
-                                   Width="Auto"
                                    Margin="5,8,0,0"
                                    Text="8/29/2024"
                                    Foreground="{DynamicResource TextColorSecondaryColor2}"
                                    TextWrapping="Wrap"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Left"/>
+                                   HorizontalAlignment="Left" />
                     </StackPanel>
                 </Grid>
             </StackPanel>
 
+            <!-- Scrollable Content -->
             <Grid Grid.Row="1" Background="Transparent">
-                <ScrollViewer Name="ScrollViewer" VerticalScrollBarVisibility="Auto" Height="Auto">
+                <ScrollViewer Name="ScrollViewer"
+                              VerticalScrollBarVisibility="Auto">
                     <StackPanel Orientation="Vertical">
                         <!-- UpdateContent -->
                     </StackPanel>
                 </ScrollViewer>
             </Grid>
 
+            <!-- Footer -->
             <Grid Grid.Row="2" Background="Transparent">
                 <TextBlock Name="DisablePopup"
                            Foreground="{DynamicResource TextColorSecondaryColor2}"
@@ -73,7 +81,7 @@
                            Padding="15"
                            Visibility="Visible"
                            HorizontalAlignment="Center"
-                           VerticalAlignment="Center"/>
+                           VerticalAlignment="Center" />
             </Grid>
         </Grid>
     </Border>
