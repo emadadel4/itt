@@ -1,44 +1,17 @@
 <Grid Row="2">
     <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*" />
-        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/>
     </Grid.ColumnDefinitions>
 
-    <!-- Buttons -->
     <Grid Column="1">
-        <!-- Install Button -->
-        <Button Name="installBtn"
-                Content="{Binding Install, TargetNullValue=Install}"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                HorizontalContentAlignment="Center"
-                VerticalContentAlignment="Center"
-                Width="140"
-                Height="45"
-                Margin="20" />
-        
-        <!-- Apply Button -->
-        <Button Name="applyBtn"
-                Content="{Binding Apply, TargetNullValue=Apply}"
-                Visibility="Collapsed"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                HorizontalContentAlignment="Center"
-                VerticalContentAlignment="Center"
-                Width="140"
-                Height="45"
-                Margin="20" />
+        <Button Name="installBtn" Content="{Binding Install, TargetNullValue=Install}" Width="140" Height="45" Margin="20"
+                HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Name="applyBtn" Content="{Binding Apply, TargetNullValue=Apply}" Visibility="Collapsed" Width="140" Height="45" Margin="20"
+                HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
     </Grid>
 
-    <!-- Statusbar -->
     <Grid Column="0">
-        <TextBlock Name="statusbar"
-                   Text="✊ #StandWithPalestine"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Center"
-                   TextWrapping="Wrap"
-                   FontWeight="SemiBold"
-                   Padding="10 0 0 0"
-                   Width="Auto" />
+        <TextBlock Name="statusbar" Text="✊ #StandWithPalestine" FontWeight="SemiBold" Padding="10 0 0 0" Width="Auto"
+                   HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"/>
     </Grid>
 </Grid>
