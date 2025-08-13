@@ -5,7 +5,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/12/2025"
+lastupdate     = "08/13/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -271,20 +271,6 @@ $iconMap  = @{ INFO="[INFO]"; WARNING="[!]"; ERROR="[X]"; DEFAULT=""; DEBUG="[DE
 $color = if ($colorMap.ContainsKey($level)) { $colorMap[$level] } else { "White" }
 $icon  = if ($iconMap.ContainsKey($level)) { $iconMap[$level] } else { "i" }
 Write-Host "$icon $Message" -ForegroundColor $color
-}
-function Disable-Service {
-param([array]$tweak)
-foreach ($serv in $tweak) {
-try {
-Add-Log  -Message "Setting Service $($serv.Name)" -Level "info"
-$service = Get-Service -Name $serv.Name -ErrorAction Stop
-Stop-Service -Name $serv.Name -ErrorAction Stop
-$service | Set-Service -StartupType $serv.StartupType -ErrorAction Stop
-}
-catch {
-Add-Log -Message "Service $Name was not found" -Level "info"
-}
-}
 }
 function ExecuteCommand {
 param ([array]$tweak)
@@ -759,28 +745,6 @@ if (-not (Get-Process -processName: Explorer)) {
 Start-Process explorer.exe
 }
 }
-function Remove-ScheduledTasks {
-param ([Parameter(Mandatory = $true)][array]$tweak)
-foreach ($task in $tweak) {
-Add-Log -Message "Removing $task ScheduledTask..." -Level "info"
-$tasks = Get-ScheduledTask -TaskName "*$task*" -ErrorAction SilentlyContinue
-if ($tasks)
-{
-foreach ($task in $tasks)
-{
-Unregister-ScheduledTask -TaskName $task.TaskName -Confirm:$false
-Add-Log -Message "$($task.TaskName) Removed" -Level "INFO"
-}
-}
-else
-{
-if ($Debug)
-{
-Add-Log -Message "No tasks matching '$task' found" -Level "debug"
-}
-}
-}
-}
 function Get-file {
 if ($itt.ProcessRunning) {
 Message -key "Please_wait" -icon "Warning" -action "OK"
@@ -864,38 +828,6 @@ Invoke-Install *> $null
 }
 catch {
 Write-Warning "Installation failed: $_"
-}
-}
-function Set-Registry {
-param ([array]$tweak)
-try {
-if(!(Test-Path 'HKU:\')) {New-PSDrive -PSProvider Registry -Name HKU -Root HKEY_USERS}
-$tweak | ForEach-Object {
-if($_.Value -ne "Remove")
-{
-If (!(Test-Path $_.Path)) {
-Add-Log -Message "$($_.Path) was not found, Creating..." -Level "info"
-New-Item -Path $_.Path -Force -ErrorAction Stop | Out-Null
-}
-Add-Log -Message "Optmize $($_.name)..." -Level "info"
-New-ItemProperty -Path $_.Path -Name $_.Name -PropertyType $_.Type -Value $_.Value -Force | Out-Null
-}
-else
-{
-if($_.Name -ne $null)
-{
-Add-Log -Message "Remove $($_.name) from registry..." -Level "info"
-Remove-ItemProperty -Path $_.Path -Name $_.Name -Force -ErrorAction SilentlyContinue
-}
-else
-{
-Add-Log -Message "Remove $($_.Path)..." -Level "info"
-Remove-Item -Path $_.Path -Recurse -Force -ErrorAction SilentlyContinue
-}
-}
-}
-} catch {
-Add-Log -Message "An error occurred: $_" -Level "WARNING"
 }
 }
 function Set-Taskbar {
@@ -1009,20 +941,6 @@ $itt['window'].FindName('AppsCategory').Visibility = $settings['installBtn']
 $itt['window'].FindName('TwaeksCategory').Visibility = $settings['applyBtn']
 break
 }
-}
-}
-function Uninstall-AppxPackage {
-param ([array]$tweak)
-try {
-foreach ($name in $tweak) {
-Add-Log -Message "Removing $name..." -Level "info"
-Get-AppxPackage "*$name*" | Remove-AppxPackage -ErrorAction SilentlyContinue
-Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like "*$name*" | Remove-AppxProvisionedPackage -Online -ErrorAction SilentlyContinue
-}
-}
-catch
-{
-Add-Log -Message "PLEASE USE (WINDOWS POWERSHELL) NOT (TERMINAL POWERSHELL 7) TO UNINSTALL $NAME." -Level "WARNING"
 }
 }
 function Invoke-Apply {
@@ -3296,33 +3214,39 @@ SnapsToDevicePixels="True">
 </Grid>
 </Window>
 "@
-$maxthreads = [int]$env:NUMBER_OF_PROCESSORS
-$hashVars = New-object System.Management.Automation.Runspaces.SessionStateVariableEntry -ArgumentList 'itt', $itt, $Null
+$MaxThreads = [int]$env:NUMBER_OF_PROCESSORS
+$HashVars = New-Object System.Management.Automation.Runspaces.SessionStateVariableEntry `
+-ArgumentList 'itt', $itt, $null
 $InitialSessionState = [System.Management.Automation.Runspaces.InitialSessionState]::CreateDefault()
-$InitialSessionState.Variables.Add($hashVars)
-$functions = @(
-'Install-App','Install-Dependencies','InvokeCommand', 'Add-Log',
-'Disable-Service', 'Uninstall-AppxPackage', 'Finish', 'Message',
-'Notify','UpdateUI', 'ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
-'Refresh-Explorer','Remove-ScheduledTasks','CreateRestorePoint','Set-Statusbar'
+$InitialSessionState.Variables.Add($HashVars)
+$Functions = @(
+'Install-App', 'Install-Dependencies', 'Add-Log','Finish', 'Message',
+'Notify', 'UpdateUI', 'ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
+'Refresh-Explorer', 'CreateRestorePoint', 'Set-Statusbar'
 )
-foreach ($func in $functions) {
-$command = Get-Command $func -ErrorAction SilentlyContinue
-if ($command) {
+foreach ($Func in $Functions) {
+$Command = Get-Command $Func -ErrorAction SilentlyContinue
+if ($Command) {
 $InitialSessionState.Commands.Add(
-(New-Object System.Management.Automation.Runspaces.SessionStateFunctionEntry $command.Name, $command.ScriptBlock.ToString())
+(New-Object System.Management.Automation.Runspaces.SessionStateFunctionEntry `
+$Command.Name, $Command.ScriptBlock.ToString())
 )
+Write-Output "Added function: $Func"
 }
 }
-$itt.runspace = [runspacefactory]::CreateRunspacePool(1, $maxthreads, $InitialSessionState, $Host)
-$itt.runspace.Open()
 try {
 [xml]$MainXaml = $MainWindowXaml
-$itt["window"] = [Windows.Markup.XamlReader]::Load([System.Xml.XmlNodeReader]$MainXaml)
+$itt["window"] = [Windows.Markup.XamlReader]::Load(
+[System.Xml.XmlNodeReader]$MainXaml
+)
 }
 catch {
-Write-Output "Error: $($_.Exception.Message)"
+Write-Output "Error initializing UI: $($_.Exception.Message)"
 }
+$itt.Runspace = [RunspaceFactory]::CreateRunspacePool(
+1, $MaxThreads, $InitialSessionState, $Host
+)
+$itt.Runspace.Open()
 try {
 $appsTheme = Get-ItemPropertyValue -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme"
 $fullCulture = Get-ItemPropertyValue -Path "HKCU:\Control Panel\International" -Name "LocaleName"
