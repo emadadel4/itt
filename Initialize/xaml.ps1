@@ -24,8 +24,8 @@
 
     # List of functions to include in the runspace environment
     $Functions = @(
-        'Install-App', 'Install-Dependencies', 'Add-Log',
-        'Finish', 'Message', 'Notify', 'UpdateUI', 'ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
+        'Install-App', 'Install-Dependencies', 'Add-Log','Finish', 'Message',
+        'Notify', 'UpdateUI', 'ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
         'Refresh-Explorer', 'CreateRestorePoint', 'Set-Statusbar'
     )
 
