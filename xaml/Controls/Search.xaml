@@ -1,10 +1,7 @@
-<!--Begin Search -->
+<!--Begin Search-->
 <Grid HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center">
-    <TextBox Padding="8"
-        Width="120"
-        VerticalAlignment="Center"
-        HorizontalAlignment="Left"
-        Style="{StaticResource SearchBox}"
-        Name="searchInput" />
+    <TextBox Name="searchInput" Width="120" Padding="8" 
+             Style="{StaticResource SearchBox}" 
+             HorizontalAlignment="Left" VerticalAlignment="Center"/>
 </Grid>
 <!--End Search-->
