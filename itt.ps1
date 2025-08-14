@@ -2564,7 +2564,7 @@ VirtualizingStackPanel.VirtualizationMode="Recycling">
 </ListView.ItemsPanel>
 <ListView.ItemTemplate>
 <DataTemplate>
-<StackPanel Orientation="Vertical" Margin="5">
+<StackPanel Orientation="Vertical" Margin="10">
 <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
 <TextBlock Margin="10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding Description}" Width="666"/>
 </StackPanel>
@@ -2607,7 +2607,7 @@ IsReadOnly="True" Visibility="Collapsed">
 </ListView.ItemsPanel>
 <ListView.ItemTemplate>
 <DataTemplate>
-<StackPanel Orientation="Vertical" Margin="5">
+<StackPanel Orientation="Vertical" Margin="10">
 <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
 <TextBlock Margin="10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding Description}" Width="666"/>
 </StackPanel>
