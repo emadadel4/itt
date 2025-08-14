@@ -109,7 +109,7 @@
     <Style TargetType="CheckBox">
         <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
         <Setter Property="Margin" Value="0"/>
-        <Setter Property="Padding" Value="6"/>
+        <Setter Property="Padding" Value="0"/>
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="BorderBrush" Value="DarkGray"/>
