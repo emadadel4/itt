@@ -5,7 +5,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/13/2025"
+lastupdate     = "08/14/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -1734,21 +1734,13 @@ $itt['window'].FindName('DisablePopup').Visibility = 'Hidden'
 $popup.IsOpen = $true
 }
 $MainWindowXaml = @"
-<Window
-xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-x:Name="Window"
-Title="Install Tweaks Tool"
-WindowStartupLocation = "CenterScreen"
-Background="{DynamicResource PrimaryBackgroundColor}"
-Width="950"
-Height="700"
-MinHeight="600"
-MinWidth="800"
-FontFamily="Arial"
-ShowInTaskbar = "True"
-TextOptions.TextFormattingMode="Ideal"
-TextOptions.TextRenderingMode="Auto"
+x:Name="Window" Title="Install Tweaks Tool"
+WindowStartupLocation="CenterScreen" Background="{DynamicResource PrimaryBackgroundColor}"
+Width="950" Height="700" MinHeight="600" MinWidth="800"
+FontFamily="Arial" ShowInTaskbar="True"
+TextOptions.TextFormattingMode="Ideal" TextOptions.TextRenderingMode="Auto"
 Icon="https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico">
 <Window.Resources>
 <Storyboard x:Key="FadeOutStoryboard">
@@ -1846,7 +1838,7 @@ ContentSource="Content"/>
 <Style TargetType="CheckBox">
 <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
 <Setter Property="Margin" Value="0"/>
-<Setter Property="Padding" Value="6"/>
+<Setter Property="Padding" Value="0"/>
 <Setter Property="Background" Value="{x:Null}"/>
 <Setter Property="BorderThickness" Value="0"/>
 <Setter Property="BorderBrush" Value="DarkGray"/>
@@ -2442,163 +2434,50 @@ Duration="0:0:0.1" />
 </Window.Resources>
 <Grid Background="{DynamicResource BackgroundImage}">
 <Grid.RowDefinitions>
-<RowDefinition Height="Auto"/>
-<RowDefinition Height="*"/>
-<RowDefinition Height="Auto"/>
+<RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/>
 </Grid.RowDefinitions>
 <Grid>
 <Grid.ColumnDefinitions>
-<ColumnDefinition Width="Auto"/>
-<ColumnDefinition Width="*"/>
+<ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/>
 </Grid.ColumnDefinitions>
-<Menu Grid.Row="0" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" BorderThickness="0">
-<MenuItem Background="Transparent" BorderBrush="Transparent" BorderThickness="0"  IsEnabled="False" ToolTip="Emad Adel">
+<Menu Grid.Row="0" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" HorizontalAlignment="Left">
+<MenuItem Background="Transparent" BorderBrush="Transparent" BorderThickness="0" IsEnabled="False" ToolTip="Emad Adel">
 <MenuItem.Icon>
 <Border Background="Transparent" CornerRadius="10" Height="89" Width="89">
 <StackPanel Orientation="Vertical">
-<TextBlock Text="itt" VerticalAlignment="Center"  TextAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource logoText}"/>
-<TextBlock Text="{DynamicResource SubText}" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Normal" FontSize="9" Style="{DynamicResource logoText}" />
+<TextBlock Text="itt" Style="{DynamicResource logoText}" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+<TextBlock Text="{DynamicResource SubText}" Style="{DynamicResource logoText}" FontWeight="Normal" FontSize="9" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 </StackPanel>
 </Border>
 </MenuItem.Icon>
 </MenuItem>
 <MenuItem Header="{Binding Management, TargetNullValue=Management}" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="Transparent">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/>
-</MenuItem.Icon>
-<MenuItem Name="sysinfo" Header="{Binding System_Info, TargetNullValue=System Info}" >
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="poweroption" Header="{Binding Power_Options, TargetNullValue=Power Options}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="deviceManager">
-<MenuItem.Header>
-<Binding Path="Device_Manager" TargetNullValue="Device Manager" />
-</MenuItem.Header>
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="services" Header="{Binding Services, TargetNullValue=Services}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="network" Header="{Binding Networks, TargetNullValue=Networks}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="appsfeatures" Header="{Binding Apps_features, TargetNullValue=Programs and Features}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="taskmgr" Header="{Binding Task_Manager, TargetNullValue=Task Manager}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="diskmgmt" Header="{Binding Disk_Managment, TargetNullValue=Disk Management}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="msconfig" Header="{Binding Msconfig, TargetNullValue=System Configuration}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="ev" Header="{Binding Environment_Variables, TargetNullValue=Environment Variables}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE81E;"/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="spp" Header="{Binding System_Protection, TargetNullValue=System Protection}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
+<MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/></MenuItem.Icon>
+<MenuItem Name="sysinfo" Header="{Binding System_Info, TargetNullValue=System Info}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="poweroption" Header="{Binding Power_Options, TargetNullValue=Power Options}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="deviceManager"><MenuItem.Header><Binding Path="Device_Manager" TargetNullValue="Device Manager"/></MenuItem.Header><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="services" Header="{Binding Services, TargetNullValue=Services}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="network" Header="{Binding Networks, TargetNullValue=Networks}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="appsfeatures" Header="{Binding Apps_features, TargetNullValue=Programs and Features}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="taskmgr" Header="{Binding Task_Manager, TargetNullValue=Task Manager}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="diskmgmt" Header="{Binding Disk_Managment, TargetNullValue=Disk Management}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="msconfig" Header="{Binding Msconfig, TargetNullValue=System Configuration}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="ev" Header="{Binding Environment_Variables, TargetNullValue=Environment Variables}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE81E;"/></MenuItem.Icon></MenuItem>
+<MenuItem Name="spp" Header="{Binding System_Protection, TargetNullValue=System Protection}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
 </MenuItem>
 <MenuItem Header="{Binding Preferences, TargetNullValue=Preferences}" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="Transparent">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/>
-</MenuItem.Icon>
-<MenuItem Name="restorepoint" Header="{Binding Create_restore_point, TargetNullValue=Restore Point}" InputGestureText="Shift+Q">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Header="{Binding package_manager, TargetNullValue=Package Manager}" ToolTip="Select Package Manager">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-<MenuItem Name="auto" Header="{Binding auto, TargetNullValue=Auto}" ToolTip="Automatically install using the best available method" />
-<MenuItem Name="choco" Header="Choco" />
-<MenuItem Name="winget" Header="Winget"/>
-</MenuItem>
-<MenuItem Header="{Binding Portable_Downloads_Folder}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-<MenuItem Name="chocoloc" Header="Choco" InputGestureText="Shift+C">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="itt" Header="ITT" InputGestureText="Shift+T">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-</MenuItem>
-<MenuItem Name="save" Header="{Binding Save, TargetNullValue=Save}" ToolTip="Save selected apps" InputGestureText="Shift+S">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="load" Header="{Binding Restore, TargetNullValue=Restore}" ToolTip="Restore selected apps" InputGestureText="Shift+D">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Header="{Binding Theme}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-<MenuItem Name="systheme" Header="{Binding Use_system_setting, TargetNullValue=System}" ToolTip="Use system theme if available" />
-<MenuItem Name="Dark" Header="Dark"/>
+<MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/></MenuItem.Icon>
+<MenuItem Name="restorepoint" Header="{Binding Create_restore_point, TargetNullValue=Restore Point}" InputGestureText="Shift+Q"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Header="{Binding package_manager, TargetNullValue=Package Manager}" ToolTip="Select Package Manager"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon><MenuItem Name="auto" Header="{Binding auto, TargetNullValue=Auto}" ToolTip="Automatically install using the best available method"/><MenuItem Name="choco" Header="Choco"/><MenuItem Name="winget" Header="Winget"/></MenuItem>
+<MenuItem Header="{Binding Portable_Downloads_Folder}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon><MenuItem Name="chocoloc" Header="Choco" InputGestureText="Shift+C"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem><MenuItem Name="itt" Header="ITT" InputGestureText="Shift+T"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem></MenuItem>
+<MenuItem Name="save" Header="{Binding Save, TargetNullValue=Save}" ToolTip="Save selected apps" InputGestureText="Shift+S"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="load" Header="{Binding Restore, TargetNullValue=Restore}" ToolTip="Restore selected apps" InputGestureText="Shift+D"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Header="{Binding Theme}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon><MenuItem Name="systheme" Header="{Binding Use_system_setting, TargetNullValue=System}" ToolTip="Use system theme if available"/><MenuItem Name="Dark" Header="Dark"/>
 <MenuItem Name="DarkKnight" Header="Dark Knight"/>
 <MenuItem Name="Light" Header="Light"/>
-<MenuItem Name="Palestine" Header="Palestine"/>
-</MenuItem>
-<MenuItem Header="{Binding Music, TargetNullValue=Music}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-<MenuItem Name="moff" Header="{Binding off, TargetNullValue=Off}" InputGestureText="Shift+M">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="mon" Header="{Binding on, TargetNullValue=On}" InputGestureText="Shift+M">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-</MenuItem>
-<MenuItem Header="{Binding Language, TargetNullValue=Language}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-<MenuItem Name="systemlang" Header="{Binding Use_system_setting, TargetNullValue=System Language}">
-</MenuItem>
-<MenuItem Name="ar" Header="عربي"/>
+<MenuItem Name="Palestine" Header="Palestine"/></MenuItem>
+<MenuItem Header="{Binding Music, TargetNullValue=Music}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon><MenuItem Name="moff" Header="{Binding off, TargetNullValue=Off}" InputGestureText="Shift+M"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem><MenuItem Name="mon" Header="{Binding on, TargetNullValue=On}" InputGestureText="Shift+M"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem></MenuItem>
+<MenuItem Header="{Binding Language, TargetNullValue=Language}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon><MenuItem Name="systemlang" Header="{Binding Use_system_setting, TargetNullValue=System Language}"/><MenuItem Name="ar" Header="عربي"/>
 <MenuItem Name="de" Header="Deutsch"/>
 <MenuItem Name="en" Header="English"/>
 <MenuItem Name="es" Header="Español"/>
@@ -2608,117 +2487,47 @@ Duration="0:0:0.1" />
 <MenuItem Name="ko" Header="한국어"/>
 <MenuItem Name="ru" Header="Русский"/>
 <MenuItem Name="tr" Header="Türkçe"/>
-<MenuItem Name="zh" Header="中文"/>
-</MenuItem>
-<MenuItem Name="ittshortcut" Header="{Binding Create_desktop_shortcut, TargetNullValue=Create Shortcut}" InputGestureText="Shift+I">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
+<MenuItem Name="zh" Header="中文"/></MenuItem>
+<MenuItem Name="ittshortcut" Header="{Binding Create_desktop_shortcut, TargetNullValue=Create Shortcut}" InputGestureText="Shift+I"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/></MenuItem.Icon></MenuItem>
 </MenuItem>
 <MenuItem Header="{Binding Third_party, TargetNullValue=Third Party}" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Transparent">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/>
-</MenuItem.Icon>
-<MenuItem Name="finddriver" Header="Find GPU Driver" ToolTip="Find GPU Driver on official manufacturer website">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="mas" Header="Windows activation" ToolTip="Windows activation">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="winoffice" Header="Windows/Office ISO" ToolTip="Windows and Office Orginal ISO">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="idm" Header="IDM Trial Reset" ToolTip="Get rid of IDM Active message">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="shelltube" ToolTip="Download youtube video easily" Header="ShellTube">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="spotifydown" Header="Spotify Downloader" ToolTip="SpotifyDown allows you to download tracks, playlists and albums from Spotify instantly.">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Header="{Binding Browsers_extensions, TargetNullValue=Browsers Extensions}">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-<MenuItem Name="uBlock" Header="uBlockOrigin"/>
-<MenuItem Header="Youtube">
-<MenuItem Name="Unhook" Header="Unhook Customize youtube"/>
-<MenuItem Name="efy" Header="Enhancer for YouTube"/>
-</MenuItem>
-</MenuItem>
-<MenuItem Name="sordum" ToolTip="Collection of free utilities designed to enhance or control various aspects of the Windows operating system" Header="Sordum tools">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="techpowerup" Header="TechPowerUp" ToolTip="Collection of free TechPowerUp utilities.">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="majorgeeks" ToolTip="website that provides trusted, safe, and curated software downloads for Windows users. It focuses on high-quality tools." Header="Major Geeks">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="webtor" ToolTip="Web-based platform that allows users to stream torrent files directly in their browser without needing to download them." Header="Webtor">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="rapidos" ToolTip="RapidOS is a powerful modification for Windows 10 and 11 that significantly boosts performance." Header="RapidOS">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
-<MenuItem Name="asustool" ToolTip="Tool that manages the setup installation for the legacy Aura Sync, LiveDash, AiSuite3" Header="ASUS Setup Tool">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/>
-</MenuItem.Icon>
-</MenuItem>
+<MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/></MenuItem.Icon>
+<MenuItem Name="finddriver" Header="Find GPU Driver" ToolTip="Find GPU Driver on official manufacturer website"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="mas" Header="Windows activation" ToolTip="Windows activation"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="winoffice" Header="Windows/Office ISO" ToolTip="Windows and Office Original ISO"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="idm" Header="IDM Trial Reset" ToolTip="Get rid of IDM Active message"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="shelltube" Header="ShellTube" ToolTip="Download YouTube video easily"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="spotifydown" Header="Spotify Downloader" ToolTip="SpotifyDown allows you to download tracks, playlists and albums from Spotify instantly."><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Header="{Binding Browsers_extensions, TargetNullValue=Browsers Extensions}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon><MenuItem Name="uBlock" Header="uBlockOrigin"/><MenuItem Header="Youtube"><MenuItem Name="Unhook" Header="Unhook Customize YouTube"/><MenuItem Name="efy" Header="Enhancer for YouTube"/></MenuItem></MenuItem>
+<MenuItem Name="sordum" Header="Sordum tools" ToolTip="Collection of free utilities designed to enhance or control various aspects of the Windows operating system"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="techpowerup" Header="TechPowerUp" ToolTip="Collection of free TechPowerUp utilities."><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="majorgeeks" Header="Major Geeks" ToolTip="Website that provides trusted, safe, and curated software downloads for Windows users. It focuses on high-quality tools."><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="webtor" Header="Webtor" ToolTip="Web-based platform that allows users to stream torrent files directly in their browser without needing to download them."><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="rapidos" Header="RapidOS" ToolTip="RapidOS is a powerful modification for Windows 10 and 11 that significantly boosts performance."><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
+<MenuItem Name="asustool" Header="ASUS Setup Tool" ToolTip="Tool that manages the setup installation for the legacy Aura Sync, LiveDash, AiSuite3"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
 </MenuItem>
 <MenuItem Name="dev" Header="{Binding About, TargetNullValue=About}" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Transparent">
-<MenuItem.Icon>
-<TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/>
-</MenuItem.Icon>
+<MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/></MenuItem.Icon>
 </MenuItem>
 </Menu>
 <Grid Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,20,0">
 <Grid.ColumnDefinitions>
-<ColumnDefinition Width="Auto"/>
-<ColumnDefinition Width="Auto"/>
+<ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/>
 </Grid.ColumnDefinitions>
 <Grid HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center">
-<TextBox Padding="8"
-Width="120"
-VerticalAlignment="Center"
-HorizontalAlignment="Left"
+<TextBox Name="searchInput" Width="120" Padding="8"
 Style="{StaticResource SearchBox}"
-Name="searchInput" />
+HorizontalAlignment="Left" VerticalAlignment="Center"/>
 </Grid>
 </Grid>
 </Grid>
-<TabControl Name="taps" Grid.Row="1" >
-<TabItem Name="apps" Header="{Binding apps, TargetNullValue=Apps}" Tag="apps" BorderBrush="{x:Null}" >
+<TabControl Name="taps" Grid.Row="1">
+<TabItem Name="apps" Header="{Binding apps, TargetNullValue=Apps}" Tag="apps" BorderBrush="{x:Null}">
 <TabItem.HeaderTemplate>
 <DataTemplate>
-<StackPanel Orientation="Vertical" >
-<TextBlock Text="📦" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-<TextBlock Text="{Binding}" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+<StackPanel Orientation="Vertical">
+<TextBlock Text="📦" FontSize="18" HorizontalAlignment="Center"/>
+<TextBlock Text="{Binding}" FontSize="12" HorizontalAlignment="Center"/>
 </StackPanel>
 </DataTemplate>
 </TabItem.HeaderTemplate>
@@ -2727,127 +2536,35 @@ Name="searchInput" />
 <RowDefinition Height="Auto"/>
 <RowDefinition Height="*"/>
 </Grid.RowDefinitions>
-<ComboBox
-SelectedIndex="0"
-Name="AppsCategory"
-Grid.Row="0"
+<ComboBox Name="AppsCategory" Grid.Row="0" SelectedIndex="0"
+Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Center"
 VirtualizingStackPanel.IsVirtualizing="True"
-VirtualizingStackPanel.VirtualizationMode="Recycling"
-VerticalAlignment="Center"
-HorizontalAlignment="Center"
-Width="auto">
-<ComboBoxItem Tag="All">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🏷 "/>
-<Run Text="{Binding all, TargetNullValue=All}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Web Browsers">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🌐 "/>
-<Run Text="{Binding web browsers, TargetNullValue=Web Browsers}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Media">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🎬 "/>
-<Run Text="{Binding media, TargetNullValue=Media}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Media Tools">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🎚 "/>
-<Run Text="{Binding media tools, TargetNullValue=Media Tools}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Documents">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="📃 "/>
-<Run Text="{Binding documents, TargetNullValue=Documents}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Compression">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="📀 "/>
-<Run Text="{Binding compression, TargetNullValue=Compression}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Communication">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="📞 "/>
-<Run Text="{Binding communication, TargetNullValue=Communication}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="File Sharing">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="📁 "/>
-<Run Text="{Binding file sharing, TargetNullValue=File Sharing}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Imaging">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="📷 "/>
-<Run Text="{Binding imaging, TargetNullValue=Imaging}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Gaming">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🎮 "/>
-<Run Text="{Binding gaming, TargetNullValue=Gaming}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Utilities">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🔨 "/>
-<Run Text="{Binding utilities, TargetNullValue=Utilities}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Disk Tools">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="💽 "/>
-<Run Text="{Binding disk tools, TargetNullValue=Disk Tools}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Development">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="👩‍💻 "/>
-<Run Text="{Binding development, TargetNullValue=Development}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Security">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🛡 "/>
-<Run Text="{Binding security, TargetNullValue=Security}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Portable">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="💼 "/>
-<Run Text="{Binding portable, TargetNullValue=Portable}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Runtimes">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="📈 "/>
-<Run Text="{Binding runtimes, TargetNullValue=Runtimes}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Drivers">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🔌 "/>
-<Run Text="{Binding drivers, TargetNullValue=Drivers}"/>
-</TextBlock>
-</ComboBoxItem>
+VirtualizingStackPanel.VirtualizationMode="Recycling">
+<ComboBoxItem Tag="All"><TextBlock><Run Text="🏷 "/><Run Text="{Binding all, TargetNullValue=All}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Web Browsers"><TextBlock><Run Text="🌐 "/><Run Text="{Binding web browsers, TargetNullValue=Web Browsers}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Media"><TextBlock><Run Text="🎬 "/><Run Text="{Binding media, TargetNullValue=Media}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Media Tools"><TextBlock><Run Text="🎚 "/><Run Text="{Binding media tools, TargetNullValue=Media Tools}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Documents"><TextBlock><Run Text="📃 "/><Run Text="{Binding documents, TargetNullValue=Documents}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Compression"><TextBlock><Run Text="📀 "/><Run Text="{Binding compression, TargetNullValue=Compression}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Communication"><TextBlock><Run Text="📞 "/><Run Text="{Binding communication, TargetNullValue=Communication}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="File Sharing"><TextBlock><Run Text="📁 "/><Run Text="{Binding file sharing, TargetNullValue=File Sharing}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Imaging"><TextBlock><Run Text="📷 "/><Run Text="{Binding imaging, TargetNullValue=Imaging}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Gaming"><TextBlock><Run Text="🎮 "/><Run Text="{Binding gaming, TargetNullValue=Gaming}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Utilities"><TextBlock><Run Text="🔨 "/><Run Text="{Binding utilities, TargetNullValue=Utilities}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Disk Tools"><TextBlock><Run Text="💽 "/><Run Text="{Binding disk tools, TargetNullValue=Disk Tools}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Development"><TextBlock><Run Text="👩‍💻 "/><Run Text="{Binding development, TargetNullValue=Development}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Security"><TextBlock><Run Text="🛡 "/><Run Text="{Binding security, TargetNullValue=Security}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Portable"><TextBlock><Run Text="💼 "/><Run Text="{Binding portable, TargetNullValue=Portable}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Runtimes"><TextBlock><Run Text="📈 "/><Run Text="{Binding runtimes, TargetNullValue=Runtimes}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Drivers"><TextBlock><Run Text="🔌 "/><Run Text="{Binding drivers, TargetNullValue=Drivers}"/></TextBlock></ComboBoxItem>
 </ComboBox>
-<ListView Name="appslist" AlternationCount="2" Grid.Row="1">
+<ListView Name="appslist" Grid.Row="1" AlternationCount="2">
 <ListView.ItemsPanel>
-<ItemsPanelTemplate>
-<VirtualizingStackPanel />
-</ItemsPanelTemplate>
+<ItemsPanelTemplate><VirtualizingStackPanel/></ItemsPanelTemplate>
 </ListView.ItemsPanel>
 <ListView.ItemTemplate>
 <DataTemplate>
-<StackPanel Orientation="Vertical" Margin="15">
+<StackPanel Orientation="Vertical" Margin="5">
 <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
 <TextBlock Margin="10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding Description}" Width="666"/>
 </StackPanel>
@@ -2860,8 +2577,8 @@ Width="auto">
 <TabItem.HeaderTemplate>
 <DataTemplate>
 <StackPanel Orientation="Vertical">
-<TextBlock Text="🛠" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="18"/>
-<TextBlock Text="{Binding}" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"  TextWrapping="Wrap" Margin="0,5,0,0"/>
+<TextBlock Text="🛠" FontSize="18" HorizontalAlignment="Center"/>
+<TextBlock Text="{Binding}" FontSize="12" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="0,5,0,0"/>
 </StackPanel>
 </DataTemplate>
 </TabItem.HeaderTemplate>
@@ -2870,75 +2587,27 @@ Width="auto">
 <RowDefinition Height="Auto"/>
 <RowDefinition Height="*"/>
 </Grid.RowDefinitions>
-<ComboBox
-SelectedIndex="0"
-Name="TwaeksCategory"
-Grid.Row="0"
-IsReadOnly="True"
+<ComboBox Name="TwaeksCategory" Grid.Row="0" SelectedIndex="0"
+Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Center"
 VirtualizingStackPanel.IsVirtualizing="True"
 VirtualizingStackPanel.VirtualizationMode="Recycling"
-VerticalAlignment="Center"
-HorizontalAlignment="Center"
-Visibility="Collapsed"
-Width="auto">
-<ComboBoxItem Tag="all">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🏷 "/>
-<Run Text="{Binding all, TargetNullValue=All}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Privacy">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🔒 "/>
-<Run Text="{Binding privacy, TargetNullValue=Privacy}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Fixer">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🔧 "/>
-<Run Text="{Binding fixer, TargetNullValue=Fixer}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Performance">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="⚡ "/>
-<Run Text="{Binding performance, TargetNullValue=Performance}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Personalization">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🎨 "/>
-<Run Text="{Binding personalization, TargetNullValue=Personalization}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Power">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🔋 "/>
-<Run Text="{Binding power, TargetNullValue=Power}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Protection">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🛡 "/>
-<Run Text="{Binding protection, TargetNullValue=Protection}"/>
-</TextBlock>
-</ComboBoxItem>
-<ComboBoxItem Tag="Classic">
-<TextBlock Foreground="{Binding RelativeSource={RelativeSource AncestorType=ComboBoxItem}, Path=Foreground}">
-<Run Text="🕰 "/>
-<Run Text="{Binding classic, TargetNullValue=Classic}"/>
-</TextBlock>
-</ComboBoxItem>
+IsReadOnly="True" Visibility="Collapsed">
+<ComboBoxItem Tag="all"><TextBlock><Run Text="🏷 "/><Run Text="{Binding all, TargetNullValue=All}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Privacy"><TextBlock><Run Text="🔒 "/><Run Text="{Binding privacy, TargetNullValue=Privacy}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Fixer"><TextBlock><Run Text="🔧 "/><Run Text="{Binding fixer, TargetNullValue=Fixer}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Performance"><TextBlock><Run Text="⚡ "/><Run Text="{Binding performance, TargetNullValue=Performance}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Personalization"><TextBlock><Run Text="🎨 "/><Run Text="{Binding personalization, TargetNullValue=Personalization}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Power"><TextBlock><Run Text="🔋 "/><Run Text="{Binding power, TargetNullValue=Power}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Protection"><TextBlock><Run Text="🛡 "/><Run Text="{Binding protection, TargetNullValue=Protection}"/></TextBlock></ComboBoxItem>
+<ComboBoxItem Tag="Classic"><TextBlock><Run Text="🕰 "/><Run Text="{Binding classic, TargetNullValue=Classic}"/></TextBlock></ComboBoxItem>
 </ComboBox>
-<ListView Name="tweakslist" AlternationCount="2" Grid.Row="1">
+<ListView Name="tweakslist" Grid.Row="1" AlternationCount="2">
 <ListView.ItemsPanel>
-<ItemsPanelTemplate>
-<VirtualizingStackPanel />
-</ItemsPanelTemplate>
+<ItemsPanelTemplate><VirtualizingStackPanel/></ItemsPanelTemplate>
 </ListView.ItemsPanel>
 <ListView.ItemTemplate>
 <DataTemplate>
-<StackPanel Orientation="Vertical" Margin="15">
+<StackPanel Orientation="Vertical" Margin="5">
 <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
 <TextBlock Margin="10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding Description}" Width="666"/>
 </StackPanel>
@@ -2951,17 +2620,14 @@ Width="auto">
 <TabItem.HeaderTemplate>
 <DataTemplate>
 <StackPanel Orientation="Vertical">
-<TextBlock Text="⚙" VerticalAlignment="Center" HorizontalAlignment="Center"  FontSize="18"/>
-<TextBlock Text="{Binding}" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+<TextBlock Text="⚙" FontSize="18" HorizontalAlignment="Center"/>
+<TextBlock Text="{Binding}" FontSize="12" HorizontalAlignment="Center"/>
 </StackPanel>
 </DataTemplate>
 </TabItem.HeaderTemplate>
-<ListView Name="SettingsList"
-AlternationCount="2">
+<ListView Name="SettingsList" AlternationCount="2">
 <ListView.ItemsPanel>
-<ItemsPanelTemplate>
-<VirtualizingStackPanel />
-</ItemsPanelTemplate>
+<ItemsPanelTemplate><VirtualizingStackPanel/></ItemsPanelTemplate>
 </ListView.ItemsPanel>
 <StackPanel Orientation="Vertical" Margin="15">
 <CheckBox Content="Show file extensions" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="Showfileextensions" ToolTip="Protection"/>
@@ -3003,58 +2669,21 @@ AlternationCount="2">
 </TabControl>
 <Grid Row="2">
 <Grid.ColumnDefinitions>
-<ColumnDefinition Width="*"/>
-<ColumnDefinition Width="auto"/>
+<ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/>
 </Grid.ColumnDefinitions>
 <Grid Column="1">
-<Button
-Name="installBtn"
-Content="{Binding Install, TargetNullValue=Install}"
-HorizontalAlignment="Center"
-VerticalAlignment="Center"
-HorizontalContentAlignment="Center"
-VerticalContentAlignment="Center"
-Width="140"
-Height="45"
-Margin="20">
-</Button>
-<Button
-Name="applyBtn"
-Content="{Binding Apply, TargetNullValue=Apply}"
-Visibility="Collapsed"
-HorizontalAlignment="Center"
-VerticalAlignment="Center"
-HorizontalContentAlignment="Center"
-VerticalContentAlignment="Center"
-Width="140"
-Height="45"
-Margin="20">
-</Button>
+<Button Name="installBtn" Content="{Binding Install, TargetNullValue=Install}" Width="140" Height="45" Margin="20"
+HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+<Button Name="applyBtn" Content="{Binding Apply, TargetNullValue=Apply}" Visibility="Collapsed" Width="140" Height="45" Margin="20"
+HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 </Grid>
 <Grid Column="0">
-<TextBlock Name="statusbar"
-Text="✊ #StandWithPalestine"
-HorizontalAlignment="Left"
-VerticalAlignment="Center"
-TextWrapping="Wrap"
-FontWeight="SemiBold"
-Padding="10 0 0 0"
-Width="auto"
-/>
+<TextBlock Name="statusbar" Text="✊ #StandWithPalestine" FontWeight="SemiBold" Padding="10 0 0 0" Width="Auto"
+HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"/>
 </Grid>
 </Grid>
-<Popup Name="EventPopup"
-Placement="Center"
-StaysOpen="False"
-AllowsTransparency="True"
-Focusable="False"
-PopupAnimation="Fade"
-Width="486" Height="600">
-<Border Background="{DynamicResource PrimaryBackgroundColor}"
-BorderBrush="{DynamicResource SecondaryPrimaryBackgroundColor}"
-BorderThickness="4"
-CornerRadius="10"
-Opacity="0">
+<Popup Name="EventPopup" Placement="Center" StaysOpen="False" AllowsTransparency="True" Focusable="False" PopupAnimation="Fade" Width="486" Height="600">
+<Border Background="{DynamicResource PrimaryBackgroundColor}" BorderBrush="{DynamicResource SecondaryPrimaryBackgroundColor}" BorderThickness="4" CornerRadius="10" Opacity="0">
 <Border.Triggers>
 <EventTrigger RoutedEvent="Border.Loaded">
 <BeginStoryboard>
@@ -3066,39 +2695,19 @@ Opacity="0">
 </Border.Triggers>
 <Grid>
 <Grid.RowDefinitions>
-<RowDefinition Height="Auto"/>
-<RowDefinition Height="*"/>
-<RowDefinition Height="auto"/>
+<RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/>
 </Grid.RowDefinitions>
-<StackPanel x:Name="MainStackPanel" Height="Auto" Background="Transparent" Orientation="Vertical" Margin="20">
+<StackPanel x:Name="MainStackPanel" Background="Transparent" Orientation="Vertical" Margin="20">
 <Grid Background="Transparent">
-<StackPanel Orientation="Vertical" Margin="0">
-<TextBlock Name="title"
-Height="Auto"
-Width="Auto"
-FontSize="20"
-Text="Changelog"
-Foreground="{DynamicResource TextColorSecondaryColor}"
-FontWeight="SemiBold"
-TextWrapping="Wrap"
-VerticalAlignment="Center"
-HorizontalAlignment="Left"/>
-<TextBlock Name="date"
-Height="Auto"
-Width="Auto"
-Margin="5,8,0,0"
-Text="8/29/2024"
-Foreground="{DynamicResource TextColorSecondaryColor2}"
-TextWrapping="Wrap"
-VerticalAlignment="Center"
-HorizontalAlignment="Left"/>
+<StackPanel>
+<TextBlock Name="title" FontSize="20" Text="Changelog" Foreground="{DynamicResource TextColorSecondaryColor}" FontWeight="SemiBold" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+<TextBlock Name="date" Margin="5,8,0,0" Text="8/29/2024" Foreground="{DynamicResource TextColorSecondaryColor2}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 </StackPanel>
 </Grid>
 </StackPanel>
 <Grid Grid.Row="1" Background="Transparent">
-<ScrollViewer Name="ScrollViewer" VerticalScrollBarVisibility="Auto" Height="Auto">
-<StackPanel Orientation="Vertical">
-<Image x:Name='ps' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
+<ScrollViewer Name="ScrollViewer" VerticalScrollBarVisibility="Auto">
+<StackPanel><Image x:Name='ps' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
 <Image.Source>
 <BitmapImage UriSource='https://camo.githubusercontent.com/5cf02c5ee4898f8f92965367dfbf6829cf7d5e180f3808898ac65eccb0835d68/68747470733a2f2f7374796c65732e7265646469746d656469612e636f6d2f74355f327168616b2f7374796c65732f696d6167655f7769646765745f3738637964797a6c336b7462312e706e67' CacheOption='OnLoad'/>
 </Image.Source>
@@ -3153,60 +2762,33 @@ HorizontalAlignment="Left"/>
 </ScrollViewer>
 </Grid>
 <Grid Grid.Row="2" Background="Transparent">
-<TextBlock Name="DisablePopup"
-Foreground="{DynamicResource TextColorSecondaryColor2}"
-Text="{Binding DisablePopupText, TargetNullValue=Show on update}"
-Background="Transparent"
-TextAlignment="Center"
-Cursor="Hand"
-Padding="15"
-Visibility="Visible"
-HorizontalAlignment="Center"
-VerticalAlignment="Center"/>
+<TextBlock Name="DisablePopup" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding DisablePopupText, TargetNullValue=Show on update}" Background="Transparent" TextAlignment="Center" Cursor="Hand" Padding="15" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 </Grid>
 </Grid>
 </Border>
 </Popup>
-<Popup
-x:Name="AboutPopup"
-AllowsTransparency="True"
-Placement="Center"
-StaysOpen="False"
-PopupAnimation="Fade"
-IsOpen="false">
-<Border
-Background="{DynamicResource PrimaryBackgroundColor}"
-BorderBrush="DarkGray"
-BorderThickness="1"
-Width="360"
-Height="300"
-Padding="10"
-CornerRadius="10"
-SnapsToDevicePixels="True">
+<Popup x:Name="AboutPopup" AllowsTransparency="True" Placement="Center" StaysOpen="False" PopupAnimation="Fade" IsOpen="False">
+<Border Background="{DynamicResource PrimaryBackgroundColor}" BorderBrush="DarkGray" BorderThickness="1" Width="360" Height="300" Padding="10" CornerRadius="10" SnapsToDevicePixels="True">
 <Grid Margin="8">
 <Grid.RowDefinitions>
-<RowDefinition Height="auto"/>
-<RowDefinition Height="auto"/>
-<RowDefinition Height="*"/>
+<RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/>
 </Grid.RowDefinitions>
 <Grid Grid.Row="0">
-<StackPanel Orientation="Vertical">
-<TextBlock Text="itt" VerticalAlignment="Center" FontFamily="arial" FontWeight="bold" FontSize="88" Margin="0 2 0 0" Foreground="{DynamicResource logo}" TextAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource logoText}"/>
-<TextBlock Text="Made by Emad Adel" HorizontalAlignment="Center" Foreground="{DynamicResource TextColorSecondaryColor}" TextAlignment="Center" Margin="0 2 0 8"/>
+<StackPanel>
+<TextBlock Text="itt" FontFamily="Arial" FontWeight="Bold" FontSize="88" Margin="0,2,0,0" Foreground="{DynamicResource logo}" TextAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource logoText}"/>
+<TextBlock Text="Made by Emad Adel" HorizontalAlignment="Center" Foreground="{DynamicResource TextColorSecondaryColor}" TextAlignment="Center" Margin="0,2,0,8"/>
 <TextBlock Name="ver" TextAlignment="Center" Foreground="{DynamicResource TextColorSecondaryColor}"/>
 </StackPanel>
 </Grid>
 <StackPanel Grid.Row="1">
-<TextBlock Text="Contributors" TextWrapping="Wrap" HorizontalAlignment="center" Foreground="{DynamicResource TextColorSecondaryColor}"/>
+<TextBlock Text="Contributors" TextWrapping="Wrap" HorizontalAlignment="Center" Foreground="{DynamicResource TextColorSecondaryColor}"/>
 <ScrollViewer VerticalScrollBarVisibility="Auto" Height="90">
-<StackPanel Margin="5,0,0,0">
-<TextBlock Text="emadadel4" Margin="1" Foreground="{DynamicResource TextColorSecondaryColor}" />
-<TextBlock Text="yousefmhmd" Margin="1" Foreground="{DynamicResource TextColorSecondaryColor}" />
-</StackPanel>
+<StackPanel Margin="5,0,0,0"><TextBlock Text="emadadel4" Margin="1" Foreground="{DynamicResource TextColorSecondaryColor}" />
+<TextBlock Text="yousefmhmd" Margin="1" Foreground="{DynamicResource TextColorSecondaryColor}" /></StackPanel>
 </ScrollViewer>
 </StackPanel>
-<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="center" Margin="0">
-<TextBlock Text="Source Code" Foreground="{DynamicResource TextColorSecondaryColor}" Name="github" Cursor="Hand" Margin="0"/>
+<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+<TextBlock Text="Source Code" Foreground="{DynamicResource TextColorSecondaryColor}" Name="github" Cursor="Hand"/>
 </StackPanel>
 </Grid>
 </Border>
