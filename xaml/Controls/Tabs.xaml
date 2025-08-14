@@ -49,7 +49,7 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Vertical" Margin="15">
+                        <StackPanel Orientation="Vertical" Margin="5">
                             <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
                             <TextBlock Margin="10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding Description}" Width="666"/>
                         </StackPanel>
@@ -99,7 +99,7 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Vertical" Margin="15">
+                        <StackPanel Orientation="Vertical" Margin="5">
                             <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
                             <TextBlock Margin="10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding Description}" Width="666"/>
                         </StackPanel>
