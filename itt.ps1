@@ -326,25 +326,14 @@ $obj
 return $selected
 }
 function Show-Selected {
-param (
-[string]$ListView,
-[string]$mode
-)
-$collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.Items)
-switch ($mode) {
-"Filter" {
-$collectionView.Filter = {
-param ($item)
-return $item.IsChecked -eq $true
+param ([string]$ListView, [string]$Mode)
+$view = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.Items)
+if ($Mode -eq 'Filter') {
+$view.Filter = { param($i) $i.IsChecked }
 }
-}
-Default {
-$collectionView.Filter = {
-param ($item)
-$item.IsChecked = $false
-}
-$collectionView.Filter = $null
-}
+else {
+foreach ($i in $itt.$ListView.Items) { $i.IsChecked = $false }
+$view.Filter = $null
 }
 }
 function Get-ToggleStatus {
