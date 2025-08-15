@@ -3,8 +3,6 @@ function Finish {
     <#
         .SYNOPSIS
         Clears checkboxes in a specified ListView and displays a notification.
-        .DESCRIPTION
-        Clears all checkboxes in the ListView named "myListView" and displays a notification with the title "Process Completed", message "All items have been processed", and icon "Success".
     #>
 
     param (
@@ -12,6 +10,7 @@ function Finish {
         [string]$title = "ITT Emad Adel",
         [string]$icon = "Info"
     )
+
     switch ($ListView) {
         "AppsListView" {
             UpdateUI -Button "InstallBtn" -Content "Install" -Width "140"
@@ -28,10 +27,11 @@ function Finish {
     }
 
     # Reset Taskbar Progress
-    $itt["window"].Dispatcher.Invoke([action] { Set-Taskbar -progress "None" -value 0.01 -icon "done" })
+    $itt["window"].Dispatcher.Invoke([action] { Set-Taskbar -progress "None" -value 0.01 -icon "logo" })
 
     # Uncheck all items in ListView
     $itt.$ListView.Dispatcher.Invoke([Action] {
+
             # Uncheck all items
             foreach ($item in $itt.$ListView.Items) {
                 $item.IsChecked = $false
@@ -42,41 +42,5 @@ function Finish {
             $collectionView.Filter = $null
             $collectionView.Refresh()
 
-            # Close window after install apps
-            # if ($i -ne "") {
-            #     Manage-Music -action "StopAll" 
-            #     $itt["window"].Close()
-            # }
         })
-}
-function Show-Selected {
-    param (
-        [string]$ListView,
-        [string]$mode
-    )
-
-    $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.Items)
-
-    switch ($mode) {
-        "Filter" {
-            $collectionView.Filter = {
-                param ($item)
-
-                # Check if item is selected
-                return $item.IsChecked -eq $true
-            }
-        }
-        Default {
-
-            $collectionView.Filter = {
-                param ($item)
-
-                # Uncheck all checkboxes
-                $item.IsChecked = $false
-            }
-
-            # Reset collection view
-            $collectionView.Filter = $null
-        }
-    }
 }
