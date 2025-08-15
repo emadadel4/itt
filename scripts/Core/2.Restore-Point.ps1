@@ -7,7 +7,7 @@ function CreateRestorePoint {
 
     try {
         Set-Statusbar -Text "✋ Please wait Creating a restore point..."
-        Add-Log "Please wait Creating a restore point..." "info"
+        Add-Log "Creating restore point..." "info"
         Set-ItemProperty "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\SystemRestore" "SystemRestorePointCreationFrequency" 0 -Type DWord -Force
         powershell.exe -NoProfile -Command {
             Enable-ComputerRestore -Drive $env:SystemDrive
