@@ -1,56 +1,18 @@
 function Get-SelectedItems {
+    param ([ValidateSet("Apps","Tweaks")] [string]$Mode)
 
-    <#
-        .SYNOPSIS
-        Retrieves selected items from the ListView based on the specified mode.
-        .DESCRIPTION
-        This function collects information about selected items from a ListView, depending on the mode specified. It extracts data from the ListView items that have checkboxes that are checked and returns this information in a structured format.
-        .EXAMPLE
-        Get-SelectedItems -Mode "Apps"
-        Retrieves and returns a list of selected applications from the `AppsListView`.
-    #>
-    
-    param ([string]$Mode)
+    $listView = if ($Mode -eq "Apps") { $itt.AppsListView } else { $itt.TweaksListView }
+    $props    = if ($Mode -eq "Apps") { 'Content','Choco','Scoop','Winget','ITT' } else { 'Name','Script' }
 
-    switch ($Mode) {
-        "Apps" {
-
-            $Apps = @()  
-
-            foreach ($item in $itt.AppsListView.Items) {
-                
-                if ($item.IsChecked) {
-
-                    $Apps += @{
-                        Name    = $item.Content
-                        Choco   = $item.Choco
-                        Scoop   = $item.Scoop
-                        Winget  = $item.Winget
-                        ITT     = $item.ITT
-                    }
-                }
-            }
-
-            return $Apps
-        }
-        "Tweaks" {
-
-            $Tweaks = @()  
-
-            foreach ($item in $itt.TweaksListView.Items) {
-        
-                if ($item.IsChecked) {
-
-                    $Tweaks += @{
-                        Name    = $item.Content
-                        Script   = $item.script
-                    }
-                }
-            }
-
-            return $Tweaks
+    $selected = foreach ($item in $listView.Items) {
+        if ($item.IsChecked) {
+            $obj = @{}
+            foreach ($p in $props) { $obj[$p] = $item.$p }
+            $obj
         }
     }
+
+    return $selected
 }
 
 function Show-Selected {
