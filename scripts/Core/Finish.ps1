@@ -33,9 +33,7 @@ function Finish {
     $itt.$ListView.Dispatcher.Invoke([Action] {
 
         # Uncheck all items
-        foreach ($item in $itt.$ListView.Items) {
-            $item.IsChecked = $false
-        }
+        foreach ($item in $itt.$ListView.Items) {$item.IsChecked = $false}
         
         # Clear the list view selection and reset the filter
         $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.Items)
