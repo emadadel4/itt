@@ -57,7 +57,7 @@ function Invoke-Install {
             Remove-Item -Path "$ITTFolder" -Recurse -Force
 
             
-            $Install_result = Install-App -Source $itt.PackgeManager -Name $App.Name -Choco $App.Choco -Scoop $App.Scoop -Winget $App.Winget -itt $App.ITT
+            $Install_result = Install-App -Source $itt.PackgeManager -Name $App.Content -Choco $App.Choco -Scoop $App.Scoop -Winget $App.Winget -itt $App.ITT
 
             if ($Install_result.Success) {
                 Set-Statusbar -Text "✔ $($Install_result.Message)"
