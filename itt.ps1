@@ -5,7 +5,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/14/2025"
+lastupdate     = "08/15/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -252,6 +252,7 @@ return $handle
 function CreateRestorePoint {
 try {
 Set-Statusbar -Text "✋ Please wait Creating a restore point..."
+Add-Log "Please wait Creating a restore point..." "info"
 Set-ItemProperty "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\SystemRestore" "SystemRestorePointCreationFrequency" 0 -Type DWord -Force
 powershell.exe -NoProfile -Command {
 Enable-ComputerRestore -Drive $env:SystemDrive
@@ -259,6 +260,7 @@ Checkpoint-Computer -Description ("ITT-" + (Get-Date -Format "yyyyMMdd-hhmmss-tt
 }
 Set-ItemProperty $itt.registryPath "backup" 1 -Force
 Set-Statusbar -Text "✔ Created successfully. Applying tweaks..."
+Add-Log "Created successfully. Applying tweaks..." "info"
 } catch {
 Add-Log "Error: $_" "ERROR"
 }
@@ -273,13 +275,11 @@ $icon  = if ($iconMap.ContainsKey($level)) { $iconMap[$level] } else { "i" }
 Write-Host "$icon $Message" -ForegroundColor $color
 }
 function ExecuteCommand {
-param ([array]$tweak)
+param ($tweak)
 try {
-foreach ($cmd in $tweak) {
 Add-Log -Message "Please wait..."
-$script = [scriptblock]::Create($cmd)
+$script = [scriptblock]::Create($tweak)
 Invoke-Command  $script -ErrorAction Stop
-}
 } catch  {
 Add-Log -Message "The specified command was not found." -Level "WARNING"
 }
