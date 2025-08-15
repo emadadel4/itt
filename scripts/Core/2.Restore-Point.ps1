@@ -7,6 +7,7 @@ function CreateRestorePoint {
 
     try {
         Set-Statusbar -Text "✋ Please wait Creating a restore point..."
+        Add-Log "Please wait Creating a restore point..." "info"
         Set-ItemProperty "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\SystemRestore" "SystemRestorePointCreationFrequency" 0 -Type DWord -Force
         powershell.exe -NoProfile -Command {
             Enable-ComputerRestore -Drive $env:SystemDrive
@@ -14,6 +15,7 @@ function CreateRestorePoint {
         }
         Set-ItemProperty $itt.registryPath "backup" 1 -Force
         Set-Statusbar -Text "✔ Created successfully. Applying tweaks..."
+        Add-Log "Created successfully. Applying tweaks..." "info"
     } catch {
         Add-Log "Error: $_" "ERROR"
     }
