@@ -252,7 +252,7 @@ return $handle
 function CreateRestorePoint {
 try {
 Set-Statusbar -Text "✋ Please wait Creating a restore point..."
-Add-Log "Please wait Creating a restore point..." "info"
+Add-Log "Creating restore point..." "info"
 Set-ItemProperty "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\SystemRestore" "SystemRestorePointCreationFrequency" 0 -Type DWord -Force
 powershell.exe -NoProfile -Command {
 Enable-ComputerRestore -Drive $env:SystemDrive
@@ -304,15 +304,26 @@ Set-Statusbar -Text "📢 All tweaks have finished"
 Notify -title "$title" -msg "All tweaks have finished" -icon "Info" -time 30000
 }
 }
-$itt["window"].Dispatcher.Invoke([action] { Set-Taskbar -progress "None" -value 0.01 -icon "done" })
+$itt["window"].Dispatcher.Invoke([action] { Set-Taskbar -progress "None" -value 0.01 -icon "logo" })
 $itt.$ListView.Dispatcher.Invoke([Action] {
-foreach ($item in $itt.$ListView.Items) {
-$item.IsChecked = $false
-}
+foreach ($item in $itt.$ListView.Items) {$item.IsChecked = $false}
 $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.$ListView.Items)
 $collectionView.Filter = $null
 $collectionView.Refresh()
 })
+}
+function Get-SelectedItems {
+param ([ValidateSet("Apps","Tweaks")] [string]$Mode)
+$listView = if ($Mode -eq "Apps") { $itt.AppsListView } else { $itt.TweaksListView }
+$props    = if ($Mode -eq "Apps") { 'Content','Choco','Scoop','Winget','ITT' } else { 'Name','Script' }
+$selected = foreach ($item in $listView.Items) {
+if ($item.IsChecked) {
+$obj = @{}
+foreach ($p in $props) { $obj[$p] = $item.$p }
+$obj
+}
+}
+return $selected
 }
 function Show-Selected {
 param (
@@ -333,38 +344,6 @@ param ($item)
 $item.IsChecked = $false
 }
 $collectionView.Filter = $null
-}
-}
-}
-function Get-SelectedItems {
-param ([string]$Mode)
-switch ($Mode) {
-"Apps" {
-$Apps = @()
-foreach ($item in $itt.AppsListView.Items) {
-if ($item.IsChecked) {
-$Apps += @{
-Name    = $item.Content
-Choco   = $item.Choco
-Scoop   = $item.Scoop
-Winget  = $item.Winget
-ITT     = $item.ITT
-}
-}
-}
-return $Apps
-}
-"Tweaks" {
-$Tweaks = @()
-foreach ($item in $itt.TweaksListView.Items) {
-if ($item.IsChecked) {
-$Tweaks += @{
-Name    = $item.Content
-Script   = $item.script
-}
-}
-}
-return $Tweaks
 }
 }
 }
@@ -944,12 +923,12 @@ break
 }
 }
 function Invoke-Apply {
-$itt['window'].FindName("TwaeksCategory").SelectedIndex = 0
-$selectedTweaks = Get-SelectedItems -Mode "Tweaks"
 if ($itt.ProcessRunning) {
 Message -key "Please_wait" -icon "Warning" -action "OK"
 return
 }
+$itt['window'].FindName("TwaeksCategory").SelectedIndex = 0
+$selectedTweaks = Get-SelectedItems -Mode "Tweaks"
 if ($selectedTweaks.Count -le 0) {return}
 Show-Selected -ListView "TweaksListView" -Mode "Filter"
 $result = Message -key "Apply_msg" -icon "ask" -action "YesNo"
@@ -1006,7 +985,7 @@ Remove-Item -Path "$chocoFolder" -Recurse -Force
 Remove-Item -Path "$chocoFolder.install" -Recurse -Force
 Remove-Item -Path "$env:TEMP\chocolatey" -Recurse -Force
 Remove-Item -Path "$ITTFolder" -Recurse -Force
-$Install_result = Install-App -Source $itt.PackgeManager -Name $App.Name -Choco $App.Choco -Scoop $App.Scoop -Winget $App.Winget -itt $App.ITT
+$Install_result = Install-App -Source $itt.PackgeManager -Name $App.Content -Choco $App.Choco -Scoop $App.Scoop -Winget $App.Winget -itt $App.ITT
 if ($Install_result.Success) {
 Set-Statusbar -Text "✔ $($Install_result.Message)"
 Add-Log -Message "$($Install_result.Message)" -Level "info"
