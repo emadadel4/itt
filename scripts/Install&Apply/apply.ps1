@@ -5,13 +5,13 @@ function Invoke-Apply {
         Handles the application of selected tweaks by executing the relevant commands, registry modifications, and other operations.
     #>
 
-    $itt['window'].FindName("TwaeksCategory").SelectedIndex = 0
-    $selectedTweaks = Get-SelectedItems -Mode "Tweaks"
-
     if ($itt.ProcessRunning) {
         Message -key "Please_wait" -icon "Warning" -action "OK"
         return
     }
+
+    $itt['window'].FindName("TwaeksCategory").SelectedIndex = 0
+    $selectedTweaks = Get-SelectedItems -Mode "Tweaks"
 
     # Return if there is no selection
     if ($selectedTweaks.Count -le 0) {return}
