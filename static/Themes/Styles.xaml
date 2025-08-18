@@ -25,7 +25,7 @@
 <!--Button Style-->
     <Style TargetType="Button">
         <Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
-        <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor2}"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Padding" Value="8"/>
         <Setter Property="FontSize" Value="14"/>
@@ -107,7 +107,7 @@
 
 <!--CheckBox Style-->
     <Style TargetType="CheckBox">
-        <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="Background" Value="{x:Null}"/>
@@ -253,7 +253,6 @@
 
 <!--TextBlock Style-->
     <Style TargetType="TextBlock">
-        <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
         <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
     </Style>
@@ -284,7 +283,7 @@
     </Style>
     <Style TargetType="MenuItem">
         <Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
-        <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
@@ -326,7 +325,7 @@
                             <Path x:Name="Arrow"
                                   Grid.Column="2"
                                   Data="M0,0 L4,4 L8,0 Z"
-                                  Fill="{DynamicResource TextColorSecondaryColor}"
+                                  Fill="{DynamicResource TextColorPrimary}"
                                   HorizontalAlignment="Center"
                                   VerticalAlignment="Center"
                                   Visibility="Collapsed"
@@ -486,7 +485,7 @@
                         </Trigger>
                         <Trigger Property="IsSelected" Value="False">
                             <Setter TargetName="Border" Property="Background" Value="Transparent" />
-                            <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -547,7 +546,11 @@
                     <ControlTemplate.Triggers>
                                 <Trigger Property="IsSelected" Value="True">
                                     <Setter TargetName="Bd" Property="Background" Value="{DynamicResource HighlightColor}"/>
-                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor2}"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="False">
+                                    <Setter TargetName="Bd" Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
                                 </Trigger>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="Bd" Property="Background" Value="{DynamicResource HighlightColor}"/>
@@ -562,7 +565,7 @@
 
 <!--ToggleSwitchStyle Style-->
     <Style x:Key="ToggleSwitchStyle" TargetType="CheckBox">
-    <Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
+    <Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
