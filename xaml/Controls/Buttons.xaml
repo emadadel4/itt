@@ -11,7 +11,7 @@
     </Grid>
 
     <Grid Column="0">
-        <TextBlock Name="statusbar" Text="✊ #StandWithPalestine" FontWeight="SemiBold" Padding="10 0 0 0" Width="Auto"
+        <TextBlock Name="statusbar" Foreground="{DynamicResource TextColorPrimary}" Text="✊ #StandWithPalestine" FontWeight="SemiBold" Padding="10 0 0 0" Width="Auto"
                    HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"/>
     </Grid>
 </Grid>
