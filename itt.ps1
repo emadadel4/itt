@@ -5,7 +5,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/15/2025"
+lastupdate     = "08/19/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -269,7 +269,7 @@ function Add-Log {
 param ([string]$Message, [string]$Level = "Default")
 $level = $Level.ToUpper()
 $colorMap = @{ INFO="White"; WARNING="Yellow"; ERROR="Red"; INSTALLED="White"; APPLY="White"; DEBUG="Yellow" }
-$iconMap  = @{ INFO="[INFO]"; WARNING="[!]"; ERROR="[X]"; DEFAULT=""; DEBUG="[DEBUG]"; ITT="[ITT]"; Chocolatey="[Chocolatey]"; Winget="[Winget]" }
+$iconMap  = @{ INFO="[i]"; WARNING="[!]"; ERROR="[X]"; DEFAULT=""; DEBUG="[DEBUG]"; ITT="[ITT]"; Chocolatey="[Chocolatey]"; Winget="[Winget]" }
 $color = if ($colorMap.ContainsKey($level)) { $colorMap[$level] } else { "White" }
 $icon  = if ($iconMap.ContainsKey($level)) { $iconMap[$level] } else { "i" }
 Write-Host "$icon $Message" -ForegroundColor $color
@@ -1729,7 +1729,7 @@ BeginTime="0:0:15" />
 </Storyboard>
 <Style TargetType="Button">
 <Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
-<Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor2}"/>
+<Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
 <Setter Property="BorderBrush" Value="Transparent"/>
 <Setter Property="Padding" Value="8"/>
 <Setter Property="FontSize" Value="14"/>
@@ -1804,7 +1804,7 @@ ContentSource="Content"/>
 </Style.Triggers>
 </Style>
 <Style TargetType="CheckBox">
-<Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
+<Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}"/>
 <Setter Property="Margin" Value="0"/>
 <Setter Property="Padding" Value="0"/>
 <Setter Property="Background" Value="{x:Null}"/>
@@ -1925,7 +1925,6 @@ VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 </Setter>
 </Style>
 <Style TargetType="TextBlock">
-<Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
 </Style>
@@ -1952,7 +1951,7 @@ CornerRadius="8">
 </Style>
 <Style TargetType="MenuItem">
 <Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
-<Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
+<Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}"/>
 <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}"/>
 <Setter Property="BorderThickness" Value="1"/>
 <Setter Property="Template">
@@ -1990,7 +1989,7 @@ Margin="5,0"/>
 <Path x:Name="Arrow"
 Grid.Column="2"
 Data="M0,0 L4,4 L8,0 Z"
-Fill="{DynamicResource TextColorSecondaryColor}"
+Fill="{DynamicResource TextColorPrimary}"
 HorizontalAlignment="Center"
 VerticalAlignment="Center"
 Visibility="Collapsed"
@@ -2142,7 +2141,7 @@ ContentSource="Header"
 </Trigger>
 <Trigger Property="IsSelected" Value="False">
 <Setter TargetName="Border" Property="Background" Value="Transparent" />
-<Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}" />
+<Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}" />
 </Trigger>
 </ControlTemplate.Triggers>
 </ControlTemplate>
@@ -2199,7 +2198,11 @@ RecognizesAccessKey="True"/>
 <ControlTemplate.Triggers>
 <Trigger Property="IsSelected" Value="True">
 <Setter TargetName="Bd" Property="Background" Value="{DynamicResource HighlightColor}"/>
-<Setter Property="Foreground" Value="White"/>
+<Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor2}"/>
+</Trigger>
+<Trigger Property="IsSelected" Value="False">
+<Setter TargetName="Bd" Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
+<Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
 </Trigger>
 <Trigger Property="IsMouseOver" Value="True">
 <Setter TargetName="Bd" Property="Background" Value="{DynamicResource HighlightColor}"/>
@@ -2211,7 +2214,7 @@ RecognizesAccessKey="True"/>
 </Setter>
 </Style>
 <Style x:Key="ToggleSwitchStyle" TargetType="CheckBox">
-<Setter Property="Foreground" Value="{DynamicResource TextColorSecondaryColor}"/>
+<Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}"/>
 <Setter Property="Template">
 <Setter.Value>
 <ControlTemplate TargetType="CheckBox">
@@ -2310,9 +2313,9 @@ Duration="0:0:0.1" />
 <ResourceDictionary x:Key="Dark">
 <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#22272e"/>
 <SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="#2d333b"/>
-<SolidColorBrush x:Key="TextColorPrimary" Color="#adbac7"/>
-<SolidColorBrush x:Key="TextColorSecondaryColor" Color="#cdd9e5"/>
-<SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#B9BBBE"/>
+<SolidColorBrush x:Key="TextColorPrimary" Color="#d1d5db"/>
+<SolidColorBrush x:Key="TextColorSecondaryColor" Color="#adbac7"/>
+<SolidColorBrush x:Key="TextColorSecondaryColor2" Color="white"/>
 <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#539bf5"/>
 <SolidColorBrush x:Key="PrimaryButtonHighlight" Color="#539bf5"/>
 <SolidColorBrush x:Key="ButtonBorderColor" Color="#539bf5"/>
@@ -2333,9 +2336,9 @@ Duration="0:0:0.1" />
 <ResourceDictionary x:Key="DarkKnight">
 <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#0a0a0a"/>
 <SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="#121212"/>
-<SolidColorBrush x:Key="TextColorPrimary" Color="#e6e6e6"/>
-<SolidColorBrush x:Key="TextColorSecondaryColor" Color="#cccccc"/>
-<SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#999999"/>
+<SolidColorBrush x:Key="TextColorPrimary" Color="#d1d5db"/>
+<SolidColorBrush x:Key="TextColorSecondaryColor" Color="#999999"/>
+<SolidColorBrush x:Key="TextColorSecondaryColor2" Color="white"/>
 <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#00b7ff"/>
 <SolidColorBrush x:Key="PrimaryButtonHighlight" Color="#00b7ff"/>
 <SolidColorBrush x:Key="ButtonBorderColor" Color="#ff0000"/>
@@ -2356,9 +2359,9 @@ Duration="0:0:0.1" />
 <ResourceDictionary x:Key="Light">
 <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#ffffff"/>
 <SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="#f6f8fa"/>
-<SolidColorBrush x:Key="TextColorPrimary" Color="#24292f"/>
-<SolidColorBrush x:Key="TextColorSecondaryColor" Color="#1f2328"/>
-<SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#57606a"/>
+<SolidColorBrush x:Key="TextColorPrimary" Color="#24292e"/>
+<SolidColorBrush x:Key="TextColorSecondaryColor" Color="#57606a"/>
+<SolidColorBrush x:Key="TextColorSecondaryColor2" Color="white"/>
 <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#0969da"/>
 <SolidColorBrush x:Key="PrimaryButtonHighlight" Color="#ffffff"/>
 <SolidColorBrush x:Key="ButtonBorderColor" Color="#0969da"/>
@@ -2379,9 +2382,9 @@ Duration="0:0:0.1" />
 <ResourceDictionary x:Key="Palestine">
 <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="black"/>
 <SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="black"/>
-<SolidColorBrush x:Key="TextColorPrimary" Color="#F5F5F5"/>
-<SolidColorBrush x:Key="TextColorSecondaryColor" Color="#CCCCCC"/>
-<SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#888888"/>
+<SolidColorBrush x:Key="TextColorPrimary" Color="#d1d5db"/>
+<SolidColorBrush x:Key="TextColorSecondaryColor" Color="#999999"/>
+<SolidColorBrush x:Key="TextColorSecondaryColor2" Color="white"/>
 <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#00D99D"/>
 <SolidColorBrush x:Key="PrimaryButtonHighlight" Color="#FFFFFF"/>
 <SolidColorBrush x:Key="ButtonBorderColor" Color="#007A3D"/>
@@ -2532,9 +2535,9 @@ VirtualizingStackPanel.VirtualizationMode="Recycling">
 </ListView.ItemsPanel>
 <ListView.ItemTemplate>
 <DataTemplate>
-<StackPanel Orientation="Vertical" Margin="10">
-<CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
-<TextBlock Margin="10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding Description}" Width="666"/>
+<StackPanel Orientation="Vertical">
+<CheckBox IsChecked="{Binding IsChecked}" Margin="10,10,0,0" Content="{Binding Content}" FontSize="15"/>
+<TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" Text="{Binding Description}" Width="666"/>
 </StackPanel>
 </DataTemplate>
 </ListView.ItemTemplate>
@@ -2575,9 +2578,9 @@ IsReadOnly="True" Visibility="Collapsed">
 </ListView.ItemsPanel>
 <ListView.ItemTemplate>
 <DataTemplate>
-<StackPanel Orientation="Vertical" Margin="10">
-<CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
-<TextBlock Margin="10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding Description}" Width="666"/>
+<StackPanel Orientation="Vertical">
+<CheckBox IsChecked="{Binding IsChecked}" Margin="10,10,0,0" Content="{Binding Content}" FontSize="15"/>
+<TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" Text="{Binding Description}" Width="666"/>
 </StackPanel>
 </DataTemplate>
 </ListView.ItemTemplate>
@@ -2646,7 +2649,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignme
 HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 </Grid>
 <Grid Column="0">
-<TextBlock Name="statusbar" Text="✊ #StandWithPalestine" FontWeight="SemiBold" Padding="10 0 0 0" Width="Auto"
+<TextBlock Name="statusbar" Foreground="{DynamicResource TextColorPrimary}" Text="✊ #StandWithPalestine" FontWeight="SemiBold" Padding="10 0 0 0" Width="Auto"
 HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"/>
 </Grid>
 </Grid>
