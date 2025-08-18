@@ -7,7 +7,7 @@
     <SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="#2d333b"/>
 
     <!-- Text -->
-    <SolidColorBrush x:Key="TextColorPrimary" Color="#cdd9e5"/>
+    <SolidColorBrush x:Key="TextColorPrimary" Color="#d1d5db"/>
     <SolidColorBrush x:Key="TextColorSecondaryColor" Color="#adbac7"/>
     <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="white"/>
     

@@ -1,14 +1,15 @@
 <!-- {Palestine} -->
 <!-- by {emadadel} -->
 <ResourceDictionary x:Key="Palestine">
+
     <!-- Backgrounds -->
     <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="black"/>
     <SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="black"/>
 
     <!-- Text -->
-    <SolidColorBrush x:Key="TextColorPrimary" Color="#F5F5F5"/>
-    <SolidColorBrush x:Key="TextColorSecondaryColor" Color="#CCCCCC"/>
-    <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#888888"/>
+    <SolidColorBrush x:Key="TextColorPrimary" Color="#d1d5db"/>
+    <SolidColorBrush x:Key="TextColorSecondaryColor" Color="#999999"/>
+    <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="white"/>
 
     <!-- Buttons and Highlights -->
     <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#00D99D"/>
