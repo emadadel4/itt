@@ -2673,7 +2673,7 @@ HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"/>
 <Grid Background="Transparent">
 <StackPanel>
 <TextBlock Name="title" FontSize="20" Text="Changelog" Foreground="{DynamicResource TextColorSecondaryColor}" FontWeight="SemiBold" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-<TextBlock Name="date" Margin="5,8,0,0" Text="8/29/2024" Foreground="{DynamicResource TextColorSecondaryColor2}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+<TextBlock Name="date" Margin="5,8,0,0" Text="8/29/2024" Foreground="{DynamicResource TextColorSecondaryColor}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 </StackPanel>
 </Grid>
 </StackPanel>
@@ -2684,57 +2684,57 @@ HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"/>
 <BitmapImage UriSource='https://camo.githubusercontent.com/5cf02c5ee4898f8f92965367dfbf6829cf7d5e180f3808898ac65eccb0835d68/68747470733a2f2f7374796c65732e7265646469746d656469612e636f6d2f74355f327168616b2f7374796c65732f696d6167655f7769646765745f3738637964797a6c336b7462312e706e67' CacheOption='OnLoad'/>
 </Image.Source>
 </Image>
-<TextBlock Text='Your support for the Palestinian cause is invaluable, especially in these challenging times. Donations play a crucial role in providing essential services to those affected by the ongoing genocide and helping to sustain long-term development efforts. Supporting trusted organizations allows your contributions to have a direct impact, offering humanitarian aid and food, medical assistance, legal support, and more.' FontSize='15' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap' MaxWidth='450'/>
+<TextBlock Text='Your support for the Palestinian cause is invaluable, especially in these challenging times. Donations play a crucial role in providing essential services to those affected by the ongoing genocide and helping to sustain long-term development efforts. Supporting trusted organizations allows your contributions to have a direct impact, offering humanitarian aid and food, medical assistance, legal support, and more.' FontSize='15' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
 <TextBlock Text=' • Keyboard Shortcuts' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Ctrl+A: Clear category filter.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Ctrl+A: Clear category filter.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Ctrl+F: toggle search mode.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Ctrl+F: toggle search mode.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Ctrl+Q: Switch to Apps.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Ctrl+Q: Switch to Apps.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Ctrl+W: Switch to Tweaks.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Ctrl+W: Switch to Tweaks.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Ctrl+E: Switch to Settings.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Ctrl+E: Switch to Settings.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Ctrl+S: Install selected Apps/Tweaks.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Ctrl+S: Install selected Apps/Tweaks.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Shift+S: Save selected.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Shift+S: Save selected.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Shift+D: Load save file.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Shift+D: Load save file.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Shift+M: Toggle music.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Shift+M: Toggle music.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Shift+P: Open Choco folder.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Shift+P: Open Choco folder.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Shift+T: Open ITT folder.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Shift+T: Open ITT folder.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Shift+Q: Restore point.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Shift+Q: Restore point.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Shift+I: ITT Shortcut.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Shift+I: ITT Shortcut.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <StackPanel Orientation='Vertical'>
-<TextBlock Text='• Ctrl+G: Close application.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap'/>
+<TextBlock Text='• Ctrl+G: Close application.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
 <TextBlock Text=' • 💡 A Secret Feature Awaits – Unlock It' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
-<TextBlock Text='Can You Find the Hidden Easter Egg? Open the source code and uncover the secret features waiting for you!' FontSize='15' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor2}' TextWrapping='Wrap' MaxWidth='450'/>
+<TextBlock Text='Can You Find the Hidden Easter Egg? Open the source code and uncover the secret features waiting for you!' FontSize='15' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
 </StackPanel>
 </ScrollViewer>
 </Grid>
 <Grid Grid.Row="2" Background="Transparent">
-<TextBlock Name="DisablePopup" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding DisablePopupText, TargetNullValue=Show on update}" Background="Transparent" TextAlignment="Center" Cursor="Hand" Padding="15" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+<TextBlock Name="DisablePopup" Foreground="{DynamicResource TextColorSecondaryColor}" Text="{Binding DisablePopupText, TargetNullValue=Show on update}" Background="Transparent" TextAlignment="Center" Cursor="Hand" Padding="15" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 </Grid>
 </Grid>
 </Border>
