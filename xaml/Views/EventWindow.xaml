@@ -20,7 +20,7 @@
                 <Grid Background="Transparent">
                     <StackPanel>
                         <TextBlock Name="title" FontSize="20" Text="Changelog" Foreground="{DynamicResource TextColorSecondaryColor}" FontWeight="SemiBold" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Name="date" Margin="5,8,0,0" Text="8/29/2024" Foreground="{DynamicResource TextColorSecondaryColor2}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock Name="date" Margin="5,8,0,0" Text="8/29/2024" Foreground="{DynamicResource TextColorSecondaryColor}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                     </StackPanel>
                 </Grid>
             </StackPanel>
@@ -34,7 +34,7 @@
 
             <!-- Footer -->
             <Grid Grid.Row="2" Background="Transparent">
-                <TextBlock Name="DisablePopup" Foreground="{DynamicResource TextColorSecondaryColor2}" Text="{Binding DisablePopupText, TargetNullValue=Show on update}" Background="Transparent" TextAlignment="Center" Cursor="Hand" Padding="15" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Name="DisablePopup" Foreground="{DynamicResource TextColorSecondaryColor}" Text="{Binding DisablePopupText, TargetNullValue=Show on update}" Background="Transparent" TextAlignment="Center" Cursor="Hand" Padding="15" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
         </Grid>
     </Border>
