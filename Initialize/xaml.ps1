@@ -228,7 +228,6 @@ $tweaksUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/st
 
 while ($true) {
     try {
-        Write-Host "Relax, good things are loading… almost there!" -ForegroundColor Yellow
         $aTask, $tTask = $c.GetStringAsync($appsUrl), $c.GetStringAsync($tweaksUrl)
         [Threading.Tasks.Task]::WaitAll($aTask, $tTask)
 
