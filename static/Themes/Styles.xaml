@@ -73,7 +73,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="ListViewItem">
                     <Border Name="bg" 
-                            CornerRadius="5"
+                            CornerRadius="4"
                             Padding="{TemplateBinding Padding}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
