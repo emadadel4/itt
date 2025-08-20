@@ -1,7 +1,7 @@
 param (
 [string]$i
 )
-Write-Host "Relax, good things are loading… almost there!" -ForegroundColor Yellow
+Write-Host "`n  Relax, good things are loading… almost there!" -ForegroundColor Yellow
 Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'PresentationCore', 'WindowsBase','System.Net.Http'
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
