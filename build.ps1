@@ -346,14 +346,14 @@ function ConvertTo-Xaml {
             "^#### (.+)" {
                 #### Description
                 $Description = $matches[1].Trim()  
-                $xaml += "<TextBlock Text=''$Description'' FontSize=''$DescriptionFontSize'' Padding=''25 0 0 10'' Foreground=''{DynamicResource TextColorSecondaryColor2}'' TextWrapping=''Wrap'' MaxWidth=''450''/>`n"
+                $xaml += "<TextBlock Text=''$Description'' FontSize=''$DescriptionFontSize'' Padding=''25 0 0 10'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap'' MaxWidth=''450''/>`n"
             }
             "^- (.+)" {
                 # - Lists
                 $List = $matches[1].Trim()  
                 $xaml += "
                 <StackPanel Orientation=''Vertical''>
-                    <TextBlock Text=''• $List'' Padding=''35,0,0,0'' FontSize=''$DescriptionFontSize'' Width=''Auto'' Height=''Auto'' Foreground=''{DynamicResource TextColorSecondaryColor2}'' TextWrapping=''Wrap''/>
+                    <TextBlock Text=''• $List'' Padding=''35,0,0,0'' FontSize=''$DescriptionFontSize'' Width=''Auto'' Height=''Auto'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
                 </StackPanel>
                 `n" 
             }
