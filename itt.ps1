@@ -1766,10 +1766,10 @@ BeginTime="0:0:15" />
 <Setter Property="SnapsToDevicePixels" Value="True"/>
 </Style>
 <Style TargetType="ListViewItem">
-<Setter Property="Margin" Value="0 10 0 0"/>
+<Setter Property="Margin" Value="25,10,25,0"/>
 <Setter Property="BorderThickness" Value="0.3"/>
 <Setter Property="BorderBrush" Value="DarkGray"/>
-<Setter Property="Padding" Value="0"/>
+<Setter Property="Padding" Value="10,10,0,0"/>
 <Setter Property="Template">
 <Setter.Value>
 <ControlTemplate TargetType="ListViewItem">
@@ -2537,8 +2537,8 @@ VirtualizingStackPanel.VirtualizationMode="Recycling">
 <ListView.ItemTemplate>
 <DataTemplate>
 <StackPanel Orientation="Vertical">
-<CheckBox IsChecked="{Binding IsChecked}" Margin="10,10,0,0" Content="{Binding Content}" FontSize="15"/>
-<TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" Text="{Binding Description}" Width="666"/>
+<CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
+<TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" Text="{Binding Description}" Width="500"/>
 </StackPanel>
 </DataTemplate>
 </ListView.ItemTemplate>
@@ -2580,8 +2580,8 @@ IsReadOnly="True" Visibility="Collapsed">
 <ListView.ItemTemplate>
 <DataTemplate>
 <StackPanel Orientation="Vertical">
-<CheckBox IsChecked="{Binding IsChecked}" Margin="10,10,0,0" Content="{Binding Content}" FontSize="15"/>
-<TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" Text="{Binding Description}" Width="666"/>
+<CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
+<TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" Text="{Binding Description}" Width="500"/>
 </StackPanel>
 </DataTemplate>
 </ListView.ItemTemplate>
