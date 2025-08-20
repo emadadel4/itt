@@ -1,11 +1,12 @@
 param (
 [string]$i
 )
+Write-Host "Relax, good things are loading… almost there!" -ForegroundColor Yellow
 Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'PresentationCore', 'WindowsBase','System.Net.Http'
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/19/2025"
+lastupdate     = "08/20/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -20,7 +21,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoProfile -Command `"$($MyInvocation.MyCommand.Definition)`"" -Verb RunAs
 exit
 }
-$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
+try {$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX} catch {Write-Host "Error: WMPlayer.OCX not found"}
 $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 $ittDir = $itt.ittDir
 if (-not (Test-Path -Path $ittDir)) {New-Item -ItemType Directory -Path $ittDir -Force | Out-Null}
@@ -2928,7 +2929,6 @@ $appsUrl   = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/st
 $tweaksUrl = "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/Tweaks.json"
 while ($true) {
 try {
-Write-Host "Relax, good things are loading… almost there!" -ForegroundColor Yellow
 $aTask, $tTask = $c.GetStringAsync($appsUrl), $c.GetStringAsync($tweaksUrl)
 [Threading.Tasks.Task]::WaitAll($aTask, $tTask)
 $appsData   = $aTask.Result | ConvertFrom-Json
