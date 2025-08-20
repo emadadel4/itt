@@ -6,6 +6,8 @@ param (
     [string]$i
 )
 
+Write-Host "Relax, good things are loading… almost there!" -ForegroundColor Yellow
+
 # Load DLLs
 Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'PresentationCore', 'WindowsBase','System.Net.Http'
 
@@ -33,7 +35,8 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 }
 
-$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX
+try {$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX} catch {Write-Host "Error: WMPlayer.OCX not found"}
+
 $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 
 # Create directory if it doesn't exist
