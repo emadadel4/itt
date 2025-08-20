@@ -1,6 +1,7 @@
 param (
 [string]$i
 )
+$Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 Write-Host "`n  Relax, good things are loading… almost there!" -ForegroundColor Yellow
 Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'PresentationCore', 'WindowsBase','System.Net.Http'
 $itt = [Hashtable]::Synchronized(@{
@@ -22,7 +23,6 @@ Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoP
 exit
 }
 try {$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX} catch {Write-Host "Error: WMPlayer.OCX not found"}
-$Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 $ittDir = $itt.ittDir
 if (-not (Test-Path -Path $ittDir)) {New-Item -ItemType Directory -Path $ittDir -Force | Out-Null}
 $logDir = Join-Path $ittDir 'logs'
