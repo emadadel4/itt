@@ -7,16 +7,11 @@ function ExecuteCommand {
 
     param ($tweak)
 
-    while ($true) {
-        try {
-            Add-Log -Message "Please wait..."
-            $script = [scriptblock]::Create($tweak)
-            Invoke-Command $script -ErrorAction Stop
-            break
-        }
-        catch {
-            Write-Host "Unstable internet connection or error detected. Retrying in 5 seconds..." -ForegroundColor Yellow
-            Start-Sleep 5
-        }
+    try {
+        Add-Log -Message "Please wait..."
+        $script = [scriptblock]::Create($tweak)
+        Invoke-Command  $script -ErrorAction Stop
+    } catch  {
+        Add-Log -Message "The specified command was not found." -Level "WARNING"
     }
 }
