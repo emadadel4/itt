@@ -33,16 +33,10 @@ $itt = [Hashtable]::Synchronized(@{
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoProfile -Command `"$($MyInvocation.MyCommand.Definition)`"" -Verb RunAs
     exit
-
 }
 
-try {$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX} catch {Write-Host "Error: WMPlayer.OCX not found"}
-
 # Create directory if it doesn't exist
-$ittDir = $itt.ittDir
-if (-not (Test-Path -Path $ittDir)) {New-Item -ItemType Directory -Path $ittDir -Force | Out-Null}
+if (-not (Test-Path -Path $itt.ittDir)) {New-Item -ItemType Directory -Path $ittDir -Force | Out-Null}
 
 # Trace the script
-$logDir = Join-Path $ittDir 'logs'
-$timestamp = Get-Date -Format "yyyy-MM-dd"
-Start-Transcript -Path "$logDir\log_$timestamp.log" -Append -NoClobber *> $null
+Start-Transcript -Path (Join-Path $itt.ittDir "logs\log_$(Get-Date -Format 'yyyy-MM-dd').log") -Append -Force *> $null
