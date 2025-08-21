@@ -101,7 +101,7 @@ try {
     catch {
         # Creating missing registry keys
         # debug start
-        if ($Debug) { Add-Log -Message "An error occurred. Creating missing registry keys..." -Level "debug" }
+        if ($Debug) { Add-Log -Message "Creating missing registry keys..." -Level "debug" }
         # debug end
         New-ItemProperty -Path $itt.registryPath -Name "Theme" -Value "default" -PropertyType String -Force *> $Null
         New-ItemProperty -Path $itt.registryPath -Name "locales" -Value "default" -PropertyType String -Force *> $Null
@@ -174,6 +174,8 @@ try {
     #===========================================================================
     #region Get user Settings from registry
     #===========================================================================
+    # Init mediaPlayer
+    try {$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX} catch {Write-Host "Error: WMPlayer.OCX not found"}
     $itt.mediaPlayer.settings.volume = "$($itt.Music)"
     $itt["window"].title = "Install Tweaks Tool " + @("🔈", "🔊")[$itt.Music -eq 100]
     $itt.PopupWindow = (Get-ItemProperty -Path $itt.registryPath -Name "PopupWindow").PopupWindow
