@@ -26,6 +26,7 @@ function Invoke-Toggle {
         "WindowsSandbox" { Invoke-WindowsSandbox $(Get-ToggleStatus WindowsSandbox) }
         "WindowsSubsystemforLinux" { Invoke-WindowsSandbox $(Get-ToggleStatus WindowsSubsystemforLinux) }
         "HyperVVirtualization" { Invoke-HyperV $(Get-ToggleStatus HyperVVirtualization) }
+        "EnableAutoTray" { Invoke-EnableAutoTray $(Get-ToggleStatus EnableAutoTray) }
     }
     # debug start
     Add-Log -Message $debug -Level "debug"
