@@ -213,4 +213,17 @@ function Get-ToggleStatus {
             return $false
         }
     }
+
+    # Enable Auto Tray
+    if ($ToggleSwitch -eq "EnableAutoTray") {
+
+        $EnableAutoTray = (Get-ItemProperty -path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer').EnableAutoTray
+
+        if ($EnableAutoTray -eq 0) {
+            return $true
+        } 
+        else {
+            return $false
+        }
+    }
 }
