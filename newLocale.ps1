@@ -18,8 +18,8 @@ try {
 # Define the cOntent in the desired format
 $table = @"
 Key,Text
-author,"$Author",
-name,"$name",
+name,$name
+author,$Author
 Welcome,Save time and install all your programs at once and debloat Windows and more. Be part of ITT and contribute to improving it
 Install,Install
 Apply,Apply
@@ -91,6 +91,7 @@ protection,Protection
 classic,Classic
 auto,Auto
 package_manager,Package Manager
+DisablePopupText,Show on update
 "@
     # Write the cOntent to the CSV file
     $csvFilePath = "locales/$csvFilePath.csv"
