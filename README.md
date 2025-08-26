@@ -9,7 +9,7 @@
 <div align="center">
 
 <a href="#">
-  <img src="https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Images/readmelogo.png" alt="itt" width="400" />
+  <img src="https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Images/readmelogo.png" alt="itt" width="366" />
 </a>
 
 # Install Tweaks Tool
