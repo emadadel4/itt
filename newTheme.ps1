@@ -32,9 +32,9 @@ try {
     <SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="#f6f8fa"/>
 
     <!-- Text -->
-    <SolidColorBrush x:Key="TextColorPrimary" Color="#24292f"/>
-    <SolidColorBrush x:Key="TextColorSecondaryColor" Color="#1f2328"/>
-    <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="#57606a"/>
+    <SolidColorBrush x:Key="TextColorPrimary" Color="#24292e"/>
+    <SolidColorBrush x:Key="TextColorSecondaryColor" Color="#57606a"/>
+    <SolidColorBrush x:Key="TextColorSecondaryColor2" Color="white"/>
 
     <!-- Buttons and Highlights -->
     <SolidColorBrush x:Key="PrimaryButtonForeground" Color="#0969da"/>
