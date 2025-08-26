@@ -466,5 +466,14 @@
     "Script": [
       "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Detailed%20BSoD/run.ps1 | iex"
     ]
+  },
+  {
+    "Content": "Enable Auto Tray",
+    "Description": "Show all tray icons",
+    "Category": "Classic",
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Enable%20Auto%20Tray/run.ps1 | iex"
+    ]
   }
 ]
