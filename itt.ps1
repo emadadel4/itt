@@ -7,7 +7,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/21/2025"
+lastupdate     = "08/26/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -491,6 +491,15 @@ return $false
 if ($ToggleSwitch -eq "HyperVVirtualization") {
 $HyperV = Get-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V"
 if ($HyperV.State -eq "Enabled") {
+return $true
+}
+else {
+return $false
+}
+}
+if ($ToggleSwitch -eq "EnableAutoTray") {
+$EnableAutoTray = (Get-ItemProperty -path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer').EnableAutoTray
+if ($EnableAutoTray -eq 0) {
 return $true
 }
 else {
@@ -1004,6 +1013,7 @@ Switch -Wildcard ($debug) {
 "WindowsSandbox" { Invoke-WindowsSandbox $(Get-ToggleStatus WindowsSandbox) }
 "WindowsSubsystemforLinux" { Invoke-WindowsSandbox $(Get-ToggleStatus WindowsSubsystemforLinux) }
 "HyperVVirtualization" { Invoke-HyperV $(Get-ToggleStatus HyperVVirtualization) }
+"EnableAutoTray" { Invoke-EnableAutoTray $(Get-ToggleStatus EnableAutoTray) }
 }
 }
 function Invoke-AutoEndTasks {
@@ -1169,6 +1179,34 @@ $value = 0
 Add-Log -Message "Disabled auto drivers update" -Level "info"
 }
 Set-ItemProperty -Path $Path -Name $name -Value $value -ErrorAction Stop
+}
+Catch [System.Security.SecurityException] {
+Write-Warning "Unable to set $Path\$Name to $Value due to a Security Exception"
+}
+Catch [System.Management.Automation.ItemNotFoundException] {
+Write-Warning $psitem.Exception.ErrorRecord
+}
+Catch{
+Write-Warning "Unable to set $Name due to unhandled exception"
+Write-Warning $psitem.Exception.StackTrace
+}
+}
+function Invoke-EnableAutoTray {
+Param(
+$Enabled,
+[string]$Path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer",
+[string]$name = "EnableAutoTray"
+)
+Try{
+if ($Enabled -eq $false){
+Add-Log -Message "Enabling all tray icons..." -Level "info"
+Set-ItemProperty -Path $Path -Name $name -Value 0 -ErrorAction Stop
+}
+else {
+Add-Log -Message "Disabling auto tray icons..." -Level "info"
+Remove-ItemProperty -Path $Path -Name $name -ErrorAction Stop
+}
+Refresh-Explorer
 }
 Catch [System.Security.SecurityException] {
 Write-Warning "Unable to set $Path\$Name to $Value due to a Security Exception"
@@ -2631,6 +2669,8 @@ IsReadOnly="True" Visibility="Collapsed">
 <CheckBox Content="Windows Subsystem for Linux" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSubsystemforLinux" ToolTip="Development"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
 <CheckBox Content="HyperV Virtualization" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="HyperVVirtualization" ToolTip="Development"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
+<CheckBox Content="Enable Auto Tray" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="EnableAutoTray" ToolTip="Personalization"/>
 </StackPanel>
 </ListView>
 </TabItem>
