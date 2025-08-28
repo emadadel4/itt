@@ -51,7 +51,7 @@
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
-                            <TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" Text="{Binding Description}" Width="500"/>
+                            <TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" TextWrapping="Wrap" Text="{Binding Description}" Width="500"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -101,7 +101,7 @@
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
-                            <TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" Text="{Binding Description}" Width="500"/>
+                            <TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" TextWrapping="Wrap" Text="{Binding Description}" Width="500"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
