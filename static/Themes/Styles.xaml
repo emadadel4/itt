@@ -561,29 +561,37 @@
             </Setter.Value>
         </Setter>
     </Style>
-<!--ComboBox Style-->
+<!--End ComboBox Style-->
 
-<!--ToggleSwitchStyle Style-->
+<!--Toggle Switch Style-->
     <Style x:Key="ToggleSwitchStyle" TargetType="CheckBox">
-    <Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
-                    <Grid VerticalAlignment="Center">
+
+                    <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="*"/> 
+                            <ColumnDefinition Width="Auto"/> 
                         </Grid.ColumnDefinitions>
 
-                        <!-- Label (Content) -->
-                        <TextBlock Grid.Column="0"
-                                Text="{TemplateBinding Content}"
+                        <!-- Icon -->
+                        <TextBlock x:Name="CheckIcon"
+                                Grid.Column="0"
+                                FontSize="17"
                                 VerticalAlignment="Center"
-                                Margin="0,0,10,0"/>
+                                HorizontalAlignment="Center"
+                                Text="⚙️"/>
+
+                        <!-- Label (Content) -->
+                        <ContentPresenter Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                        Margin="0,0,15,0"/>
 
                         <!-- Toggle Switch -->
-                        <Grid Grid.Column="1" Width="40" Height="20">
+                        <Grid Grid.Column="2" Width="40" Height="20" VerticalAlignment="Center">
                             <Border x:Name="Track"
                                     Background="{DynamicResource SecondaryPrimaryBackgroundColor}"
                                     BorderThickness="1.2"
@@ -596,26 +604,10 @@
                                     VerticalAlignment="Center"
                                     Margin="2,0,0,0"/>
                         </Grid>
-
-                        <!-- State Text -->
-                        <TextBlock Grid.Column="2"
-                                VerticalAlignment="Center"
-                                Margin="10,0,0,0">
-                            <TextBlock.Style>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="Text" Value="{Binding Off, TargetNullValue=Off}"/>
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked}" Value="True">
-                                            <Setter Property="Text" Value="{Binding On, TargetNullValue=On}"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
                     </Grid>
 
                     <ControlTemplate.Triggers>
-                        <!-- Trigger for Checked State (On) -->
+                        <!-- Checked -->
                         <Trigger Property="IsChecked" Value="True">
                             <Trigger.EnterActions>
                                 <RemoveStoryboard BeginStoryboardName="ToggleSwitchLeft"/>
@@ -633,7 +625,7 @@
                             <Setter TargetName="Track" Property="BorderBrush" Value="{x:Null}"/>
                         </Trigger>
 
-                        <!-- Trigger for Unchecked State (Off) -->
+                        <!-- Unchecked -->
                         <Trigger Property="IsChecked" Value="False">
                             <Trigger.EnterActions>
                                 <RemoveStoryboard BeginStoryboardName="ToggleSwitchRight"/>
@@ -649,17 +641,20 @@
                             <Setter TargetName="Thumb" Property="Fill" Value="{DynamicResource ToggleSwitchDisableColor}"/>
                         </Trigger>
 
-                        <!-- Mouse Over Effect -->
+                        <!-- Mouse Over -->
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="Track" Property="Background" Value="{DynamicResource HighlightColor}"/>
                             <Setter TargetName="Track" Property="Opacity" Value="0.2" />
+                            <Setter TargetName="CheckIcon" Property="Foreground" Value="{DynamicResource HighlightColor}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource HighlightColor}"/>
+                            <Setter Property="Cursor" Value="Hand"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-<!--End ToggleSwitchStyle Style-->
+<!--End Toggle Switch Style-->
 
 <!--Logo Style-->
     <Style TargetType="TextBlock" x:Key="logoText">
