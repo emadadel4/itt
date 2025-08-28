@@ -2630,41 +2630,41 @@ IsReadOnly="True" Visibility="Collapsed">
 <ItemsPanelTemplate><VirtualizingStackPanel/></ItemsPanelTemplate>
 </ListView.ItemsPanel>
 <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Show file extensions" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="Showfileextensions" ToolTip="Protection"/>
+<CheckBox Content="Show file extensions" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="Showfileextensions" ToolTip="Show file extensions in Windows displays the suffix at the end of file names like .txt .jpg .exe"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Show Super Hidden" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="ShowSuperHidden" ToolTip="Protection"/>
+<CheckBox Content="Show Super Hidden" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="ShowSuperHidden" ToolTip="Show Super Hidden displays files and folders"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Dark Mode" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="DarkMode" ToolTip="Personalization"/>
+<CheckBox Content="Dark Mode" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="DarkMode" ToolTip="Dark Mode is a setting that changes the screen to darker colors reducing eye strain and saving battery life on OLED screens"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="NumLook" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="NumLook" ToolTip="Protection"/>
+<CheckBox Content="NumLook" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="NumLook" ToolTip="Toggle the Num Lock key state when your computer starts"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Sticky Keys" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="StickyKeys" ToolTip="Personalization"/>
+<CheckBox Content="Sticky Keys" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="StickyKeys" ToolTip="Sticky keys is an accessibility feature of some graphical user interfaces which assists users who have physical disabilities"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Mouse Acceleration" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="MouseAcceleration" ToolTip="Personalization"/>
+<CheckBox Content="Mouse Acceleration" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="MouseAcceleration" ToolTip="Cursor movement is affected by the speed of your physical mouse movements"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="End Task On Taskbar Windows 11" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="EndTaskOnTaskbarWindows11" ToolTip="Personalization"/>
+<CheckBox Content="End Task On Taskbar Windows 11" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="EndTaskOnTaskbarWindows11" ToolTip="End task when right clicking a program in the taskbar"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Clear Page File At Shutdown" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="ClearPageFileAtShutdown" ToolTip="Performance"/>
+<CheckBox Content="Clear Page File At Shutdown" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="ClearPageFileAtShutdown" ToolTip="Removes sensitive data stored in virtual memory when the system shuts down"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Auto End Tasks" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="AutoEndTasks" ToolTip="Performance"/>
+<CheckBox Content="Auto End Tasks" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="AutoEndTasks" ToolTip="Automatically end tasks that are not responding"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Performance Options" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="PerformanceOptions" ToolTip="Performance"/>
+<CheckBox Content="Performance Options" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="PerformanceOptions" ToolTip="Adjust for best performance"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Launch To This PC" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="LaunchToThisPC" ToolTip="Personalization"/>
+<CheckBox Content="Launch To This PC" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="LaunchToThisPC" ToolTip="File Explorer open directly to This PC"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Disable Automatic Driver Installation" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="DisableAutomaticDriverInstallation" ToolTip="Drivers"/>
+<CheckBox Content="Disable Automatic Driver Installation" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="DisableAutomaticDriverInstallation" ToolTip="Automatically downloading and installing drivers"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Always show icons never Thumbnail" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="AlwaysshowiconsneverThumbnail" ToolTip="Performance"/>
+<CheckBox Content="Always show icons never Thumbnail" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="AlwaysshowiconsneverThumbnail" ToolTip="Show icons in the file explorer instead of thumbnails"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Core Isolation Memory Integrity" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="CoreIsolationMemoryIntegrity" ToolTip="Security"/>
+<CheckBox Content="Core Isolation Memory Integrity" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="CoreIsolationMemoryIntegrity" ToolTip="Core Isolation Memory Integrity"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Windows Sandbox" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSandbox" ToolTip="Development"/>
+<CheckBox Content="Windows Sandbox" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSandbox" ToolTip="Windows Sandbox is a feature that allows you to run a sandboxed version of Windows"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Windows Subsystem for Linux" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSubsystemforLinux" ToolTip="Development"/>
+<CheckBox Content="Windows Subsystem for Linux" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSubsystemforLinux" ToolTip="Windows Subsystem for Linux is an optional feature of Windows that allows Linux programs to run natively on Windows without the need for a separate virtual machine or dual booting"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="HyperV Virtualization" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="HyperVVirtualization" ToolTip="Development"/>
+<CheckBox Content="HyperV Virtualization" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="HyperVVirtualization" ToolTip="HyperV is a hardware virtualization product developed by Microsoft that allows users to create and manage virtual machines"/>
 </StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
-<CheckBox Content="Enable Auto Tray" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="EnableAutoTray" ToolTip="Personalization"/>
+<CheckBox Content="Enable Auto Tray" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="EnableAutoTray" ToolTip="Enables all tray icons"/>
 </StackPanel>
 </ListView>
 </TabItem>
