@@ -7,7 +7,6 @@ param (
 )
 
 $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
-Write-Host "`n  Relax, good things are loading… almost there!" -ForegroundColor Yellow
 
 # Load DLLs
 Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'PresentationCore', 'WindowsBase','System.Net.Http'
@@ -34,6 +33,8 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoProfile -Command `"$($MyInvocation.MyCommand.Definition)`"" -Verb RunAs
     exit
 }
+
+Write-Host "`n  Relax, good things are loading… almost there!" -ForegroundColor Yellow
 
 # Create directory if it doesn't exist
 if (-not (Test-Path -Path $itt.ittDir)) {New-Item -ItemType Directory -Path $ittDir -Force | Out-Null}
