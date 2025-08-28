@@ -192,7 +192,7 @@ Set-Location "C:\Users\$env:USERNAME\Documents\Github\ITT"
   </a>
 </p>
 
-## Helpful Links
+## Open Your Eyes
 
 * [Palestine Red Crescent Society](https://www.palestinercs.org/en/Donation)
 * [Support via Boycott](https://boycott4.github.io/boycott/)
