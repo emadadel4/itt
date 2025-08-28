@@ -2,12 +2,11 @@ param (
 [string]$i
 )
 $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
-Write-Host "`n  Relax, good things are loading… almost there!" -ForegroundColor Yellow
 Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'PresentationCore', 'WindowsBase','System.Net.Http'
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/28/2025"
+lastupdate     = "08/29/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -22,6 +21,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoProfile -Command `"$($MyInvocation.MyCommand.Definition)`"" -Verb RunAs
 exit
 }
+Write-Host "`n  Relax, good things are loading… almost there!" -ForegroundColor Yellow
 if (-not (Test-Path -Path $itt.ittDir)) {New-Item -ItemType Directory -Path $ittDir -Force | Out-Null}
 Start-Transcript -Path (Join-Path $itt.ittDir "logs\log_$(Get-Date -Format 'yyyy-MM-dd').log") -Append -Force *> $null
 $itt.database.locales = @'
@@ -2253,17 +2253,22 @@ RecognizesAccessKey="True"/>
 <Setter Property="Template">
 <Setter.Value>
 <ControlTemplate TargetType="CheckBox">
-<Grid VerticalAlignment="Center">
+<Grid>
 <Grid.ColumnDefinitions>
-<ColumnDefinition Width="Auto"/>
-<ColumnDefinition Width="Auto"/>
+<ColumnDefinition Width="30"/>
+<ColumnDefinition Width="*"/>
 <ColumnDefinition Width="Auto"/>
 </Grid.ColumnDefinitions>
-<TextBlock Grid.Column="0"
-Text="{TemplateBinding Content}"
+<TextBlock x:Name="CheckIcon"
+Grid.Column="0"
+FontSize="17"
 VerticalAlignment="Center"
-Margin="0,0,10,0"/>
-<Grid Grid.Column="1" Width="40" Height="20">
+HorizontalAlignment="Center"
+Text="⚙️"/>
+<ContentPresenter Grid.Column="1"
+VerticalAlignment="Center"
+Margin="0,0,15,0"/>
+<Grid Grid.Column="2" Width="40" Height="20" VerticalAlignment="Center">
 <Border x:Name="Track"
 Background="{DynamicResource SecondaryPrimaryBackgroundColor}"
 BorderThickness="1.2"
@@ -2276,20 +2281,6 @@ HorizontalAlignment="Left"
 VerticalAlignment="Center"
 Margin="2,0,0,0"/>
 </Grid>
-<TextBlock Grid.Column="2"
-VerticalAlignment="Center"
-Margin="10,0,0,0">
-<TextBlock.Style>
-<Style TargetType="TextBlock">
-<Setter Property="Text" Value="{Binding Off, TargetNullValue=Off}"/>
-<Style.Triggers>
-<DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsChecked}" Value="True">
-<Setter Property="Text" Value="{Binding On, TargetNullValue=On}"/>
-</DataTrigger>
-</Style.Triggers>
-</Style>
-</TextBlock.Style>
-</TextBlock>
 </Grid>
 <ControlTemplate.Triggers>
 <Trigger Property="IsChecked" Value="True">
@@ -2325,6 +2316,9 @@ Duration="0:0:0.1" />
 <Trigger Property="IsMouseOver" Value="True">
 <Setter TargetName="Track" Property="Background" Value="{DynamicResource HighlightColor}"/>
 <Setter TargetName="Track" Property="Opacity" Value="0.2" />
+<Setter TargetName="CheckIcon" Property="Foreground" Value="{DynamicResource HighlightColor}"/>
+<Setter Property="Foreground" Value="{DynamicResource HighlightColor}"/>
+<Setter Property="Cursor" Value="Hand"/>
 </Trigger>
 </ControlTemplate.Triggers>
 </ControlTemplate>
@@ -2572,7 +2566,7 @@ VirtualizingStackPanel.VirtualizationMode="Recycling">
 <DataTemplate>
 <StackPanel Orientation="Vertical">
 <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
-<TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" Text="{Binding Description}" Width="500"/>
+<TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" TextWrapping="Wrap" Text="{Binding Description}" Width="500"/>
 </StackPanel>
 </DataTemplate>
 </ListView.ItemTemplate>
@@ -2615,7 +2609,7 @@ IsReadOnly="True" Visibility="Collapsed">
 <DataTemplate>
 <StackPanel Orientation="Vertical">
 <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Content}" FontSize="15"/>
-<TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" Text="{Binding Description}" Width="500"/>
+<TextBlock Padding="20,8,0,10" FontSize="14" Foreground="{DynamicResource TextColorSecondaryColor}" TextWrapping="Wrap" Text="{Binding Description}" Width="500"/>
 </StackPanel>
 </DataTemplate>
 </ListView.ItemTemplate>
@@ -2635,42 +2629,42 @@ IsReadOnly="True" Visibility="Collapsed">
 <ListView.ItemsPanel>
 <ItemsPanelTemplate><VirtualizingStackPanel/></ItemsPanelTemplate>
 </ListView.ItemsPanel>
-<StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Show file extensions" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="Showfileextensions" ToolTip="Protection"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Show Super Hidden" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="ShowSuperHidden" ToolTip="Protection"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Dark Mode" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="DarkMode" ToolTip="Personalization"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="NumLook" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="NumLook" ToolTip="Protection"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Sticky Keys" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="StickyKeys" ToolTip="Personalization"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Mouse Acceleration" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="MouseAcceleration" ToolTip="Personalization"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="End Task On Taskbar Windows 11" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="EndTaskOnTaskbarWindows11" ToolTip="Personalization"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Clear Page File At Shutdown" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="ClearPageFileAtShutdown" ToolTip="Performance"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Auto End Tasks" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="AutoEndTasks" ToolTip="Performance"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Performance Options" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="PerformanceOptions" ToolTip="Performance"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Launch To This PC" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="LaunchToThisPC" ToolTip="Personalization"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Disable Automatic Driver Installation" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="DisableAutomaticDriverInstallation" ToolTip="Drivers"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Always show icons never Thumbnail" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="AlwaysshowiconsneverThumbnail" ToolTip="Performance"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Core Isolation Memory Integrity" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="CoreIsolationMemoryIntegrity" ToolTip="Security"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Windows Sandbox" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSandbox" ToolTip="Development"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Windows Subsystem for Linux" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSubsystemforLinux" ToolTip="Development"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="HyperV Virtualization" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="HyperVVirtualization" ToolTip="Development"/>
-</StackPanel>        <StackPanel Orientation="Vertical" Margin="15">
-<CheckBox Content="Enable Auto Tray" FontSize="15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="EnableAutoTray" ToolTip="Personalization"/>
+<StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Show file extensions" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="Showfileextensions" ToolTip="Protection"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Show Super Hidden" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="ShowSuperHidden" ToolTip="Protection"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Dark Mode" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="DarkMode" ToolTip="Personalization"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="NumLook" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="NumLook" ToolTip="Protection"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Sticky Keys" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="StickyKeys" ToolTip="Personalization"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Mouse Acceleration" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="MouseAcceleration" ToolTip="Personalization"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="End Task On Taskbar Windows 11" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="EndTaskOnTaskbarWindows11" ToolTip="Personalization"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Clear Page File At Shutdown" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="ClearPageFileAtShutdown" ToolTip="Performance"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Auto End Tasks" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="AutoEndTasks" ToolTip="Performance"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Performance Options" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="PerformanceOptions" ToolTip="Performance"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Launch To This PC" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="LaunchToThisPC" ToolTip="Personalization"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Disable Automatic Driver Installation" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="DisableAutomaticDriverInstallation" ToolTip="Drivers"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Always show icons never Thumbnail" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="AlwaysshowiconsneverThumbnail" ToolTip="Performance"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Core Isolation Memory Integrity" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="CoreIsolationMemoryIntegrity" ToolTip="Security"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Windows Sandbox" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSandbox" ToolTip="Development"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Windows Subsystem for Linux" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="WindowsSubsystemforLinux" ToolTip="Development"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="HyperV Virtualization" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="HyperVVirtualization" ToolTip="Development"/>
+</StackPanel>        <StackPanel Orientation="Vertical" Margin="0">
+<CheckBox Content="Enable Auto Tray" FontSize="15" Margin="5,8,0,15" Tag="" Style="{StaticResource ToggleSwitchStyle}" Name="EnableAutoTray" ToolTip="Personalization"/>
 </StackPanel>
 </ListView>
 </TabItem>
