@@ -197,7 +197,8 @@ Set-Location "C:\Users\$env:USERNAME\Documents\Github\ITT"
 * [Palestine Red Crescent Society](https://www.palestinercs.org/en/Donation)
 * [Support via Boycott](https://boycott4.github.io/boycott/)
 * [ZionistThings on Reddit](https://www.reddit.com/r/ZionistThings/)
-
+* [Israel Exposed on Telegram](https://t.me/+p_Ufon9FBOY0Y2Q0)
+* [Israel Exposed on X](https://x.com/xIsraelExposedx)
 <div align="Center">
 
 ### "If you can't lift the injustice, at least tell everyone about it."
