@@ -7,7 +7,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/26/2025"
+lastupdate     = "08/28/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -1724,9 +1724,9 @@ $itt['window'].FindName('DisablePopup').add_MouseLeftButtonDown({
 Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 1 -Force
 $popup.IsOpen = $false
 })
-$itt['window'].FindName('date').text = '08/08/2025'.Trim()
-$itt['window'].FindName('ps').add_MouseLeftButtonDown({
-Start-Process('https://www.palestinercs.org/en/Donation')
+$itt['window'].FindName('date').text = '08/30/2025'.Trim()
+$itt['window'].FindName('bc').add_MouseLeftButtonDown({
+Start-Process('https://t.me/+qnB0HvMH4ocxZDc8')
 })
 $storedDate = [datetime]::ParseExact($itt['window'].FindName('date').Text, 'MM/dd/yyyy', $null)
 $daysElapsed = (Get-Date) - $storedDate
@@ -2715,12 +2715,12 @@ HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"/>
 </StackPanel>
 <Grid Grid.Row="1" Background="Transparent">
 <ScrollViewer Name="ScrollViewer" VerticalScrollBarVisibility="Auto">
-<StackPanel><Image x:Name='ps' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
+<StackPanel><Image x:Name='bc' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
 <Image.Source>
-<BitmapImage UriSource='https://camo.githubusercontent.com/5cf02c5ee4898f8f92965367dfbf6829cf7d5e180f3808898ac65eccb0835d68/68747470733a2f2f7374796c65732e7265646469746d656469612e636f6d2f74355f327168616b2f7374796c65732f696d6167655f7769646765745f3738637964797a6c336b7462312e706e67' CacheOption='OnLoad'/>
+<BitmapImage UriSource='https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Images/tgbc.jpg' CacheOption='OnLoad'/>
 </Image.Source>
 </Image>
-<TextBlock Text='Your support for the Palestinian cause is invaluable, especially in these challenging times. Donations play a crucial role in providing essential services to those affected by the ongoing genocide and helping to sustain long-term development efforts. Supporting trusted organizations allows your contributions to have a direct impact, offering humanitarian aid and food, medical assistance, legal support, and more.' FontSize='15' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
+<TextBlock Text='Telegram group that archives all free stuff on the internet' FontSize='15' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
 <TextBlock Text=' • Keyboard Shortcuts' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
 <StackPanel Orientation='Vertical'>
 <TextBlock Text='• Ctrl+A: Clear category filter.' Padding='35,0,0,0' FontSize='15' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
