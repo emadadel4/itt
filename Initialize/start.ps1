@@ -6,7 +6,7 @@ param (
     [string]$i
 )
 
-$Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
+$Host.UI.RawUI.WindowTitle = "Install Twaeks Tool | Happy Birthday 🎉"
 
 # Load DLLs
 Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'PresentationCore', 'WindowsBase','System.Net.Http'
@@ -21,7 +21,7 @@ $itt = [Hashtable]::Synchronized(@{
     icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
     Theme          = "default"
     Date           = (Get-Date -Format "MM/dd/yyy")
-    Music          = "0"
+    Music          = "100"
     PopupWindow    = "0"
     Language       = "default"
     ittDir         = "$env:ProgramData\itt\"
