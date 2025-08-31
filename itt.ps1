@@ -6,7 +6,7 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/31/2025"
+lastupdate     = "09/01/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -1725,11 +1725,11 @@ Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 1 -Force
 $popup.IsOpen = $false
 })
 $itt['window'].FindName('date').text = '09/02/2025'.Trim()
-$itt['window'].FindName('bd').add_MouseLeftButtonDown({
-Start-Process('https://github.com/emadadel4/itt')
-})
 $itt['window'].FindName('bc').add_MouseLeftButtonDown({
 Start-Process('https://t.me/+qnB0HvMH4ocxZDc8')
+})
+$itt['window'].FindName('bd').add_MouseLeftButtonDown({
+Start-Process('https://github.com/emadadel4/itt')
 })
 $storedDate = [datetime]::ParseExact($itt['window'].FindName('date').Text, 'MM/dd/yyyy', $null)
 $daysElapsed = (Get-Date) - $storedDate
@@ -2938,7 +2938,7 @@ $itt.Theme = $fallback
 }
 try {$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX} catch {Write-Host "Error: WMPlayer.OCX not found"}
 $itt.mediaPlayer.settings.volume = "100"
-$itt["window"].title = "Install Tweaks Tool | Happy Birthday 🎉 " + @("🔈", "🔊")[$itt.Music -eq 100]
+$itt["window"].title = "Install Tweaks Tool | Happy Birthday 🎉 " + @("🔈", "🔊")[$itt.mediaPlayer.settings.volume -eq 100]
 $itt.PopupWindow = (Get-ItemProperty -Path $itt.registryPath -Name "PopupWindow").PopupWindow
 $itt["window"].TaskbarItemInfo = New-Object System.Windows.Shell.TaskbarItemInfo
 if (-not $Debug) { Set-Taskbar -progress "None" -icon "logo" }
