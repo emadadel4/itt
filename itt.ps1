@@ -1,17 +1,17 @@
 param (
 [string]$i
 )
-$Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
+$Host.UI.RawUI.WindowTitle = "Install Twaeks Tool | Happy Birthday 🎉"
 Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'PresentationCore', 'WindowsBase','System.Net.Http'
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "08/29/2025"
+lastupdate     = "08/31/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
 Date           = (Get-Date -Format "MM/dd/yyy")
-Music          = "0"
+Music          = "100"
 PopupWindow    = "0"
 Language       = "default"
 ittDir         = "$env:ProgramData\itt\"
@@ -851,7 +851,7 @@ UsageCount
 }
 }
 function PlayMusic {
-$tracks = (Invoke-RestMethod "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/ittplaylist.m3u") -split "`n" | Where-Object { $_ -and ($_ -notmatch "^#") }
+$tracks = (Invoke-RestMethod "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/birthdayplaylist.m3u") -split "`n" | Where-Object { $_ -and ($_ -notmatch "^#") }
 $shuffledTracks = $tracks | Get-Random -Count $tracks.Count
 foreach ($track in $shuffledTracks) {
 $mediaItem = $itt.mediaPlayer.newMedia($track)
@@ -1724,7 +1724,10 @@ $itt['window'].FindName('DisablePopup').add_MouseLeftButtonDown({
 Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 1 -Force
 $popup.IsOpen = $false
 })
-$itt['window'].FindName('date').text = '08/30/2025'.Trim()
+$itt['window'].FindName('date').text = '09/02/2025'.Trim()
+$itt['window'].FindName('bd').add_MouseLeftButtonDown({
+Start-Process('https://github.com/emadadel4/itt')
+})
 $itt['window'].FindName('bc').add_MouseLeftButtonDown({
 Start-Process('https://t.me/+qnB0HvMH4ocxZDc8')
 })
@@ -2709,7 +2712,13 @@ HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap"/>
 </StackPanel>
 <Grid Grid.Row="1" Background="Transparent">
 <ScrollViewer Name="ScrollViewer" VerticalScrollBarVisibility="Auto">
-<StackPanel><Image x:Name='bc' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
+<StackPanel><Image x:Name='bd' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
+<Image.Source>
+<BitmapImage UriSource='https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Images/happy.jpg' CacheOption='OnLoad'/>
+</Image.Source>
+</Image>
+<TextBlock Text='🎉 Happy Birthday to me! Enjoy the playlist 🎉' FontSize='15' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
+<Image x:Name='bc' Cursor='Hand' Margin='15' Height='400' Width='400' HorizontalAlignment='Center'>
 <Image.Source>
 <BitmapImage UriSource='https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Images/tgbc.jpg' CacheOption='OnLoad'/>
 </Image.Source>
@@ -2929,7 +2938,7 @@ $itt.Theme = $fallback
 }
 try {$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX} catch {Write-Host "Error: WMPlayer.OCX not found"}
 $itt.mediaPlayer.settings.volume = "$($itt.Music)"
-$itt["window"].title = "Install Tweaks Tool " + @("🔈", "🔊")[$itt.Music -eq 100]
+$itt["window"].title = "Install Tweaks Tool | Happy Birthday 🎉 " + @("🔈", "🔊")[$itt.Music -eq 100]
 $itt.PopupWindow = (Get-ItemProperty -Path $itt.registryPath -Name "PopupWindow").PopupWindow
 $itt["window"].TaskbarItemInfo = New-Object System.Windows.Shell.TaskbarItemInfo
 if (-not $Debug) { Set-Taskbar -progress "None" -icon "logo" }
