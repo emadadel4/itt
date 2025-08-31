@@ -2937,7 +2937,7 @@ $itt["window"].Resources.MergedDictionaries.Add($itt["window"].FindResource($fal
 $itt.Theme = $fallback
 }
 try {$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX} catch {Write-Host "Error: WMPlayer.OCX not found"}
-$itt.mediaPlayer.settings.volume = "$($itt.Music)"
+$itt.mediaPlayer.settings.volume = "100"
 $itt["window"].title = "Install Tweaks Tool | Happy Birthday 🎉 " + @("🔈", "🔊")[$itt.Music -eq 100]
 $itt.PopupWindow = (Get-ItemProperty -Path $itt.registryPath -Name "PopupWindow").PopupWindow
 $itt["window"].TaskbarItemInfo = New-Object System.Windows.Shell.TaskbarItemInfo
