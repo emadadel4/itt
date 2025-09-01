@@ -859,7 +859,7 @@ UsageCount
 }
 }
 function PlayMusic {
-$tracks = (Invoke-RestMethod "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/birthdayplaylist.m3u") -split "`n" | Where-Object { $_ -and ($_ -notmatch "^#") }
+$tracks = (Invoke-RestMethod "https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Database/ittplaylist.m3u") -split "`n" | Where-Object { $_ -and ($_ -notmatch "^#") }
 $shuffledTracks = $tracks | Get-Random -Count $tracks.Count
 foreach ($track in $shuffledTracks) {
 $mediaItem = $itt.mediaPlayer.newMedia($track)
