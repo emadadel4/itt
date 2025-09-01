@@ -17,6 +17,9 @@ Language       = "default"
 ittDir         = "$env:ProgramData\itt\"
 command        = "$($MyInvocation.MyCommand.Definition)"
 })
+$repoFileUrl = "https://api.github.com/repos/emadadel4/itt/releases/latest"
+$latestVersion = (Invoke-RestMethod -Uri $repoFileUrl).tag_name
+if ($latestVersion -ne $itt.lastupdate) {Write-Host "Your using an old version of ITT, Portable script is not Recommended`n Please use latest version of ITT from https://github.com/emadadel4/itt" -ForegroundColor Red}
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
 Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoProfile -Command `"$($MyInvocation.MyCommand.Definition)`"" -Verb RunAs
 exit
@@ -2937,8 +2940,8 @@ $itt["window"].Resources.MergedDictionaries.Add($itt["window"].FindResource($fal
 $itt.Theme = $fallback
 }
 try {$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX} catch {Write-Host "Error: WMPlayer.OCX not found"}
-$itt.mediaPlayer.settings.volume = "100"
-$itt["window"].title = "Install Tweaks Tool | Happy Birthday 🎉 " + @("🔈", "🔊")[$itt.mediaPlayer.settings.volume -eq 100]
+$itt.mediaPlayer.settings.volume = "$($itt.Music)"
+$itt["window"].title = "Install Tweaks Tool | Happy Birthday 🎉 " + @("🔈", "🔊")[$itt.Music -eq 100]
 $itt.PopupWindow = (Get-ItemProperty -Path $itt.registryPath -Name "PopupWindow").PopupWindow
 $itt["window"].TaskbarItemInfo = New-Object System.Windows.Shell.TaskbarItemInfo
 if (-not $Debug) { Set-Taskbar -progress "None" -icon "logo" }
