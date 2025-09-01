@@ -32,7 +32,7 @@ $itt = [Hashtable]::Synchronized(@{
 $repoFileUrl = "https://api.github.com/repos/emadadel4/itt/releases/latest"
 $latestVersion = (Invoke-RestMethod -Uri $repoFileUrl).tag_name
 if ($latestVersion -ne $itt.lastupdate) {
-    Write-Host "`n  You are using an old version of ITT. Portable script is not recommended.`n  Please use the latest version of ITT from official Commands on https://github.com/emadadel4/itt" -ForegroundColor Red
+    Write-Host "`n  YOU ARE USING AN OLD VERSION OF ITT. PORTABLE SCRIPT IS NOT RECOMMENDED.`n  PLEASE USE THE LATEST VERSION FROM THE OFFICIAL COMMANDS AT https://github.com/emadadel4/itt" -ForegroundColor Red
     Read-Host -Prompt "Press any key to continue..."
     exit
 }
