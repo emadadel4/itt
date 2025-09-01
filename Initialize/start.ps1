@@ -34,6 +34,7 @@ $latestVersion = (Invoke-RestMethod -Uri $repoFileUrl).tag_name
 if ($latestVersion -ne $itt.lastupdate) {
     Write-Host "`n  YOU ARE USING AN OLD VERSION OF ITT. PORTABLE SCRIPT IS NOT RECOMMENDED.`n  PLEASE USE THE LATEST VERSION FROM THE OFFICIAL COMMANDS AT https://github.com/emadadel4/itt" -ForegroundColor Red
     Read-Host -Prompt "Press any key to continue..."
+    Start-Process("https://github.com/emadadel4/itt")
     exit
 }
 
