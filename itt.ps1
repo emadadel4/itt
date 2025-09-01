@@ -20,7 +20,7 @@ command        = "$($MyInvocation.MyCommand.Definition)"
 $repoFileUrl = "https://api.github.com/repos/emadadel4/itt/releases/latest"
 $latestVersion = (Invoke-RestMethod -Uri $repoFileUrl).tag_name
 if ($latestVersion -ne $itt.lastupdate) {
-Write-Host "You are using an old version of ITT. Portable script is not recommended.`nPlease use the latest version of ITT from https://github.com/emadadel4/itt" -ForegroundColor Red
+Write-Host "`n  You are using an old version of ITT. Portable script is not recommended.`n  Please use the latest version of ITT from official Commands on https://github.com/emadadel4/itt" -ForegroundColor Red
 Read-Host -Prompt "Press any key to continue..."
 exit
 }
@@ -1732,11 +1732,11 @@ Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 1 -Force
 $popup.IsOpen = $false
 })
 $itt['window'].FindName('date').text = '09/02/2025'.Trim()
-$itt['window'].FindName('bc').add_MouseLeftButtonDown({
-Start-Process('https://t.me/+qnB0HvMH4ocxZDc8')
-})
 $itt['window'].FindName('bd').add_MouseLeftButtonDown({
 Start-Process('https://github.com/emadadel4/itt')
+})
+$itt['window'].FindName('bc').add_MouseLeftButtonDown({
+Start-Process('https://t.me/+qnB0HvMH4ocxZDc8')
 })
 $storedDate = [datetime]::ParseExact($itt['window'].FindName('date').Text, 'MM/dd/yyyy', $null)
 $daysElapsed = (Get-Date) - $storedDate
