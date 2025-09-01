@@ -6,7 +6,7 @@ param (
     [string]$i
 )
 
-$Host.UI.RawUI.WindowTitle = "Install Twaeks Tool | Happy Birthday 🎉"
+$Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 
 # Load DLLs
 Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'PresentationCore', 'WindowsBase','System.Net.Http'
