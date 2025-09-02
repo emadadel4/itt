@@ -511,5 +511,14 @@
     "Script": [
       "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Debloat%20Brave/run.ps1 | iex"
     ]
+  },
+  {
+    "Content": "Disable ConsumerFeatures",
+    "Description": "Windows 10 will not automatically install any games, third-party apps, or application links from the Windows Store",
+    "Category": "Privacy",
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20ConsumerFeatures/run.ps1 | iex"
+    ]
   }
 ]
