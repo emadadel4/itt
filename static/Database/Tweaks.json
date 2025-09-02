@@ -108,8 +108,8 @@
     ]
   },
   {
-    "Content": "Disable Start Menu Ads",
-    "Description": "Start menu Ads and web search",
+    "Content": "Bing Search in Start Menu",
+    "Description": "Web search results from Bing in your Start Menu search",
     "Category": "Privacy",
     "IsChecked": false,
     "Script": [
