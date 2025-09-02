@@ -177,7 +177,7 @@ try {
     # Init mediaPlayer
     try {$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX} catch {Write-Host "Error: WMPlayer.OCX not found"}
     $itt.mediaPlayer.settings.volume = "$($itt.Music)"
-    $itt["window"].title = "Install Tweaks Tool" + @("🔈", "🔊")[$itt.Music -eq 100]
+    $itt["window"].title = "Install Tweaks Tool " + @("🔈", "🔊")[$itt.Music -eq 100]
     $itt.PopupWindow = (Get-ItemProperty -Path $itt.registryPath -Name "PopupWindow").PopupWindow
     #===========================================================================
     #endregion Get user Settings from registry
