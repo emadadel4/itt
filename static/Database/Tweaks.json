@@ -493,5 +493,14 @@
     "Script": [
       "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Storage%20Sense/run.ps1 | iex"
     ]
+  },
+  {
+    "Content": "Disable Activity History",
+    "Description": "Erases recent docs clipboard and run history",
+    "Category": "Privacy",
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Activity%20History/run.ps1 | iex"
+    ]
   }
 ]
