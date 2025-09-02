@@ -398,31 +398,31 @@
       "type": "info"
     },
     {
-      "text": "Ctrl+[Q],[E],[R] to switch between tabs",
+      "text": "Switch between tabs Using Ctrl + [Q]/[E]/[R]",
       "type": "info"
     },
     {
-      "text": "Shift+M Toggle music",
+      "text": "Toggle music Using Shift + M",
       "type": "info"
     },
     {
-      "text": "Select your favorite apps and press Shift+S to save them to selected items",
+      "text": "Select your favorite apps and press Shift + S to save",
       "type": "info"
     },
     {
-      "text": "Shift+D to restore your saved file",
+      "text": "Restore your saved file Using Shift + D",
       "type": "info"
     },
     {
-      "text": "Ctrl+S to Install also Apply",
+      "text": "Install and Apply Using Ctrl + S",
       "type": "info"
     },
     {
-      "text": "Shift+P to Open portable downloads folder",
+      "text": "Open portable downloads folder Using Shift + P",
       "type": "info"
     },
     {
-      "text": "Ctrl+A to Clear selected category filter",
+      "text": "Clear selected category filter Using Ctrl + A",
       "type": "info"
     },
     {
