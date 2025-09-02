@@ -6,12 +6,12 @@ Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'Present
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "09/01/2025"
+lastupdate     = "09/02/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
 Date           = (Get-Date -Format "MM/dd/yyy")
-Music          = "100"
+Music          = "0"
 PopupWindow    = "0"
 Language       = "default"
 ittDir         = "$env:ProgramData\itt\"
@@ -2937,7 +2937,7 @@ $itt.Theme = $fallback
 }
 try {$itt.mediaPlayer = New-Object -ComObject WMPlayer.OCX} catch {Write-Host "Error: WMPlayer.OCX not found"}
 $itt.mediaPlayer.settings.volume = "$($itt.Music)"
-$itt["window"].title = "Install Tweaks Tool" + @("🔈", "🔊")[$itt.Music -eq 100]
+$itt["window"].title = "Install Tweaks Tool " + @("🔈", "🔊")[$itt.Music -eq 100]
 $itt.PopupWindow = (Get-ItemProperty -Path $itt.registryPath -Name "PopupWindow").PopupWindow
 $itt["window"].TaskbarItemInfo = New-Object System.Windows.Shell.TaskbarItemInfo
 if (-not $Debug) { Set-Taskbar -progress "None" -icon "logo" }
