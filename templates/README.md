@@ -192,6 +192,9 @@ Set-Location "C:\Users\$env:USERNAME\Documents\Github\ITT"
 * [ZionistThings on Reddit](https://www.reddit.com/r/ZionistThings/)
 * [Israel Exposed on Telegram](https://t.me/+p_Ufon9FBOY0Y2Q0)
 * [Israel Exposed on X](https://x.com/xIsraelExposedx)
+* [Stop Murdering Journalists](https://stopmurderingjournalists.com/)
+* [Zionism Observer](https://zionism.observer/)
+* [Databases for Palestine](https://databasesforpalestine.org/)
 <div align="Center">
 
 ### "If you can't lift the injustice, at least tell everyone about it."
