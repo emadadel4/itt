@@ -466,5 +466,23 @@
     "Script": [
       "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Detailed%20BSoD/run.ps1 | iex"
     ]
+  },
+  {
+    "Content": "Disable Windows Platform Binary Table",
+    "Description": "If enabled then allows your computer vendor to execute a program each time it boots. It enables computer vendors to force install anti-theft software, software drivers, or a software program conveniently. This could also be a security risk",
+    "Category": "BIOS",
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Windows%20Platform%20Binary%20Table/run.ps1 | iex"
+    ]
+  },
+  {
+    "Content": "Disable Teredo",
+    "Description": "Teredo network tunneling is a ipv6 feature that can cause additional latency, but may cause problems with some games",
+    "Category": "Performance",
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Disable%20Teredo/run.ps1 | iex"
+    ]
   }
 ]
