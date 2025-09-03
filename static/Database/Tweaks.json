@@ -529,5 +529,14 @@
     "Script": [
       "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Delete%20Temporary%20Files/run.ps1 | iex"
     ]
+  },
+  {
+    "Content": "Set Time to UTC (Dual Boot)",
+    "Description": "Essential for computers that are dual booting. Fixes the time sync with Linux Systems",
+    "Category": "BIOS",
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Set%20Time%20to%20UTC%20(Dual%20Boot)/run.ps1 | iex"
+    ]
   }
 ]
