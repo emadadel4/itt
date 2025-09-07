@@ -1,12 +1,12 @@
 param (
 [string]$i
 )
-$Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 Add-Type -AssemblyName 'System.Windows.Forms', 'PresentationFramework', 'PresentationCore', 'WindowsBase','System.Net.Http'
+$Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "09/04/2025"
+lastupdate     = "09/07/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -17,11 +17,11 @@ Language       = "default"
 ittDir         = "$env:ProgramData\itt\"
 command        = "$($MyInvocation.MyCommand.Definition)"
 })
-$repoFileUrl = "https://api.github.com/repos/emadadel4/itt/releases/latest"
-$latestVersion = (Invoke-RestMethod -Uri $repoFileUrl).tag_name
-if ($latestVersion -ne $itt.lastupdate) {
-Write-Host "`n  YOU ARE USING AN OLD VERSION OF ITT. PORTABLE SCRIPT IS NOT RECOMMENDED.`n  PLEASE USE THE LATEST VERSION FROM THE OFFICIAL COMMANDS AT https://github.com/emadadel4/itt" -ForegroundColor Red
-Read-Host -Prompt "Press any key to continue..."
+$checkUrl = "https://ver.emadadel4.workers.dev/check?version=$($itt.lastupdate)"
+$response = Invoke-RestMethod -Uri $checkUrl -ErrorAction Stop
+if ($response.status) {
+Write-Host "$($response.message)" -ForegroundColor Red
+read-host "   Press Enter to exit..."
 Start-Process("https://github.com/emadadel4/itt")
 exit
 }
