@@ -36,7 +36,7 @@ $itt = [Hashtable]::Synchronized(@{
 # ================================
 #region Check for updates
 # ================================
-$checkUrl = "https://debug.emadadel4.workers.dev/check?version=$($itt.lastupdate)"
+$checkUrl = "https://ver.emadadel4.workers.dev/check?version=$($itt.lastupdate)"
 $response = Invoke-RestMethod -Uri $checkUrl -ErrorAction Stop
 if ($response.status) {
     Write-Host "$($response.message)" -ForegroundColor Red
