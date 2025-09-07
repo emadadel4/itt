@@ -21,7 +21,7 @@ $checkUrl = "https://ver.emadadel4.workers.dev/check?version=$($itt.lastupdate)"
 $response = Invoke-RestMethod -Uri $checkUrl -ErrorAction Stop
 if ($response.status) {
 Write-Host "$($response.message)" -ForegroundColor Red
-read-host "   Press Enter to visit https://github.com/emadadel4/itt..."
+read-host "   Press Enter to visit https://github.com/emadadel4/itt"
 Start-Process("https://github.com/emadadel4/itt")
 exit
 }
