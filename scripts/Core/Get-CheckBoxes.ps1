@@ -1,8 +1,8 @@
 function Get-SelectedItems {
-    param ([ValidateSet("Apps","Tweaks")] [string]$Mode)
+    param ([ValidateSet("AppsListView","TweaksListView")] [string]$Mode)
 
-    $listView = if ($Mode -eq "Apps") { $itt.AppsListView } else { $itt.TweaksListView }
-    $props    = if ($Mode -eq "Apps") { 'Content','Choco','Scoop','Winget','ITT' } else { 'Name','Script' }
+    $listView = if ($Mode -eq "AppsListView") { $itt.AppsListView } else { $itt.TweaksListView }
+    $props    = if ($Mode -eq "AppsListView") { 'Content','Choco','Scoop','Winget','ITT' } else { 'Name','Script' }
 
     $selected = foreach ($item in $listView.Items) {
         if ($item.IsChecked) {
