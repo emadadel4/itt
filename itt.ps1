@@ -584,7 +584,7 @@ else
 if ($Choco -eq "na" -and $Scoop -eq "na" -and $Winget -ne "na")
 {
 Add-Log -Message "Attempting to install $Name." -Level "Winget"
-Install-Winget
+Install-Dependencies -PKGMan "winget"
 Start-Process -FilePath "winget" -ArgumentList "settings --enable InstallerHashOverride" -NoNewWindow -Wait -PassThru
 $wingetResult = Install-AppWithInstaller "winget" $wingetArgs
 Log $wingetResult "Winget"
