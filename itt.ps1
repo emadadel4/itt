@@ -6,7 +6,7 @@ $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "09/07/2025"
+lastupdate     = "09/08/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -17,6 +17,8 @@ Language       = "default"
 ittDir         = "$env:ProgramData\itt\"
 command        = "$($MyInvocation.MyCommand.Definition)"
 })
+if(-not $Debug)
+{
 $checkUrl = "https://ver.emadadel4.workers.dev/check?version=$($itt.lastupdate)"
 $response = Invoke-RestMethod -Uri $checkUrl -ErrorAction Stop
 if ($response.status) {
@@ -24,6 +26,7 @@ Write-Host "$($response.message)" -ForegroundColor Red
 read-host "   Press Enter to visit https://github.com/emadadel4/itt"
 Start-Process("https://github.com/emadadel4/itt")
 exit
+}
 }
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
 Start-Process -FilePath "PowerShell" -ArgumentList "-ExecutionPolicy Bypass -NoProfile -Command `"$($MyInvocation.MyCommand.Definition)`"" -Verb RunAs
@@ -2812,7 +2815,7 @@ $HashVars = New-Object System.Management.Automation.Runspaces.SessionStateVariab
 $InitialSessionState = [System.Management.Automation.Runspaces.InitialSessionState]::CreateDefault()
 $InitialSessionState.Variables.Add($HashVars)
 $Functions = @(
-'Install-App', 'Install-Dependencies', 'Add-Log','Finish', 'Message',
+'Install-App', 'Install-Dependencies','Install-Winget','Add-Log','Finish', 'Message',
 'Notify', 'UpdateUI', 'ExecuteCommand', 'Set-Registry', 'Set-Taskbar',
 'Refresh-Explorer', 'CreateRestorePoint', 'Set-Statusbar'
 )
