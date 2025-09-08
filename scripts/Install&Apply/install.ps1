@@ -13,7 +13,7 @@ function Invoke-Install {
     
     # Get Selected apps
     $itt['window'].FindName("AppsCategory").SelectedIndex = 0
-    $selectedApps = Get-SelectedItems -Mode "Apps"
+    $selectedApps = Get-SelectedItems -Mode "AppsListView"
 
     # Return if there is no selection
     if ($selectedApps.Count -le 0) {return}
