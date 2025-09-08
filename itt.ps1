@@ -6,7 +6,7 @@ $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "09/08/2025"
+lastupdate     = "09/09/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -321,9 +321,9 @@ $collectionView.Refresh()
 })
 }
 function Get-SelectedItems {
-param ([ValidateSet("Apps","Tweaks")] [string]$Mode)
-$listView = if ($Mode -eq "Apps") { $itt.AppsListView } else { $itt.TweaksListView }
-$props    = if ($Mode -eq "Apps") { 'Content','Choco','Scoop','Winget','ITT' } else { 'Name','Script' }
+param ([ValidateSet("AppsListView","TweaksListView")] [string]$Mode)
+$listView = if ($Mode -eq "AppsListView") { $itt.AppsListView } else { $itt.TweaksListView }
+$props    = if ($Mode -eq "AppsListView") { 'Content','Choco','Scoop','Winget','ITT' } else { 'Name','Script' }
 $selected = foreach ($item in $listView.Items) {
 if ($item.IsChecked) {
 $obj = @{}
@@ -715,7 +715,7 @@ Title  = "itt File"
 if ($openFileDialog.ShowDialog() -eq $true) {
 try {
 $FileContent = Get-Content -Path $openFileDialog.FileName -Raw | ConvertFrom-Json -ErrorAction Stop
-$collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.AppsListView.Items)
+$collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.($itt.currentList).Items)
 $collectionView.Filter = {
 param($item)
 if ($FileContent.Name -contains $item.Content) { return $item.IsChecked = $true } else { return $false }
@@ -727,10 +727,10 @@ Write-Warning "Failed to load or parse JSON file: $_"
 }
 }
 function Save-File {
-$itt['window'].FindName("AppsCategory").SelectedIndex = 0
-$selectedApps = Get-SelectedItems -Mode "Apps"
+$itt['window'].FindName($itt.currentList).SelectedIndex = 0
+$selectedApps = Get-SelectedItems -Mode "$($itt.currentList)"
 if ($selectedApps.Count -le 0) {return}
-$items = foreach ($item in $itt.AppsListView.Items) {
+$items = foreach ($item in $itt.$($itt.currentList).Items) {
 if ($item.IsChecked) {
 [PSCustomObject]@{
 Name  = $item.Content
@@ -749,7 +749,7 @@ if ($saveFileDialog.ShowDialog() -eq $true) {
 $items | ConvertTo-Json -Compress | Out-File -FilePath $saveFileDialog.FileName -Force
 Write-Host "Saved: $($saveFileDialog.FileName)"
 }
-Show-Selected -ListView "AppsListView" -Mode "Default"
+Show-Selected -ListView "$($itt.currentList)" -Mode "Default"
 }
 function Quick-Install {
 param (
@@ -776,7 +776,7 @@ Write-Warning "Failed to load or parse JSON file: $_"
 return
 }
 if ($null -eq $FileContent) { return }
-$collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt['Window'].FindName('appslist').Items)
+$collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt['Window'].FindName($itt.currentList).Items)
 $collectionView.Filter = {
 param($item)
 if ($FileContent.Name -contains $item.Content) { return $item.IsChecked = $true } else { return $false }
@@ -873,13 +873,13 @@ $tabSettings = @{
 'apps'        = @{
 'installBtn' = 'Visible';
 'applyBtn' = 'Hidden';
-'CurrentList' = 'appslist';
+'CurrentList' = 'AppsListView';
 'CurrentCategory' = 'AppsCategory'
 }
 'tweeksTab'   = @{
 'installBtn' = 'Hidden';
 'applyBtn' = 'Visible';
-'CurrentList' = 'tweakslist';
+'CurrentList' = 'TweaksListView';
 'CurrentCategory' = 'TwaeksCategory'
 }
 'SettingsTab' = @{
@@ -907,7 +907,7 @@ Message -key "Please_wait" -icon "Warning" -action "OK"
 return
 }
 $itt['window'].FindName("TwaeksCategory").SelectedIndex = 0
-$selectedTweaks = Get-SelectedItems -Mode "Tweaks"
+$selectedTweaks = Get-SelectedItems -Mode "TweaksListView"
 if ($selectedTweaks.Count -le 0) {return}
 Show-Selected -ListView "TweaksListView" -Mode "Filter"
 $result = Message -key "Apply_msg" -icon "ask" -action "YesNo"
@@ -939,7 +939,7 @@ Message -key "Please_wait" -icon "Warning" -action "OK"
 return
 }
 $itt['window'].FindName("AppsCategory").SelectedIndex = 0
-$selectedApps = Get-SelectedItems -Mode "Apps"
+$selectedApps = Get-SelectedItems -Mode "AppsListView"
 if ($selectedApps.Count -le 0) {return}
 Show-Selected -ListView "AppsListView" -Mode "Filter"
 if (-not $i) {
@@ -2323,6 +2323,24 @@ Duration="0:0:0.1" />
 </EventTrigger>
 </Style.Triggers>
 </Style>
+<Style TargetType="{x:Type ContextMenu}">
+<Setter Property="SnapsToDevicePixels" Value="True" />
+<Setter Property="OverridesDefaultStyle" Value="True" />
+<Setter Property="Grid.IsSharedSizeScope" Value="true" />
+<Setter Property="HasDropShadow" Value="True" />
+<Setter Property="Template">
+<Setter.Value>
+<ControlTemplate TargetType="{x:Type ContextMenu}">
+<Border x:Name="Border"
+Background="{ DynamicResource PrimaryBackgroundColor }"
+BorderThickness="1">
+<StackPanel IsItemsHost="True"
+KeyboardNavigation.DirectionalNavigation="Cycle" />
+</Border>
+</ControlTemplate>
+</Setter.Value>
+</Setter>
+</Style>
 <ResourceDictionary x:Key="Dark">
 <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#22272e"/>
 <SolidColorBrush x:Key="SecondaryPrimaryBackgroundColor" Color="#2d333b"/>
@@ -2542,7 +2560,7 @@ VirtualizingStackPanel.VirtualizationMode="Recycling">
 <ComboBoxItem Tag="Runtimes"><TextBlock><Run Text="📈 "/><Run Text="{Binding runtimes, TargetNullValue=Runtimes}"/></TextBlock></ComboBoxItem>
 <ComboBoxItem Tag="Drivers"><TextBlock><Run Text="🔌 "/><Run Text="{Binding drivers, TargetNullValue=Drivers}"/></TextBlock></ComboBoxItem>
 </ComboBox>
-<ListView Name="appslist" Grid.Row="1" AlternationCount="2">
+<ListView Name="AppsListView" Grid.Row="1" AlternationCount="2">
 <ListView.ItemsPanel>
 <ItemsPanelTemplate><VirtualizingStackPanel/></ItemsPanelTemplate>
 </ListView.ItemsPanel>
@@ -2585,7 +2603,7 @@ IsReadOnly="True" Visibility="Collapsed">
 <ComboBoxItem Tag="Protection"><TextBlock><Run Text="🛡 "/><Run Text="{Binding protection, TargetNullValue=Protection}"/></TextBlock></ComboBoxItem>
 <ComboBoxItem Tag="Classic"><TextBlock><Run Text="🕰 "/><Run Text="{Binding classic, TargetNullValue=Classic}"/></TextBlock></ComboBoxItem>
 </ComboBox>
-<ListView Name="tweakslist" Grid.Row="1" AlternationCount="2">
+<ListView Name="TweaksListView" Grid.Row="1" AlternationCount="2">
 <ListView.ItemsPanel>
 <ItemsPanelTemplate><VirtualizingStackPanel/></ItemsPanelTemplate>
 </ListView.ItemsPanel>
@@ -2925,8 +2943,8 @@ $popup = $itt["window"].FindName("EventPopup")
 $itt.CurrentList
 $itt.CurrentCategory
 $itt.TabControl = $itt["window"].FindName("taps")
-$itt.AppsListView = $itt["window"].FindName("appslist")
-$itt.TweaksListView = $itt["window"].FindName("tweakslist")
+$itt.AppsListView = $itt["window"].FindName("AppsListView")
+$itt.TweaksListView = $itt["window"].FindName("TweaksListView")
 $itt.SettingsListView = $itt["window"].FindName("SettingsList")
 $itt.Description = $itt["window"].FindName("description")
 $itt.Statusbar = $itt["window"].FindName("statusbar")
