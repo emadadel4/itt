@@ -715,10 +715,19 @@ Title  = "itt File"
 if ($openFileDialog.ShowDialog() -eq $true) {
 try {
 $FileContent = Get-Content -Path $openFileDialog.FileName -Raw | ConvertFrom-Json -ErrorAction Stop
+if ($FileContent.ListView -ne $itt.currentList) {
+Message -NoneKey "PLEASE SELECT THE CORRECT TAB" -icon "Warning" -action "OK"
+return
+}
 $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.($itt.currentList).Items)
 $collectionView.Filter = {
 param($item)
-if ($FileContent.Name -contains $item.Content) { return $item.IsChecked = $true } else { return $false }
+if ($FileContent.Items.Name -contains $item.Content) {
+$item.IsChecked = $true
+return $true
+} else {
+return $false
+}
 }
 }
 catch {
@@ -729,11 +738,11 @@ Write-Warning "Failed to load or parse JSON file: $_"
 function Save-File {
 $itt['window'].FindName($itt.currentList).SelectedIndex = 0
 $selectedApps = Get-SelectedItems -Mode "$($itt.currentList)"
-if ($selectedApps.Count -le 0) {return}
+if ($selectedApps.Count -le 0) { return }
 $items = foreach ($item in $itt.$($itt.currentList).Items) {
 if ($item.IsChecked) {
 [PSCustomObject]@{
-Name  = $item.Content
+Name = $item.Content
 }
 }
 }
@@ -741,12 +750,16 @@ if ($items.Count -eq 0) {
 Message -key "Empty_save_msg" -icon "Information" -action "OK"
 return
 }
+$jsonObject = @{
+ListView = $itt.currentList
+Items    = $items
+}
 $saveFileDialog = New-Object Microsoft.Win32.SaveFileDialog -Property @{
 Filter = "JSON files (*.itt)|*.itt"
 Title  = "Save JSON File"
 }
 if ($saveFileDialog.ShowDialog() -eq $true) {
-$items | ConvertTo-Json -Compress | Out-File -FilePath $saveFileDialog.FileName -Force
+$jsonObject | ConvertTo-Json -Compress | Out-File -FilePath $saveFileDialog.FileName -Force
 Write-Host "Saved: $($saveFileDialog.FileName)"
 }
 Show-Selected -ListView "$($itt.currentList)" -Mode "Default"
@@ -776,10 +789,19 @@ Write-Warning "Failed to load or parse JSON file: $_"
 return
 }
 if ($null -eq $FileContent) { return }
+if ($FileContent.ListView -ne $itt.currentList) {
+Message -NoneKey "Please type the correct command for installing" -icon "Warning" -action "OK"
+return
+}
 $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt['Window'].FindName($itt.currentList).Items)
 $collectionView.Filter = {
 param($item)
-if ($FileContent.Name -contains $item.Content) { return $item.IsChecked = $true } else { return $false }
+if ($FileContent.Items.Name -contains $item.Content) {
+$item.IsChecked = $true
+return $true
+} else {
+return $false
+}
 }
 try {
 Invoke-Install *> $null
