@@ -66,7 +66,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 Write-Host "`n  Relax, good things are loading… almost there!" -ForegroundColor Yellow
 
 # Create directory if it doesn't exist
-if (-not (Test-Path -Path $itt.ittDir)) {New-Item -ItemType Directory -Path $ittDir -Force | Out-Null}
+if (-not (Test-Path -Path $itt.ittDir)) {New-Item -ItemType Directory -Path $itt.ittDir -Force | Out-Null}
 
 # Trace the script
 Start-Transcript -Path (Join-Path $itt.ittDir "logs\log_$(Get-Date -Format 'yyyy-MM-dd').log") -Append -Force *> $null
