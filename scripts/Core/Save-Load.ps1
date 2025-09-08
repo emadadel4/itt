@@ -20,14 +20,25 @@ function Get-file {
             # Load and parse JSON data
             $FileContent = Get-Content -Path $openFileDialog.FileName -Raw | ConvertFrom-Json -ErrorAction Stop
 
+            # Check if ListView matches the current list
+            if ($FileContent.ListView -ne $itt.currentList) {
+                Message -NoneKey "PLEASE SELECT THE CORRECT TAB" -icon "Warning" -action "OK"
+                return
+            }
+
             # Get the apps list and collection view
             $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.($itt.currentList).Items)
 
-            # Define the filter predicate
+            # Define the filter predicate using Items array
             $collectionView.Filter = {
                 param($item)
 
-                if ($FileContent.Name -contains $item.Content) { return $item.IsChecked = $true } else { return $false }
+                if ($FileContent.Items.Name -contains $item.Content) { 
+                    $item.IsChecked = $true
+                    return $true
+                } else { 
+                    return $false 
+                }
             }
         }
         catch {
@@ -38,19 +49,16 @@ function Get-file {
 
 # Save selected items to a JSON file
 function Save-File {
-
     $itt['window'].FindName($itt.currentList).SelectedIndex = 0
-    
     $selectedApps = Get-SelectedItems -Mode "$($itt.currentList)"
 
-    if ($selectedApps.Count -le 0) {return}
+    if ($selectedApps.Count -le 0) { return }
 
     # Collect checked items
     $items = foreach ($item in $itt.$($itt.currentList).Items) {
-        
         if ($item.IsChecked) {
             [PSCustomObject]@{
-                Name  = $item.Content
+                Name = $item.Content
             }
         }
     }
@@ -61,6 +69,12 @@ function Save-File {
         return
     }
 
+    # Prepare the custom JSON structure
+    $jsonObject = @{
+        ListView = $itt.currentList
+        Items    = $items
+    }
+
     # Open save file dialog
     $saveFileDialog = New-Object Microsoft.Win32.SaveFileDialog -Property @{
         Filter = "JSON files (*.itt)|*.itt"
@@ -69,11 +83,11 @@ function Save-File {
 
     if ($saveFileDialog.ShowDialog() -eq $true) {
         # Save items to JSON file
-        $items | ConvertTo-Json -Compress | Out-File -FilePath $saveFileDialog.FileName -Force
+        $jsonObject | ConvertTo-Json -Compress | Out-File -FilePath $saveFileDialog.FileName -Force
         Write-Host "Saved: $($saveFileDialog.FileName)"
     }
 
-    # Uncheck checkboxex if user Cancel 
+    # Uncheck checkboxes if user canceled
     Show-Selected -ListView "$($itt.currentList)" -Mode "Default"
 }
 
@@ -114,14 +128,24 @@ function Quick-Install {
 
     if ($null -eq $FileContent) { return }
 
+    if ($FileContent.ListView -ne $itt.currentList) {
+        Message -NoneKey "Please type the correct command for installing" -icon "Warning" -action "OK"
+        return
+    }
+
     # Get the apps list and collection view
     $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt['Window'].FindName($itt.currentList).Items)
 
-    # Set the filter predicate
+    # Set the filter predicate using Items array
     $collectionView.Filter = {
         param($item)
 
-        if ($FileContent.Name -contains $item.Content) { return $item.IsChecked = $true } else { return $false }
+        if ($FileContent.Items.Name -contains $item.Content) { 
+            $item.IsChecked = $true
+            return $true
+        } else { 
+            return $false 
+        }
     }
 
     # Start the installation process
