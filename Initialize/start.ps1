@@ -36,7 +36,6 @@ $itt = [Hashtable]::Synchronized(@{
 # ================================
 #region Check for updates
 # ================================
-
 if(-not $Debug)
 {
     $checkUrl = "https://ver.emadadel4.workers.dev/check?version=$($itt.lastupdate)"
