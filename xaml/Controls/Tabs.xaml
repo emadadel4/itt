@@ -43,7 +43,7 @@
             </ComboBox>
 
             <!-- Apps List -->
-            <ListView Name="appslist" Grid.Row="1" AlternationCount="2">
+            <ListView Name="AppsListView" Grid.Row="1" AlternationCount="2">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate><VirtualizingStackPanel/></ItemsPanelTemplate>
                 </ListView.ItemsPanel>
@@ -93,7 +93,7 @@
             </ComboBox>
 
             <!-- Tweaks List -->
-            <ListView Name="tweakslist" Grid.Row="1" AlternationCount="2">
+            <ListView Name="TweaksListView" Grid.Row="1" AlternationCount="2">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate><VirtualizingStackPanel/></ItemsPanelTemplate>
                 </ListView.ItemsPanel>
