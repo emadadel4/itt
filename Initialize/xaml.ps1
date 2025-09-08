@@ -201,8 +201,8 @@ $popup = $itt["window"].FindName("EventPopup")
 $itt.CurrentList
 $itt.CurrentCategory
 $itt.TabControl = $itt["window"].FindName("taps")
-$itt.AppsListView = $itt["window"].FindName("appslist")
-$itt.TweaksListView = $itt["window"].FindName("tweakslist")
+$itt.AppsListView = $itt["window"].FindName("AppsListView")
+$itt.TweaksListView = $itt["window"].FindName("TweaksListView")
 $itt.SettingsListView = $itt["window"].FindName("SettingsList")
 
 # Buttons and Inputs
