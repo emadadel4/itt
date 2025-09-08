@@ -21,7 +21,7 @@ function Get-file {
             $FileContent = Get-Content -Path $openFileDialog.FileName -Raw | ConvertFrom-Json -ErrorAction Stop
 
             # Get the apps list and collection view
-            $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.AppsListView.Items)
+            $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt.($itt.currentList).Items)
 
             # Define the filter predicate
             $collectionView.Filter = {
@@ -39,14 +39,14 @@ function Get-file {
 # Save selected items to a JSON file
 function Save-File {
 
-    $itt['window'].FindName("AppsCategory").SelectedIndex = 0
+    $itt['window'].FindName($itt.currentList).SelectedIndex = 0
     
-    $selectedApps = Get-SelectedItems -Mode "Apps"
+    $selectedApps = Get-SelectedItems -Mode "$($itt.currentList)"
 
     if ($selectedApps.Count -le 0) {return}
 
     # Collect checked items
-    $items = foreach ($item in $itt.AppsListView.Items) {
+    $items = foreach ($item in $itt.$($itt.currentList).Items) {
         
         if ($item.IsChecked) {
             [PSCustomObject]@{
@@ -74,7 +74,7 @@ function Save-File {
     }
 
     # Uncheck checkboxex if user Cancel 
-    Show-Selected -ListView "AppsListView" -Mode "Default"
+    Show-Selected -ListView "$($itt.currentList)" -Mode "Default"
 }
 
 # Quick Install 
