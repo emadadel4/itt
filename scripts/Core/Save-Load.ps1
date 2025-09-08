@@ -115,7 +115,7 @@ function Quick-Install {
     if ($null -eq $FileContent) { return }
 
     # Get the apps list and collection view
-    $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt['Window'].FindName('appslist').Items)
+    $collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt['Window'].FindName($itt.currentList).Items)
 
     # Set the filter predicate
     $collectionView.Filter = {
