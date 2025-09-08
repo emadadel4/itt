@@ -101,7 +101,7 @@ function Install-App {
         {
             Add-Log -Message "Attempting to install $Name." -Level "Winget"
 
-            Install-Winget
+            Install-Dependencies -PKGMan "winget"
             
             Start-Process -FilePath "winget" -ArgumentList "settings --enable InstallerHashOverride" -NoNewWindow -Wait -PassThru
             
