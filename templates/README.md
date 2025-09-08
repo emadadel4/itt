@@ -35,7 +35,7 @@ ITT (Install Tweaks Tool) included most Windows 10/11 Software and Windows Tweak
 
 ###### 📦 #{a} Apps • ⚙️ #{t} Tweaks • 🔧 #{s} Settings • 💬 #{q} Quote • 🎵 #{OST} Soundtrack • 🌐 #{loc} Localization
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&repeat=false&width=435&lines=Launch+Anytime+Anywhere!)](https://git.io/typing-svg)
+![My Quotes](https://quotes.emadadel4.workers.dev/)
 
 </div>
 
