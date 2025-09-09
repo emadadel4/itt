@@ -35,8 +35,6 @@ ITT (Install Tweaks Tool) included most Windows 10/11 Software and Windows Tweak
 
 ###### 📦 #{a} Apps • ⚙️ #{t} Tweaks • 🔧 #{s} Settings • 💬 #{q} Quote • 🎵 #{OST} Soundtrack • 🌐 #{loc} Localization
 
-<img src="https://quotes.emadadel4.workers.dev/" width="100%">
-
 </div>
 
 <p align="center" dir="auto">
