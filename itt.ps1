@@ -2821,7 +2821,6 @@ New-Item -Path $itt.registryPath -Force | Out-Null
 Set-ItemProperty -Path $itt.registryPath -Name "Theme" -Value "default" -Force
 Set-ItemProperty -Path $itt.registryPath -Name "locales" -Value "default" -Force
 Set-ItemProperty -Path $itt.registryPath -Name "Music" -Value 0 -Force
-Set-ItemProperty -Path $itt.registryPath -Name "PopupWindow" -Value 0 -Force
 Set-ItemProperty -Path $itt.registryPath -Name "backup" -Value 0 -Force
 Set-ItemProperty -Path $itt.registryPath -Name "source" -Value "auto" -Force
 }
