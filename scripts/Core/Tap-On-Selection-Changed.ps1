@@ -12,22 +12,26 @@ function ChangeTap {
             'installBtn' = 'Visible';
             'applyBtn' = 'Hidden'; 
             'CurrentList' = 'AppsListView'; 
+            'searchInput' = 'Visible';
             'CurrentCategory' = 'AppsCategory' 
         }
             'tweeksTab'   = @{ 
             'installBtn' = 'Hidden'; 
             'applyBtn' = 'Visible'; 
             'CurrentList' = 'TweaksListView'; 
+            'searchInput' = 'Visible';
             'CurrentCategory' = 'TwaeksCategory'
         }
         'SettingsTab' = @{ 
             'installBtn' = 'Hidden'; 
             'applyBtn' = 'Hidden'; 
+            'searchInput' = 'Visible';
             'CurrentList' = 'SettingsList'
         }
         'WhatsNewTab' = @{ 
             'installBtn' = 'Hidden'; 
             'applyBtn' = 'Hidden'; 
+            'searchInput' = 'Collapsed';
             'hotdot' =  [System.Windows.Visibility]::Hidden;
         }
     }
@@ -43,8 +47,12 @@ function ChangeTap {
             $itt['window'].FindName('applyBtn').Visibility = $settings['applyBtn']
             $itt['window'].FindName('AppsCategory').Visibility = $settings['installBtn']
             $itt['window'].FindName('TwaeksCategory').Visibility = $settings['applyBtn']
+
+            $itt['window'].FindName('searchInput').Visibility = $settings['searchInput']
+
             if ($settings.ContainsKey('hotdot') -and $itt['window'].FindName('hotdot')) {
                 $itt['window'].FindName('hotdot').Visibility = $settings['hotdot']
+                
             }
             break
         }
