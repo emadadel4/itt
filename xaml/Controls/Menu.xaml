@@ -1,17 +1,5 @@
 <!-- Begin Menu section -->
-<Menu Grid.Row="0" Grid.Column="0" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" HorizontalAlignment="Left">
-
-    <!-- Logo -->
-    <MenuItem Background="Transparent" BorderBrush="Transparent" BorderThickness="0" IsEnabled="False" ToolTip="Emad Adel">
-        <MenuItem.Icon>
-            <Border Background="Transparent" CornerRadius="10" Height="89" Width="89">
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="itt" Style="{DynamicResource logoText}" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Text="{DynamicResource SubText}" Style="{DynamicResource logoText}" FontWeight="Normal" FontSize="9" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Border>
-        </MenuItem.Icon>
-    </MenuItem>
+<Menu Grid.Row="0" Grid.Column="0" Background="{DynamicResource SecondaryPrimaryBackgroundColor}" BorderBrush="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="15">
 
     <!-- Management -->
     <MenuItem Header="{Binding Management, TargetNullValue=Management}" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="Transparent">
