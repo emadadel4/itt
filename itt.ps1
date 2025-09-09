@@ -12,7 +12,6 @@ icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Ic
 Theme          = "default"
 Date           = (Get-Date -Format "MM/dd/yyy")
 Music          = "0"
-PopupWindow    = "0"
 Language       = "default"
 ittDir         = "$env:ProgramData\itt\"
 command        = "$($MyInvocation.MyCommand.Definition)"
