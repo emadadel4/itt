@@ -1,5 +1,54 @@
 <!-- TabControl -->
-<TabControl Name="taps" Grid.Row="1">
+<TabControl Name="taps" Grid.Row="1" SelectedIndex="1">
+
+    <!-- Whats New Tab -->
+    <TabItem BorderBrush="{x:Null}">
+
+        <TabItem.Header>
+            <Grid>
+                <TextBlock Text="itt" FontFamily="Arial" FontWeight="Bold" FontSize="44" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Ellipse Width="9" Height="9" Fill="Red"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed" Margin="40,0,0,0" x:Name="hotdot"/>
+            </Grid> 
+        </TabItem.Header>
+
+        <!-- Whats New Content -->
+        <Border Background="{DynamicResource PrimaryBackgroundColor}" BorderBrush="transparent" CornerRadius="10" Opacity="0">
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="Border.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Title -->
+                <StackPanel x:Name="MainStackPanel" Background="Transparent" Orientation="Vertical" Margin="25,25,0,0">
+                    <Grid Background="Transparent">
+                        <StackPanel>
+                            <TextBlock Name="title" FontSize="20" Text="Whats New" Foreground="{DynamicResource TextColorSecondaryColor}" FontWeight="SemiBold" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock Name="date" Margin="5,5,0,0" FontSize="12" Text="8/29/2024" Foreground="{DynamicResource TextColorSecondaryColor}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+                <!-- Content -->
+                <Grid Grid.Row="1" Background="Transparent" Margin="25,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <ScrollViewer Name="ScrollViewer" VerticalScrollBarVisibility="Auto">
+                        <StackPanel><!-- UpdateContent --></StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </Border>
+
+    </TabItem>
 
     <!-- Apps Tab -->
     <TabItem Name="apps" Header="{Binding apps, TargetNullValue=Apps}" Tag="apps" BorderBrush="{x:Null}">
