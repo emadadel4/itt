@@ -323,7 +323,7 @@ function ConvertTo-Xaml {
             "!\[itt\.xName:(.+?)\s*\[(.+?)\]\]\((.+?)\)" {
                 # Image section
                 $xaml += 
-                "<Image x:Name=''$($matches[1].Trim())'' Cursor=''Hand'' Margin=''15'' Height=''400'' Width=''400'' HorizontalAlignment=''Center''>
+                "<Image x:Name=''$($matches[1].Trim())'' Cursor=''Hand'' Margin=''15'' Height=''400'' Width=''400'' HorizontalAlignment=''Left''>
                     <Image.Source>
                         <BitmapImage UriSource=''$($matches[3].Trim())'' CacheOption=''OnLoad''/>
                     </Image.Source>
@@ -346,14 +346,14 @@ function ConvertTo-Xaml {
             "^#### (.+)" {
                 #### Description
                 $Description = $matches[1].Trim()  
-                $xaml += "<TextBlock Text=''$Description'' FontSize=''$DescriptionFontSize'' Padding=''25 0 0 10'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap'' MaxWidth=''450''/>`n"
+                $xaml += "<TextBlock Text=''$Description'' FontSize=''$DescriptionFontSize'' HorizontalAlignment=''Left'' Padding=''25 0 0 10'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap'' MaxWidth=''450''/>`n"
             }
             "^- (.+)" {
                 # - Lists
                 $List = $matches[1].Trim()  
                 $xaml += "
                 <StackPanel Orientation=''Vertical''>
-                    <TextBlock Text=''• $List'' Padding=''35,0,0,0'' FontSize=''$DescriptionFontSize'' Width=''Auto'' Height=''Auto'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
+                    <TextBlock Text=''• $List'' Padding=''35,0,0,0'' FontSize=''$DescriptionFontSize'' HorizontalAlignment=''Left'' Width=''Auto'' Height=''Auto'' Foreground=''{DynamicResource TextColorSecondaryColor}'' TextWrapping=''Wrap''/>
                 </StackPanel>
                 `n" 
             }
@@ -666,7 +666,7 @@ try {
     # Define file paths
     $FilePaths = @{
         "MainWindow" = Join-Path -Path $windows  -ChildPath "MainWindow.xaml"
-        "EventWindow" = Join-Path -Path $windows  -ChildPath "EventWindow.xaml"
+        # "EventWindow" = Join-Path -Path $windows  -ChildPath "EventWindow.xaml"
         "AboutWindow" = Join-Path -Path $windows  -ChildPath "AboutWindow.xaml"
         "tabs"       = Join-Path -Path $Controls -ChildPath "tabs.xaml"
         "menu"       = Join-Path -Path $Controls -ChildPath "menu.xaml"
@@ -684,7 +684,7 @@ try {
         $MenuXamlContent = Get-Content -Path $FilePaths["menu"] -Raw
         $ButtonsXamlContent = Get-Content -Path $FilePaths["buttons"] -Raw
         $searchXamlContent = Get-Content -Path $FilePaths["search"] -Raw
-        $EventWindowContent = Get-Content -Path $FilePaths["EventWindow"] -Raw
+        #$EventWindowContent = Get-Content -Path $FilePaths["EventWindow"] -Raw
         $AboutWindowContent = Get-Content -Path $FilePaths["AboutWindow"] -Raw
 
         $MainXamlContent = $MainXamlContent -replace "<!-- {{Tabs}} -->", $AppXamlContent
@@ -700,7 +700,7 @@ try {
         $MainXamlContent = $MainXamlContent -replace "<!-- {{ThemesKeys}} -->", (GenerateThemesKeys)
         $MainXamlContent = $MainXamlContent -replace "<!-- {{LocalesKeys}} -->", (GenerateLocalesKeys)
         $MainXamlContent = $MainXamlContent -replace "<!-- {{CustomThemes}} -->", $ThemeFilesContent 
-        $MainXamlContent = $MainXamlContent -replace "<!-- {{EventWindow}} -->", $EventWindowContent
+        #$MainXamlContent = $MainXamlContent -replace "<!-- {{EventWindow}} -->", $EventWindowContent
         $MainXamlContent = $MainXamlContent -replace "<!-- {{AboutWindow}} -->", $AboutWindowContent
 
 
