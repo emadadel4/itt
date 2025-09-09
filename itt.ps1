@@ -2534,7 +2534,7 @@ HorizontalAlignment="Left" VerticalAlignment="Center"/>
 <TabItem BorderBrush="{x:Null}">
 <TabItem.Header>
 <Grid>
-<TextBlock Text="itt" FontFamily="Arial" FontWeight="Bold" FontSize="44" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+<TextBlock Text="itt" FontFamily="Arial" FontWeight="Bold" FontSize="46" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 <Ellipse Width="9" Height="9" Fill="Red"
 HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed" Margin="40,0,0,0" x:Name="hotdot"/>
 </Grid>
