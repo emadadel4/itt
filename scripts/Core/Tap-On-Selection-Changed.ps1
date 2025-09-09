@@ -25,7 +25,7 @@ function ChangeTap {
         'SettingsTab' = @{ 
             'installBtn' = 'Hidden'; 
             'applyBtn' = 'Hidden'; 
-            'searchInput' = 'Visible';
+            'searchInput' = 'Collapsed';
             'CurrentList' = 'SettingsList'
         }
         'WhatsNewTab' = @{ 
