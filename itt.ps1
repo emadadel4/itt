@@ -473,11 +473,16 @@ return $false
 }
 }
 if ($ToggleSwitch -eq "CoreIsolationMemoryIntegrity") {
+try {
 $CoreIsolationMemory = (Get-ItemProperty -path 'HKLM:\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard').Enabled
 if ($CoreIsolationMemory -eq 1) {
 return $true
 }
 else {
+return $false
+}
+}
+catch {
 return $false
 }
 }
@@ -909,6 +914,11 @@ $tabSettings = @{
 'applyBtn' = 'Hidden';
 'CurrentList' = 'SettingsList'
 }
+'WhatsNewTab' = @{
+'installBtn' = 'Hidden';
+'applyBtn' = 'Hidden';
+'hotdot' =  [System.Windows.Visibility]::Hidden;
+}
 }
 foreach ($tab in $tabSettings.Keys) {
 if ($itt['window'].FindName($tab).IsSelected) {
@@ -919,6 +929,9 @@ $itt['window'].FindName('installBtn').Visibility = $settings['installBtn']
 $itt['window'].FindName('applyBtn').Visibility = $settings['applyBtn']
 $itt['window'].FindName('AppsCategory').Visibility = $settings['installBtn']
 $itt['window'].FindName('TwaeksCategory').Visibility = $settings['applyBtn']
+if ($settings.ContainsKey('hotdot') -and $itt['window'].FindName('hotdot')) {
+$itt['window'].FindName('hotdot').Visibility = $settings['hotdot']
+}
 break
 }
 }
@@ -1974,6 +1987,7 @@ VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 <Border Background="{TemplateBinding Background}"
 BorderBrush="{TemplateBinding BorderBrush}"
 BorderThickness="0"
+Margin="15"
 CornerRadius="8">
 <ItemsPresenter />
 </Border>
@@ -1989,7 +2003,7 @@ CornerRadius="8">
 <Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
 <Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}"/>
 <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}"/>
-<Setter Property="BorderThickness" Value="1"/>
+<Setter Property="BorderThickness" Value="0.5"/>
 <Setter Property="Template">
 <Setter.Value>
 <ControlTemplate TargetType="MenuItem">
@@ -2334,11 +2348,6 @@ Duration="0:0:0.1" />
 <Setter Property="FontSize" Value="60"/>
 <Setter Property="TextAlignment" Value="Center"/>
 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
-<Style.Triggers>
-<EventTrigger RoutedEvent="FrameworkElement.Loaded">
-<BeginStoryboard Storyboard="{StaticResource Logo}" />
-</EventTrigger>
-</Style.Triggers>
 </Style>
 <Style TargetType="{x:Type ContextMenu}">
 <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -2459,8 +2468,8 @@ KeyboardNavigation.DirectionalNavigation="Cycle" />
 <Grid.ColumnDefinitions>
 <ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/>
 </Grid.ColumnDefinitions>
-<Menu Grid.Row="0" Grid.Column="0" Background="{DynamicResource SecondaryPrimaryBackgroundColor}" BorderBrush="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="15">
-<MenuItem Header="{Binding Management, TargetNullValue=Management}" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="Transparent">
+<Menu Grid.Row="0" Grid.Column="0" Background="{DynamicResource SecondaryPrimaryBackgroundColor}" BorderBrush="Transparent" BorderThickness="0" HorizontalAlignment="Left">
+<MenuItem Header="{Binding Management, TargetNullValue=Management}" VerticalAlignment="Center" HorizontalAlignment="Left" >
 <MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/></MenuItem.Icon>
 <MenuItem Name="sysinfo" Header="{Binding System_Info, TargetNullValue=System Info}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
 <MenuItem Name="poweroption" Header="{Binding Power_Options, TargetNullValue=Power Options}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
@@ -2474,7 +2483,7 @@ KeyboardNavigation.DirectionalNavigation="Cycle" />
 <MenuItem Name="ev" Header="{Binding Environment_Variables, TargetNullValue=Environment Variables}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE81E;"/></MenuItem.Icon></MenuItem>
 <MenuItem Name="spp" Header="{Binding System_Protection, TargetNullValue=System Protection}"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
 </MenuItem>
-<MenuItem Header="{Binding Preferences, TargetNullValue=Preferences}" VerticalAlignment="Center" HorizontalAlignment="Left" BorderBrush="Transparent">
+<MenuItem Header="{Binding Preferences, TargetNullValue=Preferences}" VerticalAlignment="Center" HorizontalAlignment="Left" >
 <MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/></MenuItem.Icon>
 <MenuItem Name="restorepoint" Header="{Binding Create_restore_point, TargetNullValue=Restore Point}" InputGestureText="Shift+Q"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
 <MenuItem Header="{Binding package_manager, TargetNullValue=Package Manager}" ToolTip="Select Package Manager"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon><MenuItem Name="auto" Header="{Binding auto, TargetNullValue=Auto}" ToolTip="Automatically install using the best available method"/><MenuItem Name="choco" Header="Choco"/><MenuItem Name="winget" Header="Winget"/></MenuItem>
@@ -2499,7 +2508,7 @@ KeyboardNavigation.DirectionalNavigation="Cycle" />
 <MenuItem Name="zh" Header="中文"/></MenuItem>
 <MenuItem Name="ittshortcut" Header="{Binding Create_desktop_shortcut, TargetNullValue=Create Shortcut}" InputGestureText="Shift+I"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/></MenuItem.Icon></MenuItem>
 </MenuItem>
-<MenuItem Header="{Binding Third_party, TargetNullValue=Third Party}" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Transparent">
+<MenuItem Header="{Binding Third_party, TargetNullValue=Third Party}" VerticalAlignment="Center" HorizontalAlignment="Center" >
 <MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/></MenuItem.Icon>
 <MenuItem Name="finddriver" Header="Find GPU Driver" ToolTip="Find GPU Driver on official manufacturer website"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
 <MenuItem Name="mas" Header="Windows activation" ToolTip="Windows activation"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
@@ -2515,7 +2524,7 @@ KeyboardNavigation.DirectionalNavigation="Cycle" />
 <MenuItem Name="rapidos" Header="RapidOS" ToolTip="RapidOS is a powerful modification for Windows 10 and 11 that significantly boosts performance."><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
 <MenuItem Name="asustool" Header="ASUS Setup Tool" ToolTip="Tool that manages the setup installation for the legacy Aura Sync, LiveDash, AiSuite3"><MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text=""/></MenuItem.Icon></MenuItem>
 </MenuItem>
-<MenuItem Name="dev" Header="{Binding About, TargetNullValue=About}" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Transparent">
+<MenuItem Name="dev" Header="{Binding About, TargetNullValue=About}" VerticalAlignment="Center" HorizontalAlignment="Center" >
 <MenuItem.Icon><TextBlock FontFamily="Segoe MDL2 Assets" FontSize="15" Text=""/></MenuItem.Icon>
 </MenuItem>
 </Menu>
@@ -2531,12 +2540,12 @@ HorizontalAlignment="Left" VerticalAlignment="Center"/>
 </Grid>
 </Grid>
 <TabControl Name="taps" Grid.Row="1" SelectedIndex="1">
-<TabItem BorderBrush="{x:Null}">
+<TabItem Name="WhatsNewTab" BorderBrush="{x:Null}">
 <TabItem.Header>
 <Grid>
 <TextBlock Text="itt" FontFamily="Arial" FontWeight="Bold" FontSize="46" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 <Ellipse Width="9" Height="9" Fill="Red"
-HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed" Margin="40,0,0,0" x:Name="hotdot"/>
+HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden" Margin="40,0,0,0" x:Name="hotdot"/>
 </Grid>
 </TabItem.Header>
 <Border Background="{DynamicResource PrimaryBackgroundColor}" BorderBrush="transparent" CornerRadius="10" Opacity="0">
