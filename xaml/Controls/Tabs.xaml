@@ -1,5 +1,5 @@
 <!-- TabControl -->
-<TabControl Name="taps" Grid.Row="1">
+<TabControl Name="taps" Grid.Row="1" SelectedIndex="1">
 
     <!-- Whats New Tab -->
     <TabItem Name="WhatsNewTab" BorderBrush="{x:Null}">
