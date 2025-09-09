@@ -2544,7 +2544,7 @@ HorizontalAlignment="Left" VerticalAlignment="Center"/>
 </Grid>
 </Grid>
 </Grid>
-<TabControl Name="taps" Grid.Row="1" SelectedIndex="1">
+<TabControl Name="taps" Grid.Row="1">
 <TabItem Name="WhatsNewTab" BorderBrush="{x:Null}">
 <TabItem.Header>
 <Grid>
