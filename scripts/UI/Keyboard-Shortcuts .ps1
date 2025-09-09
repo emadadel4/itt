@@ -10,13 +10,13 @@ $KeyEvents = {
 
     switch ($key) {
         "Enter" {
-            if ($itt.currentList -eq "appslist") { Invoke-Install }
-            elseif ($itt.currentList -eq "tweakslist") { Invoke-Apply }
+            if ($itt.currentList -eq "AppsListView") { Invoke-Install }
+            elseif ($itt.currentList -eq "TweaksListView") { Invoke-Apply }
         }
         "S" {
             if ($modifiers -eq "Ctrl") {
-                if ($itt.currentList -eq "appslist") { Invoke-Install }
-                elseif ($itt.currentList -eq "tweakslist") { Invoke-Apply }
+                if ($itt.currentList -eq "AppsListView") { Invoke-Install }
+                elseif ($itt.currentList -eq "TweaksListView") { Invoke-Apply }
             }
             elseif ($modifiers -eq "Shift") { Save-File }
         }
