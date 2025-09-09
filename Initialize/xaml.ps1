@@ -199,6 +199,7 @@ $itt.CurrentCategory
 $itt.TabControl = $itt["window"].FindName("taps")
 $itt.AppsListView = $itt["window"].FindName("AppsListView")
 $itt.TweaksListView = $itt["window"].FindName("TweaksListView")
+$itt.searchInput = $itt["window"].FindName("searchInput")
 $itt.SettingsListView = $itt["window"].FindName("SettingsList")
 
 # Buttons and Inputs
