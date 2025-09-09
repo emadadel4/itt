@@ -77,12 +77,7 @@ irm raw.githubusercontent.com/emadadel4/itt/main/itt.ps1 | iex
 > [!NOTE]  
 > All links point directly to the [itt.ps1](https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/itt.ps1)  file in this repository. You can test all links in browser, make sure the link starts with https://
 
-## ⚡ Quick Install Your Saved Apps (Run as Admin is recommended)
-Example:
-
-```PowerShell
-iex "& { $(irm bit.ly/ittea) } -i .\myapps.itt"
-```
+---
 
 # 🤝 How to Contribute
 
