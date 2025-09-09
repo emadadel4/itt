@@ -35,8 +35,6 @@ ITT (Install Tweaks Tool) included most Windows 10/11 Software and Windows Tweak
 
 ###### 📦 417 Apps • ⚙️ 62 Tweaks • 🔧 18 Settings • 💬 123 Quote • 🎵 27 Soundtrack • 🌐 11 Localization
 
-<img src="https://quotes.emadadel4.workers.dev/" width="100%">
-
 </div>
 
 <p align="center" dir="auto">
