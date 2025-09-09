@@ -37,9 +37,11 @@ function ChangeTap {
     }
     # Iterate over the tab settings
     foreach ($tab in $tabSettings.Keys) {
-        # Check if the current tab is selected
+
         if ($itt['window'].FindName($tab).IsSelected) {
+            
             $settings = $tabSettings[$tab]
+
             # Update button visibility and currentList based on the selected tab
             $itt.CurrentList = $settings['CurrentList']
             $itt.CurrentCategory = $settings['CurrentCategory']
@@ -47,12 +49,10 @@ function ChangeTap {
             $itt['window'].FindName('applyBtn').Visibility = $settings['applyBtn']
             $itt['window'].FindName('AppsCategory').Visibility = $settings['installBtn']
             $itt['window'].FindName('TwaeksCategory').Visibility = $settings['applyBtn']
-
             $itt['window'].FindName('searchInput').Visibility = $settings['searchInput']
 
             if ($settings.ContainsKey('hotdot') -and $itt['window'].FindName('hotdot')) {
                 $itt['window'].FindName('hotdot').Visibility = $settings['hotdot']
-                
             }
             break
         }
