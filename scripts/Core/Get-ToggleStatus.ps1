@@ -169,14 +169,19 @@ function Get-ToggleStatus {
 
     # Core Isolation Memory Integrity
     if ($ToggleSwitch -eq "CoreIsolationMemoryIntegrity") {
-        $CoreIsolationMemory = (Get-ItemProperty -path 'HKLM:\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard').Enabled
-        if ($CoreIsolationMemory -eq 1) {
-            return $true
-        } 
-        else {
+
+        try {
+            $CoreIsolationMemory = (Get-ItemProperty -path 'HKLM:\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\CredentialGuard').Enabled
+            if ($CoreIsolationMemory -eq 1) {
+                return $true
+            } 
+            else {
+                return $false
+            }
+        }
+        catch {
             return $false
         }
-        
     }
 
     # Windows Sandbox
