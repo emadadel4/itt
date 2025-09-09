@@ -25,6 +25,11 @@ function ChangeTap {
             'applyBtn' = 'Hidden'; 
             'CurrentList' = 'SettingsList'
         }
+        'WhatsNewTab' = @{ 
+            'installBtn' = 'Hidden'; 
+            'applyBtn' = 'Hidden'; 
+            'hotdot' =  [System.Windows.Visibility]::Hidden;
+        }
     }
     # Iterate over the tab settings
     foreach ($tab in $tabSettings.Keys) {
@@ -38,6 +43,9 @@ function ChangeTap {
             $itt['window'].FindName('applyBtn').Visibility = $settings['applyBtn']
             $itt['window'].FindName('AppsCategory').Visibility = $settings['installBtn']
             $itt['window'].FindName('TwaeksCategory').Visibility = $settings['applyBtn']
+            if ($settings.ContainsKey('hotdot') -and $itt['window'].FindName('hotdot')) {
+                $itt['window'].FindName('hotdot').Visibility = $settings['hotdot']
+            }
             break
         }
     }
