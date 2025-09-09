@@ -6,7 +6,7 @@ $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "09/09/2025"
+lastupdate     = "09/10/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -769,52 +769,6 @@ Write-Host "Saved: $($saveFileDialog.FileName)"
 }
 Show-Selected -ListView "$($itt.currentList)" -Mode "Default"
 }
-function Quick-Install {
-param (
-[string]$file
-)
-try {
-if ($file -match "^https?://") {
-$FileContent = Invoke-RestMethod -Uri $file -ErrorAction Stop
-if ($FileContent -isnot [array] -or $FileContent.Count -eq 0) {
-Message -NoneKey "The file is corrupt or access is forbidden" -icon "Warning" -action "OK"
-return
-}
-}
-else {
-$FileContent = Get-Content -Path $file -Raw | ConvertFrom-Json -ErrorAction Stop
-if ($file -notmatch "\.itt") {
-Message -NoneKey "Invalid file format. Expected .itt file." -icon "Warning" -action "OK"
-return
-}
-}
-}
-catch {
-Write-Warning "Failed to load or parse JSON file: $_"
-return
-}
-if ($null -eq $FileContent) { return }
-if ($FileContent.ListView -ne $itt.currentList) {
-Message -NoneKey "Please type the correct command for installing" -icon "Warning" -action "OK"
-return
-}
-$collectionView = [System.Windows.Data.CollectionViewSource]::GetDefaultView($itt['Window'].FindName($itt.currentList).Items)
-$collectionView.Filter = {
-param($item)
-if ($FileContent.Items.Name -contains $item.Content) {
-$item.IsChecked = $true
-return $true
-} else {
-return $false
-}
-}
-try {
-Invoke-Install *> $null
-}
-catch {
-Write-Warning "Installation failed: $_"
-}
-}
 function Set-Taskbar {
 param ([string]$progress,[double]$value,[string]$icon)
 try {
@@ -914,7 +868,7 @@ $tabSettings = @{
 'SettingsTab' = @{
 'installBtn' = 'Hidden';
 'applyBtn' = 'Hidden';
-'searchInput' = 'Visible';
+'searchInput' = 'Collapsed';
 'CurrentList' = 'SettingsList'
 }
 'WhatsNewTab' = @{
@@ -2544,7 +2498,7 @@ HorizontalAlignment="Left" VerticalAlignment="Center"/>
 </Grid>
 </Grid>
 </Grid>
-<TabControl Name="taps" Grid.Row="1">
+<TabControl Name="taps" Grid.Row="1" SelectedIndex="1">
 <TabItem Name="WhatsNewTab" BorderBrush="{x:Null}">
 <TabItem.Header>
 <Grid>
@@ -3015,7 +2969,10 @@ switch ($type) {
 "TextBox" { $element.Add_TextChanged({ Invoke-Button $this.Name $this.Text }) }
 "TextBlock" { $element.Add_MouseLeftButtonDown({ Invoke-Button $this.Name $this.Text }) }
 "ComboBox" { $element.add_SelectionChanged({ Invoke-Button $this.Name $this.SelectedItem.Content }) }
-"TabControl" { $element.add_SelectionChanged({ Invoke-Button $this.Name $this.SelectedItem.Name }) }
+"TabControl" {
+$element.add_SelectionChanged({ Invoke-Button $this.Name $this.SelectedItem.Name })
+ChangeTap
+}
 "CheckBox" {
 $element.IsChecked = Get-ToggleStatus -ToggleSwitch $name
 $element.Add_Click({ Invoke-Toggle $this.Name })
