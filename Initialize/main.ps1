@@ -15,7 +15,10 @@ $MainXaml.SelectNodes("//*[@Name]") | ForEach-Object {
             "TextBox" { $element.Add_TextChanged({ Invoke-Button $this.Name $this.Text }) }
             "TextBlock" { $element.Add_MouseLeftButtonDown({ Invoke-Button $this.Name $this.Text }) }
             "ComboBox" { $element.add_SelectionChanged({ Invoke-Button $this.Name $this.SelectedItem.Content }) }
-            "TabControl" { $element.add_SelectionChanged({ Invoke-Button $this.Name $this.SelectedItem.Name }) }
+            "TabControl" { 
+                $element.add_SelectionChanged({ Invoke-Button $this.Name $this.SelectedItem.Name }) 
+                ChangeTap
+            }
             "CheckBox" {
                 $element.IsChecked = Get-ToggleStatus -ToggleSwitch $name
                 $element.Add_Click({ Invoke-Toggle $this.Name })
