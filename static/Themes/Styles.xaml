@@ -269,6 +269,7 @@
                     <Border Background="{TemplateBinding Background}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="0" 
+                            Margin="15"
                             CornerRadius="8">
                         <ItemsPresenter />
                     </Border>
@@ -285,7 +286,7 @@
         <Setter Property="Background" Value="{DynamicResource SecondaryPrimaryBackgroundColor}"/>
         <Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderThickness" Value="0.5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="MenuItem">
@@ -665,11 +666,6 @@
         <Setter Property="FontSize" Value="60"/>
         <Setter Property="TextAlignment" Value="Center"/>
         <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
-        <Style.Triggers>
-            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                <BeginStoryboard Storyboard="{StaticResource Logo}" />
-            </EventTrigger>
-        </Style.Triggers>
     </Style>
 <!--End Logo Style-->
 
