@@ -1772,7 +1772,7 @@ BeginTime="0:0:15" />
 <Setter Property="SnapsToDevicePixels" Value="True"/>
 </Style>
 <Style TargetType="ListViewItem">
-<Setter Property="Margin" Value="25,10,25,0"/>
+<Setter Property="Margin" Value="14,8,14,0"/>
 <Setter Property="BorderThickness" Value="0.3"/>
 <Setter Property="BorderBrush" Value="DarkGray"/>
 <Setter Property="Padding" Value="10,10,0,0"/>
@@ -2134,7 +2134,7 @@ Width="auto"
 Padding="8"
 BorderBrush="Transparent"
 Background="Transparent"
-Margin="5">
+Margin="14,10,0,0">
 <ContentPresenter
 x:Name="ContentSite"
 VerticalAlignment="Center"
