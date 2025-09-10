@@ -681,18 +681,6 @@
     </Style>
 <!--End Toggle Switch Style-->
 
-<!--Logo Style-->
-    <Style TargetType="TextBlock" x:Key="logoText">
-        <Setter Property="Foreground" Value="{DynamicResource logo}"/>
-        <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
-        <Setter Property="FontFamily" Value="Arial"/>
-        <Setter Property="FontWeight" Value="bold"/>
-        <Setter Property="FontSize" Value="60"/>
-        <Setter Property="TextAlignment" Value="Center"/>
-        <Setter Property="TextOptions.TextRenderingMode" Value="ClearType" />
-    </Style>
-<!--End Logo Style-->
-
 <!--ContextMenu Style-->
     <Style TargetType="{x:Type ContextMenu}">
     <Setter Property="SnapsToDevicePixels" Value="True" />
