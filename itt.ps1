@@ -2151,6 +2151,26 @@ ContentSource="Header"
 <Setter TargetName="Border" Property="Background" Value="Transparent" />
 <Setter Property="Foreground" Value="{DynamicResource TextColorPrimary}" />
 </Trigger>
+<MultiTrigger>
+<MultiTrigger.Conditions>
+<Condition Property="IsSelected" Value="True"/>
+<Condition Property="Name" Value="WhatsNewTab"/>
+</MultiTrigger.Conditions>
+<MultiTrigger.Setters>
+<Setter TargetName="Border" Property="Background" Value="{DynamicResource HighlightColor}" />
+<Setter Property="Foreground" Value="White" />
+</MultiTrigger.Setters>
+</MultiTrigger>
+<MultiTrigger>
+<MultiTrigger.Conditions>
+<Condition Property="IsSelected" Value="False"/>
+<Condition Property="Name" Value="WhatsNewTab"/>
+</MultiTrigger.Conditions>
+<MultiTrigger.Setters>
+<Setter TargetName="Border" Property="Background" Value="Transparent" />
+<Setter Property="Foreground" Value="{DynamicResource logo}" />
+</MultiTrigger.Setters>
+</MultiTrigger>
 </ControlTemplate.Triggers>
 </ControlTemplate>
 </Setter.Value>
