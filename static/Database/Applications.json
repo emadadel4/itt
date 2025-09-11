@@ -4168,5 +4168,15 @@
     "itt": "na",
     "category": "Security",
     "IsChecked": false
+  },
+  {
+    "Content": "AB Download Manager",
+    "Description": "AB Download Manager is a desktop app which lets you manage and organize your download files better than before",
+    "choco": "ab-download-manager",
+    "scoop": "extras/abdownloadmanager",
+    "winget": "amir1376.ABDownloadManager",
+    "itt": "na",
+    "category": "Utilities",
+    "IsChecked": false
   }
 ]
