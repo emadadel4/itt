@@ -556,5 +556,14 @@
     "Script": [
       "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Set%20Hibernation%20as%20default/run.ps1 | iex"
     ]
+  },
+  {
+    "Content": "Change Icon Cache Size",
+    "Description": "Icon cache is 500 KB. Increasing the icon cache size to 4 MB gives the best results",
+    "Category": "Performance",
+    "IsChecked": false,
+    "Script": [
+      "irm https://raw.githubusercontent.com/itt-co/itt-tweaks/refs/heads/main/Change%20Icon%20Cache%20Size/run.ps1 | iex"
+    ]
   }
 ]
