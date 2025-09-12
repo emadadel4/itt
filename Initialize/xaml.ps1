@@ -75,7 +75,6 @@
 #region Create default keys
 #===========================================================================
 try {
-
     $appsTheme = Get-ItemPropertyValue -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme"
     $fullCulture = Get-ItemPropertyValue -Path "HKCU:\Control Panel\International" -Name "LocaleName"
     $shortCulture = $fullCulture.Split('-')[0]
@@ -87,6 +86,12 @@ try {
         Set-ItemProperty -Path $itt.registryPath -Name "Music" -Value 0 -Force
         Set-ItemProperty -Path $itt.registryPath -Name "backup" -Value 0 -Force
         Set-ItemProperty -Path $itt.registryPath -Name "source" -Value "auto" -Force
+        $itt['window'].FindName('hotdot').Visibility = [System.Windows.Visibility]::Visible
+    }
+    else
+    {
+        # Show hotdot if first run
+        $itt['window'].FindName('hotdot').Visibility = [System.Windows.Visibility]::Collapsed
     }
     try {
         # Attempt to get existing registry values
