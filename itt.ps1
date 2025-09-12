@@ -2846,7 +2846,7 @@ $itt['window'].FindName('hotdot').Visibility = [System.Windows.Visibility]::Visi
 }
 else
 {
-$itt['window'].FindName('hotdot').Visibility = [System.Windows.Visibility]::Collapsed
+$itt['window'].FindName('hotdot').Visibility = [System.Windows.Visibility]::Hidden
 }
 try {
 $itt.Theme = (Get-ItemProperty -Path $itt.registryPath -Name "Theme" -ErrorAction Stop).Theme
