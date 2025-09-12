@@ -91,7 +91,7 @@ try {
     else
     {
         # Show hotdot if first run
-        $itt['window'].FindName('hotdot').Visibility = [System.Windows.Visibility]::Collapsed
+        $itt['window'].FindName('hotdot').Visibility = [System.Windows.Visibility]::Hidden
     }
     try {
         # Attempt to get existing registry values
