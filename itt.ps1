@@ -2842,6 +2842,11 @@ Set-ItemProperty -Path $itt.registryPath -Name "locales" -Value "default" -Force
 Set-ItemProperty -Path $itt.registryPath -Name "Music" -Value 0 -Force
 Set-ItemProperty -Path $itt.registryPath -Name "backup" -Value 0 -Force
 Set-ItemProperty -Path $itt.registryPath -Name "source" -Value "auto" -Force
+$itt['window'].FindName('hotdot').Visibility = [System.Windows.Visibility]::Visible
+}
+else
+{
+$itt['window'].FindName('hotdot').Visibility = [System.Windows.Visibility]::Collapsed
 }
 try {
 $itt.Theme = (Get-ItemProperty -Path $itt.registryPath -Name "Theme" -ErrorAction Stop).Theme
