@@ -323,7 +323,7 @@ function ConvertTo-Xaml {
             "!\[itt\.xName:(.+?)\s*\[(.+?)\]\]\((.+?)\)" {
                 # Image section
                 $xaml += 
-                "<Image x:Name=''$($matches[1].Trim())'' Cursor=''Hand'' Margin=''15'' Height=''400'' Width=''400'' HorizontalAlignment=''Left''>
+                "<Image x:Name=''$($matches[1].Trim())'' Cursor=''Hand'' Margin=''0,0,0,15'' Height=''Auto'' Width=''388'' HorizontalAlignment=''Left''>
                     <Image.Source>
                         <BitmapImage UriSource=''$($matches[3].Trim())'' CacheOption=''OnLoad''/>
                     </Image.Source>
