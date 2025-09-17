@@ -1,3 +1,8 @@
+
+### Watch a demo
+
+[![Video Thumbnail](https://img.youtube.com/vi/0kZFi6NT1gI/maxresdefault.jpg)](https://youtu.be/0kZFi6NT1gI)
+
 > [!CAUTION]  
 > **LAUNCH THE SCRIPT ONLY USING OFFICIAL COMMANDS FROM THIS REPOSITORY.**  
 > **IT'S NOT PORTABLE, SO DO NOT DOWNLOAD OR RUN IT FROM ELSEWHERE.**
