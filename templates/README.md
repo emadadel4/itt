@@ -77,7 +77,16 @@ irm raw.githubusercontent.com/emadadel4/itt/main/itt.ps1 | iex
 > [!NOTE]  
 > All links point directly to the [itt.ps1](https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/itt.ps1)  file in this repository. You can test all links in browser, make sure the link starts with https://
 
----
+
+<div align="center" dir="auto">
+
+# Watch a demo
+
+[![Video Thumbnail](https://img.youtube.com/vi/0kZFi6NT1gI/maxresdefault.jpg)](https://youtu.be/0kZFi6NT1gI)
+
+</div>
+
+<br>
 
 # 🤝 How to Contribute
 
