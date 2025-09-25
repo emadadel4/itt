@@ -341,7 +341,7 @@ function ConvertTo-Xaml {
             "^##### (.+)" {
                 ##### Headline
                 $Headline = $matches[1].Trim()  
-                $xaml += "<TextBlock Text='' • $Headline'' FontSize=''$HeadlineFontSize'' Padding=''10 25 0 20'' Foreground=''{DynamicResource PrimaryButtonForeground}'' FontWeight=''bold'' TextWrapping=''Wrap''/>`n" 
+                $xaml += "<TextBlock Text=''$Headline'' FontSize=''$HeadlineFontSize'' Padding=''10 25 0 20'' Foreground=''{DynamicResource PrimaryButtonForeground}'' FontWeight=''bold'' TextWrapping=''Wrap''/>`n" 
             }
             "^#### (.+)" {
                 #### Description
