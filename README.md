@@ -18,7 +18,7 @@ ITT (Install Tweaks Tool) included most Windows 10/11 Software and Windows Tweak
 
 <!-- ![Endpoint Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fittools-7d9fe-default-rtdb.firebaseio.com%2Fmessage.json) -->
 ![Usage Badge](https://img.shields.io/endpoint?url=https://itt.emadadel4.workers.dev/count&label=Usage&style=for-the-badge)
-![Latest update](https://img.shields.io/badge/Latest%20build-09/18/2025-blue?style=for-the-badge)
+![Latest update](https://img.shields.io/badge/Latest%20build-09/25/2025-blue?style=for-the-badge)
 ![Script size](https://img.shields.io/github/size/emadadel4/itt/itt.ps1?label=Script%20Size&style=for-the-badge)
 <!-- ![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Femadadel4%2Fitt%2F&countColor=%23263759&style=flat) -->
 
