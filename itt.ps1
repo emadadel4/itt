@@ -6,7 +6,7 @@ $Host.UI.RawUI.WindowTitle = "Install Twaeks Tool"
 $itt = [Hashtable]::Synchronized(@{
 database       = @{}
 ProcessRunning = $false
-lastupdate     = "09/18/2025"
+lastupdate     = "09/25/2025"
 registryPath   = "HKCU:\Software\ITT@emadadel"
 icon           = "https://raw.githubusercontent.com/emadadel4/ITT/main/static/Icons/icon.ico"
 Theme          = "default"
@@ -1697,12 +1697,12 @@ $itt.$Button.Content = $NonKey
 })
 }
 function Show-Event {
-$itt['window'].FindName('date').text = '09/20/2025'.Trim()
+$itt['window'].FindName('date').text = '09/30/2025'.Trim()
 $itt['window'].FindName('yt').add_MouseLeftButtonDown({
 Start-Process('https://youtu.be/0kZFi6NT1gI')
 })
 $itt['window'].FindName('bc').add_MouseLeftButtonDown({
-Start-Process('https://t.me/+qnB0HvMH4ocxZDc8')
+Start-Process('https://linkjust.com/batmancave')
 })
 $storedDate = [datetime]::ParseExact($itt['window'].FindName('date').Text, 'MM/dd/yyyy', $null)
 $daysElapsed = (Get-Date) - $storedDate
@@ -2553,13 +2553,20 @@ HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden" Margin=
 </StackPanel>
 <Grid Grid.Row="1" Background="Transparent" Margin="25,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 <ScrollViewer Name="ScrollViewer" VerticalScrollBarVisibility="Auto">
-<StackPanel><TextBlock Text=' • Watch a demo' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
+<StackPanel><TextBlock Text='▶️ Watch a demo' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
 <Image x:Name='yt' Cursor='Hand' Margin='0,0,0,15' Height='Auto' Width='388' HorizontalAlignment='Left'>
 <Image.Source>
 <BitmapImage UriSource='https://img.youtube.com/vi/0kZFi6NT1gI/maxresdefault.jpg' CacheOption='OnLoad'/>
 </Image.Source>
 </Image>
-<TextBlock Text=' • Keyboard Shortcuts' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
+<TextBlock Text='📦 Archive Hub' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
+<Image x:Name='bc' Cursor='Hand' Margin='0,0,0,15' Height='Auto' Width='388' HorizontalAlignment='Left'>
+<Image.Source>
+<BitmapImage UriSource='https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Images/tgbc.jpg' CacheOption='OnLoad'/>
+</Image.Source>
+</Image>
+<TextBlock Text='Telegram group that Archives all free stuff on the internet' FontSize='15' HorizontalAlignment='Left' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
+<TextBlock Text='Keyboard Shortcuts' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
 <StackPanel Orientation='Vertical'>
 <TextBlock Text='• Ctrl+A: Clear category filter.' Padding='35,0,0,0' FontSize='15' HorizontalAlignment='Left' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
@@ -2602,15 +2609,8 @@ HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden" Margin=
 <StackPanel Orientation='Vertical'>
 <TextBlock Text='• Ctrl+G: Close application.' Padding='35,0,0,0' FontSize='15' HorizontalAlignment='Left' Width='Auto' Height='Auto' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap'/>
 </StackPanel>
-<TextBlock Text=' • 💡 A Secret Feature Awaits – Unlock It' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
+<TextBlock Text='💡 A Secret Feature Awaits – Unlock It' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
 <TextBlock Text='Can You Find the Hidden Easter Egg? Open the source code and uncover the secret features waiting for you!' FontSize='15' HorizontalAlignment='Left' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
-<TextBlock Text=' • ⭐ Archive Telegram Group' FontSize='20' Padding='10 25 0 20' Foreground='{DynamicResource PrimaryButtonForeground}' FontWeight='bold' TextWrapping='Wrap'/>
-<Image x:Name='bc' Cursor='Hand' Margin='0,0,0,15' Height='Auto' Width='388' HorizontalAlignment='Left'>
-<Image.Source>
-<BitmapImage UriSource='https://raw.githubusercontent.com/emadadel4/itt/refs/heads/main/static/Images/tgbc.jpg' CacheOption='OnLoad'/>
-</Image.Source>
-</Image>
-<TextBlock Text='Telegram group that Archives all free stuff on the internet' FontSize='15' HorizontalAlignment='Left' Padding='25 0 0 10' Foreground='{DynamicResource TextColorSecondaryColor}' TextWrapping='Wrap' MaxWidth='450'/>
 </StackPanel>
 </ScrollViewer>
 </Grid>
